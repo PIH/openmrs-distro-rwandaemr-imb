@@ -1,0 +1,121 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.openmrs.distro</groupId>
+        <artifactId>rwandaemr</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>rwandaemr-imb-butaro</artifactId>
+    <packaging>pom</packaging>
+    <name>IMB Butaro</name>
+    <description>Butaro Distribution of the Rwanda EMR</description>
+
+    <properties>
+        <appframeworkVersion>2.4-SNAPSHOT</appframeworkVersion>
+        <appuiVersion>1.3-SNAPSHOT</appuiVersion>
+        <emrmonitorVersion>1.0.2</emrmonitorVersion>
+        <formfilterVersion>1.0.0</formfilterVersion>
+        <patientflagsVersion>1.3.4</patientflagsVersion>
+        <patientsummaryVersion>1.4.0</patientsummaryVersion>
+        <registerVersion>1.2</registerVersion>
+        <uicommonsVersion>1.8</uicommonsVersion>
+        <uiframeworkVersion>3.4-SNAPSHOT</uiframeworkVersion>
+        <webservicesRestVersion>2.12-SNAPSHOT</webservicesRestVersion> <!-- Older version running in Butaro -->
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>distribution</id>
+            <activation>
+                <property>
+                    <name>buildDistro</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.openmrs.maven.plugins</groupId>
+                        <artifactId>openmrs-sdk-maven-plugin</artifactId>
+                        <version>3.13.4</version>
+                        <executions>
+                            <execution>
+                                <id>build-distro</id>
+                                <phase>process-resources</phase>
+                                <goals>
+                                    <goal>build-distro</goal>
+                                </goals>
+                                <configuration>
+                                    <distro>${basedir}/src/main/resources/openmrs-distro.properties</distro>
+                                    <dir>${project.build.directory}/distro</dir>
+                                    <bundled>false</bundled>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>build-bundled-distro</id>
+                                <phase>process-resources</phase>
+                                <goals>
+                                    <goal>build-distro</goal>
+                                </goals>
+                                <configuration>
+                                    <distro>${basedir}/src/main/resources/openmrs-distro.properties</distro>
+                                    <dir>${project.build.directory}/bundled-distro</dir>
+                                    <bundled>true</bundled>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!--
+                    Assemble all of omods into a zip file
+                    -->
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <version>2.3</version>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>${basedir}/src/main/assembly/assembly.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>make-assembly</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>build-helper-maven-plugin</artifactId>
+                        <version>3.0.0</version>
+                        <executions>
+                            <execution>
+                                <id>attach-artifacts</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>attach-artifact</goal>
+                                </goals>
+                                <configuration>
+                                    <artifacts>
+                                        <artifact>
+                                            <file>${project.build.directory}/bundled-distro/web/openmrs.war</file>
+                                            <type>war</type>
+                                        </artifact>
+                                    </artifacts>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>

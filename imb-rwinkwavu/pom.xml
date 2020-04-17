@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>rwandaemr-imb-rwinkwavu</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <name>IMB Rwinkwavu</name>
     <description>Rwinkwavu Distribution of the Rwanda EMR</description>
 

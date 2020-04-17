@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>rwandaemr-imb-butaro</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <name>IMB Butaro</name>
     <description>Butaro Distribution of the Rwanda EMR</description>
 

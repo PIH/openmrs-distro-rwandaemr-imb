@@ -21,6 +21,7 @@
         <patientflagsVersion>1.3.4</patientflagsVersion>
         <patientsummaryVersion>1.4.0</patientsummaryVersion>
         <registerVersion>1.2</registerVersion>
+        <rwandaprimarycareVersion>2.0.8-pih-SNAPSHOT</rwandaprimarycareVersion>
         <uicommonsVersion>1.8</uicommonsVersion>
         <uiframeworkVersion>3.4-SNAPSHOT</uiframeworkVersion>
         <webservicesRestVersion>2.12-SNAPSHOT</webservicesRestVersion> <!-- Older version running in Butaro -->

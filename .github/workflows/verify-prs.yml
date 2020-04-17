@@ -4,7 +4,7 @@ name: Verify PRs
 
 on:
   pull_request:
-    branches: ['master']
+    branches: ['1.x']
 
 jobs:
   verify:

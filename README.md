@@ -16,8 +16,6 @@ are issued during the course of development for the next major release.
 
 For more information on the specific distribution versions of interest, see the below section on SDK setup.
 
-## CI and release process
-
 ## Running with OpenMRS SDK
 
 ### Pre-requisites

@@ -3,5 +3,7 @@ openmrs-distro-rwandaemr
 
 ## Running with OpenMRS SDK
 
-Please follow the instructions at the [OpenMRS SDK Wiki page](https://wiki.openmrs.org/display/docs/OpenMRS+SDK). 
+Please follow the instructions at the [OpenMRS SDK Wiki page](https://wiki.openmrs.org/display/docs/OpenMRS+SDK).
+
+Update 1.x branch. 
 

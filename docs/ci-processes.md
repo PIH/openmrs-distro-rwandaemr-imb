@@ -46,6 +46,12 @@ For every commit pushed to the configured branches (typically master plus any ac
 this job runs a “mvn deploy”, which compiles, executes tests, and verifies that this builds without errors, 
 and if so, deploys to the OpenMRS Maven Snapshots repository that is configured in the distributionManagement
  section of the [pom.xml](../pom.xml)
+ 
+For certain modules, we have started adding in capabilities to also detect when Maven dependencies have been updated
+in the Maven repository, and triggering new builds under these circumstances.  Currently, this is being piloted 
+as an approach in the [rwandareports module](https://github.com/PIH/openmrs-module-rwandareports).  Specifically:
+* https://github.com/PIH/openmrs-module-rwandareports/blob/master/pom.xml#L222
+* https://github.com/PIH/openmrs-module-rwandareports/blob/master/.github/workflows/deploy-snapshots.yml
 
 **perform-release:**
 This job exists to perform a versioned, non-SNAPSHOT release.  This is not automatically executed, 

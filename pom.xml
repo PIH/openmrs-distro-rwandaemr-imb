@@ -21,7 +21,7 @@
         <calculationVersion>1.2</calculationVersion>
         <formconceptsVersion>1.0-SNAPSHOT</formconceptsVersion>
         <idgenVersion>4.5.0</idgenVersion>
-        <groovyVersion>2.2.4</groovyVersion>
+        <groovyVersion>2.3.0</groovyVersion>
         <heightweighttrackerVersion>1.0.3</heightweighttrackerVersion>
         <htmlformentryVersion>3.9.2</htmlformentryVersion>
         <htmlformflowsheetVersion>1.4.1</htmlformflowsheetVersion>

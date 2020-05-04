@@ -39,7 +39,7 @@ ENV OMRS_CONFIG_MODULE_WEB_ADMIN="true"
 # These environment variables are meant to enable developer settings
 ENV OMRS_DEV_DEBUG_PORT="1044"
 
-# Additional environment variables as needed
+# Additional environment variables as needed.  This should match the name of the distribution supplied OpenMRS war file
 ENV OMRS_WEBAPP_NAME="openmrs"
 
 # Set up volumes.

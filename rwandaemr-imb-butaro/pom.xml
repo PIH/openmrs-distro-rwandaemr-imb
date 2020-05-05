@@ -53,18 +53,6 @@
                                     <bundled>false</bundled>
                                 </configuration>
                             </execution>
-                            <execution>
-                                <id>build-bundled-distro</id>
-                                <phase>process-resources</phase>
-                                <goals>
-                                    <goal>build-distro</goal>
-                                </goals>
-                                <configuration>
-                                    <distro>${basedir}/src/main/resources/openmrs-distro.properties</distro>
-                                    <dir>${project.build.directory}/bundled-distro</dir>
-                                    <bundled>true</bundled>
-                                </configuration>
-                            </execution>
                         </executions>
                     </plugin>
 
@@ -104,7 +92,7 @@
                                 <configuration>
                                     <artifacts>
                                         <artifact>
-                                            <file>${project.build.directory}/bundled-distro/web/openmrs.war</file>
+                                            <file>${project.build.directory}/distro/web/openmrs.war</file>
                                             <type>war</type>
                                         </artifact>
                                     </artifacts>

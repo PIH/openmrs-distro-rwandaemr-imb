@@ -10,8 +10,8 @@
     <description>Parent project that includes all sub-modules</description>
 
     <modules>
-        <module>imb-rwinkwavu</module>
-        <module>imb-butaro</module>
+        <module>rwandaemr-imb-rwinkwavu</module>
+        <module>rwandaemr-imb-butaro</module>
     </modules>
 
     <properties>

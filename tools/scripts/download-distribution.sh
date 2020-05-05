@@ -53,7 +53,7 @@ cat > $MAVEN_SETTINGS_FILE << EOF
 </settings>
 EOF
 
-mvn dependency:get -U -Dartifact=$ARTIFACT -s maven-settings.xml
+mvn dependency:get -U -Dartifact=$ARTIFACT -s $MAVEN_SETTINGS_FILE
 mvn dependency:copy -Dartifact=$ARTIFACT -DoutputDirectory=$TARGET_DIR
 unzip $ZIP_FILE -d $TARGET_DIR
 

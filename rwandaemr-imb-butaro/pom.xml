@@ -25,59 +25,48 @@
         <uiframeworkVersion>3.4-SNAPSHOT</uiframeworkVersion>
     </properties>
 
-    <profiles>
-        <profile>
-            <id>distribution</id>
-            <activation>
-                <property>
-                    <name>buildDistro</name>
-                    <value>true</value>
-                </property>
-            </activation>
-            <build>
-                <plugins>
-                    <!-- Use the SDK to retrieve the war, modules, and owas -->
-                    <plugin>
-                        <groupId>org.openmrs.maven.plugins</groupId>
-                        <artifactId>openmrs-sdk-maven-plugin</artifactId>
-                        <version>3.13.4</version>
-                        <executions>
-                            <execution>
-                                <id>build-distro</id>
-                                <phase>process-resources</phase>
-                                <goals>
-                                    <goal>build-distro</goal>
-                                </goals>
-                                <configuration>
-                                    <distro>${basedir}/src/main/resources/openmrs-distro.properties</distro>
-                                    <dir>${project.build.directory}/distro</dir>
-                                    <bundled>false</bundled>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <!-- Assemble this into a zip archive -->
-                    <plugin>
-                        <artifactId>maven-assembly-plugin</artifactId>
-                        <version>2.3</version>
+    <build>
+        <plugins>
+            <!-- Use the SDK to retrieve the war, modules, and owas -->
+            <plugin>
+                <groupId>org.openmrs.maven.plugins</groupId>
+                <artifactId>openmrs-sdk-maven-plugin</artifactId>
+                <version>3.13.4</version>
+                <executions>
+                    <execution>
+                        <id>build-distro</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>build-distro</goal>
+                        </goals>
                         <configuration>
-                            <descriptors>
-                                <descriptor>${basedir}/src/main/assembly/assembly.xml</descriptor>
-                            </descriptors>
+                            <distro>${basedir}/src/main/resources/openmrs-distro.properties</distro>
+                            <dir>${project.build.directory}/distro</dir>
+                            <bundled>false</bundled>
                         </configuration>
-                        <executions>
-                            <execution>
-                                <id>make-assembly</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>single</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Assemble this into a zip archive -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <descriptors>
+                        <descriptor>${basedir}/src/main/assembly/assembly.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

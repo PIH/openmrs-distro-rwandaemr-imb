@@ -36,6 +36,7 @@
             </activation>
             <build>
                 <plugins>
+                    <!-- Use the SDK to retrieve the war, modules, and owas -->
                     <plugin>
                         <groupId>org.openmrs.maven.plugins</groupId>
                         <artifactId>openmrs-sdk-maven-plugin</artifactId>
@@ -55,10 +56,7 @@
                             </execution>
                         </executions>
                     </plugin>
-
-                    <!--
-                    Assemble all of omods into a zip file
-                    -->
+                    <!-- Assemble this into a zip archive -->
                     <plugin>
                         <artifactId>maven-assembly-plugin</artifactId>
                         <version>2.3</version>
@@ -74,29 +72,6 @@
                                 <goals>
                                     <goal>single</goal>
                                 </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>build-helper-maven-plugin</artifactId>
-                        <version>3.0.0</version>
-                        <executions>
-                            <execution>
-                                <id>attach-artifacts</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>attach-artifact</goal>
-                                </goals>
-                                <configuration>
-                                    <artifacts>
-                                        <artifact>
-                                            <file>${project.build.directory}/distro/web/openmrs.war</file>
-                                            <type>war</type>
-                                        </artifact>
-                                    </artifacts>
-                                </configuration>
                             </execution>
                         </executions>
                     </plugin>

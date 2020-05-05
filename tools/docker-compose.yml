@@ -14,17 +14,17 @@ services:
     ports:
       - "3306:3306"
 
-  web:
-    build: ./openmrs-server
-    image: test-openmrs:latest
+  server:
+    image: partnersinhealth/openmrs-server:latest
     depends_on:
       - db
     environment:
       OMRS_CONFIG_CONNECTION_SERVER: "db"
       OMRS_CONFIG_CONNECTION_USERNAME: "root"
       OMRS_CONFIG_CONNECTION_PASSWORD: "password"
+      OMRS_CONFIG_CONNECTION_EXTRA_ARGS: "&zeroDateTimeBehavior=convertToNull"
     volumes:
-      - ./openmrs_distro:/openmrs/distribution
+      - ./distribution:/openmrs/distribution
       - openmrs-data:/openmrs/data
     ports:
       - "8080:8080"

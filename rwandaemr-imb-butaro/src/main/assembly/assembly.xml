@@ -5,7 +5,7 @@
     <formats>
         <format>zip</format>
     </formats>
-    <includeBaseDirectory>false</includeBaseDirectory>
+    <baseDirectory>${artifactId}-${version}</baseDirectory>
     <fileSets>
         <fileSet>
             <directory>${project.build.directory}/distro/web</directory>

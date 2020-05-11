@@ -12,6 +12,7 @@
     <modules>
         <module>rwandaemr-imb-butaro</module>
         <module>rwandaemr-imb-rwinkwavu</module>
+        <module>rwandaemr-installer</module>
     </modules>
 
     <properties>

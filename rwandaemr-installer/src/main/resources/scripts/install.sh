@@ -1,29 +1,38 @@
 #!/bin/bash
 
-distribution="$1"
-version="$2"
-targetDir="$3"
+## load variables from the vars.txt file
+source vars.txt
 
 create_target_dir(){
-	mkdir -p ${targetDir}
-	mkdir -p ${targetDir}/distribution
+    if [ "$env_type" == "demo" -o "$env_type" == "prod" -o "$env_type" == "test" ]; then
+      mkdir -p /opt/${parent_dir}
+      mkdir -p /opt/${parent_dir}/distribution
+    else
+      mkdir -p ${parent_dir}
+      mkdir -p /opt/${parent_dir}/distribution
+    fi
 }
 
 create-service-user(){
-	./create-service-user.sh ${targetDir}
+	./create-service-user.sh ${parent_dir}
 }
 
 download_distribution(){
-	./download-distribution.sh ${distribution} ${version} ${targetDir}/distribution/
+if [ "$env_type" == "demo" -o "$env_type" == "prod" -o "$env_type" == "test" ]; then
+	./download-distribution.sh
+else
+  ./download-distribution.sh
+fi
 }
 
 unzip_distribution(){
-	cd $(pwd)/${targetDir}/distribution
 	unzip *.zip
 	cd $(pwd)
 }
 
+
 create_target_dir
-#create-service-user
+create-service-user
 download_distribution
-unzip_distribution
+  #cd ${parent_dir}
+  #unzip_distribution

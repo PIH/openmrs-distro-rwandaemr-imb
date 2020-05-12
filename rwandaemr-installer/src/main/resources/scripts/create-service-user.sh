@@ -3,7 +3,6 @@
 ## load variables from the vars.txt file
 source vars.txt
 
-username=${target_dir}${env_type}
 home_dir=${parent_dir}
 
 if [ "$env_type" == "demo" -o "$env_type" == "prod" -o "$env_type" == "test" ]; then

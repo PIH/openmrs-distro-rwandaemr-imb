@@ -9,7 +9,7 @@ VERSION="${version}"
 if [ "$env_type" == "demo" -o "$env_type" == "prod" -o "$env_type" == "test" ]; then
   TARGET_DIR="/opt/${parent_dir}/distribution"
 else
-  TARGET_DIR="/${parent_dir}/distribution"
+  TARGET_DIR="${parent_dir}/distribution"
 fi
 
 function usage() {

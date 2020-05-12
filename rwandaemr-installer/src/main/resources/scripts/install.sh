@@ -5,11 +5,10 @@ source vars.txt
 
 create_target_dir(){
     if [ "$env_type" == "demo" -o "$env_type" == "prod" -o "$env_type" == "test" ]; then
-      mkdir -p /opt/${parent_dir}
       mkdir -p /opt/${parent_dir}/distribution
     else
       mkdir -p ${parent_dir}
-      mkdir -p /opt/${parent_dir}/distribution
+      mkdir -p ${parent_dir}/distribution
     fi
 }
 
@@ -25,14 +24,16 @@ else
 fi
 }
 
-unzip_distribution(){
-	unzip *.zip
-	cd $(pwd)
+change_ownership() {
+if [ "$env_type" == "demo" -o "$env_type" == "prod" -o "$env_type" == "test" ]; then
+	chown -R ${username}:${username} /opt/${parent_dir}
+	chmod 0700 /opt/${parent_dir}
+else
+  echo " "
+fi
 }
-
 
 create_target_dir
 create-service-user
 download_distribution
-  #cd ${parent_dir}
-  #unzip_distribution
+change_ownership

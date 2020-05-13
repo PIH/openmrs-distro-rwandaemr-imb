@@ -1,8 +1,16 @@
 #!/bin/bash -eu
 
-ARTIFACT_ID="$1"
-VERSION="$2"
-TARGET_DIR="$3"
+## load variables from the vars.txt file
+source vars.txt
+
+ARTIFACT_ID="${distribution}"
+VERSION="${version}"
+
+if [ "$env_type" == "demo" -o "$env_type" == "prod" -o "$env_type" == "test" ]; then
+  TARGET_DIR="/opt/${parent_dir}/distribution"
+else
+  TARGET_DIR="${parent_dir}/distribution"
+fi
 
 function usage() {
   echo "USAGE:"

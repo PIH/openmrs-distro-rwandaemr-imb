@@ -4,7 +4,11 @@
 
     <groupId>org.openmrs.distro</groupId>
     <artifactId>rwandaemr</artifactId>
+<<<<<<< HEAD
     <version>1.1.0-SNAPSHOT</version>
+=======
+    <version>2.0.0-SNAPSHOT</version>
+>>>>>>> master
     <packaging>pom</packaging>
     <name>Rwanda EMR Distribution Parent</name>
     <description>Parent project that includes all sub-modules</description>
@@ -12,45 +16,50 @@
     <modules>
         <module>rwandaemr-imb-butaro</module>
         <module>rwandaemr-imb-rwinkwavu</module>
+<<<<<<< HEAD
+=======
+        <module>rwandaemr-installer</module>
+>>>>>>> master
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <openMRSVersion>1.9.11</openMRSVersion>
-        <addresshierarchyrwandaVersion>1.2.5-SNAPSHOT</addresshierarchyrwandaVersion>
+        <openMRSVersion>2.3.0</openMRSVersion>
+        <addresshierarchyrwandaVersion>2.0.0-SNAPSHOT</addresshierarchyrwandaVersion>
         <calculationVersion>1.2</calculationVersion>
-        <formconceptsVersion>1.0-SNAPSHOT</formconceptsVersion>
-        <idgenVersion>4.0</idgenVersion>
-        <groovyVersion>2.2.4</groovyVersion>
-        <heightweighttrackerVersion>1.1-SNAPSHOT</heightweighttrackerVersion>
-        <htmlformentryVersion>3.6.0</htmlformentryVersion>
-        <htmlformflowsheetVersion>1.3</htmlformflowsheetVersion>
-        <htmlwidgetsVersion>1.7.2</htmlwidgetsVersion>
-        <laboratorymanagementVersion>0.1.0.11-SNAPSHOT</laboratorymanagementVersion>
+        <formconceptsVersion>2.0.0-SNAPSHOT</formconceptsVersion>
+        <idgenVersion>4.5.0</idgenVersion>
+        <groovyVersion>2.3.0</groovyVersion>
+        <heightweighttrackerVersion>2.0.0-SNAPSHOT</heightweighttrackerVersion>
+        <htmlformentryVersion>3.9.2</htmlformentryVersion>
+        <htmlformflowsheetVersion>1.4.1</htmlformflowsheetVersion>
+        <htmlwidgetsVersion>1.10.0</htmlwidgetsVersion>
+        <laboratorymanagementVersion>2.0.0-SNAPSHOT</laboratorymanagementVersion>
+        <legacyuiVersion>1.7.0-SNAPSHOT</legacyuiVersion>
         <logicVersion>0.5.2</logicVersion>
-        <metadatamappingVersion>1.0.2</metadatamappingVersion>
-        <metadatasharingVersion>1.1.9</metadatasharingVersion>
-        <mohappointmentVersion>0.3-SNAPSHOT</mohappointmentVersion>
-        <mohbillingVersion>0.0.4.2-SNAPSHOT</mohbillingVersion>
+        <metadatamappingVersion>1.3.4</metadatamappingVersion>
+        <metadatasharingVersion>1.6.0</metadatasharingVersion>
+        <mohappointmentVersion>2.0.0-SNAPSHOT</mohappointmentVersion>
+        <mohbillingVersion>2.0.0-SNAPSHOT</mohbillingVersion>
         <mohtracVersion>0.2.2.1-SNAPSHOT</mohtracVersion>
-        <namephoneticsVersion>1.5</namephoneticsVersion>
-        <omodExportVersion>1.0</omodExportVersion>
+        <namephoneticsVersion>1.6.0</namephoneticsVersion>
+        <omodExportVersion>2.0.0-SNAPSHOT</omodExportVersion>
         <orderextensionVersion>2.0-SNAPSHOT</orderextensionVersion>
-        <pharmacymanagementVersion>1.4.0-SNAPSHOT</pharmacymanagementVersion>
-        <reportingcompatibilityVersion>1.5.9-SNAPSHOT</reportingcompatibilityVersion>
-        <reportingobjectgroupVersion>1.0.4.4-SNAPSHOT</reportingobjectgroupVersion>
-        <reportingVersion>0.10.7-SNAPSHOT</reportingVersion>
+        <pharmacymanagementVersion>2.0.0-SNAPSHOT</pharmacymanagementVersion>
+        <reportingcompatibilityVersion>2.0.6</reportingcompatibilityVersion>
+        <reportingobjectgroupVersion>2.0.0-SNAPSHOT</reportingobjectgroupVersion>
+        <reportingVersion>1.20.0</reportingVersion>
         <researchencountersVersion>2.5</researchencountersVersion>
         <rowperpatientreportsVersion>1.5.6-SNAPSHOT</rowperpatientreportsVersion>
-        <rwandahivflowsheetVersion>0.5.5</rwandahivflowsheetVersion>
-        <rwandaprimarycareVersion>2.0.8-SNAPSHOT</rwandaprimarycareVersion>
-        <rwandareportsVersion>2.7.2</rwandareportsVersion>
-        <serializationVersion>0.2.12</serializationVersion>
+        <rwandahivflowsheetVersion>2.0.0-SNAPSHOT</rwandahivflowsheetVersion>
+        <rwandaprimarycareVersion>2.1.0-SNAPSHOT</rwandaprimarycareVersion>
+        <rwandareportsVersion>2.7.3-SNAPSHOT</rwandareportsVersion>
+        <serializationVersion>0.2.14</serializationVersion>
         <simplelabentryVersion>1.9-SNAPSHOT</simplelabentryVersion>
         <syncVersion>1.3</syncVersion>
-        <usagestatisticsVersion>1.5-SNAPSHOT</usagestatisticsVersion>
-        <validationVersion>1.0.1</validationVersion>
-        <webservicesRestVersion>2.24.0</webservicesRestVersion>
+        <usagestatisticsVersion>2.0.0-SNAPSHOT</usagestatisticsVersion>
+        <validationVersion>2.0.0-SNAPSHOT</validationVersion>
+        <webservicesRestVersion>2.28.0</webservicesRestVersion>
     </properties>
 
     <scm>

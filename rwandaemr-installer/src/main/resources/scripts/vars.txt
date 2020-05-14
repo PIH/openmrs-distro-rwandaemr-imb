@@ -7,7 +7,7 @@ version="1.1.0-SNAPSHOT"
 ## Any directory that you'd like your environment to be installed in
 target_dir="butaro"
 ## env type can be demo, test, prod or dev
-env_type="dev"
+env_type="prod"
 
 ## Do not change these variable
 parent_dir="${target_dir}-${env_type}-${version}"

@@ -1,0 +1,18 @@
+## ARTIFACT_ID can be either rwandaemr-imb-butaro and rwandaemr-installer OR rwandaemr-imb-rwinkwavu and rwandaemr-installer or each individual artifact
+ARTIFACT_ID1="rwandaemr-imb-butaro"
+ARTIFACT_ID2="rwandaemr-installer"
+
+#CLASSIFIER
+CLASSIFIER1="distribution"
+CLASSIFIER2="installer"
+
+## Version can either be 1.x or 2.x
+VERSION="1.1.0-SNAPSHOT"
+
+##Site name and type of env you are implementing
+IMPLEMENTATION_NAME="butaro-test"
+
+# Do not change
+BASE_DIR=${IMPLEMENTATION_NAME}-${VERSION}
+INSTALLER_VERSION="2.0.0-SNAPSHOT"
+INSTALLER_DIR="installer"

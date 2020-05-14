@@ -13,7 +13,7 @@ download_maven_distribution(){
     TARGET_DIR=${BASE_DIR}/${CLASSIFIER}
     create_base_dir
     mkdir -p ${TARGET_DIR}
-	  ./download-maven-artifacts ${ARTIFACT_ID} ${VERSION} ${TARGET_DIR} ${CLASSIFIER}
+	  ./download-maven-artifact.sh ${ARTIFACT_ID} ${VERSION} ${TARGET_DIR} ${CLASSIFIER}
 	  mv $(pwd)/$TARGET_DIR/${ARTIFACT_ID1}-${VERSION}/* $TARGET_DIR
 	  rm -rf $(pwd)/$TARGET_DIR/${ARTIFACT_ID1}-${VERSION}
 }
@@ -23,7 +23,7 @@ download_maven_installer(){
 	  TARGET_DIR=${BASE_DIR}/${CLASSIFIER}
 	  create_base_dir
 	  mkdir -p ${TARGET_DIR}
-	  ./download-maven-artifacts ${ARTIFACT_ID2} ${INSTALLER_VERSION} ${TARGET_DIR} ${CLASSIFIER}
+	  ./download-maven-artifact.sh ${ARTIFACT_ID2} ${INSTALLER_VERSION} ${TARGET_DIR} ${CLASSIFIER}
 	  mv $(pwd)/$TARGET_DIR/${ARTIFACT_ID2}-${INSTALLER_VERSION}/* $TARGET_DIR
 	  rm -rf $(pwd)/$TARGET_DIR/${ARTIFACT_ID2}-${INSTALLER_VERSION}
 }

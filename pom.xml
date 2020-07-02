@@ -43,7 +43,7 @@
         <reportingobjectgroupVersion>2.0.0-SNAPSHOT</reportingobjectgroupVersion>
         <reportingVersion>1.20.0</reportingVersion>
         <researchencountersVersion>2.5</researchencountersVersion>
-        <rowperpatientreportsVersion>1.5.6-SNAPSHOT</rowperpatientreportsVersion>
+        <rowperpatientreportsVersion>2.0.0-SNAPSHOT</rowperpatientreportsVersion>
         <rwandahivflowsheetVersion>2.0.0-SNAPSHOT</rwandahivflowsheetVersion>
         <rwandaprimarycareVersion>2.1.0-SNAPSHOT</rwandaprimarycareVersion>
         <rwandareportsVersion>2.7.3-SNAPSHOT</rwandareportsVersion>

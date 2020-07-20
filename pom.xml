@@ -35,7 +35,7 @@
         <mohtracVersion>2.0.0-SNAPSHOT</mohtracVersion>
         <namephoneticsVersion>1.6.0</namephoneticsVersion>
         <omodExportVersion>2.0.0-SNAPSHOT</omodExportVersion>
-        <orderextensionVersion>2.0-SNAPSHOT</orderextensionVersion>
+        <orderextensionVersion>3.0.0-SNAPSHOT</orderextensionVersion>
         <patientsummaryVersion>1.4.0</patientsummaryVersion>
         <pharmacymanagementVersion>2.0.0-SNAPSHOT</pharmacymanagementVersion>
         <registerVersion>1.2</registerVersion>

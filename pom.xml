@@ -15,7 +15,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <openMRSVersion>2.3.0</openMRSVersion>
+        <openMRSVersion>2.3.2-SNAPSHOT</openMRSVersion>
         <addresshierarchyrwandaVersion>2.0.0-SNAPSHOT</addresshierarchyrwandaVersion>
         <calculationVersion>1.2</calculationVersion>
         <formconceptsVersion>2.0.0-SNAPSHOT</formconceptsVersion>

@@ -46,7 +46,7 @@
         <rowperpatientreportsVersion>2.0.0-SNAPSHOT</rowperpatientreportsVersion>
         <rwandahivflowsheetVersion>2.0.0-SNAPSHOT</rwandahivflowsheetVersion>
         <rwandaprimarycareVersion>2.1.0-SNAPSHOT</rwandaprimarycareVersion>
-        <rwandareportsVersion>2.7.4-SNAPSHOT</rwandareportsVersion>
+        <rwandareportsVersion>3.0.0-SNAPSHOT</rwandareportsVersion>
         <serializationVersion>0.2.14</serializationVersion>
         <simplelabentryVersion>2.0.0-SNAPSHOT</simplelabentryVersion>
         <syncVersion>2.0.0-SNAPSHOT</syncVersion>

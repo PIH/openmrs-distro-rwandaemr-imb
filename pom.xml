@@ -3,10 +3,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.openmrs.distro</groupId>
-    <artifactId>rwandaemr</artifactId>
+    <artifactId>rwandaemr-imb</artifactId>
     <version>1.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Rwanda EMR Distribution Parent</name>
+    <name>Rwanda EMR IMB Distribution Parent for 1.x</name>
     <description>Parent project that includes all sub-modules</description>
 
     <modules>

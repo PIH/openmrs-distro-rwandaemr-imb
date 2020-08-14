@@ -1,11 +1,16 @@
-# For every commit pushed to the master branch, this will compile, package, test, verify, and deploy
 # This is only configured to deploy to the SNAPSHOTS repository, so is not intended to be used for releases
+# This will compile, package, test, verify, and deploy the distribution on the following events:
+#  - For every commit pushed to the master branch or 1.x branch
+#  - On a schedule, which is configured to deploy if any dependency updates are detected (eg. any new versions of artifacts)
 
 name: Deploy Snapshots
 
 on:
   push:
     branches: ['master', '1.x']
+
+  schedule:
+    - cron: '0 */1 * * *'  # Run hourly on the hour
 
 jobs:
   deploy:
@@ -32,9 +37,27 @@ jobs:
         server-username: BINTRAY_USERNAME
         server-password: BINTRAY_PASSWORD
 
-      # Execute the Maven deploy command to compile, package, test, verify, and publish to SNAPSHOT repository
+      # Execute the Maven command to report on current dependencies and most recently deployed dependencies
+      # This is configured in the pom of the project, using the openmrs-dependencies plugin
+    - name: Generate Dependency Reports
+      run: mvn generate-resources -U --file pom.xml
+
+      # Upload version artifacts to store with build results
+    - name: Upload dependency reports
+      uses: actions/upload-artifact@v1
+      with:
+        name: openmrs-dependency
+        path: target/openmrs-dependency
+
+      # Set diff status to an environment variable
+    - name: Set environment
+      run: echo "::set-env name=DIFF_STATUS::`cat target/openmrs-dependency/versions-diff-status.txt`"
+
+      # If this workflow was initiated by a push or if version changes are detected, initiate redeploy
+    # Execute the Maven deploy command to compile, package, test, verify, and publish to SNAPSHOT repository
     - name: Maven Deploy
       run: mvn -B deploy --file pom.xml
       env:
         BINTRAY_USERNAME: pih
         BINTRAY_PASSWORD: ${{ secrets.BINTRAY_PASSWORD }}
+      if: github.event_name == 'push' || env.DIFF_STATUS == 'DIFFER'

@@ -7,5 +7,3 @@ at https://github.com/Rwanda-EMR/openmrs-distro/rwandaemr, but with those modifi
 sites, including functionality like the synchronization module.
 
 [Documentation is in the wiki located here](https://github.com/PIH/openmrs-distro-rwandaemr-imb/wiki).
-
-============

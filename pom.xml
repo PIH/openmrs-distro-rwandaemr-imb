@@ -318,6 +318,16 @@
             <name>OpenMRS Nexus Repository</name>
             <url>http://mavenrepo.openmrs.org/nexus/content/repositories/public</url>
         </repository>
+        <repository>
+            <id>rwandaemr-repo-snapshots</id>
+            <name>RwandaEMR Artifactory Snapshots Repository</name>
+            <url>https://rwandaemr.jfrog.io/artifactory/libs-snapshot</url>
+        </repository>
+        <repository>
+            <id>rwandaemr-repo-releases</id>
+            <name>RwandaEMR Artifactory Release Repository</name>
+            <url>https://rwandaemr.jfrog.io/artifactory/libs-release</url>
+        </repository>
     </repositories>
 
     <pluginRepositories>

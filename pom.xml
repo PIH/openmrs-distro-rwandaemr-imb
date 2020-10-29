@@ -36,7 +36,7 @@
         <pharmacymanagementVersion>2.0.0-SNAPSHOT</pharmacymanagementVersion>
         <reportingcompatibilityVersion>2.0.6</reportingcompatibilityVersion>
         <reportingobjectgroupVersion>2.0.0-SNAPSHOT</reportingobjectgroupVersion>
-        <reportingVersion>1.21.0</reportingVersion>
+        <reportingVersion>1.22.0-SNAPSHOT</reportingVersion>
         <rowperpatientreportsVersion>2.0.0-SNAPSHOT</rowperpatientreportsVersion>
         <rwandahivflowsheetVersion>2.0.0-SNAPSHOT</rwandahivflowsheetVersion>
         <rwandaprimarycareVersion>2.1.0-SNAPSHOT</rwandaprimarycareVersion>

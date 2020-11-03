@@ -22,7 +22,7 @@
         <htmlformflowsheetVersion>2.0.0-SNAPSHOT</htmlformflowsheetVersion>
         <htmlwidgetsVersion>1.10.0</htmlwidgetsVersion>
         <laboratorymanagementVersion>2.0.0-SNAPSHOT</laboratorymanagementVersion>
-        <legacyuiVersion>1.8.0-SNAPSHOT</legacyuiVersion>
+        <legacyuiVersion>1.9.0-SNAPSHOT</legacyuiVersion>
         <logicVersion>0.5.2</logicVersion>
         <metadatamappingVersion>1.3.5</metadatamappingVersion>
         <metadatasharingVersion>1.7.0</metadatasharingVersion>

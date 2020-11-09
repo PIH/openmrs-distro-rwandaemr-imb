@@ -28,5 +28,12 @@
                 <include>**/*.zip</include>
             </includes>
         </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}/classes/configuration</directory>
+            <outputDirectory>openmrs_config</outputDirectory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
     </fileSets>
 </assembly>

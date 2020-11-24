@@ -12,7 +12,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <openMRSVersion>2.3.3-SNAPSHOT</openMRSVersion>
-        <addresshierarchyVersion>2.13.0</addresshierarchyVersion>
+        <addresshierarchyVersion>2.14.2</addresshierarchyVersion>
         <calculationVersion>1.2.1</calculationVersion>
         <formconceptsVersion>2.0.0-SNAPSHOT</formconceptsVersion>
         <idgenVersion>4.6.0</idgenVersion>

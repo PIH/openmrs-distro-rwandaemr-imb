@@ -1,0 +1,698 @@
+<htmlform>
+
+    <macros>
+        paperFormId = (Fill this in)
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+    </macros>
+
+    <style>
+		.section {
+			border: 1px solid $headerColor;
+			padding: 2px;
+			text-align: left;
+			margin-bottom: 1em;
+		}
+		.sectionHeader {
+			background-color: $headerColor;
+			color: $fontOnHeaderColor;
+			display: block;
+			padding: 2px;
+			font-weight: bold;
+		}
+		table.baseline-aligned td {
+			vertical-align: baseline;
+		}
+	</style>
+
+
+    <table border="2" cellspacing="0" cellpadding="6" width="100%">
+        <tr>
+            -<td>
+            <img src="/openmrs/moduleResources/rwandareports/images/rwanda-logo.jpg" align="left" height="100"
+                 width="100">
+            </img>
+        </td>
+            <td>
+                <h2>
+                    RWANDA MINISTRY OF HEALTH
+                    <br />
+                    <span class="english">MOH Rwanda</span>
+                </h2>
+            </td>
+            <td>
+                <strong>
+                    CPoN
+                    <br />
+                    Consultation Post Natale
+                    <br />
+                    <span class="english">CPoN</span>
+                </strong>
+                <br />
+                CPoN-15-Oct-2018
+            </td>
+        </tr>
+    </table>
+
+    <table border="1" width="100%">
+        <tr>
+            <td>
+                <!-- confirm that we are pulling in both the family and given names -->
+                Nom/
+                <span class="english">Name</span>
+                :
+                <lookup class="value" expression="patient.personName.familyName" />
+                <lookup class="value" expression="patient.personName.givenName" />
+                ID:
+                <lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+            </td>
+            <td>
+                DATE:
+                <encounterDate />
+                <obs conceptId="3cd91070-26fe-102b-80cb-0017a47871b2" style="no_yes" labelText="Visite programmée"
+                     noLabel="non" yesLabel="oui" />
+            </td>
+            <td>
+                Centre de santé :
+                <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode"/>
+            </td>
+        </tr>
+    </table>
+
+    <section headerLabel="1. INFORMATION DEMOGRAPHIQUE et ADHERENCE">
+        <table border="1" width="100%">
+            <tr>
+                <td style="border:solid 1px gray">
+                    <addressHierarchyRwanda/>
+                    <obs conceptId="3cda3d7e-26fe-102b-80cb-0017a47871b2" labelText=" Téléphone: " size="9"/>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+
+    <section headerLabel="2. ACCOUCHEMENT ACTUEL ET SES RESULTATS">
+        <table border="1" width="100%">
+            <tr>
+                <td><obs conceptId="78f156b9-12f6-431a-bd74-d3ad3b146a4e" answerConceptIds="7e327a1a-c1df-4712-ab5d-e05dc0dac35d,3ce0d472-26fe-102b-80cb-0017a47871b2,4d7f36bb-84d3-4915-95cc-951811c3cd4a,3cd6fac4-26fe-102b-80cb-0017a47871b2" answerCodes="healthCenter,hospital,home,unknown" style="radio" labelCode="location"/></td>
+            </tr>
+            <tr>
+                <td><obs conceptId="3cee5b7e-26fe-102b-80cb-0017a47871b2" labelCode="Delivery date"/></td>
+            </tr>
+            <tr>
+                <td><obs conceptId="1434116b-94de-4cf2-a66e-2505e24f60bb" style="radio" labelCode="Delivery state"/> <br/>
+                    <obs conceptId="ccbf24af-f3f4-4b6e-ae71-0561a26c3766" style="radio" labelCode="If Preterm, Age de la Grossesse"/></td>Weeks
+            </tr>
+            <tr>
+                <td>
+                    <obs conceptId="3cee8c3e-26fe-102b-80cb-0017a47871b2" labelText="Mode d’accouchement:" answerConceptId="3cd7af5a-26fe-102b-80cb-0017a47871b2" answerLabel="Vaginale" />
+                    <obs conceptId="3cee8c3e-26fe-102b-80cb-0017a47871b2" answerConceptId="3cd7b0ea-26fe-102b-80cb-0017a47871b2" answerLabel="césarienne" /><br />
+                    <obs conceptId="447f14be-4f34-4cba-9f80-8e091e23c6e3" labelText="Complications:" answerConceptId="dc758597-fddf-47aa-baa7-40de8038371c" answerLabel="Malformation Congénitale" />
+                    <obs conceptId="447f14be-4f34-4cba-9f80-8e091e23c6e3" answerConceptId="113841AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="Prématurité" />
+                    <obs conceptId="447f14be-4f34-4cba-9f80-8e091e23c6e3" answerConceptId="3cd743f8-26fe-102b-80cb-0017a47871b2" answerLabel="Aucune" />
+                    <obs conceptId="447f14be-4f34-4cba-9f80-8e091e23c6e3" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Autre" />
+                    <obs conceptId="4d097835-6051-4ed7-8746-e12a23a01337" />
+                </td>
+            </tr>
+            <tr>
+                <td><obs conceptId="4e75d51e-d080-406d-bfe5-1bdec35b33f0" answerConceptIds="e5cb0eed-d6c5-44bd-9fc1-d88bdd0a8b12,3cdd446a-26fe-102b-80cb-0017a47871b2,67b116d6-ddfb-47be-8d94-47273157ffc3" answerCodes="stable,patientDied,referred" style="radio" labelCode="Mother Delivery outcome :"/></td>
+            </tr>
+            <tr>
+                <td><obs conceptId="62198ece-7617-46ac-be0e-09d3553f8007" answerConceptIds="b056404d-333c-4231-989e-a3abe01e5cd0,9665c868-c00a-425a-a350-235f2e4b37c5"  answerCodes="bornAlive,stillborn" style="radio" labelCode="New Born Delivery outcome :"/><br/>
+
+                    <obs conceptId="cf4f8681-335f-4da0-9870-8a662ab398be" style="radio" answerConceptIds="3cd6f600-26fe-102b-80cb-0017a47871b2,3cd6f86c-26fe-102b-80cb-0017a47871b2" answerCodes="Yes,No" labelCode="Cri a la nessance :"/></td>
+            </tr>
+            <tr>
+                <td><obs conceptId="3cf15b3a-26fe-102b-80cb-0017a47871b2" labelText="Poids de naissance: " />Kg</td>
+            </tr>
+            <tr>
+                <td><obs conceptId="539c6cdb-d48b-4247-978a-f2f7ea404664" labelText="Taille à la naissance :" />Cm</td>
+            </tr>
+
+            <tr>
+                <td><obs conceptId="1151" style="radio" answerConceptIds="1065,1066,1067" labelCode="New born brest feeded with 1 hour after delivery?"/></td>
+            </tr>
+            <tr>
+                <td><obs conceptId="12500" style="radio" answerConceptIds="1065,1066,1067"  answerCodes="Yes,No,Unknown"  labelCode="vitamin K Provided?"/></td>
+            </tr>
+        </table>
+    </section>
+
+
+    <section headerLabel="ANTECEDANTS PERSONNELS ET FAMILIAUX">
+        <obsgroup groupingConceptId="6f5100dc-7709-4b91-894e-e5132f7545d8">
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr class="strong">
+                    <th>Items</th>
+                    <th>YES/NO</th>
+                    <th>Comments</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <obs conceptId="c9bff841-ad61-4fb5-97ee-1a6da71d0461"
+                             answerConceptId="2c928cca-4987-4be2-a867-62d5ee333352" style="checkbox"/>
+                    </td>
+                    <td>
+                        <obs conceptId="60c35f32-eae5-453d-b2a6-00a785cc5501" style="yes_no" labelCode=""/>
+                    </td>
+                    <td>
+                        <obs conceptId="26d6d854-f8bf-4317-bc76-0874589c923e" style="textarea" rows="3" cols="30"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <obs conceptId="c9bff841-ad61-4fb5-97ee-1a6da71d0461"
+                             answerConceptId="0a4d9455-1fc4-456a-a035-840f1cee9d1c" style="checkbox"/>
+                    </td>
+                    <td>
+                        <obs conceptId="60c35f32-eae5-453d-b2a6-00a785cc5501" style="yes_no" labelCode=""/>
+                    </td>
+                    <td>
+                        <obs conceptId="26d6d854-f8bf-4317-bc76-0874589c923e" style="textarea" rows="3" cols="30"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <obs conceptId="c9bff841-ad61-4fb5-97ee-1a6da71d0461"
+                             answerConceptId="c42fda85-9fbe-4f0a-85f7-41e4cf85c607" style="checkbox"/>
+                    </td>
+                    <td>
+                        <obs conceptId="60c35f32-eae5-453d-b2a6-00a785cc5501" style="yes_no" labelCode=""/>
+                    </td>
+                    <td>
+                        <obs conceptId="26d6d854-f8bf-4317-bc76-0874589c923e" style="textarea" rows="3" cols="30"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <obs conceptId="c9bff841-ad61-4fb5-97ee-1a6da71d0461"
+                             answerConceptId="77438007-e945-4d93-bbc5-529e4959c1e6" style="checkbox"/>
+                    </td>
+                    <td>
+                        <obs conceptId="60c35f32-eae5-453d-b2a6-00a785cc5501" style="yes_no" labelCode=""/>
+                    </td>
+                    <td>
+                        <obs conceptId="26d6d854-f8bf-4317-bc76-0874589c923e" style="textarea" rows="3" cols="30"/>
+                    </td>
+                </tr>
+            </table>
+        </obsgroup>
+    </section>
+
+    <section headerLabel="GROSSESSES ET ACCOUCHEMENTS CPoN">
+        <obsgroup groupingConceptId="6f5100dc-7709-4b91-894e-e5132f7545d8">
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr class="strong">
+                    <th>Items</th>
+                    <th>YES/NO</th>
+                    <th>Comments</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <obs conceptId="41cc8d5f-e55b-41cd-87bd-ff45e5186923"
+                             answerConceptId="1ddfe1ce-0d2f-4d68-926c-cc7e7f5f754a" style="checkbox"/>
+                    </td>
+                    <td>
+                        <obs conceptId="60c35f32-eae5-453d-b2a6-00a785cc5501" style="yes_no" labelCode=""/>
+                    </td>
+                    <td>
+                        <obs conceptId="26d6d854-f8bf-4317-bc76-0874589c923e" style="textarea" rows="3" cols="30"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <obs conceptId="41cc8d5f-e55b-41cd-87bd-ff45e5186923"
+                             answerConceptId="edbc02f7-061a-4f38-9dcf-4332b83a70de" style="checkbox"/>
+                    </td>
+                    <td>
+                        <obs conceptId="60c35f32-eae5-453d-b2a6-00a785cc5501" style="yes_no" labelCode=""/>
+                    </td>
+                    <td>
+                        <obs conceptId="26d6d854-f8bf-4317-bc76-0874589c923e" style="textarea" rows="3" cols="30"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <obs conceptId="41cc8d5f-e55b-41cd-87bd-ff45e5186923"
+                             answerConceptId="80cc2165-1290-430b-bca3-c502aa38ab9d" style="checkbox"/>
+                    </td>
+                    <td>
+                        <obs conceptId="60c35f32-eae5-453d-b2a6-00a785cc5501" style="yes_no" labelCode=""/>
+                    </td>
+                    <td>
+                        <obs conceptId="26d6d854-f8bf-4317-bc76-0874589c923e" style="textarea" rows="3" cols="30"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="41cc8d5f-e55b-41cd-87bd-ff45e5186923"
+                             answerConceptId="9c36ce7e-30c5-4522-864d-44626df7ea52" style="checkbox"/>
+                    </td>
+                    <td>
+                        <obs conceptId="60c35f32-eae5-453d-b2a6-00a785cc5501" style="yes_no" labelCode=""/>
+                    </td>
+                    <td>
+                        <obs conceptId="26d6d854-f8bf-4317-bc76-0874589c923e" style="textarea" rows="3" cols="30"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="41cc8d5f-e55b-41cd-87bd-ff45e5186923"
+                             answerConceptId="1a332c90-ab6e-4c7c-a160-1be391e1133f" style="checkbox"/>
+                    </td>
+                    <td>
+                        <obs conceptId="60c35f32-eae5-453d-b2a6-00a785cc5501" style="yes_no" labelCode=""/>
+                    </td>
+                    <td>
+                        <obs conceptId="26d6d854-f8bf-4317-bc76-0874589c923e" style="textarea" rows="3" cols="30"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="41cc8d5f-e55b-41cd-87bd-ff45e5186923"
+                             answerConceptId="a29e0763-d723-42e1-9102-b4ecb60247ca" style="checkbox"/>
+                    </td>
+                    <td>
+                        <obs conceptId="60c35f32-eae5-453d-b2a6-00a785cc5501" style="yes_no" labelCode=""/>
+                    </td>
+                    <td>
+                        <obs conceptId="26d6d854-f8bf-4317-bc76-0874589c923e" style="textarea" rows="3" cols="30"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="41cc8d5f-e55b-41cd-87bd-ff45e5186923"
+                             answerConceptId="824c1ef1-f82c-4732-9de2-ceecead40bc2" style="checkbox"/>
+                    </td>
+                    <td>
+                        <obs conceptId="60c35f32-eae5-453d-b2a6-00a785cc5501" style="yes_no" labelCode=""/>
+                    </td>
+                    <td>
+                        <obs conceptId="26d6d854-f8bf-4317-bc76-0874589c923e" style="textarea" rows="3" cols="30"/>
+                    </td>
+                </tr>
+
+            </table>
+        </obsgroup>
+    </section>
+    <font color="red"><b>CONSILUTATION POST NATALE No 1</b></font>
+    <section headerLabel="A. EXAMEN DE LA MERE">
+        <obsgroup groupingConceptId="6f5100dc-7709-4b91-894e-e5132f7545d8">
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        <obs conceptId="0df21c41-a930-43d4-a442-d070c9b32f3e" labelCode="CPoN Consultation Date :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="3ce93b62-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Le poids :"/>KG
+                    </td>
+                    <td>
+                        <obs conceptId="3ce93694-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Diastoric :"/>
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        <obs conceptId="3ce934fa-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Systoric :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Pulse :"/>Per Min
+                    </td>
+                    <td>
+                        <obs conceptId="3ce939d2-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="La temperature :"/>C
+                    </td>
+                </tr>
+            </table>
+
+            <b>ETAT GENERAL</b>
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        <obs conceptId="3cdeaaa8-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Etat psych/emmot :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="3573b730-0b06-4880-a2b5-3094207a4d44" style="textarea" rows="3" cols="10" labelCode="Coloration Conjoct? :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="efe6ef9a-28bf-4d18-83ac-35323f26c1c7" style="textarea" rows="3" cols="10" labelCode="Etat Membre Infer :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="27d28eb8-134b-41d1-ab59-7942621521b9" style="textarea" rows="3" cols="10" labelCode="Les seins/Mont Laiteuse :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="4d694d02-6376-435c-b6f4-5834b479482b" style="textarea" rows="3" cols="10" labelCode="Position au sein :"/>
+                    </td>
+                </tr>
+            </table>
+
+            <b>EXAMEN ABDOMINAL</b>
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        <obs conceptId="17d401cc-3b9f-4057-8800-278a19a7da05" style="textarea" rows="3" cols="10" labelCode="Paroi abdominale :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="378f96a0-783c-4fcd-9b7e-195363682595" style="textarea" rows="3" cols="10" labelCode="Organomegalie :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="9006f895-f1d0-41ba-b9bc-57f4b78092c1" style="textarea" rows="3" cols="10" labelCode="Uterus (Fond, Sensibilite) :"/>
+                    </td>
+                </tr>
+            </table>
+
+            <b>EXAMEN GENITAL ET SIGNES DE DANGER</b>
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        <obs conceptId="3cf8b87a-eed4-442f-84ea-093bce075fdf" style="textarea" rows="3" cols="10" labelCode="Lochies :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="cde4caef-55f5-4e25-aedf-50a0a80b3843" style="textarea" rows="3" cols="10" labelCode="Cicatrice du perinee :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="a8c5f5cb-e099-406b-8b5b-fde100e93677" style="textarea" rows="3" cols="10" labelCode="Prolapsus genital :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="664c34a5-6317-4b07-a0d3-213f3ba5db84" style="textarea" rows="3" cols="10" labelCode="Les seins/Mont Laiteuse :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="4d694d02-6376-435c-b6f4-5834b479482b" style="textarea" rows="3" cols="10" labelCode="Incotinence urinaire :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="9b1570e8-ea9e-4420-b0cc-708761f4c2b8" style="textarea" rows="3" cols="10" labelCode="Sign de danger :"/>
+                    </td>
+                </tr>
+            </table>
+
+            <b>DEPISTAGE</b>
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        <obs conceptId="4326b04b-3158-417a-bb8d-ad022295b0f4" style="textarea" rows="3" cols="10" labelCode="Malnutrition avec MUAC :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="3ccc7158-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Aneimie(Valeur de l HB) :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="ee64e147-dac6-46d3-9fb1-e1a2474c09ee" style="textarea" rows="3" cols="10" labelCode="Supplementation en Fer :"/>
+                    </td>
+                </tr>
+            </table>
+
+            <b>COUNSELLING</b>
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        <obs conceptId="9b1570e8-ea9e-4420-b0cc-708761f4c2b8" style="textarea" rows="3" cols="10" labelCode="Signes de danger (A la mere et le nouveau ne) :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="262fd0be-55e9-437d-a54d-af869b51d177" style="textarea" rows="3" cols="10" labelCode="Nutrition et allaitement et Evaluation :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="61c33c59-c4d2-4de0-bb0c-40586c99c4b5" style="textarea" rows="3" cols="10" labelCode="Allaitement exclusit respecte :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="b4c6c2d0-6a75-4ef7-ac05-9175e016834d" style="textarea" rows="3" cols="10" labelCode="Hygienne et Soins du nouveau ne :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="c0024684-abe6-4525-89c3-5455cd974afe" style="textarea" rows="3" cols="10" labelCode="Sexualite et planification familiale :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="3cdb822e-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Mere a recu une des methode PF :"/>
+                    </td>
+                </tr>
+            </table></obsgroup>
+    </section>
+    <section headerLabel="B. EXAMEN DU NOUVEAU NE">
+        <obsgroup groupingConceptId="6f5100dc-7709-4b91-894e-e5132f7545d8">
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+
+                <tr>
+                    <td>
+                        <obs conceptId="0df21c41-a930-43d4-a442-d070c9b32f3e" labelCode="CPoN Consultation Date :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="3ce93b62-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Le poids :"/>KG
+                    </td>
+                    <td>
+                        <obs conceptId="3ce93694-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Diastoric :"/>
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        <obs conceptId="3ce934fa-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Systoric :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="La tension arterielle :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="3ce939d2-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="La temperature :"/>C
+                    </td>
+                </tr>
+            </table>
+
+            <b>EXAMEN GENERAL RECHERCHE DES SIGNES DE DANGER</b>
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        <obs conceptId="3cdeaaa8-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Fontanelle :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="3573b730-0b06-4880-a2b5-3094207a4d44" style="textarea" rows="3" cols="10" labelCode="Muqueuse,conjonctives :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="efe6ef9a-28bf-4d18-83ac-35323f26c1c7" style="textarea" rows="3" cols="10" labelCode="Abdomen(Distension,..) :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="27d28eb8-134b-41d1-ab59-7942621521b9" style="textarea" rows="3" cols="10" labelCode="Peau,cordon ombilical :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="4d694d02-6376-435c-b6f4-5834b479482b" style="textarea" rows="3" cols="10" labelCode="Chlorexidine pour soins du cordon :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="4d694d02-6376-435c-b6f4-5834b479482b" style="textarea" rows="3" cols="10" labelCode="Examen neurologique (alerte ou lethelgique) :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="4d694d02-6376-435c-b6f4-5834b479482b" style="textarea" rows="3" cols="10" labelCode="Etat de l' anus et emission des urines :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="4d694d02-6376-435c-b6f4-5834b479482b" style="textarea" rows="3" cols="10" labelCode="Signes de danger presentes :"/>
+                    </td>
+                </tr>
+            </table>
+
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        <obs conceptId="3ce94df0-26fe-102b-80cb-0017a47871b2" labelCode="C.DATE DE CONSULTATION SUIVANTE :"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <obs conceptId="bcddc798-caf6-4414-9a93-2f1ca71b6832" labelCode="D.NOM ET SIGNATURE DU PRESTATAIRE :"/>
+                    </td>
+                </tr>
+            </table>
+        </obsgroup>
+    </section>
+
+    <font color="red"><b>CONSILUTATION POST NATALE No 4</b></font>
+    <section headerLabel="A. EXAMEN DE LA MERE">
+        <obsgroup groupingConceptId="6f5100dc-7709-4b91-894e-e5132f7545d8">
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        <obs conceptId="0df21c41-a930-43d4-a442-d070c9b32f3e" labelCode="CPoN Consultation Date :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="3ce93b62-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Le poids :"/>KG
+                    </td>
+                    <td>
+                        <obs conceptId="3ce93694-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Diastoric :"/>
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        <obs conceptId="3ce934fa-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Systoric :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Pulse :"/>Per Min
+                    </td>
+                    <td>
+                        <obs conceptId="3ce939d2-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="La temperature :"/>C
+                    </td>
+                </tr>
+            </table>
+
+            <b>ETAT GENERAL</b>
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        <obs conceptId="3cdeaaa8-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Etat psych/emmot :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="3573b730-0b06-4880-a2b5-3094207a4d44" style="textarea" rows="3" cols="10" labelCode="Coloration Conjoct? :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="efe6ef9a-28bf-4d18-83ac-35323f26c1c7" style="textarea" rows="3" cols="10" labelCode="Etat Membre Infer :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="27d28eb8-134b-41d1-ab59-7942621521b9" style="textarea" rows="3" cols="10" labelCode="Les seins/Mont Laiteuse :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="4d694d02-6376-435c-b6f4-5834b479482b" style="textarea" rows="3" cols="10" labelCode="Position au sein :"/>
+                    </td>
+                </tr>
+            </table>
+
+            <b>EXAMEN ABDOMINAL</b>
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        <obs conceptId="17d401cc-3b9f-4057-8800-278a19a7da05" style="textarea" rows="3" cols="10" labelCode="Paroi abdominale :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="378f96a0-783c-4fcd-9b7e-195363682595" style="textarea" rows="3" cols="10" labelCode="Organomegalie :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="9006f895-f1d0-41ba-b9bc-57f4b78092c1" style="textarea" rows="3" cols="10" labelCode="Uterus (Fond, Sensibilite) :"/>
+                    </td>
+                </tr>
+            </table>
+
+            <b>EXAMEN GENITAL ET SIGNES DE DANGER</b>
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        <obs conceptId="3cf8b87a-eed4-442f-84ea-093bce075fdf" style="textarea" rows="3" cols="10" labelCode="Lochies :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="cde4caef-55f5-4e25-aedf-50a0a80b3843" style="textarea" rows="3" cols="10" labelCode="Cicatrice du perinee :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="a8c5f5cb-e099-406b-8b5b-fde100e93677" style="textarea" rows="3" cols="10" labelCode="Prolapsus genital :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="664c34a5-6317-4b07-a0d3-213f3ba5db84" style="textarea" rows="3" cols="10" labelCode="Les seins/Mont Laiteuse :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="4d694d02-6376-435c-b6f4-5834b479482b" style="textarea" rows="3" cols="10" labelCode="Incotinence urinaire :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="9b1570e8-ea9e-4420-b0cc-708761f4c2b8" style="textarea" rows="3" cols="10" labelCode="Sign de danger :"/>
+                    </td>
+                </tr>
+            </table>
+
+            <b>DEPISTAGE</b>
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        <obs conceptId="4326b04b-3158-417a-bb8d-ad022295b0f4" style="textarea" rows="3" cols="10" labelCode="Malnutrition avec MUAC :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="3ccc7158-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Aneimie(Valeur de l HB) :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="ee64e147-dac6-46d3-9fb1-e1a2474c09ee" style="textarea" rows="3" cols="10" labelCode="Supplementation en Fer :"/>
+                    </td>
+                </tr>
+            </table>
+
+            <b>COUNSELLING</b>
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        <obs conceptId="9b1570e8-ea9e-4420-b0cc-708761f4c2b8" style="textarea" rows="3" cols="10" labelCode="Signes de danger (A la mere et le nouveau ne) :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="262fd0be-55e9-437d-a54d-af869b51d177" style="textarea" rows="3" cols="10" labelCode="Nutrition et allaitement et Evaluation :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="61c33c59-c4d2-4de0-bb0c-40586c99c4b5" style="textarea" rows="3" cols="10" labelCode="Allaitement exclusit respecte :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="b4c6c2d0-6a75-4ef7-ac05-9175e016834d" style="textarea" rows="3" cols="10" labelCode="Hygienne et Soins du nouveau ne :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="c0024684-abe6-4525-89c3-5455cd974afe" style="textarea" rows="3" cols="10" labelCode="Sexualite et planification familiale :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="3cdb822e-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Mere a recu une des methode PF :"/>
+                    </td>
+                </tr>
+            </table></obsgroup>
+    </section>
+    <section headerLabel="B. EXAMEN DU NOUVEAU NE">
+        <obsgroup groupingConceptId="6f5100dc-7709-4b91-894e-e5132f7545d8">
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+
+                <tr>
+                    <td>
+                        <obs conceptId="0df21c41-a930-43d4-a442-d070c9b32f3e" labelCode="CPoN Consultation Date :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="3ce93b62-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Le poids :"/>KG
+                    </td>
+                    <td>
+                        <obs conceptId="3ce93694-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Diastoric :"/>
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        <obs conceptId="3ce934fa-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Systoric :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="La tension arterielle :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="3ce939d2-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="La temperature :"/>C
+                    </td>
+                </tr>
+            </table>
+
+            <b>EXAMEN GENERAL RECHERCHE DES SIGNES DE DANGER</b>
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        <obs conceptId="3cdeaaa8-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="10" labelCode="Fontanelle :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="3573b730-0b06-4880-a2b5-3094207a4d44" style="textarea" rows="3" cols="10" labelCode="Muqueuse,conjonctives :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="efe6ef9a-28bf-4d18-83ac-35323f26c1c7" style="textarea" rows="3" cols="10" labelCode="Abdomen(Distension,..) :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="27d28eb8-134b-41d1-ab59-7942621521b9" style="textarea" rows="3" cols="10" labelCode="Peau,cordon ombilical :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="4d694d02-6376-435c-b6f4-5834b479482b" style="textarea" rows="3" cols="10" labelCode="Chlorexidine pour soins du cordon :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="4d694d02-6376-435c-b6f4-5834b479482b" style="textarea" rows="3" cols="10" labelCode="Examen neurologique (alerte ou lethelgique) :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="4d694d02-6376-435c-b6f4-5834b479482b" style="textarea" rows="3" cols="10" labelCode="Etat de l' anus et emission des urines :"/>
+                    </td>
+                    <td>
+                        <obs conceptId="4d694d02-6376-435c-b6f4-5834b479482b" style="textarea" rows="3" cols="10" labelCode="Signes de danger presentes :"/>
+                    </td>
+                </tr>
+            </table>
+
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        <obs conceptId="3ce94df0-26fe-102b-80cb-0017a47871b2" labelCode="C.DATE DE CONSULTATION SUIVANTE :"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <obs conceptId="bcddc798-caf6-4414-9a93-2f1ca71b6832" labelCode="D.NOM ET SIGNATURE DU PRESTATAIRE :"/>
+                    </td>
+                </tr>
+            </table>
+        </obsgroup>
+    </section>
+
+    <center>
+        <submit/>
+    </center>
+</htmlform>

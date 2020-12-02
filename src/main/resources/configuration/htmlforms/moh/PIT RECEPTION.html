@@ -1,0 +1,124 @@
+<htmlform>
+    <macros>
+        @PATIENT_IDENTIFIER@=VCT NUMBER
+        @TESTING_CODE@=a28ea8a3-e82f-4ad7-8ba3-2542efffa3c0
+        @RESULT_OF_HIV_TEST@=3ce17cec-26fe-102b-80cb-0017a47871b2
+        @DATE_RESULT_OF_HIV_TEST_RECEIVED@=092e2163-e657-4961-b554-96ce2c21d051
+        @NUMBER_OF_CONDOMS_TAKEN@=144dba89-fe55-4253-bc09-9bd1f6832c0a
+        @ENROLLED_IN_HIV_PROGRAM@=e3e27876-bb33-410b-9ddd-6bd1d5c5d13d
+        @HTC_RECEPTION_OF_RESULTS@=b111b3b2-ea5d-43f8-a8ee-c1d7928f3f78
+        @REFUSED_TO_JOIN_HIV_PROGRAM@=7ee63b55-82e2-4786-bba5-155e52c22649
+        @Transfered@=3a296bb6-5fc8-40ee-84fc-97c13cacf8d8
+
+    </macros>
+    <link type="text/css" rel="stylesheet" href="/openmrs/moduleResources/rwandahivflowsheet/hiv_flowsheet_new_row.css" />
+    <section headerLabel="Reception of Results">
+
+        <table cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td>
+                    <b>
+                        $@PATIENT_IDENTIFIER@:
+                    </b>
+                </td>
+                <td>
+                    <b>
+                        <lookup class="value" expression="patientIdentifiers.get(&quot;$@PATIENT_IDENTIFIER@&quot;)" />
+                    </b>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Encounter Date:
+                </td>
+                <td>
+                    <encounterDate default="today" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Location:
+                </td>
+                <td>
+                    <encounterLocation/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Provider:
+                </td>
+
+                <td>
+                    <encounterProvider/>
+                </td>
+            </tr>
+
+        </table>
+        <table>
+            <tr>
+                <td>
+                    Names: <patient field="name" />
+                </td>
+                <td>
+                    Gender: <patient field="gender" />
+                </td>
+                <td>
+                    Age: <patient field="age" />
+                </td>
+                <td>
+                    Results: <font color="red"><lookup expression="fn.latestObs(&quot;$@RESULT_OF_HIV_TEST@&quot;).getValueCoded().getName()"/></font>
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td>
+                    <obs conceptId="$@HTC_RECEPTION_OF_RESULTS@" answerConceptId="$@ENROLLED_IN_HIV_PROGRAM@" answerLabel="Enrolled in HIV program "/>
+                </td>
+                <td>
+                    <obs conceptId="$@HTC_RECEPTION_OF_RESULTS@" answerConceptId="$@Transfered@" answerLabel="Transferred"/>
+                </td>
+                <td>
+                    <obs conceptId="$@HTC_RECEPTION_OF_RESULTS@" answerConceptId="$@REFUSED_TO_JOIN_HIV_PROGRAM@" answerLabel="refused to join HIV program "/>
+                </td>
+
+            </tr>
+        </table>
+
+
+        <table cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td>
+                    Client test code:
+                </td>
+                <td>
+                    <lookup expression="fn.latestObs(&quot;$@TESTING_CODE@&quot;).valueText"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Date HIV test Result received:
+                </td>
+                <td>
+                    <obs conceptId="$@DATE_RESULT_OF_HIV_TEST_RECEIVED@" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Number of condoms taken:
+                </td>
+
+                <td>
+                    <obs conceptId="$@NUMBER_OF_CONDOMS_TAKEN@" />
+                </td>
+            </tr>
+
+        </table>
+
+    </section>
+    <br />
+    <center><submit /></center>
+    <encounterVoided/>
+    <br />
+</htmlform>

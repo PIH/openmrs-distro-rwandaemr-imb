@@ -1,0 +1,142 @@
+<htmlform>
+	<!-- Diabetes flowsheet top level form.
+         Flow-DM-RW.V2.0.akb.15May09.doc
+         Created by jberchmas 2011
+	 -->
+	<style>
+		.formName { background-color:#e0e0ff; }
+		.section { border: 1px
+		solid #8FABC7; width:99%; height:100%; padding:2px; text-align:left;
+		margin-bottom:10px; }
+		.sectionHeader { background-color: #8FABC7;
+		color: white; display: block; padding: 2px; font-weight:bold; }
+		.note {color:red;}
+		.important {color:red; font-weight:bold;}
+		.notEntered {color:gray; font-weight:bold; font-style:italic}
+		td
+		{vertical-align:top;}
+		table.labTable td { color:red; }
+		table.labTable
+		td.dateField { text-align:right; }
+		table.identifierTable td
+		{padding-right:10px;}
+		div.paddedTable span {padding-right:20px;}
+	</style>
+
+	<!-- Form header -->
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				<b>
+					IMB ID:
+					<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				</b>
+			</td>
+			<td>
+				Date:
+				<encounterDate default="today"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Nom / Last name:
+				<lookup class="value" expression="patient.personName.familyName" />
+			</td>
+			<td>
+				Prénom/ First name:
+				<lookup class="value" expression="patient.personName.givenName" />
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<img src="/openmrs/images/emr_hands.gif" align="left" height="75"
+					width="56"></img>
+				<h2>
+					Inshuti Mu Buzima
+					<br />
+					PIH Rwanda
+				</h2>
+			</td>
+			<td>
+				<strong>
+					Clinique des Maladies Chroniques/ Chronic Disease Clinic
+					<br/>
+					Fiche de Suivie -- Diabètes
+                                  <br />Flow Sheet -- Diabetes
+				</strong>
+				<br />
+				Flow-DM-RW.V2.0.akb.15May09.doc
+
+				
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Clinique / Clinic:
+				<encounterLocation />
+			</td>
+                        <td>
+				Clinicien/Provider:<encounterProvider role="NCD Provider"/>
+			</td>
+		</tr>
+	</table>
+
+<br />
+<div>
+	<section headerLabel="2. DEMOGRAPHIQUE ET RESIDENCE / DEMOGRAPHICS AND RESIDENCE">
+<htmlformflowsheet formId="6740aec2-593b-4a16-9f51-2857d496ae2e" sharedEncounter="true" showHtmlForm="true" />
+</section>			
+</div>
+<div>
+	<section headerLabel="3. DIAGNOSTIC ET LISTE DES PROBLEMES/DIAGNOSIS AND PROBLEM LIST">
+<htmlformflowsheet formId="41e2be15-92a3-4c2d-ac23-dca9ec33b252" sharedEncounter="true"  />
+</section>			
+</div>
+<br /><b>
+<obs showDate="true" conceptId="13713f73-9fa8-449f-8291-944c314437e7" answerConceptId="3cd6f600-26fe-102b-80cb-0017a47871b2" answerLabel="Consultation sociale complètée/Social work consultation completed" sharedEncounter="true"  /></b>
+<br />
+<br />
+<div>
+	<section headerLabel="4. HOSPITALISATIONS / HOSPITALIZATIONS">
+<htmlformflowsheet formId="2f03b5d4-edc4-4e19-bc7a-d67d290fea78" sharedEncounter="true" />
+</section>			
+</div>	
+<div>
+	<section headerLabel="5. VISITES D'URGENCE / URGENT VISITS">
+<htmlformflowsheet formId="f3b4c25f-9cfc-4d1d-b52a-877c62762fdf" sharedEncounter="true" />
+</section>			
+</div>
+<div>
+	<section headerLabel="6. ASSISTANCE OU EVALUATION SOCIALE/SOCIAL ASSISTANCE OR ASSESMENT">
+<htmlformflowsheet formId="86c588ef-1244-4ef9-b086-b192b408e129" sharedEncounter="true" />
+</section>			
+</div>
+
+<div>
+	<section headerLabel="7. EVENEMENTS NON-MEDICAUX DEPUIS LA DIAGNOSTIC / NON-MEDICAL LIFE EVENTS SINCE DIAGNOSIS">
+<htmlformflowsheet formId="f3519b7c-cd14-4f07-a7a7-134525d15597" sharedEncounter="true" />
+</section>			
+</div>
+<div>
+	<section headerLabel="8. RDV/CLINIC VISITS">
+<htmlformflowsheet formId="20db189c-90c5-45e2-824c-7c45d5008489" sharedEncounter="true" windowHeight="1000"  />
+</section>			
+</div>
+<div>
+	<section headerLabel="9. LISTE D'INSULINE / INSULINE LIST">
+<htmlformflowsheet formId="9a46573c-50bc-465d-b163-20959c59a9b0" sharedEncounter="true" />
+</section>			
+</div>
+<div>
+	<section headerLabel="9. LISTE DES MEDICAMENTS / MEDICATION LIST">
+<htmlformflowsheet formId="44caf0c8-119a-49c5-978b-1706841e9bbb" sharedEncounter="true" />
+</section>			
+</div>
+	<br />
+	<center>
+		<submit submitLabel="Close Flowsheet" />
+	</center>
+	<br />
+<br />
+</htmlform>

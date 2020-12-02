@@ -1,0 +1,64 @@
+<htmlform>
+    <!-- Heart Failure flowsheet:  Other Investigation
+         written by jberchmas 
+         -->
+	<style>
+		.formName { background-color:#e0e0ff; }
+		.section { border: 1px
+		solid #8FABC7; width:99%; padding:2px; text-align:left;
+		margin-bottom:10px; }
+		.sectionHeader { background-color: #8FABC7;
+		color: white; display: block; padding: 2px; font-weight:bold; }
+		table.symptoms th {text-align: right;}
+		.note {color:red;}
+		td
+		{vertical-align:top;}
+		table.labTable td { color:red; }
+		table.labTable
+		td.dateField { text-align:right; }
+		table.identifierTable td
+		{padding-right:10px;}
+		div.paddedTable span {padding-right:20px;}
+	</style>
+
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				<b>IMB ID:<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				</b>
+			</td>
+			<td>
+				Clinique / Clinic:<encounterLocation />
+			</td>
+			<td>
+				Nom/ Signature:<encounterProvider role="NCD Provider"/>
+			</td>
+		</tr>
+	</table>
+
+	<section headerLabel=" AUTRE INVESTIGATIONS / OTHER INVESTIGATION" >
+		<table border="1" width="100%">
+			<tr>
+				<td>Etude / Study</td>
+				<td>Date</td>
+				<td>Résultats / Results</td>				
+			</tr>
+                        <tr>
+				<td>TSH</td>
+                                <td rowspan="2"><br /><center><encounterDate default="today"/></center></td>
+                                <td><obs conceptId="3cdc5f1e-26fe-102b-80cb-0017a47871b2" /></td>			
+			</tr>    
+                       <tr>
+				<td>Other lab test: <obs conceptId="3cd937e4-26fe-102b-80cb-0017a47871b2" /> Name <obs conceptId="3ce1c90e-26fe-102b-80cb-0017a47871b2" /></td>
+                               <td><obs conceptId="3ce1ca8a-26fe-102b-80cb-0017a47871b2" /></td>			
+			</tr>                      
+		</table>
+	</section>
+
+	<br />
+	<center>
+		<submit />
+	</center>
+	<br />
+
+</htmlform>

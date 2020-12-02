@@ -1,0 +1,1076 @@
+<htmlform> <openmrs:htmlInclude
+        file="/scripts/jquery/jquery-1.3.2.min.js" /> <openmrs:htmlInclude
+        file="/scripts/jquery-ui/js/jquery-ui-1.7.2.custom.min.js" /> <openmrs:htmlInclude
+        file="/scripts/jquery-ui/css/redmond/jquery-ui-1.7.2.custom.css" />
+
+    <style>
+body {
+	background-color: #ffffff;
+}
+
+.bodycontainer {
+	padding: 2px;
+	background-color: transparent;
+}
+
+.header {
+	font-style: italic;
+	font-family: Gill, Georgia, serif;
+	font-size: x-large;
+	font-weight: bold;
+	color: #02416e;
+	height: 40px;
+	width: 100%;
+	border: 2px solid #ccccff;
+	text-align: center;
+	background-color: #ebf2f7;
+	margin-bottom: 5px;
+}
+
+.container {
+	clear: both;
+	height: auto;
+	width: 100%;
+	padding: 2px;
+	background-color: transparent;
+}
+
+.leftsection {
+	clear: both;
+	float: left;
+	width: 50%;
+	margin-bottom: 5px;
+}
+
+.sectioninleft {
+	border-right: 2px solid #02416e;
+	background-color: #ebf2f7;
+	border-bottom: 2px solid #02416e;
+	border-left: 2px solid #02416e;
+	border-top: 2px solid #02416e;
+}
+
+.rightsection {
+	float: right;
+	width: 50%;
+	margin-bottom: 5px;
+}
+
+.sectioninright {
+	background-color: #ebf2f7;
+	border-left: none;
+	border-bottom: 2px solid #02416e;
+	border-right: 2px solid #02416e;
+	border-top: 2px solid #02416e;
+}
+
+.section {
+	margin-bottom: 5px;
+	clear: both;
+	background-color: #ebf2f7;
+	border: 2px solid #02416e;
+}
+
+.sectionheader {
+	font-style: italic;
+	font-family: Gill, Georgia, serif;
+	font-size: medium;
+	font-weight: bold;
+	height: auto;
+	width: inherit;
+	border: 2px solid #ccccff;
+	text-align: left;
+	padding: 2px;
+	background-color: #81afc1;
+}
+
+.sectionbody {
+	clear: both;
+	height: auto;
+	width: inherit;
+	background-color: transparent;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.separator {
+	clear: both;
+	font-style: normal;
+	font-family: Gill, Georgia, serif;
+	font-size: larger;
+	font-weight: bold;
+	color: #02416e;
+	height: 30px;
+	border: 2px solid #ccccff;
+	border-left: 2px solid #02416e;
+	border-bottom: none;
+	border-right: 2px solid #02416e;
+	border-top: 2px solid #02416e;
+	text-align: center;
+	background-color: #ebf2f7;
+}
+
+.footer {
+	clear: both;
+	height: 20px;
+	width: 100%;
+	border: 2px solid #ccccff;
+	text-align: center;
+	background-color: #fbfce3;
+}
+
+input[type="text"] {
+	font-style: italic;
+	font-family: Georgia;
+}
+
+input[type="submit"] {
+	font-style: italic;
+	font-family: Georgia;
+}
+</style>
+
+    <script type="text/javascript">
+	//if (jQuery) {
+	var $hfe = jQuery.noConflict();
+
+	$hfe(document)
+			.ready(
+					function() {
+
+						/* This part handles Accordion Functionality */
+
+						// Hide all DIVs until they are called!
+						$hfe("#div1").hide();
+						$hfe("#div2").hide();
+						$hfe("#div3").hide();
+						$hfe("#div4").hide();
+						$hfe("#div5").hide();
+						$hfe("#div6").hide();
+						$hfe("#div7").hide();
+						$hfe("#div8").hide();
+						$hfe("#echographyId").hide();
+						$hfe("#stomatologyId").hide();
+						$hfe("#soinsInfirmiersId").hide();
+						$hfe("#chirurgieId").hide();
+						$hfe("#radioId").hide();
+						$hfe("#maternityId").hide();
+						$hfe("#ophtalmologyId").hide();
+						$hfe("#kinestherapyId").hide();
+						$hfe("#oxygenotherapyId").hide();
+
+						$hfe("#close1").click(function() {
+							$hfe("#div1").css('display', 'none');
+							$hfe("#tab_content1").css('display', 'none');
+						});
+						$hfe("#close2").click(function() {
+							$hfe("#div2").css('display', 'none');
+							$hfe("#tab_content2").css('display', 'none');
+						});
+						$hfe("#close3").click(function() {
+							$hfe("#div3").css('display', 'none');
+							$hfe("#tab_content3").css('display', 'none');
+						});
+
+						$hfe("#close4").click(function() {
+							$hfe("#div4").css('display', 'none');
+							$hfe("#tab_content4").css('display', 'none');
+						});
+
+						$hfe("#close5").click(function() {
+							$hfe("#div5").css('display', 'none');
+							$hfe("#tab_content5").css('display', 'none');
+						});
+
+						$hfe("#close6").click(function() {
+							$hfe("#div6").css('display', 'none');
+							$hfe("#tab_content6").css('display', 'none');
+						});
+
+						$hfe("#close7").click(function() {
+							$hfe("#div7").css('display', 'none');
+							$hfe("#tab_content7").css('display', 'none');
+						});
+
+						$hfe("#close8").click(function() {
+							$hfe("#div8").css('display', 'none');
+							$hfe("#tab_content8").css('display', 'none');
+						});
+
+						$hfe("#echographyCloseId").click(function() {
+							$hfe("#echographyId").hide();
+							$hfe("select[name=service]").val("0");
+						});
+						$hfe("#stomatologyCloseId").click(function() {
+							$hfe("#stomatologyId").hide();
+							$hfe("select[name=service]").val("0");
+						});
+						$hfe("#soinsInfirmiersCloseId").click(function() {
+							$hfe("#soinsInfirmiersId").hide();
+							$hfe("select[name=service]").val("0");
+						});
+						$hfe("#chirurgieCloseId").click(function() {
+							$hfe("#chirurgieId").hide();
+							$hfe("select[name=service]").val("0");
+						});
+							$hfe("#radioCloseId").click(function() {
+							$hfe("#radioId").hide();
+							$hfe("select[name=service]").val("0");
+						});
+						$hfe("#maternityCloseId").click(function() {
+							$hfe("#maternityId").hide();
+							$hfe("select[name=service]").val("0");
+						});
+						$hfe("#ophtalmologyCloseId").click(function() {
+							$hfe("#ophtalmologyId").hide();
+							$hfe("select[name=service]").val("0");
+						});
+						$hfe("#kinestherapyCloseId").click(function() {
+							$hfe("#kinestherapyId").hide();
+							$hfe("select[name=service]").val("0");
+						});
+						$hfe("#oxygenotherapyCloseId").click(function() {
+							$hfe("#oxygenotherapyId").hide();
+							$hfe("select[name=service]").val("0");
+						});
+
+						$hfe("#tab_content1").css('display', 'none');
+						$hfe("#tab_content2").css('display', 'none');
+						$hfe("#tab_content3").css('display', 'none');
+						$hfe("#tab_content4").css('display', 'none');
+						$hfe("#tab_content5").css('display', 'none');
+						$hfe("#tab_content6").css('display', 'none');
+						$hfe("#tab_content7").css('display', 'none');
+						$hfe("#tab_content8").css('display', 'none');
+
+						$hfe("#tab1").click(function() {
+
+							$hfe("#div1").show();
+							$hfe("#div2").hide();
+							$hfe("#div3").hide();
+							$hfe("#div4").hide();
+							$hfe("#div5").hide();
+							$hfe("#div6").hide();
+							$hfe("#div7").hide();
+							$hfe("#div8").hide();
+							$hfe("#tab_content1").css('display', 'block');
+							$hfe("#tab_content2").css('display', 'none');
+							$hfe("#tab_content3").css('display', 'none');
+							$hfe("#tab_content4").css('display', 'none');
+							$hfe("#tab_content5").css('display', 'none');
+							$hfe("#tab_content6").css('display', 'none');
+							$hfe("#tab_content7").css('display', 'none');
+							$hfe("#tab_content8").css('display', 'none');
+						});
+						$hfe("#tab2").click(function() {
+
+							$hfe("#div2").show();
+							$hfe("#div1").hide();
+							$hfe("#div3").hide();
+							$hfe("#div4").hide();
+							$hfe("#div5").hide();
+							$hfe("#div6").hide();
+							$hfe("#div7").hide();
+							$hfe("#div8").hide();
+							$hfe("#tab_content2").css('display', 'block');
+							$hfe("#tab_content1").css('display', 'none');
+							$hfe("#tab_content3").css('display', 'none');
+							$hfe("#tab_content4").css('display', 'none');
+							$hfe("#tab_content5").css('display', 'none');
+							$hfe("#tab_content6").css('display', 'none');
+							$hfe("#tab_content7").css('display', 'none');
+							$hfe("#tab_content8").css('display', 'none');
+						});
+						$hfe("#tab3").click(function() {
+
+							$hfe("#div3").show();
+							$hfe("#div1").hide();
+							$hfe("#div2").hide();
+							$hfe("#div4").hide();
+							$hfe("#div5").hide();
+							$hfe("#div6").hide();
+							$hfe("#div7").hide();
+							$hfe("#div8").hide();
+							$hfe("#tab_content3").css('display', 'block');
+							$hfe("#tab_content1").css('display', 'none');
+							$hfe("#tab_content2").css('display', 'none');
+							$hfe("#tab_content4").css('display', 'none');
+							$hfe("#tab_content5").css('display', 'none');
+							$hfe("#tab_content6").css('display', 'none');
+							$hfe("#tab_content7").css('display', 'none');
+							$hfe("#tab_content8").css('display', 'none');
+						});
+
+						$hfe("#tab4").click(function() {
+
+							$hfe("#div4").show();
+							$hfe("#div1").hide();
+							$hfe("#div2").hide();
+							$hfe("#div3").hide();
+							$hfe("#div5").hide();
+							$hfe("#div6").hide();
+							$hfe("#div7").hide();
+							$hfe("#div8").hide();
+							$hfe("#tab_content4").css('display', 'block');
+							$hfe("#tab_content1").css('display', 'none');
+							$hfe("#tab_content2").css('display', 'none');
+							$hfe("#tab_content3").css('display', 'none');
+							$hfe("#tab_content5").css('display', 'none');
+							$hfe("#tab_content6").css('display', 'none');
+							$hfe("#tab_content7").css('display', 'none');
+							$hfe("#tab_content8").css('display', 'none');
+						});
+
+						$hfe("#tab5").click(function() {
+
+							$hfe("#div5").show();
+							$hfe("#div1").hide();
+							$hfe("#div2").hide();
+							$hfe("#div3").hide();
+							$hfe("#div4").hide();
+							$hfe("#div6").hide();
+							$hfe("#div7").hide();
+							$hfe("#div8").hide();
+							$hfe("#tab_content5").css('display', 'block');
+							$hfe("#tab_content1").css('display', 'none');
+							$hfe("#tab_content2").css('display', 'none');
+							$hfe("#tab_content3").css('display', 'none');
+							$hfe("#tab_content4").css('display', 'none');
+							$hfe("#tab_content6").css('display', 'none');
+							$hfe("#tab_content7").css('display', 'none');
+							$hfe("#tab_content8").css('display', 'none');
+						});
+
+
+						$hfe("#tab6").click(function() {
+
+							$hfe("#div6").show();
+							$hfe("#div1").hide();
+							$hfe("#div2").hide();
+							$hfe("#div3").hide();
+							$hfe("#div4").hide();
+							$hfe("#div5").hide();
+							$hfe("#div7").hide();
+							$hfe("#div8").hide();
+							$hfe("#tab_content6").css('display', 'block');
+							$hfe("#tab_content1").css('display', 'none');
+							$hfe("#tab_content2").css('display', 'none');
+							$hfe("#tab_content3").css('display', 'none');
+							$hfe("#tab_content4").css('display', 'none');
+							$hfe("#tab_content5").css('display', 'none');
+							$hfe("#tab_content7").css('display', 'none');
+							$hfe("#tab_content8").css('display', 'none');
+						});
+
+						$hfe("#tab7").click(function() {
+
+							$hfe("#div7").show();
+							$hfe("#div1").hide();
+							$hfe("#div2").hide();
+							$hfe("#div3").hide();
+							$hfe("#div4").hide();
+							$hfe("#div5").hide();
+							$hfe("#div6").hide();
+							$hfe("#div8").hide();
+							$hfe("#tab_content7").css('display', 'block');
+							$hfe("#tab_content1").css('display', 'none');
+							$hfe("#tab_content2").css('display', 'none');
+							$hfe("#tab_content3").css('display', 'none');
+							$hfe("#tab_content4").css('display', 'none');
+							$hfe("#tab_content5").css('display', 'none');
+							$hfe("#tab_content6").css('display', 'none');
+							$hfe("#tab_content8").css('display', 'none');
+						});
+
+						$hfe("#tab8").click(function() {
+
+							$hfe("#div8").show();
+							$hfe("#div1").hide();
+							$hfe("#div2").hide();
+							$hfe("#div3").hide();
+							$hfe("#div4").hide();
+							$hfe("#div5").hide();
+							$hfe("#div6").hide();
+							$hfe("#div7").hide();
+							$hfe("#tab_content8").css('display', 'block');
+							$hfe("#tab_content1").css('display', 'none');
+							$hfe("#tab_content2").css('display', 'none');
+							$hfe("#tab_content3").css('display', 'none');
+							$hfe("#tab_content4").css('display', 'none');
+							$hfe("#tab_content5").css('display', 'none');
+							$hfe("#tab_content6").css('display', 'none');
+							$hfe("#tab_content7").css('display', 'none');
+						});
+
+						var selected_value;
+
+						$hfe("select[name=service]").change(function() {
+							selected_value = $hfe("select[name=service]").val();
+
+							if (selected_value == "0") {
+								$hfe("#echographyId").hide();
+								$hfe("#stomatologyId").hide();
+								$hfe("#soinsInfirmiersId").hide();
+								$hfe("#chirurgieId").hide();
+								$hfe("#radioId").hide();
+								$hfe("#maternityId").hide();
+								$hfe("#ophtalmologyId").hide();
+								$hfe("#kinestherapyId").hide();
+								$hfe("#oxygenotherapyId").hide();
+							}
+							if (selected_value == "1") {
+								$hfe("#echographyId").show();
+								$hfe("#stomatologyId").hide();
+								$hfe("#soinsInfirmiersId").hide();
+								$hfe("#chirurgieId").hide();
+								$hfe("#radioId").hide();
+								$hfe("#maternityId").hide();
+								$hfe("#ophtalmologyId").hide();
+								$hfe("#kinestherapyId").hide();
+								$hfe("#oxygenotherapyId").hide();
+							}
+							if (selected_value == "2") {
+								$hfe("#stomatologyId").show();
+								$hfe("#echographyId").hide();
+								$hfe("#soinsInfirmiersId").hide();
+								$hfe("#chirurgieId").hide();
+								$hfe("#radioId").hide();
+								$hfe("#maternityId").hide();
+								$hfe("#ophtalmologyId").hide();
+								$hfe("#kinestherapyId").hide();
+								$hfe("#oxygenotherapyId").hide();
+							}
+							if (selected_value == "3") {
+								$hfe("#soinsInfirmiersId").show();
+								$hfe("#stomatologyId").hide();
+								$hfe("#echographyId").hide();
+								$hfe("#chirurgieId").hide();
+								$hfe("#radioId").hide();
+								$hfe("#maternityId").hide();
+								$hfe("#ophtalmologyId").hide();
+								$hfe("#kinestherapyId").hide();
+								$hfe("#oxygenotherapyId").hide();
+							}
+							if (selected_value == "4") {
+								$hfe("#chirurgieId").show();
+								$hfe("#echographyId").hide();
+								$hfe("#stomatologyId").hide();
+								$hfe("#soinsInfirmiersId").hide();
+								$hfe("#radioId").hide();
+								$hfe("#maternityId").hide();
+								$hfe("#ophtalmologyId").hide();
+								$hfe("#kinestherapyId").hide();
+								$hfe("#oxygenotherapyId").hide();
+							}
+							if (selected_value == "5") {
+								$hfe("#radioId").show();
+								$hfe("#echographyId").hide();
+								$hfe("#stomatologyId").hide();
+								$hfe("#soinsInfirmiersId").hide();
+								$hfe("#chirurgieId").hide();
+								$hfe("#maternityId").hide();
+								$hfe("#ophtalmologyId").hide();
+								$hfe("#kinestherapyId").hide();
+								$hfe("#oxygenotherapyId").hide();
+							}
+							if (selected_value == "6") {
+								$hfe("#radioId").hide();
+								$hfe("#echographyId").hide();
+								$hfe("#stomatologyId").hide();
+								$hfe("#soinsInfirmiersId").hide();
+								$hfe("#chirurgieId").hide();
+								$hfe("#maternityId").show();
+								$hfe("#ophtalmologyId").hide();
+								$hfe("#kinestherapyId").hide();
+								$hfe("#oxygenotherapyId").hide();
+							}
+							if (selected_value == "7") {
+								$hfe("#echographyId").hide();
+								$hfe("#stomatologyId").hide();
+								$hfe("#soinsInfirmiersId").hide();
+								$hfe("#chirurgieId").hide();
+								$hfe("#radioId").hide();
+								$hfe("#maternityId").hide();
+								$hfe("#ophtalmologyId").show();
+								$hfe("#kinestherapyId").hide();
+								$hfe("#oxygenotherapyId").hide();
+							}
+								if (selected_value == "8") {
+								$hfe("#echographyId").hide();
+								$hfe("#stomatologyId").hide();
+								$hfe("#soinsInfirmiersId").hide();
+								$hfe("#chirurgieId").hide();
+								$hfe("#radioId").hide();
+								$hfe("#maternityId").hide();
+								$hfe("#ophtalmologyId").hide();
+								$hfe("#kinestherapyId").show();
+								$hfe("#oxygenotherapyId").hide();
+							}
+								if (selected_value == "9") {
+								$hfe("#echographyId").hide();
+								$hfe("#stomatologyId").hide();
+								$hfe("#soinsInfirmiersId").hide();
+								$hfe("#chirurgieId").hide();
+								$hfe("#radioId").hide();
+								$hfe("#maternityId").hide();
+								$hfe("#ophtalmologyId").hide();
+								$hfe("#kinestherapyId").hide();
+								$hfe("#oxygenotherapyId").show();
+							}
+						});
+						/* TEnd of part that handles Accordion Functionality */
+
+						$hfe('#1-removeEntry').remove();
+						$hfe('#10-addEntry').remove();
+						$hfe('#1-toggleContainer').show();
+
+						$hfe('#11-removeEntry').remove();
+						$hfe('#20-addEntry').remove();
+						$hfe('#11-toggleContainer').show();
+
+						$hfe('#21-removeEntry').remove();
+						$hfe('#30-addEntry').remove();
+						$hfe('#21-toggleContainer').show();
+						//});
+
+						//$hfe(document)
+						//.ready(
+						//	function() {
+						$hfe('button.addEntry')
+								.live(
+										"click",
+										function() {
+											var correctedAddButtonId = parseFloat(this.id) + 1;
+											var contentAddId = "#"
+													+ correctedAddButtonId
+													+ "-toggleContainer";
+											$hfe(contentAddId).toggle(true);
+											$hfe('#' + this.id).toggle(false);
+											$hfe(
+													'#' + parseFloat(this.id)
+															+ '-removeEntry')
+													.toggle(false);
+											return false;
+										});
+						//});
+
+						//$hfe(document)
+						//.ready(
+						//function() {
+						$hfe('button.removeEntry')
+								.live(
+										"click",
+										function() {
+											var correctedRemoveButtonId = parseFloat(this.id) - 1;
+											var contentAddId = "#"
+													+ parseFloat(this.id)
+													+ "-toggleContainer";
+											$hfe(contentAddId).toggle(false);
+											$hfe(':input:not(:button)',
+													contentAddId).val([]);
+											$hfe(
+													'#'
+															+ correctedRemoveButtonId
+															+ '-addEntry')
+													.toggle(true);
+											$hfe(
+													'#'
+															+ correctedRemoveButtonId
+															+ '-removeEntry')
+													.toggle(true);
+
+											return false;
+										});
+
+						//	});
+
+						// This where we concatenate History of the illness to the Past Medical
+						//$hfe(document)
+						//		.ready(
+						//				function() {
+						var past = "";
+						var answer = "";
+						var answer1 = '';
+						var answer2 = '';
+						var ans1, ans2, ans3, ans4, ans5, ans6, ans7, ans8, ans9, ans10;
+						ans1 = ans2 = ans3 = ans4 = ans5 = ans6 = ans7 = ans8 = ans9 = ans10 = "";
+
+						$hfe('button.addEntry')
+								.click(
+										function() {
+											if ($hfe("#w20 option:selected")) {
+												if ($hfe("#w20 option:selected")
+														.text() != "")
+													ans1 = $hfe(
+															"#w20 option:selected")
+															.text()
+															+ ", ";
+											}
+											if ($hfe("#w22 option:selected")) {
+												if ($hfe("#w22 option:selected")
+														.text() != "")
+													ans2 = $hfe(
+															"#w22 option:selected")
+															.text()
+															+ ", ";
+											}
+											if ($hfe("#w24 option:selected")) {
+												if ($hfe("#w24 option:selected")
+														.text() != "")
+													ans3 = $hfe(
+															"#w24 option:selected")
+															.text()
+															+ ", ";
+											}
+											if ($hfe("#w26 option:selected")) {
+												if ($hfe("#w26 option:selected")
+														.text() != "")
+													ans4 = $hfe(
+															"#w26 option:selected")
+															.text()
+															+ ", ";
+											}
+											if ($hfe("#w28 option:selected")) {
+												if ($hfe("#w28 option:selected")
+														.text() != "")
+													ans5 = $hfe(
+															"#w28 option:selected")
+															.text()
+															+ ", ";
+											}
+											if ($hfe("#w30 option:selected")) {
+												if ($hfe("#w30 option:selected")
+														.text() != "")
+													ans6 = $hfe(
+															"#w30 option:selected")
+															.text()
+															+ ", ";
+											}
+											if ($hfe("#w32 option:selected")) {
+												if ($hfe("#w32 option:selected")
+														.text() != "")
+													ans7 = $hfe(
+															"#w32 option:selected")
+															.text()
+															+ ", ";
+											}
+											if ($hfe("#w34 option:selected")) {
+												if ($hfe("#w34 option:selected")
+														.text() != "")
+													ans8 = $hfe(
+															"#w34 option:selected")
+															.text()
+															+ ", ";
+											}
+											if ($hfe("#w36 option:selected")) {
+												if ($hfe("#w36 option:selected")
+														.text() != "")
+													ans9 = $hfe(
+															"#w36 option:selected")
+															.text()
+															+ ", ";
+											}
+											if ($hfe("#w38 option:selected")) {
+												if ($hfe("#w38 option:selected")
+														.text() != "")
+													ans10 = $hfe(
+															"#w38 option:selected")
+															.text()
+															+ ", ";
+											}
+
+											answer = ans1 + ans2 + ans3 + ans4
+													+ ans5 + ans6 + ans7 + ans8
+													+ ans9 + ans10;
+											$hfe(
+													"span#syndromic_summary textarea")
+													.val(
+															past
+																	+ "- SYMPTOMS: "
+																	+ answer
+																	+ "\n- ILLNESS HISTORY: "
+																	+ answer2
+																	+ "\n- PAST/ANTECEDENTS: "
+																	+ answer1
+																	+ "\n- OTHER: ");
+										});
+
+						$hfe("span#past_medical textarea")
+								.keyup(
+										function() {
+											answer1 = $hfe(this).val();
+											//past += $hfe("span#syndromic_summary").val();
+											$hfe(
+													"span#syndromic_summary textarea")
+													.val(
+															past
+																	+ "- SYMPTOMS: "
+																	+ answer
+																	+ "\n- ILLNESS HISTORY: "
+																	+ answer2
+																	+ "\n- PAST/ANTECEDENTS: "
+																	+ answer1
+																	+ "\n- OTHER: ");
+										});
+
+						$hfe("span#history_illness textarea")
+								.keyup(
+										function() {
+											answer2 = $hfe(this).val();
+											//past += $hfe("span#syndromic_summary").val();
+											$hfe(
+													"span#syndromic_summary textarea")
+													.val(
+															past
+																	+ "- SYMPTOMS: "
+																	+ answer
+																	+ "\n- ILLNESS HISTORY: "
+																	+ answer2
+																	+ "\n- PAST/ANTECEDENTS: "
+																	+ answer1
+																	+ "\n- OTHER: ");
+										});
+						//});
+
+						//$hfe(document).ready( function() {
+
+						$hfe('span#is_opportunistic input[type=checkbox]')
+								.attr('disabled', true);
+						$hfe('span#hiv_status')
+								.change(
+										function() {
+											if ($hfe(
+													'span#hiv_status input[type=radio]:checked')
+													.val() == 703) {
+												$hfe(
+														'span#is_opportunistic input[type=checkbox]')
+														.attr('disabled', false);
+											} else {
+												$hfe(
+														'span#is_opportunistic input[type=checkbox]')
+														.attr('disabled', true);
+											}
+										});
+						// Setting other non-coded concept available...
+						$hfe('#other_motive').hide();
+						$hfe('#cons_motive').change(
+								function() {
+									if ($hfe('#cons_motive option:selected')
+											.val() == 5622) {
+										$hfe('#other_motive').show();
+									}
+								});
+						// other_presumptive
+						$hfe('#other_presumptive').hide();
+						$hfe('span#presumptive input').change(function() {
+							var answer = $hfe(this).val();
+							if (answer.toLowerCase() == "other") {
+								$hfe('#other_presumptive').show();
+							} else {
+								$hfe('#other_presumptive').hide();
+							}
+						});
+
+						// other primary diagnosis
+						$hfe('#other_primDiag').hide();
+						$hfe('span#primary_digno input').change(function() {
+							var answer = $hfe(this).val();
+							if (answer.toLowerCase() == "other") {
+								$hfe('#other_primDiag').show();
+							} else {
+								$hfe('#other_primDiag').hide();
+							}
+						});
+						// other secondary diagnosis
+						$hfe('#other_secDiag').hide();
+						$hfe('span#second_digno input').change(function() {
+							var answer = $hfe(this).val();
+							if (answer.toLowerCase() == "other") {
+								$hfe('#other_secDiag').show();
+							} else {
+								$hfe('#other_secDiag').hide();
+							}
+						});
+
+						// Setting the size for the autocomplete fields.
+						$hfe("span#presumptive input").attr("size", "60");
+						$hfe("span#primary_digno input").attr("size", "60");
+						$hfe("span#second_digno input").attr("size", "60");
+						$hfe("span#encDate input").attr("size", "15");
+
+						$hfe("input[type=radio][name=normal_1]")
+								.change(
+										function() {
+											var answer = $hfe(this).val();
+											if (answer == "normal") {
+												$hfe("span#pulmonary textarea")
+														.val("Normal");
+												$hfe("#pulmonary")
+														.disableSelection();
+											} else {
+												$hfe("span#pulmonary textarea")
+														.val(
+																"Abnormal because : ");
+												$hfe("#pulmonary")
+														.enableSelection();
+												$hfe("span#pulmonary textarea")
+														.focus();
+											}
+										});
+
+						$hfe("input[type=radio][name=normal_2]").change(
+								function() {
+									var answer = $hfe(this).val();
+									if (answer == "normal") {
+										$hfe("span#cardio textarea").val(
+												"Normal");
+										$hfe("#cardio").disableSelection();
+									} else {
+										$hfe("span#cardio textarea").val(
+												"Abnormal because : ");
+										$hfe("#cardio").enableSelection();
+										$hfe("span#cardio textarea").focus();
+									}
+								});
+
+						$hfe("input[type=radio][name=normal_3]")
+								.change(
+										function() {
+											var answer = $hfe(this).val();
+											if (answer == "normal") {
+												$hfe("span#abdominal textarea")
+														.val("Normal");
+												$hfe("#abdominal")
+														.disableSelection();
+											} else {
+												$hfe("span#abdominal textarea")
+														.val(
+																"Abnormal because : ");
+												$hfe("#abdominal")
+														.enableSelection();
+												$hfe("span#abdominal textarea")
+														.focus();
+											}
+										});
+
+						$hfe("input[type=radio][name=normal_4]").change(
+								function() {
+									var answer = $hfe(this).val();
+									if (answer == "normal") {
+										$hfe("span#neurologic textarea").val(
+												"Normal");
+										$hfe("#neurologic").disableSelection();
+									} else {
+										$hfe("span#neurologic textarea").val(
+												"Abnormal because : ");
+										$hfe("#neurologic").enableSelection();
+										$hfe("span#neurologic textarea")
+												.focus();
+									}
+								});
+
+						$hfe("input[type=radio][name=normal_5]").change(
+								function() {
+									var answer = $hfe(this).val();
+									if (answer == "normal") {
+										$hfe("span#musculo textarea").val(
+												"Normal");
+										$hfe("#musculo").disableSelection();
+									} else {
+										$hfe("span#musculo textarea").val(
+												"Abnormal because : ");
+										$hfe("#musculo").enableSelection();
+										$hfe("span#musculo textarea").focus();
+									}
+								});
+
+						$hfe("input[type=radio][name=normal_6]").change(
+								function() {
+									var answer = $hfe(this).val();
+									if (answer == "normal") {
+										$hfe("span#urogenital textarea").val(
+												"Normal");
+										$hfe("#urogenital").disableSelection();
+									} else {
+										$hfe("span#urogenital textarea").val(
+												"Abnormal because : ");
+										$hfe("#urogenital").enableSelection();
+										$hfe("span#urogenital textarea")
+												.focus();
+									}
+								});
+
+						$hfe("input[type=radio][name=normal_7]").change(
+								function() {
+									var answer = $hfe(this).val();
+									if (answer == "normal") {
+										$hfe("span#skin textarea")
+												.val("Normal");
+										$hfe("#skin").disableSelection();
+									} else {
+										$hfe("span#skin textarea").val(
+												"Abnormal because : ");
+										$hfe("#skin").enableSelection();
+										$hfe("span#skin textarea").focus();
+									}
+								});
+
+						$hfe("input[type=radio][name=normal_8]")
+								.change(
+										function() {
+											var answer = $hfe(this).val();
+											if (answer == "normal") {
+												$hfe(
+														"span#psychomotor textarea")
+														.val("Normal");
+												$hfe("#psychomotor")
+														.disableSelection();
+											} else {
+												$hfe(
+														"span#psychomotor textarea")
+														.val(
+																"Abnormal because : ");
+												$hfe("#psychomotor")
+														.enableSelection();
+												$hfe(
+														"span#psychomotor textarea")
+														.focus();
+											}
+										});
+
+						$hfe("input[type=radio][name=normal_9]").change(
+								function() {
+									var answer = $hfe(this).val();
+									if (answer == "normal") {
+										$hfe("span#other textarea").val(
+												"Normal");
+										$hfe("#other").disableSelection();
+									} else {
+										$hfe("span#other textarea").val(
+												"Abnormal because : ");
+										$hfe("#other").enableSelection();
+										$hfe("span#other textarea").focus();
+									}
+								});
+					});
+</script> <!-- MEDICAL CONSULTATION -->
+
+    <div class="header">DH - DOSSIER INFIRMIER FORM</div>
+    <div class="bodycontainer">
+
+        <div id="accordion">
+
+            <div id="">
+                <br />
+                <div class="section">
+                    <div class="sectionheader">Encounter Details</div>
+                    <div class="sectionbody">
+                        <table class="baseline-aligned">
+                            <tr>
+                                <td>Date:</td>
+                                <td><encounterDate default="today" /></td>
+                            </tr>
+                            <tr>
+                                <td>Location</td>
+                                <td><encounterLocation default="273" /></td>
+                            </tr>
+                            <tr>
+                                <td>Provider</td>
+                                <td><encounterProvider default="currentUser" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="sectionheader">Demographic Information</div>
+                    <div class="sectionbody">
+                        <table class="baseline-aligned">
+                            <tr>
+                                <td>Patient names</td>
+                                <td><b><u><lookup expression="patient.personName" /></u></b><br />
+                                    {<b>Id:</b> <lookup
+                                            expression="patient.patientIdentifier.identifier" />; <b>Sex:</b>
+                                    <lookup expression="patient.gender" />; <b>Age:</b> <lookup
+                                            expression="patient.age" />}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="section">
+                    <div class="sectionheader">1. Vital Signs Informations</div>
+                    <div class="sectionbody">
+
+                        <table>
+                            <tr>
+                                <obsgroup groupingConceptId="3cd74ee8-26fe-102b-80cb-0017a47871b2">
+                                    <td><obs conceptId="3ce939d2-26fe-102b-80cb-0017a47871b2" labelText="Temperature:" /></td>
+                                    <td><obs conceptId="3ce93b62-26fe-102b-80cb-0017a47871b2" labelText="Weight:" required="true" /></td>
+                                    <td><obs conceptId="3ce93cf2-26fe-102b-80cb-0017a47871b2" labelText="Height:" /></td>
+                                    <td><obs conceptId="3ce934fa-26fe-102b-80cb-0017a47871b2" labelText="SBP:" /></td>
+                                    <td><obs conceptId="3ce93694-26fe-102b-80cb-0017a47871b2" labelText="DBP:" /></td>
+                                    <td><obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" labelText="Pulse:" /></td>
+                                </obsgroup>
+                            </tr>
+                        </table>
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <section>
+                <div class="sectionheader"></div>
+                <fieldset>
+                    <table class="baseline-aligned">
+                        <tr><td><obs conceptId="3ceb11f8-26fe-102b-80cb-0017a47871b2" labelCode="Respiration" /></td></tr>
+                        <tr><td><obs conceptId="de587b48-e771-4b9e-90d2-d73906989c44" labelCode="Ponctions (en litres/24h)" /></td></tr>
+                        <tr><td><obs conceptId="287555ba-a7c1-4868-98c6-c32c83a88cf0" labelCode="Diusere (en litres/24h)" /></td></tr>
+                        <tr><td><obs conceptId="fe063fc1-5da8-4b96-a209-c644689884e5" labelCode="Selles (Nb de fois/24h)" /></td></tr>
+                        <tr><td><obs conceptId="3ce939d2-26fe-102b-80cb-0017a47871b2" labelCode="TA (2 fois/24h)" /></td></tr>
+                    </table>
+
+                </fieldset>
+
+            </section>
+            <section>
+                <div class="sectionheader">2. DOSSIER INFIRMIER</div>
+                <div class="sectionbody">
+                    <table class="baseline-aligned">
+                        <tr>
+                            <td>Soins Infirmiers</td>
+                            <td><obs conceptId="3cd9d956-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="30"/></td>
+                        </tr>
+                        <tr>
+                            <td>Observations</td>
+                            <td><obs conceptId="3cda0160-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="30"/></td>
+                        </tr>
+                    </table>
+
+
+                </div>
+            </section>
+
+
+
+            <div>
+                <center><submit/></center>
+            </div>
+
+        </div>
+
+
+        <div class="footer">
+            <b>&#169;</b> <span>MoH, District Hospital OPD form</span>
+        </div>
+    </div>
+
+    <!-- END - MEDICAL CONSULTATION --> </htmlform>

@@ -1,0 +1,75 @@
+<htmlform>
+    <!-- Epilepsy flowsheet:  Clinic visits
+         written by jberchmas 
+         -->
+	<style>
+		.formName { background-color:#e0e0ff; }
+		.section { border: 1px
+		solid #8FABC7; width:99%; padding:2px; text-align:left;
+		margin-bottom:10px; }
+		.sectionHeader { background-color: #8FABC7;
+		color: white; display: block; padding: 2px; font-weight:bold; }
+		table.symptoms th {text-align: right;}
+		.note {color:red;}
+		td
+		{vertical-align:top;}
+		table.labTable td { color:red; }
+		table.labTable
+		td.dateField { text-align:right; }
+		table.identifierTable td
+		{padding-right:10px;}
+		div.paddedTable span {padding-right:20px;}
+	</style>
+
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				<b>IMB ID:<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				</b>
+			</td>
+			<td>
+				Clinique / Clinic:<encounterLocation />
+			</td>			
+		</tr>
+	</table>
+
+	<section headerLabel=" RENDEZ-VOUS / CLINIC VISITS" >
+		<table border="1" width="100%">
+			<tr>
+				<td>Date</td>
+				<td>#Crises/Seizures</td>
+				<td>A manqués des médicaments/Missed medication</td>
+				<td>Effects Secondaires/Side Effects</td>
+                                <td>Si femme/If woman</td>
+                                <td>Plan</td>                               
+			</tr>
+
+                        <tr>
+				<td rowspan="2"><br /><center><encounterDate default="today"/>         </center></td>
+				<td><obs conceptId="ba2e9e43-5a9d-423f-a33e-c34765785397" /> crises/sz <br /> <obs conceptId="3cdd2188-26fe-102b-80cb-0017a47871b2" answerConceptId="3cce938e-26fe-102b-80cb-0017a47871b2"  answerLabel="rien/none" /> <br /> <obs conceptId="04f8bb6e-6794-46cf-8e5a-ddd4abd5628b" answerConceptId="3cd6f600-26fe-102b-80cb-0017a47871b2" answerLabel="Seulement avec la maladie ou de l'alcool / Only with illness alcohol" /></td>
+				<td><obs conceptId="46038803-3daf-401f-9977-de12e52c4a84"  answers="1065,1066" answerLabels="oui/ yes,non/ no" style="radio" /><br /></td>
+				<td><obs conceptId="3ce15adc-26fe-102b-80cb-0017a47871b2" style="yes_no" yesLabel="oui/yes" noLabel="non/no" /></td>
+                                <td>Enceinte/Pregnant: <br /><obs conceptId="3ceb4880-26fe-102b-80cb-0017a47871b2" /> Allaitement/Nursing:<br /><obs conceptId="3cee8f5e-26fe-102b-80cb-0017a47871b2" style="yes_no"  yesLabel="oui/yes"  noLabel="non/no"/></td>
+                                <td><obs conceptId="2c790e1b-a55f-495a-91b7-a9261d85b08c"  answerConceptId="3cd921a0-26fe-102b-80cb-0017a47871b2" answerLabel="Pas de changement/ no change."/>
+<br /><obs conceptId="2c790e1b-a55f-495a-91b7-a9261d85b08c"  answerConceptId="3cd924e8-26fe-102b-80cb-0017a47871b2" answerLabel="Changer des médicaments/change in medications"/> 
+<br /><obs conceptId="3cd937e4-26fe-102b-80cb-0017a47871b2"  answerConceptId="3cd94aae-26fe-102b-80cb-0017a47871b2" answerLabel="Labo/Labs"/> <obs conceptId="3cd937e4-26fe-102b-80cb-0017a47871b2"  answerConceptId="356d0244-2ce4-4e7e-a207-63e537de72d5" answerLabel="EEG"/> <obs conceptId="3cd937e4-26fe-102b-80cb-0017a47871b2"  answerConceptId="0a1699d0-a1df-42dd-8248-557d98d070ed" answerLabel="CT"/></td>                               
+			</tr>
+			<tr>
+				<td colspan="3">
+					Commentaire / Comments: <br /><obs conceptId="3cdc5938-26fe-102b-80cb-0017a47871b2" rows="2" cols="60" />
+				</td>
+                               <td>Clinicien / Clinician: <encounterProvider role="NCD Provider"/></td> 
+                                <td>RDV: <obs conceptId="3ce94df0-26fe-102b-80cb-0017a47871b2" allowFutureDates="true"/></td>    
+				
+			</tr>
+		</table>
+	</section>
+
+	<br />
+	<center>
+		<submit />
+	</center>
+	<br />
+
+</htmlform>			
+								

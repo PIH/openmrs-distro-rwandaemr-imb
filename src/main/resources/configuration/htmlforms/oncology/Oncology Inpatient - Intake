@@ -1,0 +1,2365 @@
+<htmlform> <!--
+	   Oncology Clinical Intake Form
+	   ClinicalIntake_ONCOLOGY_V1.3NT2012July4 copy
+		Author:
+		Builder: Jberchmas
+		started on Sept 22, 2012
+	-->
+
+    <macros>
+        @PATIENT_IDENTIFIER@=IMB ID
+
+        @WEIGHT_KG@=3ce93b62-26fe-102b-80cb-0017a47871b2
+        @HEIGHT_CM@=5090
+        @BSA@= 	b7eb9d2f-0642-4984-8778-ba603e703a38
+
+        @ONC_SYMPTOMS_GENERAL@=a8c2206d-496c-4405-be2a-c1cb9035aa61
+        @WEIGHT_CHANGE@=3cde67c8-26fe-102b-80cb-0017a47871b2
+        @FATIGUE@=3cf19000-26fe-102b-80cb-0017a47871b2
+        @FEVER@=3cf1898e-26fe-102b-80cb-0017a47871b2
+        @WEAKNESS@=3ceaf8ee-26fe-102b-80cb-0017a47871b2
+        @TROUBLE_SLEEPING@=dc2c3015-f746-4271-8a4e-9274ea365c31
+        @OTHER_ONC_SYMPTOMS_GENERAL@=304c5709-7c54-4bd3-8935-694050e071ab
+        @OTHER_NON_CODED@=3cee7fb4-26fe-102b-80cb-0017a47871b2
+
+        @ONC_SYMPTOMS_SKIN@=05d24575-fc32-425e-9285-5c02d6ef76a1
+        @LUMP@=f148c08d-476c-4fa8-9be3-1c6befab28f3
+        @RASH@=3cd182e2-26fe-102b-80cb-0017a47871b2<!--  -->
+        @ITCH@=3cd4cda8-26fe-102b-80cb-0017a47871b2
+        @COLOR_CHANGE@=85e9ef95-dec0-4e8d-8a9f-6fcf6e7ebe6d
+        @HAIR_NAIL_CHANGE@=b3e29271-2eee-4f13-a6c4-47072fbe8045
+        @OTHER_ONC_SYMPTOMS_SKIN@=4b8af273-f62d-468d-aefb-c3b5764aeda8
+
+        @ONC_SYMPTOMS_HEENT@=1d14093c-308e-46e6-b709-fe935e4d0f2c
+        @GROWTH@=f148c08d-476c-4fa8-9be3-1c6befab28f3
+
+        @HEADACHE@=3cd24178-26fe-102b-80cb-0017a47871b2
+        @HEARING_LOSS@=117698AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        @VISION_PROBLEM@=118938AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        @BLUR_DOUBLE_VISION@=059b202f-89ae-466b-8566-9a4c1a9c1f5c
+        @NOSEBLEED@=3cce5f68-26fe-102b-80cb-0017a47871b2
+        @OTHER_ONC_SYMPTOM_HEENT@=7f38fb6b-18e7-4f18-ba88-8c081a4c580c
+
+        @ONC_SYMPTOMS_NECK@=3bb23294-5080-4f9f-bb3e-069cfe6b2c47
+        @PAIN@=7c4d837b-5967-4ba6-902c-ca7651bebf34<!--  -->
+        @STIFF_NECK@=3cea18ac-26fe-102b-80cb-0017a47871b2
+        @OTHER_ONC_SYMPTOM_NECK@=308bd97c-79bf-4b04-89f5-2362acf79ff9
+
+        @ONC_SYMPTOMS_BREAST@=84912b78-b001-469c-977b-523f6fa112e1
+        @STIFF@=c3c839c1-f52a-4580-97ce-2ec14354cf4c<!--  -->
+        @OTHER_ONC_SYMPTOM_BREAST@=af93d716-3112-445a-baae-5bd74146a4ab
+        @Breast_discharge@ = afa40259-ce68-44b9-8682-495f29516a42
+        @EVER_HAD_ACTIVE_TUBERCULOSIS(coded)@ = 47e2d2a1-bcfc-4586-a457-32eeacbbcd9d
+
+        @ONC_SYMPTOMS_CHEST@=f84fbfb3-320c-4a8f-9e7e-a374e9a173fc
+        @COUGHING_BLOOD@=4e63a17b-4726-438c-85d8-63307532276a
+        @SHORTNESS_OF_BREATH@=3cf1a95a-26fe-102b-80cb-0017a47871b2<!--  -->
+        @CHEST_PAIN@=3ccd2364-26fe-102b-80cb-0017a47871b2
+        @TIGHTNESS@=c4ebd196-0bd4-4aa3-8c6b-a333604bb761
+        @OTHER_ONC_SYMPTOM_CHEST@=9f2619b3-cfbd-4197-8373-41b6838e0eca
+
+        @ONC_SYMPTOMS_GI@=86ae7b91-0044-4bf6-a796-072df94dcdd9
+        @SWALLOWING_DIFFICULTIES@=3cf19ff0-26fe-102b-80cb-0017a47871b2
+        @NAUSEA@=3cf1c610-26fe-102b-80cb-0017a47871b2
+        @RECTAL_BLEEDING@=3a21750b-037b-4930-89d7-71aecc0d4194
+        @DIARRHEA@=3ccc6a00-26fe-102b-80cb-0017a47871b2
+        @CONSTIPATION@=3cdc6504-26fe-102b-80cb-0017a47871b2
+        @OTHER_ONC_SYMPTOM_GI@=8f07dc48-1078-4ee3-9402-6dd76bbf3bfe
+
+        @ONC_SYMPTOMS_URINARY@=677a3a5b-83a6-4bbd-8118-5ecbe11e707b
+        @URINARY_FREQUENCY@=c3bfb03f-281d-4a3a-a266-9a73ba5acde2
+        @BURNING_SENSATION@=3ccfc4f2-26fe-102b-80cb-0017a47871b2
+        @BLOODY_URINE@=3cd48f5a-26fe-102b-80cb-0017a47871b2
+        @INCONTINENCE@=111636AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        @OTHER_ONC_SYMPTOM_URINARY@=11ae9694-d204-43b5-abf8-b13e6a830268
+
+        @ONC_SYMPTOMS_VASCULAR_MUSCULOSKELETAL@=1f6a3104-2750-421c-b9cf-afe89efddf2a
+        @JOINT_PAIN@=3cccc7ac-26fe-102b-80cb-0017a47871b2
+        @JOINT_SWELLING@=3ceb9394-26fe-102b-80cb-0017a47871b2
+        @TRAUMA@=124193AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        @OTHER_ONC_SYMPTOM_VASCULAR_MUSCULOSKELETAL@=f5c0afe4-7799-40d6-8946-099304b727f8
+
+        @ONC_SYMPTOMS_HEMATOLOGIC_ENDOCRINE@=1ff11480-4481-4d5a-9905-ae7c5dab1f92
+        @EASILY_BRUISES@=07bf2fb3-2dbf-45ec-aced-e5dc09dd0445
+        @BLEEDING@=706b6f34-4bca-4617-9cf3-3eb77cfc0a38
+        @HEAT_COLD_INTOLERANCE@=ab31f4f1-2e1c-4cc5-bff5-edaeb6ed827c
+        @OTHER_ONC_SYMPTOM_HEMATOLOGIC_ENDOCRINE@=931de7dc-3a32-4ec8-a8ec-f7925e491535
+
+        @ONC_SYMPTOMS_NEUROLOGIC_PSYCHIATRIC@=63a0aa10-a03c-4ecd-9dc5-1a6bc02e4cd5
+        @DIZZINESS@=3cd4ca7e-26fe-102b-80cb-0017a47871b2
+        @SEIZURE@=3cce938e-26fe-102b-80cb-0017a47871b2
+        @TREMOR@=3cdc698c-26fe-102b-80cb-0017a47871b2
+        @DEPRESSION@=3cce9514-26fe-102b-80cb-0017a47871b2
+        @OTHER_ONC_SYMPTOM_NEUROLOGIC_PSYCHIATRIC@=58d8f598-42df-4f74-876a-6073afcec1a7
+
+        @SYMPTOM_DETAILS@=3cdd258e-26fe-102b-80cb-0017a47871b2
+
+        @TREATMENT_RECORDS_AVAILABLE@=ac60d553-63f2-4ff0-9f14-51b4ed244a62
+        @YES@=3cd6f600-26fe-102b-80cb-0017a47871b2
+        @NO@=3cd6f86c-26fe-102b-80cb-0017a47871b2
+
+        @DOCTOR_PHONE@=f51531c0-e3f6-4611-9a32-d709551307a7
+
+        @SURGERY_PROCEDURE@=afbed187-03de-4fff-838a-66bbefb07993
+        @SURGERY_FACILITY@=13c825f8-615a-429d-b813-ef9bdf8830ea
+
+        @RADIATION_TYPE@=284071ae-19c6-49cf-82a7-ffd987441ef7
+        @RADIATION_FACILITY@=c2a1af21-c055-4395-9115-2a7b40e76cb8
+
+        @CHEMO_TYPE@=24de1822-9f3e-40e3-a690-0a293aeba040
+        @CHEMO_FACILITY@=f864c658-f01c-48b7-b0c2-83c72c75847a
+
+        @TAKEN_DOXO@=5b53f356-ce48-4e1a-8e69-4b9ba75979d1
+        @UNKNOWN@=3cd6fac4-26fe-102b-80cb-0017a47871b2
+        @TAKEN_EPIRUBICIN@=6ef8c0b1-5dcc-4fa5-9312-43aefa4a14a9
+        @MEDICAL_HISTORY@=bc3862d8-6825-4878-8801-f1e7b0790071
+        @SOCIAL_HISTORY@=ddb784e0-a1fc-4db7-9b9b-6784a529e363
+        @MEDICATION@=3cdbe106-26fe-102b-80cb-0017a47871b2
+        @PATIENT_PREGNANT@ = 3cdd8132-26fe-102b-80cb-0017a47871b2
+        @PARITY@ = 3cd6dda0-26fe-102b-80cb-0017a47871b2
+
+        @FAMILY_PLANNING_METHOD@=3ccfbd0e-26fe-102b-80cb-0017a47871b2
+        @IUD@=3ceb4d4e-26fe-102b-80cb-0017a47871b2
+        @CONDOMS@=3cce7a20-26fe-102b-80cb-0017a47871b2
+        @INJECTABLE_CONTRACEPTIVE@=3ceb5532-26fe-102b-80cb-0017a47871b2
+        @TUBAL_LIGATION@=3cdcf44c-26fe-102b-80cb-0017a47871b2
+        @FAMILY_PLANNING_STATUS@=86e6e2a7-001d-45cd-a89b-8ac4306e3581
+        @ABSTINENCE@=3cdcf5e6-26fe-102b-80cb-0017a47871b2
+        @NA@=3cd7b72a-26fe-102b-80cb-0017a47871b2
+        @POST-MENOPAUSAL@=c2b56127-fbf0-4e17-81f7-7d6c5160aba6
+
+        @HAS_ALLERGIES@=fb609db6-b030-4f5b-8823-341dcc240c79
+
+        @DIAGNOSIS_CONFIDENCE@=3f0764f8-174b-482c-b23b-b09b5b6a2fcd
+        @PATHOLOGICALLY_CONFIRMED@=6baf30ed-ded5-4fe6-b1c4-911b3ca82a74
+        @CLINICALLY_CONFIRMED@=54c32730-e200-4e19-a89e-de0ce7eb5f63
+        @SUSPECTED@=f18d4b2d-8fa6-44e5-b130-f3819ba412cf
+
+        @IMAGING_STUDIES@=24e5c4c1-ac2b-42f5-a144-aa41e4375cb5
+        @X-RAY_CHEST@=3ccc6186-26fe-102b-80cb-0017a47871b2
+        @ULTRASOUND@=251e11b5-56f4-4c6b-965f-31794f419877
+        @OTHER_INVESTIGATION@=62904b42-3d70-489d-af91-4460fa3c8208
+
+        @BMI@=3ce14da8-26fe-102b-80cb-0017a47871b2
+        @SYSTOLIC@=3ce934fa-26fe-102b-80cb-0017a47871b2
+        @DIASTOLIC@=3ce93694-26fe-102b-80cb-0017a47871b2
+        @PULSE@=3ce93824-26fe-102b-80cb-0017a47871b2
+        @TEMP@=3ce939d2-26fe-102b-80cb-0017a47871b2
+
+        @GENERAL_EXAM_FINDINGS@=0adeea3a-15f5-102d-96e4-000c29c2a5d7
+        @WELL_APPEARING@=85a1dd2f-f6ad-438a-b0f4-542b0390b633
+        @ABNORMAL@=3cd75230-26fe-102b-80cb-0017a47871b2
+
+        @HEAD_AND_NECK_EXAM@=2296711f-bd41-469b-a539-6d2e4ff6a4d4
+        @NO_ABNORMALITIES@=215241b1-0304-4737-9371-b4daf08f6430
+        @NOT_DONE@=3cd75550-26fe-102b-80cb-0017a47871b2
+
+        @CHEST_EXAM@=3cd75d0c-26fe-102b-80cb-0017a47871b2
+        @ABNORMAL_LUNGS@=50e9a27e-f3f0-4d34-9f58-d0ecbd8c5862
+        @ABNORMAL_HEART@=6eaf6ff8-7b76-45a0-9e3b-bae41034ccf2
+
+        @BREAST_EXAM@=b46b6dbb-923c-4ede-9ea7-175b2389661f
+        @LEFT_BREAST_MASS@=db9025e0-8eb0-4a6e-b6c5-a27c4acc12df
+        @RIGHT_BREAST_MASS@=79a248a7-02ae-45cf-8764-e2927cba0e8c
+        @SKIN_CHANGES@=5b357578-179a-4ddf-996f-2eb760b092d7
+
+        @RIGHT_BREAST_MASS_CONSTRUCT@=e695754b-1c5f-41a8-9d08-5768b8202648
+        @LEFT_BREAST_MASS_CONSTRUCT@=7b9a2f55-d8dd-4e5f-8638-9e212032a14c
+        @MASS_SIZE@=f174b027-79cf-4ebf-a103-d34b26eacafd
+        @BREAST_MASS_SIZE_2@=4946ce9d-11e6-45a6-921e-cfb8baf84458
+        @BREAST_MASS_MOBILITY@=13f2f074-3c53-4074-a690-6626220acbdf
+        @MOBILE@=a0f3848e-5380-4f61-b679-558f881bb4b4
+        @FIXED@=5de8377b-6170-4328-895b-f4131b147af2
+        @BREAST_ABNORMALITY_TEXT@=2154d209-e4e7-41ce-806a-030d075102b9
+
+
+        @ABDOMINAL_EXAM@=3cd76054-26fe-102b-80cb-0017a47871b2
+        @ASCITES@=3cd1fce0-26fe-102b-80cb-0017a47871b2
+        @ABDOMINAL_TENDERNESS@=3ce95c1e-26fe-102b-80cb-0017a47871b2
+        @SPLENOMEGALY@=3ce8b2fa-26fe-102b-80cb-0017a47871b2
+        @HEPATOMEGALY@=3ce8b08e-26fe-102b-80cb-0017a47871b2
+        @ABDOMINAL_MASS@=3ce958fe-26fe-102b-80cb-0017a47871b2
+        @ABDOMINAL_TENDERNESS_LOCATION@=e0e59cba-eef9-409c-bb5e-c7731218a0ad
+        @LLQ@=3ce95a8e-26fe-102b-80cb-0017a47871b2
+        @RLQ@=c7acf771-4959-4b56-aa66-a7a20abf6469
+        @LUQ@=06b9caa3-907c-493e-bd33-be63c089376c
+        @RUQ@=3ce95f48-26fe-102b-80cb-0017a47871b2
+        @SPLENOMEGALY_SIZE@=43c0e966-ff43-4ca4-a666-a8fe3cc0d38d
+        @HEPATOMEGALY_SIZE@=ff3b71b6-9657-4eb1-a031-c3a8879a0601
+        @ABDOMINAL_MASS_LOCATION@=29074fef-9f6e-4015-a7d0-6a842e01a100
+        @ABDOMINAL_MASS_SIZE_(biggest_dimension)@=5252b973-e57a-4df6-bdfd-8c6c3c33f925
+        @Abdominal_mass_size_(smallest_dimension)@ = db67763c-dc46-40b1-ac32-c116aa0dc7bc
+
+        @EXTREMITY_EXAM@=3cd7637e-26fe-102b-80cb-0017a47871b2
+        @NO_EDEMA@=824e8df3-27e9-4e2e-b61a-942b1fc9a48b
+        @EDEMA@=3cd12a04-26fe-102b-80cb-0017a47871b2
+        @1@=596daaf5-3d0b-4ddc-a848-1732d70b5962
+        @2@=bff8b23f-0d4b-4606-9e72-88c9b401f4d2
+        @3@=ed34b78a-e029-4711-a2a0-7cad6160c89c
+        @EXTREMITY_MASS_LOCATION@=2ff86957-70b5-4b97-9894-0abf03bce4fb
+        @Extremity_mass_size_(biggest_dimension)@=b17c406d-cb99-42d4-beb0-f9fc6b353bf8
+        @Extremity_mass_size_(smallest_dimension)@ = 27544757-e406-4eb4-8420-1ed86f84e979
+        @EXTREMITY_ABNORMALITY_TEXT@=4385ef3f-a1f2-4571-aaf2-32fda622ec36
+
+
+        @NERVOUS_SYSTEM_EXAM@=ab94b7c4-eeed-4f05-807c-8db9ab9bd0aa
+        @NERVOUS_ABNORMALITY@=bebc7324-ab19-4297-8b87-a931c3bc4f42
+
+        @SKIN_EXAM@=3cd75866-26fe-102b-80cb-0017a47871b2
+        @NODULES@=3adc1343-f0aa-4abb-b6ec-5d83f56893c0
+        @SKIN_ABNORMALITY_TEXT@=bf745c5b-25c1-4fd9-ada7-aac9e9420d00
+        @NODULE_SIZE@=07799c93-0304-48da-a499-b57ef5655418
+        @NODULE_DISTRIBUTION@=e28116b1-578c-49f5-afa7-40a8fdc8d9e6
+
+        @LYMPH_NODE_EXAM@=3cd759f6-26fe-102b-80cb-0017a47871b2
+        @NO_LYMPHADENOPATHY@=a3635bdc-5606-40ed-ae3f-f5b36ffeea9a
+        @LYMPHADENOPATHY@=3cce4c76-26fe-102b-80cb-0017a47871b2
+        @LYMPHADENOPATHY_CODED@=2344488e-9a8f-4a16-9c2e-e6454e22dbc1
+        @CERVICAL@=3cd265f4-26fe-102b-80cb-0017a47871b2
+        @SUBMANDIBULAR@=3cd16f46-26fe-102b-80cb-0017a47871b2
+        @SUPRACLAVICULAR@=3cd170d6-26fe-102b-80cb-0017a47871b2
+        @INFRACLAVICULAR@=34434be6-bbd2-4809-bf34-5647d2b4885b
+        @AXILLARY@=3ce9672c-26fe-102b-80cb-0017a47871b2
+        @INGUINAL@=3cd17266-26fe-102b-80cb-0017a47871b2
+        @OTHER_LYMPHADENOPATHY@=631f80a0-4b9a-4c59-aec4-a8e67d55a1ec
+
+
+        @GENITAL_EXAM@=78f295bb-31d8-4bb1-9688-589acf7dfa7a
+        @GENITAL_ABNORMALITIES@=fe7a3ff3-420a-4713-a69c-daabd0b147b1
+        @GENITAL_ABNORMALITIES_TEXT@=0219e809-d3d2-462f-8418-9fef24c2438c
+        @CERVICAL_LESION@=c2cf5d33-5c73-4dff-a1d2-1ce023ce3e9f
+        @LESION_SIZE_(largest_dimension)@=566aec6e-5e60-4439-8864-5ef7a71cd700
+        @LESION_SIZE_(smallest_dimension)@ = 6bcaf7ea-ce45-4fb4-8951-1865c5a68533
+        @VAGINAL_INVOLVEMENT@=099d5db1-5c90-4717-86f0-189aa22944c6
+        @PARAMETRIAL_INVOLVEMENT@=e1c33276-d7ce-4dee-977e-a9927e9e8e0a
+        @PELVIC_INVOLVEMENT@=827c4a9f-639b-4593-aac9-68c8695d29b7
+        @RECTAL_INVOLVEMENT@=92e3d213-50a1-41a6-a8d5-e4661f77d0f7
+        @Body_surface_area@ = b7eb9d2f-0642-4984-8778-ba603e703a38
+        @Visible_cervical_lesion@ = c2cf5d33-5c73-4dff-a1d2-1ce023ce3e9f
+
+        @OTHER_EXAM_FINDINGS@=8d8597b4-0b54-4bc1-a35c-fa06d80e7a2b
+
+        @PHYSICAL_ABNORMAL@=3cd9ae0e-26fe-102b-80cb-0017a47871b2
+        @HEAD_ABNORMAL@=3ce400c0-26fe-102b-80cb-0017a47871b2
+        @HEAD_MASS_LOCATION@=6223cc85-a8ac-4926-8042-106d89b6eeb4
+        @Head_and_neck_mass_size_(biggest_dimension)@=aaed818b-4726-40ba-8f0d-56853b8c4ae0
+        @Head_and_neck_mass_size_(smallest_dimension)@ = 87d57fbb-c048-4bd5-a445-6bf57b2c0456
+        @LUNG_ABNORMALITY_TEXT@=617ab83a-11f0-4984-9768-0c89e7f14163
+
+        @PREVIOUS_IMAGING_CONSTRUCT@=c552ec7d-e7f3-4ea8-b593-7c708a740ada
+        @ORDERED_IMAGING_CONSTRUCT@=38a07824-dada-426d-847f-b3116fc9dea6
+
+
+
+        @RETURN_VISIT_DATE@ = 3ce94df0-26fe-102b-80cb-0017a47871b2
+        @ADMISSION_FACILITY@=54d597a7-6d6a-4939-9b71-502019c4a7c8
+        @RWINKWAVU_HOSPITAL@=3cda8388-26fe-102b-80cb-0017a47871b2
+        @BUTARO_HOSPITAL@=682754d6-cff2-4f2e-90a3-ea3b1e7fa230
+        @KIREHE_HOSPITAL@=3cda8950-26fe-102b-80cb-0017a47871b2
+
+        @OTHER_FOLLOW_UP_LOCATION@=ce79ee69-9406-4cf5-a683-3c549fe6041c
+
+        @NCD_FOLLOW_UP_LOCATION@=c7c66a59-4726-4bf6-ad4a-3021dffe4892
+        @OTHER_NCD_FOLLOW_UP_LOCATION@=cd4c4c5b-9965-4433-869c-71559998d746
+
+        @OTHER_FOLLOW_UP@=388d3c0d-9c49-4623-8068-9e3ef08de12f
+        @Inpatient_Oncology@ =0b3925f9-0336-47a6-931e-5c356e9cc82f
+        @Outpatient_Oncology@ = ff319885-3f20-4ae5-8663-3ad5678cba41
+    </macros>
+
+    <style>
+        .sectionHeader {
+        background-color: #009d8e;;
+        color: white;
+        display: block;
+        padding: 2px;
+        font-weight: bold;
+        }
+
+        th.tableHeader {
+        background-color: #009d8e;
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: left;
+        }
+
+        ul {
+        list-style-type: square;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        }
+
+        tr.spaceUnder>td {
+        padding-bottom: 1em;
+        }
+
+        td {
+        font-size: 15px;
+        }
+
+        #container {
+        position: relative;
+        margin: auto;
+        width: 1400px;
+        height: auto;
+        }
+
+        @media print {
+        #container {
+        display: block;
+        }
+        #printArea {
+        display: none;
+        }
+        #userBar {
+        display: none;
+        }
+        #banner {
+        display: none;
+        }
+        #footer {
+        display: none;
+        }
+        #htmlFormEntryBanner {
+        display: none;
+        }
+        .error {
+        display: none;
+        }
+        .lables {
+        width: 200px;
+        }
+        table {
+        width: 100%;
+        }
+        table,td,th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+        th {
+        text-align: left;
+        background-color: #D9D9D9;
+        font-size: 10px;
+        }
+        td {
+        font-size: 10px;
+        }
+        .value {
+        font-size: 20px;
+        font-weight: bold;
+        font-style: italic;
+        }
+        .selectedCancerStagingKeys {
+        page-break-before: always;
+        border: 0px;
+        }
+        table.selectedCancerStagingKeys td {
+        border: 0px;
+        }
+        #signature {
+        border: none;
+        }
+        #signature td {
+        border: none;
+        }
+        }
+
+        @media screen {
+        table {
+        border: 1px solid #DFDFDF;
+        width: 100%;
+        border-color: #009d8e;
+        }
+        #container {
+        display: block;
+        }
+        #printArea {
+        display: none;
+        }
+        }
+    </style>
+    <script>
+	$j(document).ready(function() {
+		$j("#hideHIV").click(function() {
+			$j(".hiv").hide();
+			$j('.hiv input[type="text"]').val('');
+			$j('.hiv').find('input[type=checkbox]:checked').removeAttr('checked');
+                        $j(".hivstatus").hide();
+			$j('#checkthis3').find('input[type=checkbox]:checked').removeAttr('checked');
+                        $j('#checkthis2').find('input[type=checkbox]:checked').removeAttr('checked');
+                        $j("#checkthis1 input").attr('checked','checked');
+		});
+		$j("#showHIV").click(function() {
+			$j(".hiv").show();
+                        $j(".hivstatus").show();
+                        $j('#checkthis1').find('input[type=checkbox]:checked').removeAttr('checked');
+		});
+		$j("#showAllergies").click(function() {
+			$j(".allergies").show();
+		});
+		$j("#hideAllergies1").click(function() {
+			$j(".allergies").hide();
+		});
+		$j("#hideAllergies2").click(function() {
+			$j(".allergies").hide();
+		});
+
+
+                getField('pastCancerDiagnosis.value').change(function() {
+                 var checkNonCoded= $j("#pastCancerDiagnosis  option:selected").text();
+              if( checkNonCoded == "OTHER NON-CODED") {
+			getField('otherNonCoded.value')[0].disabled = false;
+		} else {
+			getField('otherNonCoded.value')[0].disabled = true;
+		}
+    });
+getField('causeNonCoded1.value')[0].disabled = true;
+     getField('cause1.value').change(function() {
+                 var checkcauseNonCoded1= $j("#cause1  option:selected").text();
+              if( checkcauseNonCoded1 == "OTHER NON-CODED") {
+			getField('causeNonCoded1.value')[0].disabled = false;
+		} else {
+			getField('causeNonCoded1.value')[0].disabled = true;
+		}
+    });
+     getField('causeNonCoded2.value')[0].disabled = true;
+     getField('cause2.value').change(function() {
+                 var checkcauseNonCoded2= $j("#cause2  option:selected").text();
+              if( checkcauseNonCoded2 == "OTHER NON-CODED") {
+			getField('causeNonCoded2.value')[0].disabled = false;
+		} else {
+			getField('causeNonCoded2.value')[0].disabled = true;
+		}
+    });
+
+      getField('causeNonCoded3.value')[0].disabled = true;
+     getField('cause3.value').change(function() {
+                 var checkcauseNonCoded3= $j("#cause3  option:selected").text();
+              if( checkcauseNonCoded3 == "OTHER NON-CODED") {
+			getField('causeNonCoded3.value')[0].disabled = false;
+		} else {
+			getField('causeNonCoded3.value')[0].disabled = true;
+		}
+    });
+
+
+ getField('reactionNonCoded1.value')[0].disabled = true;
+     getField('reaction1.value').change(function() {
+                 var checkreactionNonCoded1= $j("#reaction1  option:selected").text();
+              if( checkreactionNonCoded1 == "OTHER NON-CODED") {
+			getField('reactionNonCoded1.value')[0].disabled = false;
+		} else {
+			getField('reactionNonCoded1.value')[0].disabled = true;
+		}
+    });
+
+getField('reactionNonCoded2.value')[0].disabled = true;
+     getField('reaction2.value').change(function() {
+                 var checkreactionNonCoded2= $j("#reaction2  option:selected").text();
+              if( checkreactionNonCoded2 == "OTHER NON-CODED") {
+			getField('reactionNonCoded2.value')[0].disabled = false;
+		} else {
+			getField('reactionNonCoded2.value')[0].disabled = true;
+		}
+    });
+
+getField('reactionNonCoded3.value')[0].disabled = true;
+     getField('reaction3.value').change(function() {
+                 var checkreactionNonCoded3= $j("#reaction3  option:selected").text();
+              if( checkreactionNonCoded3 == "OTHER NON-CODED") {
+			getField('reactionNonCoded3.value')[0].disabled = false;
+		} else {
+			getField('reactionNonCoded3.value')[0].disabled = true;
+		}
+    });
+
+	});
+
+
+
+
+
+</script> <script>
+	$j(function() {
+		$j('.disdiv').find('input').attr('disabled', 'true');
+		$j(".hiv").hide();
+                 $j(".hivstatus").hide();
+		$j('#textareadisabled').find('input, textarea, button, select').attr('disabled','true');
+		$j('#disabledConcept').find('input, textarea, button, select').attr('disabled','true');
+		$j(".allergies").hide();
+                getField('otherNonCoded.value')[0].disabled = true;
+	});
+
+</script> <script type="text/javascript">
+	if (jQuery) {
+		$j(document)
+				.ready(
+						function() {
+							if ($j.browser.msie) {
+								$j(":checkbox").click(function() {
+									$j(this).change();
+								});
+							}
+							$j(".enableDisable").each(
+									function() {
+										var group = $j(this);
+										function disableFn() {
+											group.children("#disabled").fadeTo(
+													250, 0.33);
+											group.children("#disabled").find(
+													":checkbox").attr(
+													"checked", false); //uncheck
+											group.children("#disabled").find(
+													"input[type$='text']").val(
+													"");
+											group.children("#disabled").find(
+													"input").attr("disabled",
+													true); //disable
+										}
+										function enableFn() {
+											group.children("#disabled").fadeTo(
+													250, 1);
+											group.children("#disabled").find(
+													"input").attr("disabled",
+													false);
+										}
+										disableFn();
+										$j(this).children("#trigger").find(
+												":checkbox:first").change(
+												function() {
+													var checked = $j(this)
+															.attr("checked");
+													if (checked == true) {
+														enableFn();
+													} else {
+														disableFn();
+													}
+												});
+									});
+
+							$j(".checkboxGroup")
+									.each(
+											function() {
+												var group = $j(this);
+												var uncheckAll = function() {
+													group
+															.find(
+																	"input[type$='checkbox']")
+															.attr("checked",
+																	false);
+													group
+															.find(
+																	"input[type$='checkbox']")
+															.change();
+												}
+												var uncheckRadioAndAll = function() {
+													group
+															.find(
+																	"#checkboxAll,#checkboxRadio")
+															.find(
+																	"input[type$='checkbox']")
+															.attr("checked",
+																	false);
+													group
+															.find(
+																	"#checkboxAll,#checkboxRadio")
+															.find(
+																	"input[type$='checkbox']")
+															.change();
+												}
+
+												group
+														.find("#checkboxAll")
+														.find("input")
+														.click(
+																function() {
+																	var flip;
+																	var checked = $j(
+																			this)
+																			.siblings(
+																					":checkbox:first")
+																			.attr(
+																					"checked");
+																	if ($j(this)
+																			.attr(
+																					"name") == $j(
+																			this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox:first")
+																			.attr(
+																					"name")) {
+																		checked = $j(
+																				this)
+																				.attr(
+																						"checked");
+																		flip = checked;
+																	} else {
+																		flip = !checked;
+																	}
+																	if ($j(this)
+																			.attr(
+																					"type") == "text")
+																		if (flip == false)
+																			flip = !filp; // this is so the user doesn't go to check the checkbox, then uncheck it when they hit the input.
+																	uncheckAll();
+																	$j(this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox")
+																			.attr(
+																					"checked",
+																					flip);
+																	$j(this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox")
+																			.change();
+																});
+
+												group
+														.find("#checkboxRadio")
+														.find(
+																"input[type$='checkbox']")
+														.click(
+																function() {
+																	uncheckAll();
+																	$j(this)
+																			.siblings(
+																					"input[type$='checkbox']")
+																			.attr(
+																					"checked",
+																					false);
+																	$j(this)
+																			.attr(
+																					"checked",
+																					true);
+																	$j(this)
+																			.change();
+																});
+
+												group
+														.find(
+																"#checkboxCheckbox")
+														.click(
+																function() {
+																	uncheckRadioAndAll();
+																});
+											});
+						});
+	}
+</script>
+
+
+
+    <section>
+        <table border="1" cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td>
+                    <b>
+                        IMB ID: <lookup class="value"
+                                        expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+                        <br/>
+                        IMB Primary Care Registration ID:
+                        <lookup
+                            class="value"
+                            expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" />
+                        <br/>
+                        OpenClinic ID:
+                        <lookup class="value"
+                                expression="patientIdentifiers.get(&quot;OpenClinic ID&quot;)" />
+                        <br/>
+                        ARCHIVING ID:
+                        <lookup class="value"
+                                expression="patientIdentifiers.get(&quot;ARCHIVING ID&quot;)" />
+                        <br/>
+                        Rwanda National ID:
+                        <lookup class="value"
+                                expression="patientIdentifiers.get(&quot;Rwanda National ID&quot;)" />
+                    </b>
+                    
+                </td>
+                <td>Date: <encounterDate id="encounterDate" default="today" />
+                </td>
+            </tr>
+            <tr>
+                <td>Nom / Last name: <lookup class="value"
+                                             expression="patient.personName.familyName" />
+                </td>
+                <td>Prénom/ First name: <lookup class="value"
+                                                expression="patient.personName.givenName" />
+                </td>
+            </tr>
+
+            <tr>
+                <td><img
+                        src="/openmrs/moduleResources/rwandareports/images/pihHands.png"
+                        align="left" height="65"></img>
+                    <h2>
+                        Inshuti Mu Buzima <br /> PIH Rwanda
+                    </h2></td>
+                <td rowspan="2"><strong> Oncology Program / Programme d'oncologie
+                    <br /> Clinical Intake Inpatient
+                </strong> <br /></td>
+            </tr>
+            <tr>
+                <td>Clinique / Clinic: <encounterLocation
+                        id="encounterLocation" default="Butaro Hospital" />
+                </td>
+
+            </tr>
+        </table>
+    </section> <section headerLabel="INTAKE STATUS">
+        <table border="1" cellspacing="0" cellpadding="6" width="100%">
+
+            <tr >
+                <td>Intake visit type</td>
+                <td> <encounterType types="$@Inpatient_Oncology@,$@Outpatient_Oncology@" default="$@Outpatient_Oncology@"/></td>
+            </tr>
+
+        </table>
+    </section> <section headerLabel="HISTORY OF PRESENT ILLNESS">
+        <table border="1" cellspacing="0" cellpadding="6" width="100%">
+            <tr >
+                <td colspan="2">Chief complaint:<obs
+                        conceptId="60887f45-dfbe-482a-8721-48c0a5f0ef7d" cols="150"/></td>
+            </tr>
+            <tr >
+                <td colspan="2">Duration of complaint:<obs
+                        conceptId="cbc7f5d4-c775-4328-ab63-a9aead3a0faf" /></td>
+            </tr>
+            <tr >
+                <td colspan="2"><b>Symptoms</b> (Select all that apply):</td>
+            </tr>
+            <tr >
+                <td width="5%">General</td>
+
+                <td>
+                    <obs conceptId="$@ONC_SYMPTOMS_GENERAL@"
+                         answerConceptId="$@WEIGHT_CHANGE@" 	answerLabel="Weight loss/gain"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_GENERAL@"
+                         answerConceptId="$@FATIGUE@" 	answerLabel="Fatigue"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_GENERAL@"
+                         answerConceptId="$@FEVER@" 	answerLabel="Fever/Chills"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_GENERAL@"
+                         answerConceptId="$@WEAKNESS@" 	answerLabel="Weakness"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_GENERAL@"
+                         answerConceptId="$@TROUBLE_SLEEPING@" 	answerLabel="Trouble Sleeping"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_GENERAL@"
+                         answerConceptId="$@OTHER_NON_CODED@" 	answerLabel="Other"  />
+                    <obs conceptId="$@OTHER_ONC_SYMPTOMS_GENERAL@" />
+                </td>
+
+            </tr>
+
+            <tr >
+                <td width="2%">Skin</td>
+                <td>
+                    <obs conceptId="$@ONC_SYMPTOMS_SKIN@"
+                         answerConceptId="$@LUMP@" 	answerLabel="lumps"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_SKIN@"
+                         answerConceptId="$@RASH@" 	answerLabel="rashes"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_SKIN@"
+                         answerConceptId="$@ITCH@" 	answerLabel="itching"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_SKIN@"
+                         answerConceptId="$@COLOR_CHANGE@" 	answerLabel="color changes"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_SKIN@"
+                         answerConceptId="$@HAIR_NAIL_CHANGE@" 	answerLabel="hair and nail changes"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_SKIN@"
+                         answerConceptId="$@OTHER_NON_CODED@" 	answerLabel="Other"  />
+                    <obs conceptId="$@OTHER_ONC_SYMPTOMS_SKIN@" />
+                </td>
+            </tr>
+
+            <tr >
+                <td width="2%">HEENT</td>
+                <td>
+                    <obs conceptId="$@ONC_SYMPTOMS_HEENT@"
+                         answerConceptId="$@GROWTH@" 	answerLabel="mass"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_HEENT@"
+                         answerConceptId="$@HEADACHE@" 	answerLabel="headache"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_HEENT@"
+                         answerConceptId="$@HEARING_LOSS@" 	answerLabel="hearing changes"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_HEENT@"
+                         answerConceptId="$@VISION_PROBLEM@" 	answerLabel="vision loss/changes"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_HEENT@"
+                         answerConceptId="$@BLUR_DOUBLE_VISION@" 	answerLabel="blurry/double vision"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_HEENT@"
+                         answerConceptId="$@NOSEBLEED@" 	answerLabel="nosebleeds"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_HEENT@"
+                         answerConceptId="$@OTHER_NON_CODED@" 	answerLabel="Other"  />
+                    <obs conceptId="$@OTHER_ONC_SYMPTOM_HEENT@" />
+                </td>
+            </tr>
+
+            <tr >
+                <td width="2%">Neck</td>
+                <td>
+                    <obs conceptId="$@ONC_SYMPTOMS_NECK@"
+                         answerConceptId="$@GROWTH@" 	answerLabel="mass"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_NECK@"
+                         answerConceptId="$@PAIN@" 	answerLabel="pain"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_NECK@"
+                         answerConceptId="$@STIFF_NECK@" 	answerLabel="stiffness"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_NECK@"
+                         answerConceptId="$@OTHER_NON_CODED@" 	answerLabel="other"  />
+                    <obs conceptId="$@OTHER_ONC_SYMPTOM_NECK@" />
+                </td>
+
+            </tr>
+
+            <tr >
+                <td width="2%">Breast</td>
+                <td>
+                    <obs conceptId="$@ONC_SYMPTOMS_BREAST@"
+                         answerConceptId="$@GROWTH@" 	answerLabel="mass"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_BREAST@"
+                         answerConceptId="$@PAIN@" 	answerLabel="pain"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_BREAST@"
+                         answerConceptId="$@Breast_discharge@" 	answerLabel="discharge"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_BREAST@"
+                         answerConceptId="$@OTHER_NON_CODED@" 	answerLabel="other"  />
+                    <obs conceptId="$@OTHER_ONC_SYMPTOM_BREAST@" />
+                </td>
+
+            </tr>
+
+            <tr >
+                <td width="2%">Chest</td>
+                <td>
+                    <obs conceptId="$@ONC_SYMPTOMS_CHEST@"
+                         answerConceptId="$@COUGHING_BLOOD@" 	answerLabel="coughing up blood"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_CHEST@"
+                         answerConceptId="$@SHORTNESS_OF_BREATH@" 	answerLabel="shortness of breath"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_CHEST@"
+                         answerConceptId="$@CHEST_PAIN@" 	answerLabel="chest pain"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_CHEST@"
+                         answerConceptId="$@TIGHTNESS@" 	answerLabel="tightness"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_CHEST@"
+                         answerConceptId="$@OTHER_NON_CODED@" 	answerLabel="Other"  />
+                    <obs conceptId="$@OTHER_ONC_SYMPTOM_CHEST@"/>
+
+                </td>
+            </tr>
+
+            <tr >
+                <td width="2%">Gastrointestial</td>
+                <td>
+                    <obs conceptId="$@ONC_SYMPTOMS_GI@"
+                         answerConceptId="$@SWALLOWING_DIFFICULTIES@" 	answerLabel="swallowing difficulties"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_GI@"
+                         answerConceptId="$@NAUSEA@" 	answerLabel="nausea"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_GI@"
+                         answerConceptId="$@RECTAL_BLEEDING@" 	answerLabel="rectal bleeding"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_GI@"
+                         answerConceptId="$@DIARRHEA@" 	answerLabel="diarrhea"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_GI@"
+                         answerConceptId="$@CONSTIPATION@" 	answerLabel="constipation"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_GI@"
+                         answerConceptId="$@OTHER_NON_CODED@" 	answerLabel="Other"  />
+                    <obs conceptId="$@OTHER_ONC_SYMPTOM_GI@"/>
+                </td>
+            </tr>
+
+            <tr >
+                <td width="2%">Urinary</td>
+                <td>
+                    <obs conceptId="$@ONC_SYMPTOMS_URINARY@"
+                         answerConceptId="$@URINARY_FREQUENCY@" 	answerLabel="frequency"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_URINARY@"
+                         answerConceptId="$@BURNING_SENSATION@" 	answerLabel="burning/pain"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_URINARY@"
+                         answerConceptId="$@BLOODY_URINE@" 	answerLabel="blood in urine"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_URINARY@"
+                         answerConceptId="$@INCONTINENCE@" 	answerLabel="incontinence"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_URINARY@"
+                         answerConceptId="$@OTHER_NON_CODED@" 	answerLabel="other"  />
+                    <obs conceptId="$@OTHER_ONC_SYMPTOM_URINARY@" />
+
+                </td>
+
+            </tr>
+            <tr >
+                <td width="2%">Vascular/Musculoskeletal</td>
+                <td>
+                    <obs conceptId="$@ONC_SYMPTOMS_VASCULAR_MUSCULOSKELETAL@"
+                         answerConceptId="$@JOINT_PAIN@" 	answerLabel="muscle/joint pain"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_VASCULAR_MUSCULOSKELETAL@"
+                         answerConceptId="$@STIFF@" 	answerLabel="stiffness"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_VASCULAR_MUSCULOSKELETAL@"
+                         answerConceptId="$@JOINT_SWELLING@" 	answerLabel="swelling of joints"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_VASCULAR_MUSCULOSKELETAL@"
+                         answerConceptId="$@TRAUMA@" 	answerLabel="trauma"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_VASCULAR_MUSCULOSKELETAL@"
+                         answerConceptId="$@OTHER_NON_CODED@" 	answerLabel="other"  />
+                    <obs conceptId="$@OTHER_ONC_SYMPTOM_VASCULAR_MUSCULOSKELETAL@" />
+                </td>
+            </tr>
+
+            <tr >
+                <td width="2%">Hematologic/Endocrine</td>
+                <td>
+                    <obs conceptId="$@ONC_SYMPTOMS_HEMATOLOGIC_ENDOCRINE@"
+                         answerConceptId="$@EASILY_BRUISES@" 	answerLabel="easy bruising"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_HEMATOLOGIC_ENDOCRINE@"
+                         answerConceptId="$@BLEEDING@" 	answerLabel="bleeding"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_HEMATOLOGIC_ENDOCRINE@"
+                         answerConceptId="$@HEAT_COLD_INTOLERANCE@" 	answerLabel="heat/cold intolerance"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_HEMATOLOGIC_ENDOCRINE@"
+                         answerConceptId="$@OTHER_NON_CODED@" 	answerLabel="other"  />
+                    <obs conceptId="$@OTHER_ONC_SYMPTOM_HEMATOLOGIC_ENDOCRINE@"   />
+
+                </td>
+            </tr>
+            <tr >
+                <td width="2%">Neurologic/Psychiatric</td>
+                <td>
+                    <obs conceptId="$@ONC_SYMPTOMS_NEUROLOGIC_PSYCHIATRIC@"
+                         answerConceptId="$@DIZZINESS@" 	answerLabel="dizziness"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_NEUROLOGIC_PSYCHIATRIC@"
+                         answerConceptId="$@SEIZURE@" 	answerLabel="seizures"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_NEUROLOGIC_PSYCHIATRIC@"
+                         answerConceptId="$@WEAKNESS@" 	answerLabel="weakness"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_NEUROLOGIC_PSYCHIATRIC@"
+                         answerConceptId="$@TREMOR@" 	answerLabel="tremor"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_NEUROLOGIC_PSYCHIATRIC@"
+                         answerConceptId="$@DEPRESSION@" 	answerLabel="depression"  />
+                    <obs conceptId="$@ONC_SYMPTOMS_NEUROLOGIC_PSYCHIATRIC@"
+                         answerConceptId="$@OTHER_NON_CODED@" 	answerLabel="other"  />
+                    <obs conceptId="$@OTHER_ONC_SYMPTOM_NEUROLOGIC_PSYCHIATRIC@" />
+                </td>
+            </tr>
+            <tr >
+                <td colspan="2">Symptom details:<obs conceptId="$@SYMPTOM_DETAILS@"  rows="6" cols="90"/>
+
+                </td>
+            </tr>
+            <tr>
+                <td>Pain score (0 to 5):</td>
+                <td><obs conceptId="9b461c8e-155a-481c-83a4-1de363f7301e"/>/5</td>
+            </tr>
+            <tr>
+                <td>Performance status (ECOG* 0 to 5):</td>
+                <td><obs conceptId="8ad685de-4f19-4b75-b3f1-ee3b06bf05a2" />/5</td>
+            </tr>
+        </table>
+
+        *ECOG Key:
+        <br/><br/>
+        0 Fully active, able to carry on all pre-disease performance without restriction
+        <br/><br/>
+
+        1 Restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, i.e., light housework, office work
+        <br/><br/>
+        2 Ambulatory and capable of all self-care but unable to carry out any work activities. Up and about more than 50% of waking hours
+        <br/><br/>
+        3 Capable of only limited self-care, confined to bed or chair more than 50% of waking hours
+        <br/><br/>
+        4 Completely disabled. Cannot carry out any self-care. Totally confined to bed or chair
+        <br/><br/>
+        5 Dead
+
+    </section> <section headerLabel="PAST MEDICAL HISTORY">
+        <table border="1" cellspacing="0" cellpadding="6" width="100%">
+
+            <obsgroup groupingConceptId="3cdc20e4-26fe-102b-80cb-0017a47871b2">
+                <tr class="hiv" >
+                    <td colspan="3"><table width="100%">
+                        <tr >
+                            <td width="20%"><strong>HIV history:</strong></td>
+                            <td colspan="2">	<obs
+                                    conceptId="ab6fad23-f312-4ce2-b3fb-a94de1a001a5"
+                                    answerConceptId="7d846ae2-8f1c-4183-9313-af636d94027c"
+                                    answerLabel="Verified with records" style="checkbox" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                <obs conceptId="ab6fad23-f312-4ce2-b3fb-a94de1a001a5"
+                                     answerConceptId="cb174bca-190d-4a61-a6c7-9ca4f46a7df8"
+                                     answerLabel="Patient self-report" style="checkbox" />
+                            </td>
+                        </tr>
+                    </table></td>
+                </tr>
+                <tr class="hivstatus" >
+                    <td colspan="3"><table width="100%">
+                        <tr >
+                            <td width="20%"><b>Status:</b></td>
+
+                            <td><obs
+                                    conceptId="aec6ad18-f4dd-4cfa-b68d-3d7bb6ea908e"
+                                    answerConceptId="3cd3a7a2-26fe-102b-80cb-0017a47871b2"
+                                    answerLabel="Positive," style="checkbox" id="checkthis1" /> <obs conceptId="3ceda710-26fe-102b-80cb-0017a47871b2"
+                                                                                                     labelText="last CD4:" showDate="true" dateLabel=", date: " />
+                                <br/> <obs
+                                        conceptId="aec6ad18-f4dd-4cfa-b68d-3d7bb6ea908e"
+                                        answerConceptId="3cd28732-26fe-102b-80cb-0017a47871b2"
+                                        answerLabel="Negative" style="checkbox" id="checkthis2" />
+                            </td>
+                            <td>
+                                <obs
+                                        conceptId="aec6ad18-f4dd-4cfa-b68d-3d7bb6ea908e"
+                                        answerConceptId="3cd6fac4-26fe-102b-80cb-0017a47871b2"
+                                        answerLabel="Unknown / never tested" style="checkbox" id="checkthis3" /></td>
+                        </tr>
+                    </table></td>
+                </tr>
+            </obsgroup>
+            <tr>
+                <td colspan="3" class="checkboxGroup"><span id="checkboxRadio">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Enrolled
+				in the IMB HIV program?
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+				<input type="checkbox" id="hideHIV" />Yes
+
+				<!-- <obs conceptId="12a1e676-7562-46bd-bc4d-23a4805f2393"
+					answerConceptId="3cd6f600-26fe-102b-80cb-0017a47871b2"
+					answerLabel="yes" style="checkbox" id="showHIV" /> -->
+				&#160;&#160;&#160;&#160;
+				<input type="checkbox" id="showHIV" />No
+				<!-- <obs
+					conceptId="12a1e676-7562-46bd-bc4d-23a4805f2393"
+					answerConceptId="3cd6f86c-26fe-102b-80cb-0017a47871b2"
+					answerLabel="no" style="checkbox" id="hideHIV" /> --> </span>
+                </td>
+            </tr>
+            <tr>
+                <obsgroup groupingConceptId="3ce18ee4-26fe-102b-80cb-0017a47871b2">
+                    <td colspan="3"><strong>TB history:</strong>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        <obs
+                                conceptId="ab6fad23-f312-4ce2-b3fb-a94de1a001a5"
+                                answerConceptId="7d846ae2-8f1c-4183-9313-af636d94027c"
+                                answerLabel="Verified with records" style="checkbox" />
+                        <obs conceptId="ab6fad23-f312-4ce2-b3fb-a94de1a001a5"
+                             answerConceptId="cb174bca-190d-4a61-a6c7-9ca4f46a7df8"
+                             answerLabel="Patient self-report" style="checkbox" /><br/><br/><hr></hr>
+                        &#160;&#160;&#160;&#160;&#160;&#160; Does patient have known past diagnosis of TB?
+                        &#160;&#160;&#160;&#160;&#160;&#160;<obs conceptId="$@EVER_HAD_ACTIVE_TUBERCULOSIS(coded)@" answerConceptIds="$@YES@,$@NO@,$@UNKNOWN@" answerLabels="Yes,No,Unknown" style="radio"/>,
+                        &#160;&#160;<obs conceptId="3ce19060-26fe-102b-80cb-0017a47871b2" labelText="so completion date" />
+                    </td>
+                </obsgroup>
+            </tr>
+            <!--<tr >
+               <td colspan="3">&#160;&#160;&#160;&#160;&#160;&#160;<b>Does
+                       the patient report or have:</b>
+               </td>
+           </tr>
+           <tr >
+               <td colspan="2">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;a.
+                   chronic cough (more than 3 weeks)?</td>
+               <td width="20%">yes &#160;&#160;&#160;&#160; no</td>
+           </tr>
+           <tr >
+               <td colspan="3">
+                   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                   If yes:
+                   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                   productive
+                   &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                   hemoptysis</td>
+           </tr>
+            <tr >
+               <td colspan="2">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;b.
+                   night sweats that soak clothing?</td>
+               <td>yes &#160;&#160;&#160;&#160; no</td>
+           </tr>
+           <tr >
+               <td colspan="2">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;c.
+                   a large unintentional weight loss?</td>
+               <td>yes &#160;&#160;&#160;&#160; no</td>
+           </tr>  -->
+            <tr>
+                <td colspan="3">
+                    <strong>Cancer history:</strong></td>
+            </tr>
+
+            <tr >
+                <td colspan="2"><strong>Has the patient ever been
+                    treated for Cancer?</strong><br/>
+
+                    &#160;&#160;&#160;&#160;Are previous treatment records available? </td>
+                <td width="40%" class="checkboxGroup">
+                    <obs
+                            conceptId="902ccf5d-d71c-47be-a812-a685c4a383dc"
+                            answerConceptId="3cd6f600-26fe-102b-80cb-0017a47871b2"
+                            answerLabel="yes" style="checkbox" /> &#160;&#160;&#160;&#160; <obs
+                        conceptId="902ccf5d-d71c-47be-a812-a685c4a383dc"
+                        answerConceptId="3cd6f86c-26fe-102b-80cb-0017a47871b2"
+                        answerLabel="no" style="checkbox" /><br/>
+                    <obs conceptId="$@TREATMENT_RECORDS_AVAILABLE@" answerConceptId="$@YES@" answerLabel="yes"	/>
+                    <obs conceptId="$@TREATMENT_RECORDS_AVAILABLE@" answerConceptId="$@NO@" answerLabel="no"	/>
+
+                </td>
+            </tr>
+
+            <tr >
+                <td width="30%">&#160;&#160;&#160;&#160;Treating doctor, phone
+                    number:</td>
+                <td colspan="2"><obs conceptId="$@DOCTOR_PHONE@" 	/>
+                </td>
+            </tr>
+            <tr >
+                <td>&#160;&#160;&#160;&#160;Diagnosis:</td>
+                <td colspan="2"><obs
+                        conceptId="6b9413fd-c327-480e-82d8-1997002312e1" id="pastCancerDiagnosis" /> <obs
+                        conceptId="2ec6b4ac-34b1-45bd-b2db-57f4346499b2" size="40" id="otherNonCoded" /></td>
+            </tr>
+
+            <tr>
+                <td>&#160;&#160;&#160;&#160;<obs conceptId="ed2bc968-d2c0-4fa1-99a3-1b8419bdbaa6"
+                                                 answerConceptId="ce3c7128-197a-4305-aaba-3c7fc4345560"
+                                                 answerLabel="Surgical treatment, date, facility:" /></td>
+                <td colspan="2" >
+                    <obs conceptId="$@SURGERY_PROCEDURE@" showDate="true"/>
+                    <obs conceptId="$@SURGERY_FACILITY@"/>
+                </td>
+            </tr>
+            <tr>
+                <td>&#160;&#160;&#160;&#160;<obs conceptId="ed2bc968-d2c0-4fa1-99a3-1b8419bdbaa6"
+                                                 answerConceptId="9ce91aa5-1ce8-4939-a61c-df8265df990d"
+                                                 answerLabel="Radiation treatment, date, facility:" /></td>
+                <td colspan="2" >
+                    <obs conceptId="$@RADIATION_TYPE@" showDate="true"/>
+                    <obs conceptId="$@RADIATION_FACILITY@"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>&#160;&#160;&#160;&#160;<obs conceptId="ed2bc968-d2c0-4fa1-99a3-1b8419bdbaa6"
+                                                 answerConceptId="17b5c7cc-f180-454a-aa33-f3383d6c5419"
+                                                 answerLabel="Chemotherapy type, date started, date
+			ended, facility:" /></td>
+                <td colspan="2" >
+                    <obs conceptId="$@CHEMO_TYPE@" showDate="true"/>
+                    <obs conceptId="$@CHEMO_FACILITY@"/>
+                </td>
+            </tr>
+            <tr>
+                <td>&#160;&#160;&#160;&#160;Has the patient ever received Doxorubicin? </td>
+                <td colspan="2">
+                    <obs conceptId="$@TAKEN_DOXO@"	answerConceptId="$@YES@" answerLabel="yes" />
+                    total dose to date: <obs conceptId="98709f1c-a667-4436-b6b1-29873d7115e7" labelText="Doxorubicin" /> mg/m<sup>2</sup>
+                    <br /> <obs conceptId="$@TAKEN_DOXO@"	answerConceptId="$@NO@" answerLabel="no" />
+                    <br /> <obs conceptId="$@TAKEN_DOXO@"	answerConceptId="$@UNKNOWN@" answerLabel="unknown" />
+
+                </td>
+            </tr>
+            <tr >
+                <td>&#160;&#160;&#160;&#160;Has the patient ever received Epirubicin? </td>
+                <td colspan="2">
+                    <obs conceptId="$@TAKEN_EPIRUBICIN@"	answerConceptId="$@YES@" answerLabel="yes" />
+                    total dose to date: <obs conceptId="a8d06e6d-9b0d-411c-aabe-8628d67f0edd" labelText="Epirubicin" /> mg/m<sup>2</sup>
+                    <br /> <obs conceptId="$@TAKEN_EPIRUBICIN@"	answerConceptId="$@NO@" answerLabel="no" />
+                    <br /> <obs conceptId="$@TAKEN_EPIRUBICIN@"	answerConceptId="$@UNKNOWN@" answerLabel="unknown" />
+
+                </td>
+            </tr>
+
+
+            <tr>
+                <td colspan="3"><table width="100%">
+                    <tr >
+                        <td><strong>Does the patient report other
+                            co-morbidities such as:</strong></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><obs conceptId="bb7e04d8-3355-4fe8-9c87-98642eafab93"
+                                 answerConceptId="edf4ecc4-44f6-457a-b561-179f4426b16a"
+                                 answerLabel="diabetes" /></td>
+                        <td><obs conceptId="bb7e04d8-3355-4fe8-9c87-98642eafab93"
+                                 answerConceptId="3ccc4bf6-26fe-102b-80cb-0017a47871b2"
+                                 answerLabel="asthma/COPD" /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><obs conceptId="bb7e04d8-3355-4fe8-9c87-98642eafab93"
+                                 answerConceptId="3cd50188-26fe-102b-80cb-0017a47871b2"
+                                 answerLabel="hypertension" /></td>
+                        <td><obs conceptId="bb7e04d8-3355-4fe8-9c87-98642eafab93"
+                                 answerConceptId="0670f6b9-5456-4bd3-86b1-846abc4fe2ba"
+                                 answerLabel="heart failure" /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><obs conceptId="bb7e04d8-3355-4fe8-9c87-98642eafab93"
+                                 answerConceptId="3cce0a90-26fe-102b-80cb-0017a47871b2"
+                                 answerLabel="epilepsy" /></td>
+                        <td><obs conceptId="bb7e04d8-3355-4fe8-9c87-98642eafab93"
+                                 answerConceptId="894f306e-a868-44b8-b580-93495e3cca4c"
+                                 answerLabel="renal failure" /></td>
+                    </tr>
+                    <tr>
+                        <td>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<obs
+                                conceptId="bb7e04d8-3355-4fe8-9c87-98642eafab93"
+                                answerConceptId="3cd743f8-26fe-102b-80cb-0017a47871b2"
+                                answerLabel="N/A (none
+						reported)" /></td>
+                        <td><obs conceptId="bb7e04d8-3355-4fe8-9c87-98642eafab93"
+                                 answerConceptId="3ccc7a0e-26fe-102b-80cb-0017a47871b2"
+                                 answerLabel="Hepatitis B" /></td>
+                        <td><obs conceptId="bb7e04d8-3355-4fe8-9c87-98642eafab93"
+                                 answerConceptId="3ccc7bbc-26fe-102b-80cb-0017a47871b2"
+                                 answerLabel="Hepatitis C" /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><obs conceptId="bb7e04d8-3355-4fe8-9c87-98642eafab93"
+                                 answerConceptId="3cd80b44-26fe-102b-80cb-0017a47871b2"
+                                 answerLabel="HPV" /></td>
+                        <td><obs conceptId="bb7e04d8-3355-4fe8-9c87-98642eafab93"
+                                 answerConceptId="883cc674-9495-49df-ad81-d071189dce06"
+                                 answerLabel="EBV" /></td>
+                    </tr>
+                    <tr>
+                        <td>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<obs
+                                conceptId="bb7e04d8-3355-4fe8-9c87-98642eafab93"
+                                answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2"
+                                answerLabel="other:" /> <obs
+                                conceptId="0814d34f-a6ab-408c-848b-c69c96b42f70" /></td>
+                        <td colspan="2"><obs
+                                conceptId="bb7e04d8-3355-4fe8-9c87-98642eafab93"
+                                answerConceptId="3cccc34c-26fe-102b-80cb-0017a47871b2"
+                                answerLabel="mental illness:" /> <obs
+                                conceptId="b87c7e3f-a7a4-4548-958c-b22321097931" /></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" ><strong>Other medical history:</strong><small>(include number of pregnancies, deliveries, if applicable)</small><br />  <obs
+                        conceptId="$@MEDICAL_HISTORY@" cols="110" rows="8" />
+                    <br /></td>
+            </tr>
+        </table>
+    </section> <section headerLabel="SOCIAL HISTORY">
+        <table border="1" cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td><table width="100%"></table>
+                </td>
+
+            </tr>
+            <tr>
+                <td><table width="100%">
+                    <tr>
+                        <td width="40%"><strong>Does the patient smoke?</strong>
+                        </td>
+                        <td width="20%"><obs
+                                conceptId="3cdbdca6-26fe-102b-80cb-0017a47871b2"
+                                answerConceptId="3cdbdb2a-26fe-102b-80cb-0017a47871b2"
+                                answerLabel="Current smoker" /></td>
+                        <td width="20%"><obs
+                                conceptId="3cdbdca6-26fe-102b-80cb-0017a47871b2"
+                                answerConceptId="3cdbd832-26fe-102b-80cb-0017a47871b2"
+                                answerLabel="Past smoker" /></td>
+                        <td width="20%"><obs
+                                conceptId="3cdbdca6-26fe-102b-80cb-0017a47871b2"
+                                answerConceptId="3cd72968-26fe-102b-80cb-0017a47871b2"
+                                answerLabel="Never" /></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+            <tr>
+                <td><table width="100%">
+                    <tr>
+                        <td width="40%"><strong>Does the patient drink
+                            alcohol?</strong>
+                        </td>
+                        <td width="20%"><obs
+                                conceptId="3cdbde18-26fe-102b-80cb-0017a47871b2"
+                                answerConceptId="3cdbdb2a-26fe-102b-80cb-0017a47871b2"
+                                answerLabel="Current drinker" />
+                        </td>
+                        <td width="20%"><obs
+                                conceptId="3cdbde18-26fe-102b-80cb-0017a47871b2"
+                                answerConceptId="3cdbd832-26fe-102b-80cb-0017a47871b2"
+                                answerLabel="Past drinker" /></td>
+                        <td width="20%"><obs
+                                conceptId="3cdbde18-26fe-102b-80cb-0017a47871b2"
+                                answerConceptId="3cd72968-26fe-102b-80cb-0017a47871b2"
+                                answerLabel="Never" /></td>
+                    </tr>
+                </table> <br /> <br />
+                    <center>
+                        If Current or Past drinker:
+                        <obs conceptId="3ce1f550-26fe-102b-80cb-0017a47871b2" />
+                        ____ drinks / day
+                    </center>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Did the patient use traditional treatments
+                    for current illness?</strong><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<obs
+                        conceptId="b381513d-3283-4235-a6b8-34badb7abfe8"
+                        answerConceptId="36803dfa-0cfd-43ca-be4e-52597ec42417"
+                        answerLabel="scarification" />
+                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs
+                            conceptId="b381513d-3283-4235-a6b8-34badb7abfe8"
+                            answerConceptId="8821a0ff-934b-42ed-9de3-8f2af08fd7ec"
+                            answerLabel="herbal medicine" />
+                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<obs
+                            conceptId="b381513d-3283-4235-a6b8-34badb7abfe8"
+                            answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2"
+                            answerLabel="other:" />
+                    <obs conceptId="33441bcf-0e70-4035-a85e-ff8b207a10e3" />
+                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs
+                            conceptId="b381513d-3283-4235-a6b8-34badb7abfe8"
+                            answerConceptId="3cd743f8-26fe-102b-80cb-0017a47871b2"
+                            answerLabel="No" /></td>
+            </tr>
+            <tr>
+                <td ><strong>Other social history: </strong><br />
+                    <obs conceptId="$@SOCIAL_HISTORY@" cols="100"
+                         rows="3" />  <br />
+                    G
+                    <obs conceptId="$@PATIENT_PREGNANT@"/>
+                    P
+                    <obs conceptId="$@PARITY@"/>
+                </td>
+
+            </tr>
+        </table>
+    </section> <section headerLabel="FAMILY HISTORY">
+        <table border="1" cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td><strong>Has a family member had cancer?</strong></td>
+                <td><obs conceptId="f75eebc1-361e-47c7-bb61-9be3b0ebec3a"
+                         answerConceptId="3cd6f600-26fe-102b-80cb-0017a47871b2"
+                         answerLabel="yes" />
+                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs
+                            conceptId="f75eebc1-361e-47c7-bb61-9be3b0ebec3a"
+                            answerConceptId="3cd6f86c-26fe-102b-80cb-0017a47871b2"
+                            answerLabel="no" />
+                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs
+                            conceptId="f75eebc1-361e-47c7-bb61-9be3b0ebec3a"
+                            answerConceptId="3cd6fac4-26fe-102b-80cb-0017a47871b2"
+                            answerLabel="unknown" /></td>
+            </tr>
+            <obsgroup groupingConceptId="2925b722-49c4-4868-bd54-c96c40cf6521">
+                <tr>
+                    <td colspan="3">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;If yes,
+                        cancer diagnoses: <obs conceptId="2af763bf-2992-45e4-9c29-c8a58f66c42a" /></td>
+                </tr>
+                <tr>
+                    <td colspan="3">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Relationship
+                        to patient: <obs conceptId="3ce18156-26fe-102b-80cb-0017a47871b2"
+                                         answerConceptId="3ce185ca-26fe-102b-80cb-0017a47871b2"
+                                         answerLabel="Mother" /> <obs
+                                conceptId="3ce18156-26fe-102b-80cb-0017a47871b2"
+                                answerConceptId="3ce18444-26fe-102b-80cb-0017a47871b2"
+                                answerLabel="Father" />
+                        <obs conceptId="3ce18156-26fe-102b-80cb-0017a47871b2"
+                             answerConceptId="3ce18a70-26fe-102b-80cb-0017a47871b2"
+                             answerLabel="Sibling" />
+                        <obs conceptId="3ce18156-26fe-102b-80cb-0017a47871b2"
+                             answerConceptId="ece835f9-1512-44ae-b3a5-a55b1dd70890"
+                             answerLabel="Child of patient" />
+                        <obs conceptId="3ce18156-26fe-102b-80cb-0017a47871b2"
+                             answerConceptId="3ce18bec-26fe-102b-80cb-0017a47871b2"
+                             answerLabel="Other relative" /> <obs
+                                conceptId="ff4a8e94-e1f7-4697-a172-25cc57766995" />
+                    </td>
+                </tr>
+            </obsgroup>
+        </table>
+    </section> <section headerLabel="CURRENT MEDICATIONS" >
+        <table border="1" cellspacing="0" cellpadding="6" width="100%">
+            <tr >
+                <td><strong>Medications </strong></td>
+            </tr>
+            <tr >
+                <td>
+                    <br /><obs conceptId="$@MEDICATION@" cols="100"/>
+                    <br /><obs conceptId="$@MEDICATION@" cols="100"/>
+                    <br /><obs conceptId="$@MEDICATION@" cols="100"/>
+                    <br /><obs conceptId="$@MEDICATION@" cols="100"/>
+                    <br /><obs conceptId="$@MEDICATION@" cols="100"/>
+
+                </td>
+            </tr>
+
+            <tr >
+                <td>
+                    If a female, she is:<br />
+                    Pre-menopausal, on family planning:
+                    <obs conceptId="$@FAMILY_PLANNING_STATUS@" answerConceptId="$@YES@" answerLabel="yes"/>
+                    <obs conceptId="$@FAMILY_PLANNING_STATUS@" answerConceptId="$@NO@" answerLabel="no"/>
+                    <obs conceptId="$@FAMILY_PLANNING_STATUS@" answerConceptId="$@ABSTINENCE@" answerLabel="abstinent"/>
+                    <obs conceptId="$@FAMILY_PLANNING_STATUS@" answerConceptId="$@NA@" answerLabel="N/A"/>
+
+                    <br />if yes
+                    <obs conceptId="$@FAMILY_PLANNING_METHOD@" answerConceptId="$@INJECTABLE_CONTRACEPTIVE@" answerLabel="hormonal"/>
+                    <obs conceptId="$@FAMILY_PLANNING_METHOD@" answerConceptId="$@CONDOMS@" answerLabel="condoms"/>
+                    <obs conceptId="$@FAMILY_PLANNING_METHOD@" answerConceptId="$@IUD@" answerLabel="IUD"/>
+                    <obs conceptId="$@FAMILY_PLANNING_METHOD@" answerConceptId="$@TUBAL_LIGATION@" answerLabel="tubal ligation"/>
+
+                    <br /><obs conceptId="$@FAMILY_PLANNING_STATUS@" answerConceptId="$@POST-MENOPAUSAL@" answerLabel="Post-menopausal"/>
+                </td>
+            </tr>
+
+
+        </table>
+    </section>
+
+    <section
+            headerLabel="INVESTIGATIONS TO DATE (please include the latest of each type of result, enter only if available) ">
+        <table border="1" cellspacing="0" cellpadding="6" width="100%">
+
+            <tr >
+                <td><strong>Imaging:</strong></td>
+                <td colspan="9"><strong>Results:</strong></td>
+            </tr>
+            <obsgroup groupingConceptId="$@PREVIOUS_IMAGING_CONSTRUCT@">
+                <tr >
+
+                    <td>CXR:</td>
+                    <td colspan="9" class="checkboxGroup"><span id="checkboxRadio"><obs
+                            conceptId="3ccc6186-26fe-102b-80cb-0017a47871b2"
+                            answerConceptId="3cd750a0-26fe-102b-80cb-0017a47871b2"
+                            answerLabel="Normal" showDate="true" dateLabel="Date:" /><br /> <obs
+                            conceptId="3ccc6186-26fe-102b-80cb-0017a47871b2"
+                            answerConceptId="3cd75230-26fe-102b-80cb-0017a47871b2"
+                            answerLabel="Abnormal: " showDate="true" dateLabel="Date:" />
+				Comment: <obs conceptId="4b62e9c1-b0a8-44fa-804e-986dbdc7dd09"
+                              showDate="true" dateLabel="Date:" /> </span>
+                    </td>
+                </tr>
+                <tr >
+                    <td>Ultrasound:<br /></td>
+                    <td colspan="9" class="checkboxGroup"><span id="checkboxRadio"><obs
+                            conceptId="eae98945-8dd6-4679-b3f9-74402d6d05e4"
+                            answerConceptId="3cd750a0-26fe-102b-80cb-0017a47871b2"
+                            answerLabel="Normal" showDate="true" dateLabel="Date:" /><br /> <obs
+                            conceptId="eae98945-8dd6-4679-b3f9-74402d6d05e4"
+                            answerConceptId="3cd75230-26fe-102b-80cb-0017a47871b2"
+                            answerLabel="Abnormal: " showDate="true" dateLabel="Date:" />
+				Comment: <obs conceptId="7e531f98-74bf-439c-ba44-ae4016124d10"
+                              showDate="true" dateLabel="Date:" /> </span>
+                    </td>
+                </tr>
+                <tr >
+                    <obsgroup groupingConceptId="24f1852b-8701-4e3c-b46e-0ccd0b0c9c70">
+                        <td>Other: <br /> <obs
+                                conceptId="c637d097-59dc-462d-9463-ef0df629e313" showDate="true"
+                                dateLabel="Date:" />
+                        </td>
+                        <td colspan="9" class="checkboxGroup"><span id="checkboxRadio"><obs
+                                conceptId="7f779262-de04-425b-97f7-9e5cc834eb55"
+                                answerConceptId="3cd750a0-26fe-102b-80cb-0017a47871b2"
+                                answerLabel="Normal" showDate="true" dateLabel="Date:" /><br /> <obs
+                                conceptId="7f779262-de04-425b-97f7-9e5cc834eb55"
+                                answerConceptId="3cd75230-26fe-102b-80cb-0017a47871b2"
+                                answerLabel="Abnormal: " showDate="true" dateLabel="Date:" />
+				Comment: <obs conceptId="d817e568-312c-4ccf-8172-25a5ad17cb1b"
+                              showDate="true" dateLabel="Date:" /> </span>
+                        </td>
+                    </obsgroup>
+                </tr>
+            </obsgroup>
+            <tr >
+                <td><strong>Special Tests:</strong>
+                </td>
+                <td colspan="9"><strong>Results:</strong>
+                </td>
+            </tr>
+            <obsgroup groupingConceptId="76e9b5d5-3533-44ee-a002-4a2120ac401e">
+                <tr >
+                    <td ><b>Tissue biopsy</b><br /> Site1:<br /> <obs
+                            conceptId="5e1eca70-d380-492a-82c2-fa89c4924b7d" showDate="true"
+                            dateLabel="date:" /><br /> Site2:<br /> <obs
+                            conceptId="5e1eca70-d380-492a-82c2-fa89c4924b7d" showDate="true"
+                            dateLabel="date:" /></td>
+                    <td colspan="9"><br /> <br /> <br /> <br />
+
+                        <table width="100%" >
+                            <tr><td>Results:<obs
+                                    conceptId="17b8c663-f867-46e1-854d-80f970563684" showDate="true"
+                                    dateLabel="date:" /> <obs
+                                    conceptId="cffa61ee-9058-4ba5-aece-8164517d6645"
+                                    answerConceptId="3485d286-4559-4294-b8a5-848a07f6790e"
+                                    answerLabel="Unable to obtain" /> <br /> <br /></td></tr>
+                            <tr><td class="checkboxGroup"><span
+                                    id="checkboxRadio">From: <obs
+                                    conceptId="509a5a0f-c504-4ee0-bfe9-6473147f3920"
+                                    answerConceptId="68222ccb-71ee-418e-a4a4-b924b4e80108"
+                                    answerLabel="CHUK" />
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs
+                                        conceptId="509a5a0f-c504-4ee0-bfe9-6473147f3920"
+                                        answerConceptId="55acdf7c-5027-4f01-90a2-ab9745f97dd3"
+                                        answerLabel="KFH" />
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs
+                                        conceptId="509a5a0f-c504-4ee0-bfe9-6473147f3920"
+                                        answerConceptId="6c87ddb0-f8e9-4115-98cc-5e71903f2c04"
+                                        answerLabel="BWH" />
+			&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs
+                                        conceptId="509a5a0f-c504-4ee0-bfe9-6473147f3920"
+                                        answerConceptId="682754d6-cff2-4f2e-90a3-ea3b1e7fa230"
+                                        answerLabel="Butaro" />
+			&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs
+                                        conceptId="509a5a0f-c504-4ee0-bfe9-6473147f3920"
+                                        answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2"
+                                        answerLabel="Other: " /> <obs
+                                        conceptId="3ce17e68-26fe-102b-80cb-0017a47871b2" /></span></td></tr>
+                        </table>
+                    </td>
+                </tr>
+            </obsgroup>
+            <obsgroup groupingConceptId="4cc65e50-8e32-4b1b-b07f-c8e34c0e5521">
+                <tr >
+                    <td><b>Other:</b><br /> <obs
+                            conceptId="3cd9b714-26fe-102b-80cb-0017a47871b2" showDate="true"
+                            dateLabel="date:" /></td>
+                    <td colspan="9">
+
+                        <table width="100%" >
+                            <tr><td>Results:<obs
+                                    conceptId="17b8c663-f867-46e1-854d-80f970563684" showDate="true"
+                                    dateLabel="date:" /> <obs
+                                    conceptId="cffa61ee-9058-4ba5-aece-8164517d6645"
+                                    answerConceptId="3485d286-4559-4294-b8a5-848a07f6790e"
+                                    answerLabel="Unable to obtain" /> <br /> <br /></td></tr>
+                            <tr><td class="checkboxGroup"><span
+                                    id="checkboxRadio">From: <obs
+                                    conceptId="509a5a0f-c504-4ee0-bfe9-6473147f3920"
+                                    answerConceptId="68222ccb-71ee-418e-a4a4-b924b4e80108"
+                                    answerLabel="CHUK" />
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs
+                                        conceptId="509a5a0f-c504-4ee0-bfe9-6473147f3920"
+                                        answerConceptId="55acdf7c-5027-4f01-90a2-ab9745f97dd3"
+                                        answerLabel="KFH" />
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs
+                                        conceptId="509a5a0f-c504-4ee0-bfe9-6473147f3920"
+                                        answerConceptId="6c87ddb0-f8e9-4115-98cc-5e71903f2c04"
+                                        answerLabel="BWH" />
+			&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs
+                                        conceptId="509a5a0f-c504-4ee0-bfe9-6473147f3920"
+                                        answerConceptId="682754d6-cff2-4f2e-90a3-ea3b1e7fa230"
+                                        answerLabel="Butaro" />
+			&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs
+                                        conceptId="509a5a0f-c504-4ee0-bfe9-6473147f3920"
+                                        answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2"
+                                        answerLabel="Other: " /> <obs
+                                        conceptId="3ce17e68-26fe-102b-80cb-0017a47871b2" /></span></td></tr>
+                        </table>
+                    </td>
+                </tr>
+            </obsgroup>
+        </table>
+    </section>
+
+
+
+    <section headerLabel="PHYSICAL EXAM">
+        <table border="1" cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td colspan="3" width="100%"><table width="100%">
+                    <tr>
+                        <td><strong>Vital signs:</strong></td>
+                        <td>Weight <br /> <obs
+                                conceptId="3ce93b62-26fe-102b-80cb-0017a47871b2"  id="weight"/> kg</td>
+                        <td>Height <br /> <obs
+                                conceptId="3ce93cf2-26fe-102b-80cb-0017a47871b2" id="height"/> cm</td>
+                        <td>
+
+                            <span class="lastHeight"> Last Height: <lookup expression="fn.latestObs($@HEIGHT_CM@).valueNumeric"/> Date: <lookup expression="fn.latestObs($@HEIGHT_CM@).obsDatetime"/></span><br />
+
+
+
+
+
+                            <br />
+	<span style="display: none">
+	<lookup expression="patient.birthdate" class="birthdate" id="birthdate"/>
+	<lookup expression="patient.gender" class="gender" id="gender"/>
+	</span>
+
+
+
+
+                        </td>
+                        <td >BSA<obs conceptId="$@Body_surface_area@"/> M<sup>2</sup></td>
+                        <td >BP <br /> <obs conceptId="$@SYSTOLIC@"/>/<obs conceptId="$@DIASTOLIC@"/></td>
+                        <td >Pulse <br /> <obs conceptId="$@PULSE@"/></td>
+                        <td >Temp<br /> <obs conceptId="$@TEMP@"/> °C</td>
+                    </tr>
+                </table>
+                </td>
+
+            </tr>
+            <tr >
+                <td colspan="2"><strong>Normal</strong>
+                </td>
+                <td><strong>Abnormal</strong>
+                </td>
+
+            </tr>
+
+            <tr >
+                <td><b>GENERAL</b>
+                </td>
+                <td><obs conceptId="$@GENERAL_EXAM_FINDINGS@" answerConceptId="$@WELL_APPEARING@" answerLabel="Well appearing"/></td>
+                <td><obs conceptId="$@GENERAL_EXAM_FINDINGS@" answerConceptId="$@ABNORMAL@" answerLabel="Abnormal"/>:<obs conceptId="$@PHYSICAL_ABNORMAL@"/>
+
+                </td>
+            </tr>
+            <tr >
+                <td><b>Head and Neck
+                    <br /><obs conceptId="$@HEAD_AND_NECK_EXAM@" answerConceptId="$@NOT_DONE@" answerLabel="Not done"/></b>
+                </td>
+
+                <td><obs conceptId="$@HEAD_AND_NECK_EXAM@" answerConceptId="$@NO_ABNORMALITIES@" answerLabel="No Abnormalities"/></td>
+                <td><obs conceptId="$@HEAD_AND_NECK_EXAM@" answerConceptId="$@ABNORMAL@" answerLabel="Abnormal"/>:<obs conceptId="$@HEAD_ABNORMAL@"/>
+                    <br /> <obs conceptId="$@HEAD_MASS_LOCATION@" answerConceptId="$@GROWTH@" answerLabel="MASS"/>
+                    Location:<obs conceptId="$@HEAD_MASS_LOCATION@"/>
+                    Size: <obs conceptId="$@Head_and_neck_mass_size_(biggest_dimension)@"/>cm x <obs conceptId="$@Head_and_neck_mass_size_(smallest_dimension)@"/>cm</td>
+            </tr>
+
+
+            <tr >
+                <td rowspan="2"><b>Chest</b><br />
+                    <obs conceptId="$@CHEST_EXAM@" answerConceptId="$@NOT_DONE@" answerLabel="Not done"/>
+                </td>
+                <td rowspan="2"><obs conceptId="$@CHEST_EXAM@" answerConceptId="$@NO_ABNORMALITIES@" answerLabel="No abnormalities"/>		</td>
+                <td><obs conceptId="$@CHEST_EXAM@" answerConceptId="$@ABNORMAL_LUNGS@" answerLabel="Abnormal lungs"/>: <obs conceptId="$@LUNG_ABNORMALITY_TEXT@"/></td>
+            </tr>
+            <tr >
+                <td><obs conceptId="$@CHEST_EXAM@" answerConceptId="$@ABNORMAL_HEART@" answerLabel="Abnormal Heart"/>:<obs conceptId="$@ABNORMAL_HEART@"/></td>
+            </tr>
+
+
+            <tr >
+                <td>Breast
+                    <br /> <obs conceptId="$@BREAST_EXAM@" answerConceptId="$@NOT_DONE@" answerLabel="Not done"/></td>
+                <td><obs conceptId="$@BREAST_EXAM@" answerConceptId="$@NO_ABNORMALITIES@" answerLabel="No abnormalities"/></td>
+                <td>
+                    <obs conceptId="$@BREAST_EXAM@" answerConceptId="$@ABNORMAL@" answerLabel="Abnormal breasts:"/>
+
+                    <br /><obs conceptId="$@BREAST_EXAM@" answerConceptId="$@LEFT_BREAST_MASS@" answerLabel="Left breast mass"/> :
+                    <obsgroup groupingConceptId="$@LEFT_BREAST_MASS_CONSTRUCT@">
+                        <obs conceptId="$@MASS_SIZE@"/> x <obs conceptId="$@BREAST_MASS_SIZE_2@"/>
+                        <obs conceptId="$@BREAST_MASS_MOBILITY@" answerConceptId="$@MOBILE@" answerLabel="mobile"/>
+                        <obs conceptId="$@BREAST_MASS_MOBILITY@" answerConceptId="$@MOBILE@" answerLabel="fixed"/>
+                    </obsgroup>
+                    <br /> <obs conceptId="$@BREAST_EXAM@" answerConceptId="$@RIGHT_BREAST_MASS@" answerLabel="Right breast mass"/>:
+                    <obsgroup groupingConceptId="$@RIGHT_BREAST_MASS_CONSTRUCT@">
+                        <obs conceptId="$@MASS_SIZE@"/> x <obs conceptId="$@BREAST_MASS_SIZE_2@"/>
+                        <obs conceptId="$@BREAST_MASS_MOBILITY@" answerConceptId="$@MOBILE@" answerLabel="mobile"/>
+                        <obs conceptId="$@BREAST_MASS_MOBILITY@" answerConceptId="$@MOBILE@" answerLabel="fixed"/>
+                    </obsgroup>
+                    <br /><obs conceptId="$@BREAST_EXAM@" answerConceptId="$@SKIN_CHANGES@" answerLabel="Skin changes:"/>
+                    <br /> <obs conceptId="$@BREAST_EXAM@" answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other:"/>:	<obs conceptId="$@BREAST_ABNORMALITY_TEXT@"/>
+                </td>
+            </tr>
+
+            <tr >
+                <td><b>Abdomen/Pelvis</b><br />
+                    <obs conceptId="$@ABDOMINAL_EXAM@" answerConceptId="$@NOT_DONE@" answerLabel="Not done"/></td>
+                <td><obs conceptId="$@ABDOMINAL_EXAM@" answerConceptId="$@NO_ABNORMALITIES@" answerLabel="No abnormalities"/></td>
+                <td><obs conceptId="$@ABDOMINAL_EXAM@" answerConceptId="$@SPLENOMEGALY@" answerLabel="Splenomegaly"/>: <obs conceptId="$@SPLENOMEGALY_SIZE@"/>cm <br/>
+                    <obs conceptId="$@ABDOMINAL_EXAM@" answerConceptId="$@HEPATOMEGALY@" answerLabel="Hepatomegaly"/>: <obs conceptId="$@HEPATOMEGALY_SIZE@"/> cm<br />
+                    <obs conceptId="$@ABDOMINAL_EXAM@" answerConceptId="$@ABDOMINAL_TENDERNESS@" answerLabel="tenderness"/>:
+                    <obs conceptId="$@ABDOMINAL_TENDERNESS_LOCATION@" answerConceptId="$@RUQ@" answerLabel="RUQ"/>
+                    <obs conceptId="$@ABDOMINAL_TENDERNESS_LOCATION@" answerConceptId="$@LUQ@" answerLabel="LUQ"/>
+                    <obs conceptId="$@ABDOMINAL_TENDERNESS_LOCATION@" answerConceptId="$@RLQ@" answerLabel="RLQ"/>
+                    <obs conceptId="$@ABDOMINAL_TENDERNESS_LOCATION@" answerConceptId="$@LLQ@" answerLabel="LLQ"/>
+                    <br />
+                    <obs conceptId="$@ABDOMINAL_EXAM@" answerConceptId="$@ASCITES@" answerLabel="Ascites"/> <br />
+                    <obs conceptId="$@ABDOMINAL_EXAM@" answerConceptId="$@ABDOMINAL_MASS@" answerLabel="Mass"/>:
+                    location: 	<obs conceptId="$@ABDOMINAL_MASS_LOCATION@"/>
+                    size: <obs conceptId="$@ABDOMINAL_MASS_SIZE_(biggest_dimension)@"/>cm x <obs conceptId="$@Abdominal_mass_size_(smallest_dimension)@"/>cm
+                </td>
+            </tr>
+            <tr >
+                <td><b>Extremities</b><br />
+                    <obs conceptId="$@EXTREMITY_EXAM@" answerConceptId="$@NOT_DONE@" answerLabel="Not done"/></td>
+                <td><obs conceptId="$@EXTREMITY_EXAM@" answerConceptId="$@NO_EDEMA@" answerLabel="No Edema"/></td>
+                <td><obs conceptId="$@EXTREMITY_EXAM@" answerConceptId="$@EDEMA@" answerLabel="Edema"/>
+                    <obs conceptId="$@EDEMA@" answerConceptId="$@1@" answerLabel="1+"/>
+                    <obs conceptId="$@EDEMA@" answerConceptId="$@2@" answerLabel="2+"/>
+                    <obs conceptId="$@EDEMA@" answerConceptId="$@3@" answerLabel="3+"/>
+                    <br /><obs conceptId="$@EXTREMITY_EXAM@" answerConceptId="$@GROWTH@" answerLabel="mass"/> location: <obs conceptId="$@EXTREMITY_MASS_LOCATION@"/>
+                    size: <obs conceptId="$@Extremity_mass_size_(biggest_dimension)@"/> cm x <obs conceptId="$@Extremity_mass_size_(smallest_dimension)@"/> cm
+                    <br /> other:<obs conceptId="$@EXTREMITY_ABNORMALITY_TEXT@"/>
+                </td>
+            </tr>
+
+            <tr >
+                <td><b>Nervous system</b><br />
+                    <obs conceptId="$@NERVOUS_SYSTEM_EXAM@" answerConceptId="$@NOT_DONE@" answerLabel="Not done"/></td>
+                <td><obs conceptId="$@NERVOUS_SYSTEM_EXAM@" answerConceptId="$@NO_ABNORMALITIES@" answerLabel="No abnormalities"/></td>
+                <td><obs conceptId="$@NERVOUS_SYSTEM_EXAM@" answerConceptId="$@ABNORMAL@" answerLabel="Abnormal"/>:<obs conceptId="$@NERVOUS_ABNORMALITY@"/></td>
+            </tr>
+
+            <tr >
+                <td><b>Skin</b><br />
+                    <obs conceptId="$@SKIN_EXAM@" answerConceptId="$@NOT_DONE@" answerLabel="Not done"/></td>
+                <td><obs conceptId="$@SKIN_EXAM@" answerConceptId="$@NO_ABNORMALITIES@" answerLabel="No abnormalities"/></td>
+                <td><obs conceptId="$@SKIN_EXAM@" answerConceptId="$@ABNORMAL@" answerLabel="Abnormal"/>:<obs conceptId="$@SKIN_ABNORMALITY_TEXT@"/>
+                    <br /><obs conceptId="$@SKIN_EXAM@" answerConceptId="$@NODULES@" answerLabel="Nodules"/>
+                    <br />distribution:<obs conceptId="$@NODULE_DISTRIBUTION@"/>
+                    <br /> size (cm):		<obs conceptId="$@NODULE_SIZE@"/></td>
+            </tr>
+
+            <tr >
+                <td><b>Lymph nodes</b><br />
+                    <obs conceptId="$@LYMPH_NODE_EXAM@" answerConceptId="$@NOT_DONE@" answerLabel="Not done"/></td>
+                <td><obs conceptId="$@LYMPH_NODE_EXAM@" answerConceptId="$@NO_LYMPHADENOPATHY@" answerLabel="No lymphadenopathy"/></td>
+                <td><obs conceptId="$@LYMPH_NODE_EXAM@" answerConceptId="$@LYMPHADENOPATHY@" answerLabel="Lymphadenopathy"/>
+                    <br /> <obs conceptId="$@LYMPHADENOPATHY_CODED@" answerConceptId="$@CERVICAL@" answerLabel="Cervical"/>
+                    <br /> <obs conceptId="$@LYMPHADENOPATHY_CODED@" answerConceptId="$@SUBMANDIBULAR@" answerLabel="Submandibular"/>
+                    <br /> <obs conceptId="$@LYMPHADENOPATHY_CODED@" answerConceptId="$@SUPRACLAVICULAR@" answerLabel="Supraclavicular"/>
+                    <br /> <obs conceptId="$@LYMPHADENOPATHY_CODED@" answerConceptId="$@INFRACLAVICULAR@" answerLabel="Infraclavicular"/>
+                    <br /> <obs conceptId="$@LYMPHADENOPATHY_CODED@" answerConceptId="$@AXILLARY@" answerLabel="Axillary"/>
+                    <br /> <obs conceptId="$@LYMPHADENOPATHY_CODED@" answerConceptId="$@INGUINAL@" answerLabel="Inguinal"/>
+                    <br /> <obs conceptId="$@LYMPHADENOPATHY_CODED@" answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other"/>
+                    <obs conceptId="$@OTHER_LYMPHADENOPATHY@"/>
+                </td>
+            </tr>
+            <tr >
+                <td><b>Genital exam</b><br />
+                    <obs conceptId="$@GENITAL_EXAM@" answerConceptId="$@NOT_DONE@" answerLabel="Not done"/></td>
+                <td><obs conceptId="$@GENITAL_EXAM@" answerConceptId="$@NO_ABNORMALITIES@" answerLabel="No abnormalities"/></td>
+                <td><obs conceptId="$@GENITAL_EXAM@" answerConceptId="$@ABNORMAL@" answerLabel="Abnormal"/>:
+                    <br /> <obs conceptId="$@GENITAL_ABNORMALITIES@" answerConceptId="$@Visible_cervical_lesion@" answerLabel ="Visible cervical lesion"/>
+                    <br /> Size of lesion (largest dimension) <obs conceptId="$@LESION_SIZE_(largest_dimension)@" />cm x <obs conceptId="$@LESION_SIZE_(smallest_dimension)@" />cm
+                    <br /> <obs conceptId="$@GENITAL_ABNORMALITIES@" answerConceptId="$@VAGINAL_INVOLVEMENT@" answerLabel ="Vaginal involvement"/>
+                    <br /> <obs conceptId="$@GENITAL_ABNORMALITIES@" answerConceptId="$@PARAMETRIAL_INVOLVEMENT@" answerLabel ="Parametrial involvement"/>
+                    <br /> <obs conceptId="$@GENITAL_ABNORMALITIES@" answerConceptId="$@PELVIC_INVOLVEMENT@" answerLabel ="Pelvic side wall involvement"/>
+                    <br /> <obs conceptId="$@GENITAL_ABNORMALITIES@" answerConceptId="$@RECTAL_INVOLVEMENT@" answerLabel ="Rectal involvement"/>
+                    <br /> <obs conceptId="$@GENITAL_ABNORMALITIES@" answerConceptId="$@OTHER_NON_CODED@" answerLabel ="Other findings"/>
+                    <obs conceptId="$@GENITAL_ABNORMALITIES_TEXT@"/></td>
+
+            </tr>
+            <tr >
+                <td colspan="3"><b>Other exam findings</b> <small>(include location and size of mass,
+                    if applicable)</small>: <obs conceptId="$@OTHER_EXAM_FINDINGS@" cols="110" rows="4"/></td>
+
+            </tr>
+        </table>
+    </section> <section headerLabel="CLINICAL IMPRESSION &amp; PLAN">
+        <table border="1" cellspacing="0" cellpadding="6" width="100%">
+
+            <tr >
+                <td><strong>Current diagnosis status: <i>(complete a DST form; only applies to KS or Cervical cancer)</i></strong><br />
+                    <obs conceptId="$@DIAGNOSIS_CONFIDENCE@" answerConceptId="$@CLINICALLY_CONFIRMED@" answerLabel="Clinically confirmed"/>
+                    <obs conceptId="$@DIAGNOSIS_CONFIDENCE@" answerConceptId="$@PATHOLOGICALLY_CONFIRMED@" answerLabel="Pathologically confirmed"/>
+                    <obs conceptId="$@DIAGNOSIS_CONFIDENCE@" answerConceptId="$@SUSPECTED@" answerLabel="Suspected"/>
+                    <workflowState workflowId="c8dea23e-c596-40d0-a4a4-08cb61b82d3b" stateId="98091177-b242-40ae-9a78-120e5cdadac0" type="hidden"/>
+
+                    *Note that EMR will take all diagnoses here as suspected until DST completed
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Current Diagnosis:</strong><br />
+                    <table width="100%" >
+                        <tr>
+                            <td width="25%">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<workflowState
+                                    workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                    stateId="c733a3d0-c89b-4d88-9d89-b590e9175297"
+                                    stateLabel="Breast cancer" type="checkbox" /></td>
+                            <td width="25%"><workflowState
+                                    workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                    stateId="441c3084-33d1-49a5-abd6-9e8b19ddf049"
+                                    stateLabel="Cervical cancer" type="checkbox" />
+                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <workflowState
+                                        workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                        stateId="9c9fdd7c-1903-4f90-90f1-50d0c794fe6a" stateLabel="KS"
+                                        type="checkbox" /></td>
+                            <td width="25%"><workflowState
+                                    workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                    stateId="3609c073-1b51-438d-849b-35d23f042484"
+                                    stateLabel="Gastric cancer" type="checkbox" /></td>
+                            <td width="25%"><workflowState
+                                    workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                    stateId="34e298a3-8ca4-470e-8e4f-f422af9feef9"
+                                    stateLabel="Colo-rectal" type="checkbox" /></td>
+                        </tr>
+                        <tr>
+                            <td>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<workflowState
+                                    workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                    stateId="9fb6150d-cd19-43fc-8da9-e6599fac9709"
+                                    stateLabel="Prostate cancer" type="checkbox" />
+                            </td>
+                            <td><workflowState
+                                    workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                    stateId="4cef0cce-67b9-4cf5-860e-503ade7ff37a"
+                                    stateLabel="Nephroblastoma (Wilms’)" type="checkbox" /></td>
+                            <td><workflowState
+                                    workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                    stateId="b4cdfb5f-275b-4a76-893b-761ae302976d"
+                                    stateLabel="Lung cancer" type="checkbox" /></td>
+                            <td><workflowState
+                                    workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                    stateId="d84e31f8-ebe2-4f31-8655-b29dfe671be4"
+                                    stateLabel="H &#38; N cancer" type="checkbox" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<workflowState
+                                    workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                    stateId="8c3f2a38-eb43-4b13-87c2-4a85d66cafb1"
+                                    stateLabel="Other solid cancer :" type="checkbox" />
+                                <obs conceptId="b9e23b4a-e714-4a55-a3d4-2e152ab4b2b8" /></td>
+
+                        </tr>
+                        <tr>
+                            <td>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<workflowState
+                                    workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                    stateId="ca083335-c209-4d50-8a40-26bd5ef3545e"
+                                    stateLabel="Hodgkin’s lymphoma" type="checkbox" /></td>
+                            <td><workflowState
+                                    workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                    stateId="890a3c62-ec89-41a0-8ffb-ca551dc36b18"
+                                    stateLabel="Burkitt’s lymphoma" type="checkbox" /></td>
+                            <td><workflowState
+                                    workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                    stateId="70d5c89b-657d-4e46-a7e6-62cf2c04a873"
+                                    stateLabel="Large B-cell lymphoma" type="checkbox" /></td>
+                            <td><workflowState
+                                    workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                    stateId="1bdce46f-62d3-4eb1-acfa-644cfd99993a"
+                                    stateLabel="Other NHL" type="checkbox" /></td>
+                        </tr>
+                        <tr>
+                            <td>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<workflowState
+                                    workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                    stateId="b2a69a8a-599f-405f-b11e-5b9f50267921" stateLabel="ALL"
+                                    type="checkbox" /></td>
+                            <td><workflowState
+                                    workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                    stateId="f4eb9f32-ddad-44a2-b8da-309bfd0549e4" stateLabel="CML"
+                                    type="checkbox" /></td>
+                            <td><workflowState
+                                    workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                    stateId="85f296a1-f196-4405-9dc6-1c36107e6df2"
+                                    stateLabel="Multiple myeloma" type="checkbox" /></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<workflowState
+                                    workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                    stateId="cb041132-1c31-4580-aff3-3564e18b985b"
+                                    stateLabel="Other liquid cancer:" type="checkbox" />
+                                <obs conceptId="5988cf36-80fb-46b9-bf19-93ec759c4bb6" /></td>
+
+                        </tr>
+                        <tr>
+                            <td colspan="2">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<workflowState
+                                    workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                    stateId="9b9af079-2ad0-4860-9844-48d020912dc2"
+                                    stateLabel="Metastatic cancer (unknown primary) " type="checkbox" /></td>
+                            <td><workflowState
+                                    workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                    stateId="651f49b1-cead-434c-841b-2a4e2533ed3d"
+                                    stateLabel="Unknown type" type="checkbox" /></td>
+
+                            <td><workflowState
+                                    workflowId="2e602550-4337-4ffa-90a2-7becc3f167b1"
+                                    stateId="0ec01a69-95d9-4319-8458-c71106893035"
+                                    stateLabel="Not cancer" type="checkbox" /></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="checkboxGroup"><span id="checkboxRadio"><strong>Current Disease Stage:</strong><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+			<obs conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74"
+                 answerConceptId="3cd6fac4-26fe-102b-80cb-0017a47871b2"
+                 answerLabel="Unknown" /> &#160;&#160;&#160;&#160; <obs
+                            conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74"
+                            answerConceptId="11ad3741-d3fe-48ff-8872-ce42c8764d34"
+                            answerLabel="0" /> &#160;&#160;&#160;&#160; <obs
+                            conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74"
+                            answerConceptId="39c6497d-fe50-4dcf-86e4-5360e1d32f82"
+                            answerLabel="I" /> &#160;&#160;&#160;&#160; <obs conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="c899d4c0-91a1-42f2-b395-114740f237fd" answerLabel="II" /> &#160;&#160;&#160;&#160; <obs conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="1d5896f3-2e0e-4bc2-aa6c-afe1911afa79" answerLabel="III" />
+			&#160;&#160;&#160;&#160; <obs conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="d2f21acb-9519-42ca-a72d-2fcb6bb15c5d" answerLabel="IV" /> &#160;&#160;&#160;&#160; <obs conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="afe0e350-6be0-4093-a701-923a446f1924" answerLabel="V" />
+			&#160;&#160;&#160;&#160; <obs conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Other:" /> <obs conceptId="c637d097-59dc-462d-9463-ef0df629e313" /></span></td>
+
+            </tr>
+
+            <tr>
+                <td><strong>Clinical Impression and treatment plan details </strong>(include details
+                    for staging disease):<br /><obs conceptId="826af985-d6b8-46a5-8773-92e53ee10d45" cols="75" rows="4" />
+                </td>
+
+            </tr>
+        </table>
+
+    </section>
+    <section headerLabel="DIAGNOSTIC TESTS ORDERED AT INTAKE">
+        <table border="1" cellspacing="0" cellpadding="6" width="100%">
+            <tr >
+                <td width="15%"><strong>Tests:</strong></td>
+                <td colspan="9"><strong>Results:</strong></td>
+            </tr>
+            <tr >
+                <td>HIV</td>
+                <td colspan="9" class="checkboxGroup"><span id="checkboxRadio"><obs
+                        conceptId="3cd6c946-26fe-102b-80cb-0017a47871b2"
+                        answerConceptId="3cd3a7a2-26fe-102b-80cb-0017a47871b2"
+                        answerLabel="Positive " showDate="true" dateLabel="Date:" />&#160;&#160;&#160;
+				&#160;&#160;&#160; <obs
+                            conceptId="3cd6c946-26fe-102b-80cb-0017a47871b2"
+                            answerConceptId="3cd28732-26fe-102b-80cb-0017a47871b2"
+                            answerLabel="Negative" showDate="true" dateLabel="Date:" />
+		</span></td>
+            </tr>
+
+            <tr >
+                <td>Hematology</td>
+                <td width="10%">Hb:<obs
+                        conceptId="3ccc7158-26fe-102b-80cb-0017a47871b2" showDate="true"
+                        dateLabel="Date:" /></td>
+                <td width="10%">Hct:<obs
+                        conceptId="3cd69a98-26fe-102b-80cb-0017a47871b2" showDate="true"
+                        dateLabel="Date:" /></td>
+                <td width="10%">WBC:<obs
+                        conceptId="3cd2a906-26fe-102b-80cb-0017a47871b2" showDate="true"
+                        dateLabel="Date:" /></td>
+                <td width="10%">Neutro(%):<obs
+                        conceptId="3cd6a592-26fe-102b-80cb-0017a47871b2" showDate="true"
+                        dateLabel="Date:" /></td>
+                <td width="10%">Lymph(%): <obs
+                        conceptId="3cd6a402-26fe-102b-80cb-0017a47871b2" showDate="true"
+                        dateLabel="Date:" /></td>
+                <td width="10%">plts:<obs
+                        conceptId="3cd3d038-26fe-102b-80cb-0017a47871b2" showDate="true"
+                        dateLabel="Date:" /></td>
+                <td width="10%">ESR:<obs
+                        conceptId="3cdb2c48-26fe-102b-80cb-0017a47871b2" showDate="true"
+                        dateLabel="Date:" /></td>
+                <td width="10%">ANC:<obs
+                        conceptId="48348ce0-af6a-47a9-8671-1bbeb37dd500" showDate="true"
+                        dateLabel="Date:" /></td>
+                <td></td>
+            </tr>
+
+            <tr >
+                <td rowspan="2">Biochemistry</td>
+                <td>Na: <obs conceptId="3cd76b58-26fe-102b-80cb-0017a47871b2"
+                             showDate="true" dateLabel="Date:" />
+                </td>
+                <td>K: <obs conceptId="3cd76ce8-26fe-102b-80cb-0017a47871b2"
+                            showDate="true" dateLabel="Date:" />
+                </td>
+                <td>Cl: <obs conceptId="3cd76e82-26fe-102b-80cb-0017a47871b2"
+                             showDate="true" dateLabel="Date:" />
+                </td>
+                <td>CO2: <obs conceptId="3cd77012-26fe-102b-80cb-0017a47871b2"
+                              showDate="true" dateLabel="Date:" />
+                </td>
+                <td>Urea:<obs conceptId="3cd4aa12-26fe-102b-80cb-0017a47871b2"
+                              showDate="true" dateLabel="Date:" />
+                </td>
+                <td>Cr: <obs conceptId="3cd4374e-26fe-102b-80cb-0017a47871b2"
+                             showDate="true" dateLabel="Date:" />
+                </td>
+                <td>Glu: <obs conceptId="3cd4e194-26fe-102b-80cb-0017a47871b2"
+                              showDate="true" dateLabel="Date:" />
+                </td>
+                <td>Ca: <obs conceptId="01765cd1-8fd6-4783-b053-190b1f6ed5bd"
+                             showDate="true" dateLabel="Date:" />
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>SGOT: <obs conceptId="3cd275d0-26fe-102b-80cb-0017a47871b2"
+                               showDate="true" dateLabel="Date:" />
+                </td>
+                <td>SGPT: <obs conceptId="3cd27760-26fe-102b-80cb-0017a47871b2"
+                               showDate="true" dateLabel="Date:" />
+                </td>
+                <td>Tbili: <obs conceptId="3cd278fa-26fe-102b-80cb-0017a47871b2"
+                                showDate="true" dateLabel="Date:" />
+                </td>
+                <td>Dbili: <obs conceptId="b01f4fd2-7632-4c94-9481-9ed0d1da1f9a"
+                                showDate="true" dateLabel="Date:" />
+                </td>
+                <td>AlkPhos:<obs conceptId="3cd42f4c-26fe-102b-80cb-0017a47871b2"
+                                 showDate="true" dateLabel="Date:" />
+                </td>
+                <td>Uric acid: <obs
+                        conceptId="d6e20676-e800-4f26-a8b2-96a2127201dd" showDate="true"
+                        dateLabel="Date:" />
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <obsgroup groupingConceptId="4cc65e50-8e32-4b1b-b07f-c8e34c0e5521">
+                    <td>Other: <br /> <obs
+                            conceptId="3cd9b714-26fe-102b-80cb-0017a47871b2" showDate="true"
+                            dateLabel="Date:" /> <br /> <obs
+                            conceptId="3cd9b714-26fe-102b-80cb-0017a47871b2" showDate="true"
+                            dateLabel="Date:" />
+                    </td>
+                    <td colspan="9">results: <obs
+                            conceptId="c963d117-f6eb-4e98-aa64-0d52a3476c20" showDate="true"
+                            dateLabel="Date:" /><br /> <br /> <br /> <br />results: <obs
+                            conceptId="c963d117-f6eb-4e98-aa64-0d52a3476c20" showDate="true"
+                            dateLabel="Date:" />
+                    </td>
+                </obsgroup>
+            </tr>
+            <tr >
+                <td><strong>Imaging:</strong></td>
+                <td colspan="9"><strong>Results:</strong></td>
+            </tr>
+            <obsgroup groupingConceptId="$@ORDERED_IMAGING_CONSTRUCT@">
+                <tr >
+
+                    <td>CXR:</td>
+                    <td colspan="9" class="checkboxGroup"><span id="checkboxRadio"><obs
+                            conceptId="3ccc6186-26fe-102b-80cb-0017a47871b2"
+                            answerConceptId="3cd750a0-26fe-102b-80cb-0017a47871b2"
+                            answerLabel="Normal" showDate="true" dateLabel="Date:" /><br /> <obs
+                            conceptId="3ccc6186-26fe-102b-80cb-0017a47871b2"
+                            answerConceptId="3cd75230-26fe-102b-80cb-0017a47871b2"
+                            answerLabel="Abnormal: " showDate="true" dateLabel="Date:" />
+				Comment: <obs conceptId="4b62e9c1-b0a8-44fa-804e-986dbdc7dd09"
+                              showDate="true" dateLabel="Date:" /> </span>
+                    </td>
+                </tr>
+                <tr >
+                    <td>Ultrasound:<br /></td>
+                    <td colspan="9" class="checkboxGroup"><span id="checkboxRadio"><obs
+                            conceptId="eae98945-8dd6-4679-b3f9-74402d6d05e4"
+                            answerConceptId="3cd750a0-26fe-102b-80cb-0017a47871b2"
+                            answerLabel="Normal" showDate="true" dateLabel="Date:" /><br /> <obs
+                            conceptId="eae98945-8dd6-4679-b3f9-74402d6d05e4"
+                            answerConceptId="3cd75230-26fe-102b-80cb-0017a47871b2"
+                            answerLabel="Abnormal: " showDate="true" dateLabel="Date:" />
+				Comment: <obs conceptId="7e531f98-74bf-439c-ba44-ae4016124d10"
+                              showDate="true" dateLabel="Date:" /> </span>
+                    </td>
+                </tr>
+                <tr >
+                    <obsgroup groupingConceptId="24f1852b-8701-4e3c-b46e-0ccd0b0c9c70">
+                        <td>Other: <br /> <obs
+                                conceptId="c637d097-59dc-462d-9463-ef0df629e313" showDate="true"
+                                dateLabel="Date:" />
+                        </td>
+                        <td colspan="9" class="checkboxGroup"><span id="checkboxRadio"><obs
+                                conceptId="7f779262-de04-425b-97f7-9e5cc834eb55"
+                                answerConceptId="3cd750a0-26fe-102b-80cb-0017a47871b2"
+                                answerLabel="Normal" showDate="true" dateLabel="Date:" /><br /> <obs
+                                conceptId="7f779262-de04-425b-97f7-9e5cc834eb55"
+                                answerConceptId="3cd75230-26fe-102b-80cb-0017a47871b2"
+                                answerLabel="Abnormal: " showDate="true" dateLabel="Date:" />
+				Comment: <obs conceptId="d817e568-312c-4ccf-8172-25a5ad17cb1b"
+                              showDate="true" dateLabel="Date:" /> </span>
+                        </td>
+                    </obsgroup>
+                </tr>
+                <tr>
+                    <td colspan="15"><strong>Special Tests ordered:</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <obsgroup groupingConceptId="76e9b5d5-3533-44ee-a002-4a2120ac401e">
+                        <td colspan="15"><obs conceptId="3cd937e4-26fe-102b-80cb-0017a47871b2" answerLabel="Tissue biopsy" answerConceptId="cffa61ee-9058-4ba5-aece-8164517d6645"/><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Site1:  <obs
+                                conceptId="5e1eca70-d380-492a-82c2-fa89c4924b7d" size="60"
+                                /><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Site2:  <obs
+                                conceptId="5e1eca70-d380-492a-82c2-fa89c4924b7d" size="60"
+                                />
+                        </td>
+                    </obsgroup>
+                </tr>
+                <tr>
+                    <obsgroup groupingConceptId="56b7cea0-3aae-401b-8280-1639e0e46310">
+                        <td colspan="15" width="100%"><table width="100%">Other:  <obs
+                                conceptId="3ce1654a-26fe-102b-80cb-0017a47871b2"
+                                /></table>
+                        </td>
+                    </obsgroup>
+                </tr>
+            </obsgroup>
+        </table>
+    </section>
+    <br />
+    <span id="openmrs_msg">For this section update patient medications using the regimen tab on the patient dashboard</span>
+    <br /><br />
+
+    <section headerLabel="OUTPATIENT MEDICATIONS">
+        <table border="1" cellspacing="0" cellpadding="6" width="100%">
+
+        </table>
+    </section> <section headerLabel="DISPOSITION">
+        <table border="1" cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td class="checkboxGroup"><obsgroup groupingConceptId="8a62cf12-cd13-4624-ae80-4046912c1dda"><!-- <obsgroup groupingConceptId="8a62cf12-cd13-4624-ae80-4046912c1dda"> --> <obs conceptId="d3c8c5f8-9ebb-4622-98ca-c55ca41d3d44"
+                                                                                                                                                                                               answerConceptId="3ce0d472-26fe-102b-80cb-0017a47871b2"
+                                                                                                                                                                                               answerLabel="Hospital admission date &amp; site: " /> <obs
+                        conceptId="3ce94df0-26fe-102b-80cb-0017a47871b2" allowFutureDates="true" /> admission
+                    reason: <obs conceptId="1d642160-089f-49d3-98ce-68885cb5f893" /><br />
+            <span id="checkboxRadio">
+			<obs conceptId="$@ADMISSION_FACILITY@" answerConceptId="$@RWINKWAVU_HOSPITAL@" answerLabel="Rwinkwavu DH"/>
+			<obs conceptId="$@ADMISSION_FACILITY@" answerConceptId="$@BUTARO_HOSPITAL@" answerLabel="BUTARO DH"/>
+			<obs conceptId="$@ADMISSION_FACILITY@" answerConceptId="$@KIREHE_HOSPITAL@" answerLabel="KIREHE DH"/>
+			<obs conceptId="$@ADMISSION_FACILITY@" answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other"/>
+			<obs conceptId="$@OTHER_FOLLOW_UP_LOCATION@"/>
+			<br /> <br />
+		<obs conceptId="d3c8c5f8-9ebb-4622-98ca-c55ca41d3d44"
+             answerConceptId="072af2d3-e735-4cce-8e43-1f3b60c48519"
+             answerLabel="Follow-up in NCD clinic, Next outpatient visit date :"/>
+                    <obs conceptId="$@RETURN_VISIT_DATE@" allowFutureDates="true"/>
+
+			<obs conceptId="$@NCD_FOLLOW_UP_LOCATION@" answerConceptId="$@RWINKWAVU_HOSPITAL@" answerLabel="Rwinkwavu DH"/>
+			<obs conceptId="$@NCD_FOLLOW_UP_LOCATION@" answerConceptId="$@BUTARO_HOSPITAL@" answerLabel="BUTARO DH"/>
+			<obs conceptId="$@NCD_FOLLOW_UP_LOCATION@" answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other:"/>
+			<obs conceptId="$@OTHER_NCD_FOLLOW_UP_LOCATION@"/>
+
+<br />
+		<br />
+		 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Visit reason:&#160;&#160;&#160;Perform Biopsy:<obs conceptId="ea843dde-d33b-4687-88cb-5cd76111b48b" allowFutureDates="true" />&#160;&#160;&#160;Communicate pathology results:<obs conceptId="56001c5f-1a8a-4d80-b255-d1de983a852e" allowFutureDates="true"/><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Special consultation:<obs conceptId="7ec61380-3cde-4b7a-a322-4678a0b460c4" allowFutureDates="true" />&#160;&#160;&#160;Routine follow up:<obs conceptId="a7aa7d20-3520-4d8a-9324-f7b8f6a3b109" allowFutureDates="true" /><br /><br /><br />
+			      </span></obsgroup>
+
+
+                    <br />
+                    <br /> Other:
+                    <obs conceptId="$@OTHER_FOLLOW_UP@"/><br />
+                    <br />
+                    <br />
+                    <i>Complete Exit Program form if patient is exiting from oncology program</i>
+
+                </td>
+
+            </tr>
+        </table>
+    </section>
+
+    <script type="text/javascript">
+$j(document).ready(function() {
+
+	$j('.heightForAge').hide();
+	$j('.weightForAge').hide();
+	$j('.heightWeight').hide();
+	$j('.lastHeight').hide();
+
+	var lastHeight = "<lookup expression="fn.latestObs($@HEIGHT_CM@).valueNumeric"/>";
+	var lastHeightDate = "<lookup expression="fn.latestObs($@HEIGHT_CM@).obsDatetime"/>";
+
+	var birthDate = $j('.birthdate').text();
+	var date = getValue('encounter.value');
+
+	var months = monthDiff(birthDate, date);
+
+	if(months &gt; 228)
+	{
+		$j('.lastHeight').show();
+	}
+
+	getField('height.value').change(function() {
+
+		var patientId = $j('[name=personId]').val();
+		var gender = $j('.gender').text();
+
+		var length = getValue("height.value");
+
+		if(date != null)
+		{
+			if(months &gt; 228)
+			{
+				var weight = getValue("weight.value");
+				if(length != null &amp;&amp; length &gt; 0 &amp;&amp; weight != null &amp;&amp; weight &gt; 0)
+				{
+					var bsa = calculateBSA(length, weight);
+
+					setValue('bsaVal.value', bsa);
+					$j('.bsaValue').html(bsa);
+					$j('.bsa').show();
+				}
+				else if (lastHeight != null &amp;&amp; lastHeight &gt; 0 &amp;&amp; weight != null &amp;&amp; weight &gt; 0)
+				{
+					var monthsLastHeight = monthDiff(lastHeightDate, birthDate);
+					if(monthsLastHeight &gt; 228)
+					{
+						var bsa = calculateBSA(lastHeight, weight);
+
+						setValue('bsaVal.value', bsa);
+						$j('.bsaValue').html(bsa);
+						$j('.bsa').show();
+					}
+				}
+			}
+			else
+			{
+				var weight = getValue("weight.value");
+				if(length != null &amp;&amp; length &gt; 0 &amp;&amp; weight != null &amp;&amp; weight &gt; 0)
+				{
+					var bsa = calculateBSA(length, weight);
+
+					setValue('bsaVal.value', bsa);
+					$j('.bsaValue').html(bsa);
+					$j('.bsa').show();
+				}
+			}
+		}
+	});
+
+	getField('weight.value').change(function() {
+		var patientId = $j('[name=personId]').val();
+
+
+		var gender = $j('.gender').text();
+		var weight = getValue("weight.value");
+
+		if(date != null)
+		{
+			if(months &gt; 228)
+			{
+				var length = getValue("height.value");
+
+				if(length != null &amp;&amp; weight != null &amp;&amp; length &gt; 0 &amp;&amp; weight &gt; 0)
+				{
+					var bsa = calculateBSA(length, weight);
+
+					setValue('bsaVal.value', bsa);
+					$j('.bsaValue').html(bsa);
+					$j('.bsa').show();
+				}
+				else if (weight != null &amp;&amp; lastHeight != null &amp;&amp; lastHeight &gt; 0 &amp;&amp; weight &gt; 0)
+				{
+					var monthsLastHeight = monthDiff(birthDate, lastHeightDate);
+
+					if(monthsLastHeight &gt; 228)
+					{
+
+						var bsa = calculateBSA(lastHeight, weight);
+
+						setValue('bsaVal.value', bsa);
+						$j('.bsaValue').html(bsa);
+						$j('.bsa').show();
+					}
+				}
+			}
+			else {
+				var length = getValue("height.value");
+				if(length != null &amp;&amp; weight != null &amp;&amp; length &gt; 0 &amp;&amp; weight &gt; 0)
+				{
+					var bsa = calculateBSA(length, weight);
+
+					setValue('bsaVal.value', bsa);
+					$j('.bsaValue').html(bsa);
+					$j('.bsa').show();
+				}
+			}
+		}
+	});
+
+		getField('encounter.value').change(function() {
+
+			var patientId = $j('[name=personId]').val();
+
+			var gender = $j('.gender').text();
+
+			date = getValue("encounter.value");
+			var length = getValue("height.value");
+			var weight = getValue("weight.value");
+
+
+			months = monthDiff(birthDate, date);
+			if(months &lt; 229)
+			{
+				$j('.lastHeight').hide();
+			}
+
+
+			if(weight != null &amp;&amp; weight &gt; 0)
+			{
+				if(months &gt; 228)
+				{
+					var length = getValue("height.value");
+					if(length != null)
+					{
+						var bsa = calculateBSA(length, weight);
+
+						setValue('bsaVal.value', bsa);
+						$j('.bsaValue').html(bsa);
+						$j('.bsa').show();
+					}
+					else if (lastHeight != null)
+					{
+						var monthsLastHeight = monthDiff(lastHeightDate, birthDate);
+						if(monthsLastHeight &gt; 228)
+						{
+							var bsa = calculateBSA(lastHeight, weight);
+
+							setValue('bsaVal.value', bsa);
+							$j('.bsaValue').html(bsa);
+							$j('.bsa').show();
+						}
+					}
+				}
+				else {
+					var length = getValue("height.value");
+					if(length != null)
+					{
+						var bsa = calculateBSA(length, weight);
+
+						setValue('bsaVal.value', bsa);
+						$j('.bsaValue').html(bsa);
+						$j('.bsa').show();
+					}
+				}
+			}
+		});
+	});
+
+
+
+	function monthDiff(date1, date2) {
+	    var months;
+
+	    var d1 = new Date();
+	    d1.setTime(Date.parse(date1));
+
+	    var d2 = new Date();
+	    d2.setTime(Date.parse(date2));
+
+	    months = (d2.getFullYear() - d1.getFullYear()) * 12;
+	    if(d2.getMonth() > d1.getMonth())
+	    {
+	    	months = months + (d2.getMonth() - d1.getMonth());
+	    }
+	    else if(d1.getMonth() > d2.getMonth())
+	    {
+	    	months = months - (d1.getMonth() - d2.getMonth());
+	    }
+	   	if(d1.getDate() > d2.getDate())
+	   	{
+	   		months = months - 1;
+	   	}
+
+	    return months;
+	}
+
+	function calculateBSA(length, weight) {
+	    var bsa;
+
+	    bsa = (length*weight)/3600
+	    bsa = Math.sqrt(bsa);
+
+	    bsa = parseFloat(bsa).toFixed(2);
+
+	    return bsa;
+	}
+
+</script>
+    <workflowState workflowId="c8dea23e-c596-40d0-a4a4-08cb61b82d3b" stateId="98091177-b242-40ae-9a78-120e5cdadac0" type="hidden" />
+    <br />
+    Form filled in by:<encounterProvider
+            role="Oncology Provider" default="currentUser"/>
+    <br />
+    <br />
+    <submit />
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <encounterVoided/>
+</htmlform>

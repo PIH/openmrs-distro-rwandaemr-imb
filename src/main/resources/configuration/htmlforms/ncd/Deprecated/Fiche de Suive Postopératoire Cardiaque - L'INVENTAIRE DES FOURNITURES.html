@@ -1,0 +1,79 @@
+<htmlform>
+    <!-- Post cardiac surgery flowsheet:  Clinic visits
+         written by jberchmas 
+         -->
+         <macros>
+		paperFormId = Flow-CardsPostOp-IMB-RW.V2.5akb.16May09
+		headerColor =#009d8e
+		fontOnHeaderColor = white
+	</macros>
+	<style>
+		.formName { background-color:#e0e0ff; }
+		.section { border: 1px
+		solid #8FABC7; width:99%; padding:2px; text-align:left;
+		margin-bottom:10px; }
+		.sectionHeader { background-color: #8FABC7;
+		color: white; display: block; padding: 2px; font-weight:bold; }
+		table.symptoms th {text-align: right;}
+		.note {color:red;}
+		td
+		{vertical-align:top;}
+		table.labTable td { color:red; }
+		table.labTable
+		td.dateField { text-align:right; }
+		table.identifierTable td
+		{padding-right:10px;}
+		div.paddedTable span {padding-right:20px;}
+	</style>
+
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				<b>IMB ID:<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				</b>
+			</td>
+                         <td>
+				Date:
+				<encounterDate />
+                        </td>
+			<td>
+				Clinique / Clinic:<encounterLocation />
+			</td>
+                        <td>
+				Nom/ Signature:<encounterProvider role="NCD Provider"/>
+			</td>			
+		</tr>
+	</table>
+
+	<section headerLabel=" L'INVENTAIRE DES FOURNITURES (SI LE PATIENT EST SOUS WARFARINE) / SUPPLY INVENTORY (IF PATIENT ON WARFARIN)/" >
+		<table border="1" width="100%">
+			<tr>
+				<td>Date</td>
+				<td>#INR Cartridges</td>
+                                <td>#Warfarin 1 mg</td>
+				<td>#Warfarin 2 mg</td>
+				<td>#Warfarin 5 mg</td>
+                                <td>Enoxaparin</td>
+                                <td>Heparin</td>                                
+			</tr>
+
+                        <tr>
+				<td>Date</td>
+				<td>#INR Cartridges</td>
+                                <td>#Warfarin 1 mg</td>
+				<td>#Warfarin 2 mg</td>
+				<td>#Warfarin 5 mg</td>
+                                <td>Enoxaparin</td>
+                                <td>Heparin</td>
+				
+			</tr>
+		</table>
+	</section>
+
+	<br />
+	<center>
+		<submit />
+	</center>
+	<br />
+
+</htmlform>

@@ -1,0 +1,70 @@
+	<htmlform>
+        <!-- Epilepsy flowsheet:  Non-medical life events
+         written by jberchmas            
+         -->
+
+	<style>
+		.formName { background-color:#e0e0ff; }
+		.section { border: 1px
+		solid #8FABC7; width:99%; padding:2px; text-align:left;
+		margin-bottom:10px; }
+		.sectionHeader { background-color: #8FABC7;
+		color: white; display: block; padding: 2px; font-weight:bold; }
+		table.nonmedEvents th {font-weight:bold;}
+		.note {color:red;}
+		td {vertical-align:top;}
+		td.dateField { text-align:right; }
+		div.paddedTable span {padding-right:20px;}
+		.center {vertical-align:middle;text-align:center; }
+	</style>
+
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				<b>
+					IMB ID:
+					<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				</b>
+			</td>
+			<td>
+			</td>
+			<td>
+				Clinique / Clinic:
+				<encounterLocation />
+			</td>
+			<td>
+				Nom/ Signature:
+				<encounterProvider role="NCD Provider"/>
+			</td>
+		</tr>
+	</table>
+
+	<section headerLabel="EVENMENTS DE LA VIE DEPUIS LA DIAGNOSE / LIFE EVENTS SINCE DIAGNOSIS">
+		<table id="nonmedEvents" border="1" width="100%">
+			<tr>
+				<td><b>Date</b></td>
+				<td><b>Evénement/Event</b></td>
+			</tr>
+			<tr>
+				<td>
+					<encounterDate />
+				</td>
+			  <td><obs conceptId="4a179fc0-5f5a-4513-a64a-9e07c6332780" style="textarea" rows="4" cols="80"/></td>
+			</tr>
+			<tr>
+			  <td colspan="2">
+			  	<small>(ex. un mariage, un divorce, une grossesse, un accouchement, la morte d’un membre de la famille, un changement de situation socioéconomique, un changement de résidence depuis le diagnostic)
+			  	<br/>
+					(e.g. marriage, divorce, pregnancy, births, death of family members, change in socioeconomic status, change in residence since diagnosis) </small>
+			  </td>
+			</tr>
+		</table>
+	</section>
+	
+	<br />
+	<center>
+		<submit />
+	</center>
+	<br />
+
+</htmlform>

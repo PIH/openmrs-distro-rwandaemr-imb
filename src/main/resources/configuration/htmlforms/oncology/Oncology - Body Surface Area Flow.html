@@ -1,0 +1,45 @@
+<htmlform>
+	
+	<macros>
+		headerColor =#009d8e
+		fontOnHeaderColor = white
+	</macros>
+
+	<style>
+		.section {
+			border: 1px solid $headerColor;
+			padding: 2px;
+			text-align: left;
+			margin-bottom: 1em;
+		}
+		.sectionHeader {
+			background-color: $headerColor;
+			color: $fontOnHeaderColor;
+			display: block;
+			padding: 2px;
+			font-weight: bold;
+		}
+		.baseline-aligned td {
+			vertical-align: baseline;
+                        width: 100%;
+		}
+        .flowsheet {
+                width: 100%;
+        }
+
+        #title .value {
+        	float: right;
+        	color: white;
+        	padding: 6px;
+        }
+
+        #title {
+        	width: 100%;
+        }
+    </style>	
+	
+	<div id="title"><lookup class="value" expression="patient.personName"/></div>
+	<section headerLabel="BSA Form">
+		<htmlformflowsheet formId="7348b06a-a77d-4008-b2a0-389e0413789a" showHtmlForm="true" windowHeight="520" />	            
+	</section>
+</htmlform>

@@ -1,0 +1,145 @@
+<htmlform>
+    <!--
+        Rwanda Exposed Infant RdV
+        ExposedInfantRDV-31-Mar-2011
+        Written February 2010 - February 14, 2011 (pathetic)
+        Author: Neil Gupta
+        Form builders: Lara Kellett (aka Speedy)
+                      and Ellen Ball Partners In Health
+    -->
+    <macros>
+        paperFormId = (Fill this in)
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+    </macros>
+
+    <style>
+		.section {
+			border: 1px solid $headerColor;
+			padding: 2px;
+			text-align: left;
+			margin-bottom: 1em;
+		}
+		.sectionHeader {
+			background-color: $headerColor;
+			color: $fontOnHeaderColor;
+			display: block;
+			padding: 2px;
+			font-weight: bold;
+		}
+		table.baseline-aligned td {
+			vertical-align: baseline;
+		}
+	</style>
+
+    <translations defaultLocale="fr">
+        <code name="gender_m">
+            <variant locale="fr" value="Homme" />
+            <variant locale="en" value="Male" />
+        </code>
+        <code name="gender_f">
+            <variant locale="fr" value="Femme" />
+            <variant locale="en" value="Female" />
+        </code>
+    </translations>
+
+    <table border="2" cellspacing="0" cellpadding="6" width="100%">
+        <tr>
+            <td>
+                <img src="/openmrs/moduleResources/rwandareports/images/rwanda-logo.jpg" align="left" height="100"
+                     width="100">
+                </img>
+            </td>
+            <td>
+                <h2>
+                    RWANDA MINISTRY OF HEALTH
+                    <br />
+                    <span class="english">MOH Rwanda</span>
+                </h2>
+            </td>
+            <td>
+                <strong>
+                    General diagnosis
+                    <br />
+                    Rendez-vous de Suivi
+                    <br />
+                    <span class="english">Followup</span>
+                </strong>
+                <br />
+                RDV-31-Jan-2019
+            </td>
+        </tr>
+    </table>
+
+    <table border="1" width="100%">
+        <tr>
+            <td>
+                Nom/
+                <span class="english">Name</span>
+                :
+                <lookup class="value" expression="patient.personName.familyName" />
+                <lookup class="value" expression="patient.personName.givenName" />
+                ID:
+                <lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+            </td>
+            <td>
+                DATE:
+                <encounterDate />
+            </td>
+            <td>
+                Health Facility :
+                <encounterLocation id="location"  />
+            </td>
+        </tr>
+    </table>
+
+    <section headerLabel="GENERAL OPD FOLLOWUP">
+        <table border="0" width="100%">
+            <tr>
+                <td>
+                    <obs conceptId="3cd91070-26fe-102b-80cb-0017a47871b2" style="no_yes" labelText="Visite programmée"
+                         noLabel="non" yesLabel="oui" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Complaint Diagnosis
+                </td>
+                <td>
+                    <obs conceptId="f0230f4a-1b20-4a47-bce9-c5a9c01367ec"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Conclusion of exam: </td>
+                <td>
+                    <obs conceptId="3cdc5938-26fe-102b-80cb-0017a47871b2" rows="3" cols="80" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Treatment and comment
+                </td>
+                <td>
+                    <obs conceptId="3ce88a32-26fe-102b-80cb-0017a47871b2" rows="3" cols="80" />
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <obs conceptId="3ce94df0-26fe-102b-80cb-0017a47871b2" labelText="Prochain rendez-vous?" allowFutureDates="true" />
+                </td>
+            </tr>
+            <tr>
+                <td>Provider
+                    <encounterProvider default="currentUser"/>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <center>
+        <submit />
+    </center>
+    <br />
+
+</htmlform>

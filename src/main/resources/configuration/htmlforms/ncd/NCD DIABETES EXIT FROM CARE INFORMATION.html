@@ -1,0 +1,465 @@
+<htmlform> <!--
+           NCD - DIABETES Exit Forms
+            Pilot_4July_v1.3NT
+                Author:
+                Builder: Byiringiro Joshua
+                started on July 27, 2017
+        -->
+
+    <macros>
+        @PATIENT_CONTACTS_CONSTRUCT@ = 3cd9936a-26fe-102b-80cb-0017a47871b2
+        @NAMES_AND_FIRSTNAMES_OF_CONTACT@ = 3cd997f2-26fe-102b-80cb-0017a47871b2
+        @Famil_Care_giver@ = 14a171cd-d8e6-4326-9f29-a5ee3f8055dd
+        @Family_Care_giver_Phone_Number@ = a20ccea2-8671-4bfa-9852-946266fe9ac7
+        @Home_Based_Care_Practionner@ = e44010bc-28a4-43b0-8a48-422c05170385
+        @Home_Base_Care_Practionner_Phone_Number@ = a1486c51-8763-4700-b307-22ed45f947b4
+        @TELEPHONE_NUMBER@ = 3cda3d7e-26fe-102b-80cb-0017a47871b2
+        @Patient's_Contact_Phone_Owner@ = d44faa5c-32e0-4715-b4af-f89664cde097
+        @Patient(generic__answer_to_aquestion)@ = 71213fa5-308b-4402-81d0-a65a14d771d1
+        @OTHER_NO_CODED@ = 3cee7fb4-26fe-102b-80cb-0017a47871b2
+        @Other@ = c548a633-9931-496d-9ade-4b7c971e6600
+        @REASON_FOR_EXIT@=3cde5ef4-26fe-102b-80cb-0017a47871b2
+        @TOP_NCD_REASON_FOR_EXIT@=bedc579c-cfdc-4a94-9b13-112ce21145f0
+        @PATIENT_DIED@=3cdd446a-26fe-102b-80cb-0017a47871b2
+        @TRANSFERED@=3a296bb6-5fc8-40ee-84fc-97c13cacf8d8
+        @LTFU@=3ceb0ed8-26fe-102b-80cb-0017a47871b2
+        @DECLINED_CARE@=1b83f37a-df3a-42a5-b83b-ebc5237f2dbf
+        @FACILITY@=3c9331e3-d02c-4b7d-840e-59e2d8ab7dff
+        @planned_admission_reason@ = 1d642160-089f-49d3-98ce-68885cb5f893
+
+        <!-- The imported ones -->
+        @scheduledAdmission@ = 3cd91070-26fe-102b-80cb-0017a47871b2
+        @newAdmission@ = a842c267-fa68-45be-96e7-d78a1aa02bb4
+        @cancerProgressStatus@ = 05841055-295e-4313-ad3b-64b13be4118e
+        @UndergoingTreatment@ = 0387f568-8186-4f3b-bf11-ed436adaaa60
+        @SympomtomaticPalliativeCare@ = bc01928f-569e-4eae-ab9e-99c94d47e42f
+        @PresumedRemission@ = 1642c13b-3996-4614-a56f-86c48c0dc393
+        @reasonforHospitalAdmission@ = 1b066ca3-2e90-441c-8e1c-1818ac7a35f1
+        @chemotherapy@ = f08a431e-222e-479d-832a-43b345314080
+        @adverseEvent@ = da22d694-4ebf-41e2-aeb5-d28ccd61f1e1
+        @OTHER_NON_CODED@=3cee7fb4-26fe-102b-80cb-0017a47871b2
+        @Paincontrol$ = fc9299ee-9d15-4594-b5f4-5b162cd8837d
+        @CLUSTERED_ONCOLOGY_STAGE@=40a6d86f-dcd3-4e5e-88e6-bb55db8deef3
+        @EARLY@=c37a6c5a-7ef3-43e9-9ac6-215a1cf42c1f
+        @LOCALLY_ADVANCED@=3ab42fcd-df0f-4d5f-898f-1889ccb23a5b
+        @METASTATIC@=ca3a621e-9d13-483a-8863-b76f61812699
+        @CancerPriorTreatment@ = 33c20a0b-b6d0-451f-b9c8-7e40ea6850f9
+        @Completed_AC@ = 3277dab9-dc6a-4cc8-a7e7-835b69bc6776
+        @completer_AC_T@ = 207117c8-08fe-4d16-99bb-3fc2dbf25705
+        @Failed_AC_T@ = 30a4a6b7-38b7-4422-8eeb-077dbb8cb95f
+        @Failed_A@ =  	2e02e0bd-1a9f-40b5-8139-69ae13a25a6f
+        @Failed_C@ = 82212dea-3d97-402e-9b76-804102538f71
+        @Failed_T@ = 03bb30ce-0316-480d-be43-be1ecfc17355
+        @Failed_5-FU@ = 02ba08ea-8e37-46e2-8ee7-3f74767d5a0c
+        @FailedTamoxifen@ = 326f70fd-d849-4319-a565-2a7810887ceb
+        @FailedLetrozole@ = ace7540a-5adb-41b1-aad3-fed4a3aa56d2
+        @MRM@ = 4695e7e1-3360-4c95-872b-0ffceb56ac42
+        @SimpleMastectomy@ = 944ba7fe-65d6-4985-bd05-7c010d8e3db6
+        @RT@ = 26b2e69e-2344-489c-947d-7f535f51c5e1
+        @CancerRelapsed@ = 759148a5-ef5f-4aab-bc67-3811967e54b0
+        @PerformanceStatus_coded@ = 0122656b-2cc1-4709-8030-41373503b111
+        @0@ = 76d0827f-aef3-496c-93f4-d99bb4e53b91
+        @1@ = 596daaf5-3d0b-4ddc-a848-1732d70b5962
+        @2@ = bff8b23f-0d4b-4606-9e72-88c9b401f4d2
+        @3@ = ed34b78a-e029-4711-a2a0-7cad6160c89c
+        @4@ = 772c4100-270c-49d4-873a-ffec0bbef3d3
+        @Cancerdiagnosis(general)_coded@ = e44f78bb-a640-4adf-bce5-a756712b37dd
+        @BreastCancer@  =  	e1bd83f4-e9fa-4564-b8aa-74a9b199aca8
+        @Hodgkin'sLymphoma@ = c09c623b-83d6-4ea0-b0ec-6e4b94e38254
+        @OtherNonHodgkin'sLymphoma@ = 1c1d3792-bd75-492d-9073-5261ea3295c5
+        @NotCancer_noBiopsy@ = 885dc5bf-0f2a-4cb5-ab53-00d0116a1bed
+        @OTHERNON-CODED@ = 3cee7fb4-26fe-102b-80cb-0017a47871b2
+        @Suspected@ = f18d4b2d-8fa6-44e5-b130-f3819ba412cf
+        @OtherCancerDiagnosis@ = 1da2ad12-54ea-4af3-b9b2-a217064cc8d0
+        @NEW_OR_CHANGED_CANCER_DIAGNOSIS@ = 1164a066-d112-4bf9-bffb-0691f76d2618
+        @METHOD_OF_FAMILY_PLANNING@ = 3ccfbd0e-26fe-102b-80cb-0017a47871b2
+        @NATURAL_FAMILY_PLANNING@ = 3ceb5082-26fe-102b-80cb-0017a47871b2
+        @ORAL_CONTRACEPTION@ = 3cd42786-26fe-102b-80cb-0017a47871b2
+        @SurgicalFamilyPlanning@ = b8fd17a0-6736-460a-bb5d-d5625a7f4658
+        @BarrierFamilyPlanning@ = d72a4676-b456-432f-8ec4-6231c0341d7c
+        @Pregnant@ = ce677773-4278-494f-9be1-fda8cfc93055
+        @breastfeeding@ = 579eedaa-1227-48d4-aad3-0334e6dd049f
+        @SocialSupport@ = 4ac10fd6-2b4e-4edd-9932-489f0e54032e
+        @Temperature@ = 3ce939d2-26fe-102b-80cb-0017a47871b2
+        @diastolicBloodPressure@ = 3ce93694-26fe-102b-80cb-0017a47871b2
+        @systolicBloodPressure@ = 3ce934fa-26fe-102b-80cb-0017a47871b2
+        @pulse@ = 3ce93824-26fe-102b-80cb-0017a47871b2
+        @BloodOxygenSaturation@ = 3ce9401c-26fe-102b-80cb-0017a47871b2
+        @PainScale_High_5@ = e807f387-5e8d-42a0-a1f7-6364d4ab02d3
+        @RespiratoryRate@ = 3ceb11f8-26fe-102b-80cb-0017a47871b2
+        @generalPhysicalState@ = 3ce15212-26fe-102b-80cb-0017a47871b2
+        @CardialVascular@ = 12721eb9-b19b-43e3-8573-566a944ce1ba
+        @PulmonarySystem@ = 3ce15384-26fe-102b-80cb-0017a47871b2
+        @AbdominalSystem@ = 3ce157ee-26fe-102b-80cb-0017a47871b2
+        @ExtremitiesPhysicalObservation@ = 694680cd-b5ba-4cf9-a4a8-52371840e0c2
+        @OtherPhysicalSystem@ = e2d3493a-9db0-4c2e-9254-db41db8b0807
+        @Side@ = cbe15eb6-fba4-4ea0-9513-6aea78f97cc3
+        @Left@ = 3ce99198-26fe-102b-80cb-0017a47871b2
+        @Right@ = 3ce9949a-26fe-102b-80cb-0017a47871b2
+        @Bilateral@ = 57ec1a86-4e5a-4402-b417-9cd14d294f79
+        @BreastCancerConceptSet@ = b702125b-2426-47db-a13c-49363d01d1db
+        @BreastMassMobility@ = 13f2f074-3c53-4074-a690-6626220acbdf
+        @Mobile@ = a0f3848e-5380-4f61-b679-558f881bb4b4
+        @Fixed@ = 5de8377b-6170-4328-895b-f4131b147af2
+        @MassSize@ = 2f95703c-d0ce-4dfe-b59b-4376a27db8bf
+        @Length@ = 8e993b07-aacc-4629-a6d6-562d2c4e3857
+        @Width@ = 82f2423b-82aa-4890-a127-b8df3cd12d37
+        @MultipleSmallNodules@ = c68b2328-32a9-4fcb-8844-ad07c34dd6ea
+        @X-RAY_CHEST@=3ccc6186-26fe-102b-80cb-0017a47871b2
+        @NEGATIVE@=3cd28732-26fe-102b-80cb-0017a47871b2
+        @POSITIVE@=3cd3a7a2-26fe-102b-80cb-0017a47871b2
+        @YES@=3cd6f600-26fe-102b-80cb-0017a47871b2
+        @NO@=3cd6f86c-26fe-102b-80cb-0017a47871b2
+        @NONE@=3cd743f8-26fe-102b-80cb-0017a47871b2
+        @DATE_OF_SURGERY@=48e392bb-0685-4ab3-a217-fd23502a5635
+        @TUMOUR_PROGNOSIS_FOR_KS@=40121f41-5303-4b18-8251-1d62e0eb3e2f
+        @IMMUNE_SYSTEM_PROGNOSIS_FOR_KS@=26ada79f-153a-4067-b4dd-bec6bfc40647
+        @SYSTEMIC_ILLNESS_PROGNOSIS_FOR_KS@=2476256a-2c16-4605-adcb-2ca1d33c299d
+        @TIS_STAGING_SYSTEM@=60f733d6-7000-48eb-be8e-c503b094b882
+        @SURGERY_TYPE@=f2dc764c-255b-4959-beec-b2a14b597cd3
+        @MASS_SIZE@=f174b027-79cf-4ebf-a103-d34b26eacafd
+        @MASS_LOCATION@=e95848e2-f31c-485f-ba8b-8c9424840f92
+        @MASS_SIZE_CONSTRUCT@=2e775064-6ece-4546-9375-50480e8e0020
+        @MOBILE@=a0f3848e-5380-4f61-b679-558f881bb4b4
+        @FIXED@=5de8377b-6170-4328-895b-f4131b147af2
+        @BREAST_MASS_MOBILITY@=13f2f074-3c53-4074-a690-6626220acbdf
+        @RIGHT_BREAST_MASS_CONSTRUCT@=e695754b-1c5f-41a8-9d08-5768b8202648
+        @HIGH_RISK@=c5382fcc-e3b5-4676-95a3-1b09489f8429
+        @PLANNED_RADIATION_DATE@=25064eeb-932e-4c93-994c-b4053e732ed3
+        @NOT_DETERMINED@=09c8c10f-c3a6-41f8-ac91-55493ee008c6
+        @H_PYLORI_STATUS@=e45fd262-8a8c-4f72-ae42-d540973cc39f
+        @T922+@=5fc18aa2-9d23-4a82-886e-3b8c5c7bbb38
+        @T922-@=3223fbd6-00ab-44dd-9d6a-e0826520d1e9
+        @LOCATION_OF_PATHOLOGY@=ca421c58-2c81-4fac-8cf7-aced4f2896e8
+        @CHRONIC_PHASE@=a6b97e07-2087-435b-a921-c96984da5e35
+        @ACCELERATED_PHASE@=0bb18969-3e13-4686-b718-ac5ec5caec39
+        @BLAST_CRISIS@=71835cb2-aeba-4014-9c33-3c3a8ee1f456
+        @CML_STAGING@=d960c608-37f7-4525-877c-bb4b41015ba7
+        @PLANNED_CHEMOTHERAPY_START_DATE@=e9b59f4e-8a3f-467f-b5e0-1296025fb286
+        @OVERALL_CANCER_STAGE_FOUR@=d2f21acb-9519-42ca-a72d-2fcb6bb15c5d
+        @METASTASES@=05303c1b-3de8-4fb8-91ad-9563ab4d2ac0
+        @HER2_FISH+@=7c7b9746-010e-42a1-97f7-4b5e5fe0f374
+        @N3_STAGING_FOR_TNM@=e4493745-f26e-4bb8-9fce-45770af54aae
+        @N2_STAGING_FOR_TNM@=a0c26ed6-4e9f-4743-8f86-8cbc10e6a691
+        @NO_STAGING_FOR_TNM@=c8818f76-88e6-4acc-9ac7-b3fe7c1a6470
+        @N1_STAGING_FOR_TNM@=92ec921e-da58-4137-9921-f5be63792846
+        @NODE@=5f6e7585-27a2-4174-8958-95b52a408dbc
+        @T1_STAGING_FOR_TNM@=852245b6-4982-49fe-90ea-3b4f20ddf308
+        @T2_STAGING_FOR_TNM@=cef35546-ed22-4a27-afd1-d0169d520691
+        @TO_STAGING_FOR_TNM@=ab4f8b5f-2919-4f83-9fbf-17db59910c48
+        @T3_STAGING_FOR_TNM@=7b4d19fb-61fc-4633-87a0-392442ee2e8b
+        @TIS_STAGING_FOR_TNM@=7f63a1c9-370d-4dd9-9e40-c6f0e0b9db44
+        @T4_STAGING_FOR_TNM@=4060bf94-ce2b-48b8-b641-5c1561455294
+        @TUMOR@=8a1b7c95-6f00-4d66-b3da-cd091a693cf1
+        @OVERALL_CANCER_STAGE_ONE_A@=0a51df04-8563-4e83-8869-56fd79fe4113
+        @PH+@=0a01e9a5-94a9-42df-8674-1602b7d455fb
+        @PH-@=1d19d217-b491-4bff-8de7-a1f65dea3314
+        @NUMBER_OF_PLANNED_CHEMOTHERAPY_CYCLES@=aaeb5782-3ee6-4cb8-9d27-c557ad91e241
+        @PR-@=5007fcdc-becb-474a-ab79-c36a94e56f66
+        @PR+@=a054fa15-43aa-4271-bc24-dc24f34014ac
+        @PROGESTERONE_RECEPTOR@=b8c56ccc-fe19-4daa-8f2a-682b1e3acddc
+        @B_SYMPTOMS_PRESENT@=94e19d03-ba1b-46ee-ac78-0cc853f85be0
+        @NO_B_SYMPTOMS@=fb525380-e1f3-4740-a05b-7a57201a98dd
+        @SYMPTOMATIC_STAGING@=24e02fad-f94f-4a81-84e7-6c753f37edd7
+        @LEFT_BREAST_MASS_CONSTRUCT@=7b9a2f55-d8dd-4e5f-8638-9e212032a14c
+        @EXTENSIVE_STAGE@=0d1221e1-e361-48e9-a79f-660baf25c141
+        @PH_STATUS@=341f9b25-da06-4153-8abc-8fc9d52ee849
+        @LOW_RISK@=a5428445-23de-43bd-bbfb-b4054d3b1005
+        @SINUSES_NASAL_CAVITY@=fec03580-5d54-4b5d-8926-fd0b184b84db
+        @DATE_OF_PATHOLOGY_REPORT@=926dd83d-5c6c-43d9-9fb8-a8c2e364d5f6
+        @NORMAL_RENAL_FUNCTION@=911e8796-0bbb-482d-a20f-486f1581528d
+        @HEAD_AND_NECK_DIAGNOSIS_NON_CODED@=7e952ad1-935a-4792-96a7-c0ba2079711e
+        @ABNOMAL_RENAL_FUNCTION@=bedc9e04-41ee-441e-9ec6-0be4833f75b8
+        @PATHOLOGY_PERFORMED@=145c13d3-dfbb-4dc6-9986-d10fd5e9bf48
+        @OVERALL_CANCER_STAGE_FIVE@=afe0e350-6be0-4093-a701-923a446f1924
+        @OVERALL_CANCER_STAGE_THREE_A@=5833e1dc-ed16-4f46-91d4-af33b9a5dd48
+        @TNM_STAGING@=89089c30-a9ed-4a50-a3dd-0d12029feaf7
+        @NASOPHARYNX@=cb08c841-6b04-4028-83dc-d349a837bcc
+        @OVERALL_CANCER_STAGE_ONE_B_ONE@=8f133498-607b-49d1-ab3a-9e09f9fa2246
+        @LIMITED_STAGE@=14f8ee91-6fe1-4907-8e4f-b12974a5f92a
+        @SMALL_CELL_LUNG_CANCER_STAGING@=3c7a530f-6061-4b0b-b541-f44bbadeb06b
+        @PLANNED_CHEMOTHERAPY_REGIMEN@=012df739-5bd1-445c-a76e-de0d5702d86a
+        @MEDIUM_RISK@=7a5652ea-dacc-46f0-8c45-329fa28e09aa
+        @OVERALL_CANCER_STAGE_FOUR_A@=013bfdb5-8bf0-46aa-b11f-cef89acfd0f2
+        @HER2_FISH-@=bc45c3ef-701d-4279-8434-ce94525fc7df
+        @VERY_HIGH_RISK@=88e2ac87-6e53-4933-81db-949c759f2d2a
+        @ACUTE_LYMPHOBLASTIC_LEUKEMIA_STAGING@=7b10db39-009a-4e99-8ef5-abc0977dbf65
+        @HER2_FISH@=c40c9293-14bf-4e42-becd-e2af798d217d
+        @LIQUID_CANCER_STAGING@=ed671ebe-7b3e-40ed-a1ef-3d758b54fc97
+        @MULTIPLE_MYELOMA_SUBCLASSIFICATION@=fefcac01-aadb-4b19-8390-07746920d506
+        @SMALL_CELL_LUNG_CANCER@=73087fb3-7d1f-4660-81a2-79f68ac001f0
+        @CYTOGENETICS@=e591db39-b26d-4e28-802e-1e435d2c0d22
+        @PLANNED_ONCOLOGY_SURGERY_DATE@=409ebbae-8a1e-43d4-82e8-eea7b493b51d
+        @NON_SMALL_CELL_LUNG_CANCER@=924fd607-4986-4cd1-af54-505b8b90f990
+        @LUNG_CANCER_DIAGNOSIS@=bc67ddac-4085-4427-978d-d214595ff304
+        @ORAL_CAVITY-OROPHARYNX-HYPOPHARYNX@=5181b953-119e-4123-9a71-f6bdbef3973a
+        @LARYNX@=4bd37944-e0e5-486a-8c14-03e9cf716e18
+        @EDIT_HEAD_AND_NECK_CANCER_DIAGNOSIS_STATE@=60272648-efe7-4522-9b3b-b3567fe5b403
+        @PLANNED_RADIATION_FACILITY@=09693eb4-aa3d-4804-bcc3-eb149cb0614a
+        @ER-@=d65a1323-e3b2-43ac-ad35-b36359d00504
+        @BULKY_MEDIASTINAL_DISEASE_STAGING@=a6896274-c1cb-4ff7-8e39-8d9c7c7cd50b
+        @ER+@=28fa396e-5330-43b3-8c69-d978003f24ff
+        @OVERALL_CANCER_STAGE_ONE@=39c6497d-fe50-4dcf-86e4-5360e1d32f82
+        @OVERALL_CANCER_STAGE_TWO@=c899d4c0-91a1-42f2-b395-114740f237fd
+        @PLANNED_CHANGES_TO_STANDARD_CHEMOTHERAPY_REGIMEN@=d6e5e3a7-2ab7-45c2-a104-4f49ed01aefc
+        @SKIN_CHANGES_RELATED_TO_BREAST_CANCER_DIAGNOSIS@=5b357578-179a-4ddf-996f-2eb760b092d7
+        @CANCER_DIAGNOSIS_DETAILS@=826af985-d6b8-46a5-8773-92e53ee10d45
+        @EARLY@=c37a6c5a-7ef3-43e9-9ac6-215a1cf42c1f
+        @OVERALL_CANCER_STAGE_THREE_B@=cbb88e1b-2d13-4557-8ebd-9c622cd8b0c8
+        @OVERALL_CANCER_STAGE_FOUR_B@=6d86391c-10a5-49d6-967b-e619c1c908a3
+        @OVERALL_CANCER_STAGE_ZERO@=11ad3741-d3fe-48ff-8872-ce42c8764d34
+        @OVERALL_CANCER_STAGE_THREE@=1d5896f3-2e0e-4bc2-aa6c-afe1911afa79
+        @OVERALL_CANCER_STAGE_ONE_B_TWO@=5d823631-ebf5-4849-919e-914b639cc060
+        @OVERALL_ONCOLOGY_STAGE@=e9cf4aed-34be-4c0a-9004-4294d9bb2d74
+        @ESTROGEN_RECEPTOR@=1acc8814-ce06-49f3-8cc1-6b5d1efe3f79
+        @HER2_IHC+@=f8e53211-e01c-4439-86e5-083b6a044652
+        @CLUSTERED_ONCOLOGY_STAGE@=40a6d86f-dcd3-4e5e-88e6-bb55db8deef3
+        @HER2_IHC-@=2a7e3812-da32-437e-b967-079706ca955e
+        @HER2_IHC@=6270e371-3fc9-4ed1-96fb-84b072067b1b
+        @OTHER_SOLID_CANCER_NONE_CODED@=b9e23b4a-e714-4a55-a3d4-2e152ab4b2b8
+        @OHTER_LIQUID_CANCER_NON_CODED@=5988cf36-80fb-46b9-bf19-93ec759c4bb6
+        @BREAST_CANCER_COMMENTS_AND_STAGING_CONSTRUCT@=ad1daadc-b671-493c-bb68-2ece80790706
+        @CERVICAL_CANCER_COMMENTS_AND_STAGING_CONSTRUCT@=41a80891-3bb2-4423-9647-1f803cebed60
+        @KS_COMMENTS_AND_STAGING_CONSTRUCT@=c4042973-e670-467d-a4a5-bd4f109bdea1
+        @H-N_COMMENTS_AND_STAGING_CONSTRUCT@=bc662e4d-6c74-48ab-a0c6-99e3f2d6dba9
+        @GASTRIC_CANCER_COMMENTS_AND_STAGING_CONSTRUCT@=971098c1-8e3b-42cf-bd10-ffc0f339c9aa
+        @COLO-RECTAL_COMMENTS_AND_STAGING@=a46f5808-7e2d-4fa9-9266-facac792167f
+        @PROSTATE_CANCER_COMMENTS_AND_STAGING_CONSTRUCT@=de77bcbb-4027-44af-9e22-3bb691cd1736
+        @NEPHROBLASTOMA_COMMENTS_AND_STAGING_CONSTRUCT@=7c2e9249-1c84-4b98-b4c2-7d0465b1257d
+        @LUNG_CANCER_COMMENTS_AND_STAGING_CONSTRUCT@=9c5d0b7e-0de8-4c3a-aea1-7284735ceeef
+        @OTHER_SOLID_CANCER_COMMENTS_AND_STAGING_CONSTRUCT@=e4179f1d-9fb0-427e-9ca8-be6098fae679
+        @HODKINS_LYMPHOMA_COMMENTS_AND-STAGING_CONSTRUCT@=d75d402a-a9da-40e3-827c-2e76114f51e6
+        @BURKITTS_LYMPHOMA_COMMENTS_AND_STAGING_CONSTRUCT@=3e4f8536-d583-437b-9b48-4e10ee8e1b17
+        @LARGE-B_CELL_LYMPHOMA_COMMENTS_AND_STAGING_CONSTRUCT@=5e0d8a90-4029-480e-a6c7-b2e925723261
+        @OHTER_NHL_COMMENTS_AND_STAGING_CONSTRUCT@=9c82b777-7ee8-440a-a95f-24c4e3ede867
+        @MULTIPLE_MYELOMA_COMMENTS_AND_STAGING_CONSTRUCT@=68b163a4-9d9c-4571-86e4-cb70b5b92ca7
+        @METASTATIC_CANCER_COMMENTS_AND-STAGING_CONSTRUCT@=58f97dd5-c583-42a6-97c0-5dabd8171b5c
+        @ALL_COMMENTS_AND_STAGING_CONSTRUCT@=1775fe51-cc4d-44db-9702-acc3f85c5fb3
+        @CML_COMMENTS_AND_STAGING_CONSTRUCT@=c8945be9-d3b8-41bb-918a-e3bb424c244e
+        @OTHER_LIQUID_CANCER_COMMENTS_AND_STAGING_CONSTRUCT@=92fee1a2-d4de-43c2-b880-d4235b889986
+        @PATHOLOGY_PERFORMED_CONSTRUCT@=639fb794-8a5a-4958-b4b1-749e554f44fb
+        @PLANNED_ONCOLOGY_SURGERY_CONSTRUCT@=c0f544c2-b233-4956-a8d6-b75153992f00
+        @PLANNED_RADIATION_CONSTRUCT@=63ad7caa-b6e2-4b9a-b462-771a9b048c36
+        @PLANNED_CHEMOTHERAPY_CONSTRUCT@=d4ceafd0-e5b5-422a-aecd-eac58207cbcc
+        @INVASIVE_DUCTAL_CARCINOMA@=ae859e04-95b2-4b1c-ad61-61d643a96556
+        @INVASIVE_LOBULAR_CARCINOMA@=6a37d4d3-7d2a-48fa-89fc-b4a314ffd253
+        @OTHER_INVASIVE_CARCINOMA@=ff5273ea-bc19-480f-9056-d830d137bca1
+        @PATHOLOGIC_DIAGNOSIS_NON_CODED@=387dc461-bde7-4d27-8754-8ee35e5be3ee
+        @PATHOLOGOGIC_DIAGNOSIS@=21f54f50-b804-476e-a0dd-a3238cd556fb
+        @ABDOMINAL_PELVIC_ULTRASOUND@=0ffd0c89-efdf-474f-8d2d-e4f8de7c7d90
+        @CT_SCAN_OF_CHEST_ABDOMEN_PELVIS@=f0645e5e-ad7e-45c3-a4d4-a412aa61b64c
+        @IMAGING_ASSESSMENT_AND_FINDINGS@=997d8e3c-a93c-4cd4-822d-9630bdb5fffe
+        @IMAGING_STUDIES@=24e5c4c1-ac2b-42f5-a144-aa41e4375cb5
+        @IPSALATERAL@=eb544294-bc35-4f28-b7bd-1b91f8703452
+        @CONTRALATERAL@=5012f7d5-d833-4888-ada6-10642214b2f9
+        @AXILLARY_LEVEL-I-II@=94a7738a-b2a3-45ec-b0b5-25b5aecf1599
+        @INFRACLAVICULAR_AXILLARY_LEVEL_III@=953afb46-e52f-4b41-88b7-7176fdd7747d
+        @SUPRACLAVICULAR_LEVEL@=8a69a66d-48ac-4bc5-9f01-9c186a5c7cbd
+        @INTERNAL_MAMMARY_LEVEL@=088a4f0a-0b6f-497b-ad07-2de7b8a72985
+        @LYMPHANEDOPATHY_LEVELS@=206ed02d-251f-42ee-8703-4cc175f55578
+        @PALLIATIVE@=b4c1df8a-9e39-4132-89a7-463394e765cd
+        @NEOADJUVANT@=d1d9a3b0-57d7-43c9-99a7-dad45fe00cc0
+        @ADJUVANT@=0270b13f-7641-4544-a41b-4e66649b679d
+        @CHEMOTHERAPY_REGIMEN_TIMING@=bfe19cc9-27cc-484f-8cdf-c737153dceaa
+        @IMAGING_STUDY_DATE@=71d7014e-3f02-4c41-b49a-bb6462de85ff
+        @IMAGING_STUDY_SITE@=1ece1f61-f35a-4cc4-bd6d-fcf9fc80b5b5
+        @PLANNED_CHEMOTHERAPY_REGIMEN_END_DATE@=989c2c3c-b000-45e2-9bc4-0bab9808d9c4
+        @TX_STAGING_FOR_TNM@=002884fb-12a7-4758-8e22-e66b60201059
+        @NX_STAGING_FOR_TNM@=fe262f06-f0be-49c0-b55b-82361b9b8145
+        @ONCOLOGY_SURGERY_FACILITY@=1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32
+        @SURGERY_PROCEDURE@=afbed187-03de-4fff-838a-66bbefb07993
+        @PATHOLOGY_REPORT_INSTITUTION@=2c077745-437b-4e5a-9b7f-d896632340ba
+        @SURGERY_PERFORMED@=893ebbae-cbe8-4ea1-9906-16dfb6620947
+        @PERFORMED_SURGERY_CONSTRUCT@=54743dc8-6dd0-44c3-9f97-f2d96255d18e
+        @OPERATIVE_REPROT_FACILITY@=1b727a0a-ec58-4360-bee3-bcf771a9404b
+        @OPERATIVE_REPORT_CONSTRUCT@=cb7278c9-6631-4a32-b4d7-378e24b2df93
+
+
+        <!-- program Id -->
+        @Diabetes_Program@ = eff53c35-eaa8-4cae-9d68-78c2c21a5e6d
+
+
+    </macros>
+
+
+    <style>
+        th.tableHeader {
+        background-color: #009d8e;
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: left;
+        }
+
+        ul {
+        list-style-type: square;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        }
+
+        tr.spaceUnder>td {
+        padding-bottom: 1em;
+        }
+
+        td {
+        font-size: 15px;
+        }
+
+        #container {Diabetes
+        position: relative;
+        margin: auto;
+        width: 1400px;
+        height: auto;
+        }
+
+        @media print {
+        #container {
+        display: none;
+        }
+
+        #printArea {
+        display: block;
+        }
+
+        #userBar {
+        display: none;
+        }
+
+        #banner {
+        display: none;
+        }
+
+        #footer {
+        display: none;
+        }
+
+        #htmlFormEntryBanner {
+        display: none;
+        }
+
+        .error {
+        display: none;
+        }
+
+        .lables {
+        width: 200px;
+        }
+
+        table {
+        width: 100%;
+        }
+
+        table,td,th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+
+        th {
+        text-align: left;
+        background-color: #D9D9D9;
+        font-size: 10px;
+        }
+
+        td {
+        font-size: 10px;
+        }
+
+        .selectedCancerStagingKeys {
+        page-break-before: always;
+        border: 0px;
+        }
+
+        table.selectedCancerStagingKeys td {
+        border: 0px;
+        }
+
+        #signature {
+        border: none;
+        }
+        #signature td {
+        border: none;
+        }
+        }
+
+        @media screen {
+        table {
+        border: 1px solid #DFDFDF;
+        width: 100%;
+        border-color: #009d8e;
+        }
+
+        #container {
+        display: block;
+        }
+
+        #printArea {
+        display: none;
+        }
+        }
+    </style>
+
+    <div id="container" style="width:100%">
+        <section>
+
+            <table cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td><img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left"
+                             height="65" ></img>
+                        <b>REPUBLIC OF RWANDA
+                            <br />MINISTRY OF HEALTH</b>
+                    </td>
+                    <td><strong>INFORMATION SUR LA SORTIE DU PROGRAM/</strong>EXIT FROM CARE INFORMATION <br/>
+                        <b> IMB ID: <lookup class="value"
+                                            expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
+                                                                                                               expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
+                        <br/>
+                        Nom / Last name: <lookup class="value" expression="patient.personName.familyName" />
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        Prénom/ First name: <lookup class="value" expression="patient.personName.givenName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Clinique / Clinic: <encounterLocation />
+                    </td>
+                    <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        Provider:<encounterProvider />
+                    </td>
+                </tr>
+            </table>
+            <table border="1">
+                <tr >
+                    <th class="tableHeader">
+                        <strong>EMR</strong>
+                    </th>
+                    <th class="tableHeader"></th>
+                    <th class="tableHeader">
+                        <strong> Raisons</strong>Reasons
+                    </th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><strong>Sortie/</strong> Exit</td>
+                    <td>
+                        If the patient is exiting permanently, fill this drop down. <exitFromCare/><br/>
+                        <obs conceptId="$@TOP_NCD_REASON_FOR_EXIT@"
+                             answerConceptId="$@PATIENT_DIED@" answerLabel=""/> <strong>Decede/</strong>Death
+                        <obs conceptId="$@TOP_NCD_REASON_FOR_EXIT@"
+                             answerConceptId="$@LTFU@" answerLabel=""/><strong>Abandon/</strong>Lost To Follow Up
+                        <obs conceptId="$@TOP_NCD_REASON_FOR_EXIT@"
+                             answerConceptId="$@TRANSFERED@" answerLabel=""/><strong>Transfere: FOSA/</strong>Referred(Facility):
+                        <obs	conceptId="$@FACILITY@" />
+                        <obs conceptId="$@TOP_NCD_REASON_FOR_EXIT@"
+                             answerConceptId="$@DECLINED_CARE@" answerLabel=""/><strong>Refus/</strong> Declined
+
+                    </td>
+                </tr>
+
+            </table>
+
+        </section>
+        <br />
+        <completeProgram programId="$@Diabetes_Program@"/>
+
+        <submit />
+        <br/>
+    </div>
+</htmlform>

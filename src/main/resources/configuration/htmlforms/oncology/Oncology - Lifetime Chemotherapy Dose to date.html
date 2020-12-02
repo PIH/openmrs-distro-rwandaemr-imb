@@ -1,0 +1,113 @@
+<htmlform> <!--
+	 Oncology - Lifetime Chemotherapy Dose to date
+		Author:  
+		Builder: LKellett
+		started on Jan 17, 2013		
+	-->
+<macros>
+		@PATIENT_IDENTIFIER@=IMB ID
+    
+		@WEIGHT_KG@=3ce93b62-26fe-102b-80cb-0017a47871b2
+		@HEIGHT_CM@=5090
+		@BSA@= 	b7eb9d2f-0642-4984-8778-ba603e703a38
+    </macros>
+
+<style>
+
+.section {
+	border: 1px solid #009D8E;
+	width: 99%;
+	padding: 2px;
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+.sectionHeader {
+	background-color: #009D8E;
+	color: white;
+	display: block;
+	padding: 2px;
+	font-weight: bold;
+}
+
+table.symptoms th {
+	text-align: right;
+}
+
+th.subheader {
+	background-color: #8FABC7;
+	color: white
+}
+
+td {
+	vertical-align: top;
+}
+
+
+
+div.paddedTable span {
+	padding-right: 20px;
+}
+
+.indented {
+	padding-left: 20pt;
+	padding-right: 20pt;
+}
+
+.bigIndent {
+	padding-left: 40pt;
+	padding-right: 10pt;
+}
+
+.newpage {
+	color: #8FABC7;
+	font-weight: bold;
+}
+
+table{
+border-collapse:collapse;
+
+}
+</style>
+	<br/>
+	<section>
+	<table border="0" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				Date: <encounterDate default="today"  id="encounter"/>
+			
+			</td>
+			<td>
+				Clinique / Clinic: <encounterLocation order="80" default="Butaro Hospital"/>
+			</td>
+			<td>
+			
+				Nom / Signature: <encounterProvider role="Oncology Provider"/>
+			
+			</td>
+		</tr>
+	</table>
+</section>
+	
+	<section headerLabel="Enter Data">
+		<table border="0" cellpadding="6" width="100%">
+			
+			<tr>
+				<th width="10%">Total Doxorubicin (Adriamyacin) dose already given (<i>if applicable</i>): <obs
+					conceptId="98709f1c-a667-4436-b6b1-29873d7115e7" labelText=" " />mg/m<sup>2</sup>
+				(lifetime maximum dose=450mg/m<sup>2</sup>)
+				</th>
+			</tr>
+			<tr>
+				<th>Total Epirubicin dose already given (<i>if applicable</i>):<obs
+					conceptId="a8d06e6d-9b0d-411c-aabe-8628d67f0edd" labelText=" " />mg/m<sup>2</sup>(lifetime
+				maximum dose=900mg/m<sup>2</sup>)
+				</th>
+			</tr>
+		</table>
+	</section>
+	<br />
+	<center><submit /></center>
+	<encounterVoided/>
+
+</htmlform>

@@ -1,0 +1,824 @@
+<htmlform>
+    <!-- Heart Failure flowsheet:  Other Investigation
+         written by jberchmas
+         -->
+    <macros>
+        @Place_of_Death@ = 706c27e4-e0b0-44ab-a6b1-d49afacefa64
+        @Date_of_Death@ = ce0afb8a-35b3-496e-8ac9-37c3b8f6592e
+        @Time_of_Death@ = eea5ddfd-3655-492b-950a-d3ba31948d62
+        @Cause_of_death_A@ = 8f7853b9-2ce7-447f-bc22-dc0c684b1bcc
+        @Cause_of_death_B@ = 872a1860-31c9-4035-a033-7ce5c98f1d36
+        @Cause_of_death_C@ = dd096bf8-c1f3-4e4e-8208-5b869fd57166
+        @Cause_of_death_D@ = 07cfecbb-cc1f-4729-bcf7-01c3e232f0b1
+        @Time_interval_from_onset_to_death_A@ = 175bc1e6-b8f9-4315-bd94-2590e295501c
+        @Time_interval_from_onset_to_death_B@ = 72647fba-1382-41ce-a557-22394aa8ba0b
+        @Time_interva_from_onset_to_death_C@ = 756f9884-ed91-45f1-87ce-8caae91bef1f
+        @Time_interval_from_onset_to_death_D@ = 291c6e09-f369-4304-9782-c05890e7471d
+        @Other_significant_conditions_contributing_to_death@ = f748cf25-38f2-4549-bff7-314a9d02b214
+        @Was_surgery_performed_within_the_last_4_weeks?@ =bd580076-00f9-4c6d-a0f4-1713be69a04c
+        @NO@ = 3cd6f86c-26fe-102b-80cb-0017a47871b2
+        @YES@ = 3cd6f600-26fe-102b-80cb-0017a47871b2
+        @UNKNOWN@ = 3cd6fac4-26fe-102b-80cb-0017a47871b2
+        @DATE_OF_SURGERY@ = 48e392bb-0685-4ab3-a217-fd23502a5635
+        @reason_for_surgery@ = d3106acf-82b4-46c6-91f9-4920f3724fa5
+        @Was_an_autopsy_requested?@ = c5ed73aa-c23d-456f-808b-f7c5f0105559
+        @were_the_findings_used_in_the_certification?@ = 3ebc0bdb-f1a1-4be1-bba0-9e755b94ec75
+        @Manner_of_death@ = 4ee48d96-4fbe-4d57-a960-360964302fcc
+        @Disease@ = 8a29e1f6-3c0a-4974-9197-24753ea9ef97
+        @Accident@ = 47a08420-8b98-4ac9-ad2a-51c248c6df20
+        @Intentional_self-harm@ = 794d1a88-cc10-47b5-9518-7ded0498d51a
+        @ASSAULT@ = 3cce642c-26fe-102b-80cb-0017a47871b2
+        @Legal_intervention@ = e729bb55-c71c-4880-a7e2-495c27287fec
+        @War@ = 5a784e42-aafd-43a7-8545-3817236138c7
+        @Not_determined@ = 09c8c10f-c3a6-41f8-ac91-55493ee008c6
+        @Pending_investigation@ = db4a1249-19f6-4061-ae61-e2185a73d991
+        @external_cause_or_poisoning@ = 2fb7dc05-f4ec-43a4-baf0-fa74bafe7bca
+        @Date_of_injury@ = 6b4d1a39-4cfd-4e4d-81e9-f9563593ff33
+        @how_did_external_cause_occur@ = d6e64bf5-9214-4bed-ab12-dc2db1ce8a8a
+        @Place_of_occurrence_of_the_external_cause@ = 58ad311d-0c90-4317-afa3-5bcd3bbc5d70
+        @Home@ = e6969db3-6db8-493f-89a9-6b600724199b
+        @Residential_institution@ = 520d4d17-c82e-4884-954f-4ed1b4af9ca8
+        @School_other_institution_public_administrative_area@ = 2849c505-3c3c-45cd-8170-13ef3c6b36bd
+        @Sports_and_athletics_area@ = c247bac6-7a2d-46c7-8d4b-21d48c059026
+        @Street_and_highway@ = d0a0067c-b567-4a0c-96b3-f398c7dd4cff
+        @Trade_and_service_area@ = 7de09e40-8c82-484e-af14-d22b7755696f
+        @Industrial_and_construction_area@ = e92e98e9-bba1-4254-8802-22b03c4fffad
+        @Farm@ = 08a63911-9eac-49aa-833b-42f595d6f4f0
+        @Other_place@ = 95855c5b-bda5-4cc3-8124-3d149dc31ee4
+        @Multiple_pregnancy@= 5ffcc057-9e10-4e75-90ad-6a4abbe626fd
+        @Stillborn@= 2aef67d6-dc8d-4ac6-b860-4aae958b7bd4
+        @number_of_hours_survived@= 62f7e713-8b89-4dae-901e-4674e9cdde68
+        @completed_weeks_of_pregnancy@= 03625e77-893b-40aa-b9d1-83c11b676ef1
+        @Birth_weight@= 3cf15b3a-26fe-102b-80cb-0017a47871b2
+        @Age_of_mother@= be383e91-4174-4def-b258-477be6ab91ce
+        @conditions_of_mother_that_affected_the_fetus_and_new_born@= d0bb31af-6bb4-4ab0-a71b-b14eb5167de4
+        @deceased_pregnant?@= 1aacd5cb-b074-4832-ad42-3fa102ce2f2d
+        @time_of_pregnancy_in_relation_to_death@= cd0c02a6-7fba-4b0d-aab2-06eb768890e2
+        @at_time_of_death@= f578f379-ed99-4d2b-8c89-37bb6b05ae1d
+        @Between_43days_to_1_year_before_death@= 80220711-ee00-423f-ac11-f197ccd2774b
+        @within_42days_before_death@= dc23b6b3-54a0-4985-b2c3-44c9097219fa
+        @pregnancy_contribute_to_the_death?@= 3534cb58-24fd-4f33-857d-014a11840d03
+        @PARITY@= 3cd6dda0-26fe-102b-80cb-0017a47871b2
+        @TRANSFER_IN_FROM@= 3cda3efa-26fe-102b-80cb-0017a47871b2
+        @METHOD_OF_DELIVERY@= 3cee8c3e-26fe-102b-80cb-0017a47871b2
+        @SPONTANEOUS_VAGINAL_DELIVERY@= 3cd7af5a-26fe-102b-80cb-0017a47871b2
+        @CESAREAN_SECTION@= 3cd7b0ea-26fe-102b-80cb-0017a47871b2
+        @VACUUM_DELIVERY@= a104ed61-424c-472e-9220-5f50ee7e4828
+        @place_of_delivery@= 97718dbd-2cbe-421f-90c9-640ceb54e681
+        @home@=e6969db3-6db8-493f-89a9-6b600724199b
+        @Health_Facility_Coded_Answer@= 071a651b-9154-488b-a4f5-c1b79b379410
+        @In_transit@= 3477a358-cdbf-4414-9798-3683d7cae2ca
+        @delivered_by_skilled_attendant@=4b19ffac-ec9c-4e22-b971-804b29a3d781
+        @I_attended_the_deceased_before_death@ = 2d234766-d4ce-47a8-8ca8-4ce0c4c2be1e
+        @I_examined_the_body_after_death@ = 1c9bde31-e6a5-4022-8ba8-9931a8727f3b
+        @I_conducted_the_post_mortem_of_the_body@ = afaae40e-e653-4a19-8351-9b27ac05cf04
+        @OTHER_NON-CODED@ = 3cee7fb4-26fe-102b-80cb-0017a47871b2
+        @I_hereby_certify_that@ = 3bc6b989-4884-48b4-9acb-04f61a5493e5
+        @Other_that_i_certify@ = fc151a60-7196-45f2-a416-0463c1434c4e
+
+
+
+
+
+        <!-- lookup uuids-->
+
+        @Rwanda_national_id@ = ed52ec82-4b7c-411b-804a-13bd9651bb3e
+
+    </macros>
+    <style>
+        th.tableHeader {
+        background-color: #009d8e;
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: left;
+        }
+        .sectionHeader { background-color: #009d8e;
+        color: white; display: block; padding: 2px; font-weight:bold; }
+        ul {
+        list-style-type: square;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        }
+
+        tr.spaceUnder>td {
+        padding-bottom: 1em;
+        }
+
+        td {
+        font-size: 15px;
+        }
+
+        #container {
+        position: relative;
+        margin: auto;
+        width: 1400px;
+        height: auto;
+        }
+
+        @media print {
+        #container {
+        display: none;
+        }
+
+        #printArea {
+        display: block;
+        }
+
+        #userBar {
+        display: none;
+        }
+
+        #banner {
+        display: none;
+        }
+
+        #footer {
+        display: none;
+        }
+
+        #htmlFormEntryBanner {
+        display: none;
+        }
+
+        .error {
+        display: none;
+        }
+
+        .lables {
+        width: 200px;
+        }
+
+        table {
+        width: 100%;
+        }
+
+        table,td,th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+
+        th {
+        text-align: left;
+        background-color: #D9D9D9;
+        font-size: 10px;
+        }
+
+        td {
+        font-size: 10px;
+        }
+
+        .selectedCancerStagingKeys {
+        page-break-before: always;
+        border: 0px;
+        }
+
+        table.selectedCancerStagingKeys td {
+        border: 0px;
+        }
+
+        #signature {
+        border: none;
+        }
+        #signature td {
+        border: none;
+        }
+        }
+
+        @media screen {
+        table {
+        border: 1px solid #DFDFDF;
+        width: 100%;
+        border-color: #009d8e;
+        }
+
+        #container {
+        display: block;
+        }
+
+        #printArea {
+        display: none;
+        }
+        }
+        .disabled {
+        color: #D8D8D8;
+        }
+    </style>
+    <script type="text/javascript">
+	if (jQuery) {
+		$j(document)
+				.ready(
+						function() {
+							if ($j.browser.msie) {
+								$j(":checkbox").click(function() {
+									$j(this).change();
+								});
+							}
+							$j(".checkboxGroup")
+									.each(
+											function() {
+												var group = $j(this);
+												var uncheckAll = function() {
+													group
+															.find(
+																	"input[type$='checkbox']")
+															.attr("checked",
+																	false);
+													group
+															.find(
+																	"input[type$='checkbox']")
+															.change();
+												}
+												var uncheckRadioAndAll = function() {
+													group
+															.find(
+																	"#checkboxAll,#checkboxRadio")
+															.find(
+																	"input[type$='checkbox']")
+															.attr("checked",
+																	false);
+													group
+															.find(
+																	"#checkboxAll,#checkboxRadio")
+															.find(
+																	"input[type$='checkbox']")
+															.change();
+												}
+
+												group
+														.find("#checkboxAll")
+														.find("input")
+														.click(
+																function() {
+																	var flip;
+																	var checked = $j(
+																			this)
+																			.siblings(
+																					":checkbox:first")
+																			.attr(
+																					"checked");
+																	if ($j(this)
+																			.attr(
+																					"name") == $j(
+																			this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox:first")
+																			.attr(
+																					"name")) {
+																		checked = $j(
+																				this)
+																				.attr(
+																						"checked");
+																		flip = checked;
+																	} else {
+																		flip = !checked;
+																	}
+																	if ($j(this)
+																			.attr(
+																					"type") == "text")
+																		if (flip == false)
+																			flip = !filp; // this is so the user doesn't go to check the checkbox, then uncheck it when they hit the input.
+																	uncheckAll();
+																	$j(this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox")
+																			.attr(
+																					"checked",
+																					flip);
+																	$j(this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox")
+																			.change();
+																});
+
+												group
+														.find("#checkboxRadio")
+														.find(
+																"input[type$='checkbox']")
+														.click(
+																function() {
+																	uncheckAll();
+																	$j(this)
+																			.siblings(
+																					"input[type$='checkbox']")
+																			.attr(
+																					"checked",
+																					false);
+																	$j(this)
+																			.attr(
+																					"checked",
+																					true);
+																	$j(this)
+																			.change();
+																});
+
+												group
+														.find(
+																"#checkboxCheckbox")
+														.click(
+																function() {
+																	uncheckRadioAndAll();
+											  });
+											});
+						                });
+	}
+	</script>
+    <table cellspacing="0" cellpadding="6" width="100%" >
+        <!--<tr>-->
+        <!--<td><img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left"-->
+        <!--height="65" ></img>-->
+        <!--<b>REPUBLIC OF RWANDA-->
+        <!--<br />MINISTRY OF HEALTH</b>-->
+        <!--</td>-->
+        <!--<td><strong> RWANDA MEDICAL CERTIFICATE OF CAUSE OF DEATH</strong><br/>-->
+        <!--<b> IMB ID: <lookup class="value"-->
+        <!--expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"-->
+        <!--expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>-->
+        <!--<br/>-->
+        <!--Nom / Last name: <lookup class="value" expression="patient.personName.familyName" />-->
+        <!--&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;-->
+        <!--Prénom/ First name: <lookup class="value" expression="patient.personName.givenName" />-->
+        <!--</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td>Clinique / Clinic: <encounterLocation />-->
+        <!--</td>-->
+        <!--<td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;-->
+
+        <!--<br/>-->
+        <!--Provider:<encounterProvider id="encounterProvider"-->
+        <!--role="Provider" />-->
+        <!--</td>-->
+        <!--</tr>-->
+
+        <tr>
+            <td>
+                <img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left" height="65"/>
+
+                <b>REPUBLIC OF RWANDA
+                    <br />MINISTRY OF HEALTH</b>
+            </td>
+            <td>
+                <strong> RWANDA MEDICAL CERTIFICATE OF CAUSE OF DEATH </strong>
+
+            </td>
+            <td>
+                Health Facility:<encounterLocation />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Name of the deceased(full name):
+                <lookup class="value" expression="patient.personName.familyName" />
+                <lookup class="value" expression="patient.personName.givenName" />
+            </td>
+            <td>
+                NIN: <lookup expression="patient.getPatientIdentifier(7)"/>
+            </td>
+            <td>
+                Nationality: <lookup class="value" expression="personAttributes.get('Citizenship')"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <addressHierarchyRwanda />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Marital status:<lookup class="value" expression="personAttributes.get('Civil Status').name.name"/>
+            </td>
+            <td>
+                Date of Birth:<lookup expression="patient.birthdate"/>
+            </td>
+            <td>
+                Sex: <lookup expression="patient.gender" codePrefix="gender_"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Place of Death:<obs conceptId="$@Place_of_Death@"/>
+            </td>
+            <td>
+                Date of Death:<obs conceptId="$@Date_of_Death@" />
+            </td>
+            <td>
+                Time of Death:<obs conceptId="$@Time_of_Death@" />
+            </td>
+        </tr>
+    </table>
+
+    <section headerLabel="Frame A: Medication data:Part 1 and 2" >
+        <table border="1" width="100%">
+
+            <tr>
+                <td>
+                    1)
+                    <br/>
+                    <p>
+                        Report disease or condition directly leading to death on line a
+                    </p>
+                    <p>
+                        Report chain of events 'due to'(b to d) in order (if applicable)
+                    </p>
+                    <p>
+                        State the underlying cause on the lowest used line.
+                    </p>
+                </td>
+                <td>
+                    <table border="1">
+                        <tr>
+                            <th class="tableHeader">
+                            </th>
+                            <th class="tableHeader">
+                                Cause of death
+                            </th>
+                            <th class="tableHeader">
+                                Time interval from onset to death
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <center>a</center>
+                            </td>
+                            <td>
+                                <span class="disabled">
+                                    Due to:
+                                    <br/>
+                                </span>
+                                <obs conceptId="$@Cause_of_death_A@" cols="40"/>
+                            </td>
+                            <td>
+                                <obs conceptId="$@Time_interval_from_onset_to_death_A@"/>
+                                <span class="disabled">
+                                    day(s)
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <center>b</center>
+                            </td>
+                            <td>
+                                <span class="disabled">
+                                    Due to:
+                                    <br/>
+                                </span>
+                                <obs conceptId="$@Cause_of_death_B@" cols="40"/>
+                            </td>
+                            <td>
+                                <obs conceptId="$@Time_interval_from_onset_to_death_B@"/>
+                                <span class="disabled">
+                                    day(s)
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <center>b</center>
+                            </td>
+                            <td>
+                                <span class="disabled">
+                                    Due to:
+                                    <br/>
+                                </span>
+                                <obs conceptId="$@Cause_of_death_C@" cols="40"/>
+                            </td>
+                            <td>
+                                <obs conceptId="$@Time_interva_from_onset_to_death_C@"/>
+                                <span class="disabled">
+                                    day(s)
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <center>b</center>
+                            </td>
+                            <td>
+                                <span class="disabled">
+                                    Due to:
+                                    <br/>
+                                </span>
+                                <obs conceptId="$@Cause_of_death_D@" cols="40"/>
+                            </td>
+                            <td>
+                                <obs conceptId="$@Time_interval_from_onset_to_death_D@"/>
+                                <span class="disabled">
+                                    day(s)
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    2) Other significant conditions contributing to death (time
+                    intervals can be included in brackets after the condition)
+                </td>
+                <td>
+                    <obs conceptId="$@Other_significant_conditions_contributing_to_death@" cols="70"/>
+                </td>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+    </section>
+    <section headerLabel="Frame B: Other medical data" >
+        <table border="1" width="100%">
+            <tr>
+                <td>
+                    Was surgery performed within the last 4 weeks?
+                </td>
+                <td colspan="2">
+                    <obs conceptId="$@Was_surgery_performed_within_the_last_4_weeks?@"
+                         answerConceptIds="$@YES@,$@NO@,$@UNKNOWN@" answerLabels="Yes,No,Unknown" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    If yes please specify date of surgery
+                </td>
+                <td>
+                    <obs conceptId="$@DATE_OF_SURGERY@"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    If yes please specify reason for surgery (disease or
+                    condition)
+                </td>
+                <td colspan="2">
+                    <obs conceptId="$@reason_for_surgery@" cols="70"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Was an autopsy requested?
+                </td>
+                <td colspan="2">
+                    <obs conceptId="$@Was_an_autopsy_requested?@"
+                         answerConceptIds="$@YES@,$@NO@,$@UNKNOWN@" answerLabels="Yes,No,Unknown" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    If yes were the findings used in the certification?
+                </td>
+                <td colspan="2">
+                    <obs conceptId="$@were_the_findings_used_in_the_certification?@"
+                         answerConceptIds="$@YES@,$@NO@,$@UNKNOWN@" answerLabels="Yes,No,Unknown" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <strong>Manner of death:</strong>
+                </td>
+            </tr>
+            <tr>
+
+                <td class="checkboxGroup" colspan="3">
+                        <span id="checkboxRadio">
+                            <obs conceptId="$@Manner_of_death@" answerConceptId="$@Disease@" answerLabel="Disease" style="checkbox"/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Manner_of_death@" answerConceptId="$@ASSAULT@" answerLabel="ASSAULT" style="checkbox"/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Manner_of_death@" answerConceptId="$@Not_determined@" answerLabel="Not determined" style="checkbox"/><br/>
+
+                            <obs conceptId="$@Manner_of_death@" answerConceptId="$@Accident@" answerLabel="Accident" style="checkbox"/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Manner_of_death@" answerConceptId="$@Legal_intervention@" answerLabel="Legal intervention" style="checkbox"/>
+                            &#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Manner_of_death@" answerConceptId="$@Pending_investigation@" answerLabel="Pending investigation" style="checkbox"/><br/>
+
+                            <obs conceptId="$@Manner_of_death@" answerConceptId="$@Intentional_self-harm@" answerLabel="Intentional self-harm" style="checkbox"/>
+                            &#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Manner_of_death@" answerConceptId="$@War@" answerLabel="War" style="checkbox"/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Manner_of_death@" answerConceptId="$@UNKNOWN@" answerLabel="UNKNOWN" style="checkbox"/>
+                        </span>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    If external cause or poisoning:
+                    <obs conceptId="$@external_cause_or_poisoning@"/>
+                </td>
+                <td colspan="2">
+                    Date of injury:
+                    <obs conceptId="$@Date_of_injury@"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Please describe how external cause occurred (If
+                    poisoning please specify poisoning agent)
+                </td>
+                <td>
+                    <obs conceptId="$@how_did_external_cause_occur@" cols="80"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    Place of occurrence of the external cause:
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <obs conceptId="$@Place_of_occurrence_of_the_external_cause@" answerConceptId="$@Home@" answerLabel="At Home" style="checkbox"/>
+                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                    <obs conceptId="$@Place_of_occurrence_of_the_external_cause@" answerConceptId="$@Residential_institution@" answerLabel="Residential institution" style="checkbox"/>
+                    &#160;
+                    <obs conceptId="$@Place_of_occurrence_of_the_external_cause@" answerConceptId="$@School_other_institution_public_administrative_area@"
+                         answerLabel="School_other_institution_public_administrative_area" style="checkbox"/>
+                    <obs conceptId="$@Place_of_occurrence_of_the_external_cause@" answerConceptId="$@Sports_and_athletics_area@" answerLabel="Sports and athletics area" style="checkbox"/>
+                    <br/>
+                    <obs conceptId="$@Place_of_occurrence_of_the_external_cause@" answerConceptId="$@Street_and_highway@" answerLabel="Street and highway" style="checkbox"/>
+                    <obs conceptId="$@Place_of_occurrence_of_the_external_cause@" answerConceptId="$@Trade_and_service_area@" answerLabel="Trade and service area" style="checkbox"/>
+                    <obs conceptId="$@Place_of_occurrence_of_the_external_cause@" answerConceptId="$@Industrial_and_construction_area@" answerLabel="Industrial and construction area" style="checkbox"/>
+                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                    <obs conceptId="$@Place_of_occurrence_of_the_external_cause@" answerConceptId="$@Farm@" answerLabel="Farm" style="checkbox"/>
+                    <br/>
+                    <obs conceptId="$@Place_of_occurrence_of_the_external_cause@" answerConceptId="$@Other_place@" answerLabel="Other place(please specify):" style="checkbox"/>
+                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                    <obs conceptId="$@Other_place@" cols="60"/>
+                    &#160;&#160;&#160;&#160;&#160;
+                    <obs conceptId="$@Place_of_occurrence_of_the_external_cause@" answerConceptId="$@UNKNOWN@" answerLabel="UNKNOWN" style="checkbox"/>
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <strong>Fetal or Infant Death</strong>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Multiple pregnancy
+                </td>
+                <td colspan="2">
+                    <obs conceptId="$@Multiple_pregnancy@"
+                         answerConceptIds="$@YES@,$@NO@,$@UNKNOWN@" answerLabels="Yes,No,Unknown" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Stillborn?
+                </td>
+                <td colspan="2">
+                    <obs conceptId="$@Stillborn@"
+                         answerConceptIds="$@YES@,$@NO@,$@UNKNOWN@" answerLabels="Yes,No,Unknown" style="radio"/>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    If death within 24h specify number of hours survived:
+                    <obs conceptId="$@number_of_hours_survived@"/>
+                </td>
+
+                <td colspan="2">
+                    Birth weight:
+                    &#160;&#160;
+                    <obs conceptId="$@Birth_weight@"/> Grams
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Number of completed weeks of pregnancy:
+                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                    <obs conceptId="$@completed_weeks_of_pregnancy@"/>
+                </td>
+
+                <td colspan="2">
+                    Age of mother:
+                    <obs conceptId="$@Age_of_mother@"/>Years
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    if death was perinatal,please state conditions of mother that affected the fetus and new born
+                </td>
+                <td colspan="2">
+                    <obs conceptId="$@conditions_of_mother_that_affected_the_fetus_and_new_born@" cols="70"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    For women,was the deceased pregnant?
+                </td>
+                <td colspan="2">
+                    <obs conceptId="$@deceased_pregnant?@"
+                         answerConceptIds="$@YES@,$@NO@,$@UNKNOWN@" answerLabels="Yes,No,Unknown" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+
+
+                <td class="checkboxGroup" colspan="3">
+                        <span id="checkboxRadio">
+                            <obs conceptId="$@time_of_pregnancy_in_relation_to_death@" answerConceptId="$@at_time_of_death@" answerLabel="At time of death" style="checkbox"/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@time_of_pregnancy_in_relation_to_death@" answerConceptId="$@Between_43days_to_1_year_before_death@" answerLabel="Between 43 days up to 1 year before death" style="checkbox"/>
+                            <obs conceptId="$@time_of_pregnancy_in_relation_to_death@" answerConceptId="$@within_42days_before_death@" answerLabel="Within 42 days before to death" style="checkbox"/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                            <obs conceptId="$@time_of_pregnancy_in_relation_to_death@" answerConceptId="$@UNKNOWN@" answerLabel="Unknown" style="checkbox"/>
+
+                           </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Did the pregnancy contribute to the death?
+                </td>
+                <td colspan="2">
+                    <obs conceptId="$@pregnancy_contribute_to_the_death?@"
+                         answerConceptIds="$@YES@,$@NO@,$@UNKNOWN@" answerLabels="Yes,No,Unknown" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Reffered from (level of care)
+                    <obs conceptId="$@TRANSFER_IN_FROM@"/> <br/>
+
+                    Parity
+                    <obs conceptId="$@PARITY@"/>
+
+                </td>
+                <td colspan="2" >
+                    Mode of delivery:
+                    <obs conceptId="$@METHOD_OF_DELIVERY@"
+                         answerConceptIds="$@SPONTANEOUS_VAGINAL_DELIVERY@,$@VACUUM_DELIVERY@,$@CESAREAN_SECTION@" answerLabels="SVD,Assisted,Cesarean" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="checkboxGroup">
+                    <span id="checkboxRadio">
+                    Place of Delivery:
+                    <obs conceptId="$@place_of_delivery@"
+                         answerConceptId="$@Health_Facility_Coded_Answer@" answerLabel="Health Facility" style="checkbox"/>
+                    <obs conceptId="$@place_of_delivery@"
+                         answerConceptId="$@home@" answerLabel="Home" style="checkbox"/>
+                    <obs conceptId="$@place_of_delivery@"
+                         answerConceptId="$@In_transit@" answerLabel="In transit" style="checkbox"/><br/>
+                    <obs conceptId="$@place_of_delivery@"
+                         answerConceptId="$@UNKNOWN@" answerLabel="Don't Know" style="checkbox"/>
+                    </span>
+                </td>
+                <td >
+                    Delivered by skilled attendant:
+                    <obs conceptId="$@delivered_by_skilled_attendant@"
+                         answerConceptIds="$@YES@,$@NO@,$@UNKNOWN@" answerLabels="Yes,No,Don't know" style="radio"/>
+                </td>
+            </tr>
+
+
+
+        </table>
+    </section>
+    <table>
+        <tr>
+            <td colspan="3">
+                <strong> Declaration</strong>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                I hereby certify that (tick as appropriate)
+            </td>
+            <td >
+                <obs conceptId="$@I_hereby_certify_that@"
+                     answerConceptId="$@I_attended_the_deceased_before_death@"
+                     answerLabel="I attended the deceased before death" style="checkbox"/> <br/>
+                <obs conceptId="$@I_hereby_certify_that@"
+                     answerConceptId="$@I_examined_the_body_after_death@"
+                     answerLabel="I examined the body after death" style="checkbox"/> <br/>
+                <obs conceptId="$@I_hereby_certify_that@"
+                     answerConceptId="$@I_conducted_the_post_mortem_of_the_body@"
+                     answerLabel="I conducted the post mortem of the body" style="checkbox"/>  <br/>
+                <obs conceptId="$@I_hereby_certify_that@"
+                     answerConceptId="$@I_conducted_the_post_mortem_of_the_body@"
+                     answerLabel="Other (specify)" style="checkbox"/> :
+                 <obs conceptId="$@Other_that_i_certify@"/>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <center>
+        <submit />
+    </center>
+    <br />
+
+</htmlform>

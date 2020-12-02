@@ -1,0 +1,81 @@
+<htmlform>
+    <!-- Hypertension flowsheet:  Clinic visits
+         written by jberchmas 
+         -->
+	<style>
+		.formName { background-color:#e0e0ff; }
+		.section { border: 1px
+		solid #8FABC7; width:99%; padding:2px; text-align:left;
+		margin-bottom:10px; }
+		.sectionHeader { background-color: #8FABC7;
+		color: white; display: block; padding: 2px; font-weight:bold; }
+		table.symptoms th {text-align: right;}
+		.note {color:red;}
+		td
+		{vertical-align:top;}
+		table.labTable td { color:red; }
+		table.labTable
+		td.dateField { text-align:right; }
+		table.identifierTable td
+		{padding-right:10px;}
+		div.paddedTable span {padding-right:20px;}
+	</style>
+
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				<b>IMB ID:<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				</b>
+			</td>
+			<td>
+				Clinique / Clinic:<encounterLocation />
+			</td>
+			<td>
+				Nom/ Signature:<encounterProvider role="NCD Provider"/>
+			</td>
+		</tr>
+	</table>
+
+	<section headerLabel=" RENDEZ-VOUS / CLINIC VISITS" >
+		<table border="1" width="100%">
+			<tr>
+				<td>Date</td>
+				<td>Poids/Weight</td>
+				<td>Taille/Height</td>
+				<td>T.A/BP</td>
+				<td>Pouls/Pulse</td>
+                                <td>Proteinnuria</td>
+                                <td>Na (SERUM SODIUM)</td>
+                                <td>K (SERUM POTASSIUM)</td>
+                                <td>Cr (SERUM CREATININE)</td>
+                                <td>RDV</td>
+			</tr>
+
+                        <tr>
+				<td rowspan="2"><br /><center><encounterDate default="today"/>         </center></td>
+				<td><obs conceptId="3ce93b62-26fe-102b-80cb-0017a47871b2" /></td>
+				<td><obs conceptId="3ce93cf2-26fe-102b-80cb-0017a47871b2" /></td>
+				<td><obs conceptId="3ce934fa-26fe-102b-80cb-0017a47871b2" /> <obs conceptId="3ce93694-26fe-102b-80cb-0017a47871b2" /></td>
+				<td><obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" /></td>
+                                <td><obs conceptId="3cd49d88-26fe-102b-80cb-0017a47871b2" /></td>
+                                <td><obs conceptId="3cd76b58-26fe-102b-80cb-0017a47871b2" /></td>
+                                <td><obs conceptId="3cd76ce8-26fe-102b-80cb-0017a47871b2" /></td>
+                                <td><obs conceptId="3cd4374e-26fe-102b-80cb-0017a47871b2" /></td>
+                                <td><obs conceptId="3ce94df0-26fe-102b-80cb-0017a47871b2" allowFutureDates="true"/></td>
+			</tr>
+			<tr>
+				<td colspan="9">
+					Commentaire / Comments: <br /><obs conceptId="3cdc5938-26fe-102b-80cb-0017a47871b2" rows="2" cols="60" />
+				</td>
+				
+			</tr>
+		</table>
+	</section>
+
+	<br />
+	<center>
+		<submit />
+	</center>
+	<br />
+
+</htmlform>

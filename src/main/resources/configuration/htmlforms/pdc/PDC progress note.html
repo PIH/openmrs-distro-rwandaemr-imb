@@ -1,0 +1,313 @@
+<htmlform> <!--
+	   PDC Visit Form
+	   Visit Form 5July 2014_Marked for EMR 6Aug2014_HM.docx
+		Author:
+		Builder: Bailly RURANGIRWA
+		started on Sept 22, 2012
+	-->
+
+    <script>
+
+        $j( document ).ready(function() {
+            $j('tr.checkboxGroup input[type=checkbox]').each(function() {
+                $j(this).click(function () {
+                    var clicked = $j(this).closest('tr').attr("id");
+                    $j('tr.checkboxGroup input[type=checkbox]').each(function() { //loop through each checkbox
+                        var current = $j(this).closest('tr').attr("id");
+                    if(current == clicked)
+                        this.checked = false; //deselect all checkboxes with class "checkbox1"
+                       });
+                    this.checked = true;
+                 });
+            });
+
+
+            $j('td.checkboxGroupIG input[type=checkbox]').each(function() {
+                $j(this).click(function () {
+                    var clicked = $j(this).closest('td').attr("id");
+                    $j('td.checkboxGroupIG input[type=checkbox]').each(function() { //loop through each checkbox
+                        var current = $j(this).closest('td').attr("id");
+                    if(current == clicked)
+                        this.checked = false; //deselect all checkboxes with class "checkbox1"
+                       });
+                    this.checked = true;
+                 });
+            });
+
+            $j('td.checkboxGroupHAZ input[type=checkbox]').each(function() {
+                $j(this).click(function () {
+                    var clicked = $j(this).closest('td').attr("id");
+                    $j('td.checkboxGroupHAZ input[type=checkbox]').each(function() { //loop through each checkbox
+                        var current = $j(this).closest('td').attr("id");
+                    if(current == clicked)
+                        this.checked = false; //deselect all checkboxes with class "checkbox1"
+                       });
+                    this.checked = true;
+                 });
+            });
+
+            $j('td.checkboxGroupWAZ input[type=checkbox]').each(function() {
+                $j(this).click(function () {
+                    var clicked = $j(this).closest('td').attr("id");
+                    $j('td.checkboxGroupWAZ input[type=checkbox]').each(function() { //loop through each checkbox
+                        var current = $j(this).closest('td').attr("id");
+                    if(current == clicked)
+                        this.checked = false; //deselect all checkboxes with class "checkbox1"
+                       });
+                    this.checked = true;
+                 });
+            });
+
+            $j('td.checkboxGroupWHZ input[type=checkbox]').each(function() {
+                $j(this).click(function () {
+                    var clicked = $j(this).closest('td').attr("id");
+                    $j('td.checkboxGroupWHZ input[type=checkbox]').each(function() { //loop through each checkbox
+                        var current = $j(this).closest('td').attr("id");
+                    if(current == clicked)
+                        this.checked = false; //deselect all checkboxes with class "checkbox1"
+                       });
+                    this.checked = true;
+                 });
+            });
+
+            $j('td.checkboxGroupHCAZ input[type=checkbox]').each(function() {
+                $j(this).click(function () {
+                    var clicked = $j(this).closest('td').attr("id");
+                    $j('td.checkboxGroupHCAZ input[type=checkbox]').each(function() { //loop through each checkbox
+                        var current = $j(this).closest('td').attr("id");
+                    if(current == clicked)
+                        this.checked = false; //deselect all checkboxes with class "checkbox1"
+                       });
+                    this.checked = true;
+                 });
+            });
+            $j('td.checkboxGroupFeeding input[type=checkbox]').each(function() {
+                $j(this).click(function () {
+                    var clicked = $j(this).closest('td').attr("id");
+                    $j('td.checkboxGroupFeeding input[type=checkbox]').each(function() { //loop through each checkbox
+                        var current = $j(this).closest('td').attr("id");
+                    if(current == clicked)
+                        this.checked = false; //deselect all checkboxes with class "checkbox1"
+                       });
+                    this.checked = true;
+                 });
+            });
+            $j('tr#row20 input[type=checkbox]').each(function() { //loop through each checkbox
+                $j(this).click(function () {
+                    var clicked = $j(this).closest('span').attr("id");
+                    if(clicked == 'patientNeedsFollowUpNo')
+                        $j("#toggleable1").show();
+                    if(clicked == 'patientNeedsFollowUpYes')
+                        $j("#toggleable1").hide();
+                  });
+             });
+
+
+
+             if(getValue("encounterDate.value") &#60;&#61;'2019-05-20'){
+
+                $j(".before20190520changes").show();
+
+             }else{
+
+                 $j(".before20190520changes").hide();
+
+             }
+
+             getField('encounterDate.value').change(function() {
+
+                if(getValue("encounterDate.value") &#60;&#61; '2019-05-20'){
+
+                    $j(".before20190520changes").show();
+
+                }else{
+                    $j(".before20190520changes").hide();
+                }
+
+             });
+
+         });
+
+    </script>
+
+    <macros>
+        paperFormId = (Fill this in)
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+
+
+
+        @Clinican_notes@ = 6602a73b-b8d3-40bc-bae8-f00ff3b9cceb
+
+
+
+
+    </macros>
+
+    <style>
+        .formName {
+        background-color: #e0e0ff;
+        }
+
+        .section {
+        border: 1px solid #8FABC7;
+        width: 99%;
+        padding: 2px;
+        text-align: left;
+        margin-bottom: 10px;
+        }
+        .sectionHeader {
+			background-color: $headerColor;
+			color: $fontOnHeaderColor;
+			display: block;
+			padding: 2px;
+			font-weight: bold;
+		}
+        .disabled {
+        color: #C0C0C0;
+        }
+        td {
+        vertical-align: top;
+        }
+
+        table {
+        border-collapse: collapse;
+        }
+
+        .hidden {
+        color: #D8D8D8;
+        width: 19%;
+        }
+
+        @media print {
+        #container {
+        display: block;
+        /* font-size: 11px;
+        table-layout: auto; */
+        }
+        #printArea {
+        display: none;
+        }
+        #userBar {
+        display: none;
+        }
+        #banner {
+        display: none;
+        }
+        #footer {
+        display: none;
+        }
+        #submitArea{
+        display: none;
+        }
+        #htmlFormEntryBanner {
+        display: none;
+        }
+        .error {
+        display: none;
+        }
+        .lables {
+        width: 200px;
+        }
+        table {
+        width: 100%;
+        }
+        table,td,th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+        th {
+        text-align: left;
+        background-color: #D9D9D9;
+        font-size: 10px;
+        }
+        td {
+        font-size: 16px;
+        }
+        .value {
+        font-size: 20px;
+        font-weight: bold;
+        font-style: italic;
+        }
+        .selectedCancerStagingKeys {
+        page-break-before: always;
+        border: 0px;
+        }
+        table.selectedCancerStagingKeys td {
+        border: 0px;
+        }
+        #signature {
+        border: none;
+        }
+        #signature td {
+        border: none;
+        }
+        }
+    </style>
+
+    <section>
+
+        <table border="2" cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td><b>IMB ID #: <lookup
+                        class="value"
+                        expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+                </b></td>
+                <td>Date: <encounterDate
+                        default="today" id="encounterDate"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Last name/<span
+                        class="disabled">Nom: </span> <lookup class="value"
+                                                              expression="patient.personName.familyName" /></td>
+                <td>First name/<span
+                        class="disabled">Prenom: </span> <lookup class="value"
+                                                                 expression="patient.personName.givenName" /></td>
+                <td>Gender: <lookup
+                        class="value" expression="patient.Gender" /></td>
+            </tr>
+            <tr>
+                <td><img
+                        src="/openmrs/moduleResources/rwandareports/images/pihHands.png"
+                        align="left" height="65"></img>
+                    <h2>
+                        &#160;&#160;Inshuti Mu Buzima <br /> &#160;&#160;PIH Rwanda
+                    </h2></td>
+                <td><strong> Progress Note –
+                    Pediatric Developmental Clinic</strong></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Clinic or Hospital:</td>
+                <td><encounterLocation id="encounterLocation"  /></td>
+                <td>Author:<encounterProvider id="encounterProvider" /></td>
+            </tr>
+        </table>
+    </section>
+
+    <section headerLabel="Areas of Concern for Next Appointment /
+                    Additional Comments:">
+        <table border="2" cellspacing="0" cellpadding="6" width="100%">
+
+            <tr>
+                <td colspan="2">
+                    <br/>
+                    <obs conceptId="$@Clinican_notes@" cols="150" rows="10"/>
+                    <br/><br/><br/>
+
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <br/>
+    <encounterVoided/>
+    <br />
+    <div id="submitArea">
+        <submit />
+    </div><br />
+    <br />
+    <br />
+    <br />
+</htmlform>

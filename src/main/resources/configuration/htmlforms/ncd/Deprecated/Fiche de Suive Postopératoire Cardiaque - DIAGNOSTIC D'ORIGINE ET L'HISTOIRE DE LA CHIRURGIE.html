@@ -1,0 +1,124 @@
+<htmlform>
+    <!-- Post cardiac surgery flowsheet:  Original diagnosis and surgical history
+         written by jberchmas 
+         -->
+        <macros>
+		paperFormId = Flow-CardsPostOp-IMB-RW.V2.5akb.16May09
+		headerColor =#009d8e
+		fontOnHeaderColor = white
+	</macros>
+	<style>
+		.formName { background-color:#e0e0ff; }
+		.section { border: 1px
+		solid #8FABC7; width:99%; padding:2px; text-align:left;
+		margin-bottom:10px; }
+		.sectionHeader { background-color: #8FABC7;
+		color: white; display: block; padding: 2px; font-weight:bold; }
+		table.symptoms th {text-align: right;}
+		.note {color:red;}
+		td
+		{vertical-align:top;}
+		table.labTable td { color:red; }
+		table.labTable
+		td.dateField { text-align:right; }
+		table.identifierTable td
+		{padding-right:10px;}
+		div.paddedTable span {padding-right:20px;}
+	</style>
+
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				<b>IMB ID:<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				</b>
+			</td>
+			<td>
+				Date:<encounterDate default="today"/>
+			</td>
+			<td>
+				Clinique / Clinic:<encounterLocation />
+			</td>
+			<td>
+				Nom/ Signature:<encounterProvider role="NCD Provider"/>
+			</td>
+		</tr>
+	</table>
+
+	<section headerLabel="DIAGNOSTIC D'ORIGINE ET L'HISTOIRE DE LA CHIRURGIE / ORIGINAL DIAGNOSIS AND SURGICAL HISTORY">
+		<table border="1" width="100%">
+			<tr>
+				<td>Diagnostic avant chirurgie et FE de VG/Pre-surgical Diagnosis and LV EF</td>
+				<td>
+                                    <obsGroup conceptId="acfcdd18-f9b0-48a9-b3bf-fdcc685bace5">
+                                              <obs conceptId="a643a9b7-6b4e-4478-8e55-5429fe91c39b" labelText="Ejection Fraction" />
+                                              <obs conceptId="59742b68-d726-417b-b51b-a357af5fdfcd" labelText="Pre-surgical Diagnosis" />
+                                    </obsGroup>
+                                </td>
+                      </tr>
+                     <tr>
+				<td>Date de chirurgie/Surgery date</td>
+				<td><obs conceptId="48e392bb-0685-4ab3-a217-fd23502a5635" /> </td>
+		     </tr>
+                     <tr>
+				<td>Lieu de chururgie/ Place of surgery</td>
+				<td><obs conceptId="acbdfd14-d7d5-4993-a93c-38760eb7f527" answerConceptId="5551827d-e819-473d-abe7-5cd52b7f595c" answerLabel="KFH-OOH" /><obs conceptId="acbdfd14-d7d5-4993-a93c-38760eb7f527" answerConceptId="cd03df82-aaf4-416f-a5f7-c949a4d5e48c" answerLabel="KFH-TH" /><obs conceptId="acbdfd14-d7d5-4993-a93c-38760eb7f527" answerConceptId="55acdf7c-5027-4f01-90a2-ab9745f97dd3" answerLabel="KFH (autre)" /> <obs conceptId="acbdfd14-d7d5-4993-a93c-38760eb7f527" answerConceptId="1a77da3d-2e58-40ac-bf1d-30d1751a332d" answerLabel="KFH-COH" /> <br /><obs conceptId="acbdfd14-d7d5-4993-a93c-38760eb7f527" answerConceptId="bc1cc39b-f0e3-4d31-9a23-d02fd02645fc" answerLabel="India-Maiot" /> <obs conceptId="acbdfd14-d7d5-4993-a93c-38760eb7f527" answerConceptId="a50e1d5e-f47a-432c-88db-a2d0ec85d061" answerLabel="Israel-SACH" />  <obs conceptId="acbdfd14-d7d5-4993-a93c-38760eb7f527" answerConceptId="5b61eae4-6eb2-4b3c-abce-da456c73045a" answerLabel="South Africa-WS " /> <obs conceptId="acbdfd14-d7d5-4993-a93c-38760eb7f527" answerConceptId="2e30c30c-2702-4374-ba82-3ce355d44cd9" answerLabel="Sudan-Salam" /><obs conceptId="acbdfd14-d7d5-4993-a93c-38760eb7f527" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2"  answerLabel="Other" /></td>
+		     </tr>
+                    <tr>
+				<td colspan="2">Type de chirurgie et/ou type de valve / Surgery type or valve type</td>				
+		     </tr>
+                     <tr>
+			<td>
+                          <obs conceptId="6a7cff67-c32f-4d41-b793-a1f94fd1200d" answerConceptId="40b53891-d58b-438f-8186-c0197c739d57" answerLabel="sans prothèse/ without prosthesis" /><br />
+                           <obs conceptId="6a7cff67-c32f-4d41-b793-a1f94fd1200d" answerConceptId="b270d0f5-d84c-41f1-8247-a9aa6e13ebcf" answerLabel="stimulateur cardiaque/pacemaker" /><br />
+<obs conceptId="6a7cff67-c32f-4d41-b793-a1f94fd1200d" answerConceptId="a8a5cc55-247f-439a-ab7c-5eb2dfd445c6" answerLabel="prothèse bioprosthetique/ bioprosthestic valve" /><br />
+                        </td>
+			<td>
+<obs conceptId="6a7cff67-c32f-4d41-b793-a1f94fd1200d" answerConceptId="79c9ac36-5a65-467a-811e-3d6ffe1f1f4a" answerLabel="prothèse mitrale mécanique/ mecanical mitral valve" /><br />
+<obs conceptId="6a7cff67-c32f-4d41-b793-a1f94fd1200d" answerConceptId="3dd56b5f-9b2c-4992-b598-1e105add5db6" answerLabel="prothèse aortique mécanique/ mecanical aortic valve" /><br />
+<obs conceptId="6a7cff67-c32f-4d41-b793-a1f94fd1200d" answerConceptId="a1c45fa7-17ed-4d90-a66f-7f67c4aec094" answerLabel="prothèse tricuspide mécanique/ mecanical tricuspid valve" />
+                        </td>
+		     </tr>	
+                     <tr>
+                          <td><obs conceptId="6a7cff67-c32f-4d41-b793-a1f94fd1200d" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Autre Description/ Other Description" /></td><td><obs conceptId="PIH: 7474" /></td>
+                     </tr>
+                     <tr>
+                          <td align="right">FE de VG Post-opératif, donnes échographique/<br />Post-Operative LV EF, echo findings</td>
+                          <td>
+                                   <obs  showDate="true" conceptId="eaef0cb5-66dc-45c8-bbcb-699622cfeffb" />
+                        </td>
+                     </tr>
+                     <tr>
+                          <td align="right">INR cible initial/ Initial Post-operative Goal INR</td>
+                          <td><obs conceptId="a836da58-a5ea-4429-a3df-b65f318a6aa4" answerConceptId="9a6b5bd9-1d56-44fc-a80d-7b7e7fa719e0" /> <obs conceptId="a836da58-a5ea-4429-a3df-b65f318a6aa4" answerConceptId="bc675a59-f7ce-4355-a946-6807b83bba48" /> <obs conceptId="a836da58-a5ea-4429-a3df-b65f318a6aa4" answerConceptId="a56b8996-bf2a-4498-8c0c-36bd34e7474c" /> <obs conceptId="a836da58-a5ea-4429-a3df-b65f318a6aa4" answerConceptId="3cd6fac4-26fe-102b-80cb-0017a47871b2" answerLabel="N/A" /></td>
+                     </tr>	
+<tr>
+                          <td align="right">INR cible 3 mois après chirurgie/ Goal INR 3 months after surgery</td>
+                          <td><obs conceptId="6de91262-8af3-48d7-811e-cde2a3999e4b" answerConceptId="9a6b5bd9-1d56-44fc-a80d-7b7e7fa719e0" /> <obs conceptId="6de91262-8af3-48d7-811e-cde2a3999e4b" answerConceptId="bc675a59-f7ce-4355-a946-6807b83bba48" /> <obs conceptId="6de91262-8af3-48d7-811e-cde2a3999e4b" answerConceptId="a56b8996-bf2a-4498-8c0c-36bd34e7474c" /> <obs conceptId="6de91262-8af3-48d7-811e-cde2a3999e4b" answerConceptId="3cd6fac4-26fe-102b-80cb-0017a47871b2" answerLabel="N/A"/></td>
+                     </tr>	
+<tr>
+                          <td align="right">Date de change de INR cible/ Date of change in  INR goal</td>
+                          <td><obs conceptId="db326c0d-7a98-4a4c-aa4c-ef5e3e78e664" /></td>
+                     </tr>
+<tr>
+                          <td align="right">Autre médicaments/ Other medications</td>
+                          <td><obs conceptId="1aa21d13-6d6e-4791-b3fc-0a15b460a7c8" answerConceptId="3cccd35a-26fe-102b-80cb-0017a47871b2" answerLabel="Aspirine/Aspirin" /> <obs conceptId="1aa21d13-6d6e-4791-b3fc-0a15b460a7c8" answerConceptId="3cd42dc6-26fe-102b-80cb-0017a47871b2" answerLabel="Peniciline V/Penicillin" /> <obs conceptId="1aa21d13-6d6e-4791-b3fc-0a15b460a7c8" answerConceptId="4aa4bd2a-b606-4a5d-ba66-10b069730bf3" answerLabel="Benzathine Penicilline/Benzathine Penicillin" /></td>
+                     </tr>
+
+<tr>
+                          <td>Clinicien qui suit le patient/Clinician who follows patient</td>
+                          <td><encounterProvider role="NCD Provider"/></td>
+                     </tr>
+<tr>
+                          <td align="right">Téléphone/ Telephone:</td>
+                          <td><obs conceptId="f51531c0-e3f6-4611-9a32-d709551307a7" /> Email:<obs conceptId="a4cd8972-6a31-411c-ade2-54c24ddad631" /></td>
+                     </tr>
+		</table>
+	</section>
+
+	<br />
+	<center>
+		<submit />
+	</center>
+	<br />
+
+</htmlform>

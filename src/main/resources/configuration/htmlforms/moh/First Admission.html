@@ -1,0 +1,523 @@
+<htmlform>
+    <macros>
+        @Admission_Maternity@ = 56eb354e-a4e5-455a-a2b9-4748306aaeb8
+        @Maternity_admission_date@ = 49b34934-55aa-44fe-9ff3-ae4d390da3aa
+        @Maternity_Discharge_date@ = f56dad49-9a8d-4854-8cd5-382ca85ee67e
+        @RECOVERED_Delivery@ = acd8772e-8346-4c7d-9ad3-b677479b511c
+        @Died_Before_48_HR@ = e9672094-f38c-44e7-affd-a12c44cb45e5
+        @Fled@ = 1f93d370-707e-4988-b4ba-236f3c62b799
+        @Maternity_Discharge_date@ = f56dad49-9a8d-4854-8cd5-382ca85ee67e
+        @Voluntary@ = 6c31b035-4a63-48e0-bfed-e8dd32c00475
+        @Improved@ = 5a465297-2ae7-466f-8352-c7f878c2e4c0
+        @Died_After_48_HR@ = 77462de6-c450-43e2-a941-ec83f830ede5
+        @MATERNITY_WARD@ = 3ce1e6e6-26fe-102b-80cb-0017a47871b2
+        @TRANSFERRED_FROM@ = 2e895c21-3d2b-4015-94a3-85a1481e9b0e
+        @Unimproved@ = bcf502c3-f937-4e7a-9b42-06499d7bd2af
+        @Clinican_notes@ = 6602a73b-b8d3-40bc-bae8-f00ff3b9cceb
+        @PROGRESS_NOTE?@ =6a329c3c-b15f-418d-b3d6-74e9b95b5d85
+        @Other_diagnosis@ = 2bbf5f66-893c-4334-b8e6-16174cbc75f2
+        @Autopsy_requested@ = c5ed73aa-c23d-456f-808b-f7c5f0105559
+        @Refered_to?@ =346ee2d2-6615-4a56-a416-b64b224d35a8
+        @Diagnosisor_problem@ = 970d41ce-5098-47a4-8872-4dd843c0df3f
+
+    </macros>
+    <style>
+        th.tableHeader {
+        background-color: #009d8e;
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: left;
+        }
+        .sectionHeader { background-color: #009d8e;
+        color: white; display: block; padding: 2px; font-weight:bold; }
+        ul {
+        list-style-type: square;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        }
+
+        tr.spaceUnder>td {
+        padding-bottom: 1em;
+        }
+
+        td {
+        font-size: 15px;
+        }
+
+        #container {
+        position: relative;
+        margin: auto;
+        width: 1400px;
+        height: auto;
+        }
+
+        @media print {
+        #container {
+        display: none;
+        }
+
+        #printArea {
+        display: block;
+        }
+
+        #userBar {
+        display: none;
+        }
+
+        #banner {
+        display: none;
+        }
+
+        #footer {
+        display: none;
+        }
+
+        #htmlFormEntryBanner {
+        display: none;
+        }
+
+        .error {
+        display: none;
+        }
+
+        .lables {
+        width: 200px;
+        }
+
+        table {
+        width: 100%;
+        }
+
+        table,td,th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+
+        th {
+        text-align: left;
+        background-color: #D9D9D9;
+        font-size: 10px;
+        }
+
+        td {
+        font-size: 10px;
+        }
+
+        .selectedCancerStagingKeys {
+        page-break-before: always;
+        border: 0px;
+        }
+
+        table.selectedCancerStagingKeys td {
+        border: 0px;
+        }
+
+        #signature {
+        border: none;
+        }
+        #signature td {
+        border: none;
+        }
+        }
+
+        @media screen {
+        table {
+        border: 1px solid #DFDFDF;
+        width: 100%;
+        border-color: #009d8e;
+        }
+
+        #container {
+        display: block;
+        }
+
+        #printArea {
+        display: none;
+        }
+        }
+
+    </style>
+
+    <script type="text/javascript">
+	if (jQuery) {
+		$j(document)
+				.ready(
+						function() {
+							if ($j.browser.msie) {
+								$j(":checkbox").click(function() {
+									$j(this).change();
+								});
+							}
+							$j(".checkboxGroup")
+									.each(
+											function() {
+												var group = $j(this);
+												var uncheckAll = function() {
+													group
+															.find(
+																	"input[type$='checkbox']")
+															.attr("checked",
+																	false);
+													group
+															.find(
+																	"input[type$='checkbox']")
+															.change();
+												}
+												var uncheckRadioAndAll = function() {
+													group
+															.find(
+																	"#checkboxAll,#checkboxRadio")
+															.find(
+																	"input[type$='checkbox']")
+															.attr("checked",
+																	false);
+													group
+															.find(
+																	"#checkboxAll,#checkboxRadio")
+															.find(
+																	"input[type$='checkbox']")
+															.change();
+												}
+
+												group
+														.find("#checkboxAll")
+														.find("input")
+														.click(
+																function() {
+																	var flip;
+																	var checked = $j(
+																			this)
+																			.siblings(
+																					":checkbox:first")
+																			.attr(
+																					"checked");
+																	if ($j(this)
+																			.attr(
+																					"name") == $j(
+																			this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox:first")
+																			.attr(
+																					"name")) {
+																		checked = $j(
+																				this)
+																				.attr(
+																						"checked");
+																		flip = checked;
+																	} else {
+																		flip = !checked;
+																	}
+																	if ($j(this)
+																			.attr(
+																					"type") == "text")
+																		if (flip == false)
+																			flip = !filp; // this is so the user doesn't go to check the checkbox, then uncheck it when they hit the input.
+																	uncheckAll();
+																	$j(this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox")
+																			.attr(
+																					"checked",
+																					flip);
+																	$j(this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox")
+																			.change();
+																});
+
+												group
+														.find("#checkboxRadio")
+														.find(
+																"input[type$='checkbox']")
+														.click(
+																function() {
+																	uncheckAll();
+																	$j(this)
+																			.siblings(
+																					"input[type$='checkbox']")
+																			.attr(
+																					"checked",
+																					false);
+																	$j(this)
+																			.attr(
+																					"checked",
+																					true);
+																	$j(this)
+																			.change();
+																});
+
+												group
+														.find(
+																"#checkboxCheckbox")
+														.click(
+																function() {
+																	uncheckRadioAndAll();
+											  });
+											});
+						                });
+	}
+	</script>
+
+    <section headerLabel="ADMISSION">
+        <table border="1" width="100%">
+            <tr class="strong">
+                <td><img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left"
+                         height="65"></img>
+                    <b>REPUBLIC OF RWANDA
+                        <br/>MINISTRY OF HEALTH</b>
+                </td>
+                <td>
+                    NID: <lookup expression="patient.getPatientIdentifier(7)"/>
+                </td>
+                <td>
+                    Full name:
+                    <lookup class="value" expression="patient.personName.familyName" />
+                    <lookup class="value" expression="patient.personName.givenName" />
+                </td>
+                <td>
+                    <b>
+                        <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode"/>
+                    </b><br/>
+                </td>
+                <td>
+                    <b>Date:
+                        <encounterDate/>
+                    </b>
+                </td>
+                <td>
+                    <encounterProvider id="encounterProvider"
+                                       role="Provider" default="currentUser"/>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+
+    <section headerLabel="FIRST ADMISSION">
+        <obsgroup groupingConceptId="6f5100dc-7709-4b91-894e-e5132f7545d8">
+            <table border="1" width="100%">
+                <tr>
+                    <th></th>
+
+                </tr>
+
+                <tr class="strong">
+                    <td>
+                        <b>Admission Date</b><obs conceptId="49b34934-55aa-44fe-9ff3-ae4d390da3aa" LabelCode="Admission Date" />
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        <b>Discharge Date</b><obs conceptId="f56dad49-9a8d-4854-8cd5-382ca85ee67e" LabelCode="Discharge Date"/>
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        <b>Maternity Ward</b><obs conceptId="3ce1e6e6-26fe-102b-80cb-0017a47871b2" LabelCode="MATERNITY WARD" style=""/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="$@Admission_Maternity@" answerConceptId="$@RECOVERED_Delivery@" answerLabel="Recovered" style="checkbox"/>
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        <obs conceptId="$@Admission_Maternity@" answerConceptId="$@Died_Before_48_HR@" answerLabel="Died Before 48 HR" style="checkbox"/>
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        <obs conceptId="77462de6-c450-43e2-a941-ec83f830ede5" answerLabel="Died After 48 HR" style="checkbox"/>Died After 48 HR
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        <obs conceptId="$@Admission_Maternity@" answerConceptId="$@Fled@" answerLabel="Fled" style="checkbox"/>
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        <obs conceptId="$@Admission_Maternity@" answerConceptId="$@Maternity_Discharge_date@" answerLabel="Maternity Discharge date" style="checkbox"/>
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        <obs conceptId="$@Admission_Maternity@" answerConceptId="$@Voluntary@" answerLabel="Voluntary" style="checkbox"/>
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        <obs conceptId="$@Admission_Maternity@" answerConceptId="$@Improved@" answerLabel="Improved" style="checkbox"/>
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="2e895c21-3d2b-4015-94a3-85a1481e9b0e" answerLabel="TRANSFERRED FROM" style=""/>Transferd From(Code)
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        <obs conceptId="346ee2d2-6615-4a56-a416-b64b224d35a8" answerLabel="TRANSFERED TO" style=""/>Transferd To(Code)
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        <obs conceptId="bcf502c3-f937-4e7a-9b42-06499d7bd2af" answerLabel="Unimproved" style="checkbox"/>Unimproved
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        <obs conceptId="c5ed73aa-c23d-456f-808b-f7c5f0105559" answerLabel="Autopsy_requested" style="checkbox"/>Autopsy requested
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        CLINICAL SUMMARY : <obs conceptId="6602a73b-b8d3-40bc-bae8-f00ff3b9cceb" LabelCode="CLINICAL SUMMARY :" style="textarea" rows="3" cols="80" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        FINAL DIADNOSIS : <obs conceptId="970d41ce-5098-47a4-8872-4dd843c0df3f" LabelCode="FINAL DIADNOSIS :" style="textarea" rows="3" cols="80" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        INVESTIGATION S :   <obs conceptId="6a329c3c-b15f-418d-b3d6-74e9b95b5d85" LabelCode="INVESTIGATION :" style="textarea" rows="3" cols="80" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        OTHER DIAGNOSIS :  <obs conceptId="6a329c3c-b15f-418d-b3d6-74e9b95b5d85" LabelCode="OTHER DIAGNOSIS :" style="textarea" rows="3" cols="80" />
+                    </td>
+                </tr>
+
+            </table>
+        </obsgroup>
+    </section>
+    =========================================================================================================================================================================
+    =========================================================================================================================================================================
+    <section headerLabel="SECOND ADMISSION">
+        <obsgroup groupingConceptId="6f5100dc-7709-4b91-894e-e5132f7545d8">
+            <table border="1" width="100%">
+                <tr>
+                    <th></th>
+
+                </tr>
+
+                <tr class="strong">
+                    <td>
+                        <b>Admission Date</b><obs conceptId="49b34934-55aa-44fe-9ff3-ae4d390da3aa" LabelCode="Admission Date" />
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        <b>Discharge Date</b><obs conceptId="f56dad49-9a8d-4854-8cd5-382ca85ee67e" LabelCode="Discharge Date"/>
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        <b>Maternity Ward</b><obs conceptId="3ce1e6e6-26fe-102b-80cb-0017a47871b2" LabelCode="MATERNITY WARD" style=""/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="$@Admission_Maternity@" answerConceptId="$@RECOVERED_Delivery@" answerLabel="Recovered" style="checkbox"/>
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        <obs conceptId="$@Admission_Maternity@" answerConceptId="$@Died_Before_48_HR@" answerLabel="Died Before 48 HR" style="checkbox"/>
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        <obs conceptId="77462de6-c450-43e2-a941-ec83f830ede5" answerLabel="Died After 48 HR" style="checkbox"/>Died After 48 HR
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        <obs conceptId="$@Admission_Maternity@" answerConceptId="$@Fled@" answerLabel="Fled" style="checkbox"/>
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        <obs conceptId="$@Admission_Maternity@" answerConceptId="$@Maternity_Discharge_date@" answerLabel="Maternity Discharge date" style="checkbox"/>
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        <obs conceptId="$@Admission_Maternity@" answerConceptId="$@Voluntary@" answerLabel="Voluntary" style="checkbox"/>
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        <obs conceptId="$@Admission_Maternity@" answerConceptId="$@Improved@" answerLabel="Improved" style="checkbox"/>
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="2e895c21-3d2b-4015-94a3-85a1481e9b0e" answerLabel="TRANSFERRED FROM" style=""/>Transferd From(Code)
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        <obs conceptId="346ee2d2-6615-4a56-a416-b64b224d35a8" answerLabel="TRANSFERED TO" style=""/>Transferd To(Code)
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        <obs conceptId="bcf502c3-f937-4e7a-9b42-06499d7bd2af" answerLabel="Unimproved" style="checkbox"/>Unimproved
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        <obs conceptId="c5ed73aa-c23d-456f-808b-f7c5f0105559" answerLabel="Autopsy_requested" style="checkbox"/>Autopsy requested
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        CLINICAL SUMMARY : <obs conceptId="6602a73b-b8d3-40bc-bae8-f00ff3b9cceb" LabelCode="CLINICAL SUMMARY :" style="textarea" rows="3" cols="80" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        FINAL DIADNOSIS : <obs conceptId="970d41ce-5098-47a4-8872-4dd843c0df3f" LabelCode="FINAL DIADNOSIS :" style="textarea" rows="3" cols="80" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        INVESTIGATION S :   <obs conceptId="6a329c3c-b15f-418d-b3d6-74e9b95b5d85" LabelCode="INVESTIGATION :" style="textarea" rows="3" cols="80" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        OTHER DIAGNOSIS :  <obs conceptId="6a329c3c-b15f-418d-b3d6-74e9b95b5d85" LabelCode="OTHER DIAGNOSIS :" style="textarea" rows="3" cols="80" />
+                    </td>
+                </tr>
+
+            </table>
+        </obsgroup>
+    </section>
+
+
+
+
+
+
+
+
+    <center>
+        <submit />
+    </center>
+</htmlform>

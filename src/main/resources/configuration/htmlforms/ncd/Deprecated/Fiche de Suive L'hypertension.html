@@ -1,0 +1,150 @@
+<htmlform>
+	<!-- Hypertension flowsheet top level form.
+         Flow-HTN-RW.V1akb.7Feb09.doc
+         Created by jberchmas 2011
+	 -->
+	<style>
+		.formName { background-color:#e0e0ff; }
+		.section { border: 1px
+		solid #8FABC7; width:99%; height:100%; padding:2px; text-align:left;
+		margin-bottom:10px; }
+		.sectionHeader { background-color: #8FABC7;
+		color: white; display: block; padding: 2px; font-weight:bold; }
+		.note {color:red;}
+		.important {color:red; font-weight:bold;}
+		.notEntered {color:gray; font-weight:bold; font-style:italic}
+		td
+		{vertical-align:top;}
+		table.labTable td { color:red; }
+		table.labTable
+		td.dateField { text-align:right; }
+		table.identifierTable td
+		{padding-right:10px;}
+		div.paddedTable span {padding-right:20px;}
+	</style>
+
+	<!-- Form header -->
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				<b>
+					IMB ID:
+					<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				</b>
+			</td>
+			<td>
+				Date:
+				<encounterDate default="today"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Nom / Last name:
+				<lookup class="value" expression="patient.personName.familyName" />
+			</td>
+			<td>
+				Prénom/ First name:
+				<lookup class="value" expression="patient.personName.givenName" />
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<img src="/openmrs/images/emr_hands.gif" align="left" height="75"
+					width="56"></img>
+				<h2>
+					Inshuti Mu Buzima
+					<br />
+					PIH Rwanda
+				</h2>
+			</td>
+			<td>
+				<strong>
+					Clinique des Maladies Chroniques/ Chronic Disease Clinic
+					<br/>
+					Fiche de Suivie -- L’hypertension
+                                  <br />Flow Sheet -- Hypertension
+				</strong>
+				<br />
+				Flow-HTN-RW.V1akb.7Feb09.doc
+				
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Clinique / Clinic:
+				<encounterLocation />
+			</td>
+                        <td>
+				Clinicien/Provider:<encounterProvider role="NCD Provider"/>
+			</td>
+		</tr>
+	</table>
+
+<br />
+<div>
+	<section headerLabel="2. DEMOGRAPHIQUE ET RESIDENCE / DEMOGRAPHICS AND RESIDENCE">
+<htmlformflowsheet formId="8832ae44-b798-4641-a98a-ef7435aff71c" showHtmlForm="true" />
+</section>			
+</div>
+<br/>
+<b>Consultation avec cardiologue / Cardiology consultation: <obs conceptId="2b947e2b-2c52-4fb8-ba8a-da7a9eae0381" answerConceptId="3cd6f600-26fe-102b-80cb-0017a47871b2" answerLabel="oui/yes."/>  <obs conceptId="2b947e2b-2c52-4fb8-ba8a-da7a9eae0381" answerConceptId="3ce3fdbe-26fe-102b-80cb-0017a47871b2" answerLabel="pas indiquee/not indicated."/></b>
+<br/>
+<br/>
+<div>
+	<section headerLabel="3. ECHOCARDIOGRAPHIE / ECHOCARDIOGRAPHY">
+<htmlformflowsheet formId="6aaf54ea-c60b-4c95-afef-1531d05e91a0" />
+</section>			
+</div>
+<div>
+	<section headerLabel="4. AUTRE DIAGNOSIES / OTHER DIAGNOSIES">
+<htmlformflowsheet formId="f3cbd303-a25b-460d-9dfb-a7336dfef922" />
+</section>			
+</div>
+<div>
+	<section headerLabel="5. EVENEMENTS DE LA VIE DEPUIS LA DIAGNOSE/ LIFE EVENTS SINCE DIAGNOSIS DIAGNOSIS">
+<htmlformflowsheet formId="0a0d670b-1e88-4445-9838-2a3363e4039e" />
+</section>			
+</div>	
+<div>
+	<section headerLabel="6. ASSISTANCE OU EVALUATION SOCIALE/SOCIAL ASSISTANCE OR ASSESMENT">
+<htmlformflowsheet formId="7aa85f60-1c3a-4633-a34f-7b1695ea6888" />
+</section>			
+</div>
+<div>
+	<section headerLabel="7. HOSPITALISATIONS/HOSPITALIZATIONS">
+<htmlformflowsheet formId="e55d4812-f25c-44a1-bdf8-836f98f67985" />
+</section>			
+</div>
+<div>
+	<section headerLabel="8. DATE ET CAUSE DE DECES/ DATE AND CAUSE OF DEATH">
+Entered via patient dashboard.
+</section>			
+</div>
+<div>
+	<section headerLabel="9. AUTRE CAUSE DE LA SORTIE DE CLINIC / OTHER CAUSE FOR EXIT FROM CLINIC">
+Entered via patient dashboard program workflow.
+</section>			
+</div>
+<div>
+	<section headerLabel="10. RENDEZ-VOUZ/CLINIC VISITS">
+<htmlformflowsheet formId="c6276c2d-b17e-45e3-87ff-2efd341b1e20" />
+</section>			
+</div>
+<div>
+	<section headerLabel="11. AUTRE INVESTIGATIONS / OTHER INVESTIGATIONS">
+<htmlformflowsheet formId="94e5df56-db85-4a3a-a795-01cc8aada124" />
+</section>			
+</div>
+<div>
+	<section headerLabel="12. LISTE DES MEDICAMENTS / MEDICATION LIST">
+<htmlformflowsheet formId="1ee4f821-1ac9-46f0-ac47-3c9c1840313d" />
+</section>			
+</div>
+	<br />
+	<center>
+		<submit submitLabel="Close Flowsheet" />
+	</center>
+	<br />
+<br />
+</htmlform>

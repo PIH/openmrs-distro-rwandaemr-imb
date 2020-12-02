@@ -1,0 +1,265 @@
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/muzima.css" rel="stylesheet">
+    <link href="css/ui-darkness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/additional-methods.min.js"></script>
+    <script src="js/jquery-autocomplete-min.js"></script>
+    <script src="js/muzima.js"></script>
+
+    <title>Call Log or CHW Visit</title>
+</head>
+<body class="col-md-10 col-md-offset-1">
+<div id="pre_populate_data"></div>
+<form id="DiabetesCardiovascularCheckup_form" name="DiabetesCardiovascularCheckup_form">
+    <div class="section">
+        <h3>Encounter Details</h3>
+        <div class="form-group">
+            <label for="encounter.location_id">Location Name:<span class="required">*</span></label>
+            <input class="form-control valid-location-only" id="encounter.location_id" type="text" placeholder="Start typing something..."
+                   required="required">
+            <input class="form-control" name="encounter.location_id" type="hidden">
+        </div>
+        <div class="form-group">
+            <label for="encounter.provider_id_select">Provider:</label>
+            <input class="form-control valid-provider-only" id="encounter.provider_id_select" type="text" placeholder="Start typing something...">
+            <input class="form-control" name="encounter.provider_id_select" type="hidden">
+        </div>
+        <div class="form-group hidden">
+            <select id="select_providers"></select>
+        </div>
+        <div class="form-group show_provider_id_text">
+            <label for="encounter.provider_id">Provider's system-id:<span class="required">*</span></label>
+            <input class="form-control checkDigit" id="encounter.provider_id" name="encounter.provider_id"
+                   type="text" required="required" disabled="disabled">
+        </div>
+        <div class="form-group">
+            <label for="encounter.encounter_datetime">Encounter Date:<span class="required">*</span></label>
+            <input class="form-control datepicker nonFutureDate past-date" id="encounter.encounter_datetime"
+                   name="encounter.encounter_datetime" type="text" readonly="readonly"
+                   required="required">
+        </div>
+        <div class="form-group">
+            <input class="form-control" id="encounter.form_uuid" name="encounter.form_uuid"
+                   type="hidden" required="required">
+        </div>
+    </div>
+    <div class="section">
+        <h3>DEMOGRAPHICS</h3>
+
+        <div class="form-group">
+            <input class="form-control" id="patient.uuid"
+                   name="patient.uuid" type="hidden" readonly="readonly">
+        </div>
+        <div class="form-group">
+            <label for="patient.medical_record_number">Patient identifier:</label>
+            <input class="form-control" id="patient.medical_record_number"
+                   name="patient.medical_record_number" type="text" readonly="readonly">
+        </div>
+        <div class="form-group">
+            <label for="patient.given_name">Given Name:</label>
+            <input class="form-control" id="patient.given_name" name="patient.given_name" type="text"
+                   readonly="readonly">
+        </div>
+        <div class="form-group">
+            <label for="patient.middle_name">Middle Name:</label>
+            <input class="form-control" id="patient.middle_name" name="patient.middle_name" type="text"
+                   readonly="readonly">
+        </div>
+        <div class="form-group">
+            <label for="patient.family_name">Family Name:</label>
+            <input class="form-control" id="patient.family_name" name="patient.family_name" type="text"
+                   readonly="readonly">
+        </div>
+        <div class="form-group">
+            <label for="patient.sex">Gender:</label>
+            <select class="form-control" id="patient.sex" name="patient.sex" disabled="disabled">
+                <option value="">...</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="patient.birth_date">Date Of Birth:</label>
+            <input class="form-control" id="patient.birth_date" name="patient.birth_date" type="text"
+                   readonly="readonly" disabled="disabled">
+        </div>
+    </div>
+    <hr/>
+    <h3>Call log or CHW Visit </h3>
+    <div class="form-group">
+        <fieldset>
+            <div>
+                <label>This was a:</label>
+            </div>
+            <label class="font-normal">
+                <input id="obs.CalllogMean" name="obs.logMean" type="radio"
+                       data-concept="98672ac7-510e-4871-a0a1-81de095cf326^Type of Attempt^99DCT"
+                       value="ce01fc27-05c3-425e-877a-5dbb52a9ae6a^Phone call^99DCT">
+                Call
+            </label>
+            <br/>
+            <label class="font-normal">
+                <input id="obs.CHWVisitlogMean" name="obs.logMean" type="radio"
+                       data-concept="98672ac7-510e-4871-a0a1-81de095cf326^Type of Attempt^99DCT"
+                       value="355b7292-69af-414e-8985-086ec802e017^CHW Visit^99DCT">
+                CHW Visit
+            </label>
+
+        </fieldset>
+    </div>
+    <div class="form-group">
+        <fieldset>
+            <div>
+                <label>Next Step:</label>
+            </div>
+            <label class="font-normal">
+                <input id="obs.CallAsNextStep" name="obs.NextStep" type="radio"
+                       data-concept="e79ccc1c-903a-453f-871b-2e40a47ad23e^call log next step^99DCT"
+                       value="ce01fc27-05c3-425e-877a-5dbb52a9ae6a^Phone call^99DCT">
+                Call again
+            </label>
+            <br/>
+            <label class="font-normal">
+                <input id="obs.CHWVisitAsNextStep" name="obs.NextStep" type="radio"
+                       data-concept="e79ccc1c-903a-453f-871b-2e40a47ad23e^call log next step^99DCT"
+                       value="355b7292-69af-414e-8985-086ec802e017^CHW Visit^99DCT">
+                CHW Visit
+            </label>
+            <br/>
+            <label class="font-normal">
+                <input id="obs.NewAppointmentAsNextStep" name="obs.NextStep" type="radio"
+                       data-concept="e79ccc1c-903a-453f-871b-2e40a47ad23e^call log next step^99DCT"
+                       value="5a2cd0f1-aeb1-4f9d-ae56-1023a336acfb^RDV Changed^99DCT">
+                New Appointment
+            </label>
+            <br/>
+            <label class="font-normal">
+                <input id="obs.PatientWillNotReturnAsNextStep" name="obs.NextStep" type="radio"
+                       data-concept="e79ccc1c-903a-453f-871b-2e40a47ad23e^call log next step^99DCT"
+                       value="95fc1647-ddc8-4a78-80cb-2049c6cb706a^patient will not return^99DCT">
+                patient will not return
+            </label>
+
+        </fieldset>
+    </div>
+    <div class="section">
+        <fieldset>
+        <label class="font-normal">
+            Date of next visit:
+            <input class="form-control datepicker future-or-today-date" id="obs.NextDate" name="obs.NextDate" type="text"
+                   data-concept="3ce94df0-26fe-102b-80cb-0017a47871b2^RETURN VISIT DATE^99DCT"/>
+        </label>
+            <br/>
+        <label class="font-normal">
+            Next appointment location (if different from before)
+            <br/>
+            <input class="form-control" id="obs.NextVisitLocation" name="obs.NextVisitLocation" type="text"
+                   data-concept="4c80b141-2287-4397-bfe6-3e06b8aa2604^Other return visit location^99DCT"/>
+        </label>
+        </fieldset>
+    </div>
+
+    <div class="form-group">
+        <fieldset>
+            <div>
+                <label>Result of call:</label>
+            </div>
+            <label class="font-normal">
+                <input id="obs.PatientDiedResultOfCall" name="obs.ResultOfCall" type="radio"
+                       data-concept="f89b3523-c37a-4d50-ace7-cc50f2292d77^Result of Call^99DCT"
+                       value="3cdd446a-26fe-102b-80cb-0017a47871b2^PATIENT DIED^99DCT">
+                Patient Died
+
+            </label>
+            <br/>
+            <label class="font-normal">
+                Date:
+                <input class="form-control datepicker" id="obs.DeathDate" name="obs.DeathDate" type="text"
+                       data-concept="ce0afb8a-35b3-496e-8ac9-37c3b8f6592e^Date of Death^99DCT"/>
+            </label>
+            <br/>
+            <label class="font-normal">
+                <input id="obs.lostToFollowUpResultOfCall" name="obs.ResultOfCall" type="radio"
+                       data-concept="f89b3523-c37a-4d50-ace7-cc50f2292d77^Result of Call^99DCT"
+                       value="3ceb0ed8-26fe-102b-80cb-0017a47871b2^LOST TO FOLLOWUP^99DCT">
+                Patient Lost to follow-up
+            </label>
+            <br/>
+            <label class="font-normal">
+                <input id="obs.TransferResultOfCall" name="obs.ResultOfCall" type="radio"
+                       data-concept="f89b3523-c37a-4d50-ace7-cc50f2292d77^Result of Call^99DCT"
+                       value="3a296bb6-5fc8-40ee-84fc-97c13cacf8d8^Transfered^99DCT">
+                Transfer
+            </label>
+            <br/>
+            <label class="font-normal">
+                <input id="obs.DecidedNotToReturnResultOfCall" name="obs.ResultOfCall" type="radio"
+                       data-concept="f89b3523-c37a-4d50-ace7-cc50f2292d77^Result of Call^99DCT"
+                       value="3cdd5176-26fe-102b-80cb-0017a47871b2^PATIENT DEFAULTED^99DCT">
+                Decided not to return
+            </label>
+
+        </fieldset>
+    </div>
+
+
+<!--    <div>-->
+<!--        <input id="save_draft" name="save_draft" type="submit" value="Draft"/>-->
+<!--        <input id="submit_form" name="submit_form" type="submit" value="submit"/>-->
+<!--    </div>-->
+</form>
+
+</body>
+<script type="text/javascript">
+        $(document).ready(function () {
+           var dateFormat = "dd-mm-yy";
+            var currentDate = $.datepicker.formatDate(dateFormat, new Date());
+            var encounterDatetime = $('#encounter\\.encounter_datetime');
+            if ($(encounterDatetime).val() == "") {
+                $(encounterDatetime).val(currentDate);
+            }
+
+            $('#save_draft').click(function () {
+            $(this).prop('disabled', true);
+            document.saveDraft(this);
+            $(this).prop('disabled', false);
+            });
+            $('#submit_form').click(function () {
+                $(this).prop('disabled', true);
+                document.submit();
+                $(this).prop('disabled', false);
+            });
+
+            document.setupAutoCompleteData('encounter\\.location_id');
+            document.setupValidationForLocation("$('#encounter\\.location_id').val()","encounter\\.location_id");
+            document.setupAutoCompleteDataForProvider('encounter\\.provider_id_select');
+            document.setupValidationForProvider("$('#encounter\\.provider_id_select').val()","encounter\\.provider_id");
+            $('#encounter\\.provider_id_select').change(function () {
+                if ($('#encounter\\.provider_id_select').val() === '') {
+                    $('#encounter\\.provider_id').val('');
+                       $('.show_provider_id_text').show();
+                }
+            });
+            $('.future-or-today-date').change(function () {
+                if ($(this).is(':visible') && $(this).val() != '') {
+                    var errors = {};
+                    var pattern = /(\d{2})-(\d{2})-(\d{4})/g;
+                    var matches = pattern.exec($(this).val());
+                    var enteredDate = new Date(matches[3], matches[2] - 1, matches[1]);
+                    var today = new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDate());
+                    if (enteredDate < today) {
+                        errors[$(this).attr('name')] = "Please enter present or future date.";
+                    }
+                    toggleValidationMessages(errors);
+                }
+            });
+        });
+</script>
+
+</html>

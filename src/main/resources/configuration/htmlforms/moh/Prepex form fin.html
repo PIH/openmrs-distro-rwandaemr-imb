@@ -1,0 +1,236 @@
+<htmlform>
+    <macros>
+        paperFormId = (Fill this in)
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+    </macros>
+
+    <style>
+		.section {
+			border: 1px solid $headerColor;
+			padding: 2px;
+			text-align: left;
+			margin-bottom: 1em;
+		}
+		.sectionHeader {
+			background-color: $headerColor;
+			color: $fontOnHeaderColor;
+			display: block;
+			padding: 2px;
+			font-weight: bold;
+		}
+		table.baseline-aligned td {
+			vertical-align: baseline;
+		}
+		th.subheader {
+		background-color: $headerColor;
+		color:white
+		}
+	</style>
+    <includeIf velocityTest="$patient.gender == 'M' ">
+        <section headerLabel=" General Information" >
+            <table border="2" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        <b>
+                            Primary Care ID Type :
+                            <lookup class="value" expression="patientIdentifiers.get(&quot;Primary Care ID Type&quot;)" />
+                        </b>
+                    </td>
+                    <td>
+                        Date:
+                        <encounterDate />
+                    </td>
+
+                    <td>
+                        Clinique / Clinic:
+                        <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode"/>
+                    </td>
+                    <td>
+                        Clinician Nom/ Signature:
+                        <encounterProvider role="Provider"/>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <section headerLabel="1.Prepex Placement Procedure">
+            <table class="baseline-aligned">
+                <tr>
+                    <td>Placement Date</td>
+                    <td><obs conceptId="3d45b3e2-f498-4d63-9988-abe04bc3df9e"/>
+                    </td>
+                </tr>
+
+                <th>Placement Team</th>
+                <tr>
+                    <td>MC surgeon</td>
+                    <td><obs conceptId="72ffa4b8-167d-4ed3-bfe8-87dc4cd9e74d" lableText=" MC surgeon:"/></td>
+                </tr>
+                <tr>
+                    <td>Assistant</td>
+                    <td><obs conceptId="312d4754-a2ce-4db6-a4e1-fe06564a0d88" lableText=" Assistant"/></td>
+                </tr>
+                <tr>
+                    <td>PrePex Size</td>
+                    <td><obs conceptId="dd025f76-cad8-470e-a71a-1ff0a9b21302"/></td>
+                </tr>
+                <tr>
+                    <td>Prepex Lot</td>
+                    <td><obs conceptId="41405d5b-eb28-4258-8db2-ca63ec3e0cef"/></td>
+                </tr>
+                <tr>
+                    <td>Start Time:</td>
+                    <td><obs conceptId="6314f906-9694-4885-b3fb-a99f847f4dc5" required ="true"/></td>
+                    <td>End Time:</td>
+                    <td><obs conceptId="1bcaa8f2-e0ff-4a6b-976d-dd1ee78070e1" required ="true"/></td>
+                </tr>
+                <tr>
+                    <td>Derma cream Used</td>
+                    <td><obs conceptId="2db5524d-9af6-46c7-9336-e6f31c41b968"/></td>
+                    <td>Other Derma cream Used</td>
+                    <td><obs conceptId="5289471a-e3c4-413f-bef3-ac9c8a002d28"/></td>
+                </tr>
+                <tr>
+                    <td>Disinfectant Used</td>
+                    <td><obs conceptId="31382142-95ef-4e68-8ba1-842f97489c6f"/></td>
+                </tr>
+            </table>
+        </section>
+
+        <section headerLabel="2.Post Prepex Placement discharge session">
+            <table class="baseline-aligned">
+                <tr>
+                    <td><obs conceptId="5e8eb0d4-f075-41d1-895b-1ab519a63d60" style="no_yes" noLabel="no" yesLabel="yes" labelText="Discharge session performed:"/></td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="3ce93694-26fe-102b-80cb-0017a47871b2" labelText="DIASTOLIC BLOOD PRESSURE:"/></td>
+                    <td><obs conceptId="3ce934fa-26fe-102b-80cb-0017a47871b2" labelText="SYSTOLIC BLOOD PRESSURE:"/></td>
+                    <td><obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" labelText="Pulse:"/></td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="05c1fdbc-dcf1-4a19-adaf-4fbabe56aded" style="no_yes" noLabel="no" yesLabel="yes" labelText="Leaflet Provided:"/></td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="6dccc986-8418-4d56-b528-85289dd1bc22" style="no_yes" noLabel="no" yesLabel="yes" labelText="Ibuprofen Tablets provided:"/></td>
+                </tr>
+                <tr>
+                    <td>
+                        Counselor Signature:<encounterProvider role="Provider"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Date: <encounterDate/>
+                    </td>
+                </tr>
+
+            </table>
+        </section>
+
+        <section headerLabel="3.Prepex removal Procedure">
+            <table class="baseline-aligned">
+                <tr>
+                    <td>
+                        <obs conceptId="f67a96dc-f4ad-4f47-90fc-8455584fe414" labelText="Removal date:"/>
+                    </td>
+                </tr>
+                <Th>Removal Team</Th>
+                <tr>
+                    <td>MC surgeon</td>
+                    <td><obs conceptId="72ffa4b8-167d-4ed3-bfe8-87dc4cd9e74d" lableText=" MC surgeon:"/></td>
+                </tr>
+                <tr>
+                    <td>Assistant</td>
+                    <td><obs conceptId="312d4754-a2ce-4db6-a4e1-fe06564a0d88" lableText=" Assistant"/></td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="3ce93694-26fe-102b-80cb-0017a47871b2" labelText="DIASTOLIC BLOOD PRESSURE:"/></td>
+                    <td><obs conceptId="3ce934fa-26fe-102b-80cb-0017a47871b2" labelText="SYSTOLIC BLOOD PRESSURE:"/></td>
+                    <td><obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" labelText="Pulse:"/></td>
+                    <td><obs conceptId="3ce939d2-26fe-102b-80cb-0017a47871b2" labelText="Temperature:"/>(C)</td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="05c1fdbc-dcf1-4a19-adaf-4fbabe56aded" style="no_yes" noLabel="no" yesLabel="yes" labelText="Leaflet Provided:"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="6dccc986-8418-4d56-b528-85289dd1bc22" style="no_yes" noLabel="no" yesLabel="yes" labelText="Ibuprofen Tablets Provided:"/>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <section headerLabel="4.Complication(AE) information">
+            <table class="baseline-aligned">
+                <tr>
+                    <td>
+                        <obs conceptId="0ff1ec98-0a95-438b-94df-fbc1ede19f62" style="no_yes" noLabel="no" yesLabel="yes" labelText="Where any complication (AE) observed or reported::"/>
+                        <obs conceptId="c9720f84-68c0-4b7f-a670-6075c19519c5" labelText="If Yes Specify:"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="be2fe2a1-172d-4289-842f-0ecb020dff21" labelText="Timing:Placememt, during device wearing,removal visit,post removal visit"/></td>
+                </tr>
+                <tr>
+                    <td>
+                        Date:
+                        <encounterDate />
+                    </td>
+                </tr>
+
+                <Th>Fill the AE report form</Th>
+            </table>
+        </section>
+
+        <section headerLabel="5.Unscheduled visit">
+            <table class="baseline-aligned">
+                <tr>
+                    <td>
+                        Date:
+                        <encounterDate />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="432d65ba-63b5-42e8-a2ee-500ad7bdc59c" labelText="Problem description:"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="3cd7c6fc-26fe-102b-80cb-0017a47871b2" labelText="Treatment:"/></td>
+                </tr>
+
+                <th>Data Base</th>
+                <tr>
+                    <td>
+                        <obs conceptId="9016c1d7-d5b7-4c77-b6ad-0b3662177de3" style="no_yes" noLabel="no" yesLabel="yes" labelText="Client card data fully validated and entered into database:"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Data manager  Signature:
+                        <encounterProvider role="Provider"/>
+                    </td>
+                    <td>
+                        Date:
+                        <encounterDate />
+                    </td>
+                </tr>
+
+            </table>
+        </section>
+
+        <left>
+            <submit />
+        </left>
+    </includeIf>
+
+    <includeIf velocityTest="$patient.gender == 'F' ">
+        <section headerLabel="Invalid Patient Message">
+            <table border="0" width="100%">
+                <tr><td>This Form Is Only Filled For Male Patients:</td>
+                </tr>
+            </table>
+        </section>
+    </includeIf>
+</htmlform>

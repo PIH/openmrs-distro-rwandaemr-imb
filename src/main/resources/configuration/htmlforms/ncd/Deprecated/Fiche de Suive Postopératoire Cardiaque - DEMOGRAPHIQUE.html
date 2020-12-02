@@ -1,0 +1,76 @@
+<htmlform>
+      <!-- Post cardiac surgery flowsheet: Demographics
+         written by jBerchmas 
+         -->
+	<macros>
+		paperFormId = Flow-CardsPostOp-IMB-RW.V2.5akb.16May09
+		headerColor =#009d8e
+		fontOnHeaderColor = white
+	</macros>
+
+	<style>
+		.formName { background-color:#e0e0ff; }
+		.section { border: 1px
+		solid #8FABC7; width:99%; padding:2px; text-align:left;
+		margin-bottom:10px; }
+		.sectionHeader { background-color: #8FABC7;
+		color: white; display: block; padding: 2px; font-weight:bold; }
+		table.symptoms th {text-align: right;}
+		.note {color:red;}
+		td
+		{vertical-align:top;}
+		table.labTable td { color:red; }
+		table.labTable
+		td.dateField { text-align:right; }
+		table.identifierTable td
+		{padding-right:10px;}
+		div.paddedTable span {padding-right:20px;}
+	</style>
+<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				<b>IMB ID:<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				</b>
+			</td>
+			<td>
+				Date:<encounterDate default="today"/>
+			</td>
+			<td>
+				Clinique / Clinic:<encounterLocation />
+			</td>
+			<td>
+				Nom/ Signature:<encounterProvider role="NCD Provider"/>
+			</td>
+		</tr>
+	</table>
+
+<section headerLabel=" DEMOGRAPHIQUE ET RESIDENCE / DEMOGRAPHICS AND RESIDENCE" >
+<table  border="2" cellspacing="0" cellpadding="6" width="100%">
+<tr>
+<th>DEMOGRAPHIQUE/DEMOGRAPHICS</th><th>RESIDENCE</th>
+</tr>
+<tr>
+<td>Date de naissance/Date of birth: <lookup class="value" expression="patient.birthdate"/></td><td rowspan="3"><addressHierarchyRwanda/></td>
+</tr>
+<tr>
+<td>Age: <lookup class="value" expression="patient.Age"/></td>
+</tr>
+<tr>
+<td>Sexe/Sex: <lookup class="value" expression="patient.Gender"/></td>
+</tr>
+
+<tr>
+<td>Acompagnateur: <obs conceptId="0b71ad30-e864-4c9d-bebc-a678fdbcbd45" answerConceptId="3cd6f600-26fe-102b-80cb-0017a47871b2" answerLabel="oui/ yes" /> <obs conceptId="0b71ad30-e864-4c9d-bebc-a678fdbcbd45" answerConceptId="3ce3fdbe-26fe-102b-80cb-0017a47871b2" answerLabel="pas indiqué/ not indicated" /><br />
+
+<relationship type="d283d13a-2700-102b-80cb-0017a47871b2" whoAmI="B" changeExistingRelationship="true" required="false" /></td><td>Téléphone: <obs conceptId="3cda3d7e-26fe-102b-80cb-0017a47871b2" /><!--<br/><br/>Autre/other <obs conceptId="276f8057-55a4-4b1c-8915-69ad090fcffb" />--></td>
+</tr>
+<tr>
+<td colspan="2">Si c'est un enfant/If a child: Nom du parent ou tuteur/Name of parent or guardian: <obs conceptId="464f70ef-ce7b-4401-a159-2d6a5819e06c" labelText="First Name/Nom" /><obs conceptId="b21e8ee1-e1e8-4830-921b-2faf3f3985a3" labelText="Last Name/Prénom" /><br /><br />Téléphone: <obs conceptId="26732d5d-c6bb-43f1-8f2a-3b4358757d20" /></td>
+</tr>
+</table>
+</section>
+<br />	
+	<center>
+		<submit />
+	</center>
+</htmlform>

@@ -1,0 +1,201 @@
+<htmlform> <!--
+           Oncology - Inpatient progress note -Breast DST
+            Pilot_4July_v1.3NT
+                Author:
+                Builder: Byiringiro Joshua
+                started on July 27, 2017
+        -->
+
+    <macros>
+
+        <!-- encouter Types-->
+        @Chronic_Kidney_Disease@ = 710c8487-9831-4063-a79d-bf07f27653b2
+        @HYPERTENSION_VISIT@ = 2f75f29f-454d-4e91-915c-ec3fd49532b1
+        @Heart_Failure@ = d889bcb3-c99d-4648-a3ea-b373335b9efd
+        @Surgery_Type_(non_coded)@ = b4ebf8d1-615e-40a9-adeb-416bab132d21
+        @Surgery_Location_(non_coded)@ = 7db2afed-d368-4865-8be0-a3b2127f27f8
+
+    </macros>
+
+
+    <style>
+        th.tableHeader {
+        background-color: #009d8e;
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: left;
+        }
+
+        ul {
+        list-style-type: square;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        }
+
+        tr.spaceUnder>td {
+        padding-bottom: 1em;
+        }
+
+        td {
+        font-size: 15px;
+        }
+
+        #container {
+        position: relative;
+        margin: auto;
+        width: 1400px;
+        height: auto;
+        }
+
+        @media print {
+        #container {
+        display: none;
+        }
+
+        #printArea {
+        display: block;
+        }
+
+        #userBar {
+        display: none;
+        }
+
+        #banner {
+        display: none;
+        }
+
+        #footer {
+        display: none;
+        }
+
+        #htmlFormEntryBanner {
+        display: none;
+        }
+
+        .error {
+        display: none;
+        }
+
+        .lables {
+        width: 200px;
+        }
+
+        table {
+        width: 100%;
+        }
+
+        table,td,th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+
+        th {
+        text-align: left;
+        background-color: #D9D9D9;
+        font-size: 10px;
+        }
+
+        td {
+        font-size: 10px;
+        }
+
+        .selectedCancerStagingKeys {
+        page-break-before: always;
+        border: 0px;
+        }
+
+        table.selectedCancerStagingKeys td {
+        border: 0px;
+        }
+
+        #signature {
+        border: none;
+        }
+        #signature td {
+        border: none;
+        }
+        }
+
+        @media screen {
+        table {
+        border: 1px solid #DFDFDF;
+        width: 100%;
+        border-color: #009d8e;
+        }
+
+        #container {
+        display: block;
+        }
+
+        #printArea {
+        display: none;
+        }
+        }
+    </style>
+
+    <div id="container" style="width:100%">
+        <section>
+
+            <table cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td><img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left"
+                             height="65" ></img>
+                        <b>REPUBLIC OF RWANDA
+                            <br />MINISTRY OF HEALTH</b>
+                    </td>
+                    <td><strong> NCD DIAGNOSTIC ET LISTE DES PROBLEMES/</strong>Diagnosis and Problem List <br/>
+                        <b> IMB ID: <lookup class="value"
+                                            expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
+                                                                                                               expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
+                        <br/>
+                        Nom / Last name: <lookup class="value" expression="patient.personName.familyName" />
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                        Prénom/ First name: <lookup class="value" expression="patient.personName.givenName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Clinique / Clinic: <encounterLocation/>
+                    </td>
+                    <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                        Provider:<encounterProvider />
+                    </td>
+                </tr>
+            </table>
+            <div style="width:100%">
+                <table >
+                    <tr>
+                        <th>
+                            <strong>EMR</strong>
+                        </th>
+                        <th class="tableHeader" colspan="2">
+                            <strong> Diagnostique ou Probleme/</strong> Diagnosis or Problem
+                        </th>
+                    </tr>
+                    <tr>
+                        <td rowspan="2"></td>
+                        <td colspan="2">
+                            <obs conceptId="970d41ce-5098-47a4-8872-4dd843c0df3f" cols="100" rows="2" placeholder="Type here your Text"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Type of surgery: <obs conceptId="$@Surgery_Type_(non_coded)@" cols="40" />
+                        </td>
+                        <td>
+                            Location of surgery: <obs conceptId="$@Surgery_Location_(non_coded)@" cols="40" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <br />
+        <!-- <workflowState workflowId="c8dea23e-c596-40d0-a4a4-08cb61b82d3b"
+                        stateId="09426655-2909-4f6f-938b-7a31b991075e" type="hidden" />
+        -->
+        <center>
+            <submit />
+        </center>
+        <br/>
+    </div>
+</htmlform>

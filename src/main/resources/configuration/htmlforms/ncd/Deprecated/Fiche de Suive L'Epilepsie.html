@@ -1,0 +1,138 @@
+<htmlform>
+	<!-- Epilepsy flowsheet top level form.
+        Flow-Epilepsy-RW.V2.akb.15May09.doc
+         Created by jberchmas 2011
+	 -->
+	<style>
+		.formName { background-color:#e0e0ff; }
+		.section { border: 1px
+		solid #8FABC7; width:99%; height:100%; padding:2px; text-align:left;
+		margin-bottom:10px; }
+		.sectionHeader { background-color: #8FABC7;
+		color: white; display: block; padding: 2px; font-weight:bold; }
+		.note {color:red;}
+		.important {color:red; font-weight:bold;}
+		.notEntered {color:gray; font-weight:bold; font-style:italic}
+		td
+		{vertical-align:top;}
+		table.labTable td { color:red; }
+		table.labTable
+		td.dateField { text-align:right; }
+		table.identifierTable td
+		{padding-right:10px;}
+		div.paddedTable span {padding-right:20px;}
+	</style>
+
+	<!-- Form header -->
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				<b>
+					IMB ID:
+					<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				</b>
+			</td>
+			<td>
+				Date:
+				<encounterDate default="today"/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Nom / Last name:
+				<lookup class="value" expression="patient.personName.familyName" />
+			</td>
+			<td>
+				Prénom/ First name:
+				<lookup class="value" expression="patient.personName.givenName" />
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<img src="/openmrs/images/emr_hands.gif" align="left" height="75"
+					width="56"></img>
+				<h2>
+					Inshuti Mu Buzima
+					<br />
+					PIH Rwanda
+				</h2>
+			</td>
+			<td>
+				<strong>
+					Clinique des Maladies Chroniques/ Chronic Disease Clinic
+					<br/>
+					Fiche de Suivie -- L’Epilepsie
+                                  <br />Flow Sheet -- Epilepsy
+				</strong>
+				<br />
+				Flow-Epilepsy-RW.V2.akb.15May09.doc
+        
+				
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Clinique / Clinic:
+				<encounterLocation />
+			</td>
+                        <td>
+				Clinicien/Provider:<encounterProvider role="NCD Provider"/>
+			</td>
+		</tr>
+	</table>
+
+<br />
+<div>
+	<section headerLabel="2. DEMOGRAPHIQUE ET RESIDENCE / DEMOGRAPHICS AND RESIDENCE">
+<htmlformflowsheet formId="42fb7d2b-782a-4bd2-9aaf-a52ba3326aba" showHtmlForm="true" />
+</section>			
+</div>
+<div>
+	<section headerLabel="3. DIAGNOSTIC ET LISTE DES PROBLEMES / DIAGNOSIS AND PROBLEM LIST">
+<htmlformflowsheet formId="066490db-25f3-4ed8-9523-ac108d951951" />
+</section>			
+</div>
+<div>
+	<section headerLabel="4. INVESTIGATION PREALABLES / PRIOR INVESTIGATIONS">
+<htmlformflowsheet formId="cbbff2ae-aa70-4082-bfa9-df763b99ab93" />
+</section>			
+</div>
+<div>
+	<section headerLabel="5. HOSPITALISATIONS / HOSPITALIZATIONS">
+<htmlformflowsheet formId="e498bee4-7c0e-4bd8-b27a-84c21f3c649e" />
+</section>			
+</div>	
+<div>
+	<section headerLabel="6. VISITES D'URGENCE / URGENT VISITS">
+<htmlformflowsheet formId="a177b9bc-5d64-49a4-82e0-faaf81684ded" />
+</section>			
+</div>
+<div>
+	<section headerLabel="7. ASSISTANCE OU EVALUATION SOCIALE/SOCIAL ASSISTANCE OR ASSESMENT">
+<htmlformflowsheet formId="4157f713-fa0e-4f52-a706-1b921dc25334" />
+</section>			
+</div>
+
+<div>
+	<section headerLabel="8. EVENEMENTS NON-MEDICAUX DEPUIS LA DIAGNOSTIC / NON-MEDICAL LIFE EVENTS SINCE DIAGNOSIS">
+<htmlformflowsheet formId="71fa3365-90a8-426a-9a52-c9d35e124ec0" />
+</section>			
+</div>
+<div>
+	<section headerLabel="9. RDV/CLINIC VISITS">
+<htmlformflowsheet formId="b3a48ee2-7500-4427-8f5d-2d54d13256a0" />
+</section>			
+</div>
+<div>
+	<section headerLabel="10. LISTE DES MEDICAMENTS / MEDICATION LIST">
+<htmlformflowsheet formId="c7df6145-71dc-47d0-95c4-af3a2119ea20" />
+</section>			
+</div>
+	<br />
+	<center>
+		<submit submitLabel="Close Flowsheet" />
+	</center>
+	<br />
+<br />
+</htmlform>					

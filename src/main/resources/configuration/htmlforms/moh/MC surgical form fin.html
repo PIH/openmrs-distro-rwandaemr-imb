@@ -1,0 +1,219 @@
+<htmlform>
+    <macros>
+        paperFormId = (Fill this in)
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+    </macros>
+
+    <style>
+		.section {
+			border: 1px solid $headerColor;
+			padding: 2px;
+			text-align: left;
+			margin-bottom: 1em;
+		}
+		.sectionHeader {
+			background-color: $headerColor;
+			color: $fontOnHeaderColor;
+			display: block;
+			padding: 2px;
+			font-weight: bold;
+		}
+		table.baseline-aligned td {
+			vertical-align: baseline;
+		}
+		th.subheader {
+		background-color: $headerColor;
+		color:white
+		}
+	</style>
+    <includeIf velocityTest="$patient.gender == 'M' ">
+        <section headerLabel=" General Information" >
+            <table border="2" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        <b>
+                            Primary Care ID Type :
+                            <lookup class="value" expression="patientIdentifiers.get(&quot;Primary Care ID Type&quot;)" />
+                        </b>
+                    </td>
+                    <td>
+                        Date:
+                        <encounterDate />
+                    </td>
+
+                    <td>
+                        Clinique / Clinic:
+                        <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode"/>
+                    </td>
+                    <td>
+                        Clinician Nom/ Signature:
+                        <encounterProvider role="Provider"/>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <section headerLabel="1.Operation notes">
+            <table class="baseline-aligned">
+                <tr>
+                    <td>Date</td>
+                    <td><obs conceptId="a5ea3596-7e10-4aa5-a132-f30e827f4433"/></td>
+                </tr>
+                <tr>
+                    <td>MC surgeon</td>
+                    <td><obs conceptId="72ffa4b8-167d-4ed3-bfe8-87dc4cd9e74d" lableText=" MC surgeon:"/></td>
+                </tr>
+                <tr>
+                    <td>Assistant</td>
+                    <td><obs conceptId="312d4754-a2ce-4db6-a4e1-fe06564a0d88" lableText=" Assistant"/></td>
+                </tr>
+                <tr>
+                    <td>Start Time:</td>
+                    <td><obs conceptId="6314f906-9694-4885-b3fb-a99f847f4dc5" required ="true"/></td>
+                </tr>
+                <tr>
+                    <td>End Time:</td>
+                    <td><obs conceptId="1bcaa8f2-e0ff-4a6b-976d-dd1ee78070e1" required ="true"/></td>
+                </tr>
+                <tr>
+                    <td>Premedication</td>
+                    <td><obs conceptId="b8cc3063-a791-4ca1-9b08-023a91898cc5"/></td>
+                </tr>
+                <tr>
+                    <td>Amount of Local Anestesia used</td>
+                    <td><obs conceptId="7bf1a203-fee6-4338-989f-620f4a5e3526"/></td>
+                </tr>
+                <tr>
+                    <td>Suture</td>
+                    <td><obs conceptId="8420b8bf-1aa2-42b1-8af1-d287a3335d09"/></td>
+                </tr>
+                <tr>
+                    <td>Other Type of Suture</td>
+                    <td><obs conceptId="76740485-cdb9-462f-8bd2-d013c7dbcb56"/></td>
+                </tr>
+                <tr>
+                    <td>MC procedure</td>
+                    <td><obs conceptId="be2eacde-dc6c-4465-8036-abfc7c10523f"/></td>
+                </tr>
+                <tr>
+                    <td>Other MC procedure</td>
+                    <td><obs conceptId="5327b10a-83f5-454a-9c5a-ac59a203fe2f"/></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <obs conceptId="5db6b98a-93b5-4d84-a461-1da39d985e7f" style="no_yes" noLabel="no" yesLabel="yes" labelText="Post operative counselling:"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="46f389da-51e7-4800-a345-80512d86c54c" labelText="If not why?:"/>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <section headerLabel="2.Post-Operative review">
+            <table class="baseline-aligned">
+                <tr>
+                    <td><obs conceptId="3ce93694-26fe-102b-80cb-0017a47871b2" labelText="DIASTOLIC BLOOD PRESSURE:"/></td>
+                    <td><obs conceptId="3ce934fa-26fe-102b-80cb-0017a47871b2" labelText="SYSTOLIC BLOOD PRESSURE:"/></td>
+                    <td><obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" labelText="Pulse:"/></td>
+                    <!--<td><obs conceptId="3ce939d2-26fe-102b-80cb-0017a47871b2" labelText="Temperature:"/>(C)</td>-->
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="68219e74-0639-44f9-b0c5-5168e4f51ca4" labelText="Postoperative medications:"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <obs conceptId="e27adfe4-3618-470a-936c-d2f0a421ab58" style="no_yes" noLabel="no" yesLabel="yes" labelText="Surgical Complications:"/>
+                        <obs conceptId="46e30367-b967-447d-b11c-37c94eb5f86c" labelText="If Yes Specify:"/>
+                    </td>
+                </tr>
+
+                <Th>Fill the form for AE</Th>
+            </table>
+        </section>
+
+        <section headerLabel="3.Follow up visit">
+            <table class="baseline-aligned">
+                <tr>
+                    <obs conceptId="61f163ec-6aee-4d55-a87e-a30fd97538d7" style="no_yes" noLabel="no" yesLabel="yes" labelText="First visit at 48 hours:"/>
+                </tr>
+                <tr>
+                    <td>MC Provider</td>
+                    <td><obs conceptId="72ffa4b8-167d-4ed3-bfe8-87dc4cd9e74d" lableText=" MC Provider:"/></td>
+                </tr>
+                <tr>
+                    <td>
+                        Date:
+                        <encounterDate />
+                    </td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="3ce93694-26fe-102b-80cb-0017a47871b2" labelText="DIASTOLIC BLOOD PRESSURE:"/></td>
+                    <td><obs conceptId="3ce934fa-26fe-102b-80cb-0017a47871b2" labelText="SYSTOLIC BLOOD PRESSURE:"/></td>
+                    <td><obs conceptId="3ce939d2-26fe-102b-80cb-0017a47871b2" labelText="Temperature:"/>(C)</td>
+                    <td><obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" labelText="Pulse:"/></td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="1eee14b0-29b9-41bf-9d80-046b6ad8b2f6" style="no_yes" noLabel="no" yesLabel="yes" labelText="Complications:"/> &#160;&#160;&#160;&#160;&#160;&#160;&#160;If Yes fill the form for AE
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="4b206b8a-3dc3-4c9b-ad05-ae5d41c0c7ec" style="no_yes" noLabel="no" yesLabel="yes" labelText="If no: Follow up by phone done:"/>
+                    </td>
+                    <td>
+                        <obs conceptId="15cf2ef8-4bb9-4e83-9b6d-2eaa5bd63b2f" labelText="If yes where follow up has been done:"/>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <section headerLabel="4.Follow up visit at 7 Days">
+            <table class="baseline-aligned">
+                <tr>
+                    <td>MC Provider</td>
+                    <td><obs conceptId="72ffa4b8-167d-4ed3-bfe8-87dc4cd9e74d" lableText=" MC Provider:"/></td>
+                </tr>
+                <tr>
+                    <td>
+                        Date:
+                        <encounterDate />
+                    </td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="3ce93694-26fe-102b-80cb-0017a47871b2" labelText="DIASTOLIC BLOOD PRESSURE:"/></td>
+                    <td><obs conceptId="3ce934fa-26fe-102b-80cb-0017a47871b2" labelText="SYSTOLIC BLOOD PRESSURE:"/></td>
+                    <td><obs conceptId="3ce939d2-26fe-102b-80cb-0017a47871b2" labelText="Temperature:"/>(C)</td>
+                    <td><obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" labelText="Pulse:"/></td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="1eee14b0-29b9-41bf-9d80-046b6ad8b2f6" style="no_yes" noLabel="non" yesLabel="oui" labelText="Complications:"/> If Yes fill the form for AE
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+
+        <left>
+            <submit />
+        </left>
+    </includeIf>
+
+    <includeIf velocityTest="$patient.gender == 'F' ">
+        <section headerLabel="Invalid Patient Message">
+            <table border="0" width="100%">
+                <tr><td>This Form Is Only Filled For Male Patients:</td>
+                </tr>
+            </table>
+        </section>
+    </includeIf>
+</htmlform>

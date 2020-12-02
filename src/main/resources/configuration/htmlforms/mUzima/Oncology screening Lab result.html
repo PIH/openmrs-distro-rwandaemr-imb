@@ -1,0 +1,226 @@
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/muzima.css" rel="stylesheet">
+    <link href="css/ui-darkness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/additional-methods.min.js"></script>
+    <script src="js/jquery-autocomplete-min.js"></script>
+    <script src="js/muzima.js"></script>
+
+    <title>Lab Results</title>
+</head>
+<body class="col-md-10 col-md-offset-1">
+<div id="pre_populate_data"></div>
+<form id="DiabetesCardiovascularCheckup_form" name="DiabetesCardiovascularCheckup_form">
+    <div class="section">
+        <h3>Encounter Details</h3>
+        <div class="form-group">
+            <label for="encounter.location_id">Location Name:<span class="required">*</span></label>
+            <input class="form-control valid-location-only" id="encounter.location_id" type="text" placeholder="Start typing something..."
+                   required="required">
+            <input class="form-control" name="encounter.location_id" type="hidden">
+        </div>
+        <div class="form-group">
+            <label for="encounter.provider_id_select">Provider:</label>
+            <input class="form-control valid-provider-only" id="encounter.provider_id_select" type="text" placeholder="Start typing something...">
+            <input class="form-control" name="encounter.provider_id_select" type="hidden">
+        </div>
+        <div class="form-group hidden">
+            <select id="select_providers"></select>
+        </div>
+        <div class="form-group show_provider_id_text">
+            <label for="encounter.provider_id">Provider's system-id:<span class="required">*</span></label>
+            <input class="form-control checkDigit" id="encounter.provider_id" name="encounter.provider_id"
+                   type="text" required="required" disabled="disabled">
+        </div>
+        <div class="form-group">
+            <label for="encounter.encounter_datetime">Encounter Date:<span class="required">*</span></label>
+            <input class="form-control datepicker nonFutureDate past-date" id="encounter.encounter_datetime"
+                   name="encounter.encounter_datetime" type="text" readonly="readonly"
+                   required="required">
+        </div>
+        <div class="form-group">
+            <input class="form-control" id="encounter.form_uuid" name="encounter.form_uuid"
+                   type="hidden" required="required">
+        </div>
+    </div>
+    <div class="section">
+        <h3>DEMOGRAPHICS </h3>
+
+        <div class="form-group">
+            <input class="form-control" id="patient.uuid"
+                   name="patient.uuid" type="hidden" readonly="readonly">
+        </div>
+        <div class="form-group">
+            <label for="patient.medical_record_number">Patient identifier:</label>
+            <input class="form-control" id="patient.medical_record_number"
+                   name="patient.medical_record_number" type="text" readonly="readonly">
+        </div>
+        <div class="form-group">
+            <label for="patient.given_name">Given Name:</label>
+            <input class="form-control" id="patient.given_name" name="patient.given_name" type="text"
+                   readonly="readonly">
+        </div>
+        <div class="form-group">
+            <label for="patient.middle_name">Middle Name:</label>
+            <input class="form-control" id="patient.middle_name" name="patient.middle_name" type="text"
+                   readonly="readonly">
+        </div>
+        <div class="form-group">
+            <label for="patient.family_name">Family Name:</label>
+            <input class="form-control" id="patient.family_name" name="patient.family_name" type="text"
+                   readonly="readonly">
+        </div>
+        <div class="form-group">
+            <label for="patient.sex">Gender:</label>
+            <select class="form-control" id="patient.sex" name="patient.sex" disabled="disabled">
+                <option value="">...</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="patient.birth_date">Date Of Birth:</label>
+            <input class="form-control" id="patient.birth_date" name="patient.birth_date" type="text"
+                   readonly="readonly" disabled="disabled">
+        </div>
+    </div>
+    <hr/>
+    <h3>Diagnosis </h3>
+
+    <fieldset>
+        <div class="form-group">
+            <label>
+                Specimen code
+            </label>
+            <br/>
+            <label class="font-normal">
+                <input id="obs.specimenCode" name="obs.specimenCode" type="text"
+                       data-concept="16cd65e3-45af-4291-88fd-fe4d91847e4f^Specimen Code^99DCT">
+
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>
+                Result
+            </label>
+            <br/>
+            <label class="font-normal">
+                <input id="obs.positiveHPVTestResult" name="obs.HPVTestResult" type="radio"
+                       data-concept="bfb3eb1e-db98-4846-9915-0168511c6298^Test Result^99DCT"
+                       value="1b4a5f67-6106-4a4d-a389-2f430be543e4^HPV positive^99DCT">
+                HPV Positive
+            </label>
+            <br/>
+            <label class="font-normal">
+                <input id="obs.negativeHPVTestResult" name="obs.HPVTestResult" type="radio"
+                       data-concept="bfb3eb1e-db98-4846-9915-0168511c6298^Test Result^99DCT"
+                       value="64c23192-54e4-4750-9155-2ed0b736a0db^HPV negative^99DCT">
+                HPV Negative
+            </label>
+
+        </div>
+        <div class="form-group">
+            <label>If Positive specify</label>
+            <br/>
+            <label class="font-normal">
+                <input id="obs.positiveHPV16" name="obs.positiveHPVType" type="checkbox"
+                       data-concept="1b4a5f67-6106-4a4d-a389-2f430be543e4^HPV positive Type^99DCT"
+                       value="059fddd3-711f-47ab-818f-087984aeecc3^HPV 16^99DCT">
+                HPV 16
+            </label>
+            <br/>
+            <label class="font-normal">
+                <input id="obs.positiveHPV18" name="obs.positiveHPVType" type="checkbox"
+                       data-concept="1b4a5f67-6106-4a4d-a389-2f430be543e4^HPV positive Type^99DCT"
+                       value="b672c3ff-96c9-41cd-9ae6-aa0811ce347f^HPV 18^99DCT">
+                HPV 18
+            </label>
+            <br/>
+            <label class="font-normal">
+                <input id="obs.positiveHPVotherHR" name="obs.positiveHPVType" type="checkbox"
+                       data-concept="1b4a5f67-6106-4a4d-a389-2f430be543e4^HPV positive Type^99DCT"
+                       value="6c3428c6-f406-4ef9-b2dd-4fe5a79f3432^Other HR HPV^99DCT">
+                Other HR HPV
+            </label>
+        </div>
+    </fieldset>
+    <div class="form-group">
+        <fieldset>
+            <label>Other test</label>
+            <br/>
+            <label class="font-normal">
+                <input id="obs.OtherTest" name="obs.OtherTest" type="text"
+                       data-concept="3cd9b714-26fe-102b-80cb-0017a47871b2^LABORATORY TESTS OTHER^99DCT">
+            </label>
+            <br/>
+            <label>Result</label>
+            <label class="font-normal">
+                <input id="obs.OtherTestResult" name="obs.OtherTestResult" type="text"
+                       data-concept="3ce1ca8a-26fe-102b-80cb-0017a47871b2^OTHER LAB TEST RESULT^99DCT">
+            </label>
+        </fieldset>
+    </div>
+
+
+
+<!--    <div>-->
+<!--        <input id="save_draft" name="save_draft" type="submit" value="Draft"/>-->
+<!--        <input id="submit_form" name="submit_form" type="submit" value="submit"/>-->
+<!--    </div>-->
+</form>
+
+</body>
+<script type="text/javascript">
+        $(document).ready(function () {
+           var dateFormat = "dd-mm-yy";
+            var currentDate = $.datepicker.formatDate(dateFormat, new Date());
+            var encounterDatetime = $('#encounter\\.encounter_datetime');
+            if ($(encounterDatetime).val() == "") {
+                $(encounterDatetime).val(currentDate);
+            }
+
+            $('#save_draft').click(function () {
+            $(this).prop('disabled', true);
+            document.saveDraft(this);
+            $(this).prop('disabled', false);
+            });
+            $('#submit_form').click(function () {
+                $(this).prop('disabled', true);
+                document.submit();
+                $(this).prop('disabled', false);
+            });
+
+            document.setupAutoCompleteData('encounter\\.location_id');
+            document.setupValidationForLocation("$('#encounter\\.location_id').val()","encounter\\.location_id");
+            document.setupAutoCompleteDataForProvider('encounter\\.provider_id_select');
+            document.setupValidationForProvider("$('#encounter\\.provider_id_select').val()","encounter\\.provider_id");
+            $('#encounter\\.provider_id_select').change(function () {
+                if ($('#encounter\\.provider_id_select').val() === '') {
+                    $('#encounter\\.provider_id').val('');
+                       $('.show_provider_id_text').show();
+                }
+            });
+            $('.future-or-today-date').change(function () {
+                if ($(this).is(':visible') && $(this).val() != '') {
+                    var errors = {};
+                    var pattern = /(\d{2})-(\d{2})-(\d{4})/g;
+                    var matches = pattern.exec($(this).val());
+                    var enteredDate = new Date(matches[3], matches[2] - 1, matches[1]);
+                    var today = new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDate());
+                    if (enteredDate < today) {
+                        errors[$(this).attr('name')] = "Please enter present or future date.";
+                    }
+                    toggleValidationMessages(errors);
+                }
+            });
+        });
+</script>
+
+</html>

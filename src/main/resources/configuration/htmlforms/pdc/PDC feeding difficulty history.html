@@ -1,0 +1,266 @@
+<htmlform> <!--
+           PDC - Malnutrition
+            Pilot_4July_v1.3NT
+                Author:
+                Builder: Byiringiro Joshua
+                started on August 29, 2017
+        -->
+
+    <macros>
+
+        @has_had_feeding_difficulty@ = 0e306cec-899d-4be1-a538-88a0c7ef47ed
+        @YES@ = 3cd6f600-26fe-102b-80cb-0017a47871b2
+        @NO@=3cd6f86c-26fe-102b-80cb-0017a47871b2
+
+        @Patient_had_recorded_feeding_difficulty_on_encounter_with_date@ = 16e24aad-8d1e-4e51-a8bc-1c384486c973
+
+    </macros>
+
+
+    <style>
+        th.tableHeader {
+        background-color: #009d8e;
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: left;
+        }
+
+        ul {
+        list-style-type: square;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        }
+
+        tr.spaceUnder>td {
+        padding-bottom: 1em;
+        }
+
+        td {
+        font-size: 15px;
+        }
+
+        #container {
+        position: relative;
+        margin: auto;
+        width: 1400px;
+        height: auto;
+        }
+
+        @media print {
+        #container {
+        display: none;
+        }
+
+        #printArea {
+        display: block;
+        }
+
+        #userBar {
+        display: none;
+        }
+
+        #banner {
+        display: none;
+        }
+
+        #footer {
+        display: none;
+        }
+
+        #htmlFormEntryBanner {
+        display: none;
+        }
+
+        .error {
+        display: none;
+        }
+
+        .lables {
+        width: 200px;
+        }
+
+        table {
+        width: 100%;
+        }
+
+        table,td,th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+
+        th {
+        text-align: left;
+        background-color: #D9D9D9;
+        font-size: 10px;
+        }
+
+        td {
+        font-size: 10px;
+        }
+
+        .selectedCancerStagingKeys {
+        page-break-before: always;
+        border: 0px;
+        }
+
+        table.selectedCancerStagingKeys td {
+        border: 0px;
+        }
+
+        #signature {
+        border: none;
+        }
+        #signature td {
+        border: none;
+        }
+        }
+
+        @media screen {
+        table {
+        border: 1px solid #DFDFDF;
+        width: 100%;
+        border-color: #009d8e;
+        }
+
+        #container {
+        display: block;
+        }
+
+        #printArea {
+        display: none;
+        }
+        }
+    </style>
+    <script type="text/javascript">
+        $j(document).ready(function() {
+
+			$j("#feedingDifficulty").click(function(){
+                if($j("#recordedDate").css('display') == 'none'){
+                    $j("#recordedDate").show();
+                }
+                else if( $j("#recordedDate").css('display') == 'block'){
+                    $j("#recordedDate").hide();
+                    }
+
+			});
+
+		});
+    </script>
+    <div id="container"  style="width:100%">
+        <section>
+
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td><b> IMB ID: <lookup class="value"
+                                            expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
+                                                                                                               expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
+                    </td>
+                    <td>Date and Time: <encounterDate id="encounterDate" default="today" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nom / Last name: <lookup class="value"
+                                                 expression="patient.personName.familyName" />
+                    </td>
+                    <td>Prénom/ First name: <lookup class="value"
+                                                    expression="patient.personName.givenName" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><img src="/openmrs/moduleResources/rwandareports/images/pihHands.png" align="left"
+                             height="65" ></img>
+                        <h2>
+                            Inshuti Mu Buzima <br /> PIH Rwanda
+                        </h2>
+                    </td>
+                    <td><strong> PDC feeding difficulty history </strong> <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Clinique / Clinic: <encounterLocation />
+                    </td>
+                    <td>Author:<encounterProvider />
+                    </td>
+                </tr>
+            </table>
+            <table border="1">
+                <tr>
+                    <td>
+                        <strong> NOTE: The date of the encounter is the review date</strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>
+                            Patient has had a feeding difficulty?
+                            <obs conceptId="$@has_had_feeding_difficulty@" answerConceptId="$@YES@" answerLabel="YES" style="checkbox"/>
+                            <obs id="feedingDifficulty" conceptId="$@has_had_feeding_difficulty@" answerConceptId="$@NO@" answerLabel="NO" style="checkbox"/>
+
+                        </strong>
+
+
+
+                        <br/><br/><br/>
+                        <div id="recordedDate">
+
+                            <strong> <label> Please fill in all previous visits where feeding difficulties were recorded </label> </strong>
+                            <br/><br/>
+
+                            <obs conceptId="$@Patient_had_recorded_feeding_difficulty_on_encounter_with_date@" labelText="Encounter 1: "/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Patient_had_recorded_feeding_difficulty_on_encounter_with_date@" labelText="Encounter 2: "/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Patient_had_recorded_feeding_difficulty_on_encounter_with_date@" labelText="Encounter 3: "/>
+                            <br/><br/>
+                            <obs conceptId="$@Patient_had_recorded_feeding_difficulty_on_encounter_with_date@" labelText="Encounter 4: "/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Patient_had_recorded_feeding_difficulty_on_encounter_with_date@" labelText="Encounter 5: "/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Patient_had_recorded_feeding_difficulty_on_encounter_with_date@" labelText="Encounter 6: "/>
+                            <br/><br/>
+                            <obs conceptId="$@Patient_had_recorded_feeding_difficulty_on_encounter_with_date@" labelText="Encounter 7: "/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Patient_had_recorded_feeding_difficulty_on_encounter_with_date@" labelText="Encounter 8: "/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Patient_had_recorded_feeding_difficulty_on_encounter_with_date@" labelText="Encounter 9: "/>
+                            <br/><br/>
+                            <obs conceptId="$@Patient_had_recorded_feeding_difficulty_on_encounter_with_date@" labelText="Encounter 10: "/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Patient_had_recorded_feeding_difficulty_on_encounter_with_date@" labelText="Encounter 11: "/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Patient_had_recorded_feeding_difficulty_on_encounter_with_date@" labelText="Encounter 12: "/>
+                            <br/><br/>
+                            <obs conceptId="$@Patient_had_recorded_feeding_difficulty_on_encounter_with_date@" labelText="Encounter 13: "/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Patient_had_recorded_feeding_difficulty_on_encounter_with_date@" labelText="Encounter 14: "/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Patient_had_recorded_feeding_difficulty_on_encounter_with_date@" labelText="Encounter 15: "/>
+                            <br/><br/>
+                            <obs conceptId="$@Patient_had_recorded_feeding_difficulty_on_encounter_with_date@" labelText="Encounter 16: "/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Patient_had_recorded_feeding_difficulty_on_encounter_with_date@" labelText="Encounter 17: "/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Patient_had_recorded_feeding_difficulty_on_encounter_with_date@" labelText="Encounter 18: "/>
+                            <br/><br/>
+                            <obs conceptId="$@Patient_had_recorded_feeding_difficulty_on_encounter_with_date@" labelText="Encounter 19: "/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Patient_had_recorded_feeding_difficulty_on_encounter_with_date@" labelText="Encounter 20: "/>
+                            <br/><br/>
+
+
+                            <br/><br/>
+
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <br />
+        <encounterVoided/>
+        <center>
+            <submit />
+        </center>
+        <br/>
+    </div>
+</htmlform>

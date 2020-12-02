@@ -1,0 +1,114 @@
+<htmlform>
+    <!-- Hypertension flowsheet:  Clinic visits
+         written by jberchmas 
+         -->
+         <macros>
+		paperFormId = Flow-DM-RW.V2.0.akb.15May09
+		headerColor =#009d8e
+		fontOnHeaderColor = white
+	</macros>
+	<style>
+		.formName { background-color:#e0e0ff; }
+		.section { border: 1px
+		solid #8FABC7; width:99%; padding:2px; text-align:left;
+		margin-bottom:10px; }
+		.sectionHeader { background-color: #8FABC7;
+		color: white; display: block; padding: 2px; font-weight:bold; }
+		table.symptoms th {text-align: right;}
+		.note {color:red;}
+		td
+		{vertical-align:top;}
+		table.labTable td { color:red; }
+		table.labTable
+		td.dateField { text-align:right; }
+		table.identifierTable td
+		{padding-right:10px;}
+		div.paddedTable span {padding-right:20px;}
+	</style>
+
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				<b>IMB ID:<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				</b>
+			</td>
+			<td>
+				Clinique / Clinic:<encounterLocation />
+			</td>
+			<td>
+				Nom/ Signature:<encounterProvider role="NCD Provider"/>
+			</td>
+		</tr>
+	</table>
+
+	<section headerLabel=" RENDEZ-VOUS / CLINIC VISITS" >
+		<table border="1" width="100%">
+			<tr>
+				<td>Date</td>
+				<td>Poids/Weight</td>
+                                <td>Taille/Height</td>
+				<td>T.A/BP</td>
+				<td>Pouls/Pulse</td>
+                                <td>Proteinnuria</td>
+                                <td>Na (SERUM SODIUM)</td>
+                                <td>K (SERUM POTASSIUM)</td>
+                                <td>CO<sub>2</sub></td>
+                                <td>Cr (SERUM CREATININE)</td>
+                                <td>HbA1c</td>
+                                <td> A manqués d'insuline?<br />Missed insulin?</td>
+                                <td>Pieds/Feet</td>
+                                <td>RDV</td>
+			</tr>
+
+                        <tr>
+				<td><encounterDate default="today"/></td>
+				<td><obs conceptId="3ce93b62-26fe-102b-80cb-0017a47871b2" /></td>
+                                <td><obs conceptId="3ce93cf2-26fe-102b-80cb-0017a47871b2" /></td>
+				<td><obs conceptId="3ce934fa-26fe-102b-80cb-0017a47871b2" /> <obs conceptId="3ce93694-26fe-102b-80cb-0017a47871b2" /></td>
+				<td><obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" /></td>
+                                <td><obs conceptId="3cd49d88-26fe-102b-80cb-0017a47871b2" /></td>
+                                <td><obs conceptId="3cd76b58-26fe-102b-80cb-0017a47871b2" /></td>
+                                <td><obs conceptId="3cd76ce8-26fe-102b-80cb-0017a47871b2" /></td>
+                                <td><obs conceptId="3cd77012-26fe-102b-80cb-0017a47871b2" /></td>
+                                <td><obs conceptId="3cd4374e-26fe-102b-80cb-0017a47871b2" /></td>
+                                <td><obs conceptId="159644AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+                                <td><obs conceptId="ff915f86-7db0-4392-bec5-cd8c63038f0f"  answerConceptId="3cd6f600-26fe-102b-80cb-0017a47871b2" answerLabel="oui/yes" /> <obs conceptId="ff915f86-7db0-4392-bec5-cd8c63038f0f" answerConceptId="3cd6f86c-26fe-102b-80cb-0017a47871b2" answerLabel="non/no"/></td>
+                                <td>Sensation:<br /> D/R: <obs conceptId="62e72ad7-869e-4eae-909c-36ec4f2b7555" />/6 <br />D/L: <obs conceptId="19afbd01-c1d0-4041-8cc8-e87a7922c1df" />/6<br /><obs conceptId="3cd7637e-26fe-102b-80cb-0017a47871b2"  answerConceptId="4bb8cbb7-9c34-4424-aada-eda615ede91a" answerLabel="plaies/scores" /></td>
+                                <td><obs conceptId="3ce94df0-26fe-102b-80cb-0017a47871b2" allowFutureDates="true" /></td>
+			</tr>
+
+ <tr>
+				<td colspan="5">Glycémie/Glucose:</td>
+                                <td colspan="4">Glycémie aujourd'hui/Glucose today: <obs conceptId="3cd4e194-26fe-102b-80cb-0017a47871b2" />   </td>
+                                <td colspan="5">A jeun/fasting: <obs conceptId="2effb850-0384-4a09-8ae0-a7b5f7e7289f" style="yes_no" yesLabel="oui/yes" noLabel="non/no" /> </td>
+			</tr>
+
+                       <tr>
+				<td colspan="6">Symptômes d'hypoglycémie/Hypoglycemia symptoms: <obs conceptId="641f4fe3-cac2-46c4-aa94-c8b6d05e9407
+" answerConceptId="3cd6f600-26fe-102b-80cb-0017a47871b2" answerLabel="oui/yes" /> <obs conceptId="641f4fe3-cac2-46c4-aa94-c8b6d05e9407
+" answerConceptId="3cd6f86c-26fe-102b-80cb-0017a47871b2" answerLabel="non/no" /> 
+                                 </td>
+                                 <td colspan="6">
+Quand?/When?: <obs conceptId="d7dff675-50d2-4a2b-88c3-dab4150dfc7b" answerConceptId="28231877-bbf2-45bb-b6dd-3d4b083fdde1" answerLabel="le matin/morning" />  <obs conceptId="d7dff675-50d2-4a2b-88c3-dab4150dfc7b" answerConceptId="b0d31366-7cc9-4af8-9d85-b2efdc6b46e9" answerLabel="l'apres midi/Afternoon" /> <obs conceptId="d7dff675-50d2-4a2b-88c3-dab4150dfc7b" answerConceptId="bb80b293-340d-45d4-9a5f-ad5b35e50acf" answerLabel="le soir /evening" />
+                               </td>
+<td colspan="2">
+A manqué de nouriture?/Lacked of food?<obs conceptId="55475803-90e6-4fda-b2aa-6874e563da4b" answerConceptId="3cd6f600-26fe-102b-80cb-0017a47871b2" answerLabel="oui/yes" /> <obs conceptId="55475803-90e6-4fda-b2aa-6874e563da4b" answerConceptId="3cd6f86c-26fe-102b-80cb-0017a47871b2" answerLabel="non/no" />
+</td>
+
+			</tr>                       
+			<tr>
+				<td colspan="14">
+					Commentaire / Comments: <br /><obs conceptId="3cdc5938-26fe-102b-80cb-0017a47871b2" rows="2" cols="60" />
+				</td>
+				
+			</tr>
+		</table>
+	</section>
+
+	<br />
+	<center>
+		<submit />
+	</center>
+	<br />
+
+</htmlform>

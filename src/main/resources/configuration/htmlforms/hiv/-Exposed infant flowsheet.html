@@ -1,0 +1,185 @@
+<htmlform>
+    <!-- Pedi HIV top level form.
+         HIV-RW.V1.akb.July13.doc
+         Created by Neil Gupta 2014
+     -->
+    <macros>
+        paperFormId = (Fill this in)
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+    </macros>
+
+    <style>
+		.section {
+			border: 1px solid $headerColor;
+			padding: 2px;
+			text-align: left;
+			margin-bottom: 1em;
+		}
+		.sectionHeader {
+			background-color: $headerColor;
+			color: $fontOnHeaderColor;
+			display: block;
+			padding: 2px;
+			font-weight: bold;
+		}
+		table.baseline-aligned td {
+			vertical-align: baseline;
+		}
+		th.subheader {
+		background-color: $headerColor;
+		color:white
+		}
+	</style>
+
+
+    <translations defaultLocale="fr">
+        <code name="gender_m">
+            <variant locale="fr" value="Homme" />
+            <variant locale="en" value="Male" />
+        </code>
+        <code name="gender_f">
+            <variant locale="fr" value="Femme" />
+            <variant locale="en" value="Female" />
+        </code>
+    </translations>
+    <!-- Form header -->
+    Centre de santé :
+
+    <table border="2" cellspacing="0" cellpadding="6" width="100%">
+        <tr>
+
+            <td>
+                <img src="/openmrs/moduleResources/rwandareports/images/rwanda-logo.jpg" align="left" height="100"
+                     width="100">
+                </img>
+            </td>
+            <td>
+                <h2>
+                    RWANDA MINISTRY OF HEALTH
+                    <br />
+                    <span class="english">MOH Rwanda</span>
+                </h2>
+            </td>
+
+            <td>
+                <strong>
+                    Programme PMTCT
+                    <br />
+                    Fiche Résumé du Patient : Enfant Exposé
+                    <br />
+                    <span class="english">HIV-exposed infant flowsheet</span>
+                </strong>
+                <br />
+                Fiche_resume-HIV-HFCSP-RW-V1.0-ng-21Oct10-fr
+            </td>
+        </tr>
+    </table>
+
+    <table border="1" width="100%">
+        <tr>
+            <td>
+                Nom/
+                <span class="english">Name</span>
+                :
+                <lookup class="value" expression="patient.personName.familyName" />
+                <lookup class="value" expression="patient.personName.givenName" />
+                ID:
+                <lookup class="value" expression="patientIdentifiers.get(&quot;TRACnet ID&quot;)" />
+                <lookup class="value" expression="patientIdentifiers.get(&quot;Primary Care ID Type&quot;)" />
+            </td>
+            <td>
+                Location or Clinic:<encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode"/>
+            </td>
+            <td>
+                Date:<encounterDate />
+            </td>
+        </tr>
+    </table>
+
+    <br />
+    <div>
+        <section headerLabel="1. INFORMATION DEMOGRAPHIQUE">
+            <htmlformflowsheet formId="59" windowHeight="450" sharedEncounter="true" showHtmlForm="true"/>
+        </section>
+    </div>
+    <div>
+        <section headerLabel="2. SEROLOGIE VIH DE LA FAMILLE">
+            <htmlformflowsheet formId="65" sharedEncounter="true" showHtmlForm="true" windowHeight="400"/>
+        </section>
+    </div>
+
+    <div>
+        <section headerLabel="3. ACCOUCHEMENT">
+            <htmlformflowsheet formId="54" sharedEncounter="true" showHtmlForm="true" windowHeight="400"/>
+        </section>
+    </div>
+    <!--
+ <div>
+    <section headerLabel="4. TRAITEMENT ANTERIEURS DE LA MERE">
+              <htmlformflowsheet formId="187" sharedEncounter="true" showHtmlForm="true" windowHeight="400"/>
+   </section>
+ </div>
+ -->
+    <div>
+        <section headerLabel="4. ANAMNESE SYSTEMATIQUE ET DEPISTAGE TBC DE L'ENFANT">
+            <htmlformflowsheet formId="56" sharedEncounter="true" showHtmlForm="true" windowHeight="400"/>
+        </section>
+    </div>
+
+    <div>
+        <section headerLabel="5. EXAMEN CLINIQUE">
+            <htmlformflowsheet formId="60" sharedEncounter="true" showHtmlForm="true" windowHeight="400"/>
+        </section>
+    </div>
+
+    <div>
+        <section headerLabel="6. INFECTIONS OPPORTUNISTES ET AUTRES MALADIES">
+            <htmlformflowsheet formId="63" sharedEncounter="true" showHtmlForm="true"/>
+        </section>
+    </div>
+
+    <div>
+        <section headerLabel="7. PROPHYLAXIS">
+            <htmlformflowsheet formId="62" windowHeight="450" sharedEncounter="true" showHtmlForm="true"/>
+        </section>
+    </div>
+    <div>
+        <section headerLabel="8. SUIVI BIOLOGIQUE">
+            <htmlformflowsheet formId="66" windowHeight="450" sharedEncounter="true" showHtmlForm="true"/>
+        </section>
+    </div>
+
+    <div>
+        <section headerLabel="9. ARV TRITHERAPIE (Si PCR positive)">
+            <htmlformflowsheet formId="57" windowHeight="450" sharedEncounter="true" showHtmlForm="true"/>
+        </section>
+    </div>
+
+    <div>
+        <section headerLabel="10. ALLERGIES ET EFFETS SECONDAIRES ">
+            <htmlformflowsheet formId="55" windowHeight="450" sharedEncounter="true" showHtmlForm="true"/>
+        </section>
+    </div>
+    <div>
+        <section headerLabel="11. RÉSUMÉ DES VISITES">
+            <htmlformflowsheet formId="68" windowHeight="400" sharedEncounter="true" showHtmlForm="true" />
+        </section>
+    </div>
+    <div>
+        <section headerLabel="12. CONCLUSION DE SUIVI">
+            <htmlformflowsheet formId="58" sharedEncounter="true" showHtmlForm="true" windowHeight="400"/>
+        </section>
+    </div>
+    <div>
+    </div>
+
+    <br />
+    <!--
+        <center>
+        <submit submitLabel="Close Flowsheet" />
+    </center>
+         -->
+    <br />
+    <br />
+</htmlform>

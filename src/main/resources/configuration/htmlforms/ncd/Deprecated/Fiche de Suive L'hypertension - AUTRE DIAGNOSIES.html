@@ -1,0 +1,63 @@
+<htmlform>
+    <!-- Hypertension flowsheet:  Other diagnosis
+         written by jberchmas 
+         -->
+	<style>
+		.formName { background-color:#e0e0ff; }
+		.section { border: 1px
+		solid #8FABC7; width:99%; padding:2px; text-align:left;
+		margin-bottom:10px; }
+		.sectionHeader { background-color: #8FABC7;
+		color: white; display: block; padding: 2px; font-weight:bold; }
+		table.symptoms th {text-align: right;}
+		.note {color:red;}
+		td
+		{vertical-align:top;}
+		table.labTable td { color:red; }
+		table.labTable
+		td.dateField { text-align:right; }
+		table.identifierTable td
+		{padding-right:10px;}
+		div.paddedTable span {padding-right:20px;}
+	</style>
+
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				<b>IMB ID:<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				</b>
+			</td>
+			<td>
+				Clinique / Clinic:<encounterLocation />
+			</td>			
+		</tr>
+	</table>
+
+	<section headerLabel="AUTRE DIAGNOSTIC / OTHER DIAGNOSIS">
+		<table border="1" width="100%">
+			<tr>
+				<td>Date</td>
+				<td>Diagnose/Diagnosis</td>
+				<td>Clinicien/Clinician</td>
+			</tr>
+			<tr>
+				<td>
+				<encounterDate default="today"/>
+			        </td>
+				<td>
+					<obs conceptId="135d1163-d50a-411c-9ea1-530ca2033e10" cols="40"/>
+				</td>
+                                <td>
+				Nom/ Signature:<encounterProvider role="NCD Provider"/>
+			      </td>				
+			</tr>
+		</table>
+	</section>
+
+	<br />
+	<center>
+		<submit />
+	</center>
+	<br />
+
+</htmlform>

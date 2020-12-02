@@ -1,0 +1,177 @@
+<htmlform>
+    <!-- Pedi HIV top level form.
+         HIV-RW.V1.akb.Juky13.doc
+         Created by gneza 2013
+     -->
+    <macros>
+        paperFormId = (Fill this in)
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+    </macros>
+
+    <style>
+		.section {
+			border: 1px solid $headerColor;
+			padding: 2px;
+			text-align: left;
+			margin-bottom: 1em;
+		}
+		.sectionHeader {
+			background-color: $headerColor;
+			color: $fontOnHeaderColor;
+			display: block;
+			padding: 2px;
+			font-weight: bold;
+		}
+		table.baseline-aligned td {
+			vertical-align: baseline;
+		}
+		th.subheader {
+		background-color: $headerColor;
+		color:white
+		}
+
+    </style>
+    <script type="text/javascript">
+if(jQuery){
+ $j(document).ready(function(){
+ $j(".checkboxGroup").each(function(){
+     var group = $j(this);
+     var uncheckAll = function(){
+         group.find("input[type$='checkbox']").attr("checked",false);
+         group.find("input[type$='checkbox']").change();
+     }
+     var uncheckRadioAndAll = function(){
+     group.find("#checkboxAll,#checkboxRadio").find("input[type$='checkbox']").attr("checked",false);
+     group.find("#checkboxAll,#checkboxRadio").find("input[type$='checkbox']").change();
+ }
+ group.find("#checkboxRadio").find("input[type$='checkbox']").click(function(){
+     uncheckAll();
+     $j(this).siblings("input[type$='checkbox']").attr("checked",false);
+     $j(this).attr("checked",true);
+     $j(this).change();
+ });
+ });
+ });
+}
+    </script>
+
+    <section headerLabel="PROGRESS NOTE AND EVOLUTION">
+        <table cellspacing="0" cellpadding="6" width="100%" style="background-color:AliceBlue">
+            <tr>
+                <td><img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left"
+                         height="65"></img>
+                    <b>REPUBLIC OF RWANDA
+                        <br/>MINISTRY OF HEALTH</b>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>
+                        <encounterLocation id="location"/>
+                    </b><br/>
+                </td>
+                <td>
+                    <b>Date:
+                        <encounterDate/>
+                    </b>
+                </td>
+                <td>
+                    <encounterProvider id="encounterProvider"
+                                       role="Provider" />
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section headerLabel="Patient Information">
+        <table cellspacing="0" cellpadding="6" width="100%" style="background-color:AliceBlue">
+            <tr>
+                <td>
+                    Primary Care ID Type:
+                    <lookup class="value" expression="patientIdentifiers.get(&quot;Primary Care ID Type&quot;)"/>
+                    <br/>
+                    Nom / Last name:
+                    <lookup class="value" expression="patient.personName.familyName"/>
+                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                    Prénom/ First name:
+                    <lookup class="value" expression="patient.personName.givenName"/>
+                    <br/>
+                    Sexe/Sex:
+                    <lookup class="value" expression="patient.Gender"/>
+                    <br/>
+                    Date de naissance/Date of birth:
+                    <lookup class="value" expression="patient.birthdate"/>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section headerLabel="">
+        <obsgroup groupingConceptId="3cd74ee8-26fe-102b-80cb-0017a47871b2">
+            <table cellspacing="0" cellpadding="6" width="100%" style="background-color:AliceBlue">
+                <tr class="strong">
+                    <td><obs conceptId="3ce939d2-26fe-102b-80cb-0017a47871b2" labelText="Temperature:" /></td>
+                    <td><obs conceptId="3ce93b62-26fe-102b-80cb-0017a47871b2" labelText="Weight:" required="true" /></td>
+                    <td><obs conceptId="3ce93cf2-26fe-102b-80cb-0017a47871b2" labelText="Height:" /></td>
+                    <td><obs conceptId="3ce934fa-26fe-102b-80cb-0017a47871b2" labelText="SBP:" /></td>
+                    <td><obs conceptId="3ce93694-26fe-102b-80cb-0017a47871b2" labelText="DBP:" /></td>
+                    <td><obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" labelText="Pulse:" /></td>
+                    <td><obs conceptId="3ceb11f8-26fe-102b-80cb-0017a47871b2" labelCode="Respiration" /></td>
+                </tr>
+            </table>
+        </obsgroup>
+    </section>
+
+    <section headerLabel="">
+        <table cellspacing="0" cellpadding="1" width="100%" style="">
+            <tr>
+                <td><obs conceptId="3cd653c6-26fe-102b-80cb-0017a47871b2" labelText="D.D.R"/></td>
+                <td><obs conceptId="3cee56a6-26fe-102b-80cb-0017a47871b2" labelText="D.P.A" allowFutureDates="true"/></td>
+                <td><obs conceptId="bbe69d90-984d-40b4-9ab5-7fe758a58aaf" labelCode="Number of ANC" /></td>
+                <td><obs conceptId="aec6ad18-f4dd-4cfa-b68d-3d7bb6ea908e" labelCode="HIV status" /></td>
+            </tr>
+            <tr>
+                <td><obs conceptId="3cee82de-26fe-102b-80cb-0017a47871b2" size="15" labelCode="No of Pregnancies" /></td>
+                <td><obs conceptId="3cd6dda0-26fe-102b-80cb-0017a47871b2" size="15" labelCode="Party" /></td>
+                <td><obs conceptId="6df78bbb-24a6-4a1d-af5a-3717ecbeb260" size="15" labelCode="Abortions" /></td>
+                <td><obs conceptId="68b7ae37-24cd-42cc-872b-e9905024b6b6" size="15" labelCode="No of Premature" /></td>
+                <td><obs conceptId="0ebcdc59-cd88-41b3-bc73-300de2ac11c6" size="15" labelCode="No Born alive" /></td>
+                <td><obs conceptId="8d843794-11f1-42f9-a6cb-fc6c1e8da5eb" size="15" labelCode="No of stillbirths" /></td>
+            </tr>
+        </table>
+    </section>
+    <section headerLabel="">
+        <table cellspacing="1" cellpadding="1" width="100%" style="">
+            <tr>
+                <td><obs conceptId="3ce2b170-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="30" labelCode="Cheif Complaints" /></td>
+                <td><obs conceptId="24aa74e0-a281-4031-8919-63f3eaf3a729" style="textarea" rows="3" cols="30" labelCode="History of Present illness"/></td>
+                <td><obs conceptId="bc3862d8-6825-4878-8801-f1e7b0790071" style="textarea" rows="3" cols="30" labelCode="Past medical" /></td>
+                <td><obs conceptId="4e3b9dc8-2b11-4a05-972f-f9710471c5d0" style="textarea" rows="3" cols="30" labelCode="Immunization (VAT)"  /></td>
+            </tr>
+        </table>
+    </section>
+    <section headerLabel="">
+        <table cellspacing="1" cellpadding="1" width="100%" style="">
+            <tr>
+                <td><obs conceptId="3ce15f46-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="30" labelCode="Vaginal Exam" /></td>
+                <td><obs conceptId="3cdc5938-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="30" labelCode="Nurse/Midwifes conclision"/></td>
+                <td><obs conceptId="9b1570e8-ea9e-4420-b0cc-708761f4c2b8" style="textarea" rows="3" cols="30" labelCode="Danger signs" /></td>
+                <td><obs conceptId="96cd0d39-6a27-4691-b2d4-5d33a092c16c" style="textarea" rows="3" cols="30" labelCode="Emer intervention" /></td>
+            </tr>
+        </table>
+    </section>
+    <section headerLabel="">
+        <table cellspacing="1" cellpadding="1" width="100%" style="">
+            <tr>
+                <td><obs conceptId="a76690e0-00ac-42df-8c53-3754c87050b4" style="textarea" rows="3" cols="30" labelCode="Call Physician Date" /></td>
+                <td><obs conceptId="fad1b3bd-1e2b-4c67-8520-e7421d6d854b" style="textarea" rows="3" cols="30" labelCode="Physician Response Date" /></td>
+
+            </tr>
+        </table>
+    </section>
+
+    <center>
+        <submit/>
+    </center>
+</htmlform>

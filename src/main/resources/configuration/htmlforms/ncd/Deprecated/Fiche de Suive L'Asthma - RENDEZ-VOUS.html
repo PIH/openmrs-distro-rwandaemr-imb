@@ -1,0 +1,96 @@
+<htmlform>
+    <!-- Asthma flowsheet:  Clinic visits
+         written by jberchmas 
+         -->
+	<style>
+		.formName { background-color:#e0e0ff; }
+		.section { border: 1px
+		solid #8FABC7; width:99%; padding:2px; text-align:left;
+		margin-bottom:10px; }
+		.sectionHeader { background-color: #8FABC7;
+		color: white; display: block; padding: 2px; font-weight:bold; }
+		table.symptoms th {text-align: right;}
+		.note {color:red;}
+		td
+		{vertical-align:top;}
+		table.labTable td { color:red; }
+		table.labTable
+		td.dateField { text-align:right; }
+		table.identifierTable td
+		{padding-right:10px;}
+		div.paddedTable span {padding-right:20px;}
+	</style>
+
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				<b>IMB ID:<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				</b>
+			</td>
+			<td>
+				Clinique / Clinic:<encounterLocation/>
+			</td>
+<td>
+				Nom/ Signature:<encounterProvider role="NCD Provider"/>
+			</td>			
+		</tr>
+	</table>
+
+	<section headerLabel=" RENDEZ-VOUS / CLINIC VISITS" >
+		<table border="1" width="100%">
+			<tr>
+				<td>Date</td>
+				<td>#fois/semaine se réveiller avec dyspnée/times/week wakes up with dyspnea</td>
+				<td>#bouffées/semaine de salbutamol/#puffs/week of salbutamol</td>
+				<td>Débit de pointe/peak flow</td>
+                                <td>Poids/Weight</td>
+                                <td>Taille/height</td>
+                                <td>T.A/BP</td>
+                                <td>Bonne technique d'inhalateur/Good inhaler technique</td>
+                                <td>Classification d'asthme/Asthma classification</td> 
+                               <td>Etape de therapie/Step therapy</td>     
+                               <td>Suivi/Follow-up</td>                           
+			</tr>                                
+                        <tr>
+				<td rowspan="2"><br /><center><encounterDate default="today"/>         </center></td>
+				<td><obs conceptId="4992495a-daa9-42b7-8846-5dad12558d6b" /> fois/times</td>
+				<td><obs conceptId="f0b78514-e81b-44d6-83a8-c96b9abcf695" /> bouffées/puffs</td>
+				<td><obs conceptId="e5e67313-b658-4118-9a71-5d5b60fc81d7" /></td>
+                                <td><obs conceptId="3ce93b62-26fe-102b-80cb-0017a47871b2" /></td>
+                                <td><obs conceptId="3ce93cf2-26fe-102b-80cb-0017a47871b2" /></td>
+				<td><obs conceptId="3ce934fa-26fe-102b-80cb-0017a47871b2" /> <obs conceptId="3ce93694-26fe-102b-80cb-0017a47871b2" /></td>
+                                <td><obs conceptId="0e39fb30-b0c6-44b0-96c1-c80f7fa90d9c" answerConceptId="3cd6f600-26fe-102b-80cb-0017a47871b2" answerLabel="oui/yes" /> <obs conceptId="0e39fb30-b0c6-44b0-96c1-c80f7fa90d9c" answerConceptId="3cd6f86c-26fe-102b-80cb-0017a47871b2" answerLabel="non/no" /> <br /><obs conceptId="0e39fb30-b0c6-44b0-96c1-c80f7fa90d9c" answerConceptId="PIH: 7399" answerLabel="entrainement brève donné/brief coaching given" /></td>
+                                <td rowspan="2"><obs conceptId="33c38f5b-0a68-4499-bd86-87ca792c868e" answerConceptId="3ce3fdbe-26fe-102b-80cb-0017a47871b2" answerLabel="pas d'asthme/not asthma" /><br />
+<obs conceptId="33c38f5b-0a68-4499-bd86-87ca792c868e" answerConceptId="153753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="intermittent/intermittent" /> <br />
+<obs conceptId="33c38f5b-0a68-4499-bd86-87ca792c868e" answerConceptId="0016512d-4388-44f0-a4b6-f6ad9e18fdcd" answerLabel="persistant léger/mid persistent" /> <br />
+<obs conceptId="33c38f5b-0a68-4499-bd86-87ca792c868e" answerConceptId="134026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="persistant modéré/moderate persistent" /> <br />
+<obs conceptId="33c38f5b-0a68-4499-bd86-87ca792c868e" answerConceptId="113018AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" answerLabel="persistant sévère/severe persistent" /> <br />
+<obs conceptId="33c38f5b-0a68-4499-bd86-87ca792c868e" answerConceptId="602cf7fd-84a4-470f-a5a8-76f19b4e6645" answerLabel="sévère incontrôlé/severe uncontrolled" />
+                               </td> 
+                               <td rowspan="2">
+<obs conceptId="c898157e-de43-4d0e-a7ee-aafc7c69cc89" answerConceptId="410ecb5b-b280-4dce-a58b-dbe6f5a97f2b" answerLabel="monter étape/step up" /> <br />
+<obs conceptId="c898157e-de43-4d0e-a7ee-aafc7c69cc89" answerConceptId="3cd921a0-26fe-102b-80cb-0017a47871b2" answerLabel="continuer le même traitment/continue the same treatment" /> <br />
+<obs conceptId="c898157e-de43-4d0e-a7ee-aafc7c69cc89" answerConceptId="bd9a1827-3bff-42cd-9d54-d90960d9b8d1" answerLabel="descendre etape/step down" /> <br />
+                              </td>     
+                               <td rowspan="2">
+RDV: <obs conceptId="3ce94df0-26fe-102b-80cb-0017a47871b2" allowFutureDates="true" /><br />
+<obs conceptId="0af3dbde-15f5-102d-96e4-000c29c2a5d7" answerConceptId="24b7dc2a-82de-4edc-bde0-1789ed9c59d3" answerLabel="classe de groupe/group class" /> <br />
+<obs conceptId="0af3dbde-15f5-102d-96e4-000c29c2a5d7" answerConceptId="a92583b5-0331-462b-bda3-d64c027f9382" answerLabel="assistance sociale/social assistance" /> <br />
+<obs conceptId="0af3dbde-15f5-102d-96e4-000c29c2a5d7" answerConceptId="87d5f786-e33b-4858-a75e-41f32f43defd" answerLabel="accompagnateur" /> <br />
+                              </td>                           
+			</tr>
+			<tr>
+				<td colspan="5">
+					Commentaire / Comments: <br /><obs conceptId="3cdc5938-26fe-102b-80cb-0017a47871b2" rows="2" cols="60" />
+				</td>                               				
+			</tr>
+		</table>
+	</section>
+
+	<br />
+	<center>
+		<submit />
+	</center>
+	<br />
+
+</htmlform>

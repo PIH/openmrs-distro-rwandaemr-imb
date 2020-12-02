@@ -1,0 +1,120 @@
+<htmlform>
+
+<macros> paperFormId =
+Flow-DM-RW.V2.0.akb.15May09 headerColor =#009d8e fontOnHeaderColor =
+white </macros>
+<style>
+.formName {
+	background-color: #e0e0ff;
+}
+
+.section {
+	border: 1px solid #8FABC7;
+	width: 99%;
+	padding: 2px;
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+.sectionHeader {
+	background-color: #8FABC7;
+	color: white;
+	display: block;
+	padding: 2px;
+	font-weight: bold;
+}
+
+table.symptoms th {
+	text-align: right;
+}
+
+.note {
+	color: red;
+}
+
+td {
+	vertical-align: top;
+}
+
+table.labTable td {
+	color: red;
+}
+
+table.labTable
+		td.dateField {
+	text-align: right;
+}
+
+table.identifierTable td {
+	padding-right: 10px;
+}
+
+div.paddedTable span {
+	padding-right: 20px;
+}
+
+.itembox {
+	border: 5px solid #3333cc;
+	border-radius: 10px;
+	padding: 20px;
+	
+}
+
+.hide {
+    visibility:hidden;
+}
+</style>
+<style> 
+#Div1, #Div2, #Div3 
+{ 
+DISPLAY: none; 
+} 
+</style>
+<script type="text/javascript">
+if(jQuery){
+ $j(document).ready(function(){
+    if ( $j.browser.msie ) {
+        $j(":checkbox").click(function(){
+             $j(this).change();
+     });
+ }
+ 
+ });
+
+</script>
+
+<section>
+<table border="0" cellspacing="0" cellpadding="6" width="100%">
+    <tr>
+	    <td>Nom /Last Name:<lookup class="value" expression="patient.personName.familyName" /></td>
+        <td>Prénom/ First Name:<lookup class="value" expression="patient.personName.givenName" /> <lookup class="value" expression="patient.personName.middleName" /></td>
+	</tr>
+    <tr>
+        <td>Clinique / Clinic:<encounterLocation order="80" default="Butaro Hospital"/></td>
+        <td>Clinicien / Provider:<encounterProvider role="Oncology Provider" /></td>
+        <td>Date:<encounterDate default="today" /></td>
+    </tr>
+</table>
+</section>
+
+<div class="itembox">
+    
+        Communicate pathology results: <obs conceptId="56001c5f-1a8a-4d80-b255-d1de983a852e" allowFutureDates="true"/><br/><br/>
+        Routine follow up: <obs conceptId="a7aa7d20-3520-4d8a-9324-f7b8f6a3b109" allowFutureDates="true" /><br/><br/>
+        Special consultation: <obs conceptId="7ec61380-3cde-4b7a-a322-4678a0b460c4" allowFutureDates="true" /><br/><br/>
+        Perform Biopsy: <obs conceptId="ea843dde-d33b-4687-88cb-5cd76111b48b" allowFutureDates="true" /><br/><br/>
+        Chemotherapy – inpatient ward: <obs conceptId="6de4e3ee-fe8d-427e-b38f-1703e80f8513" allowFutureDates="true" /><br/><br/>
+        Chemotherapy – infusion center: <obs conceptId="9e597e90-b8c9-4784-82ff-2cc2420c62b7" allowFutureDates="true" /><br/><br/>
+        
+</div>
+<br/>
+<left>
+	<submit />
+</left>
+<br/>
+<br/>
+<br/>
+<br/>
+<encounterVoided/>
+
+</htmlform>

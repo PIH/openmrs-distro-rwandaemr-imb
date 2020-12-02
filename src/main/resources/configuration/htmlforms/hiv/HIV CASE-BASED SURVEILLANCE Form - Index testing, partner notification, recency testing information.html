@@ -1,0 +1,455 @@
+<htmlform>
+    <macros>
+        paperFormId = (Fill this in)
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+        @ENROLLMENT_DATE@ = badacf97-0970-4dde-aee4-5e1c2bb125f7
+        @DATE_ANTI_RETROVIRALS_STARTED@ = 3ce498dc-26fe-102b-80cb-0017a47871b2
+        @CBS_SAMPLE_REFERRAL_SITE@=e4e62a59-91cf-4323-a140-aeaceae6c520
+        @DATE_RESULTS_RECEIVED_AT_ARV_SERVICE@=9fa91969-35bc-48aa-8ffd-fea157299d4d
+        @DATE_PATIENT_RECEIVED_RESULTS_OF_HIV_TEST@=092e2163-e657-4961-b554-96ce2c21d051
+        @RECENCY_ASSAY_TEST@=e06cffdb-024c-45af-b148-fa275d368fc0
+        @RECENCY_TEST_NAME@=5119a7e8-d4c6-4380-8c12-420cb3deff4d
+        @RECENCY_ASSAY_RESULTS@=b4b0e241-e41a-4d46-89dd-e531cf6d8202
+        @RECENCY_TEST_DATE@=f97c7656-6369-426a-9597-b3fb9acf25af
+        @LONG_TERM@=819f5ebe-0b3e-44ba-b435-8f3d1b7bb130
+        @RECENT@=fb3b2a61-4f4b-46b2-9187-9ec769349a44
+        @INVALID@=9340dede-5124-49cf-9b3c-5153cc0e537f
+        @RECENCY_SAMPLE_COLLECTION_DATE@=774f49dc-cd95-4f7e-a20f-b38f9a1f52c4
+        @NUMBER_OF_FAMILY_MEMBERS@ = fe5fdddf-96ee-42af-9b36-0ab8c3ddd05d
+        @NUMBER_OF_SEXUAL_PARTNERS@ = 3cee2924-26fe-102b-80cb-0017a47871b2
+        @SEXUAL_PARTNERS_IN_LAST_12 MONTHS@=06de84ee-6deb-4d33-b2b6-bc680a73939c
+        @SOCIAL_NETWORK_MEMBERS@ = 504e851d-8a95-4f0f-bcad-ca081a975abf
+        @CBS_CONTACT_AGE@=2ecf52c4-f732-46a8-9f10-45a04ca70f49
+        @CBS_CONTACT_GENDER@=d1ecd154-13b1-433a-8480-3213e178aff7
+        @RELATION_OF_THE_CONTACT_AND_INDEX_CASE@=d4a45c62-5d82-43a2-856d-6c75db9fe842
+        @Spouse_Husband_Fiancé@=78240034-73f3-46d8-b688-81fb99f27056
+        @Girlfiend_Boyfriend@=a71fff61-4db8-43ce-98f8-5de7f689f560
+        @Couple_cohabiting_partner@=8d234f0f-c299-42e5-8edf-f2460e64704e
+        @Casual_partner@=ca27eadb-c14d-414e-8db9-694b3831e719
+        @Somon_who_pay_me_to_have_sex@=a8415b6a-065d-4cd6-9c70-4cdcec7bf8ef
+        @Somone_I_pay_to_have_sexual_relation@=f95bdebd-c174-4eaa-86cf-067f78db5364
+        @Victim_of_violence@=825ee96c-5277-4b29-bece-7d94e654da34
+        @Partner_is_unknown@=7f0dd8e6-f0c3-4cb1-a81e-24391fc7200b
+        @His_her_child@=98463468-4bc0-4df0-8b78-ad5e208c5d2a
+        @Member_of_his_social_network@=1394d37f-38ca-4f8a-a486-ac46e0ed7523
+        @Other_PWID_TG_etc@=d0385b0e-c9ac-4f63-ab8d-b6273c029f9d
+        @CBS_CONTACT_HIV_STATUS@=438e1ee2-5642-4868-867d-960eca6e6451
+        @POSITIVE@=3cd3a7a2-26fe-102b-80cb-0017a47871b2
+        @NEGATIVE@=3cd28732-26fe-102b-80cb-0017a47871b2
+        @UNKNOWN@=3cd6fac4-26fe-102b-80cb-0017a47871b2
+        @CBS_RISK_OF_VIOLENCE@= 5d90078d-43d5-4ea1-9bf6-cda5398d1d67
+        @YES@=3cd6f600-26fe-102b-80cb-0017a47871b2
+        @NO@=3cd6f86c-26fe-102b-80cb-0017a47871b2
+        @CBS_PLANNED_REFERENCE_TYPE@=d300cfbb-c771-44db-8272-7065efc88242
+        @CBS_CONTACT_SUCCESSFULLY_INVITED@=0b888b3c-df20-467c-9be9-0e68b779a97d
+        @CBS_CONTACT_RECIEVED_AT_HEALTH_FACILITY@=cceda879-286d-4dca-8ea8-1168f217fd1c
+        @CBC_UNSUCCESSFUL_CLIENT_REFERRAL@=e5dbe475-9116-4ed6-9349-6ab652bf9b13
+        @CBS_PERMISSION_TO_CONTACT_PARTNER_NOT_GIVEN@=535dcc8a-71fb-47a1-89c6-1e0247ac4b6b
+        @CBC_CONTACT_ADDRESS_INCOMPLETE_INCORRECT@=4db56fa7-e8cc-4ab4-b1bb-22a603dfdb35
+        @CONTACT_REFUSED_NOTIFICATION@=5a3402d4-983b-4015-b673-5d76b6a7beef
+        @CBS_CONTACT_MOVED_OUT_OF_AREA@=55bf58e2-48ff-41cf-a4a4-4b4feba2a140
+        @CBS_CONTACT_NOT_REACHABLE_ON_PHONE@=12beb608-5f22-43d1-afc0-f7aef355051d
+        @CBS_OTHER_REASON_CONTACT_NOT_RECEIVED@=2138c5f5-ce1d-4e96-9b9b-c1ca6fc21510
+        @CBS_REASONS_CONTACT_NOT_RECEIVED_AT_FACILITY@=0d52c378-adeb-4c89-a977-1f6cc4a7e9e4
+        @CBS_OTHER_REASON_NOT_LINKED_TO_TREATMENT_AT_FACILITY@=959b33b3-4750-49fb-90a0-a76393a24b22
+        @CBS_REFERENCE_BY_CLIENT@=c1ef1230-a9f7-4593-bdc8-1e9a08d45968
+        @CBS_REFERENCE_BY_HEALTH_CARE_PROVIDER@=5e053da8-f8ac-4f4d-902f-dba756a312a5
+        @CBS_DOUBLE_REFERENCE@=e7fbe2c7-b9c4-4caa-83f3-3fc327a225c4
+        @CBS_REFERENCE_FAMILY_TESTING@=35de662a-63de-4dbc-92c4-2b08165406ab
+        @CBS_REFERENCE_SOCIAL_NETWORK_TESTING@=d195e749-fa4a-43e3-8ceb-a72f25fb2be4
+        @CBS_HIV_STATUS_KNOWN@=6c93ead4-d189-4476-a81d-1bef16bda6a4
+        @CBS_REFERENCE_NOT_PLANNED@=8919a43c-fdee-4861-9fd8-ff068d4d740c
+        @CBS_CONTACT_TESTED_FOR_HIV@=5ba1d72e-8a77-4ad3-824e-19006bbf05e7
+        @CBS_REASON_CONTACT_NOT_TESTED_FOR_HIV@=bd3649bd-8c55-4671-a9d1-d1515ca2877f
+        @CBS_CONTACT_HIV_RESULT@=c86a2bcc-638b-4696-a2ac-1a74a1781745
+        @CBS_CONTACT_TRACNET_NUMBER@=0fbbc915-2550-4de8-93a0-1661ad7b45b8
+        @CBS_UNTESTED_CONTACT_GIVEN_SELF_TEST_KIT@=7bfac55f-4ae4-4f4a-a597-5584e8be6020
+        @CBC_COMMENT@=e328e0b0-28c3-44c9-9b2a-5f16b5185e2c
+        @CBS_CONTACT_GROUP@=95b7a6fc-57b1-45b9-a595-467f6118b51e
+        @CBS_CONTACT_NOTIFIER@=e7664ff5-a8ab-47a2-bc29-4470636a5634
+        @CBS_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@=f7908667-e296-4be4-b41e-26bc4b5ceccb
+        @CBS_INDEX_NOTIFIED_CONTACT@=d12bec46-f525-41b2-99c6-bd51bda4046c
+        @CBS_INDEX_AND_HEALTHCARE_PROVIDER_NOTIFIED_CONTACT@=ab6fcd11-6531-4fcf-bfb2-a214b88c0d29
+        @CBS_CONTACT_INITIATED_ON_ART@=c1063a9d-515b-440a-af6a-89375cb44ca0
+        @CBS_NOTIFICATION_APPROACH@=80530ec0-b820-4fe8-9d12-9d1f6476b0bf
+        @CBS_CONTACT_CODE@=41c410a4-18a4-4221-98ad-1daf1b22de4d
+        @ELECTRONIC_RECORD_MATCHES_PAPER_FORM@=RWANDA:Electronic record matches paper form
+
+        <!-- Concept added by lcdamy -->
+        @CBS_REASON_CONTACT_NOT_TESTED_FOR_HIV_SELECTION@=e052e8d1-6674-49d9-b9ae-f9a93e1e5e34
+        @REFUS_DU_TEST@=f799db35-8489-44f1-9572-c2eb0ba0d591
+        @CAS_CONNU@=bdb88bfa-c2f2-41bc-a1e2-91692a3afcee
+        @AUTRE_SPECIFIE@=1133af8b-c58d-44b3-9f3f-2803f05d18da
+        @CBS_ENROLLED_IN_CBS_ANSWER@=072b230b-66b7-4bd4-8aec-ba019f91637d
+        @CBS_ENROLLED_UPID@=a525a87f-b157-4599-b8e2-731896a9b7bc
+        @CBS_AUTRE_REASON_INDEX_CASE@=88caa2b9-2c65-4638-a4fb-6900987d3d22
+        @CBS_AUTRE_REASON_HIV@=6136d472-4fab-4107-8efb-b632928ad085
+        @CBS_HUBS@=367b90c5-d5d9-4800-b467-69cedd7f9c24
+        @NRL@=183985cb-e5d9-4415-8b7e-fd4c85662a14
+        @GIHUNDWE_HOSPITAL@=a810cdff-0221-425a-bde5-d33f1366a126
+        @Kibuye_Hospital@=b757c3c7-d259-419f-9fa8-56292c0d2d0d
+        @Gisenyi_District_Hospital@=325e942f-c41d-4032-b86d-2cdff25b7b81
+        @RUHENGERI_HOSPITAL@=3cb82e34-7ea2-44f6-af0b-f0ea4d995bf4
+        @RWAMAGANA_HOSPITAL@=f2e75b8c-b770-4019-a70e-7acec43c53ee
+        @Nyagatare_Hospital@=8a75974a-67b6-4a57-8902-4217819dba4c
+        @Centre_Hôspitalier_Universitaire_de_Butare@=2b472c6b-a0d4-44b1-bb2f-3d44289a19e5
+        @RMH@=52e2552c-cfac-4b8b-b5ad-55a1da58a1e1
+        @DATE_ANTI_RETROVIRALS_STARTED_HIDE@ = a84ccc24-fd81-4e18-ba82-5a785c2f86bc
+        @USERNAME@=e2d006a3-edb1-498e-bf18-6e3f03c0296c
+        @PASSWORD@=cdd2335d-e764-4825-be7a-a1475a05d42f
+
+    </macros>
+    <style>
+        .header {
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+        th.tableHeader {
+            background-color: #009d8e;
+            color: #FFFFFF;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        .section {
+            border: 1px solid #009d8e;
+            padding: 2px;
+            text-align: left;
+            margin-bottom: 1em;
+        }
+
+        .sectionHeader {
+            background-color: #009d8e;
+            color: #FFFFFF;
+            display: block;
+            padding: 2px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        tr.spaceUnder>td {
+            padding-bottom: 1em;
+        }
+
+        td {
+            font-size: 15px;
+        }
+
+        table.baseline-aligned td {
+            vertical-align: baseline;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            background-color: #D9D9D9;
+            font-size: 16px;
+        }
+
+        .error {
+            display: none;
+        }
+
+        .lables {
+            width: 200px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        .selectedCancerStagingKeys {
+            page-break-before: always;
+            border: 0px;
+        }
+
+        table.selectedCancerStagingKeys td {
+            border: 0px;
+        }
+
+        .mandotory-star {
+            color: #ff0000;
+        }
+    </style>
+    <script type="text/javascript">
+        if (jQuery) {
+            var url = new URL(window.location.href);
+            $j(document).ready(function () {
+                $j("#obs1").hide();
+                var username = $j("#obs_username").text().trim();
+                var password = $j("#obs_password").text().trim();
+                $j("#obs_username").remove();
+                $j("#obs_password").remove();
+                var patientUuid = $j("#patient_id").text();
+                var ANTIRETROVIRAL_DRUGS_UUID = "3cd72184-26fe-102b-80cb-0017a47871b2";
+
+                const params = new URLSearchParams({
+                    patient: $j.trim(patientUuid),
+                    v: "full"
+                });
+                var apiAddress = url.origin + "/openmrs/ws/rest/v1/order?"
+                apiAddress = apiAddress + params.toString();
+                const url1 = apiAddress;
+                const options = {
+                    headers: {
+                        Authorization: "Basic " + btoa(username + ":" + password)
+                    }
+                };
+
+                fetch(url1, options)
+                    .then(res => res.json())
+                    .then(
+                        data => {
+                            var orders = data.results;
+                            var regimentStartDate = undefined;
+                            if (orders[0]) {
+                                const url2 = url.origin + "/openmrs/ws/rest/v1/concept/" + ANTIRETROVIRAL_DRUGS_UUID
+                                fetch(url2, options)
+                                    .then(res => res.json())
+                                    .then(
+                                        data => {
+                                            var arvs = [];
+                                            for (var i in data.setMembers) {//The set of ANTIRETROVIRAL DRUGS 
+                                                arvs.push(data.setMembers[i].uuid);
+                                            }
+
+                                            var arvOrders = orders.filter(o => arvs.includes(o.concept.uuid));
+                                            arvOrders.sort(function (a, b) {
+                                                var dateA = new Date(a.dateActivated), dateB = new Date(b.dateActivated);
+                                                return dateA - dateB;
+                                            });
+
+                                            var regimentStartDate = arvOrders[0].dateActivated;
+                                            var d = regimentStartDate.slice(0, 10).split('-');
+                                            regimentStartDate = d[0] + '-' + d[1] + '-' + d[2]; // "yyyy-mm-dd"
+                                            $j("#regimentStartDate").text(regimentStartDate);
+                                            var myvalue1 = regimentStartDate;
+                                            setValue('obs_value1.value', myvalue1);
+                                        }
+                                    );
+                            }
+                        }
+                    );
+
+
+                if (url.searchParams.get("mode") == "EDIT") {//Edit
+                    console.log("Mode Edit");
+                } else if (url.searchParams.get("formId")) {//Creation
+                    console.log("Mode formId");
+                } else {//View the form
+                    console.log("Mode view");
+                }
+
+                //If  submission does not work redirect with an error message
+                beforeSubmit.push(function () {
+
+                    var date = getValue('encounterDate.value');
+                    var provider = getValue('encounterProvider.value');
+                    var location = getValue('encounterLocation.value');
+                    var enrollment = getValue('enrollDate.value');
+
+                    var date1 = new Date("2018-10-01");
+                    var date2 = new Date(enrollment);
+                    var date3 = new Date();
+
+                    console.log([date1, date2, date3]);
+
+                    if (date1 > date2) {
+                        alert("All enrolments date should captured between the 01/10/2018 and today'date");
+                        return false;
+                    };
+
+                    if (date2 > date3) {
+                        alert("All enrolments date should captured between the 01/10/2018 and today'date");
+                        return false;
+                    };
+
+                    if (!date || date == "") {
+                        getField('encounterDate.error').html('This field is required').show();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        return false;
+                    } else {
+                        getField('encounterDate.error').html('This field is required').hide();
+                    }
+
+                    if (!provider || provider == "") {
+                        getField('encounterProvider.error').html('This field is required').show();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        return false;
+                    } else {
+                        getField('encounterProvider.error').html('This field is required').hide();
+                    }
+
+                    if (!location || location == "") {
+                        getField('encounterLocation.error').html('This field is required').show();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        return false;
+                    } else {
+                        getField('encounterLocation.error').html('This field is required').hide();
+                    }
+
+                    if (!enrollment || enrollment == "") {
+                        getField('enrollDate.error').html('This field is required').show();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        return false;
+                    } else {
+                        getField('enrollDate.error').html('This field is required').hide();
+                    }
+
+                    return true;
+                });
+
+            });
+        }
+
+    </script>
+    <span style="float:right">Paper Form ID: $paperFormId</span>
+    <h2> HIV CASE-BASED SURVEILLANCE Form (v0.1)</h2>
+    <p><strong>Index testing, partner notification, recency testing information </strong></p>
+    <!--===============================   Section 1 =======================================  -->
+    <section headerLabel="1. Encounter Details">
+        <div id="patient_id" style="display:none">
+            <lookup expression="patient.uuid" />
+        </div>
+        <table cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td width="50%">Date:</td>
+                <td>
+                    <encounterDate id="encounterDate" /> <span class="mandotory-star">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Location:</td>
+                <td>
+                    <encounterLocation default="9496a55d-bb9e-41ec-bdac-5c0c0dd50e2b" /> <span class="mandotory-star">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Provider:</td>
+                <td>
+                    <encounterProvider id="encounterProvider" /> <span class="mandotory-star">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Date d'enrôlement dans le CBS (enrollment date in CBS):</td>
+                <td>
+                    <obs conceptId="$@ENROLLMENT_DATE@" allowFutureDates="true" required='true' id='enrollDate' />
+                </td>
+            </tr>
+            <tr>
+                <td>№ d'Identifiant Unique (UPID): </td>
+                <td>
+                    <lookup class="value"
+                        complexExpression="#foreach( $patId in $patientIdentifiers.get('UPID') ) $patId #end " />
+                </td>
+            </tr>
+            <tr>
+                <td>Date de début des ARVs (Date of ART initiation):</td>
+                <td>
+                    <div id="look1">
+                        <span class="value" id="regimentStartDate"> </span>
+                    </div>
+                    <div id="obs_username">
+                        <lookup expression="fn.getConcept('111238').name" />
+                    </div>
+                    <div id="obs_password">
+                        <lookup expression="fn.getConcept('111239').name" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </section><br></br>
+    <!--===============================   Section 2 =======================================  -->
+    <section headerLabel="Information sur le Test de 'Recency Testing' (Recency Testing Information)">
+        <table cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td width="50%">
+                    Date de collecte de l'échantillon (Date of sample collection):
+                </td>
+                <td>
+                    <obs conceptId="$@RECENCY_SAMPLE_COLLECTION_DATE@" allowFutureDates="true" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Le site où l'échantillon a été référé (Site where sample was referred):
+                </td>
+                <td>
+                    <obs conceptId="$@CBS_HUBS@"
+                        conceptAnserIds="$@NRL@,$@GIHUNDWE_HOSPITAL@,$@Kibuye_Hospital@,$@Gisenyi_District_Hospital@,$@RUHENGERI_HOSPITAL@,$@RWAMAGANA_HOSPITAL@,$@Nyagatare_Hospital@,$@Centre_Hôspitalier_Universitaire_de_Butare@,$@RMH@"
+                        answerLabels="NRL,GIHUNDWE HOSPITAL,Kibuye HOSPITAL,Gisenyi District HOSPITAL,RUHENGERI HOSPITAL,RWAMAGANA HOSPITAL,Nyagatare HOSPITAL,CHUB,RMH" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Date de réception du Résultat dans le service ARV (Date of result reception at ARV Service):
+                </td>
+                <td>
+                    <obs conceptId="$@DATE_RESULTS_RECEIVED_AT_ARV_SERVICE@" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Résultat (R/LT) (Result R/LT):
+                </td>
+                <td>
+                    <obs conceptId="$@RECENCY_ASSAY_RESULTS@" conceptAnswerIds="$@RECENT@, $@LONG_TERM@"
+                        answerLabels="R, LT" style="radio" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Date d'annonce du résultat au Cas Index (Date result was disclosed to Index Case):
+                </td>
+                <td>
+                    <obs conceptId="$@DATE_PATIENT_RECEIVED_RESULTS_OF_HIV_TEST@" allowFutureDates="true" />
+                    <div id="obs1">
+                        <obs conceptId="$@DATE_ANTI_RETROVIRALS_STARTED_HIDE@" id="obs_value1" />
+                    </div>
+
+                </td>
+            </tr>
+        </table>
+    </section>
+    <br></br>
+    <!--===============================   Section 3 =======================================  -->
+    <section headerLabel="Nombre de Contacts (Number of Contacts)">
+        <table cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td width="50%">Membres de la famille (Family members):
+                </td>
+                <td>
+                    <obs conceptId="$@NUMBER_OF_FAMILY_MEMBERS@" id="numFamily" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Partenaires sexuels notifies durant les 12 derniers mois (Sexual Partners in the last 12 months):
+                </td>
+                <td>
+                    <obs conceptId="$@NUMBER_OF_SEXUAL_PARTNERS@" id="numSexPartners" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Personnes de réseau social (Social Network members):
+                </td>
+                <td>
+                    <obs conceptId="$@SOCIAL_NETWORK_MEMBERS@" id="numSocialNetMembers" />
+                </td>
+            </tr>
+        </table>
+    </section>
+    <br></br>
+
+    <submit />
+
+</htmlform>

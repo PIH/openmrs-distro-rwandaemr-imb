@@ -1,0 +1,395 @@
+<htmlform>
+    <!-- Pedi HIV top level form.
+         HIV-RW.V1.akb.July13.doc
+         Created by gneza 2013
+     -->
+    <macros>
+        paperFormId = (Fill this in)
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+    </macros>
+
+    <style>
+		.section {
+			border: 1px solid $headerColor;
+			padding: 2px;
+			text-align: left;
+			margin-bottom: 1em;
+		}
+		.sectionHeader {
+			background-color: $headerColor;
+			color: $fontOnHeaderColor;
+			display: block;
+			padding: 2px;
+			font-weight: bold;
+		}
+		table.baseline-aligned td {
+			vertical-align: baseline;
+		}
+	</style>
+    <table border="2" cellspacing="0" cellpadding="6" width="100%">
+        <tr>
+            <td>
+                <img src="/openmrs/moduleResources/rwandareports/images/rwanda-logo.jpg" align="left" height="100"
+                     width="100">
+                </img>
+                <h2>
+                    RWANDA MINISTRY OF HEALTH
+                    <br />
+                    <span class="english">MoH Rwanda</span>
+                </h2>
+            </td>
+            <td>
+                Nom/<span class="english">Name</span>:
+                <lookup class="value" expression="patient.personName.familyName" />
+                <br />
+                <lookup class="value" expression="patient.personName.givenName" />
+                <br />
+                ID:
+                <lookup class="value" expression="patientIdentifiers.get(&quot;Primary Care ID Type&quot;)" />
+            </td>
+            <td>
+                <b>
+                    Age:
+                    <lookup class="value" expression="patient.age"/>
+                </b>
+            </td>
+            <td>
+                <b>
+                    Gender:
+                    <lookup class="value" expression="patient.gender"/>
+                </b>
+            </td>
+            <td>
+                Clinique / Clinic:
+                <encounterLocation id="location" />
+            </td>
+            <td>
+                Clinician Nom/ Signature:
+                <encounterProvider/>
+            </td>
+            <td>
+                <encounterDate />
+            </td>
+        </tr>
+    </table>
+
+    <section headerLabel="Followup Form (SUIVI 1)">
+        <table border="1" width="100%" class="rdv">
+            <tr class="strong">
+                <td colspan="4'"></td>
+                <th colspan="2" align="center"></th>
+                <td colspan="6"></td>
+            </tr>
+
+            <tr class="strong">
+                <th>Weight (kg)</th>
+                <td>
+                    <obs conceptId="3ce93b62-26fe-102b-80cb-0017a47871b2" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>Height (cm) </th>
+                <td>
+                    <!-- Height (cm)-->
+                    <obs conceptId="3ce93cf2-26fe-102b-80cb-0017a47871b2" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>P/T(Z-score)</th>
+                <td>
+
+                    <obs conceptId="40cdb065-6daf-44fb-b68b-467c2a4d8a90" labelText=""/>
+                </td>
+            </tr>
+            <tr>
+                <th>T/A(z-score)</th>
+                <td>
+
+                    <obs conceptId="6d4b1720-f45c-4069-98d9-e7e865105a7a" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>P/A(Z-score)</th>
+                <td>
+
+                    <obs conceptId="c9d8c9db-518c-4a00-985d-d2fc8ac1f739" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>BMI(Z-score)</th>
+                <td>
+                    <obs conceptId="3ce14da8-26fe-102b-80cb-0017a47871b2" />
+                </td>
+            </tr>
+
+            <tr>
+                <th>BMI/Age</th>
+                <td>
+
+                    <obs conceptId="66d7467a-0e95-4bf5-bd80-ba14500fdcef" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>Oedema</th>
+                <td>
+
+                    <obs conceptId="adccfa31-36de-4bd1-b37a-e8d8b29227da" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>MUAC (CM) </th>
+                <td>
+                    <obs conceptId="4326b04b-3158-417a-bb8d-ad022295b0f4" labelText="" />
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section headerLabel="Followup Form (SUIVI 2)">
+        <table border="1" width="100%" class="rdv">
+            <tr class="strong">
+                <td colspan="4'"></td>
+                <th colspan="2" align="center"></th>
+                <td colspan="6"></td>
+            </tr>
+
+            <tr class="strong">
+                <th>Weight (kg)</th>
+                <td>
+                    <obs conceptId="3ce93b62-26fe-102b-80cb-0017a47871b2" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>Height (cm) </th>
+                <td>
+                    <!-- Height (cm)-->
+                    <obs conceptId="3ce93cf2-26fe-102b-80cb-0017a47871b2" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>P/T(Z-score)</th>
+                <td>
+
+                    <obs conceptId="40cdb065-6daf-44fb-b68b-467c2a4d8a90" labelText=""/>
+                </td>
+            </tr>
+            <tr>
+                <th>T/A(z-score)</th>
+                <td>
+
+                    <obs conceptId="6d4b1720-f45c-4069-98d9-e7e865105a7a" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>P/A(Z-score)</th>
+                <td>
+
+                    <obs conceptId="c9d8c9db-518c-4a00-985d-d2fc8ac1f739" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>BMI(Z-score)</th>
+                <td>
+                    <obs conceptId="3ce14da8-26fe-102b-80cb-0017a47871b2" />
+                </td>
+            </tr>
+
+            <tr>
+                <th>BMI/Age</th>
+                <td>
+
+                    <obs conceptId="66d7467a-0e95-4bf5-bd80-ba14500fdcef" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>Oedema</th>
+                <td>
+
+                    <obs conceptId="adccfa31-36de-4bd1-b37a-e8d8b29227da" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>MUAC (CM) </th>
+                <td>
+                    <obs conceptId="4326b04b-3158-417a-bb8d-ad022295b0f4" labelText="" />
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section headerLabel="Followup Form (SUIVI 3)">
+        <table border="1" width="100%" class="rdv">
+            <tr class="strong">
+                <td colspan="4'"></td>
+                <th colspan="2" align="center"></th>
+                <td colspan="6"></td>
+            </tr>
+
+            <tr class="strong">
+                <th>Weight (kg)</th>
+                <td>
+                    <obs conceptId="3ce93b62-26fe-102b-80cb-0017a47871b2" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>Height (cm) </th>
+                <td>
+                    <!-- Height (cm)-->
+                    <obs conceptId="3ce93cf2-26fe-102b-80cb-0017a47871b2" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>P/T(Z-score)</th>
+                <td>
+
+                    <obs conceptId="40cdb065-6daf-44fb-b68b-467c2a4d8a90" labelText=""/>
+                </td>
+            </tr>
+            <tr>
+                <th>T/A(z-score)</th>
+                <td>
+
+                    <obs conceptId="6d4b1720-f45c-4069-98d9-e7e865105a7a" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>P/A(Z-score)</th>
+                <td>
+
+                    <obs conceptId="c9d8c9db-518c-4a00-985d-d2fc8ac1f739" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>BMI(Z-score)</th>
+                <td>
+                    <obs conceptId="3ce14da8-26fe-102b-80cb-0017a47871b2" />
+                </td>
+            </tr>
+
+            <tr>
+                <th>BMI/Age</th>
+                <td>
+
+                    <obs conceptId="66d7467a-0e95-4bf5-bd80-ba14500fdcef" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>Oedema</th>
+                <td>
+
+                    <obs conceptId="adccfa31-36de-4bd1-b37a-e8d8b29227da" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>MUAC (CM) </th>
+                <td>
+                    <obs conceptId="4326b04b-3158-417a-bb8d-ad022295b0f4" labelText="" />
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section headerLabel="Followup Form (SUIVI 4)">
+        <table border="1" width="100%" class="rdv">
+            <tr class="strong">
+                <td colspan="4'"></td>
+                <th colspan="2" align="center"></th>
+                <td colspan="6"></td>
+            </tr>
+
+            <tr class="strong">
+                <th>Weight (kg)</th>
+                <td>
+                    <obs conceptId="3ce93b62-26fe-102b-80cb-0017a47871b2" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>Height (cm) </th>
+                <td>
+                    <!-- Height (cm)-->
+                    <obs conceptId="3ce93cf2-26fe-102b-80cb-0017a47871b2" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>P/T(Z-score)</th>
+                <td>
+
+                    <obs conceptId="40cdb065-6daf-44fb-b68b-467c2a4d8a90" labelText=""/>
+                </td>
+            </tr>
+            <tr>
+                <th>T/A(z-score)</th>
+                <td>
+
+                    <obs conceptId="6d4b1720-f45c-4069-98d9-e7e865105a7a" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>P/A(Z-score)</th>
+                <td>
+
+                    <obs conceptId="c9d8c9db-518c-4a00-985d-d2fc8ac1f739" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>BMI(Z-score)</th>
+                <td>
+                    <obs conceptId="3ce14da8-26fe-102b-80cb-0017a47871b2" />
+                </td>
+            </tr>
+
+            <tr>
+                <th>BMI/Age</th>
+                <td>
+
+                    <obs conceptId="66d7467a-0e95-4bf5-bd80-ba14500fdcef" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>Oedema</th>
+                <td>
+
+                    <obs conceptId="adccfa31-36de-4bd1-b37a-e8d8b29227da" labelText="" />
+                </td>
+            </tr>
+            <tr>
+                <th>MUAC (CM) </th>
+                <td>
+                    <obs conceptId="4326b04b-3158-417a-bb8d-ad022295b0f4" labelText="" />
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section headerLabel="Exit Program">
+        <table border="1" width="100%" class="rdv">
+            <tr class="strong">
+                <td colspan="4'"></td>
+                <th colspan="2" align="center"></th>
+                <td colspan="6"></td>
+            </tr>
+
+            <tr>
+            <th>Raison of exit nutrition program </th>
+            <th>Observation </th>
+            </tr>
+
+            <!-- Raison of exit nutrition program-->
+            <tr>
+                <td>
+                    <obs conceptId="3c32e4c3-54d6-48f1-a646-8b51d738af9c" labelText="" />
+                </td>
+            <!-- Observation-->
+                <td>
+                    <obs conceptId="a5c1a38c-5f2f-46e3-82a3-9188f015eea5" labelText="" />
+                </td>
+            </tr>
+        </table>
+    </section>
+
+
+    <left>
+        <submit />
+    </left>
+</htmlform>

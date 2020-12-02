@@ -1,0 +1,1642 @@
+<htmlform> <!--
+           Oncology Post Nephroblastoma
+            Pilot_4July_v1.3NT
+                Author:  Oncology Program
+                Builder: Neza Guillaine 
+                started on May 22, 2014                
+        -->
+
+    <macros>
+        // Diagnosis workflow.
+        @DIAGNOSIS_work_flow@ = 2e602550-4337-4ffa-90a2-7becc3f167b1
+        @Diagnosis_Status@ =c8dea23e-c596-40d0-a4a4-08cb61b82d3b
+    </macros>
+    <style>
+        th.tableHeader {
+        background-color: #009d8e;
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: left;
+        }
+
+        ul {
+        list-style-type: square;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        }
+
+        tr.spaceUnder>td {
+        padding-bottom: 1em;
+        }
+
+        td {
+        font-size: 15px;
+        }
+
+        #container {
+        position: relative;
+        margin: auto;
+        width: 1400px;
+        height: auto;
+        }
+
+        @media print {
+        #container {
+        display: none;
+        }
+        #printArea {
+        display: block;
+        }
+        #userBar {
+        display: none;
+        }
+        #banner {
+        display: none;
+        }
+        #footer {
+        display: none;
+        }
+        #htmlFormEntryBanner {
+        display: none;
+        }
+        .error {
+        display: none;
+        }
+        .lables {
+        width: 200px;
+        }
+        table {
+        width: 100%;
+        }
+        table,td,th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+        th {
+        text-align: left;
+        background-color: #D9D9D9;
+        font-size: 10px;
+        }
+        td {
+        font-size: 10px;
+        }
+        .selectedCancerStagingKeys {
+        page-break-before: always;
+        border: 0px;
+        }
+        table.selectedCancerStagingKeys td {
+        border: 0px;
+        }
+        }
+
+        @media screen {
+        table {
+        border: 1px solid #DFDFDF;
+        width: 100%;
+        border-color: #009d8e;
+        }
+        #container {
+        display: block;
+        }
+        #printArea {
+        display: none;
+        }
+        }
+    </style>
+
+    <script type="text/javascript">
+if(jQuery){
+ $j(document).ready(function(){
+	 // Tick and hide cervicalCancer obs tag
+	 $j("#cervicalCancer").hide();
+	 $j("#cervicalCancer input").attr('checked','checked');
+	 
+	 $j("#postoperativeChemo").hide();
+	 $j("#postoperativeChemo input").attr('checked','checked');
+	 
+	 
+	 var pathologgyClone = $j("#toggleble20").clone();
+	 
+	 
+	 $j("#pathologyCompletedNo").click(function(){
+		 $j("#toggleble20").replaceWith(pathologgyClone);
+		 pathologgyClone = $j("#toggleble20").clone();
+ });
+	 
+    if ( $j.browser.msie ) {
+        $j(":checkbox").click(function(){
+             $j(this).change();
+     });
+        }
+    
+    $j(".checkboxGroup").each(function(){
+        var group = $j(this);
+        var checked = group.find(":checked").closest("td").attr("id");
+       
+        var uncheckAll = function(){
+            group.find("input[type$='checkbox']").attr("checked",false);
+            group.find("input[type$='checkbox']").change();
+        }
+       
+        var showSection = function(which){
+        	if(which !=""){
+        	var triggerIndex = which.substring(7);
+        	var sectionId= "toggleble"+triggerIndex;
+            $j(".togglebles").find("tbody[id$="+sectionId+"]").fadeIn(1000);
+           }
+        }
+        
+       
+        
+        var hideSection = function(which){
+        	var sectionId= "toggleble"+which.substring(7);
+            $j(".togglebles").find("tbody[id$="+sectionId+"]").hide();
+        }      
+        
+    group.find("input[type$='checkbox']").click(function(){
+    	if(typeof checked != "undefined")
+    		hideSection(checked);
+        uncheckAll();
+        $j(this).siblings("input[type$='checkbox']").attr("checked",false);
+        $j(this).attr("checked",true);
+        checked = group.find(":checked").closest("td").attr("id");
+        $j(this).change();
+        showSection($j(this).closest("td").attr("id"));
+    });
+    
+    });
+
+ });
+}
+</script> <script type="text/javascript">
+if(jQuery){
+ $j(document).ready(function(){
+    if ( $j.browser.msie ) {
+        $j(":checkbox").click(function(){
+             $j(this).change();
+     });
+ }
+	var printableTables = ["nephroblastoma"];
+	
+	var hideStagingKeys = function(elementsToHide) {
+		$j('.'+elementsToHide).slideToggle("fast");
+     };
+	
+     //add a button to toggle staging keys
+	for (var i = 0; i &lt; printableTables.length; i++) {
+	    var lastRow=printableTables[i]+"CancerStagingKeys";
+	    $j('.'+lastRow+':last').after('<tr><td colspan="6" style="text-align: left;"><button style="color: #FFF; background-color: #BB2714;" type="button" id="'+lastRow+'">Click here to view or hide staging guidelines</button></td></tr>');	
+	    
+	    $j('#'+lastRow).click(function () {
+	    	hideStagingKeys(this.id);
+	    	}); 
+	    
+	    hideStagingKeys(lastRow); //Initialize the staging keys to hidden
+	    
+	}
+     
+	var getURLParam = function(name) {
+	    var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(document.URL);
+	    if(results == null)
+	    	return;
+	    return results[1] || 0;
+	};
+     
+	var isEditMode = function() {
+		if(getURLParam('mode') == 'EDIT')
+			return true;
+		else
+			return false;
+     };
+     
+     var isViewMode = function() {
+    	 if(getURLParam('inPopup') == 'true')
+    		 return true;
+    	 else
+    		 return false;
+     };
+	
+	var setInnerHtml = function(elementId,contentToSet) {
+		$j('#'+elementId).html(''+contentToSet); 
+     };
+     
+     var checkEmptyInputs = function(value,ifEmptyReturn,ifNotEmpReturn) {
+ 		if(value == "")
+ 			return ifEmptyReturn;
+ 		else
+ 			return ifNotEmpReturn;
+      };
+	
+     var hideOthers = function(elementToSkip) {
+    	 for (var i = 0; i &lt; printableTables.length; i++) {
+ 		    var tableToHide=printableTables[i];
+ 		    if(tableToHide != elementToSkip)
+ 		       $j('#'+tableToHide).hide();     		    	
+ 		}
+      };
+      
+      var appendStagingKeys = function(elementToAppend) { 
+    	  if(typeof elementToAppend == null){
+    		  $j('.selectedCancerStagingKeys').empty();
+    		  return;
+    	  }
+    	  $j('.selectedCancerStagingKeys').empty();
+    	  $j('.'+elementToAppend).clone().appendTo('.selectedCancerStagingKeys');        	  
+       };
+       
+       var getValueOfChildSpan = function(parentId) { 
+        return $j('#'+parentId).children("span").html();
+       };
+       
+       var hasValue = function(elementId) { 
+    	   if($j('#'+elementId).children("span").attr("class") == 'value')
+               return true;
+    	   else
+    		   return false;
+          };
+       
+       var ViewModeHandler = function(){};
+       ViewModeHandler.prototype = {
+
+    		    handleHeadingSection: function() { //handle heading section
+    		    	 setInnerHtml("finalDiagnosis", "nephroblastoma");
+    		         setInnerHtml("date", getValueOfChildSpan('encounterDate'));
+    		         setInnerHtml("locationPrintArea", getValueOfChildSpan('encounterLocation'));
+    		         setInnerHtml("provider", getValueOfChildSpan('encounterProvider'));    		       
+    		         setInnerHtml("managingDCA", document.getElementById('managingDCA.managingDCA').value);
+    		         setInnerHtml("managingGP", document.getElementById('managingGP.managingGP').value);
+    		    },
+    		    
+    			  
+    			 handleNephroblastomaCancerSection: function() { //handle Nephroblastoma cancer section
+    					hideOthers('nephroblastoma');
+    					
+    					setInnerHtml('nephroblastomaMass', ''+getValueOfChildSpan('nephroblastomaMassObs'));
+    					setInnerHtml('nephroblastomaMassSize1', ''+getValueOfChildSpan('nephroblastomaMassSize1Obs'));
+    					setInnerHtml('nephroblastomaMassSize2', ''+getValueOfChildSpan('nephroblastomaMassSize2Obs'));
+    					setInnerHtml('nephroblastomaDiagnosisComments', ''+getValueOfChildSpan('nephroblastomaDiagnosisCommentsObs'));
+    				
+    					appendStagingKeys('nephroblastomaCancerStagingKeys');
+    				},    				
+    				
+    				handlePathologySection: function() {//handle Pathology section	 
+   					 if(hasValue('changeInTreatmentIntentObs'))
+						 setInnerHtml('changeInTreatmentIntent', 'change in treatment intent');
+    				if(hasValue('changeInTreatmentPlanResultObs'))
+						 setInnerHtml('changeInTreatmentPlanResult', 'change in treatment plan because of surgery result');
+    				if(hasValue('changeInTreatmentIntentOtherResultObs'))
+   						setInnerHtml('changeInTreatmentIntentOtherResult', 'change in treatment plan because of other result (specify):');
+   					    setInnerHtml('changeInTreatmentIntentOtherResultText', ''+getValueOfChildSpan('changeInTreatmentIntentOtherResultsSpecifiedObs'));
+   					 
+					if(hasValue('surgeryDateObs'))
+						setInnerHtml('surgeryDate', ''+getValueOfChildSpan('surgeryDateObs'));
+					if(hasValue('surgeryFacilityButaroObs'))
+						setInnerHtml('surgeryFacilityBH','BH');
+					if(hasValue('surgeryFacilityKFObs'))
+						setInnerHtml('surgeryFacilityKF','KF');
+					 if(hasValue('surgeryFacilityCHUKObs'))
+						setInnerHtml('surgeryFacilityCHUK','CHUK');
+					 if(hasValue('surgeryFacilityCHUBObs'))
+						setInnerHtml('surgeryFacilityCHUB','CHUB');
+					 if(hasValue('surgeryFacilityObsOthers'))
+						setInnerHtml('surgeryFacilityothers','OTHERS:');
+					    setInnerHtml('surgeryFacilityText', ''+getValueOfChildSpan('surgeryFacilityTextObs'));
+					if(hasValue('pathologyFacilityBWHObs'))
+				  	   setInnerHtml('pathologyFacilityBWH','BWH');
+				    if(hasValue('pathologyFacilityButaroObs'))
+					   setInnerHtml('pathologyFacilityBH','BH');
+					if(hasValue('pathologyFacilityKFObs'))
+						setInnerHtml('pathologyFacilityKF','KF');
+					 if(hasValue('pathologyFacilityCHUKObs'))
+						setInnerHtml('pathologyFacilityCHUK','CHUK');
+					 if(hasValue('pathologyFacilityCHUBObs'))
+						setInnerHtml('pathologyFacilityCHUB','CHUB');
+					 if(hasValue('pathologyFacilityObsOthers'))
+						setInnerHtml('pathologyFacilityothers','OTHERS:');
+					    setInnerHtml('pathologyFacilityText', ''+getValueOfChildSpan('pathologyFacilityTextObs'));
+					if(hasValue('surgeryTypeLeftObs'))
+					  setInnerHtml('surgeryTypeLeft', 'DONE');
+					if(hasValue('surgeryTypeLeftPartialObs'))
+ 					  setInnerHtml('surgeryLeftPNephro', 'Partial nephrectomy');
+ 					if(hasValue('surgeryTypeLeftTotalObs'))
+   					  setInnerHtml('surgeryLeftTNephro', 'Total nephrectomy');
+ 					if(hasValue('surgeryTypeLeftOtherObs'))
+ 					  setInnerHtml('surgeryTypeLeftOther','Others:');
+ 					  setInnerHtml('surgeryTypeLeftOtherText',''+getValueOfChildSpan('surgeryTypeLeftTextObs'));
+ 					if(hasValue('surgeryTypeRightObs'))
+   					  setInnerHtml('surgeryTypeRight', 'DONE');
+ 					if(hasValue('surgeryTypeRightPartialObs'))
+   					 setInnerHtml('surgeryRightPNephro', 'Partial nephrectomy');
+   					if(hasValue('surgeryTypeRightTotalObs'))
+     				  setInnerHtml('surgeryRightTNephro', 'Total nephrectomy');
+   					if(hasValue('surgeryTypeRightOtherObs'))
+   					  setInnerHtml('surgeryTypeRightOther','Others:');
+   				      setInnerHtml('surgeryTypeRightOtherText',''+getValueOfChildSpan('surgeryTypeRightTextObs'));
+    	              setInnerHtml('pathologySurgicalNotes', ''+getValueOfChildSpan('pathologySurgicalNotesObs'));
+    	              setInnerHtml('pathologyConfirmedType', ''+getValueOfChildSpan('pathologyConfirmedTypeObs'));
+   	                if(hasValue('surgeryPathologyReportDateObs'))
+   						setInnerHtml('surgeryPathologyReportDate', ''+getValueOfChildSpan('surgeryPathologyReportDateObs'));
+   	                if(hasValue('nopathologyperformed'))
+   	                	setInnerHtml('pathologyNotperformed','N/A (no pathology)');
+   	               if(hasValue('nephroblastomaRiskOS0'))
+ 				      setInnerHtml('nephroblastomaRiskO', 'LOW RISK');
+ 					if(hasValue('nephroblastomaRiskOS1'))
+ 					    setInnerHtml('nephroblastomaRiskO1', 'INTERMEDIATE RISK');
+ 					if(hasValue('nephroblastomaRiskOS2'))
+ 					    setInnerHtml('nephroblastomaRiskO2', 'HIGH RISK');
+ 					if(hasValue('nephroblastomaRiskOS3'))
+ 					    setInnerHtml('nephroblastomaRiskO3', 'UNABLE TO CLASSIFY BY PATHOLOGY');
+   	                if(hasValue('nephroblastomaStageOS0'))
+				    setInnerHtml('nephroblastomaStageO', '0');
+					if(hasValue('nephroblastomaStageOS1'))
+					    setInnerHtml('nephroblastomaStageO1', 'I');
+					if(hasValue('nephroblastomaStageOS2'))
+					    setInnerHtml('nephroblastomaStageO2', 'II');
+					if(hasValue('nephroblastomaStageOS3'))
+					    setInnerHtml('nephroblastomaStageO3', 'III');
+					if(hasValue('nephroblastomaStageOS4'))
+					    setInnerHtml('nephroblastomaStageO4', 'IV');
+					if(hasValue('nephroblastomaStageOS5'))
+					    setInnerHtml('nephroblastomaStageO5', 'V');
+					if(hasValue('pathologyTypeLeftObs'))
+					  setInnerHtml('pathologyTypeLeft', 'DONE');
+					if(hasValue('pathologyTypeLeftStageOS1'))
+	 				  setInnerHtml('pathologyTypeLeftStageO1', 'I');
+	 				if(hasValue('pathologyTypeLeftStageOS2'))
+	   				  setInnerHtml('pathologyTypeLeftStageO2', 'II');
+	 				if(hasValue('pathologyTypeLeftStageOS3'))
+	 				  setInnerHtml('pathologyTypeLeftStageO3','III');
+	 				if(hasValue('pathologyTypeRightObs'))
+	   				  setInnerHtml('pathologyTypeRight', 'DONE');
+	 				if(hasValue('pathologyTypeRightStageOS1'))
+	   				  setInnerHtml('pathologyTypeRightStageO1', 'I');
+	   				if(hasValue('pathologyTypeRightStageOS2'))
+	     			  setInnerHtml('pathologyTypeRightStageO2', 'II');
+	   				if(hasValue('pathologyTypeRightStageOS3'))
+	   				  setInnerHtml('pathologyTypeRightStageO3','III');
+				  
+   					 else{
+   						 setInnerHtml('pathologyCompleted', 'No');
+   						 $j("#pathology tr:gt(1)").hide();
+   					 }
+   				 },
+    				
+   				 handleTreatmentItentSection: function() {//handle Treatment Intent section
+    				   	
+    				   	if(hasValue('treatmentCurative')){
+    				   		setInnerHtml('treatmentIntent', 'Curative');
+    				   	}
+    				   if(hasValue('treatmentPalliation')){
+    				       	setInnerHtml('treatmentIntent', 'Palliation ONLY');
+    				   	}
+    				},
+    				
+    				handleTreatmentPlanSection: function() {//handle Treatment Plan section
+    				    /*  now that we are going to play with the treatment plan sections (i.e radiation and chemotherapy) 
+    				    we need to initisalize them to hidden state and we'll be toggling them one by one according to whether a section is selected or not */
+    				    $j('#radiationTreatmentPlan').hide();
+    				    $j('#chemotherapyTreatmentPlan_1').hide(); 
+    				   
+    				    //handle radiation section if selected
+    				    if(hasValue('trigger22')){
+    				    	$j('#radiationTreatmentPlan').show();
+    				    	if(hasValue('radiationFacilityMulagoObs'))
+      						  setInnerHtml('radiationFacilityMulago','Mulago');
+    				    	if(hasValue('radiationFacilityOthers'))
+    				    	  setInnerHtml('otherradiationFacility','Others:')
+    				    	  setInnerHtml('othersradiationFacilityText',''+getValueOfChildSpan('radiationFacilityText'));
+    				  } 
+    				    
+    				  //handle chemotherapy section if selected
+    				    if(hasValue('trigger23_1')){
+    				    	$j('#chemotherapyTreatmentPlan_1').show();
+    						setInnerHtml('chemotherapyCycles', ''+getValueOfChildSpan('chemotherapyCyclesObs'));
+    						setInnerHtml('chemotherapyFirstCycle', ''+getValueOfChildSpan('chemotherapyFirstCycleObs'));
+    						setInnerHtml('chemotherapyRegimenEnd', ''+getValueOfChildSpan('chemotherapyRegimenEndObs'));
+    						setInnerHtml('chemotherapyStandardRegimen', ''+getValueOfChildSpan('chemotherapyStandardRegimenObs'));
+    						
+    						if(hasValue('chemotherapyRegimenVincriObs'))
+    						  setInnerHtml('chemotherapyRegimen', 'Vincristine/Actinomycin D');
+    						if(hasValue('chemotherapyRegimenVincriDObs'))
+        					  setInnerHtml('chemotherapyRegimen', 'Vincristine/Actinomycin D/Doxorubicin');
+    						if(hasValue('postoperativeChemo'))
+    					      setInnerHtml('postoperativeChemoRegimen','<b>POST-OPERATIVE \u2713 </b>');
+    					}
+    				  
+    				},
+       }
+       
+       
+       //this class contains methods used to handle printing of this form while in the EDIT or ENTER mode 
+	var EditModeHandler = function(){};
+	EditModeHandler.prototype = {
+
+	    handleHeadingSection: function() { //handle heading section
+	         setInnerHtml("finalDiagnosis", "nephroblastoma");
+	         setInnerHtml("date", $j.datepicker.formatDate('dd/M/yy', new Date(getValue('encounterDate.value'))));
+	         setInnerHtml("locationPrintArea", $j('#encounterLocation option:selected').text());
+	         setInnerHtml("provider", $j('#encounterProvider option:selected').text());
+	         setInnerHtml("managingDCA", getValue('managingDCA.managingDCA.value')+' '+getValue('managingDCA.newRelationship.value'));
+	         setInnerHtml("managingGP", getValue('managingGP.managingGP.value')+' '+getValue('managingGP.newRelationship.value'));
+	    },
+	
+	    handleNephroblastomaCancerSection: function() { //handle Nephroblastoma section
+			hideOthers('nephroblastoma');
+    	
+	    	setInnerHtml('nephroblastomaMass', ''+getValue('nephroblastomaMassObs.value'));
+			setInnerHtml('nephroblastomaMassSize1', ''+getValue('nephroblastomaMassSize1Obs.value'));
+			setInnerHtml('nephroblastomaMassSize2', ''+getValue('nephroblastomaMassSize2Obs.value'));
+			setInnerHtml('nephroblastomaDiagnosisComments', ''+getValue('nephroblastomaDiagnosisCommentsObs.value'));
+		
+	    	
+	    	appendStagingKeys('nephroblastomaCancerStagingKeys');
+	 },	 
+	 
+	 handlePathologySection: function() {//handle Pathology section	 
+		 if(getValue('changeInTreatmentIntentObs.value')!=null ) 
+			 setInnerHtml('changeInTreatmentIntent', 'change in treatment intent');
+	     if(getValue('changeInTreatmentPlanResultObs.value')!=null ) 
+			 setInnerHtml('changeInTreatmentPlanResult', 'change in treatment plan because of surgery result');
+		 if(getValue('changeInTreatmentIntentOtherResultObs.value')!=null)
+			 setInnerHtml('changeInTreatmentIntentOtherResult', 'change in treatment plan because of other result (specify):');
+			 setInnerHtml('changeInTreatmentIntentOtherResultText', ''+getValue('changeInTreatmentIntentOtherResultsSpecifiedObs.value'));
+				 
+			if(getValue('surgeryDateObs.value')!=null) 
+					setInnerHtml('surgeryDate', ''+getValue('surgeryDateObs.value'));
+			if(getValue('surgeryFacilityButaroObs.value')!=null)
+	  			  setInnerHtml('surgeryFacilityBH','BH');
+			if(getValue('surgeryFacilityKFObs.value')!=null)
+	    		  setInnerHtml('surgeryFacilityKF','KF');
+	     	 if(getValue('surgeryFacilityCHUKObs.value')!=null)
+	    		 setInnerHtml('surgeryFacilityCHUK','CHUK');
+	     	if(getValue('surgeryFacilityCHUBObs.value')!=null)
+	    		  setInnerHtml('surgeryFacilityCHUB','CHUB');
+	     	if(getValue('surgeryFacilityObsOthers.value')!=null)
+	    	 setInnerHtml('surgeryFacilityothers','OTHERS:');
+	     	 setInnerHtml('surgeryFacilityText', ''+getValue('surgeryFacilityTextObs.value'));
+	     	if(getValue('pathologyFacilityBWHObs.value')!=null)
+	  			  setInnerHtml('pathologyFacilityBWH','BWH');
+	     	if(getValue('pathologyFacilityButaroObs.value')!=null)
+	  			  setInnerHtml('pathologyFacilityBH','BH');
+			if(getValue('pathologyFacilityKFObs.value')!=null)
+	    		  setInnerHtml('pathologyFacilityKF','KF');
+	     	 if(getValue('pathologyFacilityCHUKObs.value')!=null)
+	    		 setInnerHtml('pathologyFacilityCHUK','CHUK');
+	     	if(getValue('pathologyFacilityCHUBObs.value')!=null)
+	    		  setInnerHtml('pathologyFacilityCHUB','CHUB');
+	     	if(getValue('pathologyFacilityObsOthers.value')!=null)
+	    	  setInnerHtml('pathologyFacilityothers','OTHERS:');
+	     	  setInnerHtml('pathologyFacilityText', ''+getValue('pathologyFacilityTextObs.value'));
+	     	if(getValue('surgeryTypeLeftObs.value')!=null)
+    			setInnerHtml('surgeryTypeLeft', 'DONE');
+     		if(getValue('surgeryTypeLeftPartialObs.value')!=null)
+			 setInnerHtml('surgeryLeftPNephro', 'Partial nephrectomy');
+			if(getValue('surgeryTypeLeftTotalObs.value')!=null)
+				setInnerHtml('surgeryLeftTNephro', 'Total nephrectomy');
+			if(getValue('surgeryTypeLeftOtherObs.value')!=null)
+			  setInnerHtml('surgeryTypeLeftOther','Others:');
+			  setInnerHtml('surgeryTypeLeftOtherText',''+getValue('surgeryTypeLeftTextObs.value'));
+			if(getValue('surgeryTypeRightObs.value')!=null)
+		      setInnerHtml('surgeryTypeRight', 'DONE');
+			if(getValue('surgeryTypeRightPartialObs.value')!=null)
+			  setInnerHtml('surgeryRightPNephro', 'Partial nephrectomy');
+			if(getValue('surgeryTypeRightTotalObs.value')!=null)
+			  setInnerHtml('surgeryRightTNephro', 'Total nephrectomy');
+			if(getValue('surgeryTypeRightOtherObs.value')!=null)
+			  setInnerHtml('surgeryTypeRightOther','Others:');
+			  setInnerHtml('surgeryTypeRightOtherText',''+getValue('surgeryTypeRightTextObs.value'));
+	          setInnerHtml('pathologySurgicalNotes', ''+getValue('pathologySurgicalNotesObs.value'));
+	          setInnerHtml('pathologyConfirmedType', ''+$j('#pathologyConfirmedTypeObs option:selected').text());
+			if(getValue('surgeryPathologyReportDateObs.value')!=null)
+				setInnerHtml('surgeryPathologyReportDate', ''+getValue('surgeryPathologyReportDateObs.value'));
+			if(getValue('nopathologyperformed.value')!=null)
+               	setInnerHtml('pathologyNotperformed','N/A (no pathology)');
+			if(getValue('nephroblastomaRiskOS0.value') !=null )
+	     	    setInnerHtml('nephroblastomaRiskO', 'LOW RISK');
+	     	if(getValue('nephroblastomaRiskOS1.value') !=null )
+	     	    setInnerHtml('nephroblastomaRiskO1', 'INTERMEDIATE RISK');
+	     	if(getValue('nephroblastomaRiskOS2.value') !=null )
+	     	    setInnerHtml('nephroblastomaRiskO2', 'HIGH RISK');
+	     	if(getValue('nephroblastomaRiskOS3.value') !=null )
+	     	    setInnerHtml('nephroblastomaRiskO3', 'UNABLE TO CLASSIFY BY PATHOLOGY');
+			if(getValue('nephroblastomaStageOS0.value') !=null )
+	     	    setInnerHtml('nephroblastomaStageO', '0');
+	     	if(getValue('nephroblastomaStageOS1.value') !=null )
+	     	    setInnerHtml('nephroblastomaStageO1', 'I');
+	     	if(getValue('nephroblastomaStageOS2.value') !=null )
+	     	    setInnerHtml('nephroblastomaStageO2', 'II');
+	     	if(getValue('nephroblastomaStageOS3.value') !=null )
+	     	    setInnerHtml('nephroblastomaStageO3', 'III');
+	     	if(getValue('nephroblastomaStageOS4.value') !=null )
+	     	    setInnerHtml('nephroblastomaStageO4', 'IV');
+	     	if(getValue('nephroblastomaStageOS5.value') !=null )
+	     	    setInnerHtml('nephroblastomaStageO5', 'V');
+	     	if(getValue('pathologyTypeLeftObs.value')!=null)
+			   setInnerHtml('pathologyTypeLeft', 'DONE');
+			if(getValue('pathologyTypeLeftStageOS1.value')!=null)
+			  setInnerHtml('pathologyTypeLeftStageO1', 'I');
+			if(getValue('pathologyTypeLeftStageOS2.value')!=null)
+ 			  setInnerHtml('pathologyTypeLeftStageO2', 'II');
+			if(getValue('pathologyTypeLeftStageOS3.value')!=null)
+			  setInnerHtml('pathologyTypeLeftStageO3','III');
+			if(getValue('pathologyTypeRightObs.value')!=null)
+ 			  setInnerHtml('pathologyTypeRight', 'DONE');
+			if(getValue('pathologyTypeRightStageOS1.value')!=null)
+ 			 setInnerHtml('pathologyTypeRightStageO1', 'I');
+ 			if(getValue('pathologyTypeRightStageOS2.value')!=null)
+   			  setInnerHtml('pathologyTypeRightStageO2', 'II');
+ 			if(getValue('pathologyTypeRightStageOS3.value')!=null)
+ 			  setInnerHtml('pathologyTypeRightStageO3','III');
+     		
+        
+		 else{
+			 setInnerHtml('pathologyCompleted', 'No');
+			 $j("#pathology tr:gt(1)").hide();
+		 }
+	 },	 
+	 
+	 handleTreatmentItentSection: function() {//handle Treatment Intent section
+		 //see which treatment intent selected
+	    	var treatmentIntent = $j(".treatmentPlan").find(":checked").closest("td").attr("id");
+	    	
+	    	if(treatmentIntent == 'treatmentCurative'){
+	    		setInnerHtml('treatmentIntent', 'Curative');
+	    	}
+	        if(treatmentIntent == 'treatmentPalliation'){
+	        	setInnerHtml('treatmentIntent', 'Palliation ONLY');
+	    	}
+	 },
+	 
+     handleTreatmentPlanSection: function() {//handle Treatment Plan section
+         /*  now that we are going to play with the treatment plan sections (i.e radiation and chemotherapy) 
+         we need to initisalize them to hidden state and we'll be toggling them one by one according to whether a section is selected or not */
+         $j('#radiationTreatmentPlan').hide();
+         $j('#chemotherapyTreatmentPlan_1').hide();
+        
+       //find selected sections
+         var radiationPlanned = $j(".radiation").find(":checked").closest("td").attr("id");
+         var chemotherapyPlanned = $j(".chemotherapy").find(":checked").closest("td").attr("id"); 
+        
+       
+         //handle radiation section if selected
+         if(radiationPlanned == 'trigger22'){
+           	$j('#radiationTreatmentPlan').show();
+           	if(getValue('radiationFacilityMulagoObs.value')!=null)
+ 			 setInnerHtml('radiationFacilityMulago','Mulago');
+           	if(getValue('radiationFacilityOthers.value')!=null)
+ 		    	setInnerHtml('otherradiationFacility','Others:')
+ 		    	setInnerHtml('othersradiationFacilityText',''+getValue('radiationFacilityText.value'));
+          }
+         
+       //handle chemotherapy section if selected
+         if(chemotherapyPlanned == 'trigger23_1'){
+          	$j('#chemotherapyTreatmentPlan_1').show();
+      		//setInnerHtml('chemotherapyRegimen', ''+$j('#chemotherapyRegimenObs option:selected').text());
+      		setInnerHtml('chemotherapyCycles', ''+checkEmptyInputs(getValue('chemotherapyCyclesObs.value'),'',Math.floor(getValue('chemotherapyCyclesObs.value'))));
+      		setInnerHtml('chemotherapyFirstCycle', ''+getValue('chemotherapyFirstCycleObs.value'));
+      		setInnerHtml('chemotherapyRegimenEnd', ''+checkEmptyInputs(getValue('chemotherapyRegimenEndObs.value'),'',getValue('chemotherapyRegimenEndObs.value')));
+      		setInnerHtml('chemotherapyStandardRegimen', ''+getValue('chemotherapyStandardRegimenObs.value'));
+      		
+      		if(getValue('chemotherapyRegimenVincriObs.value')!=null)
+ 			  setInnerHtml('chemotherapyRegimen', 'Vincristine/Actinomycin D');
+ 			if(getValue('chemotherapyRegimenVincriDObs.value')!=null)
+ 			  setInnerHtml('chemotherapyRegimen', 'Vincristine/Actinomycin D/Doxorubicin');
+ 			if(getValue('postoperativeChemo.value')!=null)
+ 			      setInnerHtml('postoperativeChemoRegimen','<b>POST-OPERATIVE \u2713 </b>');
+
+      	}
+	 },
+	};
+    
+    $j("#printLinkSpan").find("a[href]").click(function(event) {    
+    	var diagnosis = {trigger1:'nephroblastoma'};
+		
+    	var printHandler = null;
+    	var checked = null;
+    	
+    	if(isEditMode()){ //the form is in the edit mode
+    		
+    		printHandler = new EditModeHandler();    		
+    	    checked = $j(".checkboxGroup").find(":checked").closest("td").attr("id");
+    	    
+    	}else if(isViewMode()){//the form is in the view mode
+    		
+    		printHandler = new ViewModeHandler();    		
+    		 var elements = [];
+    			$j("td[id^='trigger']").each(function(){
+    			   elements.push(this.id); 
+    			});
+
+    			for(var i = 0; i &lt; 19; i++){
+    				if($j('#'+elements[i]).children("span").attr("class") == 'value'){
+    					 checked = elements[i];
+    				}
+    			}
+    	}else{//this should be the enter mode which should be handled the same way as the edit mode
+    		//(..this means we treat the edit mode as the default mode)
+    		
+    		printHandler = new EditModeHandler();    		
+    	    checked = $j(".checkboxGroup").find(":checked").closest("td").attr("id");
+    	}
+    	
+          
+    	printHandler.handleHeadingSection();
+    	//printHandler.handleHeadingSection(diagnosis[checked]);
+    	
+         /* now that we want to play with the printable sections, lets set them all to visible 
+         and we'll be hinding them one by one skiping the one whe have to show (see the hideOthers method) */
+    	for (var i = 0; i &lt; printableTables.length; i++) {
+		    var tableToHide=printableTables[i];
+		    	  $j('#'+tableToHide).show();
+		}
+    	
+    /* switch(checked)
+    {
+       case 'trigger1':
+    	   printHandler.handleNephroblastomaCancerSection();    	
+      break;       
+    	default:
+    	  alert("No cancer type selected");
+    	} */
+    	
+    
+        printHandler.handleNephroblastomaCancerSection();
+    
+         //handle pathology section    
+        printHandler.handlePathologySection();
+    	 
+    	 /* the following lines are about handling the treatment plan section  */
+ 	    
+ 	    //handle treatment intent section
+        printHandler.handleTreatmentItentSection();
+    	 
+    	 //handle radiation and chemotherapy sections
+        printHandler.handleTreatmentPlanSection();    	
+	  });
+
+ });
+}
+</script>
+    <div id="printArea">
+        <div style="width: 100%; clear: both;">
+            <div style="float: left; width: 45%;">
+                <h4>
+                    Date Created: <span id="date"></span>
+                </h4>
+            </div>
+            <div style="float: right; width: 45%; text-align: right;">
+                <h4>
+                    Author: <span id="provider"></span>
+                </h4>
+            </div>
+        </div>
+        <table>
+            <tr class="diagnosisPrintArea">
+                <td width="9%"><img src="/openmrs/moduleResources/rwandareports/images/pihHands.png" align="left"
+                                    height="65" ></img></td>
+                <td style="border-right: 1px solid white;"><b>Inshuti Mu
+                    Buzima <br />PIH Rwanda</b></td>
+                <td align="right">Oncology Program / Programme d'oncologie<br />
+                    <h5>Diagnosis – Post Nephroblastoma</h5></td>
+            </tr>
+        </table>
+        <br />
+        <table>
+            <tr>
+                <th colspan="3">Patient Details</th>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td class="lables">IMB ID</td>
+                <td colspan="2" class="values"><lookup class="value"
+                                                       expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
+                                                                                                                          expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td class="lables">Name</td>
+                <td colspan="2" class="values"><lookup class="value"
+                                                       expression="patient.personName.familyName" /> <lookup
+                        class="value" expression="patient.personName.givenName" /></td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td class="lables">Clinique / Clinic</td>
+                <td colspan="2" class="values"><span id="locationPrintArea"></span>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table>
+            <tr>
+                <th colspan="3">Managing Doctors</th>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td class="lables">Managing DCA</td>
+                <td colspan="2" class="values"><span id="managingDCA"></span></td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td class="lables">Managing GP</td>
+                <td colspan="2" class="values"><span id="managingGP"></span></td>
+            </tr>
+        </table>
+        <br />
+
+        <br />
+        <table>
+            <tr class="diagnosisPrintArea">
+                <th colspan="3">DISEASE WORK-UP</th>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td class="lables">Reason for change in treatment</td>
+                <td colspan="2" class="values">
+                    <span id="changeInTreatmentIntent"></span>
+                    <span id="changeInTreatmentPlanResult"></span>
+                    <span id="changeInTreatmentIntentOtherResult"></span>
+                    <span id="changeInTreatmentIntentOtherResultText"></span>
+                </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td class="lables">Date of Surgery: <span id="surgeryDate"></span></td>
+                <td class="lables" colspan="2">Institution:
+                    <span id="surgeryFacilityBH"></span>
+                    <span id="surgeryFacilityKF"></span>
+                    <span id="surgeryFacilityCHUK"></span>
+                    <span id="surgeryFacilityCHUB"></span>
+                    <span id="surgeryFacilityothers"></span>
+                    <span id="surgeryFacilityText"></span>
+                </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td class="lables">Surgical Procedure</td>
+                <td>Left Side: <span id="surgeryTypeLeft"></span>&#160;&#160;&#160;<br/>
+                    Right Side: <span id="surgeryTypeRight"></span>&#160;&#160;&#160;
+                </td>
+                <td colspan="2" class="values">
+
+                    <span id="surgeryLeftPNephro"></span>
+                    <span id="surgeryLeftTNephro"></span>
+                    <span id="surgeryTypeLeftOther"></span>
+                    <span id="surgeryTypeLeftOtherText"></span>
+                    <br/>
+
+                    <span id="surgeryRightPNephro"></span>
+                    <span id="surgeryRightTNephro"></span>
+                    <span id="surgeryTypeRightOther"></span>
+                    <span id="surgeryTypeRightOtherText"></span>
+                </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td>Other Notes:</td>
+                <td colspan="2"><span id="pathologySurgicalNotes"></span></td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td>Surgical Pathology Report Date:</td>
+                <td colspan="2">
+                    <span id="surgeryPathologyReportDate"></span>
+                    <span id="pathologyNotperformed"></span>
+                </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td class="lables">Institution issuing surgical Pathology report:</td>
+                <td class="lables" colspan="2">Site:
+                    <span id="pathologyFacilityBWH"></span>
+                    <span id="pathologyFacilityBH"></span>
+                    <span id="pathologyFacilityKF"></span>
+                    <span id="pathologyFacilityCHUK"></span>
+                    <span id="pathologyFacilityCHUB"></span>
+                    <span id="pathologyFacilityothers"></span>
+                    <span id="pathologyFacilityText"></span>
+                </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td>Wilm's Tumor Type:</td>
+                <td colspan="2"><span id="pathologyConfirmedType"></span></td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td class="lables">Risk Classification:</td>
+                <td colspan="2" class="values">
+                    <span id="nephroblastomaRiskO"></span>
+                    <span id="nephroblastomaRiskO1"></span>
+                    <span id="nephroblastomaRiskO2"></span>
+                    <span id="nephroblastomaRiskO3"></span>
+
+                </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td class="lables">Overall Stage*</td>
+                <td colspan="2" class="values">
+                    <span id="nephroblastomaStageO"></span>
+                    <span id="nephroblastomaStageO1"></span>
+                    <span id="nephroblastomaStageO2"></span>
+                    <span id="nephroblastomaStageO3"></span>
+                    <span id="nephroblastomaStageO4"></span>
+                    <span id="nephroblastomaStageO5"></span>
+                </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td class="lables">**If Stage V, specify bilateral staging:</td>
+                <td>Right: <span id="pathologyTypeRight"></span>&#160;&#160;&#160;<br/>
+                    Left: <span id="pathologyTypeLeft"></span>&#160;&#160;&#160;
+                </td>
+                <td colspan="2" class="values">
+                    <span id="pathologyTypeRightStageO1"></span>
+                    <span id="pathologyTypeRightStageO2"></span>
+                    <span id="pathologyTypeRightStageO3"></span>
+                    <br/>
+                    <span id="pathologyTypeLeftStageO1"></span>
+                    <span id="pathologyTypeLeftStageO2"></span>
+                    <span id="pathologyTypeLeftStageO3"></span>
+
+                </td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        <table id="treatmentPlan">
+            <tr class="diagnosisPrintArea">
+                <th colspan="3">Pre-Operative Treatment Plan</th>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td class="lables">Intent</td>
+                <td colspan="2" class="values"><span id="treatmentIntent"></span>
+                </td>
+            </tr>
+        </table>
+        <table id="radiationTreatmentPlan">
+            <tr class="diagnosisPrintArea">
+                <th colspan="3">Radiationtherapy</th>
+            </tr>
+
+            <tr class="diagnosisPrintArea">
+                <td class="lables">Facility</td>
+                <td colspan="2" class="values">
+                    <span id="radiationFacilityMulago"></span>
+                    <span id="otherradiationFacility"></span>
+                    <span id="othersradiationFacilityText"></span>
+                </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td class="lables">Start Date</td>
+                <td colspan="2" class="values"><span id="radiationStartDate"></span>
+                </td>
+            </tr>
+        </table>
+        <table id="chemotherapyTreatmentPlan">
+            <tr class="diagnosisPrintArea">
+                <th colspan="3">Chemotherapy</th>
+            </tr>
+
+            <tr class="diagnosisPrintArea">
+                <td class="lables">Regimen Type</td>
+                <td colspan="2" class="values"><span id="chemotherapyRegimen"></span>
+                </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td class="lables">Regimen Timing: </td>
+                <td colspan="2" class="values"><span id="postoperativeChemoRegimen"></span>
+                </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td class="lables">Cycles</td>
+                <td colspan="2" class="values"><span id="chemotherapyCycles"></span>
+                </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+
+                <td class="lables">Planned first cycle</td>
+                <td colspan="2" class="values"><span id="chemotherapyFirstCycle"></span>
+                </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+
+                <td class="lables">Planned regimen length</td>
+                <td colspan="2" class="values"><span id="chemotherapyRegimenEnd"></span>
+                </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td class="lables">Changes to standard regimen</td>
+                <td colspan="2" class="values"><span
+                        id="chemotherapyStandardRegimen"></span></td>
+            </tr>
+        </table>
+        <br/><br/><br/>
+        <table id="signature">
+
+            <tr class="diagnosisPrintArea, spaceUnder">
+                <td class="lables">Specialists consulted on this case:</td>
+                <td class="values"><span ><input type="checkbox" name="" value="">Oncologist:___________________</input></span></td>
+                <td class="values"><span ><input type="checkbox" name="" value="">Surgeon:___________________</input><input type="checkbox" name="" value="">None</input></span></td>
+            </tr>
+            <tr class="diagnosisPrintArea, spaceUnder">
+                <td colspan="3" class="lables"><b>Staging and treatment plan confirmed by:</b></td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td class="values"><span>__________________________________<br/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(Internist Name)</span></td>
+                <td class="values"><span>__________________________________<br/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(Signature)</span></td>
+                <td class="values"><span>________/___________/_____________<br/>&#160;&#160;&#160;&#160;(dd)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(mm)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(yyy)</span></td>
+            </tr>
+        </table>
+        <br/><br/><br/><br/><br/>
+        <table>
+            <tr class="diagnosisPrintArea">
+                <td colspan="6" bgcolor="#8a8a8a">
+                    <b>*Tumor Risk classification (SIOP,2001):</b></td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td><b>Stage</b></td>
+                <td colspan="5"><b><CENTER>Characteristics</CENTER></b></td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td><h5>I Low Risk</h5></td>
+                <td colspan="5"><span style="float: left;">
+						<ul>
+                            <li>Mesoblastic nephroma</li>
+                            <li>Cystic partially differentiated nephroblastoma</li>
+                            <li>Nephroblastomadcompletely necrotic (following preoperative chemotherapy)</li>
+
+                        </ul> </span> </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td><h5>II Intermediate Risk</h5></td>
+                <td colspan="5"><span style="float: left;">
+						<ul>
+                            <li>Nephroblastomadepithelial type</li>
+                            <li>Nephroblastomadstromal type</li>
+                            <li>Nephroblastomadmixed type </li>
+                            <li>Nephroblastomadregressive type</li>
+                            <li>Nephroblastomadfocal anaplasia type</li>
+                        </ul> </span> </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td><h5>III High Risk</h5></td>
+                <td colspan="5"><span style="float: left;">
+						<ul>
+                            <li>Nephroblastomadblastemal type</li>
+                            <li>Nephroblastomaddiffuse anaplasia type</li>
+                            <li>Clear cell sarcoma of the kidney</li>
+                            <li>Rhabdoid tumour of the kidney</li>
+                        </ul>
+						 </span>
+                </td>
+            </tr>
+
+            <tr class="diagnosisPrintArea">
+                <td colspan="6" bgcolor="#8a8a8a">
+                    <b><small>*SIOP Staging of Nephroblastoma:based upon surgical evaluation after administration of chemotherapy to reduce the size of the tumor</small></b></td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td><b>Stage</b></td>
+                <td colspan="5"><b><CENTER>Characteristics</CENTER></b></td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td><h5><center>I</center></h5></td>
+                <td colspan="5"><span style="float: left;">
+						<ul>
+                            <li>Tumor is fully resected and is limited to the kidney,
+                                or if outside the kidney, it is surrounded with a fibrous
+                                pseudocapsule. Tumor may be found in the renal capsule, pelvic
+                                system (but not involving the ureter walls), and intrarenal
+                                vessels. There is no evidence of renal sinus vessel involvement
+                                or tumor at or beyond the margins of resection</li>
+                        </ul>
+						 </span>
+                </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td><h5><center>II</center></h5></td>
+                <td colspan="5"><span style="float: left;">
+						<ul>
+                            <li>Tumor extends beyond the kidney or fibrous
+                                pseudocapsule but is completely resected without evidence of
+                                tumor at or beyond the margins of resection. Tumor infiltrates,
+                                which are completely resected, can extend into the renal sinus,
+                                blood vessels and lymph nodes beyond the renal parenchyma,
+                                adjacent organs, or vena cava.</li>
+                        </ul>
+						 </span>
+                </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td><h5><center>III</center></h5></td>
+                <td colspan="5"><span style="float: left;">
+						<ul>
+                            <li>After surgery, residual tumor remains but is
+                                confined to the abdomen. This includes regional lymph node
+                                involvement, incomplete resection of the tumor, tumor
+                                penetration of the peritoneal surface, tumor thrombi of vessels
+                                at resection margins, tumor spillage, or previous biopsy. There
+                                is no evidence of hematogenous metastasis.</li>
+                        </ul>
+						 </span>
+                </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td><h5><center>IV</center></h5></td>
+                <td colspan="5"><span style="float: left;">
+						<ul>
+                            <li>Hematogenous metastasis (e.g. lung, liver, bone,
+                                brain) or lymph node involvement beyond the abdominopelvic
+                                region.</li>
+                        </ul>
+						 </span>
+                </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td><h5><center>V</center></h5></td>
+                <td colspan="5"><span style="float: left;">
+						<ul><li>Bilateral renal involvement is present at the time of
+                            diagnosis.</li></ul></span> </td>
+            </tr>
+            <tr class="diagnosisPrintArea">
+                <td colspan="6">
+                    <small>SIOP=International Society of Pediatric Oncology<br/><br/>
+                        Vujanić, G. M., &amp; Sandstedt, B. (2010). The pathology of Wilms’ tumour (nephroblastoma): the International Society of Paediatric Oncology approach.
+                        <br/> Journal of clinical pathology, 63(2), 102–9. doi:10.1136/jcp.2009.064600<br/><br/>
+                        Israels, T., Moreira, C., Scanlan, T., Molyneux, L., Kampondeni, S., Hesseling, P., ... Borgstein, E. (2013). SIOP PODC :
+                        Clinical Guidelines for the <br/>Management of Children With Wilms Tumour in a Low Income Setting. Pediatric Blood Cancer, (60).</small>
+                </td>
+            </tr>
+        </table>
+
+
+    </div>
+    <div id="container">
+        <section>
+
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td><b> IMB ID: <lookup class="value"
+                                            expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
+                                                                                                               expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
+                    </td>
+                    <td>Date: <encounterDate id="encounterDate" default="today" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nom / Last name: <lookup class="value"
+                                                 expression="patient.personName.familyName" />
+                    </td>
+                    <td>Prénom/ First name: <lookup class="value"
+                                                    expression="patient.personName.givenName" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><img src="/openmrs/moduleResources/rwandareports/images/pihHands.png" align="left"
+                             height="65" ></img>
+                        <h2>
+                            Inshuti Mu Buzima <br /> PIH Rwanda
+                        </h2>
+                    </td>
+                    <td><strong> Oncology Program / Programme d'oncologie <br />
+                        Diagnosis – Staging – Treatment Plan</strong> <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Clinique / Clinic: <encounterLocation id="encounterLocation" default="Butaro Hospital" />
+                    </td>
+                    <td>Author:<encounterProvider id="encounterProvider"
+                                                  role="Oncology Provider" />
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table>
+                <tr>
+                    <th class="tableHeader">MANAGING DCA</th>
+                </tr>
+                <tr class="spaceUnder">
+                    <td><relationship id="managingDCA"
+                                      type="2293a1d2-6ec5-428c-8230-b78353952a13" whoAmI="B"
+                                      changeExistingRelationship="false" />
+                    </td>
+                </tr>
+                <tr class="spaceUnder">
+                    <td></td>
+                </tr>
+                <tr>
+                    <th class="tableHeader">MANAGING GP</th>
+                </tr>
+                <tr>
+                    <td><relationship id="managingGP"
+                                      type="ff98bcbf-1706-456e-bba6-77588f5f1b45" whoAmI="B"
+                                      changeExistingRelationship="false" />
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <br />
+        <table class="checkboxGroup togglebles">
+
+            <obs id="cervicalCancer" conceptId="3dc2eb50-6981-43d3-b907-e3dd8b5ed620" answerConceptId="5b89422f-573e-4f99-8a35-941c291f6848" />
+        </table>
+        <br/>
+        <table>
+            <tr class="spaceUnder">
+                <th class="tableHeader" colspan="3">DISEASE WORK-UP</th>
+                <th class="tableHeader" colspan="3">This is a follow-up DST for (select reason):<br />
+                    <table>
+                        <tr class="checkboxGroup">
+                            <td width="265px">
+                                <obs id="changeInTreatmentIntentObs" conceptId="28cc8546-9325-455f-b199-731fa9e1f500" answerConceptId="9a0b29d4-8df8-4c50-b8b7-0a943fe6c243" answerLabel="change in treatment intent" /><br/>
+                                <obs id="changeInTreatmentPlanResultObs" conceptId="28cc8546-9325-455f-b199-731fa9e1f500" answerConceptId="116cfd14-b950-4477-9eeb-0ce3b603822d" answerLabel="change in treatment plan because of surgery result"/><br/>
+                                <obs id="changeInTreatmentIntentOtherResultObs" conceptId="28cc8546-9325-455f-b199-731fa9e1f500" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="change in treatment plan because of other result (specify): " />
+                                <obs id="changeInTreatmentIntentOtherResultsSpecifiedObs" conceptId="f19fd580-617c-4933-ae78-632cd5f68024" labelText="" />
+                                <br/><br/>
+                            </td>
+                        </tr>
+                    </table>
+                </th>
+            </tr>
+        </table>
+        <table class="togglebles">
+            <TBODY>
+            <!-- Begin of the pathology section -->
+            <tr class="spaceUnder">
+                <td colspan="6"><table style='border: 0px;'>
+                    <!-- <TBODY id="toggleble20"> -->
+                    <tr>
+                        <th class="tableHeader" colspan="8">FINAL DIAGNOSIS &#38;
+                            STAGING</th>
+                    </tr>
+                    <tr class="spaceUnder">
+                        <td colspan="6"><b>Notes from Operative Report/Consultation Surgeon:</b><br/>
+                            <small>(Include a copy of operative report in chart, if applicable)</small></td>
+                    </tr>
+                    <!-- <obsgroup groupingConceptId="639fb794-8a5a-4958-b4b1-749e554f44fb"> -->
+                    <tr class="spaceUnder">
+                        <td class="checkboxGroup">Date of Surgery:&#160;&#160;&#160;&#160;&#160;
+                            <obs id="surgeryDateObs" conceptId="48e392bb-0685-4ab3-a217-fd23502a5635" labelText="" />&#160;&#160;&#160;&#160;&#160;&#160;
+                            Institution:<obs id="surgeryFacilityButaroObs" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="682754d6-cff2-4f2e-90a3-ea3b1e7fa230" answerLabel="Butaro" style="checkbox" />
+                            <obs id="surgeryFacilityKFObs" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="55acdf7c-5027-4f01-90a2-ab9745f97dd3" answerLabel="KHF" style="checkbox" />
+                            <obs id="surgeryFacilityCHUKObs" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="68222ccb-71ee-418e-a4a4-b924b4e80108" answerLabel="CHUK" style="checkbox" />
+                            <obs id="surgeryFacilityCHUBObs" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="2b472c6b-a0d4-44b1-bb2f-3d44289a19e5" answerLabel="CHUB" style="checkbox" />
+                            <obs id="surgeryFacilityObsOthers" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="OTHERS" style="checkbox" />
+                            <obs id="surgeryFacilityTextObs" conceptId="13c825f8-615a-429d-b813-ef9bdf8830ea" labelText="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Surgical Procedure:</td>
+                    </tr>
+                    <tr class="spaceUnder">
+                        <td>
+                            <table style='border: 0px;'><tr>
+                                <td><obs id="surgeryTypeLeftObs" conceptId="f2dc764c-255b-4959-beec-b2a14b597cd3" answerConceptId="51f29eee-66e8-4ec6-bf04-dd386e44cedb" answerLabel="Left Side:" style="checkbox" />&#160;&#160;&#160;
+                                    <br/><obs id="surgeryTypeRightObs" conceptId="f2dc764c-255b-4959-beec-b2a14b597cd3" answerConceptId="feb907f8-6a2b-4259-9a9b-1bd4e5d9ac7e" answerLabel="Right Side:" style="checkbox" />
+                                </td>
+                                <td colspan="2"><table style='border: 0px;'><tr><td class="checkboxGroup">
+                                    <obs id="surgeryTypeLeftPartialObs" conceptId="51f29eee-66e8-4ec6-bf04-dd386e44cedb" answerConceptId="4a3a38be-67dc-4000-8f71-06a01756151a" answerLabel="Partial Nephrectomy" style="checkbox" />
+                                    <obs id="surgeryTypeLeftTotalObs" conceptId="51f29eee-66e8-4ec6-bf04-dd386e44cedb" answerConceptId="2d883de4-7295-4ab2-b91f-51890b4f16da" answerLabel="Total Nephrectomy" style="checkbox" />
+                                    <obs id="surgeryTypeLeftOtherObs" conceptId="51f29eee-66e8-4ec6-bf04-dd386e44cedb" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Others:" style="checkbox" />&#160;&#160;&#160;
+                                    <obs id="surgeryTypeLeftTextObs" conceptId="7190388d-afb5-4461-8ba0-887f539f4846" labelText=""  />
+                                    <br/></td></tr><tr><td class="checkboxGroup">
+                                    <obs id="surgeryTypeRightPartialObs" conceptId="feb907f8-6a2b-4259-9a9b-1bd4e5d9ac7e" answerConceptId="4a3a38be-67dc-4000-8f71-06a01756151a" answerLabel="Partial Nephrectomy" style="checkbox" />
+                                    <obs id="surgeryTypeRightTotalObs" conceptId="feb907f8-6a2b-4259-9a9b-1bd4e5d9ac7e" answerConceptId="2d883de4-7295-4ab2-b91f-51890b4f16da" answerLabel="Total Nephrectomy" style="checkbox" />
+                                    <obs id="surgeryTypeRightOtherObs" conceptId="feb907f8-6a2b-4259-9a9b-1bd4e5d9ac7e" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Others:" style="checkbox" />&#160;&#160;&#160;
+                                    <obs id="surgeryTypeRightTextObs" conceptId="bc25adb9-1d19-498e-86bd-35f1002f582f" labelText="" />
+                                </td></tr></table>
+                                </td></tr></table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Other Notes:</td>
+                    </tr>
+                    <tr><td colspan="5">
+                        <obs id="pathologySurgicalNotesObs" conceptId="826af985-d6b8-46a5-8773-92e53ee10d45" rows="5" cols="60" labelText="" />
+                    </td></tr>
+                    <tr class="spaceUnder">
+                        <td><br/><b>Surgical Pathology report date:</b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs id="surgeryPathologyReportDateObs" conceptId="926dd83d-5c6c-43d9-9fb8-a8c2e364d5f6" labelText="" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs id="nopathologyperformed" conceptId="145c13d3-dfbb-4dc6-9986-d10fd5e9bf48" answerConceptId="3cd6f86c-26fe-102b-80cb-0017a47871b2" answerLabel="N/A (no pathology)" style="checkbox" />
+                            <br/><small>(include a copy of pathology report in chart, if applicable)</small>
+                        </td>
+                    </tr>
+                    <tr class="spaceUnder">
+                        <td class="checkboxGroup">Institution issuing surgical pathology report:&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs id="pathologyFacilityBWHObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="6c87ddb0-f8e9-4115-98cc-5e71903f2c04" answerLabel="BWH" style="checkbox" />
+                            <obs id="pathologyFacilityButaroObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="682754d6-cff2-4f2e-90a3-ea3b1e7fa230" answerLabel="Butaro" style="checkbox" />
+                            <obs id="pathologyFacilityKFObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="55acdf7c-5027-4f01-90a2-ab9745f97dd3" answerLabel="KHF" style="checkbox" />
+                            <obs id="pathologyFacilityCHUKObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="68222ccb-71ee-418e-a4a4-b924b4e80108" answerLabel="CHUK" style="checkbox" />
+                            <obs id="pathologyFacilityCHUBObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="2b472c6b-a0d4-44b1-bb2f-3d44289a19e5" answerLabel="CHUB" style="checkbox" />
+                            <obs id="pathologyFacilityObsOthers" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="OTHERS" style="checkbox" />
+                            <obs id="pathologyFacilityTextObs" conceptId="deeca3da-a026-446b-a756-0f6eaecfd9a7" labelText="" />
+                        </td>
+                    </tr>
+                    <tr class="spaceUnder">
+                        <td>Pathologic diagnosis (Wilm's Tumor) Specify Type:&#160;&#160;&#160;&#160;
+                            <obs id="pathologyConfirmedTypeObs" conceptId="bb6ae40a-f0ed-4391-ac92-76d4c3e142c1" labelText="" />
+                        </td>
+                    </tr>
+                    <tr class="spaceUnder">
+                        <td>
+                            Diagnosis Status:  &#160;&#160;&#160;&#160;
+                            <workflowState workflowId="$@Diagnosis_Status@" type="radio"/>
+                        </td>
+                    </tr>
+                    <tr><td><hr/></td></tr>
+                    <tr class="spaceUnder">
+                        <td colspan="6"><b>Confirmed Disease Stage</b></td>
+                    </tr>
+                    <tr class="checkboxGroup">
+                        <td>Risk Classification†:&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs id="nephroblastomaRiskOS0" conceptId="559083a3-1a0f-4a67-98ff-1997534f2a42" answerConceptId="a5428445-23de-43bd-bbfb-b4054d3b1005" answerLabel="I-Low Risk" />&#160;&#160;&#160;&#160;&#160;
+                            <obs id="nephroblastomaRiskOS1" conceptId="559083a3-1a0f-4a67-98ff-1997534f2a42" answerConceptId="7a5652ea-dacc-46f0-8c45-329fa28e09aa" answerLabel="II-Intermediate Risk" />&#160;&#160;&#160;&#160;&#160;
+                            <obs id="nephroblastomaRiskOS2" conceptId="559083a3-1a0f-4a67-98ff-1997534f2a42" answerConceptId="c5382fcc-e3b5-4676-95a3-1b09489f8429" answerLabel="III-High Risk" />&#160;&#160;&#160;&#160;&#160;
+                            <obs id="nephroblastomaRiskOS3" conceptId="559083a3-1a0f-4a67-98ff-1997534f2a42" answerConceptId="3cd774d6-26fe-102b-80cb-0017a47871b2" answerLabel="Unable to clasiffy by Pathology" />&#160;&#160;&#160;&#160;&#160;
+                        </td>
+                    </tr>
+
+
+                    <tr class="checkboxGroup">
+                        <td>Overall Stage*:&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs id="nephroblastomaStageOS0" conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="11ad3741-d3fe-48ff-8872-ce42c8764d34" answerLabel="0" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs id="nephroblastomaStageOS1" conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="39c6497d-fe50-4dcf-86e4-5360e1d32f82" answerLabel="I" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs id="nephroblastomaStageOS2" conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="c899d4c0-91a1-42f2-b395-114740f237fd" answerLabel="II" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs id="nephroblastomaStageOS3" conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="1d5896f3-2e0e-4bc2-aa6c-afe1911afa79" answerLabel="III" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs id="nephroblastomaStageOS4" conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="d2f21acb-9519-42ca-a72d-2fcb6bb15c5d" answerLabel="IV" />
+                        </td>
+                        <td id="trigger21"><obs id="nephroblastomaStageOS5" conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="afe0e350-6be0-4093-a701-923a446f1924" answerLabel="V" /></td>
+                    </tr>
+                    <TBODY id="toggleble21">
+                    <tr>
+                        <td><br/>**If Stage V, specify bilateral staging:</td>
+                    </tr>
+                    <tr class="spaceUnder">
+                        <td>
+                            <table style='border: 0px;'><tr>
+                                <td><obs id="pathologyTypeRightObs" conceptId="9edfb940-f4ff-49a5-8eab-84c95034a6d6" answerConceptId="feb907f8-6a2b-4259-9a9b-1bd4e5d9ac7e" answerLabel="Right: " style="checkbox" />
+                                    <br/><obs id="pathologyTypeLeftObs" conceptId="9edfb940-f4ff-49a5-8eab-84c95034a6d6" answerConceptId="51f29eee-66e8-4ec6-bf04-dd386e44cedb" answerLabel="Left: " style="checkbox" />&#160;&#160;&#160;&#160;&#160;
+                                </td>
+                                <td colspan="2"><table style='border: 0px;'><tr><td class="checkboxGroup">
+                                    <obs id="pathologyTypeRightStageOS1" conceptId="feb907f8-6a2b-4259-9a9b-1bd4e5d9ac7e" answerConceptId="39c6497d-fe50-4dcf-86e4-5360e1d32f82" answerLabel="I" style="checkbox" />&#160;&#160;&#160;&#160;&#160;
+                                    <obs id="pathologyTypeRightStageOS2" conceptId="feb907f8-6a2b-4259-9a9b-1bd4e5d9ac7e" answerConceptId="c899d4c0-91a1-42f2-b395-114740f237fd" answerLabel="II" style="checkbox" />&#160;&#160;&#160;
+                                    <obs id="pathologyTypeRightStageOS3" conceptId="feb907f8-6a2b-4259-9a9b-1bd4e5d9ac7e" answerConceptId="1d5896f3-2e0e-4bc2-aa6c-afe1911afa79" answerLabel="III" style="checkbox" />
+                                    <br/></td></tr><tr><td class="checkboxGroup">
+                                    <obs id="pathologyTypeLeftStageOS1" conceptId="51f29eee-66e8-4ec6-bf04-dd386e44cedb" answerConceptId="39c6497d-fe50-4dcf-86e4-5360e1d32f82" answerLabel="I" style="checkbox" />&#160;&#160;&#160;&#160;&#160;
+                                    <obs id="pathologyTypeLeftStageOS2" conceptId="51f29eee-66e8-4ec6-bf04-dd386e44cedb" answerConceptId="c899d4c0-91a1-42f2-b395-114740f237fd" answerLabel="II" style="checkbox" />&#160;&#160;&#160;
+                                    <obs id="pathologyTypeLeftStageOS3" conceptId="51f29eee-66e8-4ec6-bf04-dd386e44cedb" answerConceptId="1d5896f3-2e0e-4bc2-aa6c-afe1911afa79" answerLabel="III" style="checkbox" />
+                                </td></tr></table>
+                                </td></tr></table>
+                        </td>
+                    </tr>
+                    </TBODY>
+                    <!-- BEGGINING OF STAGING KEY COMMENTS -->
+                    <tr class="nephroblastomaCancerStagingKeys">
+                        <td colspan="6" bgcolor="#8a8a8a">
+                            <b>*Tumor Risk classification (SIOP,2001):</b>
+                        </td></tr>
+                    <tr class="nephroblastomaCancerStagingKeys">
+                        <td colspan="6"><span style="float: left;">
+						<h5>I Low Risk</h5>
+						<ul>
+                            <li>Mesoblastic nephroma</li>
+                            <li>Cystic partially differentiated nephroblastoma</li>
+                            <li>Nephroblastomadcompletely necrotic (following preoperative chemotherapy)</li>
+
+                        </ul> </span> </td>
+                    </tr>
+
+                    <tr class="nephroblastomaCancerStagingKeys">
+                        <td colspan="6"><span style="float: left;">
+						<h5>II Intermediate Risk</h5>
+						<ul>
+                            <li>Nephroblastomadepithelial type</li>
+                            <li>Nephroblastomadstromal type</li>
+                            <li>Nephroblastomadmixed type </li>
+                            <li>Nephroblastomadregressive type</li>
+                            <li>Nephroblastomadfocal anaplasia type</li>
+                        </ul> </span> </td>
+                    </tr>
+
+                    <tr class="nephroblastomaCancerStagingKeys">
+                        <td colspan="6"><span style="float: left;">
+						<h5>III High Risk</h5>
+						<ul>
+                            <li>Nephroblastomadblastemal type</li>
+                            <li>Nephroblastomaddiffuse anaplasia type</li>
+                            <li>Clear cell sarcoma of the kidney</li>
+                            <li>Rhabdoid tumour of the kidney</li>
+                        </ul>
+						<small>*SIOP Staging of Nephroblastoma:based upon surgical evaluation after administration of chemotherapy to reduce the size of the tumor</small>
+						 </span>
+                        </td>
+                    </tr>
+
+                    <tr class="nephroblastomaCancerStagingKeys" bgcolor="#8a8a8a">
+                        <td colspan="6"><span style="float: left;"><b>Stage  Characteristics</b></span></td>
+                    </tr>
+
+                    <tr class="nephroblastomaCancerStagingKeys">
+                        <td colspan="6"><span style="float: left;">
+						<ul>
+                            <li><b>I</b>  Tumor is fully resected and is limited to the kidney,
+                                or if outside the kidney, it is surrounded with a fibrous
+                                pseudocapsule. Tumor may be found in the renal capsule, pelvic
+                                system (but not involving the ureter walls), and intrarenal
+                                vessels. There is no evidence of renal sinus vessel involvement
+                                or tumor at or beyond the margins of resection.</li>
+                            <li><b>II</b>  Tumor extends beyond the kidney or fibrous
+                                pseudocapsule but is completely resected without evidence of
+                                tumor at or beyond the margins of resection. Tumor infiltrates,
+                                which are completely resected, can extend into the renal sinus,
+                                blood vessels and lymph nodes beyond the renal parenchyma,
+                                adjacent organs, or vena cava.</li>
+                            <li><b>III</b>  After surgery, residual tumor remains but is
+                                confined to the abdomen. This includes regional lymph node
+                                involvement, incomplete resection of the tumor, tumor
+                                penetration of the peritoneal surface, tumor thrombi of vessels
+                                at resection margins, tumor spillage, or previous biopsy. There
+                                is no evidence of hematogenous metastasis.</li>
+                            <li><b>IV</b>  Hematogenous metastasis (e.g. lung, liver, bone,
+                                brain) or lymph node involvement beyond the abdominopelvic
+                                region.</li>
+                            <li><b>V</b>  Bilateral renal involvement is present at the time of
+                                diagnosis.</li>
+                        </ul> </span> </td>
+                    </tr>
+                    <tr class="nephroblastomaCancerStagingKeys">
+                        <td colspan="6"><span style="float: left;">
+				<small>SIOP=International Society of Pediatric Oncology<br/><br/>
+                    Vujanić, G. M., &amp; Sandstedt, B. (2010). The pathology of Wilms’ tumour (nephroblastoma): the International Society of Paediatric Oncology approach.
+                    <br/> Journal of clinical pathology, 63(2), 102–9. doi:10.1136/jcp.2009.064600<br/><br/>
+
+                    Israels, T., Moreira, C., Scanlan, T., Molyneux, L., Kampondeni, S., Hesseling, P., ... Borgstein, E. (2013). SIOP PODC :
+                    Clinical Guidelines for the <br/>Management of Children With Wilms Tumour in a Low Income Setting. Pediatric Blood Cancer, (60).</small>
+				</span> </td>
+                    </tr>
+
+                    <!-- END OF STAGING KEY COMMENTS -->
+
+                </table> </td>
+            </tr>
+
+            </TBODY>
+
+        </table>
+        <br />
+        <br />
+        <table width="100%">
+            <tr>
+                <th class="tableHeader" colspan="4">POST-OPERATIVE TREATMENT PLAN</th>
+            </tr>
+            <tr class="checkboxGroup , treatmentPlan">
+                <td>Intent</td>
+                <td id="treatmentCurative"><!-- <workflowState
+					workflowId="bc04fe8c-869e-4b9b-8b9f-7224c0a3cb1f"
+					stateId="cb777216-77f6-478a-9353-12ed7e85a929"
+					stateLabel="Curative" type="checkbox" /> -->
+                    <obs conceptId="74bf3a55-6e92-4b91-86b0-a19345f22ad2"
+                         answerConceptId="3d996ff0-4990-42d4-a7cf-45ead911d7af" answerLabel="Curative" />
+                </td>
+                <td id="treatmentPalliation"><!-- <workflowState
+					workflowId="bc04fe8c-869e-4b9b-8b9f-7224c0a3cb1f"
+					stateId="353e32de-4b62-4e09-9a4d-829942483db0"
+					stateLabel="Palliation ONLY" type="checkbox" /> -->
+                    <obs conceptId="74bf3a55-6e92-4b91-86b0-a19345f22ad2"
+                         answerConceptId="11fbb8e0-e069-4036-9095-56049540ab7c" answerLabel="Palliation ONLY" />
+                </td>
+            </tr>
+            <tr class="checkboxGroup , chemotherapy">
+                <td>Chemotherapy</td>
+                <td id="trigger23_1"><!-- <workflowState
+					workflowId="e0a43e8d-27ce-4417-a497-54974c699bc0"
+					stateId="73521919-ea8b-43e9-ad44-20fbdad33a75" stateLabel="Planned"
+					type="checkbox" /> -->
+                    <obs conceptId="24dcc1af-882b-4b60-b0f9-b8a7159c040a"
+                         answerConceptId="c0fea63b-2e63-49aa-b0eb-5297f98355ef" answerLabel="Planned" />
+                </td>
+                <td id="chemoRemover1"><!-- <workflowState
+					workflowId="e0a43e8d-27ce-4417-a497-54974c699bc0"
+					stateId="3f13abb5-0a00-4fac-b89b-4d0679c3b6e1"
+					stateLabel="Not planned" type="checkbox" /> -->
+                    <obs conceptId="24dcc1af-882b-4b60-b0f9-b8a7159c040a"
+                         answerConceptId="7ff97aed-5be5-432a-8ba2-45ef783dc108" answerLabel="Not Planned" />
+                </td>
+                <td></td>
+            </tr>
+            <tr class="checkboxGroup , radiation">
+                <td>Radiation therapy</td>
+                <td id="trigger22"><!-- <workflowState
+					workflowId="bf1d4a87-4219-4741-ac9a-770fb7cb7036"
+					stateId="37848fcc-ecc3-460d-9c69-4fd3c9f3f767" stateLabel="Planned"
+					type="checkbox" /> -->
+                    <obs conceptId="4084fde4-1c2d-4830-a660-d34da22d3266"
+                         answerConceptId="c0fea63b-2e63-49aa-b0eb-5297f98355ef" answerLabel="Planned" />
+                </td>
+                <td><!-- <workflowState
+					workflowId="bf1d4a87-4219-4741-ac9a-770fb7cb7036"
+					stateId="3543071e-e416-4fe2-89e9-6d55506c6c72"
+					stateLabel="Not planned" type="checkbox" /> -->
+                    <obs conceptId="4084fde4-1c2d-4830-a660-d34da22d3266"
+                         answerConceptId="7ff97aed-5be5-432a-8ba2-45ef783dc108" answerLabel="Not Planned" />
+                </td>
+                <td></td>
+
+            </tr>
+        </table>
+        <table class="togglebles" width="100%">
+            <obsgroup groupingConceptId="d4ceafd0-e5b5-422a-aecd-eac58207cbcc">
+                <TBODY id="toggleble23_1">
+                <tr>
+                    <th class="tableHeader" colspan="4">POST-OPERATIVE CHEMOTHERAPY</th>
+                </tr>
+                <tr class="checkboxGroup spaceUnder">
+                    <td>Regimen</td>
+                    <td><obs id="chemotherapyRegimenVincriObs" conceptId="012df739-5bd1-445c-a76e-de0d5702d86a" answerConceptId="2855d624-c002-4659-9236-7d076efe47ba" answerLabel="Vincristine/Actinomycin D" />
+                    </td>
+                    <td> <obs id="chemotherapyRegimenVincriDObs" conceptId="012df739-5bd1-445c-a76e-de0d5702d86a" answerConceptId="45e9af04-cacc-4a31-bf6a-419b938b82ba" answerLabel="Vincristine/Actinomycin D/Doxorubicin" />
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr><obs id="postoperativeChemo" conceptId="bfe19cc9-27cc-484f-8cdf-c737153dceaa" answerConceptId="97deeeb0-48aa-4193-a164-da3acfc59b55" />	</tr>
+
+                <tr>
+                    <td>Cycles</td>
+                    <td><obs id="chemotherapyCyclesObs"
+                             conceptId="aaeb5782-3ee6-4cb8-9d27-c557ad91e241" labelText="" />
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Planned first cycle</td>
+                    <td><obs id="chemotherapyFirstCycleObs"
+                             conceptId="e9b59f4e-8a3f-467f-b5e0-1296025fb286" allowFutureDates="true" labelText="" />
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Planned regimen end</td>
+                    <td><obs id="chemotherapyRegimenEndObs"
+                             conceptId="989c2c3c-b000-45e2-9bc4-0bab9808d9c4" allowFutureDates="true" labelText="" />
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="spaceUnder">
+                    <td>Planned changes to standard regimen</td>
+                    <td><obs id="chemotherapyStandardRegimenObs"
+                             conceptId="d6e5e3a7-2ab7-45c2-a104-4f49ed01aefc" labelText="" />
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                </TBODY>
+            </obsgroup>
+        </table>
+        <table class="togglebles" width="100%">
+            <obsgroup groupingConceptId="63ad7caa-b6e2-4b9a-b462-771a9b048c36">
+                <TBODY id="toggleble22">
+                <tr>
+                    <th class="tableHeader" colspan="4">RADIATION THERAPY</th>
+                </tr>
+                <tr class="checkboxGroup">
+                    <td>Facility</td>
+                    <td><obs id="radiationFacilityMulagoObs" conceptId="09693eb4-aa3d-4804-bcc3-eb149cb0614a" answerConceptId="ceac8227-23ec-4f51-9dab-6ed3886151aa" answerLabel="Mulago" />
+                        <obs id="radiationFacilityOthers" conceptId="09693eb4-aa3d-4804-bcc3-eb149cb0614a" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Other:" />
+                        <obs id="radiationFacilityText" conceptId="5e3e2ad0-781c-4b1c-94c7-f5c64cd8b249" labelText=""  />
+                    </td>
+                </tr>
+                <tr class="spaceUnder">
+                    <td>Planned date</td>
+                    <td><obs id="radiationStartDateObs"
+                             conceptId="25064eeb-932e-4c93-994c-b4053e732ed3" allowFutureDates="true"/>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </TBODY>
+            </obsgroup>
+        </table>
+        <br />
+        <workflowState workflowId="c8dea23e-c596-40d0-a4a4-08cb61b82d3b"
+                       stateId="09426655-2909-4f6f-938b-7a31b991075e" type="hidden" />
+        <submit />
+    </div>
+
+    <script type="text/javascript">
+	if (jQuery) {
+		$j(document).ready(function() {			
+			    $j(".checkboxGroup").each(function(){
+			        var checkboxGroup = $j(this);
+			        var checkedBox = checkboxGroup.find(":checked");	
+			        if(checkedBox.is(':checked')){
+		        		 var which = checkedBox.closest("td").attr("id");
+		        		 if(which !=""){
+		        			 var triggerIndex = which.substring(7);
+		        	         var sectionId= "toggleble"+triggerIndex;
+		        	         $j(".togglebles").find("tbody[id$="+sectionId+"]").show();
+		        		 }
+		        	 }
+			 });
+			 
+			 beforeSubmit.push(function() {    	
+					var elements = [];
+					$j("td[id^='trigger']").each(function(){
+					   elements.push(this.id); 
+					});
+
+					for(var i = 0; i &lt; elements.length; i++){
+						if(!$j('#'+elements[i]).find('input').is(":checked")){
+							var triggerIndex = elements[i].substring(7);
+				        	var sectionId= "toggleble"+triggerIndex;           
+				             $j('#'+sectionId+' :input').each(function(){         
+				            	  //clear values that may have been recorded for othe solid or other liquid cancer type
+				            	  //if they are not the cancer type selected
+				            	   if(sectionId == "toggleble10")
+				            		   $j("#otherSolidSpec").find("input[type$='text']").val("");
+				            	   
+				            	   if(sectionId == "toggleble19")
+				            		   $j("#otherLiquidSpec").find("input[type$='text']").val("");
+				            	   
+				            	    var type = this.type;
+				            	    var tag = this.tagName.toLowerCase(); // normalize case
+				            	    // it's ok to reset the value attr of text inputs,
+				            	    // password inputs, and textareas. This is a general case though, as I don't have password inputs in this form
+				            	    if (type == 'text' || type == 'password' || tag == 'textarea')
+				            	      this.value = "";
+				            	    //if input is the jQuery datepicker, using this.value ="" will not clear the input
+				            	    //we clear the input by setting the date to null with jQuery
+				            	    else if ($j(this).datepicker().is('.hasDatepicker'))
+				            	    	$j(this).datepicker( "setDate" , null );
+				            	    // checkboxes and radios need to have their checked state cleared
+				            	    // but should *not* have their 'value' changed
+				            	    else if (type == 'checkbox' || type == 'radio')
+				            	      this.checked = false;
+				            	    // select elements need to have their 'selectedIndex' property set to -1
+				            	    // (this works for both single and multiple select elements)
+				            	    else if (tag == 'select')
+				            	      this.selectedIndex = -1;	
+				          	 }); 
+						}
+						
+					}
+				    return true;
+				});
+		});
+		
+	}
+</script>
+    <!-- Handle adding/removing chemotherapy sections --> <script type="text/javascript">
+    function addChemo() {
+        var trigger23_1 = $j('#trigger23_1').find("input[type$='checkbox']").is(':checked');
+      
+        var checked = new Array();
+        checked.push(trigger23_1);
+       
+        for (var i = 0; i &lt; checked.length; i++) {
+            var index = i + 1;
+            if (checked[i] != true) {
+                $j('#trigger23_' + index).find("input[type$='checkbox']").click();
+                $j('#trigger23_' + index).find("input[type$='checkbox']").attr("checked", true);
+                return;
+            }
+
+           
+        }
+
+    }
+
+    function removeChemo(elementId) {
+        $j('#' + elementId).find("input[type$='checkbox']").click();
+        $j('#' + elementId).find("input[type$='checkbox']").attr("checked", true);
+    }
+</script>
+    <ifMode mode="EDIT"> <script type="text/javascript">
+  var hideAll = function(){
+            $j(".togglebles").find("tbody[id^='toggleble']").hide();
+            $j(".togglebles").find("span[id^='toggleble']").hide();
+        }
+               
+        hideAll();
+        </script> </ifMode> <ifMode mode="ENTER"> <script type="text/javascript">
+  var hideAll = function(){
+            $j(".togglebles").find("tbody[id^='toggleble']").hide();
+            $j(".togglebles").find("span[id^='toggleble']").hide();
+        }
+               
+        hideAll();
+        </script> </ifMode> <ifMode mode="VIEW"> <script type="text/javascript">
+ 	
+       var elements = [];
+		$j("td[id^='trigger']").each(function(){
+		   elements.push(this.id); 
+		});
+
+		for(var i = 0; i &lt; elements.length; i++){
+			
+			if($j('#'+elements[i]).children("span").attr("class") != 'value' &amp;&amp; $j('#'+elements[i]).children("span").attr("id") != 'changeInTreatmentIntentObs'){
+				var triggerIndex = elements[i].substring(7);
+	        	var sectionId= "toggleble"+triggerIndex;
+	        	 $j(".togglebles").find("tbody[id$="+sectionId+"]").hide();
+			 }
+			if(elements[i] == 'trigger20' &amp;&amp; $j('#pathologyCompletedNo').children("span").attr("class") == 'value'){
+				$j("#toggleble20").hide();
+			}
+			if(elements[i] == 'trigger21' &amp;&amp; $j('#pathologyCompletedNo').children("span").attr("class") == 'value'){
+				$j("#toggleble21").hide();
+			}
+		}
+ 	 
+       </script> </ifMode> <encounterVoided/> </htmlform>

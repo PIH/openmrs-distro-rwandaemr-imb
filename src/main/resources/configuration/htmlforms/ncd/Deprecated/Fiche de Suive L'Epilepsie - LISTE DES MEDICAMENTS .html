@@ -1,0 +1,55 @@
+<htmlform>
+    <!-- Asthma flowsheet:  Medication list
+         Written by jberchmas
+           -->
+	<style>
+		.formName { background-color:#e0e0ff; }
+		.section { border: 1px
+		solid #8FABC7; width:99%; padding:2px; text-align:left;
+		margin-bottom:10px; }
+		.sectionHeader { background-color: #8FABC7;
+		color: white; display: block; padding: 2px; font-weight:bold; }
+		table.symptoms th {text-align: right;}
+		.note {color:red;}
+		td
+		{vertical-align:top;}
+		table.labTable td { color:red; }
+		table.labTable
+		td.dateField { text-align:right; }
+		table.identifierTable td
+		{padding-right:10px;}
+		div.paddedTable span {padding-right:20px;}
+	</style>
+
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				<b>
+					IMB ID:
+					<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				</b>
+			</td>
+			<td>
+				Date:
+				<encounterDate />
+			</td>
+
+			<td>
+				Clinique / Clinic:
+				<encounterLocation />
+			</td>
+			<td>
+				Nom/ Signature:<encounterProvider role="NCD Provider"/>
+			</td>
+		</tr>
+	</table>
+
+	<section headerLabel="LISTE DES MEDICAMENTS/MEDICATION LIST">
+             <drugOrder drugNames="d2f1d186-b85f-42b9-99ca-eb37efb82e73,5f08db40-3512-4881-8c63-06ad32bb6538,259afc76-02a3-4938-8451-111fa4c7d5e3,22044c27-fcca-4f5d-b232-f1eaf05fafb2,93f91c58-b861-4ea9-b6a2-140e9ecdbcf9,07eb727a-d3f8-4df8-8168-88de12858ef2,203de976-82f0-403d-abbd-83f9884d6316,203de976-82f0-403d-abbd-83f9884d6316,07eb727a-d3f8-4df8-8168-88de12858ef2,93f91c58-b861-4ea9-b6a2-140e9ecdbcf9,22044c27-fcca-4f5d-b232-f1eaf05fafb2,259afc76-02a3-4938-8451-111fa4c7d5e3,e863f077-21ac-498a-a6d1-c6067ce544f3,72a193ea-8e10-4c3e-8cb0-edcc9c9ba634,bbd6adf4-bfc2-4516-8e99-3cc2fbc9a6e2,7dc8031a-079c-46ba-b3ab-e2c13fa67dfd,a061faf5-b9a8-4ef4-b7a8-ffb31231345a,9e442521-801a-417b-a7e5-c2ab5230e8f2,97ab029d-470f-45bd-9ada-fe6c8bf780e0"  discontinuedReasonConceptId="3cde6070-26fe-102b-80cb-0017a47871b2" discontinueReasonLabel="Raison pour arret" />
+	</section>
+
+	<center>
+		<submit />
+	</center>
+
+</htmlform>	

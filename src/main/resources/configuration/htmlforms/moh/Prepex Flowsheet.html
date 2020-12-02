@@ -1,0 +1,138 @@
+<htmlform>
+    <!-- Pedi HIV top level form.
+         HIV-RW.V1.akb.July13.doc
+         Created by Neil Gupta 2014
+     -->
+    <macros>
+        paperFormId = (Fill this in)
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+    </macros>
+
+    <style>
+		.section {
+			border: 1px solid $headerColor;
+			padding: 2px;
+			text-align: left;
+			margin-bottom: 1em;
+		}
+		.sectionHeader {
+			background-color: $headerColor;
+			color: $fontOnHeaderColor;
+			display: block;
+			padding: 2px;
+			font-weight: bold;
+		}
+		table.baseline-aligned td {
+			vertical-align: baseline;
+		}
+		th.subheader {
+		background-color: $headerColor;
+		color:white
+		}
+	</style>
+
+
+    <translations defaultLocale="fr">
+        <code name="gender_m">
+            <variant locale="fr" value="Homme" />
+            <variant locale="en" value="Male" />
+        </code>
+        <code name="gender_f">
+            <variant locale="fr" value="Femme" />
+            <variant locale="en" value="Female" />
+        </code>
+    </translations>
+    <!-- Form header -->
+    Centre de santé :
+    <!--<encounterLocation />-->
+    <table border="2" cellspacing="0" cellpadding="6" width="100%">
+        <tr>
+            <td>
+                <img src="/openmrs/moduleResources/rwandareports/images/rwanda-logo.jpg" align="left" height="100"
+                     width="100">
+                </img>
+            </td>
+            <td>
+                <h2>
+                    RWANDA MINISTRY OF HEALTH
+                    <br />
+                    <span class="english">MOH Rwanda</span>
+                </h2>
+            </td>
+            <td>
+                <strong>
+                    Programme PMTCT
+                    <br />
+                    Fiche Résumé du Patient : MC
+                    <br />
+                    <span class="english">MC Prepex flowsheet</span>
+                </strong>
+                <br />
+                Fiche_resume-HIV-HFCSP-RW-V1.0-ng-21Oct10-fr
+            </td>
+            <td>
+                <!-- Ministry of Health logo should go in here -->
+            </td>
+        </tr>
+    </table>
+
+    <table border="1" width="100%">
+        <tr>
+            <td>
+                Nom/
+                <span class="english">Name</span>
+                :
+                <lookup class="value" expression="patient.personName.familyName" />
+                <lookup class="value" expression="patient.personName.givenName" />
+                HTC NUMBER:
+                <lookup class="value" expression="patientIdentifiers.get(&quot;HTC NUMBER&quot;)" />
+                <!--<lookup class="value" expression="patientIdentifiers.get(&quot;HTC NUMBER&quot;)" />-->
+            </td>
+            <!--<td>
+                Date:
+                <encounterDate />
+            </td>-->
+        </tr>
+    </table>
+
+    <br />
+    <div>
+        <section headerLabel="prepex and Surgical Consultation Form">
+            <htmlformflowsheet formId="c7eeb0fd-bf4b-43e3-91a3-0d450f67385a" windowHeight="450" sharedEncounter="true" showHtmlForm="true"/>
+        </section>
+    </div>
+    <div>
+        <section headerLabel="Prepex Placement Procedure Form">
+            <htmlformflowsheet formId="0dbac4dc-f3cb-48de-a34b-338fe4f9f12a" sharedEncounter="true" showHtmlForm="true" windowHeight="400"/>
+        </section>
+    </div>
+
+    <div>
+        <section headerLabel="Prepex Post Placement discharge session">
+            <htmlformflowsheet formId="13694a74-d995-4088-8e67-f6d5248541a8" sharedEncounter="true" showHtmlForm="true" windowHeight="400"/>
+        </section>
+    </div>
+
+    <div>
+        <section headerLabel="Prepex removal Procedure">
+            <htmlformflowsheet formId="74b9fb5f-369e-4e12-b4b2-7d1e33889d11" sharedEncounter="true" showHtmlForm="true" windowHeight="400"/>
+        </section>
+    </div>
+
+    <div>
+        <section headerLabel="Prepex Complication (AE) informations">
+            <htmlformflowsheet formId="359571b4-bff1-4890-90bb-9daa4994d782" sharedEncounter="true" showHtmlForm="true" windowHeight="400"/>
+        </section>
+    </div>
+    <div>
+        <section headerLabel="PrePex Unscheduled visit">
+            <htmlformflowsheet formId="3e466f6c-85b1-4333-8a5d-2cb68e933e4b" sharedEncounter="true" showHtmlForm="true" windowHeight="400"/>
+        </section>
+    </div>
+    <div>
+        <section headerLabel="PrePex Data Base">
+            <htmlformflowsheet formId="02b009e5-f398-4cb4-b822-6c8602410c1d" sharedEncounter="true" showHtmlForm="true" windowHeight="400"/>
+        </section>
+    </div>
+</htmlform>

@@ -1,0 +1,548 @@
+<htmlform> <!--
+	   Oncology Clinical Intake Form
+	   ClinicalIntake_ONCOLOGY_V1.3NT2012July4 copy
+		Author:
+		Builder: Jberchmas
+		started on Sept 22, 2012
+	-->
+
+    <macros>
+
+        @Type_of_Attempt@ = 98672ac7-510e-4871-a0a1-81de095cf326
+        @Phone_call@ = ce01fc27-05c3-425e-877a-5dbb52a9ae6a
+        @CHW_Visit@ = 355b7292-69af-414e-8985-086ec802e017
+        @call_log_next_step@ = e79ccc1c-903a-453f-871b-2e40a47ad23e
+        @Phone_call@ = ce01fc27-05c3-425e-877a-5dbb52a9ae6a
+        @CHW_Visit@ = 355b7292-69af-414e-8985-086ec802e017
+        @RDV_Changed@ = 5a2cd0f1-aeb1-4f9d-ae56-1023a336acfb
+        @patient_will_not_return@ = 95fc1647-ddc8-4a78-80cb-2049c6cb706a
+        @RETURN_VISIT_DATE@ = 3ce94df0-26fe-102b-80cb-0017a47871b2
+        @return_visit_location@ = d3c8c5f8-9ebb-4622-98ca-c55ca41d3d44
+        @Result_of_Call@ = f89b3523-c37a-4d50-ace7-cc50f2292d77
+        @PATIENT_DIED@ = 3cdd446a-26fe-102b-80cb-0017a47871b2
+        @Date_of_Death@ = ce0afb8a-35b3-496e-8ac9-37c3b8f6592e
+        @LOST_TO_FOLLOWUP@ = 3ceb0ed8-26fe-102b-80cb-0017a47871b2
+        @Transfered@ = 3a296bb6-5fc8-40ee-84fc-97c13cacf8d8
+        @PATIENT_DEFAULTED@ = 3cdd5176-26fe-102b-80cb-0017a47871b2
+        @Other_return_visit_location@ = 4c80b141-2287-4397-bfe6-3e06b8aa2604
+    </macros>
+
+    <style>
+        .sectionHeader {
+        background-color: #009d8e;;
+        color: white;
+        display: block;
+        padding: 2px;
+        font-weight: bold;
+        }
+
+        th.tableHeader {
+        background-color: #009d8e;
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: left;
+        }
+
+        ul {
+        list-style-type: square;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        }
+
+        tr.spaceUnder>td {
+        padding-bottom: 1em;
+        }
+
+        td {
+        font-size: 15px;
+        }
+
+        #container {
+        position: relative;
+        margin: auto;
+        width: 1400px;
+        height: auto;
+        }
+
+        @media print {
+        #container {
+        display: block;
+        }
+        #printArea {
+        display: none;
+        }
+        #userBar {
+        display: none;
+        }
+        #banner {
+        display: none;
+        }
+        #footer {
+        display: none;
+        }
+        #htmlFormEntryBanner {
+        display: none;
+        }
+        .error {
+        display: none;
+        }
+        .lables {
+        width: 200px;
+        }
+        table {
+        width: 100%;
+        }
+        table,td,th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+        th {
+        text-align: left;
+        background-color: #D9D9D9;
+        font-size: 10px;
+        }
+        td {
+        font-size: 10px;
+        }
+        .value {
+        font-size: 20px;
+        font-weight: bold;
+        font-style: italic;
+        }
+        .selectedCancerStagingKeys {
+        page-break-before: always;
+        border: 0px;
+        }
+        table.selectedCancerStagingKeys td {
+        border: 0px;
+        }
+        #signature {
+        border: none;
+        }
+        #signature td {
+        border: none;
+        }
+        }
+
+        @media screen {
+        table {
+        border: 1px solid #DFDFDF;
+        width: 100%;
+        border-color: #009d8e;
+        }
+        #container {
+        display: block;
+        }
+        #printArea {
+        display: none;
+        }
+        }
+    </style>
+    <script>
+	$j(document).ready(function() {
+		$j("#hideHIV").click(function() {
+			$j(".hiv").hide();
+			$j('.hiv input[type="text"]').val('');
+			$j('.hiv').find('input[type=checkbox]:checked').removeAttr('checked');
+                        $j(".hivstatus").hide();
+			$j('#checkthis3').find('input[type=checkbox]:checked').removeAttr('checked');
+                        $j('#checkthis2').find('input[type=checkbox]:checked').removeAttr('checked');
+                        $j("#checkthis1 input").attr('checked','checked');
+		});
+		$j("#showHIV").click(function() {
+			$j(".hiv").show();
+                        $j(".hivstatus").show();
+                        $j('#checkthis1').find('input[type=checkbox]:checked').removeAttr('checked');
+		});
+		$j("#showAllergies").click(function() {
+			$j(".allergies").show();
+		});
+		$j("#hideAllergies1").click(function() {
+			$j(".allergies").hide();
+		});
+		$j("#hideAllergies2").click(function() {
+			$j(".allergies").hide();
+		});
+
+
+                getField('pastCancerDiagnosis.value').change(function() {
+                 var checkNonCoded= $j("#pastCancerDiagnosis  option:selected").text();
+              if( checkNonCoded == "OTHER NON-CODED") {
+			getField('otherNonCoded.value')[0].disabled = false;
+		} else {
+			getField('otherNonCoded.value')[0].disabled = true;
+		}
+    });
+getField('causeNonCoded1.value')[0].disabled = true;
+     getField('cause1.value').change(function() {
+                 var checkcauseNonCoded1= $j("#cause1  option:selected").text();
+              if( checkcauseNonCoded1 == "OTHER NON-CODED") {
+			getField('causeNonCoded1.value')[0].disabled = false;
+		} else {
+			getField('causeNonCoded1.value')[0].disabled = true;
+		}
+    });
+     getField('causeNonCoded2.value')[0].disabled = true;
+     getField('cause2.value').change(function() {
+                 var checkcauseNonCoded2= $j("#cause2  option:selected").text();
+              if( checkcauseNonCoded2 == "OTHER NON-CODED") {
+			getField('causeNonCoded2.value')[0].disabled = false;
+		} else {
+			getField('causeNonCoded2.value')[0].disabled = true;
+		}
+    });
+
+      getField('causeNonCoded3.value')[0].disabled = true;
+     getField('cause3.value').change(function() {
+                 var checkcauseNonCoded3= $j("#cause3  option:selected").text();
+              if( checkcauseNonCoded3 == "OTHER NON-CODED") {
+			getField('causeNonCoded3.value')[0].disabled = false;
+		} else {
+			getField('causeNonCoded3.value')[0].disabled = true;
+		}
+    });
+
+
+ getField('reactionNonCoded1.value')[0].disabled = true;
+     getField('reaction1.value').change(function() {
+                 var checkreactionNonCoded1= $j("#reaction1  option:selected").text();
+              if( checkreactionNonCoded1 == "OTHER NON-CODED") {
+			getField('reactionNonCoded1.value')[0].disabled = false;
+		} else {
+			getField('reactionNonCoded1.value')[0].disabled = true;
+		}
+    });
+
+getField('reactionNonCoded2.value')[0].disabled = true;
+     getField('reaction2.value').change(function() {
+                 var checkreactionNonCoded2= $j("#reaction2  option:selected").text();
+              if( checkreactionNonCoded2 == "OTHER NON-CODED") {
+			getField('reactionNonCoded2.value')[0].disabled = false;
+		} else {
+			getField('reactionNonCoded2.value')[0].disabled = true;
+		}
+    });
+
+getField('reactionNonCoded3.value')[0].disabled = true;
+     getField('reaction3.value').change(function() {
+                 var checkreactionNonCoded3= $j("#reaction3  option:selected").text();
+              if( checkreactionNonCoded3 == "OTHER NON-CODED") {
+			getField('reactionNonCoded3.value')[0].disabled = false;
+		} else {
+			getField('reactionNonCoded3.value')[0].disabled = true;
+		}
+    });
+
+	});
+
+
+
+
+
+</script> <script>
+	$j(function() {
+		$j('.disdiv').find('input').attr('disabled', 'true');
+		$j(".hiv").hide();
+                 $j(".hivstatus").hide();
+		$j('#textareadisabled').find('input, textarea, button, select').attr('disabled','true');
+		$j('#disabledConcept').find('input, textarea, button, select').attr('disabled','true');
+		$j(".allergies").hide();
+                getField('otherNonCoded.value')[0].disabled = true;
+	});
+
+</script> <script type="text/javascript">
+	if (jQuery) {
+		$j(document)
+				.ready(
+						function() {
+							if ($j.browser.msie) {
+								$j(":checkbox").click(function() {
+									$j(this).change();
+								});
+							}
+							$j(".enableDisable").each(
+									function() {
+										var group = $j(this);
+										function disableFn() {
+											group.children("#disabled").fadeTo(
+													250, 0.33);
+											group.children("#disabled").find(
+													":checkbox").attr(
+													"checked", false); //uncheck
+											group.children("#disabled").find(
+													"input[type$='text']").val(
+													"");
+											group.children("#disabled").find(
+													"input").attr("disabled",
+													true); //disable
+										}
+										function enableFn() {
+											group.children("#disabled").fadeTo(
+													250, 1);
+											group.children("#disabled").find(
+													"input").attr("disabled",
+													false);
+										}
+										disableFn();
+										$j(this).children("#trigger").find(
+												":checkbox:first").change(
+												function() {
+													var checked = $j(this)
+															.attr("checked");
+													if (checked == true) {
+														enableFn();
+													} else {
+														disableFn();
+													}
+												});
+									});
+
+							$j(".checkboxGroup")
+									.each(
+											function() {
+												var group = $j(this);
+												var uncheckAll = function() {
+													group
+															.find(
+																	"input[type$='checkbox']")
+															.attr("checked",
+																	false);
+													group
+															.find(
+																	"input[type$='checkbox']")
+															.change();
+												}
+												var uncheckRadioAndAll = function() {
+													group
+															.find(
+																	"#checkboxAll,#checkboxRadio")
+															.find(
+																	"input[type$='checkbox']")
+															.attr("checked",
+																	false);
+													group
+															.find(
+																	"#checkboxAll,#checkboxRadio")
+															.find(
+																	"input[type$='checkbox']")
+															.change();
+												}
+
+												group
+														.find("#checkboxAll")
+														.find("input")
+														.click(
+																function() {
+																	var flip;
+																	var checked = $j(
+																			this)
+																			.siblings(
+																					":checkbox:first")
+																			.attr(
+																					"checked");
+																	if ($j(this)
+																			.attr(
+																					"name") == $j(
+																			this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox:first")
+																			.attr(
+																					"name")) {
+																		checked = $j(
+																				this)
+																				.attr(
+																						"checked");
+																		flip = checked;
+																	} else {
+																		flip = !checked;
+																	}
+																	if ($j(this)
+																			.attr(
+																					"type") == "text")
+																		if (flip == false)
+																			flip = !filp; // this is so the user doesn't go to check the checkbox, then uncheck it when they hit the input.
+																	uncheckAll();
+																	$j(this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox")
+																			.attr(
+																					"checked",
+																					flip);
+																	$j(this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox")
+																			.change();
+																});
+
+												group
+														.find("#checkboxRadio")
+														.find(
+																"input[type$='checkbox']")
+														.click(
+																function() {
+																	uncheckAll();
+																	$j(this)
+																			.siblings(
+																					"input[type$='checkbox']")
+																			.attr(
+																					"checked",
+																					false);
+																	$j(this)
+																			.attr(
+																					"checked",
+																					true);
+																	$j(this)
+																			.change();
+																});
+
+												group
+														.find(
+																"#checkboxCheckbox")
+														.click(
+																function() {
+																	uncheckRadioAndAll();
+																});
+											});
+						});
+	}
+</script>
+
+
+
+    <section>
+        <table border="1" cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td>
+                    <b>
+                        IMB ID: <lookup class="value"
+                                        expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+                        <br/>
+                        <!--                        IMB Primary Care Registration ID:-->
+                        <!--                        <lookup-->
+                        <!--                                class="value"-->
+                        <!--                                expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" />-->
+                        <!--                        <br/>-->
+                        <!--                        OpenClinic ID:-->
+                        <!--                        <lookup class="value"-->
+                        <!--                                expression="patientIdentifiers.get(&quot;OpenClinic ID&quot;)" />-->
+                        <!--                        <br/>-->
+                        <!--                        ARCHIVING ID:-->
+                        <!--                        <lookup class="value"-->
+                        <!--                                expression="patientIdentifiers.get(&quot;ARCHIVING ID&quot;)" />-->
+                        <!--                        <br/>-->
+                        Rwanda National ID:
+                        <lookup class="value"
+                                expression="patientIdentifiers.get(&quot;Rwanda National ID&quot;)" />
+                    </b>
+
+                </td>
+                <td>Date: <encounterDate id="encounterDate" default="today" />
+                </td>
+            </tr>
+            <tr>
+                <td>Nom / Last name: <lookup class="value"
+                                             expression="patient.personName.familyName" />
+                </td>
+                <td>Prénom/ First name: <lookup class="value"
+                                                expression="patient.personName.givenName" />
+                </td>
+            </tr>
+            <tr>
+                <td> Gender: <lookup class="value" expression="patient.gender"/> </td>
+                <td> Date Of Birth: <lookup class="value" expression="patient.birthdate"/> </td>
+            </tr>
+            <tr>
+                <td><img src="/openmrs/moduleResources/rwandareports/images/rwanda-logo.jpg" align="left"
+                         height="65" ></img>
+                    <b>REPUBLIC OF RWANDA
+                        <br />MINISTRY OF HEALTH</b>
+                </td>
+                <td ><strong>
+                    Oncology Screening Call log or CHW visit
+                </strong> </td>
+            </tr>
+            <tr>
+                <td>Location Name: <encounterLocation
+                        id="encounterLocation" />
+                </td>
+                <td>Provider:<encounterProvider id="encounterProvider"
+                                                default="currentUser"/>
+                </td>
+
+            </tr>
+        </table>
+    </section>
+    <section >
+        <table class="form-group" border="1">
+            <tr>
+                <td>
+
+                    This was a
+                </td>
+                <td>
+
+
+                    <obs conceptId="$@Type_of_Attempt@" answerConceptIds="$@Phone_call@,$@CHW_Visit@" answerLabels="Call,CHW Visit" style="radio"/>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <label>Next Step:</label>
+                </td>
+                <td>
+                    <obs conceptId="$@call_log_next_step@" answerConceptIds="$@Phone_call@,$@CHW_Visit@,$@RDV_Changed@,$@patient_will_not_return@"
+                         answerLabels="Call Again,CHW Visit,New Appointment,Patient will not return" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Next  visit date:
+                </td>
+                <td>
+                    <obs conceptId="$@RETURN_VISIT_DATE@" allowFutureDates="true"/>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Next appointment location (if different from before)
+                </td>
+                <td>
+                    <obs conceptId="$@return_visit_location@"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Result of call
+                </td>
+                <td>
+
+                    <obs conceptId="$@Result_of_Call@" answerConceptId="$@PATIENT_DIED@" answerLabel="Patient Died" style="checkbox"/>
+                    , Date:
+                    <obs conceptId="$@Date_of_Death@"/>
+                    <br/>
+                    <obs conceptId="$@Result_of_Call@" answerConceptId="$@LOST_TO_FOLLOWUP@" answerLabel="Patient Lost to follow-up" style="checkbox"/>
+                    <br/>
+                    <obs conceptId="$@Result_of_Call@" answerConceptId="$@Transfered@" answerLabel="Transfer" style="checkbox"/>
+                    <br/>
+                    <obs conceptId="$@Result_of_Call@" answerConceptId="$@PATIENT_DEFAULTED@" answerLabel="Decided not to return" style="checkbox"/>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <br />
+    <br />
+    <submit />
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <encounterVoided/>
+</htmlform>

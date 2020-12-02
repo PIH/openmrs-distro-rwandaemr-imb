@@ -1,0 +1,55 @@
+<htmlform>
+    <!-- hypertension flowsheet:  Medication list
+         Written by jberchmas
+           -->
+	<style>
+		.formName { background-color:#e0e0ff; }
+		.section { border: 1px
+		solid #8FABC7; width:99%; padding:2px; text-align:left;
+		margin-bottom:10px; }
+		.sectionHeader { background-color: #8FABC7;
+		color: white; display: block; padding: 2px; font-weight:bold; }
+		table.symptoms th {text-align: right;}
+		.note {color:red;}
+		td
+		{vertical-align:top;}
+		table.labTable td { color:red; }
+		table.labTable
+		td.dateField { text-align:right; }
+		table.identifierTable td
+		{padding-right:10px;}
+		div.paddedTable span {padding-right:20px;}
+	</style>
+
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				<b>
+					IMB ID:
+					<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				</b>
+			</td>
+			<td>
+				Date:
+				<encounterDate />
+			</td>
+
+			<td>
+				Clinique / Clinic:
+				<encounterLocation />
+			</td>
+			<td>
+				Nom/ Signature:<encounterProvider role="NCD Provider"/>
+			</td>
+		</tr>
+	</table>
+
+	<section headerLabel="LISTE DES MEDICAMENTS/MEDICATION LIST">
+             <drugOrder drugNames="0bae921c-15f5-102d-96e4-000c29c2a5d7,0bae96d6-15f5-102d-96e4-000c29c2a5d7,0bae9866-15f5-102d-96e4-000c29c2a5d7,0bae9b86-15f5-102d-96e4-000c29c2a5d7,0bae9d16-15f5-102d-96e4-000c29c2a5d7,0baea036-15f5-102d-96e4-000c29c2a5d7,0baea1c6-15f5-102d-96e4-000c29c2a5d7,9b5093dd-f09f-45b1-9e83-ae2e7051f618,0baea4e6-15f5-102d-96e4-000c29c2a5d7,0baed164-15f5-102d-96e4-000c29c2a5d7,56a382c0-7d8c-461f-988a-9f2e8cb1d74d,45f8111d-f4a2-4cc9-83ff-e1fdd3192bf5,42f03100-26fe-102b-80cb-0017a47871b2,6ab5ea46-064f-48f7-b220-e2caf75dbdca,af33f860-3add-4ea4-acb2-fca0bf9c19e3,f6f83405-ab6a-4128-8428-1af40aa1769f,18f2bd63-8425-4384-8f57-a77dafa89a41,9b5093dd-f09f-45b1-9e83-ae2e7051f618,e088ab6b-c00e-4fb4-83e1-6fdd5819a5be,c5dd6925-91eb-48f1-9b8e-7a0652ee576c,4422d261-a13c-4ffd-bb15-04fa66efb120,b5e7e664-8b5b-4be8-8171-ece64dfc8ee1,517034fa-cc88-4fbf-bf2e-f0aaa85dc30f,078d36c9-56ab-47d8-95ec-befffec86b98"  discontinuedReasonConceptId="3cde6070-26fe-102b-80cb-0017a47871b2" discontinueReasonLabel="Raison pour arret" />
+	</section>
+
+	<center>
+		<submit />
+	</center>
+
+</htmlform>

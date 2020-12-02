@@ -1,0 +1,58 @@
+<htmlform>
+	
+	<macros>
+		headerColor =#009d8e
+		fontOnHeaderColor = white
+	</macros>
+
+	<style>
+		.section {
+			border: 1px solid $headerColor;
+			padding: 2px;
+			text-align: left;
+			margin-bottom: 1em;
+		}
+		.sectionHeader {
+			background-color: $headerColor;
+			color: $fontOnHeaderColor;
+			display: block;
+			padding: 2px;
+			font-weight: bold;
+		}
+		.baseline-aligned td {
+			vertical-align: baseline;
+                        width: 100%;
+		}
+        .flowsheet {
+                width: 100%;
+        }
+
+        #title .value {
+        	float: right;
+        	color: white;
+        	padding: 6px;
+        }
+
+        #title {
+        	width: 100%;
+        }
+    </style>
+	
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			jQuery('#discardLinkSpan a').html("Return to dashboard");
+			jQuery('#htmlFormEntryBanner b').html("");
+
+			});
+	</script>
+	<div id="title"><lookup class="value" expression="patient.personName"/></div>
+	<section headerLabel="Clinician Notes">
+		<table class="flowsheet">
+			<tr>
+				<td class="flowsheet">
+					<span class="flowsheet"><htmlformflowsheet formId="a771f0bd-0a82-49d0-933a-7d128447dfca" windowHeight="500" showProvider="Clinician" /></span>
+	            </td>
+			</tr>
+		</table>
+	</section>
+</htmlform>

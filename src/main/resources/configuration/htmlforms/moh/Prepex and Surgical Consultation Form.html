@@ -1,0 +1,442 @@
+<htmlform>
+    <macros>
+        paperFormId = (Fill this in)
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+    </macros>
+
+    <style>
+		.section {
+			border: 1px solid $headerColor;
+			padding: 2px;
+			text-align: left;
+			margin-bottom: 1em;
+		}
+		.sectionHeader {
+			background-color: $headerColor;
+			color: $fontOnHeaderColor;
+			display: block;
+			padding: 2px;
+			font-weight: bold;
+		}
+		table.baseline-aligned td {
+			vertical-align: baseline;
+		}
+		th.subheader {
+		background-color: $headerColor;
+		color:white
+		}
+	</style>
+    <includeIf velocityTest="$patient.gender == 'M' ">
+        <section headerLabel=" General Information" >
+            <table border="2" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        <b>
+                            Primary Care ID Type :
+                            <lookup class="value" expression="patientIdentifiers.get(&quot;Primary Care ID Type&quot;)" />
+                        </b>
+                    </td>
+                    <td>
+                        Date:
+                        <encounterDate />
+                    </td>
+
+                    <td>
+                        Clinique / Clinic:
+                        <encounterLocation id="location" />
+                    </td>
+                    <td>
+                        Clinician Nom/ Signature:
+                        <encounterProvider role="Provider"/>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+<section headerLabel="Personal Details" >
+    <table  border="2" cellspacing="0" cellpadding="6" width="100%">
+        <tr>
+            <td>
+                1.Client Names:<lookup class="value" expression="patient.personName.familyName"/> <lookup class="value" expression="patient.personName.givenName"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                2.Visit Date: <encounterDate />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                3.HTC NUMBER:
+                <lookup class="value" expression="patientIdentifiers.get(&quot;HTC NUMBER&quot;)" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <obs conceptId="93ec5eed-1300-4156-b8d0-6925f1360701" labelText="4.Code Number in MC register: " />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                5.Date of birth: <lookup class="value" expression="patient.birthdate"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                6.Primary Care ID Type :
+                <lookup class="value" expression="patientIdentifiers.get(&quot;Primary Care ID Type&quot;)" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                7.Marital status: <lookup class="value" expression="personAttributes.get('Civil Status')"/>
+            </td>
+        </tr>
+        <!--<tr>
+            <td>
+                Lieu de naissance:<lookup class="value" expression="personAttributes.get('Birthplace')"/>
+            </td>
+        </tr>-->
+        <table>
+            <th>8.Address</th>
+            <tr>
+                <td rowspan="3"><addressHierarchyRwanda/><br/>
+                    <obs conceptId="3cda3d7e-26fe-102b-80cb-0017a47871b2" labelText="Telephone: " size="9"/>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <th>9.Name of Contact Family:</th>
+
+            <tr>
+                <td>
+                    <obs conceptId="3cd997f2-26fe-102b-80cb-0017a47871b2" labelText="Names:"/>
+                </td>
+            </tr>
+            <!--<tr>
+                <td>
+                <obs conceptId="b21e8ee1-e1e8-4830-921b-2faf3f3985a3" labelText="Prenom:"/>
+                </td>
+            </tr>-->
+            <!--<tr>
+                <td>
+                    <obs conceptId="3ce18d68-26fe-102b-80cb-0017a47871b2" style="no_yes" noLabel="non" yesLabel="oui" labelText="Person alive?"/>
+                </td>
+            </tr>-->
+            <tr>
+                <td>
+                    <obs conceptId="3ce600aa-26fe-102b-80cb-0017a47871b2" labelText="Family Phone: " size="15"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <obs conceptId="3cd99a68-26fe-102b-80cb-0017a47871b2" labelText="Relationship:"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    10.Education: <lookup class="value" expression="personAttributes.get('Education Level')"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    11.Occupation/Function: <lookup class="value" expression="personAttributes.get('Main Activity')"/>
+                </td>
+            </tr>
+        </table>
+    </table>
+</section>
+
+<section headerLabel=" Medical History:" >
+    <table  border="2" cellspacing="0" cellpadding="6" width="100%">
+
+        <tr>
+            <td>
+                <obs conceptId="3ce1ecd6-26fe-102b-80cb-0017a47871b2" style="no_yes" noLabel="no" yesLabel="yes" labelText="12.Smoker?"/>
+                <obs conceptId="cd278f0b-95ce-4fc2-bc11-8ea30a79914c" labelText="If Yes Sticks per Day?"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="3cdbde18-26fe-102b-80cb-0017a47871b2" style="no_yes" noLabel="no" yesLabel="yes" labelText="Alcohol?"/>
+                <obs conceptId="3ce1f550-26fe-102b-80cb-0017a47871b2" labelText="If yesy Bottles of Bieer per Day?"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="38b0118c-1cf4-40a9-a508-15c48d9586ac" labelText="13.Allergies (Drug Rubber):"/>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <obs conceptId="c7656309-684f-4b4d-9874-487bd44f1073" style="no_yes" noLabel="no" yesLabel="yes" labelText="14.Tetanus immunization status:"/>
+                <obs conceptId="98e5ad8c-ab46-4ebb-943c-814fbc72acba" labelText="If yes when:"/>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="765f5fd3-7abd-418e-b048-86f7e9ecb4fb" labelText="15.Current medications:"/>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="82e12670-0e3c-44b6-a230-2487ad78bab4" style="no_yes" noLabel="no" yesLabel="yes" labelText="16.Ever Had Sex:"/>
+                <obs conceptId="3cce7a20-26fe-102b-80cb-0017a47871b2" style="no_yes" noLabel="no" yesLabel="yes" labelText="Used Condom?:"/>
+
+            </td>
+        </tr>
+        <!--<tr>
+            <td>
+                <obs conceptId="82e12670-0e3c-44b6-a230-2487ad78bab4" style="no_yes" noLabel="non" yesLabel="oui" labelText="Ever Had Sex:"/>
+                <obs conceptId="3cce7a20-26fe-102b-80cb-0017a47871b2" style="no_yes" noLabel="non" yesLabel="oui" labelText="Used Condom?:"/>
+
+
+            </td>
+        </tr>-->
+
+        <tr>
+            <td>
+                <obs conceptId="70bacab1-36b4-4b6b-8579-c81a34398b16" style="no_yes" noLabel="no" yesLabel="yes" labelText="17.HIV History:Tested"/>
+                <obs conceptId="3cde8c9e-26fe-102b-80cb-0017a47871b2" style="no_yes" noLabel="non" yesLabel="yes" labelText="If Yes HIV Test Date:"/>
+                <obs conceptId="3cd9a954-26fe-102b-80cb-0017a47871b2" labelText="HIV Test Location:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="aec6ad18-f4dd-4cfa-b68d-3d7bb6ea908e" labelText="HIV Status"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="f77bea18-0d40-42c9-98a8-740518e5acc7" style="no_yes" noLabel="no" yesLabel="yes" labelText="Spouse notified:"/>
+                <obs conceptId="70bacab1-36b4-4b6b-8579-c81a34398b16" style="no_yes" noLabel="no" yesLabel="yes" labelText="Spouse Tested:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="3ceda710-26fe-102b-80cb-0017a47871b2" labelText="18.HIV Status If Positive:CD4 Count"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="44176fb3-27d9-41e8-8fa0-97b339d8b6d7" style="no_yes" noLabel="no" yesLabel="yes" labelText="19.Client given results"/>
+            </td>
+        </tr>
+    </table>
+</section>
+<section headerLabel="Clinical History and Screening">
+    <table class="baseline-aligned">
+        <th>20.Does the client have any of the following complaints?</th>
+        <tr>
+            <td>
+                <obs conceptId="6a16ba84-f2e5-4bf0-ae20-e24c46444062" style="no_yes" noLabel="no" yesLabel="yes" labelText="Urethral discharge:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="fe83b1fc-e96f-4f62-a450-e1a3e99972c4" style="no_yes" noLabel="no" yesLabel="yes" labelText="Genital Sore:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="b24118d3-d87c-4580-be72-f4eea0dbbf8a" style="no_yes" noLabel="no" yesLabel="yes" labelText="Pain on erection:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="6b06f214-0110-4302-86a1-a58b2b28030b" style="no_yes" noLabel="no" yesLabel="yes" labelText="Swelling of the scrotum:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="672e0a68-d565-4333-9a7c-6e1abd498293" style="no_yes" noLabel="no" yesLabel="yes" labelText="Pain on urination:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="ee353862-ee23-4ab2-8f8d-1690dbfff461" style="no_yes" noLabel="no" yesLabel="yes" labelText="Difficulty in retracting foreskin:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="91d0d81e-9314-4c2b-97c0-d4dd9a377dcb" style="no_yes" noLabel="no" yesLabel="yes" labelText="Genital warts:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="c548a633-9931-496d-9ade-4b7c971e6600" style="no_yes" noLabel="no" yesLabel="yes" labelText="Other:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="d86a326b-ba5c-4dd2-8627-103fdc1ae6e2" style="no_yes" noLabel="no" yesLabel="yes" labelText="21.Any Bleeding problem in self or other family members:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="88fc1bea-0020-4c2e-9202-a4d968286327" style="no_yes" noLabel="no" yesLabel="yes" labelText="22.Has the Client had any STIs in the last 3 months:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="f6f50926-5f91-4ac8-9f0d-1622c05aec98" style="no_yes" noLabel="no" yesLabel="yes" labelText="STI Treated:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="b97fba46-7b05-4e34-b828-c3ff2917f5c4" style="no_yes" noLabel="no" yesLabel="yes" labelText="STIs condition:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="769b6c66-194f-44a1-b95b-a388a970bcea" style="no_yes" noLabel="no" yesLabel="yes" labelText="Where Treated STIs:"/>
+            </td>
+        </tr>
+
+        <th>23.Is the patient under treatment for any of the following?</th>
+
+        <tr>
+            <td>
+                <obs conceptId="1d5a8a80-3aeb-4182-880c-aa8a67c600be" style="no_yes" noLabel="no" yesLabel="yes" labelText="Hypertension:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="1a381e8d-1b6e-4d4a-b16a-f8993b90b7b4" style="no_yes" noLabel="no" yesLabel="yes" labelText="HIV/AIDS:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="094e5976-6ad0-4a12-8932-242239a0ea2f" style="no_yes" noLabel="no" yesLabel="yes" labelText="Diabetes:"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <obs conceptId="c548a633-9931-496d-9ade-4b7c971e6600" labelText="Others:"/>
+            </td>
+        </tr>
+        <!-- <tr>
+             <td>
+                 <obs conceptId="6a23ae0a-824a-4bb4-878e-efdcb36aa49b" style="no_yes" noLabel="non" yesLabel="oui" labelText="Has Client surgical ever had any surgical operation?:"/>
+             </td>
+         </tr>
+         -->
+        <tr>
+            <td>
+                <obs conceptId="6a23ae0a-824a-4bb4-878e-efdcb36aa49b" style="no_yes" noLabel="no" yesLabel="Yes" labelText="24.Has Client ever had any surgical operation?:"/>
+                <obs conceptId="3e91cec4-00a2-41f0-b374-80701339b287" style="no_yes" noLabel="no" yesLabel="yes" labelText="If Yes What:"/>
+                <obs conceptId="48e392bb-0685-4ab3-a217-fd23502a5635" labelText=" and when:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="e27adfe4-3618-470a-936c-d2f0a421ab58" style="no_yes" noLabel="no" yesLabel="yes" labelText="Any Complications related to Urgery?:"/>
+            </td>
+        </tr>
+    </table>
+</section>
+<section headerCode="Physical Examinations">
+    <table class="baseline-aligned">
+        <tr>
+            <td><obs conceptId="3ce93694-26fe-102b-80cb-0017a47871b2" labelText="25.Diastolic Blood Pressure:"/> mmHg</td>
+            <td><obs conceptId="3ce934fa-26fe-102b-80cb-0017a47871b2" labelText="Systoric Blood Pressure:"/> mmHg</td>
+            <td><obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" labelText="Pulse:"/></td>
+            <td><obs conceptId="3ce93b62-26fe-102b-80cb-0017a47871b2" labelCode="Weight"/>(KG)</td>
+        </tr>
+        <th>26.General examination findings</th>
+        <tr>
+            <td>
+                <obs conceptId="53eb1c21-fd8c-47fd-a25f-8bae10d9db7d" style="no_yes" noLabel="no" yesLabel="yes" labelText=" MC Pallor:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="477549dd-c96d-4d7e-9a31-e5588317c1c5" style="no_yes" noLabel="no" yesLabel="yes" labelText=" MC Wasting:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="95a54091-9ee3-40df-8806-7d6798d2a2be" style="no_yes" noLabel="no" yesLabel="yes" labelText=" MC Jaundice:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="85a27a99-f56c-422a-bcaa-edd947c5ecd2" style="no_yes" noLabel="no" yesLabel="yes" labelText=" MC Lymphadenopathy:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="bc13338a-7429-4d92-a0d6-2699255e179f" style="no_yes" noLabel="no" yesLabel="yes" labelText=" Leg oedema:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="81791a1c-b7c9-4013-93cf-9c773ef2c80b" style="no_yes" noLabel="no" yesLabel="yes" labelText=" Check for any Wound:"/>
+            </td>
+        </tr>
+        <th>27.Genital Examination findings</th>
+        <tr>
+            <td>
+                <obs conceptId="0846dc16-d7cb-46f7-b07f-4ed6970a2333" labelText="Penis: Normal/Abnormal, specify"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="3d5932c4-869c-4079-b5b0-23b619122c76" labelText="28.Is Client Suitable for MC:"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <obs conceptId="aa98563b-1552-4a1d-99d9-25c75ad493cb" style="no_yes" noLabel="no" yesLabel="yes" labelText="29.Client or Guardian Signed MC consent form:"/>
+            </td>
+        </tr>
+        <th>30.MC Booking Date</th>
+        <tr>
+            <td>
+                <obs conceptId="40b8e46b-c741-4019-9b87-2dc93d227331" lableText=" MC Booking Date:"/>
+            </td>
+        </tr>
+    </table>
+</section>
+<section headerCode="Consent Form">
+    <table class="baseline-aligned">
+        <tr>
+            <p>ICYEMEZO CYO KWEMERA K' UBUSHAKE GUKEBWA KW' ABAGABO</p>
+            <p>Jyewe ..............................................</p>
+            <p>Maze gusobanukirwa neza ibijyanye no gukebwa:Ibyiza byabyo cyane cyane mu rwego rwo kugabanya kuba nakwandura virus itera Sida,
+                ingaruka zishobora kubaho n' uko nabyitwaramo iyo bbaye, ndasaba kandi mbemereye kubushake ko mwankorera icyo gikorwa cyo gucyebwa</p>
+
+            <p>Umukono ............................................</p>
+
+            <p>Jyewe ..............................................</p> Maza guha ibisobanuro bihagije uyu
+            <p>....................................................</p>
+            <p>kubijyanye no gukebwa kw' abagabo,namuhaye umwanya wo kubaza
+                ibibazo kubyo yaba adasobanukiwe kandi muha ibisubizo. nanjye namubajije ibibazo kugirango menye neza ko yabyumvishe. Ndemeza ko
+                yifatiye icyemezo azi neza impamvu</p>
+
+            <p>Umukono .............................................</p>
+        </tr>
+    </table>
+</section>
+
+        <left>
+            <submit />
+        </left>
+    </includeIf>
+
+    <includeIf velocityTest="$patient.gender == 'F' ">
+        <section headerLabel="Invalid Patient Message">
+            <table border="0" width="100%">
+                <tr><td>This Form Is Only Filled For Male Patients:</td>
+                </tr>
+            </table>
+        </section>
+    </includeIf>
+</htmlform>

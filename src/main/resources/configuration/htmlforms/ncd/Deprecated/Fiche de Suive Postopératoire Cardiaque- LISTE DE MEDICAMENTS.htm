@@ -1,0 +1,60 @@
+<htmlform>
+    <!-- Post cardiac surgery flowsheet:  Medication list
+         Written by jberchmas
+           -->
+         <macros>
+		paperFormId = Flow-CardsPostOp-IMB-RW.V2.5akb.16May09
+		headerColor =#009d8e
+		fontOnHeaderColor = white
+	</macros>
+	<style>
+		.formName { background-color:#e0e0ff; }
+		.section { border: 1px
+		solid #8FABC7; width:99%; padding:2px; text-align:left;
+		margin-bottom:10px; }
+		.sectionHeader { background-color: #8FABC7;
+		color: white; display: block; padding: 2px; font-weight:bold; }
+		table.symptoms th {text-align: right;}
+		.note {color:red;}
+		td
+		{vertical-align:top;}
+		table.labTable td { color:red; }
+		table.labTable
+		td.dateField { text-align:right; }
+		table.identifierTable td
+		{padding-right:10px;}
+		div.paddedTable span {padding-right:20px;}
+	</style>
+
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				<b>
+					IMB ID:
+					<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				</b>
+			</td>
+			<td>
+				Date:
+				<encounterDate />
+			</td>
+
+			<td>
+				Clinique / Clinic:
+				<encounterLocation/>
+			</td>
+			<td>
+				Nom/ Signature:<encounterProvider role="NCD Provider"/>
+			</td>
+		</tr>
+	</table>
+
+	<section headerLabel="LISTE DES MEDICAMENTS/MEDICATION LIST">
+             <drugOrder drugNames="0bae921c-15f5-102d-96e4-000c29c2a5d7,0bae93ac-15f5-102d-96e4-000c29c2a5d7,0bae9546-15f5-102d-96e4-000c29c2a5d7,0bae96d6-15f5-102d-96e4-000c29c2a5d7,0bae9866-15f5-102d-96e4-000c29c2a5d7,0bae99f6-15f5-102d-96e4-000c29c2a5d7,0bae9b86-15f5-102d-96e4-000c29c2a5d7,0bae9d16-15f5-102d-96e4-000c29c2a5d7,0bae9ea6-15f5-102d-96e4-000c29c2a5d7,0baea036-15f5-102d-96e4-000c29c2a5d7,0baea1c6-15f5-102d-96e4-000c29c2a5d7,9b5093dd-f09f-45b1-9e83-ae2e7051f618,36123c25-e1ca-47b0-892a-f568ba454abd,0baec78c-15f5-102d-96e4-000c29c2a5d7,0baecc5a-15f5-102d-96e4-000c29c2a5d7,0baecd5e-15f5-102d-96e4-000c29c2a5d7,0baece62-15f5-102d-96e4-000c29c2a5d7,0baecf5c-15f5-102d-96e4-000c29c2a5d7,f6eb8ecd-d05c-425d-86fc-845325cc5953,75219834-df21-4b82-ad94-2852e7ca1084,42f03100-26fe-102b-80cb-0017a47871b2,6ab5ea46-064f-48f7-b220-e2caf75dbdca,af33f860-3add-4ea4-acb2-fca0bf9c19e3,f6f83405-ab6a-4128-8428-1af40aa1769f,5eff1708-d845-44e5-bd36-b57b1723a809,9b5093dd-f09f-45b1-9e83-ae2e7051f618,36123c25-e1ca-47b0-892a-f568ba454abd,03bdaf55-6f75-4516-b0de-b157cdd08bd5,c4e898aa-c403-468a-aac6-3684be86a214,22e1c5ac-232e-4081-9cf4-8d040446f673,e088ab6b-c00e-4fb4-83e1-6fdd5819a5be,c5dd6925-91eb-48f1-9b8e-7a0652ee576c,00cff890-02c1-4026-86e4-33a010da49ba,94bcc86d-f0f8-472b-bd12-101a78cb4c67,a027a79d-2808-4339-9a10-1c64c98e79ab,bb097866-f31f-4d22-b710-f878e7ca7ddd,b019c62a-baf6-4329-8095-fd8e402636ab,f6eb8ecd-d05c-425d-86fc-845325cc5953,078d36c9-56ab-47d8-95ec-befffec86b98,30e1f05d-4d61-463d-84e6-38ed7599ff62,dea9831f-d2f9-4242-ac80-6a485257dcee,a0a08deb-35ae-40ff-9564-a4548a0b91ee,e8f38b63-5c89-4f64-909d-8d823ecabc03"  discontinuedReasonConceptId="3cde6070-26fe-102b-80cb-0017a47871b2" discontinueReasonLabel="Raison pour arret" />
+	</section>
+
+	<center>
+		<submit />
+	</center>
+
+</htmlform>

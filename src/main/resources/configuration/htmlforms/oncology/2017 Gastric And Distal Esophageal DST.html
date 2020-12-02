@@ -1,0 +1,1153 @@
+<htmlform> <!--
+           Gastric, Ge Junction and Distal Esophageal Cancer
+                Author:  
+                Builder: Jean Berchmas 
+                started on July 14, 2014                
+        -->
+<style>
+th.tableHeader {
+	background-color: #009d8e;
+	color: #FFFFFF;
+	font-size: 16px;
+	text-align: left;
+}
+
+ul {
+	list-style-type: square;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;	
+}
+
+tr.spaceUnder>td {
+	padding-bottom: 1em;
+}
+
+td {
+	font-size: 15px;
+}
+
+#container {
+	position: relative;
+	margin: auto;
+	width: 1400px;
+	height: auto;
+}
+
+@media print {
+	#container {
+		display: block;
+		/* font-size: 11px;
+		table-layout: auto; */
+	}
+	#printArea {
+		display: none;
+	}
+	#userBar {
+		display: none;
+	}
+	#banner {
+		display: none;
+	}
+	#footer {
+		display: none;
+	}
+	#htmlFormEntryBanner {
+		display: none;
+	}
+	.error {
+		display: none;
+	}
+	.lables {
+		width: 200px;
+	}
+	table {
+		width: 100%;
+	}
+	table,td,th {
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+	th {
+		text-align: left;
+		background-color: #D9D9D9;
+		font-size: 10px;
+	}
+	td {
+		font-size: 16px;
+	}
+	.value {
+		font-size: 20px;
+		font-weight: bold;
+		font-style: italic;
+	}
+	.selectedCancerStagingKeys {
+		page-break-before: always;
+		border: 0px;
+	}
+	table.selectedCancerStagingKeys td {
+		border: 0px;
+	}
+	#signature {
+    border: none;
+   }
+   #signature td {
+    border: none;
+   }
+}
+
+@media screen {
+	table {
+		border: 1px solid #DFDFDF;
+		width: 100%;
+		border-color: #009d8e;
+	}
+	#container {
+		display: block;
+	}
+	#printArea {
+		display: none;
+	}
+}
+</style>
+<ifMode mode="ENTER"> 
+<script type="text/javascript">
+if(jQuery){
+ $j(document).ready(function(){
+	 if(getValue('pathologyCompletedYes.value')!=null){
+		 $j("#toggleble20").show(); 
+	 }
+	 if(getValue('pathologyCompletedNo.value')!=null || getValue('pathologyCompletedYes.value')==null){
+		$j("#toggleble20").hide(); 
+	 }
+	 if(getValue('endoscopyCompletedYes.value')!=null){
+		 $j("#toggleble21").show(); 
+	 }
+	 if(getValue('endoscopyCompletedNo.value')!=null ||getValue('endoscopyCompletedYes.value')==null){
+		$j("#toggleble21").hide(); 
+	 }   
+	 $j("#signature").hide(); 
+ });
+}
+</script> 
+</ifMode>
+<script type="text/javascript">
+if(jQuery){
+ $j(document).ready(function(){
+	if ( $j.browser.msie ) {
+        $j(":checkbox").click(function(){
+             $j(this).change();
+     });
+        }
+    
+    $j(".checkboxGroup").each(function(){
+        var group = $j(this);
+        var checked = group.find(":checked").closest("td").attr("id");
+       
+        var uncheckAll = function(){
+            group.find("input[type$='checkbox']").attr("checked",false);
+            group.find("input[type$='checkbox']").change();
+        }
+       
+         var showSection = function(which){
+        	if(which !=""){
+        	var triggerIndex = which.substring(7);
+        	var sectionId= "toggleble"+triggerIndex;
+            $j(".togglebles").find("tbody[id$="+sectionId+"]").fadeIn(1000);
+           }
+        }
+        
+       
+        
+        var hideSection = function(which){
+        	var sectionId= "toggleble"+which.substring(7);
+            $j(".togglebles").find("tbody[id$="+sectionId+"]").hide();
+        }       
+        
+    group.find("input[type$='checkbox']").click(function(){
+    	if(typeof checked != "undefined")
+    		hideSection(checked);
+        uncheckAll();
+        $j(this).siblings("input[type$='checkbox']").attr("checked",false);
+        $j(this).attr("checked",true);
+        checked = group.find(":checked").closest("td").attr("id");
+        $j(this).change();
+        showSection($j(this).closest("td").attr("id"));
+    });
+    
+    });
+
+ });
+}
+</script> 
+<div id="container">
+	<section>
+
+	<table border="1" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td><b> IMB ID: <lookup class="value"
+						expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
+						expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
+			</td>
+			<td>Date: <encounterDate id="encounterDate" default="today" />
+			</td>
+		</tr>
+		<tr>
+			<td>Nom / Last name: <lookup class="value"
+					expression="patient.personName.familyName" />
+			</td>
+			<td>Prénom/ First name: <lookup class="value"
+					expression="patient.personName.givenName" />
+			</td>
+		</tr>
+
+		<tr>
+			<td><img src="/openmrs/moduleResources/rwandareports/images/pihHands.png" align="left"
+			height="65" ></img>			
+			
+				<h2>
+					Inshuti Mu Buzima <br /> PIH Rwanda
+				</h2>
+			</td>
+			<td><strong> Oncology Program / Programme d'oncologie <br />
+					Diagnosis – Staging – Treatment Plan</strong> <br />
+			</td>
+		</tr>
+		<tr>
+			<td>Clinique / Clinic: <encounterLocation id="encounterLocation" default="Butaro Hospital" />
+			</td>
+			<td>Author:<encounterProvider id="encounterProvider"
+					role="Oncology Provider" default="currentUser"/>
+			</td>
+		</tr>
+	</table>
+	<br />
+	<!-- <table>
+	<tr>
+		<td> -->  <h1>GASTRIC, GE JUNCTION &amp; DISTAL ESOPHAGEAL CANCER</h1><br />
+			<font color="red"><b>*</b></font>DO NOT fill out this form for patients with Gastrointestinal Stromal Tumors (GIST), please fill out an OTHER SOLIDS DST
+		<!-- </td>
+		</tr>
+	</table> -->
+	<br />
+	<br />
+	<table>
+		<tr>
+			<th class="tableHeader">MANAGING DCA</th>
+		</tr>
+		<tr class="spaceUnder">
+			<td><relationship id="managingDCA"
+					type="2293a1d2-6ec5-428c-8230-b78353952a13" whoAmI="B"
+					changeExistingRelationship="false" />
+			</td>
+		</tr>
+		<tr class="spaceUnder">
+			<td></td>
+		</tr>
+		<tr>
+			<th class="tableHeader">MANAGING GP</th>
+		</tr>
+		<tr>
+			<td><relationship id="managingGP"
+					type="ff98bcbf-1706-456e-bba6-77588f5f1b45" whoAmI="B"
+					changeExistingRelationship="false" />
+			</td>
+		</tr>
+	</table>
+	</section>
+	<br />
+	
+	
+	<!-- start Create and hide  Gastric cancer diagnosis obs-->
+	
+	<table class="togglebles">	
+		<!-- <TBODY id="toggleble1"> -->
+		
+		<tr class="spaceUnder">
+		<th class="tableHeader" colspan="8">
+		<table>
+		<tr class="checkboxGroup , spaceUnder">
+		<th width="30%">DISEASE WORK-UP </th>
+			<th>
+						
+			This is a follow-up DST for (select reason):<br />
+			<obsgroup groupingConceptId="d61bbda2-b88f-4054-9f5b-35113bd253a8">
+			&#160;&#160;&#160;&#160;<obs id="changeInTreatmentIntentObs" conceptId="28cc8546-9325-455f-b199-731fa9e1f500" answerConceptId="9a0b29d4-8df8-4c50-b8b7-0a943fe6c243" answerLabel="Change in treatment intent" /> <br />
+			&#160;&#160;&#160;&#160;<obs id="changeInTreatmentPlanSurgeryResultsObs" conceptId="28cc8546-9325-455f-b199-731fa9e1f500" answerConceptId="116cfd14-b950-4477-9eeb-0ce3b603822d" answerLabel="Change in treatment plan because of surgery results" /> <br />
+			&#160;&#160;&#160;&#160;<obs id="changeInTreatmentIntentOtherResultObs" conceptId="28cc8546-9325-455f-b199-731fa9e1f500" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Change in treatment plan because of other result (specify):" />
+			<obs id="changeInTreatmentPlanOtherResultTextObs" conceptId="f19fd580-617c-4933-ae78-632cd5f68024" />
+			</obsgroup>
+                                                                      
+			</th>
+		</tr>
+		</table>
+		
+		</th>
+			
+		</tr>
+		<tr class="checkboxGroup">
+		<td colspan="6"> Type of Cancer &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="gastricCancerTypepathologyCompletedYes"
+					conceptId="3dc2eb50-6981-43d3-b907-e3dd8b5ed620"
+					answerConceptId="806cc635-a11b-491d-867a-9367523751c2"
+					answerLabel="Gastric Cancer" />
+					&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+					<obs id="distalEsophagealCancerType"
+					conceptId="3dc2eb50-6981-43d3-b907-e3dd8b5ed620"
+					answerConceptId="cbc735e8-6f18-44e5-be22-3e40765eaa52"
+					answerLabel="Distal Esophageal or Gastro-estophageal Junction Cancer" />
+					
+		<hr />			  
+		</td>
+		</tr>
+		<!-- Begin of the pathology section -->		
+		<tr class="spaceUnder">
+	<td colspan="6"><table style='border: 0px;'>
+		<obsgroup groupingConceptId="639fb794-8a5a-4958-b4b1-749e554f44fb">
+		<tr class="checkboxGroup , spaceUnder">
+			<td width="400px">Pathology completed</td>
+			<td id="trigger20" width="265px"><obs id="pathologyCompletedYes"
+					conceptId="145c13d3-dfbb-4dc6-9986-d10fd5e9bf48"
+					answerConceptId="3cd6f600-26fe-102b-80cb-0017a47871b2"
+					answerLabel="Yes" style="checkbox" /></td>
+			<td><obs id="pathologyCompletedNo"
+					conceptId="145c13d3-dfbb-4dc6-9986-d10fd5e9bf48"
+					answerConceptId="3cd6f86c-26fe-102b-80cb-0017a47871b2"
+					answerLabel="NO" style="checkbox" /></td>  
+					<td colspan="3" width="30%"></td>
+		</tr>
+		<TBODY id="toggleble20">
+			<tr class="spaceUnder">
+				<td colspan="6">Date:<obs id="dateOfPathologyObs"
+						conceptId="926dd83d-5c6c-43d9-9fb8-a8c2e364d5f6" labelText="" /><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(date
+					of report)</td>
+			</tr>
+			<tr class="checkboxGroup , spaceUnder">
+				<td colspan="6">Institution issuing pathology report:
+						<obs id="siteOfPathologyBWHObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="6c87ddb0-f8e9-4115-98cc-5e71903f2c04" answerLabel="BWH" />
+						<obs id="siteOfPathologyBUTAROObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="682754d6-cff2-4f2e-90a3-ea3b1e7fa230" answerLabel="BUTARO" />
+						<obs id="siteOfPathologyKFHObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="55acdf7c-5027-4f01-90a2-ab9745f97dd3" answerLabel="KFH" />
+						<obs id="siteOfPathologyCHUKObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="68222ccb-71ee-418e-a4a4-b924b4e80108" answerLabel="CHUK" />
+						<obs id="siteOfPathologyCHUBObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="2b472c6b-a0d4-44b1-bb2f-3d44289a19e5" answerLabel="CHUB" />
+						<obs id="siteOfPathologyOTHERObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Other:" />
+						<obs id="siteOfPathologyOTHERTextObs" conceptId="deeca3da-a026-446b-a756-0f6eaecfd9a7" />
+				
+				</td>
+
+			</tr>
+			
+			 <tr>
+				
+				<td class="checkboxGroup" colspan="6">
+				<table style='border: 0px;' width="100%">
+				<tr>
+				<td width="200px">Pathologic Diagnosis:</td> 
+				<td width="300px"><obs id="squamousCellCarcinomaObs"
+						conceptId="21f54f50-b804-476e-a0dd-a3238cd556fb"
+						answerConceptId="fe789956-12f8-43f9-9f2d-1c43104cf0bc"
+						answerLabel="Invarsive Adenocarcinoma" /></td>
+				 
+				<td><obs id="otherPathologicDiagnosisObs"
+						conceptId="21f54f50-b804-476e-a0dd-a3238cd556fb"
+						answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2"
+						answerLabel="Other (specify) :" /><obs
+						id="otherPathologicDiagnosisNonCodedObs"
+						conceptId="387dc461-bde7-4d27-8754-8ee35e5be3ee" size="40" />
+				</td></tr> 
+				</table>
+				</td>
+				
+			</tr>
+			</TBODY>
+			</obsgroup>			
+			
+			
+			<tr><td colspan="6"><hr /></td></tr>
+			
+			
+		<obsgroup groupingConceptId="1671489b-4427-41a7-b562-d1ad61e66c13">
+		<tr class="checkboxGroup , spaceUnder">
+			<td width="400px">Endoscopy completed</td>
+			<td id="trigger21" width="265px"><obs id="endoscopyCompletedYes"
+					conceptId="53fca5a1-7350-4d1c-9767-d401441ea744"
+					answerConceptId="3cd6f600-26fe-102b-80cb-0017a47871b2"
+					answerLabel="Yes" style="checkbox" /></td>
+			<td><obs id="endoscopyCompletedNo"
+					conceptId="53fca5a1-7350-4d1c-9767-d401441ea744"
+					answerConceptId="3cd6f86c-26fe-102b-80cb-0017a47871b2"
+					answerLabel="NO" style="checkbox" /></td>  
+					<td colspan="3" width="30%"></td>
+		</tr>
+		<TBODY id="toggleble21">
+			<tr class="spaceUnder">
+				<td colspan="6">Date:<obs id="dateOfEndoscopyObs"
+						conceptId="888cc599-24f4-4435-b42f-ecc347486141" labelText="" /><br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(date
+					of report)</td>
+			</tr>
+			<tr class="checkboxGroup , spaceUnder">
+				<td colspan="6">Endoscopy Institution:
+						<obs id="siteOfEndoscopyBUTAROObs" conceptId="b2bea54f-ff32-4991-ab45-5d215b966138" answerConceptId="682754d6-cff2-4f2e-90a3-ea3b1e7fa230" answerLabel="BUTARO" />
+						<obs id="siteOfEndoscopyKFHObs" conceptId="b2bea54f-ff32-4991-ab45-5d215b966138" answerConceptId="55acdf7c-5027-4f01-90a2-ab9745f97dd3" answerLabel="KFH" />
+						<obs id="siteOfEndoscopyCHUKObs" conceptId="b2bea54f-ff32-4991-ab45-5d215b966138" answerConceptId="68222ccb-71ee-418e-a4a4-b924b4e80108" answerLabel="CHUK" />
+						<obs id="siteOfEndoscopyCHUBObs" conceptId="b2bea54f-ff32-4991-ab45-5d215b966138" answerConceptId="2b472c6b-a0d4-44b1-bb2f-3d44289a19e5" answerLabel="CHUB" />
+						<obs id="siteOfEndoscopyOTHERObs" conceptId="b2bea54f-ff32-4991-ab45-5d215b966138" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Other:" />
+						<obs id="siteOfEndoscopyOTHERTextObs" conceptId="6015b9c0-2fe5-4c75-84fa-dffb7dc401b7" />
+				
+				</td>
+			</tr>
+			
+			 <tr>
+			
+				
+				<td class="checkboxGroup" colspan="6">
+				Endoscopy Findings:<br /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+				<obs id="endoscopyFindings"
+						conceptId="3395b6a7-6f87-483f-aa42-23677ea9d4d1" style="textarea" cols="100" rows="5" />
+				
+				</td>
+				
+			</tr>
+			</TBODY>
+			</obsgroup>
+			
+			
+			<tr><td colspan="6"><hr /></td></tr>
+			
+			
+			
+			
+			<tr>
+			<td colspan="6">
+			<!-- Endoscopy -->
+			</td>
+			</tr>
+			
+			<tr class="spaceUnder">
+			<td colspan="6">Imaging Studies (includea copy of imaging report in chart, if applicable)</td>
+			</tr>
+			<tr>
+				<td colspan="3" width="50%"><obs id="chestXRayObs"
+						conceptId="24e5c4c1-ac2b-42f5-a144-aa41e4375cb5"
+						answerConceptId="3ccc6186-26fe-102b-80cb-0017a47871b2"
+						answerLabel="Chest X-ray" showDate="true" dateLabel="&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Study Date:"/></td>
+				<td class="checkboxGroup" colspan="3">Site: 
+				<obs id="siteOfImagingStudiesChestBUTAROObs"
+						conceptId="1ece1f61-f35a-4cc4-bd6d-fcf9fc80b5b5" answerConceptId="682754d6-cff2-4f2e-90a3-ea3b1e7fa230" answerLabel="Butaro" />
+				<obs id="siteOfImagingStudiesChestKFHObs"
+						conceptId="1ece1f61-f35a-4cc4-bd6d-fcf9fc80b5b5" answerConceptId="55acdf7c-5027-4f01-90a2-ab9745f97dd3" answerLabel="KFH" />
+				<obs id="siteOfImagingStudiesChestCHUKObs"
+						conceptId="1ece1f61-f35a-4cc4-bd6d-fcf9fc80b5b5" answerConceptId="68222ccb-71ee-418e-a4a4-b924b4e80108" answerLabel="CHUK" />
+				<obs id="siteOfImagingStudiesChestCHUBObs"
+						conceptId="1ece1f61-f35a-4cc4-bd6d-fcf9fc80b5b5" answerConceptId="2b472c6b-a0d4-44b1-bb2f-3d44289a19e5" answerLabel="CHUB" />
+				<obs id="siteOfImagingStudiesChestOtherObs"
+						conceptId="1ece1f61-f35a-4cc4-bd6d-fcf9fc80b5b5" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Other: " />
+				<obs id="siteOfImagingStudiesChestOtherObsText" conceptId="a94a3341-0639-43e5-bc63-1a4f35b67348" size="14" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3"><obs id="abdominalUltrasoundObs" 
+						conceptId="24e5c4c1-ac2b-42f5-a144-aa41e4375cb5"
+						answerConceptId="3cd49748-26fe-102b-80cb-0017a47871b2"
+						answerLabel="Abdominal Ultrasound" showDate="true" dateLabel="&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Study Date:"/></td>
+				<td class="checkboxGroup" colspan="3">Site: 
+				<obs id="siteOfImagingStudiesUltrasoundBUTAROObs"
+						conceptId="bbc9e640-36f2-4ae2-a219-75c64b76db24" answerConceptId="682754d6-cff2-4f2e-90a3-ea3b1e7fa230" answerLabel="Butaro" />
+				<obs id="siteOfImagingStudiesUltrasoundKFHObs"
+						conceptId="bbc9e640-36f2-4ae2-a219-75c64b76db24" answerConceptId="55acdf7c-5027-4f01-90a2-ab9745f97dd3" answerLabel="KFH" />
+				<obs id="siteOfImagingStudiesUltrasoundCHUKObs"
+						conceptId="bbc9e640-36f2-4ae2-a219-75c64b76db24" answerConceptId="68222ccb-71ee-418e-a4a4-b924b4e80108" answerLabel="CHUK" />
+				<obs id="siteOfImagingStudiesUltrasoundCHUBObs"
+						conceptId="bbc9e640-36f2-4ae2-a219-75c64b76db24" answerConceptId="2b472c6b-a0d4-44b1-bb2f-3d44289a19e5" answerLabel="CHUB" />
+				<obs id="siteOfImagingStudiesUltrasoundOtherObs"
+						conceptId="bbc9e640-36f2-4ae2-a219-75c64b76db24" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Other: " />
+				<obs id="siteOfImagingStudiesUltrasoundOtherObsText" conceptId="3c409512-868f-4626-a5f8-e4fa41b5da52"  size="14" />
+				</td>
+				
+			</tr>
+			<tr>
+				<td colspan="3"><obs id="CTScanOfAbdomenPelvisObs"
+						conceptId="24e5c4c1-ac2b-42f5-a144-aa41e4375cb5"
+						answerConceptId="33c0e251-34e3-4cf5-a93d-6192856de458"
+						answerLabel="CT scan of Abdomen/Pelvis" showDate="true" dateLabel="&#160;&#160; Study Date:"/></td>
+				<td class="checkboxGroup" colspan="3">Site:
+				<obs id="siteOfImagingStudiesCTScanChestAbdomenPelvisBUTAROObs"
+						conceptId="2e8f91f6-7186-4c82-be48-61cb0a829dd7" answerConceptId="682754d6-cff2-4f2e-90a3-ea3b1e7fa230" answerLabel="Butaro" />
+				<obs id="siteOfImagingStudiesCTScanChestAbdomenPelvisKFHObs"
+						conceptId="2e8f91f6-7186-4c82-be48-61cb0a829dd7" answerConceptId="55acdf7c-5027-4f01-90a2-ab9745f97dd3" answerLabel="KFH" />
+				<obs id="siteOfImagingStudiesCTScanChestAbdomenPelvisCHUKObs"
+						conceptId="2e8f91f6-7186-4c82-be48-61cb0a829dd7" answerConceptId="68222ccb-71ee-418e-a4a4-b924b4e80108" answerLabel="CHUK" />
+				<obs id="siteOfImagingStudiesCTScanChestAbdomenPelvisCHUBObs"
+						conceptId="2e8f91f6-7186-4c82-be48-61cb0a829dd7" answerConceptId="2b472c6b-a0d4-44b1-bb2f-3d44289a19e5" answerLabel="CHUB" />
+				<obs id="siteOfImagingStudiesCTScanChestAbdomenPelvisOtherObs"
+						conceptId="2e8f91f6-7186-4c82-be48-61cb0a829dd7" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Other: " />
+				<obs id="siteOfImagingStudiesCTScanChestAbdomenPelvisOtherObsText" conceptId="046e4d66-dab3-49e4-b25b-d091f20884ac"  size="14" />
+				</td>
+				
+			</tr>
+			<tr>
+				<td colspan="3"><obs id="CTScanOfAbdomenPelvisObs"
+						conceptId="24e5c4c1-ac2b-42f5-a144-aa41e4375cb5"
+						answerConceptId="d90c51af-73ca-4f41-a56b-0c32a339638d"
+						answerLabel="CT scan of chest" showDate="true" dateLabel="&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Study Date:"/></td>
+				<td class="checkboxGroup" colspan="3">Site:
+				<obs id="siteOfImagingStudiesCTScanChestAbdomenPelvisBUTAROObs"
+						conceptId="2e8f91f6-7186-4c82-be48-61cb0a829dd7" answerConceptId="682754d6-cff2-4f2e-90a3-ea3b1e7fa230" answerLabel="Butaro" />
+				<obs id="siteOfImagingStudiesCTScanChestAbdomenPelvisKFHObs"
+						conceptId="2e8f91f6-7186-4c82-be48-61cb0a829dd7" answerConceptId="55acdf7c-5027-4f01-90a2-ab9745f97dd3" answerLabel="KFH" />
+				<obs id="siteOfImagingStudiesCTScanChestAbdomenPelvisCHUKObs"
+						conceptId="2e8f91f6-7186-4c82-be48-61cb0a829dd7" answerConceptId="68222ccb-71ee-418e-a4a4-b924b4e80108" answerLabel="CHUK" />
+				<obs id="siteOfImagingStudiesCTScanChestAbdomenPelvisCHUBObs"
+						conceptId="2e8f91f6-7186-4c82-be48-61cb0a829dd7" answerConceptId="2b472c6b-a0d4-44b1-bb2f-3d44289a19e5" answerLabel="CHUB" />
+				<obs id="siteOfImagingStudiesCTScanChestAbdomenPelvisOtherObs"
+						conceptId="2e8f91f6-7186-4c82-be48-61cb0a829dd7" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Other: " />
+				<obs id="siteOfImagingStudiesCTScanChestAbdomenPelvisOtherObsText" conceptId="046e4d66-dab3-49e4-b25b-d091f20884ac"  size="14" />
+				</td>
+				
+			</tr>
+			<tr>
+				<td colspan="3"><obs id="OtherImagingStudyObs"
+						conceptId="24e5c4c1-ac2b-42f5-a144-aa41e4375cb5"
+						answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2"
+						answerLabel="Other:" />
+						<obs id="OtherImagingStudyTextObs"
+						conceptId="042187c5-3b6e-4bc0-8e11-c0091e78aa68"
+						showDate="true" dateLabel="&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Study Date:"/>
+					</td>
+				<td class="checkboxGroup" colspan="3">Site: 
+				<obs id="siteOfOtherImagingStudyBUTAROObs"
+						conceptId="a3f67d44-3e2c-4df5-bc67-d9ae315c2c5d" answerConceptId="682754d6-cff2-4f2e-90a3-ea3b1e7fa230" answerLabel="Butaro" />
+				<obs id="siteOfOtherImagingStudyKFHObs"
+						conceptId="a3f67d44-3e2c-4df5-bc67-d9ae315c2c5d" answerConceptId="55acdf7c-5027-4f01-90a2-ab9745f97dd3" answerLabel="KFH" />
+				<obs id="siteOfOtherImagingStudyCHUKObs"
+						conceptId="a3f67d44-3e2c-4df5-bc67-d9ae315c2c5d" answerConceptId="68222ccb-71ee-418e-a4a4-b924b4e80108" answerLabel="CHUK" />
+				<obs id="siteOfOtherImagingStudyCHUBObs"
+						conceptId="a3f67d44-3e2c-4df5-bc67-d9ae315c2c5d" answerConceptId="2b472c6b-a0d4-44b1-bb2f-3d44289a19e5" answerLabel="CHUB" />
+				<obs id="siteOfOtherImagingStudyOtherObs"
+						conceptId="a3f67d44-3e2c-4df5-bc67-d9ae315c2c5d" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Other: " />
+				<obs id="siteOfOtherImagingStudyOtherObsText" conceptId="51b5aa9c-158d-413b-ba37-aa898c0675a9"  size="14" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="6"><obs id="imagingStudyNoneObs"
+						conceptId="24e5c4c1-ac2b-42f5-a144-aa41e4375cb5"
+						answerConceptId="3cd743f8-26fe-102b-80cb-0017a47871b2"
+						answerLabel="None" /></td>
+			</tr>
+							<tr>
+								<td>Imaging Assessment:</td>
+								<td colspan="5"><obs id="imagingAssessmentAndFindingsObs"
+										conceptId="997d8e3c-a93c-4cd4-822d-9630bdb5fffe" rows="5"
+										cols="70" labelText="" />
+								</td>
+							</tr>
+						<!-- </TBODY> -->
+		
+	</table> </td>
+	</tr>
+		
+		<!-- End of the pathology section -->
+		<tr>
+			<th class="tableHeader" colspan="8">FINAL DIAGNOSIS &#38;
+				STAGING</th>
+		</tr>
+    <tr class="spaceUnder">
+				<td colspan="6"><b>Confirmed Diagnosis Details</b></td>
+			</tr>
+			<!-- <obsgroup groupingConceptId="41a80891-3bb2-4423-9647-1f803cebed60">  -->
+			<obsgroup groupingConceptId="2e775064-6ece-4546-9375-50480e8e0020">
+			
+			<tr>				
+				<td colspan="6"><br /></td>
+			</tr>
+			
+			<tr>
+				
+				<td colspan="6">
+				Mass location:
+				<obs id="gastricMassObs1"
+						conceptId="547ce691-8151-461e-9b1b-b9dc40e9a455" 
+						answerConceptId="02180b0a-07d4-4bb8-9b64-d73e064a3a6e"
+						answerLabel="Distal Esophagus" />
+						
+						
+				<obs id="gastricMassObs2"
+						conceptId="547ce691-8151-461e-9b1b-b9dc40e9a455" 
+						answerConceptId="50035cd3-bd83-466a-b891-f6658746d764"
+						answerLabel="Gastro-esophageal Junction" />
+				
+				<obs id="gastricMassObs3"
+						conceptId="547ce691-8151-461e-9b1b-b9dc40e9a455" 
+						answerConceptId="bcdd01b2-48b3-434a-bcc1-910d7831950d"
+						answerLabel="Fundus of Stomach" />
+						
+				<obs id="gastricMassObs4"
+						conceptId="547ce691-8151-461e-9b1b-b9dc40e9a455" 
+						answerConceptId="8c1abb04-8271-430d-9386-a58796650ae1"
+						answerLabel="Body of Stomach" />
+				
+				<obs id="gastricMassObs5"
+						conceptId="547ce691-8151-461e-9b1b-b9dc40e9a455" 
+						answerConceptId="ea36664e-5a76-43f3-a361-b91083322139"
+						answerLabels="Pylorus" />
+						
+				<obs id="gastricMassObs6"
+						conceptId="547ce691-8151-461e-9b1b-b9dc40e9a455" 
+						answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2"
+						answerLabel="Other" />
+						
+						
+						</td>
+			</tr>
+			
+			<tr>				
+				<td colspan="6"><br /></td>
+			</tr>
+			
+			<tr>
+				<td colspan="6">Mass size:<obs id="gastricMassSize1Obs"
+						conceptId="f174b027-79cf-4ebf-a103-d34b26eacafd" /> X <obs
+						id="gastricMassSize2Obs"
+						conceptId="f174b027-79cf-4ebf-a103-d34b26eacafd" /> cm</td>
+				
+			</tr>
+			
+			<tr>				
+				<td colspan="6"><br /></td>
+			</tr>
+			
+			<tr>
+				
+				<td colspan="6">
+				Lymphadenopath(specify):
+				<obs id="lymphadenopathObs1"
+						conceptId="d12597da-602f-4642-b15c-2463a617da57" 
+						answerConceptId="8670ad33-ff44-4f21-93c9-f791faffc195"
+						answerLabel="Superclavicular" />
+						
+						
+				<obs id="lymphadenopathObs2"
+						conceptId="d12597da-602f-4642-b15c-2463a617da57" 
+						answerConceptId="d9c1c4d3-5a99-4ae4-a73e-d207e5f893eb"
+						answerLabel="Periumbilical" />
+				
+				<obs id="lymphadenopathObs3"
+						conceptId="d12597da-602f-4642-b15c-2463a617da57" 
+						answerConceptId="484d9b81-fd6f-4be5-a8b6-8e82863c1486"
+						answerLabel="Left axillary" />
+						
+				<obs id="lymphadenopathObs4"
+						conceptId="d12597da-602f-4642-b15c-2463a617da57" 
+						answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2"
+						answerLabel="Other:" />
+				
+				<obs id="lymphadenopathObsText"
+						conceptId="5f17dc68-a7a2-4af3-af7b-89c1e64a1880"  />						
+						
+						</td>
+			</tr>
+			
+			<tr>				
+				<td colspan="6"><br /></td>
+			</tr>
+			
+			<tr>
+				
+				<td colspan="6">
+				<b>Other Mass Details:</b>
+				<obs id="otherMassLocation"
+						conceptId="e95848e2-f31c-485f-ba8b-8c9424840f92" size="40" />						
+						
+						</td>
+			</tr>
+			
+			<tr>				
+				<td colspan="6"><br /></td>
+			</tr>
+			
+			<tr>
+				
+				<td colspan="6">
+				<b>Pre-Operative Clinical Staging</b>
+
+				<obs id="preOperativeClinicalStagingObs1"
+						conceptId="f88cb62f-d06b-4649-ab32-3ff20ab4fce1" 
+						answerConceptId="05beea12-df4d-46fb-8d28-ce93fe2a210d"
+						answerLabel="Resectable or Curable Disease" />
+						
+						
+				<obs id="preOperativeClinicalStagingObs2"
+						conceptId="f88cb62f-d06b-4649-ab32-3ff20ab4fce1" 
+						answerConceptId="00b98288-a8f1-4dcd-8fd5-3731379c1d62"
+						answerLabel="Locally Advanced Unresectable Disease" />
+				
+				<obs id="preOperativeClinicalStagingObs3"
+						conceptId="f88cb62f-d06b-4649-ab32-3ff20ab4fce1" 
+						answerConceptId="2557963e-ea62-40c9-bd88-03a0bcc243ec"
+						answerLabel="Metastatic Disease" />
+						
+				<obs id="preOperativeClinicalStagingObs4"
+						conceptId="f88cb62f-d06b-4649-ab32-3ff20ab4fce1" 
+						answerConceptId="2796c193-47f2-4561-aa9b-fd148bb5f30f"
+						answerLabel="Patient status post surgical resection" />						
+						
+						</td>
+			</tr>
+			
+			</obsgroup>
+						
+	</table>
+	<br />
+	<br />
+	<table width="100%">
+		<tr>
+			<th class="tableHeader" colspan="4">TREATMENT PLAN</th>
+		</tr>
+		<tr class="checkboxGroup , treatmentPlan">
+			<td>Intent</td>
+			<td id="treatmentCurative"><!-- <workflowState
+					workflowId="bc04fe8c-869e-4b9b-8b9f-7224c0a3cb1f"
+					stateId="cb777216-77f6-478a-9353-12ed7e85a929"
+					stateLabel="Curative" type="checkbox" /> -->
+					<obs
+					conceptId="74bf3a55-6e92-4b91-86b0-a19345f22ad2"
+					answerConceptId="3d996ff0-4990-42d4-a7cf-45ead911d7af"
+					answerLabel="Curative" type="checkbox" />
+			</td>
+			<td id="treatmentPalliative"><!-- <workflowState
+					workflowId="bc04fe8c-869e-4b9b-8b9f-7224c0a3cb1f"
+					stateId="eb4eeb73-996d-47c9-928e-f0569999eefa"
+					stateLabel="Palliative systemic therapy" type="checkbox" /> -->
+					<obs
+					conceptId="74bf3a55-6e92-4b91-86b0-a19345f22ad2"
+					answerConceptId="0d02a051-9196-4f89-883a-8a443989ed65"
+					answerLabel="Palliative systemic therapy" type="checkbox" />
+			</td>
+			<td id="treatmentPalliation"><!-- <workflowState
+					workflowId="bc04fe8c-869e-4b9b-8b9f-7224c0a3cb1f"
+					stateId="353e32de-4b62-4e09-9a4d-829942483db0"
+					stateLabel="Palliation ONLY" type="checkbox" /> -->
+					<obs
+					conceptId="74bf3a55-6e92-4b91-86b0-a19345f22ad2"
+					answerConceptId="11fbb8e0-e069-4036-9095-56049540ab7c"
+					answerLabel="Palliation ONLY" type="checkbox" />
+			</td>
+		</tr>
+		
+	
+	</table>
+	<table class="togglebles" width="100%">
+		<obsgroup groupingConceptId="c0f544c2-b233-4956-a8d6-b75153992f00">
+		<TBODY id="toggleble21">
+			<tr class="checkboxGroup">
+				<th class="tableHeader" colspan="4">SURGERY
+				
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+						
+				
+				<!-- <workflowState
+					workflowId="f213cee1-df80-4a6d-a3eb-44e4581c3479"
+					stateId="d9a71d5e-cad4-432b-ab00-6a1edc7a226d" stateLabel="Planned"
+					type="checkbox" /> -->
+					
+					<obs id="plannedSurgery"
+						conceptId="985e240a-7654-44cc-b436-cc20944f4a4a"
+						answerConceptId="c0fea63b-2e63-49aa-b0eb-5297f98355ef"
+						answerLabel="Planned" />
+					
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+						
+				<!-- <workflowState
+					workflowId="f213cee1-df80-4a6d-a3eb-44e4581c3479"
+					stateId="16387e03-5410-45e1-9f98-9e82ba245605"
+					stateLabel="Not planned" type="checkbox" /> -->
+					
+					<obs id="notPlannedSurgery"
+						conceptId="985e240a-7654-44cc-b436-cc20944f4a4a"
+						answerConceptId="7ff97aed-5be5-432a-8ba2-45ef783dc108"
+						answerLabel="Not planned" />
+					
+					
+					</th>
+			</tr>
+			
+			<tr class="checkboxGroup">
+				<td>Facility</td>
+				<td>
+				<obs id="surgeryFacilityButaroObs" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="682754d6-cff2-4f2e-90a3-ea3b1e7fa230" answerLabel="Butaro" style="checkbox" />
+				<obs id="surgeryFacilityKFObs" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="55acdf7c-5027-4f01-90a2-ab9745f97dd3" answerLabel="KHF" style="checkbox" />
+				<obs id="surgeryFacilityCHUKObs" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="68222ccb-71ee-418e-a4a4-b924b4e80108" answerLabel="CHUK" style="checkbox" />
+				<obs id="surgeryFacilityCHUBObs" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="2b472c6b-a0d4-44b1-bb2f-3d44289a19e5" answerLabel="CHUB" style="checkbox" />
+				<obs id="surgeryFacilityObsOthers" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="OTHERS:" style="checkbox" />
+				<obs id="surgeryFacilityObsOthersText" conceptId="13c825f8-615a-429d-b813-ef9bdf8830ea" labelText="" />
+				</td>
+			</tr>
+			<tr class="spaceUnder">
+				<td>Planned date</td>
+				<td><obs id="surgeryStartDateObs"
+						conceptId="409ebbae-8a1e-43d4-82e8-eea7b493b51d" />
+				</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr class="checkboxGroup">
+				<td>Surgery Type</td>
+				<td>
+				<obs id="gastrectomyObs" conceptId="f2dc764c-255b-4959-beec-b2a14b597cd3" answerConceptId="f890c8da-3eea-4825-95a8-f55c9a6c4bc6" answerLabel="Gastrectomy" />
+				<obs id="esophagectomyObs" conceptId="f2dc764c-255b-4959-beec-b2a14b597cd3" answerConceptId="a46b5020-f1fc-4248-9492-4f5039babc34" answerLabel="Esophagectomy" />
+				<obs id="surgeryTypeOthersObs" conceptId="f2dc764c-255b-4959-beec-b2a14b597cd3" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Other:" style="checkbox" />
+				<obs id="surgeryTypeTextObs" conceptId="4eeeb806-b306-407e-a46f-19eafd59f71b" />			
+				
+				</td>
+				<td></td>
+				<td></td>
+			</tr>
+			
+		</TBODY>
+		</obsgroup>
+	</table>
+	
+	
+	<table class="togglebles" width="100%">
+		<obsgroup groupingConceptId="d4ceafd0-e5b5-422a-aecd-eac58207cbcc">
+		<TBODY id="toggleble23_1">
+			<tr class="checkboxGroup">
+				<th class="tableHeader" colspan="4">PRE-OPERATIVE CHEMOTHERAPY
+								&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+						<obs id="plannedPreOperative"
+						conceptId="e75eb5d3-68b1-4d3e-a950-af2b672c3ab2"
+						answerConceptId="c0fea63b-2e63-49aa-b0eb-5297f98355ef"
+						answerLabel="Planned" />
+						&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+						
+						<obs id="notPlannedPreOperative"
+						conceptId="e75eb5d3-68b1-4d3e-a950-af2b672c3ab2"
+						answerConceptId="7ff97aed-5be5-432a-8ba2-45ef783dc108"
+						answerLabel="Not Planned" />
+				</th>
+				
+			</tr>
+			<tr class="spaceUnder checkboxGroup">
+				<td>Regimen Type</td>
+				<td colspan="3"><obs id="chemotherapyRegimenFolfoxObs"
+						conceptId="012df739-5bd1-445c-a76e-de0d5702d86a" answerConceptId="c01e740d-8263-403b-808b-51e797eca1d8"
+						answerLabel="FOLFOX" />
+				</td>				
+			</tr>
+			
+			<tr>
+				<td>Cycles</td>
+				<td><obs id="chemotherapyCyclesObs"
+						conceptId="aaeb5782-3ee6-4cb8-9d27-c557ad91e241" labelText="" />
+				</td>
+				<td></td>
+				<!-- <td></td> -->
+			</tr>
+			<tr>
+				<td>Planned first cycle</td>
+				<td><obs id="chemotherapyFirstCycleObs"
+						conceptId="e9b59f4e-8a3f-467f-b5e0-1296025fb286" allowFutureDates="true" labelText="" />
+				</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Planned regimen end</td>
+				<td><obs id="chemotherapyFirstCycleObs"
+						conceptId="989c2c3c-b000-45e2-9bc4-0bab9808d9c4" allowFutureDates="true" labelText="" />
+				</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr class="spaceUnder">
+				<td>Planned changes to standard regimen</td>
+				<td><obs id="chemotherapyStandardRegimenObs"
+						conceptId="d6e5e3a7-2ab7-45c2-a104-4f49ed01aefc" labelText="" />
+				</td>
+				<td></td>
+				<td></td>
+			</tr>			
+		</TBODY>
+		</obsgroup>
+		
+	</table>
+		
+	
+	<!-- Start Notes -->
+	
+	<table width="100%">		
+		<tr class="spaceUnder">
+	<th colspan="6" class="tableHeader">POST-OPERATIVE STAGING</th>
+		</tr>
+		<tr class="spaceUnder">
+			<td colspan="6"><b>Notes from Operative Report/Consultation with Surgeon:</b><br/>
+			<small>(Include a copy of operative report in chart, if applicable)</small></td>
+		</tr>
+			<!-- <obsgroup groupingConceptId="639fb794-8a5a-4958-b4b1-749e554f44fb"> -->
+			<tr class="spaceUnder">
+				<td class="checkboxGroup" colspan="6">Date of Surgery:&#160;&#160;&#160;&#160;&#160;
+				<obs id="surgeryDateObs" conceptId="48e392bb-0685-4ab3-a217-fd23502a5635" labelText="" />&#160;&#160;&#160;&#160;&#160;&#160;
+	Institution:<obs id="surgeryFacilityButaroObs" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="682754d6-cff2-4f2e-90a3-ea3b1e7fa230" answerLabel="Butaro" style="checkbox" />
+				<obs id="surgeryFacilityKFObs" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="55acdf7c-5027-4f01-90a2-ab9745f97dd3" answerLabel="KHF" style="checkbox" />
+				<obs id="surgeryFacilityCHUKObs" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="68222ccb-71ee-418e-a4a4-b924b4e80108" answerLabel="CHUK" style="checkbox" />
+				<obs id="surgeryFacilityCHUBObs" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="2b472c6b-a0d4-44b1-bb2f-3d44289a19e5" answerLabel="CHUB" style="checkbox" />
+				<obs id="surgeryFacilityObsOthers" conceptId="1e1a2f81-ef1b-4eff-a1a4-457aa5ee8b32" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="OTHERS" style="checkbox" />
+				<obs id="surgeryFacilityTextObs" conceptId="13c825f8-615a-429d-b813-ef9bdf8830ea" labelText="" />
+				</td>
+			</tr>
+			<tr>
+			<td colspan="6">Procedure:
+			
+				<obs id="postGastrectomyObs" conceptId="f2dc764c-255b-4959-beec-b2a14b597cd3" answerConceptId="f890c8da-3eea-4825-95a8-f55c9a6c4bc6" answerLabel="Gastrectomy" />
+				<obs id="postEsophagectomyObs" conceptId="f2dc764c-255b-4959-beec-b2a14b597cd3" answerConceptId="a46b5020-f1fc-4248-9492-4f5039babc34" answerLabel="Esophagectomy" />
+				<obs id="postSurgeryTypeOthersObs" conceptId="f2dc764c-255b-4959-beec-b2a14b597cd3" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Other:" style="checkbox" />
+				<obs id="postSurgeryTypeTextObs" conceptId="4eeeb806-b306-407e-a46f-19eafd59f71b" />			
+				
+			
+			</td>
+			</tr>
+			<tr>
+			<td colspan="6">Other Notes:<br />
+			&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+			<obs id="pathologySurgicalNotesObs" conceptId="826af985-d6b8-46a5-8773-92e53ee10d45" rows="5" cols="60" labelText="" />
+			</td></tr>
+			<tr class="spaceUnder">
+			<td colspan="6"><br/><b>Surgical Pathology report date:</b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+				<obs id="surgeryPathologyReportDateObs" conceptId="926dd83d-5c6c-43d9-9fb8-a8c2e364d5f6" labelText="" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+			<obs id="nopathologyperformed" conceptId="145c13d3-dfbb-4dc6-9986-d10fd5e9bf48" answerConceptId="3cd6f86c-26fe-102b-80cb-0017a47871b2" answerLabel="N/A (no pathology)" style="checkbox" />	
+			<br/><small>(include a copy of pathology report in chart, if applicable)</small>
+			</td>
+			</tr>
+			<tr class="spaceUnder">
+				<td class="checkboxGroup" colspan="6">Institution issuing surgical pathology report:<br />
+                <obs id="pathologyFacilityBWHObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="6c87ddb0-f8e9-4115-98cc-5e71903f2c04" answerLabel="BWH" style="checkbox" />
+                <obs id="pathologyFacilityButaroObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="682754d6-cff2-4f2e-90a3-ea3b1e7fa230" answerLabel="Butaro" style="checkbox" />
+				<obs id="pathologyFacilityKFObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="55acdf7c-5027-4f01-90a2-ab9745f97dd3" answerLabel="KHF" style="checkbox" />
+				<obs id="pathologyFacilityCHUKObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="68222ccb-71ee-418e-a4a4-b924b4e80108" answerLabel="CHUK" style="checkbox" />
+				<obs id="pathologyFacilityCHUBObs" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="2b472c6b-a0d4-44b1-bb2f-3d44289a19e5" answerLabel="CHUB" style="checkbox" />
+				<obs id="pathologyFacilityObsOthers" conceptId="ca421c58-2c81-4fac-8cf7-aced4f2896e8" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="OTHERS" style="checkbox" />
+				<obs id="pathologyFacilityTextObs" conceptId="deeca3da-a026-446b-a756-0f6eaecfd9a7" labelText="" />
+				</td>
+			</tr>
+			<tr><td colspan="6"><hr/></td></tr> 
+			<tr class="spaceUnder">
+				<td colspan="6"><b>Confirmed Disease Stage</b></td>
+			</tr>
+		<tr class="checkboxGroup">
+			<td>TNM Pathologic Staging<sup>*</sup>:
+			</td>
+			<td>
+			T<obs id="pathologicStagingT" conceptId="8a1b7c95-6f00-4d66-b3da-cd091a693cf1" />
+			</td>
+			<td>
+			N<obs id="pathologicStagingN" conceptId="5f6e7585-27a2-4174-8958-95b52a408dbc" />
+			</td>
+			<td>
+			M<obs id="pathologicStagingM" conceptId="05303c1b-3de8-4fb8-91ad-9563ab4d2ac0" />
+			</td>
+			<td>
+			</td>
+			<td></td>			
+			</tr>
+			
+			
+		<tr class="checkboxGroup">
+			<td>Overall Stage<sup>*</sup>: 
+			</td>
+			<td>
+			<obs id="nephroblastomaStageOS0" conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="11ad3741-d3fe-48ff-8872-ce42c8764d34" answerLabel="0" />
+			</td>
+			<td>
+			<obs id="nephroblastomaStageOS1" conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="39c6497d-fe50-4dcf-86e4-5360e1d32f82" answerLabel="I" />
+			</td>
+			<td>
+			<obs id="nephroblastomaStageOS2" conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="c899d4c0-91a1-42f2-b395-114740f237fd" answerLabel="II" />
+			</td>
+			<td>
+			<obs id="nephroblastomaStageOS3" conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="1d5896f3-2e0e-4bc2-aa6c-afe1911afa79" answerLabel="III" />    
+			</td>
+			<td>
+			<obs id="nephroblastomaStageOS4" conceptId="e9cf4aed-34be-4c0a-9004-4294d9bb2d74" answerConceptId="d2f21acb-9519-42ca-a72d-2fcb6bb15c5d" answerLabel="IV" />
+			</td>
+			
+		</tr>
+		
+		<tr class="checkboxGroup">
+			<td>H. pylori status: 
+			</td>
+			<td>
+			<obs id="HPyloriStatusPositif" conceptId="e45fd262-8a8c-4f72-ae42-d540973cc39f" answerConceptId="3cd3a7a2-26fe-102b-80cb-0017a47871b2" answerLabel="Positive" />
+			</td>
+			<td>
+			<obs id="HPyloriStatusNegatif" conceptId="e45fd262-8a8c-4f72-ae42-d540973cc39f" answerConceptId="3cd28732-26fe-102b-80cb-0017a47871b2" answerLabel="Negative" />
+			</td>
+			<td>
+			<obs id="HPyloriStatusNotDet" conceptId="e45fd262-8a8c-4f72-ae42-d540973cc39f" answerConceptId="09c8c10f-c3a6-41f8-ac91-55493ee008c6" answerLabel="Not determined" />
+			</td>
+			<td></td><td></td>
+			
+		</tr>
+			
+		</table>
+		<!-- End Notes -->
+		
+		
+		
+		
+		<br />
+		<br />
+		
+		
+		
+		
+		
+		
+		<table class="togglebles" width="100%">
+		<obsgroup groupingConceptId="e62e4fae-cabd-44a4-ac7f-61add147c335">
+<!-- 		<TBODY id="toggleble23_1"> -->
+			<TBODY>
+			<tr class="checkboxGroup">
+				<th class="tableHeader" colspan="4">POST-OPERATIVE CHEMOTHERAPY
+				
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+						<obs id="plannedPostOperative"
+						conceptId="24dcc1af-882b-4b60-b0f9-b8a7159c040a"
+						answerConceptId="c0fea63b-2e63-49aa-b0eb-5297f98355ef"
+						answerLabel="Planned" />
+						&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+						
+						<obs id="NotPlannedPostOperative"
+						conceptId="24dcc1af-882b-4b60-b0f9-b8a7159c040a"
+						answerConceptId="7ff97aed-5be5-432a-8ba2-45ef783dc108"
+						answerLabel="Not Planned" />
+				
+				</th>
+			</tr>
+			<tr class="spaceUnder checkboxGroup">
+				<td>Regimen Type</td>
+				<td colspan="3"><obs id="chemotherapyRegimenFolfoxObs"
+						conceptId="012df739-5bd1-445c-a76e-de0d5702d86a" answerConceptId="c01e740d-8263-403b-808b-51e797eca1d8"
+						answerLabel="FOLFOX" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td>Cycles</td>
+				<td><obs id="chemotherapyCyclesObs"
+						conceptId="aaeb5782-3ee6-4cb8-9d27-c557ad91e241" labelText="" />
+				</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Planned first cycle</td>
+				<td><obs id="chemotherapyFirstCycleObs"
+						conceptId="e9b59f4e-8a3f-467f-b5e0-1296025fb286" allowFutureDates="true" labelText="" />
+				</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Planned regimen end</td>
+				<td><obs id="chemotherapyFirstCycleObs"
+						conceptId="989c2c3c-b000-45e2-9bc4-0bab9808d9c4" allowFutureDates="true" labelText="" />
+				</td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr class="spaceUnder">
+				<td>Planned changes to standard regimen</td>
+				<td><obs id="chemotherapyStandardRegimenObs"
+						conceptId="d6e5e3a7-2ab7-45c2-a104-4f49ed01aefc" labelText="" />
+				</td>
+				<td></td>
+				<td></td>
+			</tr>			
+		</TBODY>
+		</obsgroup>
+		
+	</table>
+	
+	<table class="togglebles" width="100%">
+		<obsgroup groupingConceptId="63ad7caa-b6e2-4b9a-b462-771a9b048c36">
+		<!-- <TBODY id="toggleble22"> -->
+		<TBODY >
+			<tr class="checkboxGroup">
+				<th class="tableHeader" colspan="4">RADIATION THERAPY
+
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+						
+
+			<!-- <workflowState
+					workflowId="bf1d4a87-4219-4741-ac9a-770fb7cb7036"
+					stateId="37848fcc-ecc3-460d-9c69-4fd3c9f3f767" stateLabel="Planned"
+					type="checkbox" /> -->
+					
+					<obs
+					conceptId="4084fde4-1c2d-4830-a660-d34da22d3266"
+					answerConceptId="c0fea63b-2e63-49aa-b0eb-5297f98355ef" stateLabel="Planned"
+					type="checkbox" />
+
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+
+			<!-- <workflowState
+					workflowId="bf1d4a87-4219-4741-ac9a-770fb7cb7036"
+					stateId="3543071e-e416-4fe2-89e9-6d55506c6c72"
+					stateLabel="Not planned" type="checkbox" /> -->
+					
+					
+					<obs
+					conceptId="4084fde4-1c2d-4830-a660-d34da22d3266"
+					answerConceptId="7ff97aed-5be5-432a-8ba2-45ef783dc108" stateLabel="Not Planned"
+					type="checkbox" />
+					
+			   </th>
+			</tr>
+				<tr class="checkboxGroup">
+				<td>Facility</td>
+				<td><obs id="radiationFacilityMulagoObs" conceptId="09693eb4-aa3d-4804-bcc3-eb149cb0614a" answerConceptId="ceac8227-23ec-4f51-9dab-6ed3886151aa" answerLabel="Mulago" />
+				<obs id="radiationFacilityOthers" conceptId="09693eb4-aa3d-4804-bcc3-eb149cb0614a" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Other:" />
+				<obs id="radiationFacilityText" conceptId="5e3e2ad0-781c-4b1c-94c7-f5c64cd8b249" labelText=""  />
+				</td>
+			</tr>
+			<tr class="spaceUnder">
+				<td>Planned dates</td>
+				<td><obs id="radiationStartDateObs"
+						conceptId="25064eeb-932e-4c93-994c-b4053e732ed3" />
+				</td>
+				<td></td>
+				<td></td>
+			</tr>
+		</TBODY>
+		</obsgroup>
+	</table>
+			
+	
+	<br/>
+	<table id="signature">
+	
+		<tr class="diagnosisPrintArea, spaceUnder">
+			<td class="lables">Specialists consulted on this case:</td>
+			<td class="values"><span ><input type="checkbox" name="" value="">Oncologist:___________________</input></span></td>
+			<td class="values"><span ><input type="checkbox" name="" value="">Surgeon:___________________</input><input type="checkbox" name="" value="">None</input></span></td>
+		</tr>
+		<tr class="diagnosisPrintArea, spaceUnder">
+			<td colspan="3" class="lables"><b>Staging and treatment plan confirmed by:</b></td>
+		</tr>
+		<tr class="diagnosisPrintArea">
+			<td class="values"><span>__________________________________<br/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(Internist Name)</span></td>
+			<td class="values"><span>__________________________________<br/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(Signature)</span></td>
+			<td class="values"><span>________/___________/_____________<br/>&#160;&#160;&#160;&#160;(dd)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(mm)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(yyy)</span></td>
+		</tr>
+	</table>	
+	
+	<br />
+	
+	<submit />
+</div>
+
+<encounterVoided/> 
+</htmlform>

@@ -1,14 +1,14 @@
 <htmlform 
-	htmlformUuid="7d0f30cf-1b4b-4af0-8196-9c8d75ee27ba" 
-	formUuid="42fb7d2b-782a-4bd2-9aaf-a52ba3326aba" 
-	formName="Fiche de Suive L&apos;Epilepsie- DEMOGRAPHIQUE" 
-	formDescription="Fiche de Suive L&apos;Epilepsie- DEMOGRAPHIQUE" 
+	htmlformUuid="fab19a01-f75e-4f49-a71e-f836b7c477a6" 
+	formUuid="ba8a604e-cfaf-47be-be60-804e5ef4fcee" 
+	formName="Fiche de Suive L&apos;Asthme- DEMOGRAPHIQUE" 
+	formDescription="Fiche de Suive L&apos;Asthme- DEMOGRAPHIQUE" 
 	formVersion="0.1" 
-	formEncounterType="7e51bf4c-1276-48e3-8b8c-eaa1dd0a6dca" 
+	formEncounterType="820004cd-5f2b-40a9-bf26-bf6f5a945790" 
 	formPublished="false" 
 	formRetired="false"
 >
-      <!-- Epilepsy flowsheet: Demographics
+      <!-- asthma flowsheet: Demographics
          written by jBerchmas 
          -->
 	<macros>

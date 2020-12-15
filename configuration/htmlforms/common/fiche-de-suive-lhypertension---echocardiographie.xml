@@ -1,14 +1,14 @@
 <htmlform 
-	htmlformUuid="986ccbaa-67fa-4c0f-b917-c34eb3f74f47" 
-	formUuid="a177b9bc-5d64-49a4-82e0-faaf81684ded" 
-	formName="Fiche de Suive L&apos;Epilepsie-VISITES D&apos;URGENCE" 
-	formDescription="Fiche de Suive L&apos;Epilepsie-VISITES D&apos;URGENCE" 
+	htmlformUuid="5ca2124c-2548-4909-a6a8-638cc0e21c3b" 
+	formUuid="6aaf54ea-c60b-4c95-afef-1531d05e91a0" 
+	formName="Fiche de Suive L&apos;hypertension - ECHOCARDIOGRAPHIE" 
+	formDescription="Fiche de Suive L&apos;hypertension-ECHOCARDIOGRAPHIE" 
 	formVersion="0.1" 
-	formEncounterType="7e51bf4c-1276-48e3-8b8c-eaa1dd0a6dca" 
+	formEncounterType="2f75f29f-454d-4e91-915c-ec3fd49532b1" 
 	formPublished="false" 
 	formRetired="false"
 >
-    <!-- Epilepsy flowsheet:  Urgent visit
+    <!-- Hypertension flowsheet:  Echocardiography
          written by jberchmas 
          -->
 	<style>
@@ -37,32 +37,32 @@
 				</b>
 			</td>
 			<td>
-				Date:<encounterDate default="today"/>
-			</td>
-			
-			<td>
-				Nom/ Signature:<encounterProvider role="NCD Provider"/>
-			</td>
+				Clinique / Clinic:<encounterLocation />
+			</td>			
 		</tr>
 	</table>
 
-	<section headerLabel="VISITES D'URGENCE / URGENT VISITS">
+	<section headerLabel="ECHOCARDIOGRAPHIE / ECOCARDIOGRAPHY">
 		<table border="1" width="100%">
 			<tr>
-				<td>Date d’admission/ Date of admission</td>
-				<td>Clinique / Clinic</td>
-				<td>Raison pour visite/ Reason for visit</td>
+				<td>Date</td>
+				<td>FE/EF</td>
+				<td>Résultats/Results</td>
+				<td>Clinicien/Clinician</td>
 			</tr>
 			<tr>
 				<td>
-					<obs conceptId="027564d3-1be0-477f-b280-9a2b48631ff4"/>
+				<encounterDate default="today"/>
+			        </td>
+				<td>
+					<obs conceptId="a643a9b7-6b4e-4478-8e55-5429fe91c39b"/>
 				</td>
 				<td>
-					<encounterLocation />
+					<obs conceptId="5c052224-aeaf-4a17-8dca-8255eef79644" cols="40"/>
 				</td>
-				<td>
-					<obs conceptId="a52ef56e-d62b-42d9-9830-9682c1651885"/>
-                               </td>
+                                <td>
+				Nom/ Signature:<encounterProvider role="NCD Provider"/>
+			      </td>				
 			</tr>
 		</table>
 	</section>

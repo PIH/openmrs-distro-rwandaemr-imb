@@ -1,14 +1,14 @@
 <htmlform 
-	htmlformUuid="986ccbaa-67fa-4c0f-b917-c34eb3f74f47" 
-	formUuid="a177b9bc-5d64-49a4-82e0-faaf81684ded" 
-	formName="Fiche de Suive L&apos;Epilepsie-VISITES D&apos;URGENCE" 
-	formDescription="Fiche de Suive L&apos;Epilepsie-VISITES D&apos;URGENCE" 
+	htmlformUuid="51fe8b80-1cc2-4624-93ad-04a17446b1e8" 
+	formUuid="e55d4812-f25c-44a1-bdf8-836f98f67985" 
+	formName="Fiche de Suive L&apos;hypertension - HOSPITALISATIONS" 
+	formDescription="Fiche de Suive L&apos;hypertension - HOSPITALISATIONS" 
 	formVersion="0.1" 
-	formEncounterType="7e51bf4c-1276-48e3-8b8c-eaa1dd0a6dca" 
+	formEncounterType="2f75f29f-454d-4e91-915c-ec3fd49532b1" 
 	formPublished="false" 
 	formRetired="false"
 >
-    <!-- Epilepsy flowsheet:  Urgent visit
+    <!-- Hypertension flowsheet:  Hospitalizations
          written by jberchmas 
          -->
 	<style>
@@ -39,30 +39,38 @@
 			<td>
 				Date:<encounterDate default="today"/>
 			</td>
-			
+			<td>
+				Clinique / Clinic:<encounterLocation />
+			</td>
 			<td>
 				Nom/ Signature:<encounterProvider role="NCD Provider"/>
 			</td>
 		</tr>
 	</table>
 
-	<section headerLabel="VISITES D'URGENCE / URGENT VISITS">
+	<section headerLabel="HOSPITALISATIONS / HOSPITALIZATIONS">
 		<table border="1" width="100%">
 			<tr>
 				<td>Date d’admission/ Date of admission</td>
-				<td>Clinique / Clinic</td>
-				<td>Raison pour visite/ Reason for visit</td>
+				<td>Date de décharge/ Date of discharge</td>
+				<td>Hôpital/ Hospital</td>
+				<td>Raison pour hospitalisation/ Reason for hospitalization</td>
 			</tr>
 			<tr>
 				<td>
 					<obs conceptId="027564d3-1be0-477f-b280-9a2b48631ff4"/>
 				</td>
 				<td>
-					<encounterLocation />
+					<obs conceptId="61f48c84-714d-42b3-805c-15645370deb8"/>
 				</td>
 				<td>
-					<obs conceptId="a52ef56e-d62b-42d9-9830-9682c1651885"/>
-                               </td>
+					<obs conceptId="0aed076e-15f5-102d-96e4-000c29c2a5d7"/>
+				</td>
+				<td>
+					<obs conceptId="3ce1492a-26fe-102b-80cb-0017a47871b2"/>
+                                        <br />
+                                        <b>Other:</b><br /> <obs conceptId="3cdceff6-26fe-102b-80cb-0017a47871b2" rows="4" cols="50"/>
+				</td>
 			</tr>
 		</table>
 	</section>

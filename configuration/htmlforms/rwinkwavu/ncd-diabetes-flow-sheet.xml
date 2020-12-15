@@ -187,13 +187,13 @@
         <br />
         <div>
             <section headerLabel="LISTE D'INSULINE / INSULIN LIST">
-                <htmlformflowsheet formId="$@NCD_RBC_Diabetes_Insulin_List@" sharedEncounter="true" windowHeight="500"/>
+                <htmlformflowsheet formId="$@NCD_RBC_Diabetes_Insulin_List@" sharedEncounter="true" windowHeight="550"/>
             </section>
         </div>
         <br />
         <div>
             <section headerLabel="LISTE DES MEDICAMENTS/ MEDICATION LIST">
-                <htmlformflowsheet formId="$@NCD_RBC_Diabetes_Medication_List@" sharedEncounter="true" windowHeight="900" />
+                <htmlformflowsheet formId="$@NCD_RBC_Diabetes_Medication_List@" sharedEncounter="true" windowHeight="850"/>
             </section>
         </div>
         <br />
@@ -205,7 +205,7 @@
         <br />
         <div>
             <section headerLabel="EXIT FROM CARE INFORMATION">
-                <htmlformflowsheet formId="$@NCD_DIABETES_Exit_from_Care_Information@" sharedEncounter="true" windowHeight="550"/>
+                <htmlformflowsheet formId="$@NCD_DIABETES_Exit_from_Care_Information@" sharedEncounter="true" windowHeight="450"/>
             </section>
         </div>
         <br />

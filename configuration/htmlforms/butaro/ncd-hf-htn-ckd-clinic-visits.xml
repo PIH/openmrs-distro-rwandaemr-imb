@@ -129,7 +129,7 @@
                     <td><obs conceptId="$@temperature@"/></td>
                     <td><obs conceptId="$@pulse@"/></td>
                     <td><obs conceptId="$@NYHA@"/></td>
-                    <td><obs conceptId="$@bloodVolumeStatus@" answerConceptIds="$@HYPERVOLEMIC@, $@EUVOLEMIC@, $@HYPOVOLEMIC@" answerLabels="Hyper, Eu, Hypo"/></td>
+                    <td><obs conceptId="$@bloodVolumeStatus@" answerConceptIds="$@HYPERVOLEMIC@, $@EUVOLEMIC@, $@HYPOVOLEMIC@" answerLabels="Hyper, Eu, Hypo" style="radio"/></td>
                     <td><obs conceptId="$@adherence@" answerConceptIds="$@YES@, $@NO@, $@NOT_APPLICABLE@" answerLabels="oui/yes, non/no, NA" style="radio"/></td>
                     <td><obs conceptId="$@sodium@"/> mmoI/L</td>
                     <td><obs conceptId="$@potassium@"/> mEq/L </td>

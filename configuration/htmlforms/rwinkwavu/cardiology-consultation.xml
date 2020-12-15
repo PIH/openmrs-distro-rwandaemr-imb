@@ -105,7 +105,7 @@
 		</tr>
 		<tr>
 			<td colspan="2">
-				<obs conceptId="3389" answerConceptId="1065"
+				<obs conceptId="PIH: 3389" answerConceptId="PIH: 1065"
 					answerLabel="patient est hospitalisé" style="checkbox" />
 				<span class="english">/ patient is hospitalized</span>
 			</td>

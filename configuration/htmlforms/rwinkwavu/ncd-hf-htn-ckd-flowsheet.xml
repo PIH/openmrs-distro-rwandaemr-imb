@@ -142,7 +142,7 @@
     <!-- Form header -->
     <table cellspacing="0" cellpadding="6" width="100%">
         <tr>
-            <td><img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left"
+            <td><img src="/openmrs/moduleResources/rwandareports/images/rwanda-logo.jpg" align="left"
                      height="65" ></img>
                 <b>REPUBLIC OF RWANDA
                     <br />MINISTRY OF HEALTH</b>
@@ -169,7 +169,7 @@
     <table>
 
         <br />
-        <div>
+       <div>
             <section headerLabel="DIAGNOSTIQUE ET LISTE DES PROBLÈME / DIAGNOSIS AND PROBLEM LIST">
                 <htmlformflowsheet formId="$@NCD_HF/HTN/CKD_Diagnosis_and_Problem_List@" sharedEncounter="true" windowHeight="450"/>
             </section>
@@ -195,28 +195,28 @@
         <br />
         <div>
             <section headerLabel="LISTE DES MEDICAMENTS/ MEDICATION LIST">
-                <htmlformflowsheet formId="$@NCD_HF_HTN_CKD_Medication_List@" sharedEncounter="true" windowHeight="900"/>
+                <htmlformflowsheet formId="$@NCD_HF_HTN_CKD_Medication_List@" sharedEncounter="true" windowHeight="850"/>
             </section>
         </div>
         <br />
         <div>
             <section headerLabel="LISTE DES MEDICAMENTS/ MEDICATION EXAM">
-                <htmlformflowsheet formId="$@NC_HF/HTN/CKD_MedicationExam@" sharedEncounter="true" />
+                <htmlformflowsheet formId="$@NC_HF/HTN/CKD_MedicationExam@" sharedEncounter="true" windowHeight="450"/>
             </section>
         </div>
         <br />
         <div>
             <section headerLabel="HEART FAILURE - EXIT FROM CARE INFORMATION">
-                <htmlformflowsheet formId="$@NCD_HEART_FAILURE_Exit_From_Care_Information@" sharedEncounter="true" windowHeight="500"/>
+                <htmlformflowsheet formId="$@NCD_HEART_FAILURE_Exit_From_Care_Information@" sharedEncounter="true" windowHeight="550"/>
             </section>
         </div>
         <div>
             <section headerLabel="HEPERTENSION - EXIT FROM CARE INFORMATION">
-                <htmlformflowsheet formId="$@NCD_HEPERTENSION_Exit_from_Care_Information@" sharedEncounter="true" windowHeight="500"/>
+                <htmlformflowsheet formId="$@NCD_HEPERTENSION_Exit_from_Care_Information@" sharedEncounter="true" windowHeight="500" />
             </section>
         </div>
-        <div>
-            <section headerLabel="CHRONIC KIDNEY DISEASE - EXIT FROM CARE INFORMATION">
+      <div>
+           <section headerLabel="CHRONIC KIDNEY DISEASE - EXIT FROM CARE INFORMATION">
                 <htmlformflowsheet formId="$@NCD_CKD_Exit_from_Care_Information@" sharedEncounter="true" windowHeight="500"/>
             </section>
         </div>

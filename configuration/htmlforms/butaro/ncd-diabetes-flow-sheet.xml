@@ -169,7 +169,7 @@
         <br />
         <div>
             <section headerLabel="DIAGNOSTIQUE ET LISTE DES PROBLÈME / DIAGNOSIS AND PROBLEM LIST">
-                <htmlformflowsheet formId="$@NCD_RBC_Diabetes_Diagnosis_and_Problems@" sharedEncounter="true" />
+                <htmlformflowsheet formId="$@NCD_RBC_Diabetes_Diagnosis_and_Problems@" sharedEncounter="true"/>
             </section>
         </div>
         <br />
@@ -181,7 +181,7 @@
         <br />
         <div>
             <section headerLabel="AUTRE INVESTIGATIONS / OTHER INVESTIGATIONS">
-                <htmlformflowsheet formId="$@NCD_RBC_Diabetes_Other_Investigations@" sharedEncounter="true"  windowHeight="500"/>
+                <htmlformflowsheet formId="$@NCD_RBC_Diabetes_Other_Investigations@" sharedEncounter="true" windowHeight="500"/>
             </section>
         </div>
         <br />

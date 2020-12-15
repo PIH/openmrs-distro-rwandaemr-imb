@@ -1,11 +1,11 @@
 <htmlform 
-	htmlformUuid="a6c86a00-72f4-4c22-9c2c-612b4f564a8c" 
-	formUuid="ce8bfb5d-4ec0-42b6-8fe0-0804f0aaf484" 
-	formName="HIV Transfer In Form - Mode of admission" 
-	formDescription="HIV Transfer In Form - Diagnostique du VIH" 
+	htmlformUuid="8a342cab-c520-41e6-8ac4-a6ae8f1f0bc5" 
+	formUuid="c7d0e826-2813-4203-a823-b4efe93f1f1f" 
+	formName="HIV Transfer In Form - Hospitalisations" 
+	formDescription="Adult Transfer Flowsheet Hospitalisations" 
 	formVersion="1.0" 
 	formEncounterType="504ca1b7-ae18-434a-89d9-cf80f1ad3407" 
-	formPublished="true" 
+	formPublished="false" 
 	formRetired="false"
 >
 
@@ -50,7 +50,7 @@
     			
     			if(jQuery('[name=encounterId]') == null)
     			{
-	    			jQuery.get(  
+	    			$.get(  
     		            "lastEnteredForm.form",  
     		            {formId: formId, patientId: patientId, date: date, dateFormat: dateFormat},  
     		            function(responseText){  
@@ -95,28 +95,48 @@
 		</tr>
 	</table>
 	
-	<section headerLabel="MODE INITIAL D'ADMISSION DANS LES SOINS DU VIH / INITAL MODE OF ADMISSION INTO HIV CARE">
+	<section headerLabel="HOSPITALISATIONS / HOSPITALIZATIONS">
 	<table border="1" width="100%">
+		<obsgroup groupingConceptId="$@HOSPITALIZATION_CONSTRUCT@">
+		<!-- <tr>
+			<th width="20%">Date d‚Äôadmission/ Date of admission</th>
+			<td><obs conceptId="$@DATE_OF_HOSPITAL_ADMITTANCE@" required="true" /></td>
+		</tr>
 		<tr>
-			<th>Mode d'admission</th>
-			<td><obsgroup groupingConceptId="3cdedf3c-26fe-102b-80cb-0017a47871b2">
-				<table>
-                                   <tr>
-                                       <td width="25%"><obs conceptId="3cdc85ac-26fe-102b-80cb-0017a47871b2" answerConceptId="3cdc8426-26fe-102b-80cb-0017a47871b2" answerLabel="VCT" /></td><td width="25%"><obs conceptId="3cdc85ac-26fe-102b-80cb-0017a47871b2" answerConceptId="3cdc8138-26fe-102b-80cb-0017a47871b2" answerLabel="PMTCT" /></td><td width="25%"><obs conceptId="3cdc85ac-26fe-102b-80cb-0017a47871b2" answerConceptId="3cda41f2-26fe-102b-80cb-0017a47871b2" answerLabel="Hospitalisation" /></td><td width="25%"><obs conceptId="3cdc85ac-26fe-102b-80cb-0017a47871b2" answerConceptId="3cdc871e-26fe-102b-80cb-0017a47871b2" answerLabel="Consultation Externe" /></td>
-                                   </tr>
-                                  <tr>
-                                       <td colspan="2"><obs conceptId="3cdc85ac-26fe-102b-80cb-0017a47871b2" answerConceptId="3cdc82b4-26fe-102b-80cb-0017a47871b2" answerLabel="Consultation Tuberculeux" /></td><td><obs conceptId="3cdc85ac-26fe-102b-80cb-0017a47871b2" answerConceptId="3cde9842-26fe-102b-80cb-0017a47871b2" answerLabel="Service nutritionel" /></td><td><obs conceptId="3cdc85ac-26fe-102b-80cb-0017a47871b2" answerConceptId="16edb286-a2c0-4b35-a3b6-101ea2bbb231" answerLabel="Vaccination" /> </td>
-                                   </tr> 
-                                   <tr>
-                                       <td colspan="4"><obs conceptId="3cdc85ac-26fe-102b-80cb-0017a47871b2" answerConceptId="3ce4f67e-26fe-102b-80cb-0017a47871b2" answerLabel="Transfer  " /> Si oui, transfere d'ou:  <obs conceptId="3cda3efa-26fe-102b-80cb-0017a47871b2" /></td>
-                                   </tr>
-                                   <tr>
-                                       <td colspan="4"><obs conceptId="3cdc85ac-26fe-102b-80cb-0017a47871b2" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Autre:" /> <obs conceptId="ee0a764d-274e-47cc-9751-184a260b1122" /> </td>
-                                   </tr>
-                                </table>
-</obsgroup>
+			<th>Date de decharge/ Date of discharge</th>
+			<td><obs conceptId="$@HOSPITALIZATION_DISCHARGE_DATE@" /></td>
+		</tr> -->
+		<!-- <tr>
+			<th>H√¥pital/ Hospital</th>
+			<td><obs conceptId="$@LOCATION_OF_HOSPITALIZATION@" /></td>
+		</tr> -->
+		<tr>
+			<th>Raison pour hospitalisation/ Reason for hospitalization</th>
+			<td>
+				<obs conceptId="$@DIAGNOSIS_WHILE_HOSPITALIZED@" answerConceptId="$@MALARIA@" answerLabel="Paludisme/Malaria"/><br/>
+				<obs conceptId="$@DIAGNOSIS_WHILE_HOSPITALIZED@" answerConceptId="$@PNEUMONIA@" answerLabel="Pneumonie/Pneumonia"/><br/>
+				<obs conceptId="$@DIAGNOSIS_WHILE_HOSPITALIZED@" answerConceptId="$@GASTROENTERITIS@" answerLabel="Gastroenterite/Gastroenteritis"/><br/>
+				<!-- <obs conceptId="$@DIAGNOSIS_WHILE_HOSPITALIZED@" answerConceptId="$@MALNUTRITION@" answerLabel="Anemie/Malnutrition"/><br/>
+				<obs conceptId="$@DIAGNOSIS_WHILE_HOSPITALIZED@" answerConceptId="$@MENINGITIS@" answerLabel="Meningite/Meningitis"/><br/> -->
+				Autre/Other:
+				<obs conceptId="$@DIAGNOSIS_WHILE_HOSPITALIZED@" id="diagnosisWhileHospitalized"/>
+				<obs conceptId="$@DIAGNOSIS_WHILE_HOSPITALIZED_NON_CODED@" id="diagnosisWhileHospitalizedNonCoded" size="40" />
 			</td>
-		</tr>		
+		</tr>
+		<tr>
+			<th>Duree / Duration</th>
+			<td>
+				<obsgroup groupingConceptId="$@DURATION_OF_HOSPITALIZATION_CONSTRUCT@">
+					<obs conceptId="$@Duration_of_hospitalization@" />
+					<obs conceptId="$@TIME_UNITS@" answerConceptIds="$@DAYS@,$@WEEKS@,$@MONTHS@" answerLabels="jours/days,semaines/weeks,mois/months"/>
+				</obsgroup>
+			</td>
+		</tr>
+		<tr>
+			<th>Commentaire</th>
+			<td><obs conceptId="$@HOSPITALIZATION_COMMENT@" rows="4" cols="40" /></td>
+		</tr>
+		</obsgroup>
 	</table>
 	</section>
 	

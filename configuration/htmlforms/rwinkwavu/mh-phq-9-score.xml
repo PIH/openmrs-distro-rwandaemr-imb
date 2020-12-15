@@ -395,7 +395,7 @@
         <!--header-->
         <code name="PHQ-9_Score">
             <variant locale="en" value="PHQ-9 Score"/>
-            <variant locale="rw" value="Amanota -Ibibazo 9 ku buzima bw’umurwayi. "/>
+            <variant locale="rw" value="Amanota -Ibibazo 9 ku buzima bw’umurwayi "/>
         </code>
         <code name="Last_name">
             <variant locale="en" value="Last name"/>

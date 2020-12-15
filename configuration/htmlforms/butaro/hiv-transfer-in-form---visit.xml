@@ -41,8 +41,6 @@
 	
 	<link type="text/css" rel="stylesheet" href="/openmrs/moduleResources/rwandahivflowsheet/hiv_flowsheet_new_row.css" />
 	
-	
-	
 	<script type="text/javascript">
 	
     	$(document).ready(function(){

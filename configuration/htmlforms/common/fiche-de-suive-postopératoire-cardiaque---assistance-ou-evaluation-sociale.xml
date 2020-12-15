@@ -1,16 +1,21 @@
 <htmlform 
-	htmlformUuid="4fda9108-2f0a-4827-acee-a487e157b7fb" 
-	formUuid="4157f713-fa0e-4f52-a706-1b921dc25334" 
-	formName="Fiche de Suive L&apos;Epilepsie-ASSISTANCE OU EVALUATION SOCIALE" 
-	formDescription="Fiche de Suive L&apos;Epilepsie-ASSISTANCE OU EVALUATION SOCIALE" 
+	htmlformUuid="a94d225b-46fb-42f7-aa21-3e8bf6c58c6f" 
+	formUuid="af815630-1bc8-4c34-96f2-b8de2af74e8d" 
+	formName="Fiche de Suive Postop&#233;ratoire Cardiaque - ASSISTANCE OU EVALUATION SOCIALE" 
+	formDescription="Fiche de Suive Postop&#233;ratoire - ASSISTANCE OU EVALUATION SOCIALE" 
 	formVersion="0.1" 
-	formEncounterType="7e51bf4c-1276-48e3-8b8c-eaa1dd0a6dca" 
+	formEncounterType="93c83fb3-52c8-462f-a9e7-58c463906ed5" 
 	formPublished="false" 
 	formRetired="false"
 >
-    <!-- Epilepsy flowsheet:  Social assistance
+    <!-- Post Cardiac Surgery flowsheet:  Social assistance
          written by jberchmas            
          -->
+        <macros>
+		paperFormId = Flow-CardsPostOp-IMB-RW.V2.5akb.16May09
+		headerColor =#009d8e
+		fontOnHeaderColor = white
+	</macros>
 	<style>
 		.formName { background-color:#e0e0ff; }
 		.section { border: 1px
@@ -38,7 +43,7 @@
 			</td>
 			<td>
 				Clinique / Clinic:
-				<encounterLocation order="Rwinkwavu Hospital,Kabarondo Health Center,Ndego Health Center,Ruramira Health Center,Cyarubare Health Center,Kirehe Hospital,Gahara Health Center,Rusumo Health Center,Mulindi Health Center,Nyarubuye Health Center, Mushikiri Health Center, Musaza Health Center,Karama Health Center"/>
+				<encounterLocation />
 			</td>
 			<td>
 				Nom/ Signature:
@@ -76,8 +81,7 @@
 				<td><obs conceptId="3ce169b4-26fe-102b-80cb-0017a47871b2" answerConceptId="599c2435-55a1-4fae-b501-092e516df013" answerLabel="Agricultural Assistance"/></td>
 			</tr>
 			<tr>
-				<td colspan="2"><obs conceptId="PIH: 2156" answerConceptId="PIH: 5622" answerLabel="autre/other:" />
-<obs conceptId="PIH: 2923" /></td>
+				<td colspan="2"><obs conceptId="3ce169b4-26fe-102b-80cb-0017a47871b2" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Autre/Other:"/><obs conceptId="PIH: 2923" /></td>
 			</tr>
 		</obsgroup>
 		</table>

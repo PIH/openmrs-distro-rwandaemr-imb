@@ -88,7 +88,7 @@
                         </td>
 		     </tr>	
                      <tr>
-                          <td><obs conceptId="6a7cff67-c32f-4d41-b793-a1f94fd1200d" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Autre Description/ Other Description" /></td><td><obs conceptId="7081" /></td>
+                          <td><obs conceptId="6a7cff67-c32f-4d41-b793-a1f94fd1200d" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Autre Description/ Other Description" /></td><td><obs conceptId="PIH: 7474" /></td>
                      </tr>
                      <tr>
                           <td align="right">FE de VG Post-opératif, donnes échographique/<br />Post-Operative LV EF, echo findings</td>

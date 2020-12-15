@@ -1,14 +1,14 @@
 <htmlform 
-	htmlformUuid="986ccbaa-67fa-4c0f-b917-c34eb3f74f47" 
-	formUuid="a177b9bc-5d64-49a4-82e0-faaf81684ded" 
-	formName="Fiche de Suive L&apos;Epilepsie-VISITES D&apos;URGENCE" 
-	formDescription="Fiche de Suive L&apos;Epilepsie-VISITES D&apos;URGENCE" 
+	htmlformUuid="4cf3eb1f-b62a-424d-9080-c13bd40efaf8" 
+	formUuid="95d9b2e8-1ab9-42c6-9aeb-2018195b30a9" 
+	formName="Fiche de Suive L&apos;Asthme-VISITES D&apos;URGENCE" 
+	formDescription="Fiche de Suive L&apos;Asthme-VISITES D&apos;URGENCE" 
 	formVersion="0.1" 
-	formEncounterType="7e51bf4c-1276-48e3-8b8c-eaa1dd0a6dca" 
+	formEncounterType="820004cd-5f2b-40a9-bf26-bf6f5a945790" 
 	formPublished="false" 
 	formRetired="false"
 >
-    <!-- Epilepsy flowsheet:  Urgent visit
+    <!-- Asthma flowsheet:  Hospitalizations
          written by jberchmas 
          -->
 	<style>

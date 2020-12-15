@@ -1,14 +1,14 @@
 <htmlform 
-	htmlformUuid="7d0f30cf-1b4b-4af0-8196-9c8d75ee27ba" 
-	formUuid="42fb7d2b-782a-4bd2-9aaf-a52ba3326aba" 
-	formName="Fiche de Suive L&apos;Epilepsie- DEMOGRAPHIQUE" 
-	formDescription="Fiche de Suive L&apos;Epilepsie- DEMOGRAPHIQUE" 
+	htmlformUuid="d18d8efa-35da-4b4e-8c5e-10c581b6df40" 
+	formUuid="8832ae44-b798-4641-a98a-ef7435aff71c" 
+	formName="Fiche de Suive L&apos;hypertension - DEMOGRAPHIQUE" 
+	formDescription="Fiche de Suive L&apos;hypertension - DEMOGRAPHIQUE" 
 	formVersion="0.1" 
-	formEncounterType="7e51bf4c-1276-48e3-8b8c-eaa1dd0a6dca" 
+	formEncounterType="2f75f29f-454d-4e91-915c-ec3fd49532b1" 
 	formPublished="false" 
 	formRetired="false"
 >
-      <!-- Epilepsy flowsheet: Demographics
+      <!-- hypertension flowsheet: Demographics
          written by jBerchmas 
          -->
 	<macros>

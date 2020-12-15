@@ -1,14 +1,14 @@
 <htmlform 
-	htmlformUuid="986ccbaa-67fa-4c0f-b917-c34eb3f74f47" 
-	formUuid="a177b9bc-5d64-49a4-82e0-faaf81684ded" 
-	formName="Fiche de Suive L&apos;Epilepsie-VISITES D&apos;URGENCE" 
-	formDescription="Fiche de Suive L&apos;Epilepsie-VISITES D&apos;URGENCE" 
+	htmlformUuid="3623b363-7cf4-42cb-865f-03e7bcdbfee0" 
+	formUuid="f3cbd303-a25b-460d-9dfb-a7336dfef922" 
+	formName="Fiche de Suive L&apos;hypertension - AUTRE DIAGNOSIES" 
+	formDescription="Fiche de Suive L&apos;hypertension - AUTRE DIAGNOSIES" 
 	formVersion="0.1" 
-	formEncounterType="7e51bf4c-1276-48e3-8b8c-eaa1dd0a6dca" 
+	formEncounterType="2f75f29f-454d-4e91-915c-ec3fd49532b1" 
 	formPublished="false" 
 	formRetired="false"
 >
-    <!-- Epilepsy flowsheet:  Urgent visit
+    <!-- Hypertension flowsheet:  Other diagnosis
          written by jberchmas 
          -->
 	<style>
@@ -37,32 +37,28 @@
 				</b>
 			</td>
 			<td>
-				Date:<encounterDate default="today"/>
-			</td>
-			
-			<td>
-				Nom/ Signature:<encounterProvider role="NCD Provider"/>
-			</td>
+				Clinique / Clinic:<encounterLocation />
+			</td>			
 		</tr>
 	</table>
 
-	<section headerLabel="VISITES D'URGENCE / URGENT VISITS">
+	<section headerLabel="AUTRE DIAGNOSTIC / OTHER DIAGNOSIS">
 		<table border="1" width="100%">
 			<tr>
-				<td>Date d’admission/ Date of admission</td>
-				<td>Clinique / Clinic</td>
-				<td>Raison pour visite/ Reason for visit</td>
+				<td>Date</td>
+				<td>Diagnose/Diagnosis</td>
+				<td>Clinicien/Clinician</td>
 			</tr>
 			<tr>
 				<td>
-					<obs conceptId="027564d3-1be0-477f-b280-9a2b48631ff4"/>
-				</td>
+				<encounterDate default="today"/>
+			        </td>
 				<td>
-					<encounterLocation />
+					<obs conceptId="135d1163-d50a-411c-9ea1-530ca2033e10" cols="40"/>
 				</td>
-				<td>
-					<obs conceptId="a52ef56e-d62b-42d9-9830-9682c1651885"/>
-                               </td>
+                                <td>
+				Nom/ Signature:<encounterProvider role="NCD Provider"/>
+			      </td>				
 			</tr>
 		</table>
 	</section>

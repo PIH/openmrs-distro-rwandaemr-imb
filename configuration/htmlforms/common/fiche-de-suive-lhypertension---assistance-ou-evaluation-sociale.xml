@@ -1,14 +1,14 @@
 <htmlform 
-	htmlformUuid="4fda9108-2f0a-4827-acee-a487e157b7fb" 
-	formUuid="4157f713-fa0e-4f52-a706-1b921dc25334" 
-	formName="Fiche de Suive L&apos;Epilepsie-ASSISTANCE OU EVALUATION SOCIALE" 
-	formDescription="Fiche de Suive L&apos;Epilepsie-ASSISTANCE OU EVALUATION SOCIALE" 
+	htmlformUuid="7d2032d4-ef98-4690-8d21-0a19e63ee814" 
+	formUuid="7aa85f60-1c3a-4633-a34f-7b1695ea6888" 
+	formName="Fiche de Suive L&apos;hypertension - ASSISTANCE OU EVALUATION SOCIALE" 
+	formDescription="Fiche de Suive L&apos;hypertension - ASSISTANCE OU EVALUATION SOCIALE" 
 	formVersion="0.1" 
-	formEncounterType="7e51bf4c-1276-48e3-8b8c-eaa1dd0a6dca" 
+	formEncounterType="2f75f29f-454d-4e91-915c-ec3fd49532b1" 
 	formPublished="false" 
 	formRetired="false"
 >
-    <!-- Epilepsy flowsheet:  Social assistance
+    <!-- Hypertension flowsheet:  Social assistance
          written by jberchmas            
          -->
 	<style>
@@ -38,7 +38,7 @@
 			</td>
 			<td>
 				Clinique / Clinic:
-				<encounterLocation order="Rwinkwavu Hospital,Kabarondo Health Center,Ndego Health Center,Ruramira Health Center,Cyarubare Health Center,Kirehe Hospital,Gahara Health Center,Rusumo Health Center,Mulindi Health Center,Nyarubuye Health Center, Mushikiri Health Center, Musaza Health Center,Karama Health Center"/>
+				<encounterLocation />
 			</td>
 			<td>
 				Nom/ Signature:

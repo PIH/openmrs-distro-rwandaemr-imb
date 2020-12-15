@@ -1,0 +1,721 @@
+<htmlform 
+	htmlformUuid="e7c1cf52-a585-45e7-b76e-b4520d6a811b" 
+	formUuid="c9e2b656-7b79-40ca-b15b-8283045fd4a4" 
+	formName="PF Consultation Form" 
+	formDescription="PF Consultation Form" 
+	formVersion="1.0" 
+	formEncounterType="36167d4a-2a8b-4de2-a392-5e365107856e" 
+	formPublished="false" 
+	formRetired="false"
+>
+    <!-- Pedi HIV top level form.
+         HIV-RW.V1.akb.Juky13.doc
+         Created by gneza 2013
+     -->
+    <macros>
+        paperFormId = (Fill this in)
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+    </macros>
+
+    <style>
+		.section {
+			border: 1px solid $headerColor;
+			padding: 2px;
+			text-align: left;
+			margin-bottom: 1em;
+		}
+		.sectionHeader {
+			background-color: $headerColor;
+			color: $fontOnHeaderColor;
+			display: block;
+			padding: 2px;
+			font-weight: bold;
+		}
+		table.baseline-aligned td {
+			vertical-align: baseline;
+		}
+		th.subheader {
+		background-color: $headerColor;
+		color:white
+		}
+	</style>
+    <script type="text/javascript">
+if(jQuery){
+ $j(document).ready(function(){
+ $j(".checkboxGroup").each(function(){
+     var group = $j(this);
+     var uncheckAll = function(){
+         group.find("input[type$='checkbox']").attr("checked",false);
+         group.find("input[type$='checkbox']").change();
+     }
+     var uncheckRadioAndAll = function(){
+     group.find("#checkboxAll,#checkboxRadio").find("input[type$='checkbox']").attr("checked",false);
+     group.find("#checkboxAll,#checkboxRadio").find("input[type$='checkbox']").change();
+ }
+ group.find("#checkboxRadio").find("input[type$='checkbox']").click(function(){
+     uncheckAll();
+     $j(this).siblings("input[type$='checkbox']").attr("checked",false);
+     $j(this).attr("checked",true);
+     $j(this).change();
+ });
+ });
+ });
+}
+</script>
+    <table border="2" cellspacing="0" cellpadding="6" width="100%">
+        <tr>
+            <td>
+                <b>
+                    Primary Care ID Type :
+                    <lookup class="value" expression="patientIdentifiers.get(&quot;Primary Care ID Type&quot;)" />
+                </b>
+            </td>
+            <td>
+                Date:
+                <encounterDate />
+            </td>
+            <td>
+                Clinique / Clinic:
+                <encounterLocation id="location" />
+            </td>
+            <td>
+                Clinician Nom/ Signature:
+                <encounterProvider role="Provider"/>
+            </td>
+        </tr>
+    </table>
+    <section headerLabel=" INFORMATION DEMOGRAPHIQUE" >
+        <table  border="2" cellspacing="0" cellpadding="6" width="100%">
+            <tr><td>
+                Nom:<lookup class="value" expression="patient.personName.familyName" />
+            </td></tr>
+            <tr><td>Prenom:<lookup class="value" expression="patient.personName.givenName" />
+            </td></tr>
+            <tr><td>Sexe/Sex: <lookup class="value" expression="patient.Gender"/>
+            </td></tr>
+            <tr><td>Date de naissance/Date of birth: <lookup class="value" expression="patient.birthdate"/>
+            </td></tr>
+            <tr><td>Lieu de naissance:<lookup class="value" expression="personAttributes.get('Birthplace')"/>
+            </td></tr>
+            <tr><td>Civil Status:<lookup class="value" expression="personAttributes.get('CivilStatus')"/>
+            </td></tr>
+            <tr><td>Education Level:<lookup class="value" expression="personAttributes.get('EducationLevel')"/>
+            </td></tr>
+            <tr><td>Main Activity:<lookup class="value" expression="personAttributes.get('MainActivity')"/>
+            </td></tr>
+        </table>
+    </section>
+    <section headerLabel=" Residence:" >
+        <table  border="1" cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td rowspan="3"><addressHierarchyRwanda/><br/>
+                    <obs conceptId="3cda3d7e-26fe-102b-80cb-0017a47871b2" labelText="Telephone: " size="10"/></td>
+            </tr>
+        </table>
+    </section>
+
+
+    <section headerLabel="Other Information">
+        <obsgroup groupingConceptId="b2918713-521f-43dd-91f3-9c6c699eb033">
+            <table  border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr class="strong">
+                    <th colspan="3" align="center">Utilisation Anterieure de contraception</th>
+                </tr>
+                <tr class="strong">
+                    <th></th>
+                    <th>Women</th>
+                    <th>Men</th>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="64898fa2-031b-45ce-ba53-c817433b408e" answerConceptId="3fd055f1-9837-474c-87cb-a0857e9954fa" style="checkbox" /></td>
+                    <td><obs conceptId="cd3e9923-a3d3-4309-be05-9e7f604afcd4" labelText="Modern"/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<obs conceptId="b54777dc-538c-44d4-ad0b-baa38b707592" labelText="Natural"/></td>
+                    <td><obs conceptId="cd3e9923-a3d3-4309-be05-9e7f604afcd4" labelText="Modern"/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<obs conceptId="b54777dc-538c-44d4-ad0b-baa38b707592" labelText="Natural"/></td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="64898fa2-031b-45ce-ba53-c817433b408e" answerConceptId="8d43544e-0de4-460f-b286-2e02c0b3ef8b" style="checkbox" /></td>
+                    <td><obs conceptId="159cffd4-48f6-4c79-a511-51ea6457d818" style="textarea" rows="3" cols="30" /></td>
+                    <td><obs conceptId="4cc18932-3547-4779-ba4d-5221ded02cab" style="textarea" rows="3" cols="30" /></td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="64898fa2-031b-45ce-ba53-c817433b408e" answerConceptId="361f2acb-e632-437e-888c-ca9fa1b0fc7e" style="checkbox" /></td>
+                    <td><obs conceptId="361f2acb-e632-437e-888c-ca9fa1b0fc7e" style="textarea" rows="3" cols="30" /></td>
+                    <td><obs conceptId="361f2acb-e632-437e-888c-ca9fa1b0fc7e" style="textarea" rows="3" cols="30" /></td>
+                </tr>
+            </table>
+        </obsgroup>
+    </section>
+
+    <!--<section headerLabel="Other Information">
+        <obsgroup groupingConceptId="b2918713-521f-43dd-91f3-9c6c699eb033">
+            <table  border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr class="strong">
+                    <td><obs conceptId="3cd6dda0-26fe-102b-80cb-0017a47871b2" labelCode="Parity"/></td>
+                    <td><obs conceptId="3cde80dc-26fe-102b-80cb-0017a47871b2" labelCode="Number of Child Deaths"/></td>
+                    <td><obs conceptId="3cd653c6-26fe-102b-80cb-0017a47871b2" labelCode="Date of Last Menstrual"/></td>
+                    <td><obs conceptId="6df78bbb-24a6-4a1d-af5a-3717ecbeb260" labelCode="Number of abortions"/></td>
+                    <td><obs conceptId="789dabea-e83e-478a-871b-215559288746" labelCode="Last Born Birth Date"/></td>
+                    <td><obs conceptId="f8c17ed2-38e4-4010-bd10-e27c99185eb4" answerConceptId="94efe7f2-9b74-4c38-b017-f77b9874d88b" style="checkbox" /></td>
+                    <td><obs conceptId="f8c17ed2-38e4-4010-bd10-e27c99185eb4" answerConceptId="1aa519c4-ce19-4c2f-baa4-fb9808164f47" style="checkbox" /></td>
+                    <td><obs conceptId="f8c17ed2-38e4-4010-bd10-e27c99185eb4" answerConceptId="4baf225d-2b88-4a69-809f-9c82cb8c0b49" style="checkbox" /></td>
+
+
+                    Cannot find concept for value 4baf225d-2b88-4a69-809f-9c82cb8c0b49
+                    in answerConceptId attribute value. Parameters: {answerConceptId=4baf225d-2b88-4a69-809f-9c82cb8c0b49, style=checkbox, conceptId=f8c17ed2-38e4-4010-bd10-e27c99185eb4}
+
+
+
+                </tr>
+            </table>
+        </obsgroup>
+    </section>-->
+
+    <section headerCode="Instruction pour l' utulisation du tableau des criteres d' Eligibilite ci-dessous">
+        <tr><td><th>Repondre par "Yes" ou par "No" aux criteres ci-dessous enonces.</th></td></tr>
+        <table class="baseline-aligned">
+            <tr>
+                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;-Si toutes les reponses sont Non, Alors la cliente est eligible a toutes les methodes. </p>
+                <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;-Si il ya des reponses Yes a des criteres, il faudrait alors les passer en revue un a un afin de decider l eligibilite ou de la non eligibilite de la cliente pour la methode consideree</p>
+            </tr>
+        </table>
+    </section>
+
+    <section headerLabel="ANAMNESE">
+        <obsgroup groupingConceptId="b2918713-521f-43dd-91f3-9c6c699eb033">
+            <table  border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr class="strong">
+                    <th>Items</th>
+                    <th>YES/NO</th>
+                    <th>PC</th>
+                    <th>PP</th>
+                    <th>INJECT.</th>
+                    <th>IMPLANTS</th>
+                    <th>DIU</th>
+                    <th>MAO</th>
+                    <th>COLLIER</th>
+                    <th>BARRIERS</th>
+                    <th>CCV</th>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="913fcb02-3cdc-451b-9275-bc42d4626779" answerConceptId="94d3a5a7-511f-476f-95aa-bb8ff009f9c3" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="913fcb02-3cdc-451b-9275-bc42d4626779" answerConceptId="dc8aadd0-5040-44e3-a7d0-88b63d679e6e" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="913fcb02-3cdc-451b-9275-bc42d4626779" answerConceptId="d6fd0b42-8a97-4815-9380-028cced0725b" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="913fcb02-3cdc-451b-9275-bc42d4626779" answerConceptId="757df661-d43b-4fd7-b3a7-a8535a65c35b" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="913fcb02-3cdc-451b-9275-bc42d4626779" answerConceptId="fcc7a930-2d41-4e77-b1a6-481b86acca91" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="913fcb02-3cdc-451b-9275-bc42d4626779" answerConceptId="aa39c7d3-b4e4-46d3-9d96-e11765e8d06f" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="913fcb02-3cdc-451b-9275-bc42d4626779" answerConceptId="08607293-8915-475b-a9c1-dcea9f9753f9" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="913fcb02-3cdc-451b-9275-bc42d4626779" answerConceptId="ebc36e28-d5e3-4948-bbf6-d20db2f07622" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="913fcb02-3cdc-451b-9275-bc42d4626779" answerConceptId="1feffd2e-eba3-4b46-9757-b48a24d28d1a" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="913fcb02-3cdc-451b-9275-bc42d4626779" answerConceptId="ef00371a-7d36-4912-8e3d-89f4aba1576b" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="913fcb02-3cdc-451b-9275-bc42d4626779" answerConceptId="243502ba-8768-42ce-8549-1ccb2e44f834" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="913fcb02-3cdc-451b-9275-bc42d4626779" answerConceptId="f3e81337-e9c2-408c-8941-e6028e5a65b8" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="913fcb02-3cdc-451b-9275-bc42d4626779" answerConceptId="cfd4db40-ce10-4b59-aa6d-522e1a3ad573" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+            </table>
+        </obsgroup>
+    </section>
+
+    <section headerLabel="ANTECEDENTS">
+        <obsgroup groupingConceptId="b2918713-521f-43dd-91f3-9c6c699eb033">
+            <table  border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr class="strong">
+                    <th>Items</th>
+                    <th>YES/NO</th>
+                    <th>PC</th>
+                    <th>PP</th>
+                    <th>INJECT.</th>
+                    <th>IMPLANTS</th>
+                    <th>DIU</th>
+                    <th>MAO</th>
+                    <th>COLLIER</th>
+                    <th>BARRIERS</th>
+                    <th>CCV</th>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="d63a441d-0f40-4da4-be6c-2d33a2c5979e" answerConceptId="f77c5f93-269a-4dcf-8a5f-246a43db28de" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="d63a441d-0f40-4da4-be6c-2d33a2c5979e" answerConceptId="aa926e12-aaa7-48e7-97af-a577cf0ad033" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="d63a441d-0f40-4da4-be6c-2d33a2c5979e" answerConceptId="89bb259d-a08b-47ff-9cdb-edff8e42fc89" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="d63a441d-0f40-4da4-be6c-2d33a2c5979e" answerConceptId="a9b93fd1-87c2-4a69-b7fb-3f30568962c4" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+            </table>
+        </obsgroup>
+    </section>
+
+    <section headerLabel="EXAMEN GENERAL GYNECOLOGIQUE">
+        <obsgroup groupingConceptId="b2918713-521f-43dd-91f3-9c6c699eb033">
+            <table  border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr class="strong">
+                    <th>Items</th>
+                    <th>YES/NO</th>
+                    <th>PC</th>
+                    <th>PP</th>
+                    <th>INJECT.</th>
+                    <th>IMPLANTS</th>
+                    <th>DIU</th>
+                    <th>MAO</th>
+                    <th>COLLIER</th>
+                    <th>BARRIERS</th>
+                    <th>CCV</th>
+                </tr>
+                <tr>
+                    <td><obs conceptId="1c096bf8-5322-4a02-8e6e-4148c930768a" answerConceptId="1eb8d2e2-527d-498c-871b-0fd8a54987a6" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="1c096bf8-5322-4a02-8e6e-4148c930768a" answerConceptId="10d2d7e3-a64d-4116-b68e-22ccc04e8ce2" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="1c096bf8-5322-4a02-8e6e-4148c930768a" answerConceptId="4a182c41-8b63-405c-b84a-17ad0f44efb4" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="1c096bf8-5322-4a02-8e6e-4148c930768a" answerConceptId="b845c0bb-2b27-4b6c-b0ab-fa59026c5d08" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="1c096bf8-5322-4a02-8e6e-4148c930768a" answerConceptId="a15ef9e8-b6f1-4f4a-b430-235267ea8679" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="1c096bf8-5322-4a02-8e6e-4148c930768a" answerConceptId="0c996301-38ad-4e14-8136-f136b03aaee8" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="1c096bf8-5322-4a02-8e6e-4148c930768a" answerConceptId="8c0cdce6-52c3-4243-9d07-feb0332e32f4" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="1c096bf8-5322-4a02-8e6e-4148c930768a" answerConceptId="74db643c-5230-42de-adf8-aa5f9d711a5f" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="1c096bf8-5322-4a02-8e6e-4148c930768a" answerConceptId="89bb259d-a08b-47ff-9cdb-edff8e42fc89" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="1c096bf8-5322-4a02-8e6e-4148c930768a" answerConceptId="c4205d6d-e00b-4d40-900a-cadce2825023" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="1c096bf8-5322-4a02-8e6e-4148c930768a" answerConceptId="28897d8b-c6da-452d-8009-a5565232627e" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>
+               <!-- <tr>
+                    <td><obs conceptId="1c096bf8-5322-4a02-8e6e-4148c930768a" answerConceptId="0d16cc42-6a45-49fe-8887-d451c589877d" style="checkbox" /></td>
+                    <td><obs conceptId="be839126-b72e-4a80-a226-b0cfb808d4a0" style="yes_no" labelCode=""/></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                    <td><obs conceptId="fd411600-3201-40d6-8cd4-6159710cadbd" answerConceptIds="d977e0c1-ccec-4652-97f5-3305ea35d7fc,b4d8e71c-34c3-4cbb-bd76-45a718ff7f71,c204ee42-d512-4539-b838-2e6596bdbe7e,ae236494-b7ed-443e-947b-ae22dbdefa58" answerLabels="+,(-),-,N/A" style="radio" /></td>
+                </tr>-->
+            </table>
+        </obsgroup>
+    </section>
+
+
+
+    <table border="1" width="100%" style="background-color:lightgrey">
+        <tr>
+            <td>
+                Legende
+            </td>
+        </tr>
+        <tr>
+            <td>
+                += Eligible (categorie 1 de l' OMS)
+                <br />
+                <br />
+                (-)= Eligiblite relative (categorie 2 de l' OMS)
+                <br />
+                -= Non Eligible (categorie 3 et 4 de l' OMS)
+                <br />
+                <br />
+                SO: sans objet
+            </td>
+        </tr>
+    </table>
+
+    <section headerLabel="EXAMENS COMPLEMENTAIRES (si necessaires)">
+        <table border="1" width="100%" class="rdv">
+            <tr class="strong">
+                <th>Date</th>
+                <th>Type d' examen demande</th>
+                <th>Resultats</th>
+            </tr>
+            <tr>
+                <obsgroup groupingConceptId="b2918713-521f-43dd-91f3-9c6c699eb033">
+                    <td><obs conceptId="5f656c6f-6e67-474f-8f42-8e415513c44b"/></td>
+                    <td><obs conceptId="fd450b44-5133-4957-a3b5-66f35a219c00" style="textarea" rows="3" cols="70"/></td>
+                    <td><obs conceptId="01381146-3e1f-45f1-b30c-879e7c364bca" style="textarea" rows="3" cols="70"/></td>
+                </obsgroup>
+            </tr>
+        </table>
+    </section>
+
+    <section headerLabel="CONCLUSION">
+        <table border="1" width="100%" class="rdv">
+            <th>A.Modern Method choosen</th>
+            <th>B.Natural Method choosen</th>
+            <obsgroup groupingConceptId="b2918713-521f-43dd-91f3-9c6c699eb033">
+                <tr>
+                    <td><obs conceptId="cd3e9923-a3d3-4309-be05-9e7f604afcd4" labelText="1.Modern"/></td>
+                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                    <td><obs conceptId="b54777dc-538c-44d4-ad0b-baa38b707592" labelText="1.Natural"/></td>
+                </tr>
+                <tr>
+                    <td><obs conceptId="cd3e9923-a3d3-4309-be05-9e7f604afcd4" labelText="2.Modern"/></td>
+                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                    <td><obs conceptId="b54777dc-538c-44d4-ad0b-baa38b707592" labelText="2.Natural"/></td>
+                </tr>
+            </obsgroup>
+            <th>C.Offered Method</th>
+            <tr>
+                <td><obs conceptId="cd3e9923-a3d3-4309-be05-9e7f604afcd4" labelText="Modern"/></td>
+                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                <td><obs conceptId="b54777dc-538c-44d4-ad0b-baa38b707592" labelText="Natural"/></td>
+            </tr>
+        </table>
+    </section>
+
+    <section headerLabel="FICHE INDIVIDUELLE DE SUIVI PF">
+
+        <table  border="1" cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td>
+                    <obs conceptId="73665cd7-d8d4-42ac-9d01-bc49c1ee8617" labelText="Date de la Visite"/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                    <obs conceptId="53ddeecd-5c9d-41c9-aae2-bd8db86f998a" labelText="Prescription" size="30"/> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                    <obs conceptId="3ce94df0-26fe-102b-80cb-0017a47871b2" labelText="Prochain RDV"/>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <center>
+        <submit />
+    </center>
+</htmlform>

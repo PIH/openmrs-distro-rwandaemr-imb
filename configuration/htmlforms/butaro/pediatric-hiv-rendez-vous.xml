@@ -1,0 +1,983 @@
+<htmlform 
+	htmlformUuid="772b3e7a-71ab-11e0-8923-001e68a9fdcf" 
+	formUuid="12edfd20-8822-4b7d-b38f-69e0ad60abc2" 
+	formName="Pediatric HIV rendez-vous" 
+	formDescription="The Pediatric followup form for the HIV program.  RdV-HIV-InfactPMTCT-RW-V2.0-ss-18Aug09-fr.  Designed by Sarah Stulac in August 2009. " 
+	formVersion="2.0" 
+	formEncounterType="4d91222c-26fe-102b-80cb-0017a47871b2" 
+	formPublished="false" 
+	formRetired="false"
+>
+	<!--
+		This form matches the latest paper form at PIH/IMB Rwanda as of
+		19August2010. 
+		
+		RdV-HIV-Pediatric-RW-V2.0-ss-11Aug09-fr 
+				
+		Partners In Health
+		form author:  Sara Stulac 
+		htmlform authors: Ellen, Zeke and Cordt 
+		19 August 2010
+	-->
+	<style>
+		.formName { background-color:#e0e0ff; }
+		.section { border: 1px
+		solid #8FABC7; width:99%; padding:2px; text-align:left;
+		margin-bottom:10px; }
+		.sectionHeader { background-color: #8FABC7;
+		color: white; display: block; padding: 2px; font-weight:bold; }
+		table.symptoms th {text-align:right;}
+		.note {color:red;}
+		td
+		{vertical-align:top;}
+		table.labTable td { color:red; }
+		table.labTable
+		td.dateField { text-align:right; }
+		table.identifierTable td
+		{padding-right:10px;}
+		div.paddedTable span {padding-right:20px;}
+		.indented {padding-left: 20pt; padding-right: 20pt; }
+		.bigIndent
+		{padding-left: 40pt; padding-right: 10pt; }
+		.newpage {color:#8FABC7;
+		font-weight:bold;}
+		#oui,#non{
+		display:-moz-inline-stack;
+		display:inline-block;
+		zoom:1;
+		*display:inline;
+		vertical-align:text-top;
+		}
+	</style>
+	
+	<!-- jquery loaded for nonessential purposes. -->
+	<script type="text/javascript">
+		if(jQuery){
+		$(document).ready(function(){
+		// the following code makes it so that  
+		//   the user can't check both clear,
+		//   and any lung sound, etc
+		$(".ouiNon").each(function(){
+		var oui = $(this).find("#oui").find("input");
+		var non = $(this).find("#non").find("input");
+		oui.click(function(){
+		non.attr('checked', false);
+		oui.attr('checked', true);
+		});
+		non.click(function(){
+		oui.attr('checked', false);
+		non.attr('checked', true);
+		});
+		});
+		});
+		}
+</script>
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td width="50%">
+				<b>
+					Nom:
+					<lookup class="value" expression="patient.personName.familyName" />
+					Prénom:
+					<lookup class="value" expression="patient.personName.givenName" />
+				</b>
+			</td>
+			<td align="right">
+				<b>
+					IMB ID:
+					<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				</b>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img src="/openmrs/images/emr_hands.gif" align="left" height="75"
+					width="56"></img>
+				<h2>
+					Inshuti Mu Buzima
+					<br />
+					PIH Rwanda
+				</h2>
+			</td>
+			<td>
+				<strong>
+					Programme TB/VIH
+					<br />
+					RENDEZ-VOUS de Pédiatrie
+				</strong>
+				<br />
+				RdV-HIV-Pediatric-RW-V2.0-ss-11Aug09-fr
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Date:
+				<encounterDate />
+			</td>
+			<td>
+				Centre de santé:
+				<encounterLocation />
+			</td>
+		</tr>
+	</table>
+
+	<section headerLabel="1. Accompagnateur/adhérence">
+		<table border="1" width="100%">
+			<tr>
+				<td width="50%">
+					<obs conceptId="2159" style="no_yes" noLabel="non" yesLabel="oui"
+						labelText="Changement de l'accompagnateur? " />
+					<br />
+					<obs conceptId="2008" labelText="Si oui, raison: " />
+					<br />
+					<br />
+					<b>S'il y a un changement d'accompagnateur, veuillez le changer
+						ONLINE</b>
+				</td>
+
+				<td>
+					<obs conceptId="6409" style="no_yes" noLabel="non" yesLabel="oui"
+						labelText="Annonce du diagnostic? " />
+					<br />
+					<obs conceptId="2122" style="no_yes" noLabel="non" yesLabel="oui"
+						labelText="Parent ou tuteur présent? " />
+					<br />
+					<obs conceptId="2121" style="no_yes" noLabel="non" yesLabel="oui"
+						labelText="Accompagnateur présent? " />
+					<br />
+
+
+					<p>
+						<obs conceptId="1738"
+							labelText="Numero de doses non prises pendant le mois passé: " />
+						<br />
+						<obs conceptId="2732" labelText="DOT chaque jour? " style="no_yes"
+							noLabel="non" yesLabel="oui" />
+						<br />
+						<obs conceptId="2926" labelText="Fiche: " style="radio"
+							answerConceptIds="1065,1066,1067" answerLabels="correcte,incorrecte,absente" />
+					</p>
+				</td>
+			</tr>
+		</table>
+	</section>
+
+	<table border="1" width="100%">
+		<tr>
+			<td>
+				<section headerLabel="2. Anamnèse">
+					<b>Symptômes actuels :</b>
+					<br />
+					<obs conceptId="432" labelText="Pas de problèmes" style="checkbox"
+						answerLabel="" />
+					<br />
+					<br />
+
+					<obs conceptId="1293" answerConceptId="512" style="checkbox"
+						answerLabel="Eruption cutanée" />
+					<obs conceptId="1293" answerConceptId="218" style="checkbox"
+						answerLabel="Otite" />
+					<obs conceptId="1293" answerConceptId="6019" stlye="checkbox"
+						answerLabel="Gonflement abdominal" />
+					<br />
+					<br />
+
+					<obsgroup groupingConceptId="1292">
+						<obs conceptId="1293" answerConceptId="16" stlye="checkbox"
+							answerLabel="Diarrhée " />
+						<obs conceptId="2440" />
+						selles/jour
+						<obs conceptId="1293" answerConceptId="2135" stlye="checkbox"
+							labelText="" answerLabel="sanglantes" />
+						<br />
+						<div class="bigIndent">
+							<obs conceptId="1294" labelText="duree: " answerLabel="" />
+							<i>
+								jours
+								<obs conceptId="2160" labelText="" answerLabel="" />
+								semaine
+								<obs conceptId="2161" labelText="" answerLabel="" />
+								mois
+							</i>
+						</div>
+						<br />
+						<br />
+					</obsgroup>
+					<obsgroup groupingConceptId="1292">
+						<div class="ouiNon">
+							<div id="oui">
+								<obs conceptId="1734" answerConceptId="107" stlye="checkbox"
+									answerLabel="non" labelText="Toux: " />
+							</div>
+							<div id="non">
+								<obs conceptId="1293" answerConceptId="107" stlye="checkbox"
+									answerLabel="oui" />
+							</div>
+						</div>
+						<div class="bigIndent">
+							<obs conceptId="1294" labelText="duree: " answerLabel="" />
+							<i>
+								jours
+								<obs conceptId="2160" labelText="" answerLabel="" />
+								semaine
+								<obs conceptId="2161" labelText="" answerLabel="" />
+								mois
+							</i>
+							<br />
+
+							<obs conceptId="1293" answerConceptId="2128" stlye="checkbox"
+								answerLabel="seche" />
+							<obs conceptId="1293" answerConceptId="970" stlye="checkbox"
+								answerLabel="hémoptysie" />
+							<br />
+							<obs conceptId="1293" answerConceptId="5957" stlye="checkbox"
+								answerLabel="productive, aspect:" />
+							<obs conceptId="2130" size="10" answerLabel="" textLabel="" />
+							<br />
+							<obs conceptId="1293" answerConceptId="5960" stlye="checkbox"
+								answerLabel="dyspnée" />
+						</div>
+						<br />
+						<br />
+					</obsgroup>
+					<obsgroup groupingConceptId="1292">
+						<div class="ouiNon">
+							<div id="non">
+								<obs conceptId="1734" answerConceptId="6029" stlye="checkbox"
+									answerLabel="non" labelText="Sueurs nocturnes: " />
+							</div>
+							<div id="oui">
+								<obs conceptId="1293" answerConceptId="6029" stlye="checkbox"
+									answerLabel="oui" />
+							</div>
+						</div>
+
+						<div class="bigIndent">
+							<obs conceptId="1294" labelText="duree: " answerLabel="" />
+							<i>
+								jours
+								<obs conceptId="2160" labelText="" answerLabel="" />
+								semaine
+								<obs conceptId="2161" labelText="" answerLabel="" />
+								mois
+							</i>
+						</div>
+						<br />
+					</obsgroup>
+
+					<obsgroup groupingConceptId="1292">
+						<obs conceptId="1734" answerConceptId="5945" stlye="checkbox"
+							answerLabel="non" labelText="Fièvre: " />
+						<obs conceptId="1293" answerConceptId="5945" stlye="checkbox"
+							answerLabel="oui" />
+						<br />
+						<div class="bigIndent">
+							<obs conceptId="1294" labelText="duree: " answerLabel="" />
+							<i>
+								jours
+								<obs conceptId="2160" labelText="" answerLabel="" />
+								semaine
+								<obs conceptId="2161" labelText="" answerLabel="" />
+								mois
+							</i>
+						</div>
+						<br />
+					</obsgroup>
+					<div class="ouiNon" style="width: 100%;">
+						<div id="non">
+							<obs conceptId="1734" answerConceptId="832" stlye="checkbox"
+								answerLabel="non" labelText="Perte de poids: " />
+						</div>
+						<div id="oui" style="60%;">
+							<obs conceptId="1293" answerConceptId="832" stlye="checkbox"
+								answerLabel="oui," />
+							<obs conceptId="3226" labelText=" " />
+							kg
+						</div>
+					</div>
+					<br />
+					<br />
+					<obs conceptId="2133" style="no_yes" noLabel="non" yesLabel="oui"
+						labelText="Contact avec une personne TBC+: " />
+					<br />
+					<br />
+					<obs conceptId="3009" style="no_yes" noLabel="non" yesLabel="oui"
+						labelText="Besoin de plus d'evaluation pour TB: " />
+					<br />
+					<br />
+
+					<obs conceptId="6397" labelText="Commentaires:" />
+					<br />
+					<br />
+
+					<obs conceptId="2129" labelText="Autres symptômes/signes : "
+						size="20" />
+					<br />
+					<obs conceptId="1715" style="no_yes" noLabel="non" yesLabel="oui"
+						labelText="Hospitalisé depuis le dernier RDV? " />
+					<br />
+					<br />
+					<obs conceptId="3589" labelText="Consulté au C.S. depuis le dernier RDV?"
+						style="no_yes" noLabel="non" yesLabel="oui" />
+					<br />
+					<div class="indented">
+						<obs conceptId="1716" labelText="Si oui, diagnostic: " />
+					</div>
+					<br />
+				</section>
+
+				<section headerLabel="6. Investigations à fairè">
+					<table>
+						<tr>
+							<td></td>
+							<td>
+								<obs conceptId="3267" labelText="Date:" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<obs conceptId="1271" labelText="" answerConceptId="5497"
+									answerLabel="CD4" style="checkbox" />
+								<br />
+								<obs conceptId="1271" labelText="" answerConceptId="1444"
+									answerLabel="crachat TB" style="checkbox" />
+								<br />
+								<obs conceptId="1271" labelText="" answerConceptId="1019"
+									answerLabel="hémogramme" style="checkbox" />
+								<br />
+								<obs conceptId="1271" labelText="" answerConceptId="2555"
+									answerLabel="urée / créatinine" style="checkbox" />
+								<br />
+								<obs conceptId="1271" labelText="" answerConceptId="856"
+									answerLabel="charge virale" style="checkbox" />
+								<br />
+								<obs conceptId="1271" labelText="" answerConceptId="2711"
+									answerLabel="échographie" style="checkbox" />
+								<obs conceptId="3555" />
+								<br />
+							</td>
+							<td>
+								<obs conceptId="1271" labelText="" answerConceptId="3007"
+									answerLabel="SGOT/SGPT" style="checkbox" />
+								<br />
+								<obs conceptId="1271" labelText="" answerConceptId="887"
+									answerLabel="glycémie" style="checkbox" />
+								<br />
+								<obs conceptId="1271" labelText="" answerConceptId="1476"
+									answerLabel="G.E." style="checkbox" />
+								<br />
+								<obs conceptId="1271" labelText="" answerConceptId="1437"
+									answerLabel="tuberculine" style="checkbox" />
+								<br />
+								<obs conceptId="1271" labelText="" answerConceptId="12"
+									answerLabel="X-ray thorax" style="checkbox" />
+								<br />
+								<obs conceptId="1271" labelText="" answerConceptId="5622"
+									answerLabel="" />
+								<obs conceptId="2153" />
+								<br />
+							</td>
+						</tr>
+					</table>
+				</section>
+				<br />
+
+			</td>
+			<td>
+				<section headerLabel="3. Examen clinique">
+					<table>
+						<tr>
+							<td colspan="2">
+								<obs conceptId="5089" labelText="Poids: " />
+								kg
+								<div class="indented">
+									<obs conceptId="2217" labelText="" />
+									Z-score
+								</div>
+								<br />
+								<br />
+								<obs conceptId="5088" labelText="Temp: " />
+								°C
+								<br />
+								<br />
+								<obs conceptId="5085" labelText="TA: " />
+								/
+								<obs conceptId="5086" labelText="" />
+							</td>
+
+							<td>
+								<obs conceptId="5090" labelText="Taille: " />
+								cm
+								<div class="indented">
+									<obs conceptId="2218" labelText="" />
+									Z-score
+								</div>
+								<br />
+								<br />
+								<obs conceptId="5087" labelText="Pouls: " />
+								/min
+								<br />
+								<br />
+								<obs conceptId="5242" labelText="FR: " />
+								/min
+								<br />
+							</td>
+
+						</tr>
+					</table>
+
+					<table>
+						<tr>
+							<th></th>
+							<td>normale</td>
+							<td colspan="2">si non, expliquer</td>
+						</tr>
+
+						<repeat>
+
+							<template>
+								<obsgroup groupingConceptId="2138">
+									<tr class="ouiNon">
+										<td>{condition}</td>
+										<td id="oui">
+											<obs conceptId="2139" answerConceptId="{notionID}"
+												labelText="" answerLabel="" />
+										</td>
+										<td id="non">
+											<obs conceptId="2187" answerConceptId="{notionID}"
+												labelText="" answerLabel="" />
+										</td>
+										<td id="non">
+											<obs conceptId="{notionID}" />
+										</td>
+									</tr>
+								</obsgroup>
+							</template>
+							<render notionID="2151" condition="Peau" />
+							<render notionID="2435" condition="ORL" />
+							<render notionID="2143" condition="CV" />
+							<render notionID="2141" condition="Pulm." />
+							<render notionID="2144" condition="Abd." />
+							<render notionID="2145" condition="Neur." />
+							<render notionID="6410" condition="Dvlpmt" />
+							<render notionID="2925" condition="Autre" />
+
+						</repeat>
+
+					</table>
+
+				</section>
+
+				<section headerLabel="4. Effets secondaires"> <!-- this & the next section are not labeled properly -->
+					<table cellpadding="1">
+						<tr>
+							<td colspan="3">
+								Est-ce que le patient a les effets secondaires?
+								<obs conceptId="2146" value="false" noLabel="non" yesLabel="oui"
+									style="checkbox" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<obs conceptId="1297" answerConceptId="3" labelText=""
+									answerLabel="anémie" style="checkbox" />
+							</td>
+							<td>éruption cutanée:</td>
+						</tr>
+						<tr>
+							<td>
+								<obs conceptId="1297" answerConceptId="821" labelText=""
+									answerLabel="neuropathie" style="checkbox" />
+							</td>
+							<td>
+								<div class="indented">
+									<obs conceptId="1297" answerConceptId="1726" labelText=""
+										answerLabel="légère" style="checkbox" />
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<obs conceptId="1297" answerConceptId="29" labelText=""
+									answerLabel="hépatite" style="checkbox" />
+							</td>
+							<td>
+								<div class="indented">
+									<obs conceptId="1297" answerConceptId="1727" labelText=""
+										answerLabel="modérée" style="checkbox" />
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<obs conceptId="1297" answerConceptId="2150" labelText=""
+									answerLabel="cauchemars" style="checkbox" />
+							</td>
+							<td>
+								<div class="indented">
+									<obs conceptId="1297" answerConceptId="1728" labelText=""
+										answerLabel="sévère" style="checkbox" />
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<obs conceptId="1297" answerConceptId="5978" labelText=""
+									answerLabel="nausée/vomissement" style="checkbox" />
+							</td>
+							<td>
+								<obs conceptId="1297" answerConceptId="1458" labelText=""
+									answerLabel="acidose lactique" style="checkbox" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<obs conceptId="1297" answerConceptId="2148" labelText=""
+									answerLabel="lipodystrophie" style="checkbox" />
+							</td>
+							<td colspan="2">
+								<obs conceptId="1297" answerConceptId="5622" labelText=""
+									answerLabel="autres: " style="checkbox" />
+								<obs conceptId="1729" />
+							</td>
+						</tr>
+
+					</table>
+				</section>
+
+				<section headerLabel="5. Nouveaux résultats de laboratoire">
+					<table cellpadding="1">
+						<tr>
+							<td>
+								<obs conceptId="5497" labelText="Dernier CD4: " dateLabel="Date:" />
+								<br />
+								<div class="indented">
+									<obs conceptId="730" labelText="CD4%:" /> <!--REMOVED DATE, IT WASN'T ON THE PAPER - ZEKE-->
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<br />
+								<i>Examen--Résultats--Date</i>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<obs conceptId="21" labelText="Hb (g/L)" showDate="true" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<obs conceptId="678" labelText="GB - total" showDate="true" />
+								x10/L
+								<br />
+								<div class="indented">
+									<obs conceptId="3060" labelText=" granulo %" showDate="true" />
+									<br />
+									<obs conceptId="1021" labelText=" lympho %" showDate="true" />
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<obs conceptId="729" labelText="Plaquettes (10^9/L)"
+									showDate="true" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<obs conceptId="790" labelText="Créatinine (µmol/L)"
+									showDate="true" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<obs conceptId="653" labelText="SGOT (UI/L)" showDate="true" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<obs conceptId="654" labelText="SGPT (UI/L)" showDate="true" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<obs conceptId="5475" labelText="Tuberculine (PPD)"
+									showDate="true" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<obs conceptId="1342" labelText="X-ray thorax" showDate="true" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<obsgroup groupingConceptId="2214">
+									<obs conceptId="2215" labelText="Autre:" />
+									<obs conceptId="2216" labelText="Résultat" showDate="true" />
+								</obsgroup>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<obsgroup groupingConceptId="2214">
+									<obs conceptId="2215" labelText="Autre:" />
+									<obs conceptId="2216" labelText="Résultat" showDate="true" />
+								</obsgroup>
+							</td>
+						</tr>
+					</table>
+				</section>
+			</td>
+		</tr>
+	</table>
+	<br />
+
+	<div class="newpage">Page 2</div>
+
+	<section headerLabel="7. Diagnostic">
+		<table border="1" width="100%">
+			<tr>
+				<td>
+					<obs conceptId="1401" labelText="" value="false" style="checkbox" />
+					Aucun
+					<br />
+					<br />
+					<b>Tuberculose</b>
+					<br />
+					<obs conceptId="1607" labelText="" answerLabel="pulmonaire"
+						answerConceptId="1549" />
+					<br />
+					<obs conceptId="1607" labelText="" answerLabel="extra-pulmonaire"
+						answerConceptId="1547" />
+					<br />
+					<br />
+					<b>Autre pneumopathie</b>
+					<br />
+					<obs conceptId="1607" labelText="" answerLabel="pneumonie bactérienne"
+						answerConceptId="1350" />
+					<br />
+					<obs conceptId="1607" labelText="" answerLabel="PCP"
+						answerConceptId="1351" />
+				</td>
+				<td>
+					<b>Entérite </b>
+					<br />
+					<obs conceptId="1607" labelText="" answerLabel="typhoïde"
+						answerConceptId="141" />
+					<obs conceptId="1607" labelText="" answerLabel="diarrhee chronique"
+						answerConceptId="1431" />
+					<br />
+					<obs conceptId="1607" labelText="" answerLabel="diahrrhee aigüe"
+						answerConceptId="1354" />
+					<br />
+					<obs conceptId="1607" labelText="" answerLabel="autre"
+						answerConceptId="2930" />
+					<br />
+					<br />
+
+
+					<b>Méningite</b>
+					<br />
+					<obs conceptId="1607" labelText="" answerLabel="TB"
+						answerConceptId="1360" />
+					<obs conceptId="1607" labelText="" answerLabel="cryptococcose"
+						answerConceptId="1359" />
+					<br />
+					<obs conceptId="1607" labelText="" answerLabel="bactérienne"
+						answerConceptId="1358" />
+				</td>
+				<td>
+
+					<b>Encéphalopathie</b>
+					<br />
+					<obs conceptId="1607" labelText="" answerLabel="VIH"
+						answerConceptId="1362" />
+					<obs conceptId="1607" labelText="" answerLabel="autre"
+						answerConceptId="1363" />
+					<br />
+					<br />
+
+					<b>Psychologique</b>
+					<br />
+					<obs conceptId="1607" labelText="" answerLabel="dépression"
+						answerConceptId="207" />
+					<br />
+					<obs conceptId="1607" labelText="" answerLabel="anxiété"
+						answerConceptId="2719" />
+					<obs conceptId="1607" labelText="" answerLabel="psychose"
+						answerConceptId="219" />
+					<br />
+					<br />
+
+					<b>Candidose</b>
+					<br />
+					<obs conceptId="1607" labelText="" answerLabel="orale pharyngée"
+						answerConceptId="5334" />
+					<br />
+					<obs conceptId="1607" labelText="" answerLabel="oesophagienne"
+						answerConceptId="1616" />
+					<obs conceptId="1607" labelText="" answerLabel="vaginale"
+						answerConceptId="298" />
+				</td>
+				<td>
+					<b>Eruption cutanée</b>
+					<br />
+					<obs conceptId="1607" labelText="" answerLabel="taenia capitis"
+						answerConceptId="144" />
+					<br />
+					<obs conceptId="1607" labelText="" answerLabel="zona"
+						answerConceptId="836" />
+					<obs conceptId="1607" labelText="" answerLabel="gâle"
+						answerConceptId="140" />
+					<br />
+					<br />
+
+					<b>Autres</b>
+					<br />
+					<obs conceptId="1607" labelText="" answerLabel="sarcome de Kaposi"
+						answerConceptId="507" />
+					<br />
+					<obs conceptId="1607" labelText="" answerLabel="verminose"
+						answerConceptId="199" />
+					<br />
+					<obs conceptId="1607" labelText="" answerLabel="paludisme"
+						answerConceptId="123" />
+					<obs conceptId="1607" labelText="" answerLabel="otite"
+						answerConceptId="218" />
+					<br />
+					<obs conceptId="1607" labelText="" answerLabel="malnutrition"
+						answerConceptId="68" />
+				</td>
+			</tr>
+		</table>
+	</section>
+
+
+	<section headerLabel="8. Médicaments">
+		<b>Prophylaxie: </b>
+		<i>(Ce n'est pas necessaire de remplir cette question, mais n'oubliez
+			pas chequer les regimes actuelles ONLINE)</i>
+		<br />
+		<br />
+		<b>Curatif: </b>
+		<i>(Ce n'est pas necessaire de remplir cette question, mais n'oubliez
+			pas chequer les regimes actuelles ONLINE)</i>
+	</section>
+
+	<section headerLabel="9. Traitement antirétroviral (TAR)">
+		<table>
+			<tr>
+				<td>
+					<obs conceptId="1255" answerConceptId="1107" answerLabel="TAR non-indiqué"
+						style="checkbox" labelText="" />
+				</td>
+				<td>
+					<obs conceptId="1255" answerConceptId="1257"
+						answerLabel="TAR continué (pas de changement)" style="checkbox"
+						labelText="" />
+				</td>
+				<td>
+					<obs conceptId="1255" answerConceptId="1258" answerLabel="changement de dose"
+						style="checkbox" labelText="" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<obs conceptId="1255" answerConceptId="1256" answerLabel="TAR initié"
+						style="checkbox" labelText="" />
+				</td>
+				<td>
+					<obs conceptId="1255" answerConceptId="1259" answerLabel="changement de molécule"
+						style="checkbox" labelText="" />
+				</td>
+				<td>
+					<obs conceptId="1255" answerConceptId="1260" answerLabel="TAR arrèté"
+						style="checkbox" labelText="" />
+				</td>
+			</tr>
+		</table>
+
+		<table border="0" bgcolor="lightgrey">
+			<tr>
+				<td colspan="3">
+					Si changement ou interruption, indiquer la raison :
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<obs conceptId="1252" answerConceptId="843" answerLabel="Echec"
+						style="checkbox" labelText="" />
+				</td>
+				<td>
+					<obs conceptId="1252" answerConceptId="1761" answerLabel="Rupture du stock"
+						style="checkbox" labelText="" />
+				</td>
+				<td>
+					<obsgroup groupingConceptId="1652">
+						<obs conceptId="1252" answerConceptId="102" answerLabel="Toxicité"
+							style="checkbox" labelText="" />
+						<obs conceptId="3332" answerLabel="" labelText="(a spécifier)" />
+					</obsgroup>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<obs conceptId="1252" answerConceptId="2511"
+						answerLabel="Interaction avec les anti-TB" style="checkbox"
+						labelText="" />
+				</td>
+				<td>
+					<obs conceptId="1252" answerConceptId="1817" answerLabel="Changement des poids"
+						style="checkbox" labelText="" />
+				</td>
+				<td>
+					<obs conceptId="1252" answerConceptId="5622" answerLabel="Autre: "
+						style="checkbox" labelText="" />
+					<obs conceptId="3121" />
+				</td>
+			</tr>
+		</table>
+		<p>
+			<b>Assurez que les medicaments TAR sont correctes pour ce patient
+				ONLINE.
+		</b>
+		</p>
+	</section>
+
+
+	<section headerLabel="10. Traitement antituberculeux">
+		<table>
+			<tr>
+				<td>
+					<obs conceptId="1268" answerConceptId="1107"
+						answerLabel="traitement anti-TB non-indiqué" style="checkbox"
+						labelText="" />
+				</td>
+				<td>
+					<obs conceptId="1268" answerConceptId="1257"
+						answerLabel="traitement anti-TB continué (pas de changement)"
+						style="checkbox" labelText="" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<obs conceptId="1268" answerConceptId="1256"
+						answerLabel="traitement anti-TB initié" style="checkbox"
+						labelText="" />
+				</td>
+				<td>
+					<obs conceptId="1268" answerConceptId="1259" answerLabel="changement de molécule"
+						style="checkbox" labelText="" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<obs conceptId="1268" answerConceptId="1258" answerLabel="changement de dose"
+						style="checkbox" labelText="" />
+				</td>
+				<td>
+					<obs conceptId="1268" answerConceptId="1260"
+						answerLabel="traitement anti-TB arrèté" style="checkbox"
+						labelText="" />
+				</td>
+			</tr>
+		</table>
+
+		<br />
+		<table>
+			<tr>
+				<td valign="center">
+					<i>
+						<b>Assurez que les medicaments Anti-TB sont correctes pour ce
+							patient ONLINE</b>
+					</i>
+				</td>
+				<td>
+					<table border="0" bgcolor="lightgrey">
+						<tr>
+							<td colspan="2">
+								Si changement ou interruption, indiquer la raison
+								:
+				</td>
+						</tr>
+						<tr>
+							<td>
+								<obs conceptId="1269" answerConceptId="843" answerLabel="Echec"
+									style="checkbox" labelText="" />
+							</td>
+							<td>
+								<obsgroup groupingConceptId="1652">
+									<obs conceptId="1269" answerConceptId="102" answerLabel="Toxicité"
+										style="checkbox" labelText="" />
+									<obs conceptId="3332" answerLabel="" labelText="(a spécifier)" />
+								</obsgroup>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<obs conceptId="1269" answerConceptId="1761" answerLabel="Rupture du stock"
+									style="checkbox" labelText="" />
+							</td>
+							<td>
+								<obs conceptId="1269" answerConceptId="6405" answerLabel="Traitement termine"
+									style="checkbox" labelText="" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<obs conceptId="1269" answerConceptId="1817" answerLabel="Changement des poids"
+									style="checkbox" labelText="" />
+							</td>
+							<td>
+								<obs conceptId="1269" answerConceptId="1804"
+									answerLabel="Phase de continuation" style="checkbox" labelText="" />
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<obs conceptId="1269" answerConceptId="5622" answerLabel="Autre: "
+									style="checkbox" labelText="" />
+								<obs conceptId="3121" />
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</section>
+
+
+	<section headerLabel="11. Conduite à tenir">
+		<i>(autres remarques et autres médicaments)</i>
+		<br />
+		<obs conceptId="1620" rows="20" cols="80" />
+		<br />
+		<br />
+		<obs conceptId="1781" style="no_yes" noLabel="non" yesLabel="oui"
+			labelText="Est-ce que le patient sera référé vers un autre site?" />
+		Centre de santé:
+		<obs conceptId="2158" />
+		<obs conceptId="1389" labelText="Autre centre:" />
+		<br />
+		<br />
+		<obs conceptId="5096" labelText="Prochain rendez-vous?		"
+			allowFutureDates="true" />
+		Prestataire de service:
+		<encounterProvider role="Provider"/>
+		<br />
+	</section>
+	<br />
+	<div style="text-align: center;">
+		<submit />
+	</div>
+	<br />
+
+	<enrollInProgram programId="10" />
+	<!-- 10 for rwanda (rwink) and butaro	-->
+
+</htmlform>

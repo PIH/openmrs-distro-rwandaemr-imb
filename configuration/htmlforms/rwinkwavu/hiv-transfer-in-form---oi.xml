@@ -1,0 +1,94 @@
+<htmlform 
+	htmlformUuid="0fad0062-4477-4bba-8578-b2acbe040527" 
+	formUuid="d802e26e-593a-4496-a8b4-1f8368357b5c" 
+	formName="HIV Transfer In Form - OI" 
+	formDescription="Adult Transfer Flowsheet OI" 
+	formVersion="1.0" 
+	formEncounterType="504ca1b7-ae18-434a-89d9-cf80f1ad3407" 
+	formPublished="true" 
+	formRetired="false"
+>
+
+    <macros>
+		@PATIENT_IDENTIFIER@=IMB ID
+    	
+		@CURRENT_OPPORTUNISTIC_INFECTION_CONSTRUCT@=a5694b2e-22f0-487d-a22d-06771ae6b82d
+		@CURRENT_OPPORTUNISTIC_INFECTION@=0ae23a5a-15f5-102d-96e4-000c29c2a5d7
+		@CURRENT_OPPORTUNISTIC_INFECTION_NON_CODED@=3cdd0f04-26fe-102b-80cb-0017a47871b2
+		@WHO_STAGE@=3cdb3b02-26fe-102b-80cb-0017a47871b2
+		@CLINICAL_IMPRESSION_COMMENTS@=3cd9d956-26fe-102b-80cb-0017a47871b2
+
+		@WHO_STAGE_1_ADULT@=3cd7ee16-26fe-102b-80cb-0017a47871b2
+		@WHO_STAGE_2_ADULT@=3cd7ef9c-26fe-102b-80cb-0017a47871b2
+		@WHO_STAGE_3_ADULT@=3cd7f118-26fe-102b-80cb-0017a47871b2
+		@WHO_STAGE_4_ADULT@=3cd7f294-26fe-102b-80cb-0017a47871b2
+
+		@OTHER_NON_CODED@=5622
+    </macros>
+
+	<link type="text/css" rel="stylesheet" href="/openmrs/moduleResources/rwandahivflowsheet/hiv_flowsheet_new_row.css" />
+	
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				<b>
+					$@PATIENT_IDENTIFIER@: <lookup class="value" expression="patientIdentifiers.get(&quot;$@PATIENT_IDENTIFIER@&quot;)" />
+				</b>
+			</td>
+			<td>
+				Date: <encounterDate default="today"/>
+			</td>
+			<td>
+				Clinique / Clinic: <encounterLocation />
+			</td>
+			<td>
+				Nom / Signature: <encounterProvider role="HIV Patient Provider"/>
+			</td>
+		</tr>
+	</table>
+	
+	<section headerLabel="INFECTIONS OPPORTUNISTES / OPPORTUNISTIC INFECTIONS">
+		<table border="1" width="100%">
+			<obsgroup groupingConceptId="$@CURRENT_OPPORTUNISTIC_INFECTION_CONSTRUCT@">
+			<tr>
+				<th width="20%">Diagnostic /<br/>Diagnosis</th>
+				<td>
+					<obs conceptId="$@CURRENT_OPPORTUNISTIC_INFECTION@" id="currentOpportunisticInfection" required="true"/>
+					<obs conceptId="$@CURRENT_OPPORTUNISTIC_INFECTION_NON_CODED@" id="currentOpportunisticInfectionNonCoded" size="40"/>
+				</td>
+			</tr>
+			<tr>
+				<th>Stade OMS /<br/>Stage WHO</th>
+				<td>
+					<obs conceptId="$@WHO_STAGE@" answerConceptIds="$@WHO_STAGE_1_ADULT@,$@WHO_STAGE_2_ADULT@,$@WHO_STAGE_3_ADULT@,$@WHO_STAGE_4_ADULT@" answerLabels="1,2,3,4" style="radio"/> <br/>
+				</td>
+			</tr>
+			<tr>
+				<th>Commentaire /<br/>Comment</th>
+				<td><obs conceptId="$@CLINICAL_IMPRESSION_COMMENTS@" rows="4" cols="40" /></td>
+			</tr>
+			</obsgroup>
+		</table>
+	</section>
+	
+	<br />
+	<center><submit /></center>
+	<br />
+
+<script type="text/javascript">
+	
+$j(document).ready(function() {
+	getField('currentOpportunisticInfectionNonCoded.value')[0].disabled = true;
+
+	getField('currentOpportunisticInfection.value').change(function() {
+		if(getValue('currentOpportunisticInfection.value') == $@OTHER_NON_CODED@) {
+			getField('currentOpportunisticInfectionNonCoded.value')[0].disabled = false;
+		} else {
+			getField('currentOpportunisticInfectionNonCoded.value')[0].disabled = true;
+		}
+	});
+});
+
+</script>
+
+</htmlform>

@@ -1,0 +1,223 @@
+<htmlform 
+	htmlformUuid="5306102c-e8ac-425f-9832-232b59f0bfd7" 
+	formUuid="9099ff21-c1a5-475b-930a-04e78bc21d1f" 
+	formName="Oncology - Outpatient Flow: Medication Allergies" 
+	formDescription="Oncology  Outpatient Flow  section of Medication Allergies" 
+	formVersion="0.1" 
+	formEncounterType="ff319885-3f20-4ae5-8663-3ad5678cba41" 
+	formPublished="false" 
+	formRetired="false"
+> <!-- Oncology - Outpatient Flow: Drug Allergies
+         Written by jberchmas
+           --> <macros> paperFormId = OutPt
+Flow_ONCOLOGY_V1.2NT2012June20 copy.doc headerColor =#3333cc;
+fontOnHeaderColor = white </macros>
+<style>
+.formName {
+	background-color: #e0e0ff;
+}
+
+.section {
+	border: 1px solid #3333cc;
+	width: 100%;
+	padding: 2px;
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+.sectionHeader {
+	background-color: #3333cc;;
+	color: white;
+	display: block;
+	padding: 2px;
+	font-weight: bold;
+}
+
+table.symptoms th {
+	text-align: right;
+}
+
+.note {
+	color: red;
+}
+
+td {
+	vertical-align: top;
+}
+
+table.labTable td {
+	color: red;
+}
+
+table.labTable
+		td.dateField {
+	text-align: right;
+}
+
+table.identifierTable td {
+	padding-right: 10px;
+}
+
+div.paddedTable span {
+	padding-right: 20px;
+}
+
+table {
+	border-collapse: collapse;
+}
+</style>
+<script>
+	$j(document).ready(function() {
+getField('causeNonCoded1.value')[0].disabled = true;
+     getField('cause1.value').change(function() {
+                 var checkcauseNonCoded1= $j("#cause1  option:selected").text();
+              if( checkcauseNonCoded1 == "OTHER NON-CODED") {
+			getField('causeNonCoded1.value')[0].disabled = false;
+		} else {
+			getField('causeNonCoded1.value')[0].disabled = true;
+		}
+    });
+     getField('causeNonCoded2.value')[0].disabled = true;
+     getField('cause2.value').change(function() {
+                 var checkcauseNonCoded2= $j("#cause2  option:selected").text();
+              if( checkcauseNonCoded2 == "OTHER NON-CODED") {
+			getField('causeNonCoded2.value')[0].disabled = false;
+		} else {
+			getField('causeNonCoded2.value')[0].disabled = true;
+		}
+    });
+
+      getField('causeNonCoded3.value')[0].disabled = true;
+     getField('cause3.value').change(function() {
+                 var checkcauseNonCoded3= $j("#cause3  option:selected").text();
+              if( checkcauseNonCoded3 == "OTHER NON-CODED") {
+			getField('causeNonCoded3.value')[0].disabled = false;
+		} else {
+			getField('causeNonCoded3.value')[0].disabled = true;
+		}
+    });
+
+
+ getField('reactionNonCoded1.value')[0].disabled = true;
+     getField('reaction1.value').change(function() {
+                 var checkreactionNonCoded1= $j("#reaction1  option:selected").text();
+              if( checkreactionNonCoded1 == "OTHER NON-CODED") {
+			getField('reactionNonCoded1.value')[0].disabled = false;
+		} else {
+			getField('reactionNonCoded1.value')[0].disabled = true;
+		}
+    });
+
+getField('reactionNonCoded2.value')[0].disabled = true;
+     getField('reaction2.value').change(function() {
+                 var checkreactionNonCoded2= $j("#reaction2  option:selected").text();
+              if( checkreactionNonCoded2 == "OTHER NON-CODED") {
+			getField('reactionNonCoded2.value')[0].disabled = false;
+		} else {
+			getField('reactionNonCoded2.value')[0].disabled = true;
+		}
+    });
+
+getField('reactionNonCoded3.value')[0].disabled = true;
+     getField('reaction3.value').change(function() {
+                 var checkreactionNonCoded3= $j("#reaction3  option:selected").text();
+              if( checkreactionNonCoded3 == "OTHER NON-CODED") {
+			getField('reactionNonCoded3.value')[0].disabled = false;
+		} else {
+			getField('reactionNonCoded3.value')[0].disabled = true;
+		}
+    });
+
+	});
+</script>
+<table border="1" cellspacing="0" cellpadding="6" width="100%">
+	<tr>
+		<td><b> IMB ID: <lookup class="value"
+						expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
+						expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
+			</td>
+		<td>Date: <encounterDate /></td>
+
+		<td>Clinique / Clinic: <encounterLocation order="43" default="Rwinkwavu Hospital" /></td>
+		<td>Nom/ Signature:<encounterProvider role="Oncology Provider" />
+		</td>
+	</tr>
+</table>
+
+<section headerLabel="MEDICATION ALLERGIES">
+<table border="1" cellspacing="0" cellpadding="6" width="100%">
+	<tr>
+
+		<td><b><center>Medication causing allergies:</center> </b></td>
+		<td><b><center>Reaction:</center> </b></td>
+		<td><b><center>Year of reaction:</center> </b></td>
+	</tr>
+
+	<lookup
+			complexExpression="#set($obsGroupList = [])	
+						
+						#foreach($encounter in $fn.allEncounters(null)) 
+						                                         #foreach($obs in $encounter.obs)
+				                                                   #if( $obs.obsGroup.concept.uuid == '3cd95d5a-26fe-102b-80cb-0017a47871b2' )
+				                                                     #if( ($obsGroupList.contains($obs.obsGroup)) )			                                                
+				                                                     	
+				                                                     #else
+                                                                       #set($_usls =$obsGroupList.add($obs.obsGroup))	
+                                                                     #end		                                                     
+				                                                    #end				                                                   	
+				                                                   #end					                                                                                              
+				                                                 #end
+				                                      #foreach($obsGroup in $obsGroupList)
+				                                      &lt;tr class='existingAllergy'>
+                                                        #foreach($o in $obsGroup.groupMembers)
+                                                         #if( $o.concept.uuid == '3cd95ed6-26fe-102b-80cb-0017a47871b2' )
+                                                            #set($causes = $o.valueCoded.name)	                                                        
+                                                         #elseif( $o.concept.uuid == '3cd96052-26fe-102b-80cb-0017a47871b2' )
+                                                            #set($reaction = $o.valueCoded.name)
+                                                         #elseif( $o.concept.uuid == '3cd964bc-26fe-102b-80cb-0017a47871b2' )
+                                                          #set($year = $o.valueDatetime)
+                                                        #end      
+                                                      #end           
+                                                        &lt;td style='border: 1px solid black; border-collapse: collapse;'> $causes &lt;/td>  &lt;td style='border: 1px solid black; border-collapse: collapse;'> $reaction &lt;/td>  &lt;td style='border: 1px solid black; border-collapse: collapse;'> $year &lt;/td>                                            
+                                                      &lt;/tr>
+                                                    #end" />
+				
+				
+				
+				
+				<tr>
+			<obsgroup groupingConceptId="3cd95d5a-26fe-102b-80cb-0017a47871b2">
+			<td><obs id="cause1"
+					conceptId="3cd95ed6-26fe-102b-80cb-0017a47871b2" /><obs  id="causeNonCoded1" conceptId="2c62cce0-8b88-4b9e-8b22-c99c7ccc3e27" labelText="other:" /></td>
+			<td><obs id="reaction1"
+					conceptId="3cd96052-26fe-102b-80cb-0017a47871b2" />  <obs id="reactionNonCoded1" conceptId="3cdd0c48-26fe-102b-80cb-0017a47871b2"  labelText="other:" /></td>
+			<td><obs id="firstAllergyYear"
+					conceptId="3cd964bc-26fe-102b-80cb-0017a47871b2" />
+			</td>
+			</obsgroup>
+		</tr>
+		<tr>
+			<obsgroup groupingConceptId="3cd95d5a-26fe-102b-80cb-0017a47871b2">
+			<td><obs id="cause2"
+					conceptId="3cd95ed6-26fe-102b-80cb-0017a47871b2" /><obs id="causeNonCoded2" conceptId="2c62cce0-8b88-4b9e-8b22-c99c7ccc3e27" labelText="other:" /></td>
+			<td><obs id="reaction2"
+					conceptId="3cd96052-26fe-102b-80cb-0017a47871b2" />  <obs id="reactionNonCoded2" conceptId="3cdd0c48-26fe-102b-80cb-0017a47871b2"  labelText="other:" /></td>
+			<td><obs id="secondAllergyYear"
+					conceptId="3cd964bc-26fe-102b-80cb-0017a47871b2" />
+			</td>
+			</obsgroup>
+		</tr>
+		<tr>
+			<obsgroup groupingConceptId="3cd95d5a-26fe-102b-80cb-0017a47871b2">
+			<td><obs id="cause3"
+					conceptId="3cd95ed6-26fe-102b-80cb-0017a47871b2" /> <obs id="causeNonCoded3" conceptId="2c62cce0-8b88-4b9e-8b22-c99c7ccc3e27" labelText="other:" /></td>
+			<td><obs id="reaction3"
+					conceptId="3cd96052-26fe-102b-80cb-0017a47871b2" />  <obs id="reactionNonCoded3" conceptId="3cdd0c48-26fe-102b-80cb-0017a47871b2"  labelText="other:" /></td>
+			<td><obs id="thirdAllergyYear"
+					conceptId="3cd964bc-26fe-102b-80cb-0017a47871b2" />
+			</td>
+			</obsgroup>
+		</tr>
+
+</table>
+</section> <submit /> </htmlform>

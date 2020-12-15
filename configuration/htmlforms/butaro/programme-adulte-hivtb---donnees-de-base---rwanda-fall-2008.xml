@@ -1,0 +1,1634 @@
+<htmlform 
+	htmlformUuid="772b2e26-71ab-11e0-8923-001e68a9fdcf" 
+	formUuid="40ee823e-5845-11df-b810-001e68a9fdcf" 
+	formName="PROGRAMME ADULTE HIVTB - DONNEES DE BASE - Rwanda Fall 2008" 
+	formDescription="The Rwanda DDB used in fall 2008 to match paper form" 
+	formVersion="1.0" 
+	formEncounterType="4d911d04-26fe-102b-80cb-0017a47871b2" 
+	formPublished="false" 
+	formRetired="true"
+>
+<macros>
+    lightgrey=#e0e0e0
+    lightblue=#e0e0ff
+    darkblue=#4444ff
+</macros>
+
+<style>
+	table.ddb {
+		width: 100%;
+		border: 1px $darkblue solid;
+		border-spacing: 0px;
+	}
+	table.ddb th {
+		border-bottom: 1px black solid;
+		background-color: $lightblue;
+	}
+	table.ddb th td {
+		padding: 2px;
+	}
+</style>
+
+<table class="ddb">
+	<tr><th>Information démographique</th></tr>
+	<tr><td>
+		1. Date: <encounterDate/> <br/>
+		2. Nom: <lookup class="value" expression="patient.personName"/> <br/>
+		3. IMB ID: <lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)"/> <br/>
+		5. Sexe: <lookup class="value" expression="patient.gender"/>
+		6. Date de naissance: <lookup class="value" expression="patient.birthdate"/> <br/>
+		7. (a) <obs conceptId="4015" labelText="Nom de la mère:"/> <obs conceptId="4012" labelText="Prénom de la mère:"/> <br/>
+			(b) <obs conceptId="4013" labelText="Nom du père:"/> <obs conceptId="4014" labelText="Prénom du père:"/> <br/>
+		8. Lieu de naissance: <obs conceptId="2997"/><br/>
+		9. Pour les enfants: (a) Personne responsable: <obs conceptId="2928" labelText="Nom:"/> <obs conceptId="2927" labelText="Prénom:"/> <br/>
+		   (b) Lien avec le patient: <obs conceptId="1826"/> <br/>
+		10. Résidence actuelle: <lookup class="value" complexExpression="#foreach( $addr in $patient.addresses ) $!addr.stateProvince, $!addr.countyDistrict, $!addr.cityVillage, $!addr.neighborhoodCell, $!addr.address1 &lt;br/&gt; #end"/> <br/>
+		11. Nom de l'Accompagnateur: <font color="red">Assurez que l'accompagnateur est correcte pour ce patient ONLINE</font> <br/>
+			<obs conceptId="3293" answerConceptId="1066" answerLabel="Pas d'accompagnateur encore"/> <br/>
+		12. (b) <font color="red">Assurez que le Groupe ARV et le Groupe TB est correcte pour ce patient ONLINE</font> <br/>
+		13. Clinique: <encounterLocation/>
+	</td></tr>
+</table>
+
+<br/>
+
+<table class="ddb">
+	<tr><th colspan="2">Anamnèse</th></tr>
+	<tr valign="top"><td>
+		14(a). <b>Plaintes actuelles:</b> <br/>
+		<obs conceptId="1364" rows="25" cols="60"/>
+	</td><td>
+		14(b). <b>Anamnèse systématique et screening TBC:</b> <br/>
+		<table>
+			<tr valign="top">
+				<td>Toux:</td>
+				<td>
+					<obsgroup groupingConceptId="1292">
+						<obs conceptId="1734" answerConceptId="107" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="107" answerLabel="oui"/>, <br/>
+						<obs conceptId="1293" answerConceptId="2128" answerLabel="sèche"/>
+						<obs conceptId="1293" answerConceptId="5957" answerLabel="productive"/>,
+						<obs conceptId="2130" labelText="aspect"/> <br/>
+						<obs conceptId="1293" answerConceptId="970" answerLabel="hémoptysie"/>
+						<obs conceptId="1293" answerConceptId="5960" answerLabel="dyspnée"/> <br/>
+						durée: <obs conceptId="2160"/>semaine <obs conceptId="2240"/>mois <br/>
+						<obs conceptId="1293" answerConceptId="136" answerLabel="douleur thorax"/>
+						/<obs conceptId="2860" labelText="lieux"/> <br/>
+						<obs conceptId="1736"/>
+					</obsgroup>
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>Sueurs nocturnes:</td>
+				<td>
+					<obs conceptId="1734" answerConceptId="6029" answerLabel="non"/>
+					<obs conceptId="1293" answerConceptId="6029" answerLabel="oui"/>, <br/>
+					<obs conceptId="1293" answerConceptId="2164" answerLabel="moins de 3 semaines"/>
+					<obs conceptId="1293" answerConceptId="2163" answerLabel="plus de 3 semaines"/>
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>Fièvre:</td>
+				<td>
+					<obs conceptId="1734" answerConceptId="5945" answerLabel="non"/>
+					<obs conceptId="1293" answerConceptId="5945" answerLabel="oui"/>, <br/>
+					durée:
+					<obs conceptId="1294"/>jours
+					<obs conceptId="2160"/>semaines
+					<obs conceptId="2161"/>mois
+				</td>
+			</tr>
+			<tr valign="top">
+				<td colspan="2"><obs conceptId="2133" labelText="Contact avec une personne TBC+:" style="no_yes"/></td>
+			</tr>
+			<tr valign="top">
+				<td colspan="2">
+					Perte de poids:
+					<obs conceptId="1734" answerConceptId="832" answerLabel="non"/>
+					<obs conceptId="1293" answerConceptId="832" answerLabel="oui"/>
+				</td>
+			</tr>
+		</table>
+		<hr/>
+		<obsgroup groupingConceptId="1292">
+			<b>Diarrhée:</b>
+			<obs conceptId="1734" answerConceptId="16" answerLabel="non"/>
+			<obs conceptId="1293" answerConceptId="16" answerLabel="oui,"/> <br/>
+			<obs conceptId="2240" labelText="nombre de selles:"/> / jour <br/>
+			<obs conceptId="1293" answerConceptId="971" answerLabel="moins de 1 mois"/>
+			<obs conceptId="1293" answerConceptId="1431" answerLabel="plus de 1 mois"/> <br/>
+			<obs conceptId="1293" answerConceptId="2135" answerLabel="sanglantes"/> <br/>
+				<obs conceptId="1736" labelText="remarques:"/>
+		</obsgroup>
+		<br/>
+		<b>Resultat du depistage TBC</b> <obs conceptId="2136" labelText="" answerConceptIds="664,703" answerLabels="negatif,positif"/>
+	</td></tr>
+</table>
+
+<br/>
+
+<table class="ddb">
+	<tr><th>Antécédents médicaux</th></tr>
+	<tr><td>
+		<table>
+			<tr>
+				<td>15.</td>
+				<td></td>
+				<td></td>
+				<td>Date</td>
+				<td>Remarques</td>
+			</tr>
+			<obsgroup groupingConceptId="991">
+				<tr>
+					<td>Pneumopathie</td>
+					<td><obs conceptId="997" answerConceptId="1598" answerLabel="non"/></td>
+					<td><obs conceptId="992" answerConceptId="1598" answerLabel="oui"/></td>
+					<td><obs conceptId="999"/></td>
+					<td><obs conceptId="1249"/></td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="991">
+				<tr>
+					<td>Zona</td>
+					<td><obs conceptId="997" answerConceptId="836" answerLabel="non"/></td>
+					<td><obs conceptId="992" answerConceptId="836" answerLabel="oui"/></td>
+					<td><obs conceptId="999"/></td>
+					<td><obs conceptId="1249"/></td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="991">
+				<tr>
+					<td>Muguet / candidose</td>
+					<td><obs conceptId="997" answerConceptId="204" answerLabel="non"/></td>
+					<td><obs conceptId="992" answerConceptId="204" answerLabel="oui"/></td>
+					<td><obs conceptId="999"/></td>
+					<td><obs conceptId="1249"/></td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="991">
+				<tr>
+					<td>Dermatite</td>
+					<td><obs conceptId="997" answerConceptId="119" answerLabel="non"/></td>
+					<td><obs conceptId="992" answerConceptId="119" answerLabel="oui"/></td>
+					<td><obs conceptId="999"/></td>
+					<td><obs conceptId="1249"/></td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="991">
+				<tr>
+					<td>Entéropathie</td>
+					<td><obs conceptId="997" answerConceptId="993" answerLabel="non"/></td>
+					<td><obs conceptId="992" answerConceptId="993" answerLabel="oui"/></td>
+					<td><obs conceptId="999"/></td>
+					<td><obs conceptId="1249"/></td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="991">
+				<tr>
+					<td>Anémie</td>
+					<td><obs conceptId="997" answerConceptId="3" answerLabel="non"/></td>
+					<td><obs conceptId="992" answerConceptId="3" answerLabel="oui"/></td>
+					<td><obs conceptId="999"/></td>
+					<td><obs conceptId="1249"/></td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="991">
+				<tr>
+					<td>IST</td>
+					<td><obs conceptId="997" answerConceptId="174" answerLabel="non"/></td>
+					<td><obs conceptId="992" answerConceptId="174" answerLabel="oui"/></td>
+					<td><obs conceptId="999"/></td>
+					<td><obs conceptId="1249"/></td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="991">
+				<tr>
+					<td>Paludisme au cours de 12 mois passés</td>
+					<td><obs conceptId="997" answerConceptId="1599" answerLabel="non"/></td>
+					<td><obs conceptId="992" answerConceptId="1599" answerLabel="oui"/></td>
+					<td><obs conceptId="999"/></td>
+					<td><obs conceptId="1249"/></td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="991">
+				<tr>
+					<td>Neuropathie</td>
+					<td><obs conceptId="997" answerConceptId="821" answerLabel="non"/></td>
+					<td><obs conceptId="992" answerConceptId="821" answerLabel="oui"/></td>
+					<td><obs conceptId="999"/></td>
+					<td><obs conceptId="1249"/></td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="991">
+				<tr>
+					<td>Épilepsie / convulsions</td>
+					<td><obs conceptId="997" answerConceptId="155" answerLabel="non"/></td>
+					<td><obs conceptId="992" answerConceptId="155" answerLabel="oui"/></td>
+					<td><obs conceptId="999"/></td>
+					<td><obs conceptId="1249"/></td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="991">
+				<tr>
+					<td>Autres syndromes neurologiques</td>
+					<td><obs conceptId="997" answerConceptId="995" answerLabel="non"/></td>
+					<td><obs conceptId="992" answerConceptId="995" answerLabel="oui"/></td>
+					<td><obs conceptId="999"/></td>
+					<td><obs conceptId="1249"/></td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="991">
+				<tr>
+					<td>HTA</td>
+					<td><obs conceptId="997" answerConceptId="903" answerLabel="non"/></td>
+					<td><obs conceptId="992" answerConceptId="903" answerLabel="oui"/></td>
+					<td><obs conceptId="999"/></td>
+					<td><obs conceptId="1249"/></td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="991">
+				<tr>
+					<td>Hépatite</td>
+					<td><obs conceptId="997" answerConceptId="29" answerLabel="non"/></td>
+					<td><obs conceptId="992" answerConceptId="29" answerLabel="oui"/></td>
+					<td><obs conceptId="999"/></td>
+					<td><obs conceptId="1249"/></td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="991">
+				<tr>
+					<td>Maladies cardio-vasculaires</td>
+					<td><obs conceptId="997" answerConceptId="996" answerLabel="non"/></td>
+					<td><obs conceptId="992" answerConceptId="996" answerLabel="oui"/></td>
+					<td><obs conceptId="999"/></td>
+					<td><obs conceptId="1249"/></td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="991">
+				<tr>
+					<td>Diabete</td>
+					<td><obs conceptId="997" answerConceptId="175" answerLabel="non"/></td>
+					<td><obs conceptId="992" answerConceptId="175" answerLabel="oui"/></td>
+					<td><obs conceptId="999"/></td>
+					<td><obs conceptId="1249"/></td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="991">
+				<tr>
+					<td>Néphropathie</td>
+					<td><obs conceptId="997" answerConceptId="5025" answerLabel="non"/></td>
+					<td><obs conceptId="992" answerConceptId="5025" answerLabel="oui"/></td>
+					<td><obs conceptId="999"/></td>
+					<td><obs conceptId="1249"/></td>
+				</tr>
+			</obsgroup>
+		</table>
+		Remarques:
+	</td></tr>
+</table>
+
+<br/>
+
+<table class="ddb">
+	<tr><th>Enquête sur la tuberculose</th></tr>
+	<tr><td>
+		<table>
+			<tr>
+				<td>16.</td>
+				<td>(a) Jamais eu la tuberculose active?</td>
+				<td>
+					<obsgroup groupingConceptId="2181">
+						<obs conceptId="1546" style="no_yes"/>
+						, date du diagnostic
+<obs conceptId="2182"/>
+					</obsgroup>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>(b) Extra-pulmonaire?</td>
+				<td><obs conceptId="1547" style="no_yes"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>(c) Pulmonaire?</td>
+				<td><obs conceptId="1549" style="no_yes"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>(d) Chimiorésistance connue?</td>
+				<td>
+					<obs conceptId="2183" style="no_yes"/>
+					<obs conceptId="1339"/>
+				</td>
+			</tr>
+		</table>
+	</td></tr>
+</table>
+
+<br/>
+
+<table class="ddb">
+	<tr><th>Allergies connues aux médicaments / Effets secondaires</th></tr>
+	<tr><td>
+		17.
+		<table>
+			<tr>
+				<td align="center">Médicaments</td>
+				<td align="center">Effets secondaires (spécifier: éruption, anaphylaxie,<br/>angio-oedème, neuropathie, hépatite, autres)</td>
+				<td align="center">Date des effets secondaires</td>
+			</tr>
+			<obsgroup groupingConceptId="1295">
+				<tr>
+					<td align="center"><obs conceptId="1296" answerConceptIds="628,814,797,796,745,633,656,912,631,767,916,5622" answerLabels="3TC (Lamivudine),ABC (Abacavir),AZT ou ZDV (Zidovudine),ddI (Didanosine),E ou EMB (Ethambutol),EFV ou EFZ (Efavirenz),H ou INH (Isoniazid),Ibuprofen,NVP (Nevirapine),R ou RIF (Rifampicin),TMP/SMX ou co-trimoxazole (Trimethoprim et Sulfamethoxazole),Autre"/></td>
+					<td align="center"><obs conceptId="1297" answerConceptIds="1458,998,3,1298,2150,80,512,1726,1727,1728,29,215,2148,5978,821,5980,5622" answerLabels="acidose lactique,anaphylaxie,anemie,angio-oedeme,couchemars,douleur commune,eruption,eruption legere,eruption moderee,eruption severe,hepatite,ictere,lipodystrophie,nausee,neuropathie,vomissements,autre"/></td>
+					<td align="center"><obs conceptId="1300"/></td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="1295">
+				<tr>
+					<td align="center"><obs conceptId="1296" answerConceptIds="628,814,797,796,745,633,656,912,631,767,916,5622" answerLabels="3TC (Lamivudine),ABC (Abacavir),AZT ou ZDV (Zidovudine),ddI (Didanosine),E ou EMB (Ethambutol),EFV ou EFZ (Efavirenz),H ou INH (Isoniazid),Ibuprofen,NVP (Nevirapine),R ou RIF (Rifampicin),TMP/SMX ou co-trimoxazole (Trimethoprim et Sulfamethoxazole),Autre"/></td>
+					<td align="center"><obs conceptId="1297" answerConceptIds="1458,998,3,1298,2150,80,512,1726,1727,1728,29,215,2148,5978,821,5980,5622" answerLabels="acidose lactique,anaphylaxie,anemie,angio-oedeme,couchemars,douleur commune,eruption,eruption legere,eruption moderee,eruption severe,hepatite,ictere,lipodystrophie,nausee,neuropathie,vomissements,autre"/></td>
+					<td align="center"><obs conceptId="1300"/></td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="1295">
+				<tr>
+					<td align="center"><obs conceptId="1296" answerConceptIds="628,814,797,796,745,633,656,912,631,767,916,5622" answerLabels="3TC (Lamivudine),ABC (Abacavir),AZT ou ZDV (Zidovudine),ddI (Didanosine),E ou EMB (Ethambutol),EFV ou EFZ (Efavirenz),H ou INH (Isoniazid),Ibuprofen,NVP (Nevirapine),R ou RIF (Rifampicin),TMP/SMX ou co-trimoxazole (Trimethoprim et Sulfamethoxazole),Autre"/></td>
+					<td align="center"><obs conceptId="1297" answerConceptIds="1458,998,3,1298,2150,80,512,1726,1727,1728,29,215,2148,5978,821,5980,5622" answerLabels="acidose lactique,anaphylaxie,anemie,angio-oedeme,couchemars,douleur commune,eruption,eruption legere,eruption moderee,eruption severe,hepatite,ictere,lipodystrophie,nausee,neuropathie,vomissements,autre"/></td>
+					<td align="center"><obs conceptId="1300"/></td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="1295">
+				<tr>
+					<td align="center"><obs conceptId="1296" answerConceptIds="628,814,797,796,745,633,656,912,631,767,916,5622" answerLabels="3TC (Lamivudine),ABC (Abacavir),AZT ou ZDV (Zidovudine),ddI (Didanosine),E ou EMB (Ethambutol),EFV ou EFZ (Efavirenz),H ou INH (Isoniazid),Ibuprofen,NVP (Nevirapine),R ou RIF (Rifampicin),TMP/SMX ou co-trimoxazole (Trimethoprim et Sulfamethoxazole),Autre"/></td>
+					<td align="center"><obs conceptId="1297" answerConceptIds="1458,998,3,1298,2150,80,512,1726,1727,1728,29,215,2148,5978,821,5980,5622" answerLabels="acidose lactique,anaphylaxie,anemie,angio-oedeme,couchemars,douleur commune,eruption,eruption legere,eruption moderee,eruption severe,hepatite,ictere,lipodystrophie,nausee,neuropathie,vomissements,autre"/></td>
+					<td align="center"><obs conceptId="1300"/></td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="1295">
+				<tr>
+					<td align="center"><obs conceptId="1296" answerConceptIds="628,814,797,796,745,633,656,912,631,767,916,5622" answerLabels="3TC (Lamivudine),ABC (Abacavir),AZT ou ZDV (Zidovudine),ddI (Didanosine),E ou EMB (Ethambutol),EFV ou EFZ (Efavirenz),H ou INH (Isoniazid),Ibuprofen,NVP (Nevirapine),R ou RIF (Rifampicin),TMP/SMX ou co-trimoxazole (Trimethoprim et Sulfamethoxazole),Autre"/></td>
+					<td align="center"><obs conceptId="1297" answerConceptIds="1458,998,3,1298,2150,80,512,1726,1727,1728,29,215,2148,5978,821,5980,5622" answerLabels="acidose lactique,anaphylaxie,anemie,angio-oedeme,couchemars,douleur commune,eruption,eruption legere,eruption moderee,eruption severe,hepatite,ictere,lipodystrophie,nausee,neuropathie,vomissements,autre"/></td>
+					<td align="center"><obs conceptId="1300"/></td>
+				</tr>
+			</obsgroup>
+
+		</table>
+	</td></tr>
+</table>
+<br/>
+
+<table class="ddb">
+	<tr><th>Traitements antérieurs (jusqu'á présent)</th></tr>
+	<tr><td>
+		18. Si le patient a pris des médicaments contre VIH ou TB, indiquer le/les médicaments(s)
+		<table>
+			<tr>
+				<td align="right"></td>
+				<td>Date du début</td>
+				<td>Date d'arrêt</td>
+				<td width="20"></td>
+				<td align="right"></td>
+				<td>Date du début</td>
+				<td>Date d'arrêt</td>
+			</tr>
+			<tr>
+				<td colspan="7"><b>Prophylaxie:</b></td>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1608">
+					<td><obs conceptId="1609" answerConceptId="916" answerLabel="co-trimoxazole"/></td>
+					<td><obs conceptId="1499"/></td>
+					<td><obs conceptId="1500"/></td>
+				</obsgroup>
+				<td></td>
+				<obsgroup groupingConceptId="1608">
+					<td><obs conceptId="1609" answerConceptId="747" answerLabel="fluconazole"/></td>
+					<td><obs conceptId="1499"/></td>
+					<td><obs conceptId="1500"/></td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<td colspan="7"><b>VIH:</b></td>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1608">
+					<td><obs conceptId="1611" answerConceptId="1502" answerLabel=""/>D4T<sub>30</sub> + 3TC + NVP</td>
+					<td><obs conceptId="1499"/></td>
+					<td><obs conceptId="1500"/></td>
+				</obsgroup>
+				<td></td>
+				<obsgroup groupingConceptId="1608">
+					<td><obs conceptId="1611" answerConceptId="1505" answerLabel=""/>D4T<sub>30</sub> + 3TC + EFV</td>
+					<td><obs conceptId="1499"/></td>
+					<td><obs conceptId="1500"/></td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1608">
+					<td><obs conceptId="1611" answerConceptId="1503" answerLabel=""/>D4T<sub>40</sub> + 3TC + NVP</td>
+					<td><obs conceptId="1499"/></td>
+					<td><obs conceptId="1500"/></td>
+				</obsgroup>
+				<td></td>
+				<obsgroup groupingConceptId="1608">
+					<td><obs conceptId="1611" answerConceptId="1506" answerLabel=""/>D4T<sub>40</sub> + 3TC + EFV</td>
+					<td><obs conceptId="1499"/></td>
+					<td><obs conceptId="1500"/></td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1608">
+					<td><obs conceptId="1611" answerConceptId="1610" answerLabel="AZT + 3TC + NVP"/></td>
+					<td><obs conceptId="1499"/></td>
+					<td><obs conceptId="1500"/></td>
+				</obsgroup>
+				<td></td>
+				<obsgroup groupingConceptId="1608">
+					<td><obs conceptId="1611" answerConceptId="1612" answerLabel="AZT + 3TC + EFV"/></td>
+					<td><obs conceptId="1499"/></td>
+					<td><obs conceptId="1500"/></td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<td colspan="7"><b>TB:</b></td>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1608">
+					<td colspan="5"><obs conceptId="1611" answerConceptId="2125" answerLabel="Primo-traitement : 2 RHEZ / 4 RH"/></td>
+					<td><obs conceptId="1499"/></td>
+					<td><obs conceptId="1500"/></td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1608">
+					<td colspan="5"><obs conceptId="1611" answerConceptId="2126" answerLabel="Retraitement : 2 S+RHEZ / 1 RHEZ / 5 RH+E"/></td>
+					<td><obs conceptId="1499"/></td>
+					<td><obs conceptId="1500"/></td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1608">
+					<td colspan="5"><obs conceptId="1611" answerConceptId="2124" answerLabel="Traitement des enfants de moins de 6 ans : 2 RHZ / 4 RH"/></td>
+					<td><obs conceptId="1499"/></td>
+					<td><obs conceptId="1500"/></td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1608">
+					<td colspan="5"><obs conceptId="1611" answerConceptId="2127" answerLabel="Traitement d'habitude pour MDR-TB"/></td>
+					<td><obs conceptId="1499"/></td>
+					<td><obs conceptId="1500"/></td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<td colspan="7"><b>Autres médicaments <i>(à spécifier)</i></b></td>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1608">
+					<td><obs conceptId="1615"/></td>
+					<td><obs conceptId="1499"/></td>
+					<td><obs conceptId="1500"/></td>
+				</obsgroup>
+				<td></td>
+				<obsgroup groupingConceptId="1608">
+					<td><obs conceptId="1615"/></td>
+					<td><obs conceptId="1499"/></td>
+					<td><obs conceptId="1500"/></td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1608">
+					<td><obs conceptId="1615"/></td>
+					<td><obs conceptId="1499"/></td>
+					<td><obs conceptId="1500"/></td>
+				</obsgroup>
+				<td></td>
+				<obsgroup groupingConceptId="1608">
+					<td><obs conceptId="1615"/></td>
+					<td><obs conceptId="1499"/></td>
+					<td><obs conceptId="1500"/></td>
+				</obsgroup>
+			</tr>
+		</table>
+	</td></tr>
+</table>
+
+<br/>
+
+<table class="ddb">
+	<tr><th>Signes et symptômes actuels</th></tr>
+	<tr><td>
+		<table>
+			<tr>
+				<td>19.</td>
+				<td></td>
+				<td>Durée</td>
+				<td></td>
+				<td></td>
+				<td>Durée</td>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Toux (plus de 3 semaines)</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="1430" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="1430" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Prurigo nodularis</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="879" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="879" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Fievre</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="5945" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="5945" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Eruption cutanées</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="512" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="512" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Sueurs nocturnes</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="6029" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="6029" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Convulsions</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="206" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="206" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Perte de poids (plus de 10%)</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="1352" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="1352" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Déficit neurologique focal</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="972" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="972" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Hémoptysie</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="970" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="970" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Confusion</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="6006" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="6006" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Diarrhée (au moins1 mois)</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="971" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="971" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Paresthésie</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="6004" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="6004" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Diarrhée (moins de 1 mois)</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="971" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="971" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Nausée</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="5978" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="5978" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Dyspnée</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="5960" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="5960" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Vomissement</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="5980" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="5980" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Dysphagie</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="881" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="881" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Ictere</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="130" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="130" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Céphalée</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="620" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="620" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Fatigue</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="5949" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="5949" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="1292">
+					<td align="right">Troubles visuels</td>
+					<td>
+						<obs conceptId="1734" answerConceptId="5953" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="5953" answerLabel="oui"/>
+					</td>
+					<td>
+						<obs conceptId="1294" size="3"/>jours
+						<obs conceptId="2160" size="3"/>semaines
+						<obs conceptId="2161" size="3"/>mois
+					</td>
+				</obsgroup>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="6"><obs conceptId="2129" labelText="Autres (à spécifier):"/></td>
+			</tr>
+			<tr>
+				<td colspan="6"><obs conceptId="2129" labelText="Autres (à spécifier):"/></td>
+			</tr>
+		</table>
+	</td></tr>
+</table>
+
+<br/>
+
+<table class="ddb">
+	<tr><th colspan="6">Examen clinique</th></tr>
+	<tr>
+		<td>20.</td>
+		<td>(a) Signes vitaux:</td>
+		<td><obs conceptId="5088" labelText="Temp:"/>°C</td>
+		<td><obs conceptId="5087" labelText="Pouls:"/> /min.</td>
+		<td><obs conceptId="5242" labelText="FR:"/>/min.</td>
+		<td>
+			<obs conceptId="5085" labelText="TA:"/>
+			<obs conceptId="5086" labelText="/"/>
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>(b) Paramètres:</td>
+		<td><obs conceptId="5089" labelText="Poids:"/>kg</td>
+		<td><obs conceptId="5090" labelText="Taille:"/>cm</td>
+		<td><obs conceptId="2137" labelText="IMC:"/>kg/m2</td>
+		<td></td>
+	</tr>	
+</table>
+
+<br/>
+
+<table class="ddb">
+	<tr><th>Examen physique</th></tr>
+	<tr><td>
+		<table cellspacing="0" cellpadding="2" border="1">
+			<tr>
+				<td>Système</td>
+				<td>Description</td>
+			</tr>
+			<tr>
+				<td>Etat général:</td>
+				<td><obs conceptId="2140" size="60" labelText=""/></td>
+			</tr>
+			<tr>
+				<td>Peau, phanères, aires ganglionnaires</td>
+				<td><obs conceptId="2151" size="60" labelText=""/></td>
+			</tr>
+			<tr>
+				<td>ORL (parotide, etc.)</td>
+				<td><obs conceptId="2435" size="60" labelText=""/></td>
+			</tr>
+			<tr>
+				<td>Pulmonaire</td>
+				<td><obs conceptId="2141" size="60" labelText=""/></td>
+			</tr>
+			<tr>
+				<td>Cardio-vasculaire</td>
+				<td><obs conceptId="2143" size="60" labelText=""/></td>
+			</tr>
+			<tr>
+				<td>Abdominal</td>
+				<td><obs conceptId="2144" size="60" labelText=""/></td>
+			</tr>
+			<tr>
+				<td>Neurologique</td>
+				<td><obs conceptId="2145" size="60" labelText=""/></td>
+			</tr>
+			<tr>
+				<td>Ostéo-articulaire</td>
+				<td><obs conceptId="2147" size="60" labelText=""/></td>
+			</tr>
+			<tr>
+				<td>Uro-génital</td>
+				<td><obs conceptId="2149" size="60" labelText=""/></td>
+			</tr>
+		</table>
+		Remarques:<br/>
+		<obs conceptId="1336" rows="6" cols="80"/>
+	</td></tr>
+</table>
+
+<br/>
+
+<table class="ddb">
+	<tr><th colspan="6">Serologie VIH</th></tr>
+	<tr><td>
+		<obs conceptId="2169" labelText="21. Test VIH"
+			answerConceptIds="664,703,1138" answerLabels="non-réactif,réactif,indéterminé"/>
+		<obs conceptId="1837" labelText="Date du diagnostic"/>
+		<obs conceptId="2288" style="checkbox" labelText="date inconnu"/><br/>
+		<obs conceptId="2231" labelText="22. Test commandé par:"
+			answerConceptIds="1649,2232,2233,1877,2070,2234,2235,5622"
+			answerLabels="Clinique - VCT,Clinique - ANC,Clinique - ambulatoire,Clinique Mobile,Hôpital,Malnutrition,Maternité,Autre"/>
+		si autre, specifier: <obs conceptId="2236"/>
+		<br/>
+		<obs conceptId="967" labelText="23. Partenaire (conjoint(e)) référé pour test VIH?"
+			answerConceptIds="1066,1065,1914" answerLabels="non,oui,pas de partenaire"/>
+		<br/>
+		<obs conceptId="5596" labelText="24. DDR"/> <br/>
+		<obs conceptId="5272" labelText="Enceinte?" answerConceptIds="1066,1065" answerLabels="non,oui"/>,
+		<obs conceptId="968" labelText="DPA" allowFutureDates="true"/> <br/>
+	</td></tr>
+</table>
+
+<br/>
+
+<table class="ddb">
+	<tr><th>Autres examens de laboratoire</th></tr>
+	<tr><td>
+		25. Si l'examen n'est pas complet, le laissez vide.  Si les résultats ne sont pas reçu encore, écrivez « en entente » ou « en en cours » <br/>
+		<obs conceptId="5497" labelText="CD4:" dateLabel="Date:"/>
+		<obs conceptId="730" labelText="CD4%:" dateLabel="Date:"/>
+		<br/>
+		<obs conceptId="3052" labelText="Crachat 1:"
+			answerConceptIds="664,1410,1408,1409,1407" 
+			answerLabels="négatif,+,++,+++,non réalisé"/>
+		<br/>
+		<obs conceptId="3052" labelText="Crachat 2:"
+			answerConceptIds="664,1410,1408,1409,1407" 
+			answerLabels="négatif,+,++,+++,non réalisé"/>
+		<br/>
+		<obs conceptId="3052" labelText="Crachat 3:"
+			answerConceptIds="664,1410,1408,1409,1407" 
+			answerLabels="négatif,+,++,+++,non réalisé"/>
+		<br/>
+		<obs conceptId="1435" labelText="PPD:"
+			answerConceptIds="664,703"
+			answerLabels="négatif,positif"/>,
+		<obs conceptId="1437" labelText=""/>mm
+		<br/>
+		<obsgroup groupingConceptId="1722">
+			<obs conceptId="1338" labelText="Culture:"
+				answerConceptIds="664,703"
+				answerLabels="négatif,positif"/>
+			<obs conceptId="1595" labelText="source:"/>
+		</obsgroup>
+		<br/>
+		<obsgroup groupingConceptId="1443">
+			<obs conceptId="1597" labelText="Antibiogramme (DST) pour M. tuberculosis:"
+				answerConceptIds="1439,1442" answerLabels="susceptible,résistant"/>
+			<br/>
+			<obs conceptId="1339" labelText="Médicaments antituberculeux auxquels la souche est résistante:"/> <br/>
+		</obsgroup>
+		<table>
+			<tr>
+				<td align="right">RPR:</td>
+				<td><obs conceptId="1478" labelText="" dateLabel="Date:"/></td>
+				<td align="right">Analyse d'urine:</td>
+				<td><obs conceptId="1479" labelText="" dateLabel="Date:"/></td>
+			</tr>
+			<tr>
+				<td align="right">Hémoglobine:</td>
+				<td><obs conceptId="21" labelText="" dateLabel="Date:"/></td>
+				<td align="right">Créatinine:</td>
+				<td><obs conceptId="790" labelText="" dateLabel="Date:"/></td>
+			</tr>
+			<tr>
+				<td align="right">Hématocrite:</td>
+				<td><obs conceptId="1015" labelText="" dateLabel="Date:"/></td>
+				<td align="right">VS:</td>
+				<td><obs conceptId="1477" labelText="" dateLabel="Date:"/></td>
+			</tr>
+			<tr>
+				<td align="right">Compte des globules blancs:</td>
+				<td><obs conceptId="678" labelText="" dateLabel="Date:"/></td>
+				<td align="right">Cholestérol:</td>
+				<td><obs conceptId="1006" labelText="" dateLabel="Date:"/></td>
+			</tr>
+			<tr>
+				<td align="right"></td>
+				<td>
+					Neutro:
+					<obs conceptId="1022" labelText="" dateLabel="Date:"/>
+				</td>
+				<td align="right">Glycémie:</td>
+				<td><obs conceptId="887" labelText="" dateLabel="Date:"/></td>
+			</tr>
+			<tr>
+				<td align="right"></td>
+				<td>
+					Lympho:
+					<obs conceptId="1021" labelText="" dateLabel="Date:"/>
+				</td>
+				<td align="right">Urée:</td>
+				<td><obs conceptId="857" labelText="" dateLabel="Date:"/></td>
+			</tr>
+			<tr>
+				<td align="right">Plaquettes:</td>
+				<td><obs conceptId="729" labelText="" dateLabel="Date:"/></td>
+				<td align="right">Frottis vaginal:</td>
+				<td><obs conceptId="1475" labelText="" dateLabel="Date:"/></td>
+			</tr>
+			<tr>
+				<td align="right">SGOT(AST):</td>
+				<td><obs conceptId="653" labelText="" dateLabel="Date:"/></td>
+				<td align="right">Goutte épaisse:</td>
+				<td>
+					<obs conceptId="32" labelText="" dateLabel="Date:"
+						answerConceptIds="664,703,1138" answerLabels="negatif,positif,indeterminé"/>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">SGPT(ALT):</td>
+				<td><obs conceptId="654" labelText="" dateLabel="Date:"/></td>
+				<td align="right">Autres tests/IST:</td>
+				<td><obs conceptId="1340" labelText="" dateLabel="Date:"/></td>
+			</tr>
+			<tr>
+				<td align="right">Charge virale:</td>
+				<td><obs conceptId="856" labelText="" dateLabel="Date:"/></td>
+				<td align="right">DBS:</td>
+				<td><obs conceptId="1553" labelText="" dateLabel="Date:"/></td>
+			</tr>
+			<tr>
+				<td colspan="4">
+					<obs conceptId="1341" labelText="Autres (à spécifier):"/>
+				</td>
+			</tr>
+		</table>
+	</td></tr>
+</table>
+
+<br/>
+
+<table class="ddb">
+	<tr><th>Radiologie</th></tr>
+	<tr><td>
+		<obs conceptId="1342" labelText="26. Cliché du thorax:" size="80"/> <br/>
+		<obs conceptId="1730" labelText="27. Autre (à spécifier):" size="80"/>
+	</td></tr>
+</table>
+
+<br/>
+
+<table class="ddb">
+	<tr><th>Impressions cliniques</th></tr>
+	<tr><td>
+		28. (a) <br/>
+		<obs conceptId="1364" labelText="" rows="5" cols="80"/> <br/>
+		<obs conceptId="1401" style="no_yes" labelText="28. (b) Est-ce que le patient a une infection opportuniste ou une condition co-morbide (confirmée ou présumée) en ce moment?"/>
+		<table width="100%">
+			<tr valign="top"><td>
+				<obs conceptId="1607" answerConceptId="58" answerLabel="Tuberculose"/> <br/>
+				<small>Si le traitement de TB est initié lors de ce rendez-vous, remplir une carte du traitement tuberculose</small> <br/>
+				<obs conceptId="1607" answerConceptId="1598" answerLabel="Pneumopathie"/> <br/>
+				<obs conceptId="1607" answerConceptId="1431" answerLabel="Diarrhée chronique (&#8805;1 mois)"/> <br/>
+				<obs conceptId="1607" answerConceptId="3588" answerLabel="Diarrhée aigüe"/> <br/>
+				<obs conceptId="1607" answerConceptId="1352" answerLabel="Perte de poids (plus de 10%)"/> <br/>
+				<obs conceptId="1607" answerConceptId="1616" answerLabel="Candidose oesophage"/> <br/>
+				<obs conceptId="1607" answerConceptId="836" answerLabel="Zona"/> <br/>
+				<obs conceptId="1607" answerConceptId="1369" answerLabel="Convulsions / déficit neurologique focal"/> <br/>
+				<obs conceptId="1607" answerConceptId="1361" answerLabel="Encéphalopathie non focale"/> <br/>
+				<obs conceptId="1607" answerConceptId="60" answerLabel="Méningite"/> <br/>
+			</td><td>
+				<obs conceptId="1607" answerConceptId="1370" answerLabel="Prurigo nodularis"/> <br/>
+				<obs conceptId="1607" answerConceptId="123" answerLabel="Malaria"/> <br/>
+				<obs conceptId="1607" answerConceptId="5334" answerLabel="Muguet / candidose bucco-pharyngée"/> <br/>
+				<obs conceptId="1607" answerConceptId="507" answerLabel="Sarcome de Kaposi"/> <br/>
+				<table><tr valign="top">
+					<td>IST</td>
+					<td>
+						<obs conceptId="1607" answerConceptId="864" answerLabel="Ulcérations génitales"/> <br/>
+						<obs conceptId="1607" answerConceptId="1816" answerLabel="Ecoulement, vaginal/urétral"/> <br/>
+						<obs conceptId="1607" answerConceptId="174" answerLabel="Autre (à spécifier)"/>
+					</td>
+				</tr></table>
+				<table><tr valign="top">
+					<td>Pertes vaginales</td>
+					<td>
+						<obs conceptId="1607" answerConceptId="684" answerLabel="Trichomonas"/> <br/>
+						<obs conceptId="1607" answerConceptId="298" answerLabel="Candidose vaginale"/> <br/>
+						<obs conceptId="1607" answerConceptId="2155" answerLabel="Bacterial vaginosis (non-specified)"/>
+					</td>
+				</tr></table>
+				<obs conceptId="1607" answerConceptId="5622" answerLabel="Autres"/>
+					<obs conceptId="1731" labelText="(à spécifier):"/> <br/>
+				<obs conceptId="1607" answerConceptId="5622" answerLabel="Autres"/>
+					<obs conceptId="1731" labelText="(à spécifier):"/> <br/>
+			</td></tr>
+		</table>
+		<obs conceptId="1480" labelText="29. Stade de l'OMS pour le VIH/SIDA:"
+			answerConceptIds="1204,1205,1206,1207,1067" answerLabels="1,2,3,4,inconnu"/>
+
+	</td></tr>
+</table>
+
+<br/>
+
+<table class="ddb">
+	<tr><th>Prophylaxie</th></tr>
+	<tr><td>
+		30.
+		<table>
+			<tr>
+				<td></td>
+				<td align="center">initée / dose</td>
+				<td align="center">continuée / dose</td>
+				<td align="center">arrêtée / raison</td>
+			</tr>
+			<tr>
+				<td align="right">isoniazide:</td>
+				<td>
+					<obsgroup groupingConceptId="6149">
+						<obs conceptId="3117" answerConceptId="656" answerLabel=""/>
+						<obs conceptId="2742" size="8"/>
+					</obsgroup>
+				</td>
+				<td>
+					<obsgroup groupingConceptId="2739">
+						<obs conceptId="2289" answerConceptId="656" answerLabel=""/>
+						<obs conceptId="2742" size="8"/>
+					</obsgroup>
+				</td>
+				<td>
+					<obsgroup groupingConceptId="6149">
+						<obs conceptId="6148" answerConceptId="656" answerLabel=""/>
+						<obs conceptId="2983"/>
+					</obsgroup>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">fluconazole:</td>
+				<td>
+					<obsgroup groupingConceptId="6149">
+						<obs conceptId="3117" answerConceptId="747" answerLabel=""/>
+						<obs conceptId="2742" size="8"/>
+					</obsgroup>
+				</td>
+				<td>
+					<obsgroup groupingConceptId="2739">
+						<obs conceptId="2289" answerConceptId="747" answerLabel=""/>
+						<obs conceptId="2742" size="8"/>
+					</obsgroup>
+				</td>
+				<td>
+					<obsgroup groupingConceptId="6149">
+						<obs conceptId="6148" answerConceptId="747" answerLabel=""/>
+						<obs conceptId="2983"/>
+					</obsgroup>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">co-trimoxazole:</td>
+				<td>
+					<obsgroup groupingConceptId="6149">
+						<obs conceptId="3117" answerConceptId="916" answerLabel=""/>
+						<obs conceptId="2742" size="8"/>
+					</obsgroup>
+				</td>
+				<td>
+					<obsgroup groupingConceptId="2739">
+						<obs conceptId="2289" answerConceptId="916" answerLabel=""/>
+						<obs conceptId="2742" size="8"/>
+					</obsgroup>
+				</td>
+				<td>
+					<obsgroup groupingConceptId="6149">
+						<obs conceptId="6148" answerConceptId="916" answerLabel=""/>
+						<obs conceptId="2983"/>
+					</obsgroup>
+				</td>
+			</tr>
+		</table>
+		<obs conceptId="6159" labelText="amphotéricine B pour méningite cryptococcose (3-5 mg/kg/jour):"/> <br/>
+		<obs conceptId="6160" labelText="traitement du paludisme (spécifier médicament/posologie):"/> <br/>
+		<obs conceptId="2290" labelText="autres (à spécifier):"/> <br/>
+		
+		31. <obs conceptId="1491" labelText="Planification familiale:" size="40"/> <br/>
+		<obs conceptId="374" answerConceptId="190" answerLabel="condoms"/>
+		<obs conceptId="374" answerConceptId="5279" answerLabel="DMPA"/>
+		<obs conceptId="374" answerConceptId="780" answerLabel="contraceptifs oraux"/>
+		<obs conceptId="374" answerConceptId="1718" answerLabel="norplant"/>
+		<obs conceptId="374" answerConceptId="1719" answerLabel="ligature"/>
+		<obs conceptId="374" answerConceptId="1720" answerLabel="abstinence"/>
+		<obs conceptId="374" answerConceptId="1721" answerLabel="vasectomie"/> <br/>
+		<obs conceptId="374" answerConceptId="1107" answerLabel="rien"/>
+		<obs conceptId="374" answerConceptId="5622" answerLabel="autres"/> <obs conceptId="2996" labelText="(à spécifier):"/>
+	</td></tr>
+</table>
+
+<br/>
+
+<table class="ddb">
+	<tr><th>Régime antirétroviral</th></tr>
+	<tr><td>
+		<table>
+			<obsgroup groupingConceptId="2220">
+				<tr valign="top">
+					<td>32.</td>
+					<td>Ce patient nécessite-t-il le traitement antirétroviral?</td>
+					<td>
+						<obs conceptId="1445" answerConceptId="2221" answerLabel="non, pas indiqué cliniquement"/> <br/>
+						<obs conceptId="1445" answerConceptId="2247" answerLabel="non, refusé par le patient"/> <br/>
+						<obs conceptId="1445" answerConceptId="2851" answerLabel="non, enceinte (référé vers PTME)"/> <br/>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><obs conceptId="1445" answerConceptId="2222" answerLabel="oui, après avoir trouvé un accompagnateur et après formation"/></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><obs conceptId="1445" answerConceptId="1619" answerLabel="oui, à commencer immédiatement:"/></td>
+					<td><obs conceptId="1499" labelText="date du début:"/></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><obs conceptId="1445" answerConceptId="1432" answerLabel="oui, traitement en cours:"/></td>
+					<td><obs conceptId="1190" labelText="date du début:"/></td>
+				</tr>
+			</obsgroup>
+		</table>
+		<i>Si le patient doit commencer les ARVs aujourd'hui ou reçoit déjà les ARVs, compléter alors le tableau ci-dessous.</i><br/>
+		<table>
+			<tr>
+				<td><obs conceptId="1088" answerConceptId="792" answerLabel=""/>D4T<sub>30</sub> + 3TC + NVP</td>
+				<td><obs conceptId="1088" answerConceptId="1503" answerLabel=""/>D4T<sub>40</sub> + 3TC + NVP</td>
+				<td><obs conceptId="1088" answerConceptId="1610" answerLabel="AZT + 3TC + NVP"/></td>
+			</tr>
+			<tr>
+				<td><obs conceptId="1088" answerConceptId="1505" answerLabel=""/>D4T<sub>30</sub> + 3TC + EFV</td>
+				<td><obs conceptId="1088" answerConceptId="1506" answerLabel=""/>D4T<sub>40</sub> + 3TC + EFV</td>
+				<td><obs conceptId="1088" answerConceptId="1612" answerLabel="AZT + 3TC + EFV"/></td>
+			</tr>
+		</table>
+		<obs conceptId="1088" answerConceptId="5622" answerLabel="Autre"/>
+			<obs conceptId="3123" labelText="(à spécifier):"/> <br/>
+
+		33. <obs conceptId="1446" labelText="Est-ce que le patient débute les ARVs pour PTME?" style="no_yes"/> <br/>
+		34. <obs conceptId="1497" labelText="Est-ce que le patient débute les ARVs pour prophylaxie?" style="no_yes"/>
+			<obs conceptId="1496" labelText="Si oui,"
+				answerConceptIds="165,1494,1495"
+				answerLabels="violence sexuelle,exposition au sang ou ses dérivés,rapport sexuel avec quelqu'un VIH+"/> <br/>
+	</td></tr>
+</table>
+
+<br/>
+
+<table class="ddb">
+	<tr><th>Régime anti-tuberculose</th></tr>
+	<tr><td>
+		<table>
+			<obsgroup groupingConceptId="2223">
+				<tr valign="top">
+					<td>35.</td>
+					<td>Ce patient nécessite-t-il le traitement anti-tuberculose?</td>
+					<td>
+						<obs conceptId="1559" answerConceptId="2224" answerLabel="inspection en cours"/> <br/>
+						<obs conceptId="1559" answerConceptId="1066" answerLabel="non"/>
+						<obs conceptId="1559" answerConceptId="1065" answerLabel="oui"/>
+							<obs conceptId="1499" labelText="date du début:"/><br/>
+						<obs conceptId="1559" answerConceptId="1432" answerLabel="traitement en cours"/>
+							<obs conceptId="1190" labelText="date du début:"/><br/>
+					</td>
+				</tr>
+			</obsgroup>
+		</table>
+		<i>Si le patient doit commencer les Anti-TB  aujourd'hui ou reçoit déjà les Anti-TBs, compléter alors le tableau ci-dessous.  Aussi remplissez le registre des patients TB, et remplissez une carte de traitement TB.</i> <br/>
+		<obsgroup groupingConceptId="3115">
+			<obs conceptId="1270" answerConceptId="1131" answerLabel="RHZE"/>
+			<obs conceptId="3112" labelText="" size="5"/>cés
+		</obsgroup>
+		<obsgroup groupingConceptId="3115">
+			<obs conceptId="1270" answerConceptId="1194" answerLabel="RH"/>
+			<obs conceptId="3112" labelText="" size="5"/>cés
+		</obsgroup>
+		<obsgroup groupingConceptId="3115">
+			<obs conceptId="1270" answerConceptId="768" answerLabel="RHZ"/>
+			<obs conceptId="3112" labelText="" size="5"/>cés
+		</obsgroup>
+		<obsgroup groupingConceptId="3115">
+			<obs conceptId="1270" answerConceptId="438" answerLabel="S"/>
+			<obs conceptId="3112" labelText="" size="5"/>mg
+		</obsgroup>
+		<obsgroup groupingConceptId="3115">
+			<obs conceptId="1270" answerConceptId="745" answerLabel="E"/>
+			<obs conceptId="3112" labelText="" size="5"/>mg
+		</obsgroup>
+		<br/>
+		<obsgroup groupingConceptId="3115">
+			<obs conceptId="1270" answerConceptId="2127" answerLabel="Traitement MDR"/>
+			<obs conceptId="3118" labelText="(à spécifier):"/>
+		</obsgroup>
+		<obsgroup groupingConceptId="3115">
+			<obs conceptId="1270" answerConceptId="3124" answerLabel="Autres"/>
+			<obs conceptId="3116" labelText="(à spécifier):"/>
+		</obsgroup>
+	</td></tr>
+</table>
+
+<br/>
+
+<table class="ddb">
+	<tr><th>Transfer</th></tr>
+	<tr><td>
+		36.
+		<obs conceptId="1781" style="no_yes" labelText="Est-ce que le patient a été référé vers un autre site?"/> <br/>
+		<obs conceptId="1389" labelText="Autre site du traitement ARV (à spécifier):" size="40"/>
+	</td></tr>
+</table>
+
+<br/>
+
+<table class="ddb">
+	<tr><th>Sommaire et Conduite</th></tr>
+	<tr><td>
+		37. <br/>
+		<obs conceptId="2881" rows="8" cols="80"/>
+		<br/>
+		38. <obs conceptId="5096" labelText="Date du prochain rendez-vous?" allowFutureDates="true"/>
+	</td></tr>
+</table>
+
+<br/>
+
+<div style="border: 1px black solid; background-color: $lightgrey">
+	Nom du prestataire de service: <encounterProvider role="Provider"/>
+</div>
+
+<br/>
+
+<table class="ddb">
+	<tr><th>Données socio épidémiologiques</th></tr>
+	<tr><td>
+		<table>
+			<tr valign="top">
+				<td>39.</td>
+				<td>
+					<obs conceptId="1054" labelText="Statut matrimonial:"
+						answerConceptIds="5555,1060,3628,1058,1056,1059"
+						answerLabels="marié(e),union libre,célibataire,divorcé(e),séparé(e),veuf/veuve"/> <br/>
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>40.</td>
+				<td>
+					(a) <obs conceptId="5568" style="no_yes" labelText="D'autres partenaires sexuels actuels?"/>,
+						<obs conceptId="1433"/> <br/>
+					(b) <obs conceptId="1302" style="no_yes" labelText="Sont-ils de la même localité?"/>
+						<obs conceptId="1303" labelText="Si non, d'où sont-ils?"/>
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>41.</td>
+				<td>
+					<obs conceptId="1434" labelText="Bref sommaire des déplacements (lieux de résidence, etc.):"/>
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>42.</td>
+				<td>
+					<obs conceptId="1304" labelText="Activité principale:"
+						answerConceptIds="1107,1687,1306,1307,1309,1326,5622"
+						answerLabels="aucun,commerçant,cultivateur,étudiant,chômeur,main-d'oeuvre,autres:"/>
+					(autres: <obs conceptId="3754"/>)
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>43.</td>
+				<td>
+					<obs conceptId="1310" labelText="Évaluation nutritionnelle:"
+						answerConceptIds="1115,1311,1312,1313"
+						answerLabels="normale,malnutrition M1 (légère),malnutrition M2 (modérée),malnutrition M3 (sévère)"/>
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>44.</td>
+				<td>
+					La maison:<br/>
+					(a) <obs conceptId="1323" labelText="No. personnes qui vivent dans la maison:"/>
+					(b) <obs conceptId="1324" labelText="No. Pièces:"/> <br/>
+					(c) <obs conceptId="1319" labelText="Toiture de:"
+						answerConceptIds="1320,1321,1316,3352"
+						answerLabels="tôle,pailles,béton,tente"/>
+					(d) <obs conceptId="1315" labelText="Sol:"
+						answerConceptIds="1316,1317"
+						answerLabels="béton,terre battue"/> <br/>
+					(e) <obs conceptId="1322" labelText="Latrine:" style="no_yes"/>
+					(f) <obs conceptId="1318" labelText="Radio:" style="no_yes"/>
+				</td>
+			</tr>
+			<tr valign="top">
+				<td>45.</td>
+				<td>
+					<obs conceptId="5607" labelText="No. d'année(s) d'instruction:"/>
+				</td>
+			</tr>
+		</table>
+		46.
+		<table>
+			<tr>
+				<td>Nom/prénom des suspects</td>
+				<td>Lien avec le suspect</td>
+				<td>Age (ans/ mois)</td>
+				<td>Statut sérologique (nég, pos, inconnu)</td>
+				<td>En cas de séropositivité pour le VIH, le contact est-il suivi dans une clinique? Si oui, spécifie:</td>
+				<td>En cas de statut  inconnu pour le VIH, est-ce que le contact a été référé pour un Test VIH?</td>
+				<td>En cas d'une référence formelle, indiquez la clinique</td>
+			</tr>
+			<obsgroup groupingConceptId="2171">
+				<tr>
+					<td>
+						nom:<obs conceptId="2724"/>
+						prénom:<obs conceptId="2725"/>
+					</td>
+					<td>
+						<obs conceptId="2172"
+							answerConceptIds="5617,2175,2174,2178,1826,2179"
+							answerLabels="partenaire,mere,pere,frere/soeur,personne responsable,autre"/>
+					</td>
+					<td>
+						<obs conceptId="1329" size="10"/>
+					</td>
+					<td>
+						<obs conceptId="2169"
+							answerConceptIds="664,703,1138"
+							answerLabels="nég,pos,inconnu"/>
+					</td>
+					<td>
+						<obs conceptId="1331" style="no_yes"/>,
+						<obs conceptId="1332"/>
+					</td>
+					<td>
+						<obs conceptId="1333" style="no_yes"/>
+					</td>
+					<td>
+						<obs conceptId="1334"/>
+					</td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="2171">
+				<tr>
+					<td>
+						nom:<obs conceptId="2724"/>
+						prénom:<obs conceptId="2725"/>
+					</td>
+					<td>
+						<obs conceptId="2172"
+							answerConceptIds="5617,2175,2174,2178,1826,2179"
+							answerLabels="partenaire,mere,pere,frere/soeur,personne responsable,autre"/>
+					</td>
+					<td>
+						<obs conceptId="1329" size="10"/>
+					</td>
+					<td>
+						<obs conceptId="2169"
+							answerConceptIds="664,703,1138"
+							answerLabels="nég,pos,inconnu"/>
+					</td>
+					<td>
+						<obs conceptId="1331" style="no_yes"/>,
+						<obs conceptId="1332"/>
+					</td>
+					<td>
+						<obs conceptId="1333" style="no_yes"/>
+					</td>
+					<td>
+						<obs conceptId="1334"/>
+					</td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="2171">
+				<tr>
+					<td>
+						nom:<obs conceptId="2724"/>
+						prénom:<obs conceptId="2725"/>
+					</td>
+					<td>
+						<obs conceptId="2172"
+							answerConceptIds="5617,2175,2174,2178,1826,2179"
+							answerLabels="partenaire,mere,pere,frere/soeur,personne responsable,autre"/>
+					</td>
+					<td>
+						<obs conceptId="1329" size="10"/>
+					</td>
+					<td>
+						<obs conceptId="2169"
+							answerConceptIds="664,703,1138"
+							answerLabels="nég,pos,inconnu"/>
+					</td>
+					<td>
+						<obs conceptId="1331" style="no_yes"/>,
+						<obs conceptId="1332"/>
+					</td>
+					<td>
+						<obs conceptId="1333" style="no_yes"/>
+					</td>
+					<td>
+						<obs conceptId="1334"/>
+					</td>
+				</tr>
+			</obsgroup>
+		</table>
+	</td></tr>
+</table>
+
+<br/>
+
+<table class="ddb">
+	<tr><th>Tabac / Alcool</th></tr>
+	<tr><td>
+		<table>
+			<tr valign="top">
+				<td>47.</td>
+				<td>
+					<obs conceptId="2239" style="no_yes" labelText="Est-ce que le patient fume le tabac?"/>,
+					<obs conceptId="2240" labelText="# moyenne/jour:"/>,
+				</td>
+				<td><obs conceptId="2241" labelText="pour combien d'années"/></td>
+			</tr>
+			<tr valign="top">
+				<td>48.</td>
+				<td colspan="2">
+					(a) <obs conceptId="2243" labelText="En moyenne, combien de jours par semaine buvez-vous l'alcool?"/> jours/semaine
+				</td>
+			</tr>
+			<tr valign="top">
+				<td></td>
+				<td>
+					(b) En moyenne, combien de chacune buvez-vous chaque jour?
+				</td>
+				<td>
+					<obs conceptId="2244" labelText=""/> verres de vin <br/>
+					<obs conceptId="2245" labelText=""/> bouteilles de bière <br/>
+					<obs conceptId="2246" labelText=""/> boissons alcoolisées
+				</td>
+			</tr>
+		</table>
+	</td></tr>
+</table>
+
+<br/>
+
+<table class="ddb">
+	<tr><th>Transport</th></tr>
+	<tr><td>
+		49. <obs conceptId="975" labelText="Comment le patient est-t-il arrivé à la clinique?"
+			answerConceptIds="976,977,978,979,1606,981"
+			answerLabels="marche,bicyclette,mini-bus,voiture,grabat (ingobyi),autre"/>
+			(autre: <obs conceptId="981"/>) <br/>
+		50. <obs conceptId="1704" labelText="Combien de temps prend-il au patient pour arriver à la clinique à pied?"
+			answerConceptIds="1049,1050,1051,982,983,984,1067"
+			answerLabels="moins de 30 minutes,30 minutes à une heure,1 à 2 heures,2 à 3 heures,3 à 6 heures,plus de 6 heures,inconnu"/>
+	</td></tr>
+</table>
+
+<br/>
+
+<table class="ddb">
+	<tr><th>Activités quotidiennes</th></tr>
+	<tr><td>
+		<i>S'il vous plaît, poser les questions suivantes au patient exactement comme elles sont écrites:</i><br/>
+		51. (a) <obs conceptId="1402" labelText="Ni uwuhe murimo w'ingenzi wakoraga mbere y'uko urwara? (urugero: guhinga, korora amatungo, akazi ko mu rugo, kurera abana, gucuruza, kwiga)?" size="60"/> <br/>
+		(b) <obs conceptId="1601" labelText="Ubu umaze koroherwa, ushobora kongera gukora imirimo wakoraga?"
+			answerConceptIds="1602,1603,1090"
+			answerLabels="buri munsi,rimwe na rimwe,oya"/> <br/>
+		52. (a) <obs conceptId="1604" labelText="Ni utuhe turimo tundi wakundaga kwikorera mbere y'uko urwara? (urugero: kumesa cg gutera ipasi, kuragira amatungo, gusana amazu, gukina umupira)?" size="60"/> <br/>
+		(b) <obs conceptId="1605" labelText="Ubu umaze koroherwa, ushobora kongera kwikorera utwo turimo?"
+			answerConceptIds="1602,1603,1090"
+			answerLabels="buri munsi,rimwe na rimwe,oya"/>
+	</td></tr>
+</table>
+
+<br/>
+
+<table class="ddb">
+	<tr><th>Assistance socioéconomique</th></tr>
+	<tr><td>
+		53. <i>Marquez ceux qui sont en rapport avec la visite actuelle.</i>
+		<table>
+			<tr>
+				<td></td>
+				<td>Déjà reçu</td>
+				<td>Recommandé</td>
+				<td></td>
+				<td></td>
+				<td>Déjà reçu</td>
+				<td>Recommandé</td>
+			</tr>
+			<tr>
+				<td>Aide financière</td>
+				<td><obs conceptId="2156" answerConceptId="1398" answerLabel=""/></td>
+				<td><obs conceptId="2157" answerConceptId="1398" answerLabel=""/></td>
+				<td></td>
+				<td>Assistance pour transport</td>
+				<td><obs conceptId="2156" answerConceptId="990" answerLabel=""/></td>
+				<td><obs conceptId="2157" answerConceptId="990" answerLabel=""/></td>
+			</tr>
+			<tr>
+				<td>Aide nutritionnelle</td>
+				<td><obs conceptId="2156" answerConceptId="1400" answerLabel=""/></td>
+				<td><obs conceptId="2157" answerConceptId="1400" answerLabel=""/></td>
+				<td></td>
+				<td rowspan="2">Aide pour construction ou réparation de la maison</td>
+				<td rowspan="2"><obs conceptId="2156" answerConceptId="1396" answerLabel=""/></td>
+				<td rowspan="2"><obs conceptId="2157" answerConceptId="1396" answerLabel=""/></td>
+			</tr>
+			<tr>
+				<td>Aide scolaire (pour enfants)</td>
+				<td><obs conceptId="2156" answerConceptId="1394" answerLabel=""/></td>
+				<td><obs conceptId="2157" answerConceptId="1394" answerLabel=""/></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Assistance pour funérailles</td>
+				<td><obs conceptId="2156" answerConceptId="1492" answerLabel=""/></td>
+				<td><obs conceptId="2157" answerConceptId="1492" answerLabel=""/></td>
+				<td></td>
+				<td>Formation pour travail</td>
+				<td><obs conceptId="2156" answerConceptId="1397" answerLabel=""/></td>
+				<td><obs conceptId="2157" answerConceptId="1397" answerLabel=""/></td>
+			</tr>
+		</table>
+	</td></tr>
+</table>
+
+<submit/>
+
+</htmlform>

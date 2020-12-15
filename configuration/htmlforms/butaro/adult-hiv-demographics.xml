@@ -1,0 +1,137 @@
+<htmlform 
+	htmlformUuid="fbc1503c-d80f-4220-9727-51e1f3b59618" 
+	formUuid="c71a00d0-c936-421d-ae52-130824460361" 
+	formName="Adult HIV Demographics" 
+	formVersion="1.0" 
+	formEncounterType="c1c39e98-2f2d-432b-8cc9-b2f273209c29" 
+	formPublished="true" 
+	formRetired="false"
+>
+
+    <macros>
+		@PATIENT_IDENTIFIER@=IMB ID
+    	
+   		@PATENT_VISIT_CONSTRUCT@=220304e9-556c-4c74-b1c7-38357cc9561a
+		@WEIGHT_KG@=3ce93b62-26fe-102b-80cb-0017a47871b2
+		@FUNCTIONAL_ABILITY_OF_THE_PATIENT@=3cdc979a-26fe-102b-80cb-0017a47871b2
+		@CURRENT_OPPORTUNISTIC_INFECTION@=1607
+		@CURRENT_OPPORTUNISTIC_INFECTION_NON_CODED@=1731
+		@SEXUALLY_TRANSMITTED_INFECTION@=812acd3b-08f8-4f56-8162-98e0f6b26630
+		@SEXUALLY_TRANSMITTED_INFECTION_NON_CODED@=a8b35975-7680-4ef1-8298-de222d361eb8
+		@RESULT_OF_TUBERCULOSIS_SCREENING_QUALITATIVE@=3ce14c2c-26fe-102b-80cb-0017a47871b2
+		@METHOD_OF_FAMILY_PLANNING@=3ccfbd0e-26fe-102b-80cb-0017a47871b2
+		@PREGNANCY_STATUS@=3ceb4880-26fe-102b-80cb-0017a47871b2
+		@NUMBER_OF_DOSES_OF_ANTIRETROVIRALS_MISSED_IN_THE_PAST_MONTH@=3cdd3204-26fe-102b-80cb-0017a47871b2
+		@FREE_TEXT_REASON_FOR_POOR_ADHERENCE_TO_ANTIRETROVIRAL_THERAPY@=3ce67814-26fe-102b-80cb-0017a47871b2
+		@NEXT_VISIT@=3ce94df0-26fe-102b-80cb-0017a47871b2
+
+		@NORMAL@=3cd750a0-26fe-102b-80cb-0017a47871b2
+		@Assistance_required@=d335ec09-c724-4327-9726-f3c984bb1ca1
+		@BEDRIDDEN@=3cdc9c18-26fe-102b-80cb-0017a47871b2
+
+		@ABSTINENCE@=3cdcf5e6-26fe-102b-80cb-0017a47871b2
+		@CONDOMS@=3cce7a20-26fe-102b-80cb-0017a47871b2
+		@NATURAL_FAMILY_PLANNING@=3ceb5082-26fe-102b-80cb-0017a47871b2
+		@NONE@=3cd743f8-26fe-102b-80cb-0017a47871b2
+
+		@OTHER_NON_CODED@=5622
+		<!-- 277e342c-79c6-470a-8427-e737d3114ba4 ELECTRONIC_RECORD_MATCHES_PAPER_FORM 7084 -->
+		@ELECTRONIC_RECORD_MATCHES_PAPER_FORM@=c8f6b4ae-600e-496c-b6b9-d6b395e13a1f
+    	@INSURANCE@=8da67e73-776c-43f6-9758-79d1f6786db3
+    	@INSURANCE_NON_CODED@=bab86ae4-080a-4e83-8808-faa9863d9a61
+    	@MUTUELLE@=465d1588-a6f6-41ac-9b9c-cc4fdf140e78
+    	@NONE@=3cd743f8-26fe-102b-80cb-0017a47871b2
+    	@ONE@=596daaf5-3d0b-4ddc-a848-1732d70b5962
+    	@TWO@=bff8b23f-0d4b-4606-9e72-88c9b401f4d2
+    	@THREE@=ed34b78a-e029-4711-a2a0-7cad6160c89c
+    	@FOUR@=772c4100-270c-49d4-873a-ffec0bbef3d3
+    	@UBUDEHE@=db8549e7-1e4f-4a0b-b6fc-b8614414c04d
+    	
+    
+    
+    
+    </macros>
+
+	
+	<link type="text/css" rel="stylesheet" href="/openmrs/moduleResources/rwandahivflowsheet/hiv_flowsheet_new_row.css" />
+
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				<b>
+					$@PATIENT_IDENTIFIER@: <lookup class="value" expression="patientIdentifiers.get(&quot;$@PATIENT_IDENTIFIER@&quot;)" />
+				</b>
+			</td>
+			<td>
+				Date: <encounterDate default="today" />
+			</td>
+			<td>
+				Clinique / Clinic: <encounterLocation />
+			</td>
+			<td>
+				Nom / Signature: <encounterProvider role="HIV Patient Provider"/>
+			</td>
+		</tr>
+	</table>
+	
+	<section headerLabel="Income Demographics">
+		<table border="1" width="100%">
+			<tr>
+				<td>
+					Insurance State: 
+					 <obs conceptId="$@INSURANCE@"
+						answerConceptId="$@MUTUELLE@" answerLabel="Mutuelle" /> 
+					<obs conceptId="$@INSURANCE@"
+						answerConceptId="$@NONE@" answerLabel="None" /> 
+					<obs conceptId="$@INSURANCE@"
+						answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other" /> 
+					Other Insurance
+					<obs conceptId="$@INSURANCE_NON_CODED@"/> 
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Ubudehe: 
+					 <obs conceptId="$@UBUDEHE@"
+						answerConceptId="$@ONE@" answerLabel="1" /> 
+					<obs conceptId="$@UBUDEHE@"
+						answerConceptId="$@TWO@" answerLabel="2" /> 
+						<obs conceptId="$@UBUDEHE@"
+						answerConceptId="$@THREE@" answerLabel="3" /> 
+						<obs conceptId="$@UBUDEHE@"
+						answerConceptId="$@FOUR@" answerLabel="4" /> 
+				</td>
+			</tr>
+
+		</table>
+	</section>
+
+	<br />
+	<center><submit /></center>
+	<encounterVoided/>
+	<br />
+
+<script type="text/javascript">
+$j(document).ready(function() {
+	getField('currentOpportunisticInfectionNonCoded.value')[0].disabled = true;
+	getField('currentSTINonCoded.value')[0].disabled = true;
+
+	getField('currentOpportunisticInfection.value').change(function() {
+		if(getValue('currentOpportunisticInfection.value') == $@OTHER_NON_CODED@) {
+			getField('currentOpportunisticInfectionNonCoded.value')[0].disabled = false;
+		} else {
+			getField('currentOpportunisticInfectionNonCoded.value')[0].disabled = true;
+		}
+    });
+
+	getField('currentSTI.value').change(function() {
+		if(getValue('currentSTI.value') == $@OTHER_NON_CODED@) {
+			getField('currentSTINonCoded.value')[0].disabled = false;
+		} else {
+			getField('currentSTINonCoded.value')[0].disabled = true;
+		}
+    });
+});
+</script>
+
+</htmlform>

@@ -1,0 +1,651 @@
+<htmlform 
+	htmlformUuid="a7b6113a-6b23-11df-808b-0015175d9adf" 
+	formUuid="593d4f9c-912a-4809-afc9-36c883932bac" 
+	formName="VIH Adult Rendez-Vous 3.0" 
+	formDescription="Return visit for a patient in the TB and/or HIV programs.  This version matches the form implemented in Burera initially." 
+	formVersion="3.0" 
+	formEncounterType="4d911f5c-26fe-102b-80cb-0017a47871b2" 
+	formPublished="false" 
+	formRetired="true"
+>
+<macros>
+    lightgrey=#e0e0e0
+    lightblue=#e0e0ff
+</macros>
+
+<h3 align="center" style="background-color: $lightblue">
+	Nom du patient: <lookup expression="patient.personName" class="value"/> <br/>
+	RENDEZ-VOUS - Adultes
+</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" width="100%">
+    <tr>
+      <td width="50%">
+        Date: <encounterDate/> <br/>
+        <obs conceptId="2868" style="checkbox" labelText="Patient ponctuel"/>
+	<obs conceptId="2868" style="checkbox" value="false" labelText="Patient retardaire"/>
+        de <obs conceptId="2320" labelText=""/> jours <br/>
+        <obs conceptId="1246" style="checkbox" value="false" labelText="Visite non-programmee"/>
+      </td>
+      <td width="50%">
+        Clinique: <encounterLocation/>
+      </td>
+    </tr>
+</table>
+
+<br/>
+
+<table width="100%" border="1" cellspacing="0" cellpadding="2">
+    <tr bgcolor="lightgrey">
+      <td colspan="2"><b>1. Information demographique</b></td>
+    </tr>
+    <tr valign="top">
+      <td width="50%">
+        <font color="red">Assurez que le Groupe ARV et le Groupe TB est correcte pour ce patient ONLINE</font>
+      </td>
+      <td width="50%">
+        <obs conceptId="2159" style="no_yes" labelText="Changement ou nouveau accompagnateur?" dateLabel="Date du changement/debut:" /> <obs conceptId="2008" labelText="Raison:"/> <br />
+        <font color="red">Si l'accompagnateur a change svp entrez ca online</font>
+      </td>
+    </tr>
+</table>
+
+<br/>
+
+<table border="0" width="100%">
+    <tr valign="top">
+      <td width="50%">
+        <table width="100%" border="1" cellspacing="0" cellpadding="2">
+            <tr>
+              <td bgcolor="$lightgrey"><b>3. Anamnese</b></td>
+            </tr>
+            <tr>
+              <td>
+		 Symptomes: <br/>
+                 <obs conceptId="432" style="checkbox" labelText="Visite de routine, pas de probleme"/> <br/>
+                 <obs conceptId="1364" rows="10" cols="60"/>
+                 <br/><br/>
+
+                Conditions socioeconomiques:
+                <table><tr><td>
+                  <obs conceptId="2861" answerConceptId="1309" answerLabel="necessite d'un emploi"/> <br/>
+                  <obs conceptId="2861" answerConceptId="2862" answerLabel="faim"/> <br/>
+                  <obs conceptId="2861" answerConceptId="2863" answerLabel="frais scolaire"/> <br/>
+                  <obs conceptId="2861" answerConceptId="5622" answerLabel="autre"/>
+                </td><td>
+                  <obs conceptId="2861" answerConceptId="2864" answerLabel="probleme avec maison"/> <br/>
+                  <obs conceptId="2861" answerConceptId="2865" answerLabel="enterrement"/> <br/>
+                  <obs conceptId="2861" answerConceptId="2866" answerLabel="inaccessibilite de l'eau"/>
+                </td></tr></table>
+
+		<br/>
+                <b>Examen Clinique:</b> <br/>
+		<table width="100%"><tr valign="top">
+		<td width="50%">
+			<obs conceptId="5088" labelText="Temp:"/> C <br/>
+			<obs conceptId="5087" labelText="Pouls:"/>/min <br/>
+			<obs conceptId="5089" labelText="Poids:"/>kg <br/>
+			<obs conceptId="2137" labelText="IMC:"/>kg/m2 <br/>
+		</td><td width="50%">
+			<obs conceptId="5242" labelText="FR:"/>/min <br/>
+			<obs conceptId="5085" labelText="TA:"/>
+			<obs conceptId="5086" labelText="/"/> <br/>
+			<obs conceptId="5090" labelText="Taille:"/>cm
+		</td>
+		</tr></table>
+              </td>
+            </tr>
+        </table>
+      </td>
+      <td width="50%">
+        <table width="100%" border="1" cellspacing="0" cellpadding="2">
+            <tr>
+              <td bgcolor="$lightgrey"><b>4. Anamnese systematique et depistage TBC:</b></td>
+            </tr>
+            <tr>
+		<td>
+			<table width="100%">
+				<obsgroup groupingConceptId="2162">
+				<tr>
+					<td>
+						<b>Toux:</b>
+						<obs conceptId="1734" answerConceptId="107" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="107" answerLabel="oui"/>
+					</td>
+					<td colspan="2">
+						duree:
+						<obs conceptId="2160" labelText=""/>semaines
+						<obs conceptId="2161" labelText=""/>mois
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><obs conceptId="1293" answerConceptId="2128" answerLabel="seche"/></td>
+					<td><obs conceptId="1293" answerConceptId="970" answerLabel="hemoptysie"/></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><obs conceptId="1293" answerConceptId="5957" answerLabel="productive"/></td>
+					<td><obs conceptId="1293" answerConceptId="5960" answerLabel="dyspnee"/></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="2"><obs conceptId="1293" answerConceptId="136" answerLabel="douleur thoracique"/></td>
+				</tr>
+				</obsgroup>
+				<tr>
+					<td align="right"><b>Sueurs nocturnes</b></td>
+					<td colspan="2">
+						<obs conceptId="1734" answerConceptId="6029" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="2164" answerLabel="moins de 3 semaines"/>
+						<obs conceptId="1293" answerConceptId="2163" answerLabel="plus de 3 semaines"/>
+					</td>
+				</tr>
+				<tr valign="top">
+					<td align="right"><b>Fievre</b></td>
+					<td colspan="2">
+						<obs conceptId="1734" answerConceptId="5945" answerLabel="non"/>
+						<obsgroup groupingConceptId="1292">
+							<obs conceptId="1293" answerConceptId="5945" answerLabel="oui,"/>
+							<br/>
+							duree:
+							<obs conceptId="1294" labelText=""/>jours
+							<obs conceptId="2160" labelText=""/>semaines
+							<obs conceptId="2161" labelText=""/>mois
+						</obsgroup>
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><b>Perte de poids</b></td>
+					<td colspan="2">
+						<obs conceptId="1734" answerConceptId="832" answerLabel="non"/>
+						<obs conceptId="1293" answerConceptId="832" answerLabel="oui moins de 10%"/>
+						<obs conceptId="1293" answerConceptId="1352" answerLabel="oui plus de 10%"/>
+					</td>
+				</tr>
+				<tr>
+					<td align="right"><b>Contact TBC+:</b></td>
+					<td colspan="2"><obs conceptId="2133" style="no_yes" labelText=""/></td>
+				</tr>
+			</table>
+		</td>
+            </tr>
+            <tr>
+              <td>
+		<b>Resultat du depistage TBC</b> <obs conceptId="2136" labelText="" answerConceptIds="664,703" answerLabels="negatif,positif"/>
+		<br/><br/>
+	      </td>
+            </tr>
+            <tr>
+              <td bgcolor="$lightgrey"><b>5. La sante sexuelle</b></td>
+            </tr>
+            <tr>
+              <td>
+                <table border="0">
+                    <tr>
+                      <td align="right">Sexuellement actif:</td>
+                      <td><obs conceptId="2730" style="no_yes"/></td>
+                    </tr>
+                    <tr>
+                      <td align="right">Dernieres regles</td>
+                      <td><obs conceptId="968"/></td>
+                    </tr>
+                    <tr>
+                      <td align="right">Planification familiale</td>
+                      <td><obs conceptId="5271" style="no_yes"/></td>
+                    </tr>
+                    <tr>
+                      <td align="right">Methode</td>
+                      <td>
+			<obs conceptId="374" answerConceptId="1720" answerLabel="abstinence"/>
+			<obs conceptId="374" answerConceptId="780" answerLabel="contraceptifs oraux"/> <br/>
+			<obs conceptId="374" answerConceptId="190" answerLabel="condoms"/>
+			<obs conceptId="374" answerConceptId="5279" answerLabel="Depo-provera"/> <br/>
+			<obs conceptId="374" answerConceptId="5622" answerLabel="autres"/>
+			<obs conceptId="2877" labelText="(a specifier):"/>
+		      </td>
+                    </tr>
+                    <tr>
+                      <td align="right">Enceinte</td>
+                      <td>
+			<obs conceptId="5272" answerConceptIds="1066,1065" answerLabels="non,oui"/>
+			<obs conceptId="5596" labelText="DPA"/>
+		      </td>
+                    </tr>
+                    <tr>
+                      <td align="right">Symptomes d'IST</td>
+                      <td><obs conceptId="2731" size="40"/></td>
+                    </tr>
+                </table>
+              </td>
+            </tr>
+        </table>
+      </td>
+    </tr>
+</table>
+
+<br/>
+
+<table border="0" width="100%">
+    <tr valign="top">
+      <td width="50%">
+        <table border="1" cellspacing="0" cellpadding="2" width="100%">
+           <tr>
+            <td bgcolor="$lightgrey"><b>6. Hospitalization</b></td>
+           </tr>
+           <tr>
+            <td>
+              Hospitalise(e) depuis la derniere visite <obs conceptId="1715" style="no_yes"/><br/>
+              Si oui, diagnostic: <obs conceptId="1716"/>
+              <br/><br/>
+            </td>
+           </tr>
+           <tr>
+            <td bgcolor="$lightgrey"><b>7. Adherence aux ARVs</b></td>
+           </tr>
+           <tr>
+            <td>
+              # de doses manquees au course du mois precedent <obs conceptId="1738"/> <br/>
+              Visite quotidienne de l'accompagnateur? <obs conceptId="2732" style="no_yes"/>
+            </td>
+           </tr>
+        </table>
+      </td>
+      <td width="50%">
+        <table border="1" cellspacing="0" cellpadding="2" width="100%">
+          <tr>
+            <td bgcolor="$lightgrey"><b>8. Effects secondaires</b></td>
+          </tr>
+          <tr>
+            <td>
+              Est-ce que le patient a des effets secondaires? <br/>
+              <table>
+                <tr>
+                  <td colspan="2"><obs conceptId="1297" answerConceptId="5978" answerLabel="nausee/vomissement"/></td>
+                  <td><obs conceptId="1297" answerConceptId="1726" answerLabel="eruption legere"/></td>
+                </tr>
+                <tr>
+                  <td><obs conceptId="1297" answerConceptId="821" answerLabel="neuropathie"/></td>
+                  <td><obs conceptId="1297" answerConceptId="3" answerLabel="anemie"/></td>
+                  <td><obs conceptId="1297" answerConceptId="1727" answerLabel="eruption moderee"/></td>
+                </tr>
+                <tr>
+                  <td><obs conceptId="1297" answerConceptId="1458" answerLabel="acidose lactique"/></td>
+                  <td><obs conceptId="1297" answerConceptId="215" answerLabel="ictere"/></td>
+                  <td><obs conceptId="1297" answerConceptId="1728" answerLabel="eruption severe"/></td>
+                </tr>
+                <tr>
+                  <td><obs conceptId="1297" answerConceptId="29" answerLabel="hepatitie"/></td>
+                  <td colspan="2"><obs conceptId="1297" answerConceptId="5622" answerLabel="autres"/></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+</table>
+
+<br/>
+
+<table border="1" cellspacing="0" cellpadding="2" width="100%">
+  <tr>
+    <td width="50%">
+      <span style="background-color: $lightgrey; font-weight: bold">9. Etat du patient / evaluation</span> <br/>
+      Bien suivi par l'accompagnateur? <obs conceptId="2152" answerConceptIds="1066,1065,1067,2154" answerLabels="non,oui,inconnu,pas d'accompagnateur"/>
+    </td>
+    <td width="50%">
+      Progres: <obs conceptId="1463" answerConceptIds="1459,1460,1462,1723" answerLabels="bon,satisfaisant,pas de progres,deterioration"/><br/>
+      Stade OMS actuel: <obs conceptId="1480" answerConceptIds="1204,1205,1206,1207,1067" answerLabels="1,2,3,4,inconnu"/>
+    </td>
+  </tr>
+</table>
+
+<br/>
+
+<table width="100%" border="1" cellspacing="0" cellpadding="2"><tr valign="top">
+<td width="25%">
+  <span style="background-color: $lightgrey; font-weight: bold">10. Diagnostic (confirme ou presume)</span> <br/>
+  <obs conceptId="1401" style="checkbox" value="false" labelText="Absence d'infections opportuniste"/> <br/>
+  Tuberculeuse <br/>
+  <obs conceptId="1607" answerConceptId="1549" answerLabel="pulmonaire"/> <br/>
+  <obs conceptId="1607" answerConceptId="1547" answerLabel="extrapulmonaire"/> <br/>
+
+  Pneumopathie non tuberculeuse <br/>
+  <obs conceptId="1607" answerConceptId="1350" answerLabel="pneumonie bacterienne"/> <br/>
+  <obs conceptId="1607" answerConceptId="1351" answerLabel="pneumocystose"/> <br/>
+
+  Enterite <br/>
+  <obs conceptId="1607" answerConceptId="141" answerLabel="fievre typhoide"/> <br/>
+  <obs conceptId="1607" answerConceptId="3536" answerLabel="TB"/> <br/>
+  <obs conceptId="1607" answerConceptId="1365" answerLabel="dysenterie bacillaire"/> <br/>
+</td>
+<td width="25%">
+  Diarhee <br/>
+  <obs conceptId="1607" answerConceptId="14" answerLabel="parasitaires (amibes giardia)"/> <br/>
+  <obs conceptId="1607" answerConceptId="2763" answerLabel="bacterienne"/> <br/>
+
+  Meningite <br/>
+  <obs conceptId="1607" answerConceptId="1358" answerLabel="bacterienne"/>
+  <obs conceptId="1607" answerConceptId="1359" answerLabel="cryptococcose"/> <br/>
+  <obs conceptId="1607" answerConceptId="1360" answerLabel="tuberculose"/> <br/>
+
+  Convulsions/deficit neurologique focal <br/>
+  <obs conceptId="1607" answerConceptId="5355" answerLabel="toxoplasmose"/> <br/>
+  <obs conceptId="1607" answerConceptId="1369" answerLabel="lymphome"/> <br/>
+  <obs conceptId="1607" answerConceptId="123" answerLabel="malaria"/>
+  <!--
+  <obs conceptId="1607" answerConceptId="" answerLabel="tuberculome"/> *** <br/>
+  -->
+
+  Encephalopathie non focale <br/>
+  <obs conceptId="1607" answerConceptId="1362" answerLabel="VIH"/> <br/>
+</td>
+<td width="25%">
+  Psychologique <br/>
+  <obs conceptId="1607" answerConceptId="207" answerLabel="depression"/> <br/>
+  <obs conceptId="1607" answerConceptId="2719" answerLabel="anxiete"/>
+  <obs conceptId="1607" answerConceptId="1360" answerLabel="psychose"/> <br/>
+
+  Troubles genito-urinaires <br/>
+  <obs conceptId="1607" answerConceptId="902" answerLabel="Maladies inflammatoires pelviennes"/> <br/>
+  <obs conceptId="1607" answerConceptId="1213" answerLabel="condylomes (HPV)"/> <br/>
+  <obs conceptId="1607" answerConceptId="1373" answerLabel="HSV"/>
+  <obs conceptId="1607" answerConceptId="223" answerLabel="syphilis"/> <br/>
+  <obs conceptId="1607" answerConceptId="2737" answerLabel="LGV"/>
+  <obs conceptId="1607" answerConceptId="2738" answerLabel="chancroide"/> <br/>
+
+  Ecoulement vaginal ou uretral <br/>
+  <obs conceptId="1607" answerConceptId="684" answerLabel="trichomoniasis"/> <br/>
+  <obs conceptId="1607" answerConceptId="893" answerLabel="genococcie (GC)"/> <br/>
+  <obs conceptId="1607" answerConceptId="2857" answerLabel="non-GC (autre)"/> <br/>
+</td>
+<td width="25%">
+  Candidose <br/>
+  <obs conceptId="1607" answerConceptId="5334" answerLabel="oropharyngee"/> <br/>
+  <obs conceptId="1607" answerConceptId="1616" answerLabel="oesophagienne"/> <br/>
+  <obs conceptId="1607" answerConceptId="298" answerLabel="vaginale"/> <br/>
+
+  Eruption cutanee <br/>
+  <obs conceptId="1607" answerConceptId="1370" answerLabel="prurigo nodulaire"/> <br/>
+  <obs conceptId="1607" answerConceptId="836" answerLabel="zona"/> <br/>
+
+  Autres <br/>
+  <obs conceptId="1607" answerConceptId="507" answerLabel="sarcoma de Kaposi"/> <br/>
+  <obs conceptId="1607" answerConceptId="823" answerLabel="perte de poids (cachectique)"/> <br/>
+  <!--
+  <obs conceptId="1607" answerConceptId="" answerLabel="syphilis neurologique"/>*** <br/>
+  -->
+  <obs conceptId="1607" answerConceptId="5622" answerLabel="autre"/> <br/>
+</td>
+</tr></table>
+
+<br/>
+
+<table width="100%" border="1" cellspacing="0" cellpadding="2">
+<tr><td bgcolor="$lightgrey"><b>11. Traitement antiretroviral</b></td></tr>
+<tr><td>
+  <table width="100%"><tr>
+  <td width="33%">
+    <obs conceptId="1255" answerConceptId="1107" answerLabel="Prise d'ARV non indiquee a date"/><br/>
+    <obs conceptId="1255" answerConceptId="1257" answerLabel="Prise d'ARV en cours (pas de changement)"/><br/>
+  </td>
+  <td width="33%">
+    <obs conceptId="1255" answerConceptId="1256" answerLabel="Prise d'ARV initiee"/><br/>
+    <obs conceptId="1255" answerConceptId="1260" answerLabel="Prise d'ARV arretee"/><br/>
+  </td>
+  <td width="33%">
+    Date: <obs conceptId="3126"/><br/>
+    <obs conceptId="1255" answerConceptId="1259" answerLabel="Changement d'ARVs"/><br/>
+  </td>
+  </tr></table>
+  <table width="100%" cellspacing="0" cellpadding="2">
+    <tr>
+      <td colspan="2">(si debut ou changement, indiquer le neuveau traitment suivant)</td>
+      <td colspan="2" bgcolor="$lightgrey">(si changement ou interruption, indiquer les raisons suivantes)</td>
+    </tr>
+    <tr valign="top">
+      <td width="25%">
+        <obs conceptId="1250" answerConceptId="1502" answerLabel="D4T30 + 3TC + NVP"/><br/>
+        <obs conceptId="1250" answerConceptId="1610" answerLabel="AZT + 3TC + NVP"/><br/>
+        <obs conceptId="1250" answerConceptId="2210" answerLabel="AZT pour PTME"/><br/>
+        <obs conceptId="1250" answerConceptId="5424" answerLabel="Autre (a specifier):"/>
+              <obs conceptId="3123"/>
+      </td>
+      <td width="25%">
+        <obs conceptId="1250" answerConceptId="1505" answerLabel="D4T30 + 3TC + EFV"/><br/>
+        <obs conceptId="1250" answerConceptId="1612" answerLabel="AZT + 3TC + EFV"/><br/>
+      </td>
+      <td width="25%" bgcolor="$lightgrey">
+        <obs conceptId="1252" answerConceptId="843" answerLabel="Echec"/><br/>
+        <obs conceptId="1252" answerConceptId="102" answerLabel="Toxicite"/><br/>
+        <obs conceptId="1252" answerConceptId="1483" answerLabel="Refus par le patient"/><br/>
+        <obs conceptId="1252" answerConceptId="1761" answerLabel="Rupture de stock"/><br/>
+        <obs conceptId="1252" answerConceptId="5622" answerLabel="Autre (a specifier):"/>
+                <obs conceptId="3127"/>
+      </td>
+      <td width="25%" bgcolor="$lightgrey">
+        <obs conceptId="1252" answerConceptId="25" answerLabel="Interaction avec medicaments TBC"/><br/>
+        <obs conceptId="1252" answerConceptId="1755" answerLabel="Grossesse"/><br/>
+        <obs conceptId="1252" answerConceptId="1253" answerLabel="PTME termine"/><br/>
+        <obs conceptId="1252" answerConceptId="1258" answerLabel="Changement de dose"/><br/>
+      </td>
+    </tr>
+  </table>
+</td></tr></table>
+
+<br/>
+
+<table width="100%" border="1" cellspacing="0" cellpadding="2">
+<tr><td bgcolor="$lightgrey"><b>12. Traitement antituberculose</b></td></tr>
+<tr><td>
+  <table width="100%"><tr>
+  <td width="33%">
+    <obs conceptId="1268" answerConceptId="1107" answerLabel="Prise d'Anti-TBCs non indiquee a date"/><br/>
+    <obs conceptId="1268" answerConceptId="1257" answerLabel="Prise d'Anti-TBCs en cours (pas de changement)"/><br/>
+  </td>
+  <td width="33%">
+    <obs conceptId="1268" answerConceptId="1256" answerLabel="Prise d'Anti-TBCs initiee"/><br/>
+    <obs conceptId="1268" answerConceptId="1260" answerLabel="Prise d'Anti-TBCs arretee"/><br/>
+  </td>
+  <td width="33%">
+    Date: <obs conceptId="1113"/><br/>
+    <obs conceptId="1268" answerConceptId="1259" answerLabel="Changement d'Anti-TBCs"/><br/>
+  </td>
+  </tr></table>
+  <table width="100%" cellspacing="0" cellpadding="2">
+    <tr>
+      <td colspan="2">(si debut ou changement, indiquer le neuveau traitment suivant)</td>
+      <td colspan="2" bgcolor="$lightgrey">(si changement ou interruption, indiquer les raisons suivantes)</td>
+    </tr>
+    <tr valign="top">
+      <td width="25%">
+	<obsgroup groupingConceptId="3115">
+	  <obs conceptId="1270" answerConceptId="1131" answerLabel="RHZE"/>
+	  <obs conceptId="3112"/> ces
+	  <br/>
+	</obsgroup>
+	<obsgroup groupingConceptId="3115">
+	  <obs conceptId="1270" answerConceptId="1614" answerLabel="HRE"/>
+	  <obs conceptId="3112"/> ces
+	  <br/>
+	</obsgroup>
+	<obsgroup groupingConceptId="3115">
+	  <obs conceptId="1270" answerConceptId="1194" answerLabel="HR"/>
+	  <obs conceptId="3112"/> ces
+	  <br/>
+	</obsgroup>
+	<obsgroup groupingConceptId="3115">
+	  <obs conceptId="1270" answerConceptId="3124" answerLabel="Autre (a specifier):"/>
+	  <obs conceptId="3116"/>
+	  <br/>
+	</obsgroup>
+      </td>
+
+      <td width="25%">
+	<obsgroup groupingConceptId="3115">
+	  <obs conceptId="1270" answerConceptId="438" answerLabel="S"/>
+	  <obs conceptId="3113"/> g
+	  <br/>
+	</obsgroup>
+	<obsgroup groupingConceptId="3115">
+	  <obs conceptId="1270" answerConceptId="745" answerLabel="E"/>
+	  <obs conceptId="3122"/> mg
+	  <br/>
+	</obsgroup>
+      </td>
+      <td width="25%" bgcolor="$lightgrey">
+        <obs conceptId="1269" answerConceptId="843" answerLabel="Echec"/><br/>
+	<obs conceptId="1269" answerConceptId="159" answerLabel="Gueri"/><br/>
+        <obs conceptId="1269" answerConceptId="1761" answerLabel="Rupture de stock"/><br/>
+        <obs conceptId="1269" answerConceptId="1258" answerLabel="Changement de dose"/><br/>
+        <obs conceptId="1269" answerConceptId="5622" answerLabel="Autre (a specifier):"/>
+                <obs conceptId="3127"/>
+      </td>
+      <td width="25%" bgcolor="$lightgrey">
+        <obs conceptId="1269" answerConceptId="102" answerLabel="Toxicite"/><br/>
+        <obs conceptId="1269" answerConceptId="1585" answerLabel="Traitement termine"/><br/>
+        <obs conceptId="1269" answerConceptId="1804" answerLabel="Phase de continuation"/><br/>
+        <obs conceptId="1269" answerConceptId="2867" answerLabel="Prolongation de traitement"/><br/>
+      </td>
+    </tr>
+  </table>
+</td></tr></table>
+
+<br/>
+
+<table border="1" cellspacing="0" cellpadding="2" width="100%">
+<tr><td bgcolor="$lightgrey"><b>13. Traitement prophylactique</b></td></tr>
+<tr><td>
+	<table width="100%"><tr>
+	<td width="50%">
+		<obs conceptId="2324" answerConceptId="2221" answerLabel="Prise de prophylaxie non indiquee a date"/> <br/>
+		<obs conceptId="2324" answerConceptId="1066" answerLabel="Prise de prophylaxie continuee (pas de changement)"/> <br/>
+		<obs conceptId="2324" answerConceptId="1065" answerLabel="Initiee ou arretee du prophylaxie (a specifier)"/> <br/>
+	</td>
+	<td width="50%">
+		<table>
+			<tr>
+				<td></td>
+				<td>initiee</td>
+				<td>arretee</td>
+				<td></td>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="6149">
+					<td>Co-trimoxazole</td>
+					<td><obs conceptId="3117" answerConceptId="916" answerLabel=""/></td>
+					<td><obs conceptId="6148" answerConceptId="916" answerLabel=""/></td>
+					<td><obs conceptId="3974" labelText="Date:"/></td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="6149">
+					<td>Isoniazide</td>
+					<td><obs conceptId="3117" answerConceptId="656" answerLabel=""/></td>
+					<td><obs conceptId="6148" answerConceptId="656" answerLabel=""/></td>
+					<td><obs conceptId="3974" labelText="Date:"/></td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="6149">
+					<td>Fluconazole</td>
+					<td><obs conceptId="3117" answerConceptId="747" answerLabel=""/></td>
+					<td><obs conceptId="6148" answerConceptId="747" answerLabel=""/></td>
+					<td><obs conceptId="3974" labelText="Date:"/></td>
+				</obsgroup>
+			</tr>
+
+		</table>
+	</td>
+	</tr></table>
+</td></tr>
+</table>
+
+<br/>
+
+<table width="100%"><tr valign="top">
+<td width="50%">
+	<table border="1" cellspacing="0" cellpadding="2" width="100%">
+		<tr><td bgcolor="$lightgrey"><b>14. Assistance socioeconomique</b></td></tr>
+		<tr><td>
+			<table width="100%">
+				<tr>
+					<td>Marquer ceux qui sont en rapport avec la visite actuelle.</td>
+					<td>Deja recue</td>
+					<td>Recommandee</td>
+				</tr>
+				<tr>
+					<td align="right">Aide financiere</td>
+					<td><obs conceptId="2156" answerConceptId="1398" answerLabel=""/></td>
+					<td><obs conceptId="2157" answerConceptId="1398" answerLabel=""/></td>
+				</tr>
+				<tr>
+					<td align="right">Aide nutritionnelle</td>
+					<td><obs conceptId="2156" answerConceptId="1400" answerLabel=""/></td>
+					<td><obs conceptId="2157" answerConceptId="1400" answerLabel=""/></td>
+				</tr>
+				<tr>
+					<td align="right">Aide scolaire (pour enfants)</td>
+					<td><obs conceptId="2156" answerConceptId="1394" answerLabel=""/></td>
+					<td><obs conceptId="2157" answerConceptId="1394" answerLabel=""/></td>
+				</tr>
+				<tr>
+					<td align="right">Assistance pour funerailles</td>
+					<td><obs conceptId="2156" answerConceptId="1492" answerLabel=""/></td>
+					<td><obs conceptId="2157" answerConceptId="1492" answerLabel=""/></td>
+				</tr>
+				<tr>
+					<td align="right">Assistance pour transport</td>
+					<td><obs conceptId="2156" answerConceptId="990" answerLabel=""/></td>
+					<td><obs conceptId="2157" answerConceptId="990" answerLabel=""/></td>
+				</tr>
+				<tr>
+					<td align="right">Aide pour construction ou<br/>reparation de maison</td>
+					<td><obs conceptId="2156" answerConceptId="1396" answerLabel=""/></td>
+					<td><obs conceptId="2157" answerConceptId="1396" answerLabel=""/></td>
+				</tr>
+				<tr>
+					<td align="right">Formation professionnelle</td>
+					<td><obs conceptId="2156" answerConceptId="1397" answerLabel=""/></td>
+					<td><obs conceptId="2157" answerConceptId="1397" answerLabel=""/></td>
+				</tr>
+			</table>
+		</td></tr>
+	</table>
+</td><td width="50%">
+	<table border="1" cellspacing="0" cellpadding="2" width="100%">
+		<tr><td bgcolor="$lightgrey"><b>14. Nutrition</b></td></tr>
+		<tr><td>
+			<obs conceptId="1806" labelText="Patient a-t-il recu de l'aide nutritionnelle aujourd'hui?" answerConceptIds="1809,1808,1807" answerLabels="oui,le patient participe au programme,non le patient ne participe pas au programme"/>
+		</td></tr>
+	</table>
+
+	<br/>
+
+	<table border="1" cellspacing="0" cellpadding="2" width="100%">
+		<tr><td bgcolor="$lightgrey"><b>15. Transfert</b></td></tr>
+		<tr><td>
+			<obsgroup groupingConceptId="1783">
+				<obs conceptId="1781" style="no_yes" labelText="Reference vers un autre site?"/>
+				<obs conceptId="1389" labelText="a specifier"/>
+			</obsgroup>
+		</td></tr>
+	</table>
+</td>
+</tr></table>
+
+<br/>
+
+<table border="1" cellspacing="0" cellpadding="2" width="100%">
+	<tr><td bgcolor="$lightgrey"><b>16. Diagnostique et conduite a tenir</b></td></tr>
+	<tr><td>
+		<obs conceptId="1620" rows="15" cols="80"/><br/>
+		<obs conceptId="5096" labelText="Prochain rendez-vous"/>
+		Prestataire: <encounterProvider role="Provider"/>
+	</td></tr>
+</table>
+<br/>
+<submit/>
+
+</htmlform>

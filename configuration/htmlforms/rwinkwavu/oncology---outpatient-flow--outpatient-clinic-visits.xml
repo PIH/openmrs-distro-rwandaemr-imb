@@ -1,0 +1,521 @@
+<htmlform 
+	htmlformUuid="20f1eb06-398b-4a4e-b19e-1c860eb20e54" 
+	formUuid="d4142144-5fc4-48e5-a3ee-df2410abc094" 
+	formName="Oncology - Outpatient Flow: Outpatient Clinic visits" 
+	formDescription="Oncology - Outpatient Flow section of Outpatient Clinic visits" 
+	formVersion="0.1" 
+	formEncounterType="ff319885-3f20-4ae5-8663-3ad5678cba41" 
+	formPublished="false" 
+	formRetired="false"
+> <!-- Oncology - Outpatient Flow: Clinic visits
+         Written by jberchmas
+           -->
+	<macros> paperFormId = OutPt
+		Flow_ONCOLOGY_V1.2NT2012June20 copy.doc headerColor =#3333cc;
+		fontOnHeaderColor = white
+
+
+		@DIASTOLIC_BLOOD_PRESSURE@ = 3ce93694-26fe-102b-80cb-0017a47871b2
+		@SYSTOLIC_BLOOD_PRESSURE@ = 3ce934fa-26fe-102b-80cb-0017a47871b2
+		@PULSE@ = 3ce93824-26fe-102b-80cb-0017a47871b2
+		@TEMPERATURE_(C)@ = 3ce939d2-26fe-102b-80cb-0017a47871b2
+		@Pain_score@ = 9b461c8e-155a-481c-83a4-1de363f7301e
+		@NEW_OR_ONGOING_SYMPTOMS@ = 7f3de9e8-7d34-43bf-99fb-ee0ffa42f815
+		@Treatment_Intent@ = 74bf3a55-6e92-4b91-86b0-a19345f22ad2
+		@Curative@ = 3d996ff0-4990-42d4-a7cf-45ead911d7af
+		@Palliative_systemic@ = 0d02a051-9196-4f89-883a-8a443989ed65
+		@Palliation@ = 11fbb8e0-e069-4036-9095-56049540ab7c
+		@GENERAL_EXAM_FINDINGS@ = 0adeea3a-15f5-102d-96e4-000c29c2a5d7
+		@NO_DISTRESS@ =91091ccf-5bdb-4074-a68d-43f047e1b5fa
+		@OTHER_NON-CODED@ = 3cee7fb4-26fe-102b-80cb-0017a47871b2
+		@OTHER_GENERAL_EXAM_FINDINGS@ = 8d8597b4-0b54-4bc1-a35c-fa06d80e7a2b
+		@CARDIAC_EXAM_FINDINGS@ = 3cd75e9c-26fe-102b-80cb-0017a47871b2
+		@NORMAL@ = 3cd750a0-26fe-102b-80cb-0017a47871b2
+		@ABNORMAL@ = 3cd75230-26fe-102b-80cb-0017a47871b2
+		@CARDIOVASCULA_SYSTEM_COMMENT@ = 3ce6c102-26fe-102b-80cb-0017a47871b2
+		@CHEST_EXAM_FINDINGS@ = 3cd75d0c-26fe-102b-80cb-0017a47871b2
+		@CHEST_EXAM_COMMENTS@ = b5c04602-cc56-4888-b8b5-3e6eebde98ba
+		@LYMPH_NODE_EXAM_FINDINGS@ = 3cd759f6-26fe-102b-80cb-0017a47871b2
+		@LYMPH_NODE_EXAM_COMMENTS@ = 1990ad61-360a-4420-b15b-eebb322b59c7
+		@OTHER_PHYSICAL_EXAMS@ = 29f22e0a-9772-425b-9da1-e5f528ad24d8
+		@RETURN_VISIT_DATE@ = 3ce94df0-26fe-102b-80cb-0017a47871b2
+		@Oncology_Return_visit_locatin@ = 43b71f0b-7012-4df5-b54e-d604b71cc9ab
+		@Oncology_Ward@ = 0161fa23-d8ac-4cc6-a7e5-ad1ae3284b6c
+		@Outpatient_Clinic@ = b0699525-ac50-44da-a1a3-3280beb472fa
+		@PATIENT_PLAN_COMMENTS@ = 3ce88a32-26fe-102b-80cb-0017a47871b2
+		@ALANINE_AMINOTRANSFERASE@ = 3cd27760-26fe-102b-80cb-0017a47871b2
+		@ASPARTATE_AMINOTRANSFERASE@ = 3cd275d0-26fe-102b-80cb-0017a47871b2
+		@TOTAL_BILIRUBIN@ = 3cd278fa-26fe-102b-80cb-0017a47871b2
+		@DIRECT_BILIRUBIN@ = b01f4fd2-7632-4c94-9481-9ed0d1da1f9a
+		@Chemotherapy_inpatient_ward_visit@=6de4e3ee-fe8d-427e-b38f-1703e80f8513
+
+	</macros>
+	<style>
+		.formName {
+		background-color: #009d8e;
+		}
+
+		.section {
+		border: 1px solid #3333cc;
+		width: 100%;
+		padding: 2px;
+		text-align: left;
+		margin-bottom: 10px;
+		}
+
+		.sectionHeader {
+		background-color: #3333cc;;
+		color: white;
+		display: block;
+		padding: 2px;
+		font-weight: bold;
+		}
+
+		table.symptoms th {
+		text-align: right;
+		}
+
+		.note {
+		color: red;
+		}
+		.disabled {
+		color: #D8D8D8;
+		}
+
+		td {
+		vertical-align: top;
+		}
+
+		table.labTable td {
+		color: red;
+		}
+
+		table.labTable
+		td.dateField {
+		text-align: right;
+		}
+
+		table.identifierTable td {
+		padding-right: 10px;
+		}
+
+		div.paddedTable span {
+		padding-right: 20px;
+		}
+
+		table {
+		border-collapse: collapse;
+		}
+	</style>
+	<script type="text/javascript">
+	if (jQuery) {
+		$j(document)
+				.ready(
+						function() {
+							if ($j.browser.msie) {
+								$j(":checkbox").click(function() {
+									$j(this).change();
+								});
+							}
+							$j(".enableDisable").each(
+									function() {
+										var group = $j(this);
+										function disableFn() {
+											group.children("#disabled").fadeTo(
+													250, 0.33);
+											group.children("#disabled").find(
+													":checkbox").attr(
+													"checked", false); //uncheck
+											group.children("#disabled").find(
+													"input[type$='text']").val(
+													"");
+											group.children("#disabled").find(
+													"input").attr("disabled",
+													true); //disable
+										}
+										function enableFn() {
+											group.children("#disabled").fadeTo(
+													250, 1);
+											group.children("#disabled").find(
+													"input").attr("disabled",
+													false);
+										}
+										disableFn();
+										$j(this).children("#trigger").find(
+												":checkbox:first").change(
+												function() {
+													var checked = $j(this)
+															.attr("checked");
+													if (checked == true) {
+														enableFn();
+													} else {
+														disableFn();
+													}
+												});
+									});
+
+							$j(".checkboxGroup")
+									.each(
+											function() {
+												var group = $j(this);
+												var uncheckAll = function() {
+													group
+															.find(
+																	"input[type$='checkbox']")
+															.attr("checked",
+																	false);
+													group
+															.find(
+																	"input[type$='checkbox']")
+															.change();
+												}
+												var uncheckRadioAndAll = function() {
+													group
+															.find(
+																	"#checkboxAll,#checkboxRadio")
+															.find(
+																	"input[type$='checkbox']")
+															.attr("checked",
+																	false);
+													group
+															.find(
+																	"#checkboxAll,#checkboxRadio")
+															.find(
+																	"input[type$='checkbox']")
+															.change();
+												}
+
+												group
+														.find("#checkboxAll")
+														.find("input")
+														.click(
+																function() {
+																	var flip;
+																	var checked = $j(
+																			this)
+																			.siblings(
+																					":checkbox:first")
+																			.attr(
+																					"checked");
+																	if ($j(this)
+																			.attr(
+																					"name") == $j(
+																			this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox:first")
+																			.attr(
+																					"name")) {
+																		checked = $j(
+																				this)
+																				.attr(
+																						"checked");
+																		flip = checked;
+																	} else {
+																		flip = !checked;
+																	}
+																	if ($j(this)
+																			.attr(
+																					"type") == "text")
+																		if (flip == false)
+																			flip = !filp; // this is so the user doesn't go to check the checkbox, then uncheck it when they hit the input.
+																	uncheckAll();
+																	$j(this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox")
+																			.attr(
+																					"checked",
+																					flip);
+																	$j(this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox")
+																			.change();
+																});
+
+												group
+														.find("#checkboxRadio")
+														.find(
+																"input[type$='checkbox']")
+														.click(
+																function() {
+																	uncheckAll();
+																	$j(this)
+																			.siblings(
+																					"input[type$='checkbox']")
+																			.attr(
+																					"checked",
+																					false);
+																	$j(this)
+																			.attr(
+																					"checked",
+																					true);
+																	$j(this)
+																			.change();
+																});
+
+												group
+														.find(
+																"#checkboxCheckbox")
+														.click(
+																function() {
+																	uncheckRadioAndAll();
+																});
+											});
+						});
+	}
+</script>
+	<script>
+	$j(function() {
+		$j('.disdiv').find('input').attr('disabled', 'true');
+	});
+</script>
+	<div id="container">
+		<!-- Generic Disease workup header  -->
+		<section>
+
+			<table border="1" cellspacing="0" cellpadding="6" width="100%">
+				<tr>
+					<td><b> IMB ID: <lookup class="value"
+											expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup
+							class="value"
+							expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
+					</td>
+					<td>Date: <encounterDate id="encounterDate" default="today" />
+					</td>
+				</tr>
+				<tr>
+					<td>Nom / Last name: <lookup class="value"
+												 expression="patient.personName.familyName" />
+					</td>
+					<td>Prénom/ First name: <lookup class="value"
+													expression="patient.personName.givenName" />
+					</td>
+				</tr>
+
+				<tr>
+					<td><img
+							src="/openmrs/moduleResources/rwandareports/images/pihHands.png"
+							align="left" height="65"></img>
+						<h2>
+							Inshuti Mu Buzima <br /> PIH Rwanda
+						</h2></td>
+					<td rowspan="2"><strong> Oncology Program / Programme d'oncologie
+						<br /> Outpatient clinic visits
+					</strong> <br /></td>
+				</tr>
+				<tr>
+					<td>Clinique / Clinic: <encounterLocation
+							id="encounterLocation" default="Butaro Hospital" />
+					</td>
+
+				</tr>
+			</table>
+			<br />
+		</section>
+	</div>
+	<div style="width:100%">
+		<section headerLabel="OUTPATIENT CLINIC VISITS">
+
+			<table border="1" width="100%">
+				<tr>
+
+					<td><b>Wt</b></td>
+					<td  ><b>Ht</b></td>
+					<td><b>BP</b></td>
+					<td><b>Pulse</b></td>
+					<td><b>T</b></td>
+					<td><b>Pain score</b></td>
+					<td><b>ECOG score</b></td>
+					<td width="10%"   ><b>New / Ongoing
+						symptoms</b></td>
+					<td><b>LFT</b></td>
+					<td><b>WBC</b></td>
+					<td><b>% Neutro</b></td>
+					<td><b>Hb</b></td>
+					<td><b>Plt</b></td>
+					<td><b>Cr</b></td>
+					<td><b>Other tests(specify)</b></td>
+					<td><b>Next visit date</b></td>
+
+				</tr>
+				<tr>
+					<td><obs conceptId="3ce93b62-26fe-102b-80cb-0017a47871b2" />kg</td>
+					<td><obs conceptId="3ce93cf2-26fe-102b-80cb-0017a47871b2" />cm</td>
+					<td>
+						<obs conceptId="$@SYSTOLIC_BLOOD_PRESSURE@"/>/
+						<obs conceptId="$@DIASTOLIC_BLOOD_PRESSURE@"/>
+
+					</td>
+
+					<td>
+						<obs conceptId="$@PULSE@"/> /min
+					</td>
+					<td>
+						<obs conceptId="$@TEMPERATURE_(C)@"/>
+					</td>
+					<td ><obs conceptId="$@Pain_score@" />/5</td>
+					<td><obs conceptId="8ad685de-4f19-4b75-b3f1-ee3b06bf05a2" />/5</td>
+					<td>
+						<obs conceptId="$@NEW_OR_ONGOING_SYMPTOMS@" cols="15" rows="4"/>
+					</td>
+					<td>
+						ALT:<obs conceptId="$@ALANINE_AMINOTRANSFERASE@"/> <br/>
+						AST:<obs conceptId="$@ASPARTATE_AMINOTRANSFERASE@"/> <br/>
+						Total Bilirubin: <obs conceptId="$@TOTAL_BILIRUBIN@"/> <br/>
+						Direct Bilirubin:<obs conceptId="$@DIRECT_BILIRUBIN@"/> <br/>
+
+					</td>
+					<td><obs conceptId="3cd2a906-26fe-102b-80cb-0017a47871b2" />
+					</td>
+					<td><obs conceptId="3cd6a592-26fe-102b-80cb-0017a47871b2" />
+					</td>
+					<td><obs conceptId="3ccc7158-26fe-102b-80cb-0017a47871b2" />
+					</td>
+					<td><obs conceptId="3cd3d038-26fe-102b-80cb-0017a47871b2" />
+					</td>
+					<td><obs conceptId="3cd4374e-26fe-102b-80cb-0017a47871b2" />
+					</td>
+					<td><obsgroup
+							groupingConceptId="3ce1c792-26fe-102b-80cb-0017a47871b2">
+						<obs conceptId="3ce1c90e-26fe-102b-80cb-0017a47871b2"
+							 labelText="Name" />
+						<obs conceptId="3ce1ca8a-26fe-102b-80cb-0017a47871b2"
+							 labelText="Result" /></obsgroup>
+					</td>
+					<td>Outpatient<obs conceptId="a7aa7d20-3520-4d8a-9324-f7b8f6a3b109" allowFutureDates="true"/><br />
+						Inpatient <obs conceptId="$@Chemotherapy_inpatient_ward_visit@" allowFutureDates="true"/>
+
+					</td>
+
+
+				</tr>
+				<tr>
+					<td colspan="3"><b>Visit type: </b>
+					</td>
+					<td colspan="16"><span ><obs
+							conceptId="86a2cf11-1ea5-4b8a-9e4b-08f4cdbe1346"
+							answerConceptId="1989ac72-f2c4-404e-914e-36e83a51af9c"
+							answerLabel="Scheduled (routine) follow-up" />
+			&#160;&#160;&#160;&#160;&#160;&#160; </span><obs
+							conceptId="86a2cf11-1ea5-4b8a-9e4b-08f4cdbe1346"
+							answerConceptId="38a2913c-c261-4ed4-961c-9f02422ba436"
+							answerLabel="Unscheduled visit" /> <span >
+			&#160;&#160;&#160;&#160;&#160;&#160; <obs
+							conceptId="86a2cf11-1ea5-4b8a-9e4b-08f4cdbe1346"
+							answerConceptId="86a2cf11-1ea5-4b8a-9e4b-08f4cdbe1346"
+							answerLabel="Scheduled referred visit" />
+			&#160;&#160;&#160;&#160;&#160;&#160; <obs
+							conceptId="86a2cf11-1ea5-4b8a-9e4b-08f4cdbe1346"
+							answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2"
+							answerLabel="other:" />  <obs
+							conceptId="11d84ecf-bb66-4ed9-9205-bdc5cc126365" /></span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3"><b>Treatment intent: </b>
+					</td>
+					<td colspan="16"><obs conceptId="$@Treatment_Intent@" answerConceptId="$@Curative@" answerLabel="Curative" style="checkbox"/>
+						&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+						<obs conceptId="$@Treatment_Intent@" answerConceptId="$@Palliative_systemic@" answerLabel="Palliative systemic therapy" style="checkbox"/>
+						&#160;&#160;&#160;&#160;&#160;&#160;
+						<obs conceptId="$@Treatment_Intent@" answerConceptId="$@Palliation@" answerLabel="Palliation ONLY" style="checkbox"/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3"><b>Physical exam:</b>
+					</td>
+					<td colspan="16">General:
+						<obs conceptId="$@GENERAL_EXAM_FINDINGS@" answerConceptId="$@NO_DISTRESS@" answerLabel="No distress" style="checkbox"/>
+						<obs conceptId="$@GENERAL_EXAM_FINDINGS@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other" style="checkbox"/>:
+						<obs  conceptId="$@OTHER_GENERAL_EXAM_FINDINGS@"/>
+						Cardiovascular:
+						<obs conceptId="$@CARDIAC_EXAM_FINDINGS@" answerConceptIds="$@NORMAL@,$@ABNORMAL@" answerLabels="Normal,Abnomal" style="radio"/>:
+						<obs conceptId="$@CARDIOVASCULA_SYSTEM_COMMENT@" />
+						<br/>
+						Lungs:
+						<obs conceptId="$@CHEST_EXAM_FINDINGS@" answerConceptIds="$@NORMAL@,$@ABNORMAL@" answerLabels="Normal,Abnomal" style="radio"/>:
+						<obs conceptId="$@CHEST_EXAM_COMMENTS@" />
+
+						<br />
+						Lymph nodes:
+						<obs conceptId="$@LYMPH_NODE_EXAM_FINDINGS@" answerConceptIds="$@NORMAL@,$@ABNORMAL@" answerLabels="Normal,Abnomal" style="radio"/>:
+						<obs conceptId="$@LYMPH_NODE_EXAM_COMMENTS@" />
+						<br />Other:
+						<obs conceptId="$@OTHER_PHYSICAL_EXAMS@" />
+					</td>
+
+				</tr>
+				<tr>
+					<td colspan="3"><b>Cancer progression:</b>
+					</td>
+					<td colspan="16">
+						<table width="100%">
+							<tr >
+								<td class="checkboxGroup"><span id="checkboxRadio"><b>Mass location</b> <i>(if applicable)</i>:<obsgroup
+										groupingConceptId="2e775064-6ece-4546-9375-50480e8e0020">
+									<obs conceptId="e95848e2-f31c-485f-ba8b-8c9424840f92" /> <b>current
+									size:</b> <obs conceptId="f174b027-79cf-4ebf-a103-d34b26eacafd" /> X
+									<obs conceptId="f174b027-79cf-4ebf-a103-d34b26eacafd" /></obsgroup>
+                                <br/>
+                                <b>Mode of assessment:</b>
+						<obs conceptId="9ea0a07f-922d-4e61-82c9-dbc940b30783" answerConceptId="b50f4136-1f74-4288-869e-7bea6620ee25" answerLabel="Clinical ONLY" /> &#160;&#160;&#160;&#160;&#160;&#160;<obs conceptId="9ea0a07f-922d-4e61-82c9-dbc940b30783" answerConceptId="b63afdd3-55c5-4be8-897e-96ccd10deb66" answerLabel="Imaging" />
+						&#160;&#160;&#160;&#160;&#160;&#160; <obs conceptId="9ea0a07f-922d-4e61-82c9-dbc940b30783" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="other:" /> <obs conceptId="2de07f49-4b97-4037-b30a-bce98546d1cc" /></span></td>
+							</tr>
+							<tr>
+								<td class="checkboxGroup"><span id="checkboxRadio"><obs
+										conceptId="05841055-295e-4313-ad3b-64b13be4118e"
+										answerConceptId="e377b4da-5fdc-40c1-ac2e-60071fac5e5f"
+										answerLabel="Progressing" /> &#160;&#160;&#160;&#160;&#160;&#160; <obs
+										conceptId="05841055-295e-4313-ad3b-64b13be4118e"
+										answerConceptId="5f9c4b32-37ff-48ae-86cb-685d6aae6129"
+										answerLabel="Improving" />
+						&#160;&#160;&#160;&#160;&#160;&#160; <obs
+											conceptId="05841055-295e-4313-ad3b-64b13be4118e"
+											answerConceptId="3cd921a0-26fe-102b-80cb-0017a47871b2"
+											answerLabel="Unchanged" />
+						&#160;&#160;&#160;&#160;&#160;&#160; <obs
+											conceptId="05841055-295e-4313-ad3b-64b13be4118e"
+											answerConceptId="e0a96aca-7768-42f9-bacd-eb4dbaf7fc3e"
+											answerLabel="No evidence of disease" />
+						&#160;&#160;&#160;&#160;&#160;&#160; <obs conceptId="05841055-295e-4313-ad3b-64b13be4118e"
+																  answerConceptId="3edd5ca8-ef60-4c09-ad69-5215ec7d8a3a"
+																  answerLabel="Unable to assesss" />
+                                <br/>
+						&#160;&#160;&#160;&#160;&#160;&#160; <obs
+											conceptId="05841055-295e-4313-ad3b-64b13be4118e"
+											answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2"
+											answerLabel="other: " />
+			<obs conceptId="3044bf81-beab-4c8c-a5b9-5af7dc98e4a7" /></span></td>
+							</tr>
+						</table></td>
+				</tr>
+
+				<tr>
+					<td colspan="19">
+						<table width="100%">
+							<tr>
+								<td colspan="3"><span><b>Plan</b></span><br />
+									<obs conceptId="$@PATIENT_PLAN_COMMENTS@" cols="150"/>
+
+									<br/>
+									<span >Complete ‘Exit Program’ form if patient is exiting from oncology program</span>
+									<br /><br /><span> **Complete another ‘DST’ form if there’s change in disease stage or tx intent</span>
+									<br /><br /><b>Clinician:</b><encounterProvider role="Oncology Provider" />
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+			</table>
+
+		</section>
+	</div>
+	<submit /> 
+<encounterVoided/>
+</htmlform>

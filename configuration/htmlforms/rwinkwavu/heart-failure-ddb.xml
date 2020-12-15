@@ -1,0 +1,1411 @@
+<htmlform 
+	htmlformUuid="c07855e3-a62f-4a94-88ae-2825d988409c" 
+	formUuid="c4302c96-94a6-4724-90cf-88cc29409aa5" 
+	formName="Heart Failure DdB" 
+	formDescription="The htmlform version of the Heart Failure Intake form.  There are 2 versions of this:  InfoPath and html." 
+	formVersion="1.5" 
+	formEncounterType="d889bcb3-c99d-4648-a3ea-b373335b9efd" 
+	formPublished="false" 
+	formRetired="false"
+>
+
+<!-- Heart Failure Intake (DdB) 
+     DDB-Cards-RW.V1.5akb.26Apr09
+     Ellen Ball
+     21 October 2010
+  -->
+	<style>
+		.formName { background-color:#e0e0ff; }
+		.section { border: 1px
+		solid #8FABC7; width:99%; padding:2px; text-align:left;
+		margin-bottom:10px; }
+		.sectionHeader { background-color: #8FABC7;
+		color: white; display: block; padding: 2px; font-weight:bold; }
+		table.symptoms th {text-align: right;}
+		.note {color:red;}
+		td
+		{vertical-align:top;}
+		table.labTable td { color:red; }
+		table.labTable
+		td.dateField { text-align:right; }
+		table.identifierTable td
+		{padding-right:10px;}
+		div.paddedTable span {padding-right:20px;}
+	</style>
+
+	<translations defaultLocale="fr">
+		<code name="gender_m">
+			<variant locale="fr" value="Homme" />
+			<variant locale="en" value="Male" />
+		</code>
+		<code name="gender_f">
+			<variant locale="fr" value="Femme" />
+			<variant locale="en" value="Female" />
+		</code>
+		<code name="section1Header">
+			<variant locale="fr" value="Histoire de la maladie" />
+			<variant locale="en" value="History of present illness" />
+		</code>
+
+	</translations>
+
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				<b>
+					IMB ID:
+					<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				</b>
+			</td>
+			<td>
+				Date:
+				<encounterDate />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Nom / Last name:
+				<lookup class="value" expression="patient.personName.familyName" />
+			</td>
+			<td>
+				Prénom/ First name:
+				<lookup class="value" expression="patient.personName.givenName" />
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<img src="/openmrs/images/emr_hands.gif" align="left" height="75"
+					width="56"></img>
+				<h2>
+					Inshuti Mu Buzima
+					<br />
+					PIH Rwanda
+				</h2>
+			</td>
+			<td>
+				<strong>
+					Clinique des Maladies Chroniques/ Chronic Disease Clinic
+					Données de Bases</strong>
+				<br />
+				L’insuffisance Cardiaque ou Etat Œdémateux (Insuffisance Rénale ou
+				Hépatique)
+				<br />
+				Intake Form -- Heart Failure or Edematous State (Renal or Liver
+				Failure)
+				<br />
+				<br />
+				DDB-Cards-RW.V1.5akb.26Apr09.doc
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				Clinique ou Hôpital/ Clinic or Hospital:
+				<encounterLocation />
+			</td>
+		</tr>
+	</table>
+
+	<section headerLabel="1. Histoire de la maladie actuelle">
+		<table border="1" width="100%">
+			<tr>
+				<td>
+					<b>A. Patient référé de:</b>
+					<obs conceptId="3509" answerConceptId="2233" answerLabel="soins  primaires"
+						style="checkbox" />
+					<obs conceptId="3509" answerConceptId="2070" answerLabel="l'hôpital"
+						style="checkbox" />
+					<obs conceptId="3509" answerConceptId="2069" answerLabel="autre clinique"
+						style="checkbox" />
+					<obs conceptId="3509" answerConceptId="5622" answerLabel="autre"
+						style="checkbox" />
+					<obs conceptId="3512" />
+
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>B. Motif de consultation</b>
+					<obs conceptId="2310" size="60" />
+
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td>
+								<b>C. Durée des symptômes</b>
+							</td>
+							<td align="right">
+								<obsgroup groupingConceptId="1292">
+									<obs conceptId="1294" labelText="" />
+									jours
+									<obs conceptId="2161" />
+									mois
+									<obs conceptId="3462" />
+									annees
+								</obsgroup>
+							</td>
+						</tr>
+					</table>
+				</td>
+
+			</tr>
+			<tr>
+				<td>
+					<table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td>
+								<b>D. Déjà été hospitalisé á cause de même symptômes?</b>
+							</td>
+							<td align="right">
+								<obs conceptId="3686" style="yes_no" noLabel="Non" yesLabel="Oui" />
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<obs conceptId="2190" labelText="Nombre total d'hospitalisations:" />
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>E. Le patient a-t-il eu</b>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					<obs conceptId="3314" labelText="une dyspnée d'effort?"
+						answerConceptIds="1065,1066" style="radio" answerLabels="oui,non" />
+					<br />
+					<obs conceptId="1293" answerConceptId="3486" labelText="une orthopnée?"
+						style="checkbox" answerLabel="oui" />
+					<obs conceptId="1734" answerLabel="non" labelText="" style="checkbox"
+						answerConceptId="3486" />
+					<br />
+					<obs conceptId="3685"
+						labelText="Si oui, le patient dort-il assis à cause d'orthopnée?"
+						style="yes_no" noLabel="Non" yesLabel="Oui" />
+				</td>
+
+			</tr>
+			<tr>
+				<td>
+					<b>F. Déjà traité par un tradi-practicien pour ces symptomes?</b>
+					<br />
+					<obs conceptId="3315"
+						labelText="Ever treated by a traditional healer for these symptoms?"
+						answerConceptIds="1065,1066" style="radio" answerLabels="oui,non" />
+					<br />
+					<table width="100%" border="0">
+						<tr>
+							<td>
+								<obs conceptId="3687" labelText="Diagnostique:"
+									answerConceptId="83" answerLabel="empoisonnement" style="checkbox" />
+								<obs conceptId="3687" answerConceptId="5622" answerLabel="autre"
+									style="checkbox" />
+								<obs conceptId="3688" />
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>
+								<obs conceptId="3392" labelText="Traitment:"
+									answerConceptId="3318" answerLabel="purgative" style="checkbox" />
+								<obs conceptId="3392" answerConceptId="5622" answerLabel="autre"
+									style="checkbox" />
+								<obs conceptId="3393" />
+							</td>
+							<td>
+								<obs conceptId="3317" labelText="Coût:" />
+								FRW
+							</td>
+						</tr>
+					</table>
+				</td>
+
+			</tr>
+			<tr>
+				<td>
+					<table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td>
+								<b>G. Si femme:</b>
+							</td>
+							<td>Les symptômes ont-ils commencés au tour de l'accouchement?
+							</td>
+							<td align="right">
+								<obs conceptId="3334" labelText="" style="radio"
+									answerConceptIds="1175,1065,1066" answerLabels="N/A,oui,non" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+							</td>
+							<td>Si entre 15 et 45 ans, utilise-t’elle un methode de planning
+								familial?</td>
+							<td align="right">
+								<obs conceptId="3201" labelText="" answerConceptIds="1175,1065,1066"
+									style="radio" answerLabels="N/A,oui,non" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+							</td>
+							<td>
+							</td>
+							<td align="right">
+								<obs conceptId="6195" labelText="Si non, pourquoi:" />
+							</td>
+						</tr>
+
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>H. Le patient a-t'il:</b>
+					<br />
+					<table width="100%" border="0">
+						<tr>
+							<td>a. toux chronique (plus que 3 semaines)
+</td>
+							<td align="right">
+								<obsgroup groupingConceptId="1292">
+									<obs conceptId="1293" answerConceptId="1430" style="checkbox"
+										answerLabel="oui" labelText="" />
+									<obs conceptId="1734" answerConceptId="1430" style="checkbox"
+										answerLabel="non" />
+									<br />
+									<obs conceptId="1293" answerConceptId="5957" style="checkbox"
+										answerLabel="productif" labelText="Si oui" />
+									<obs conceptId="1293" answerConceptId="970" style="checkbox"
+										answerLabel="hémoptysie" />
+								</obsgroup>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<hr />
+							</td>
+						</tr>
+						<tr>
+							<td>b. les sueurs nocturnes qui rendent les vetements trempées
+							</td>
+							<td align="right">
+								<obs conceptId="1293" answerConceptId="6029" answerLabel="oui"
+									labelText="" />
+								<obs conceptId="1734" answerConceptId="6029" answerLabel="non" />
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<hr />
+							</td>
+						</tr>
+						<tr>
+							<td>c. une grande perte du poids ?</td>
+							<td align="right">
+								<obsgroup groupingConceptId="1292">
+									<obs conceptId="1293" answerConceptId="1352" labelText=""
+										style="checkbox" answerLabel="oui" />
+									<obs conceptId="1734" answerConceptId="1352" answerLabel="non"
+										style="checkbox" />
+									<br />
+									<obs conceptId="3684" labelText="Si oui: combien?" />
+									kg ou
+									<obs conceptId="3752" labelText="les vêtements sont plus gros"
+										style="checkbox" />
+								</obsgroup>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td>
+								<b>I. Le patient fume-t-il?</b>
+							</td>
+							<td align="right">
+								<obs conceptId="1551" answerConceptId="1065" answerLabel="oui"
+									style="checkbox" />
+								<obs conceptId="1551" answerConceptId="1066" answerLabel="non"
+									style="checkbox" />
+								<obs conceptId="1551" answerConceptId="1548" answerLabel="dans le passé"
+									style="checkbox" />
+								<br />
+								<obs conceptId="3338" answerConceptId="3335" answerLabel="traditionnelle"
+									labelText="Si oui:" style="checkbox" />
+								<obs conceptId="3338" answerConceptId="3336" answerLabel="moderne"
+									style="checkbox" />
+								<obs conceptId="3338" answerConceptId="3337" answerLabel="pipe"
+									style="checkbox" />
+								<obs conceptId="2240" answerLabel="" />
+								cigarettes ou pipes/jour
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td>
+								<b>J. Le patient prend-t-il de l'alcool?</b>
+							</td>
+							<td align="right">
+								<obs conceptId="1552" answerConceptId="1065" answerLabel="oui"
+									style="checkbox" />
+								<obs conceptId="1552" answerConceptId="1066" answerLabel="non"
+									style="checkbox" />
+								<obs conceptId="1552" answerConceptId="1548" answerLabel="dans le passé"
+									style="checkbox" />
+								<br />
+								<obs conceptId="3342" answerConceptId="3335" answerLabel="traditionelle"
+									labelText="Si oui:" style="checkbox" />
+								<obs conceptId="6135" />
+								litres/jour
+								<obs conceptId="3342" answerConceptId="3336" answerLabel="modern" />
+								<obs conceptId="6136" />
+								bouteilles/jour
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Donnez toute autre histoire utile:
+					<br />
+					<obs conceptId="3221" rows="7" cols="60" />
+				</td>
+			</tr>
+		</table>
+
+
+	</section>
+
+	<section headerLabel="2. Médicaments ambulatoires reçus auparavant">
+		<table border="1" width="100%">
+			<tr>
+				<td>
+					<table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td>
+								<b>Le patient, prends t'il les médicaments cardiaques à temps de
+									DDB?</b>
+							</td>
+							<td align="right">
+								<obs conceptId="6206" answerConceptId="1065" style="checkbox" />
+								oui
+								<obs conceptId="6206" answerConceptId="1066" style="checkbox" />
+								non
+								<br />
+								<obs conceptId="6207" labelText="Jamais pris des médicaments cardiaques"
+									style="checkbox" />
+								<obs conceptId="6204" labelText="La même que le consultation cardiaque"
+									style="checkbox" />
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<br />
+					<b>
+						<i>This section should be entered ONLINE: Record medications in
+							the regimen section of patient dashboard</i>
+					</b>
+					<br />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td>
+								Allergies médicamenteuses</td>
+							<td align="right">
+								<obs conceptId="985" labelText="" style="yes_no" noLabel="Non" yesLabel="Oui" />
+								<obs conceptId="3516" labelText="Si oui, expliquer:" />
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</section>
+	<section headerLabel="3. Antécédents médicaux / Past medical history">
+		<table border="1" width="100%">
+			<tr>
+				<td>
+					<table border="0" width="100%">
+						<tr>
+							<td>
+								A. Le patient a-t'il déjà eu un serotest? </td>
+							<td align="right">
+								<obs conceptId="6140" answerConceptId="1065" answerLabel="oui"
+									style="checkbox" />
+								<obs conceptId="6140" answerConceptId="1066" answerLabel="non"
+									style="checkbox" />
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<ul>
+									Si oui, résultat:
+									<obs conceptId="3753" answerConceptId="703" answerLabel="positif"
+										style="checkbox" />
+									<obs conceptId="3753" answerConceptId="664" answerLabel="négatif"
+										style="checkbox" />
+									<obs conceptId="1837" labelText="Date du dernier test:" />
+									<br />
+									Si positif:
+									<obs conceptId="3791" labelText="Dernier CD4" />
+									<obs conceptId="3461" labelText="Date:" />
+									<br />
+									Inscrit dans le IMB VIH program?
+									<obs conceptId="6137" answerConceptId="1065" answerLabel="oui"
+										style="checkbox" />
+									<obs conceptId="6137" answerConceptId="1066" answerLabel="non"
+										style="checkbox" />
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table border="0" width="100%">
+						<tr>
+							<td>
+								B. Le patient a-t-il déjà été traité pour la tuberculose?
+							</td>
+							<td align="right">
+								<obs conceptId="1424" answerConceptId="1065" style="checkbox" />
+								oui
+								<obs conceptId="1424" answerConceptId="1066" style="checkbox" />
+								non
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<ul>
+						<obs conceptId="1543" labelText="Si oui, combien de fois?" />
+						<obs conceptId="5966" labelText="En quelle(s) anée(s)?" />
+						,
+						<obs conceptId="6626" />
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					C.
+					<obs conceptId="6178" labelText="Autre antécédents:" />
+				</td>
+			</tr>
+		</table>
+	</section>
+	<section headerLabel="4. Antécédents socio-économique">
+		<table border="1" width="100%">
+			<tr>
+				<td>
+					<table border="0" width="100%">
+						<tr>
+							<td>A. Occupation</td>
+							<td>
+								<obs conceptId="1304" answerConceptId="1309" answerLabel="chômeur"
+									style="checkbox" />
+							</td>
+							<td>
+								<obs conceptId="1304" answerConceptId="2446" answerLabel="retraité"
+									style="checkbox" />
+							</td>
+							<td>
+								<obs conceptId="1304" answerConceptId="1306" answerLabel="cultivateur"
+									style="checkbox" />
+							</td>
+							<td>
+								<obs conceptId="1304" answerConceptId="6138" answerLabel="petite enfant"
+									style="checkbox" />
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								<obs conceptId="1304" answerConceptId="3396" answerLabel="professionnel"
+									style="checkbox" />
+							</td>
+							<td>
+								<obs conceptId="1304" answerConceptId="3344" answerLabel="chauffeur"
+									style="checkbox" />
+							</td>
+							<td>
+								<obs conceptId="1304" answerConceptId="1404" answerLabel="ménager"
+									style="checkbox" />
+							</td>
+							<td>
+								<obs conceptId="1304" answerConceptId="1307" answerLabel="à l'école"
+									style="checkbox" />
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td colspan="2">
+								<obs conceptId="1304" answerConceptId="3343"
+									answerLabel="en âge scolaire mais pas à l'école" style="checkbox" />
+							</td>
+							<td>
+								<obs conceptId="1304" answerConceptId="1682" answerLabel="mineur"
+									style="checkbox" />
+							</td>
+							<td>
+								<obs conceptId="1304" answerConceptId="5622" answerLabel="autre"
+									style="checkbox" />
+								<obs conceptId="3754" />
+							</td>
+						</tr>
+					</table>
+
+				</td>
+			</tr>
+			<tr>
+				<td>
+					B.
+					Trop malade pour travailler?
+					<obs conceptId="1304" answerConceptId="1065" answerLabel="oui"
+						style="checkbox" />
+					<obs conceptId="1304" answerConceptId="1066" answerLabel="non"
+						style="checkbox" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table border="0" width="100%">
+						<tr>
+							<td>C. État civil:</td>
+							<td>
+								<obs conceptId="1054" answerConceptId="5555"
+									answerLabel="marié ou vie avec partenaire" style="checkbox" />
+								<br />
+								<obs conceptId="1054" answerConceptId="3347"
+									answerLabel="célibataire ou enfant" style="checkbox" />
+								<br />
+								<obs conceptId="1054" answerConceptId="1059" answerLabel="veuf"
+									style="checkbox" />
+								<obs conceptId="3348" labelText="(partenaire mort de:" />
+								)
+							</td>
+							<td>
+								<obs conceptId="1054" answerConceptId="3346" answerLabel="partenaire en prison"
+									style="checkbox" />
+								<br />
+								<obs conceptId="1054" answerConceptId="1058" answerLabel="divorcé ou séparé"
+									style="checkbox" />
+								<br />
+								<obs conceptId="1054" answerConceptId="6139" answerLabel="orphan"
+									style="checkbox" />
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table border="0" width="100%">
+						<tr>
+							<td>
+								D. Transport:</td>
+							<td>
+								<obs conceptId="975" answerConceptId="976" answerLabel="piéton/foot"
+									style="checkbox" />
+								<obs conceptId="975" answerConceptId="978" answerLabel="bus"
+									style="checkbox" />
+								<obs conceptId="975" answerConceptId="977" answerLabel="vélo/bike"
+									style="checkbox" />
+								<obs conceptId="975" answerConceptId="3291" answerLabel="taxi"
+									style="checkbox" />
+								<obs conceptId="975" answerConceptId="981" answerLabel="autre/other"
+									style="checkbox" />
+								<br />
+								Coût du transport (aller-retour) / Cost of transport
+								(roundtrip):
+								<obs conceptId="2970" />
+								FRW
+								<br />
+								Temps du voyage à l'établissement de santé / Travel time to
+								health center
+								<obs conceptId="3463" />
+								hrs.
+								<obs conceptId="2980" />
+								min.
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					E. État socio-économique / Socio-economic status:
+
+					<table border="0" width="100%">
+						<tr>
+							<td align="right">
+								La maison du patient a:</td>
+							<td>
+								<obs conceptId="1324" />
+								chambres / rooms
+								<obs conceptId="1323" />
+								occupants
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								La famille du patient possède une maison?</td>
+							<td>
+								<obs conceptId="3351" answerConceptId="1065" answerLabel="oui"
+									style="checkbox" />
+								<obs conceptId="3351" answerConceptId="1066" answerLabel="non"
+									style="checkbox" />
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								La toiture est en:</td>
+							<td>
+								<obs conceptId="1319" answerConceptId="1320" answerLabel="tôle / tin"
+									style="checkbox" />
+								<obs conceptId="1319" answerConceptId="1321" answerLabel="pailles / thatch"
+									style="checkbox" />
+								<obs conceptId="1319" answerConceptId="1316" answerLabel="béton / cement"
+									style="checkbox" />
+								<obs conceptId="1319" answerConceptId="1600" answerLabel="sheeting"
+									style="checkbox" />
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								Le plancher est en:</td>
+							<td>
+								<obs conceptId="1315" answerConceptId="1316" answerLabel="béton / cement"
+									style="checkbox" />
+								<obs conceptId="1315" answerConceptId="1317" answerLabel="terre battue / dirt"
+									style="checkbox" />
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								La famille du patient possède une parcelle?</td>
+							<td>
+								<obs conceptId="2949" answerConceptId="1065" answerLabel="oui"
+									style="checkbox" />
+								<obs conceptId="2949" answerConceptId="1066" answerLabel="non"
+									style="checkbox" />
+								Si oui:
+								<obs conceptId="2951" />
+								hectacres
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								La famille du patient possède des vaches ou chèvres?
+							</td>
+							<td>
+								<obs conceptId="1658" />
+								chèvres / goats
+								<br />
+								<obs conceptId="1656" />
+								vaches / cows
+
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								Combien d'enfants a eu le patient, ou si l'enfant, combien des
+								enfants dans la famille?
+								<obs conceptId="2649" />
+								enfants / children
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								Tous les enfants sont vivants?</td>
+							<td>
+								<obs conceptId="3354" answerConceptId="1065" answerLabel="oui"
+									style="checkbox" />
+								<obs conceptId="3354" answerConceptId="1066" answerLabel="non"
+									style="checkbox" />
+								<obs conceptId="3355" labelText="cause de décès / cause of death:" />
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								Tous les enfants d'age scolaire vont-ils à l'école?
+							</td>
+							<td>
+								<obs conceptId="3755" answerConceptId="1065" answerLabel="oui"
+									style="checkbox" />
+								<obs conceptId="3755" answerConceptId="1066" answerLabel="non"
+									style="checkbox" />
+								<obs conceptId="3755" answerConceptId="1175" answerLabel="N/A"
+									style="checkbox" />
+							</td>
+						</tr>
+						<tr>
+							<td align="right">
+								Autres informations sociales / Other social
+								information:</td>
+							<td>
+								<obs conceptId="3357" />
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</section>
+	<section headerLabel="5. Examen Physique">
+		<obs conceptId="6205" labelText="La même que le consultation cardiaque"
+			style="checkbox" />
+		<table border="1" width="100%">
+			<tr>
+				<td colspan="3">
+					<table width="100%">
+						<tr>
+							<td colspan="4">
+								<b>Signes vitaux/ Vital signs:</b>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<obs conceptId="5085" labelText="TA:" />
+								/
+								<obs conceptId="5086" />
+								mmHg
+							</td>
+							<td>
+								<obs conceptId="5087" labelText="Pouls:" />
+								bpm
+							</td>
+							<td>
+								<obs conceptId="5089" labelText="Poids:" />
+								kg
+							</td>
+							<td>
+								<obs conceptId="5090" labelText="Taille:" />
+								cm
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="4">
+								<b>Le patient a-t-il des vertiges étant debout?</b>
+								<obs conceptId="3220" style="radio" answerConceptIds="1065,1066"
+									answerLabels="oui,non" />
+							</td>
+						</tr>
+
+						<tr>
+							<td>Si indiqué:</td>
+							<td>
+								<obs conceptId="5088" labelText="Temp:" />
+								°C
+							</td>
+							<td>
+								<obs conceptId="5242" labelText="FR:" />
+							</td>
+							<td>
+								<obs conceptId="5092" labelText="SaO2" />
+								%
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td align="center">
+					<b>
+						Normaux / Normal</b>
+				</td>
+				<td align="center">
+					<b>Anormaux / Abnormal</b>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					E.G. / General</td>
+				<td>
+					<obs conceptId="1119" answerConceptId="3227" answerLabel="bonne apparence"
+						style="checkbox" />
+				</td>
+				<td>
+					<obs conceptId="1119" answerConceptId="3229" answerLabel="cachectique"
+						style="checkbox" />
+					<obs conceptId="1119" answerConceptId="3230" answerLabel="obèse"
+						style="checkbox" />
+					<obs conceptId="1119" answerConceptId="3231" answerLabel="tachypnéique"
+						style="checkbox" />
+					<br />
+					<obs conceptId="1119" answerConceptId="3232"
+						answerLabel="utilisation des muscles accessoires" style="checkbox" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Tête et cou / HEENT </td>
+				<td>
+					<obs conceptId="1122" answerConceptId="3757"
+						answerLabel="tension jugulaire normaux" style="checkbox" />
+				</td>
+				<td>
+					<obs conceptId="1122" answerConceptId="3756" answerLabel="Tension jugulaire haut"
+						style="checkbox" />
+					<obs conceptId="1122" answerConceptId="133" answerLabel="goitre"
+						style="checkbox" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Poumons / Lungs </td>
+				<td>
+					<obs conceptId="3238" answerConceptId="3236" answerLabel="clairs"
+						style="checkbox" />
+				</td>
+				<td>
+					<obs conceptId="3238" answerConceptId="3239" answerLabel="crépitations"
+						style="checkbox" />
+					<obs conceptId="3792" labelText="(Si oui, lieu" />
+					)
+					<obs conceptId="3238" answerConceptId="5209" answerLabel="wheezing"
+						style="checkbox" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Coeur / Heart </td>
+				<td>
+					<obs conceptId="1124" answerConceptId="3365" answerLabel="CP non-déplacé"
+						style="checkbox" />
+					<br />
+					<obs conceptId="1124" answerConceptId="3790" answerLabel="rythme régulier"
+						style="checkbox" />
+					<br />
+					<obs conceptId="1124" answerConceptId="3241" answerLabel="pas de souffles"
+						style="checkbox" />
+				</td>
+				<td>
+					<obs conceptId="1124" answerConceptId="3242" answerLabel="tachycardie"
+						style="checkbox" />
+					<obs conceptId="1124" answerConceptId="3177" answerLabel="rythme irrégulie"
+						style="checkbox" />
+					<obs conceptId="1124" answerConceptId="5177" answerLabel="CP déplacé"
+						style="checkbox" />
+					<br />
+					<obsgroup groupingConceptId="6177">
+						<obs conceptId="1124" answerConceptId="562" answerLabel="souffle"
+							style="checkbox" />
+						<obs conceptId="3758" labelText="1. localisation" />
+						<br />
+						<pre>
+							<obs conceptId="1124" answerConceptId="6199" answerLabel="systolique"
+								style="checkbox" />
+							<obs conceptId="1124" answerConceptId="5160" answerLabel="diastolique"
+								style="checkbox" />
+						</pre>
+						<br />
+					</obsgroup>
+					<obsgroup groupingConceptId="6177">
+						<obs conceptId="1124" answerConceptId="6197" answerLabel="souffle"
+							style="checkbox" />
+						<obs conceptId="3758" labelText="2. localisation" />
+						<br />
+						<pre>
+							<obs conceptId="1124" answerConceptId="6199" answerLabel="systolique"
+								style="checkbox" />
+							<obs conceptId="1124" answerConceptId="5160" answerLabel="diastolique"
+								style="checkbox" />
+						</pre>
+					</obsgroup>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Abdomen </td>
+				<td>
+					<obs conceptId="1125" answerConceptId="3243" answerLabel="souple"
+						style="checkbox" />
+					<obs conceptId="1125" answerConceptId="3244" answerLabel="pas sensible"
+						style="checkbox" />
+					<br />
+					<obs conceptId="1125" answerConceptId="3246" answerLabel="pas d'hepatomegalie"
+						style="checkbox" />
+					<br />
+					<obs conceptId="1125" answerConceptId="3245" answerLabel="pas de splenomegalie"
+						style="checkbox" />
+					<br />
+					<obs conceptId="1125" answerConceptId="3247" answerLabel="pas d'ascite"
+						style="checkbox" />
+				</td>
+				<td>
+					<obs conceptId="1125" answerConceptId="5009" answerLabel="splénomégalie"
+						style="checkbox" />
+					<obs conceptId="3253" />
+					cm
+					<obs conceptId="1125" answerConceptId="5008" answerLabel="hépatomégalie"
+						style="checkbox" />
+					<obs conceptId="3254" />
+					cm
+					<br />
+					<obs conceptId="1125" answerConceptId="3248" answerLabel="fois pulsatile"
+						style="checkbox" />
+					<br />
+					<obsgroup groupingConceptId="2425">
+						<obs conceptId="1125" answerConceptId="581" answerLabel="ascites:"
+							style="checkbox" />
+						<obs conceptId="3793" answerConceptId="1901" answerLabel="légère"
+							style="checkbox" />
+						<obs conceptId="3793" answerConceptId="1900" answerLabel="modérée"
+							style="checkbox" />
+						<obs conceptId="3793" answerConceptId="3250" answerLabel="abondante"
+							style="checkbox" />
+					</obsgroup>
+					<br />
+					<obsgroup groupingConceptId="2425">
+						<obs conceptId="1125" answerConceptId="5105" answerLabel="sensibilité:"
+							style="checkbox" />
+						<obs conceptId="1125" answerConceptId="5107" answerLabel="HCD"
+							style="checkbox" />
+						<obs conceptId="1125" answerConceptId="3252" answerLabel="HCG"
+							style="checkbox" />
+						<obs conceptId="1125" answerConceptId="3251" answerLabel="FID"
+							style="checkbox" />
+						<obs conceptId="1125" answerConceptId="5104" answerLabel="FIG"
+							style="checkbox" />
+					</obsgroup>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Extrémités / Extremities </td>
+				<td>
+					<obs conceptId="3261" answerConceptId="3255" answerLabel="pas d'OMI"
+						style="checkbox" />
+					<br />
+					<obs conceptId="3261" answerConceptId="3373"
+						answerLabel="pas de douleur ou gonflement articulaire" style="checkbox" />
+				</td>
+				<td>
+					<obs conceptId="3261" answerConceptId="3256" answerLabel="froids"
+						style="checkbox" />
+					<obsgroup groupingConceptId="3795">
+						<obs conceptId="3261" answerConceptId="590"
+							answerLabel="Oedème des membres inferieures" style="checkbox" />
+						<obs conceptId="3261" answerConceptId="3258" answerLabel="1+"
+							style="checkbox" />
+						<obs conceptId="3261" answerConceptId="3259" answerLabel="2+"
+							style="checkbox" />
+						<obs conceptId="3261" answerConceptId="3260" answerLabel="3+"
+							style="checkbox" />
+					</obsgroup>
+
+					<br />
+					<obs conceptId="3261" answerConceptId="80"
+						answerLabel="articulations douloureuses" style="checkbox" />
+					<obs conceptId="3261" answerConceptId="5312" answerLabel="articulations gonflées"
+						style="checkbox" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Neuro </td>
+				<td>
+					<obs conceptId="1129" answerConceptId="1115" answerLabel="pas d'abnormalitiés"
+						style="checkbox" />
+				</td>
+				<td>
+					<obs conceptId="1129" answerConceptId="6005" answerLabel="faiblesse focalisée"
+						style="checkbox" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Autre / Other </td>
+				<td>
+					<obs conceptId="2188" />
+				</td>
+				<td>
+					<obs conceptId="2188" />
+				</td>
+			</tr>
+		</table>
+	</section>
+	<section headerLabel="6. Labos préalables (aujourd'hui y compris)">
+		<obs conceptId="6200" labelText="La même que le consultation cardiaque"
+			style="checkbox" />
+		<table border="1" width="100%">
+			<tr>
+				<td>
+					Date
+				</td>
+				<td>
+					Nom / Résultats
+				</td>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="2214">
+					<td>
+						<obs conceptId="3267" labelText="1." />
+					</td>
+					<td>
+						<obs conceptId="1271" answerConceptIds="678,729,653,654,849,1624"
+							answerLabels="GB,Plaquettes,ALT/SGOT,AST/SGPT,Proteinuria,TSH" />
+						<obs conceptId="2215" labelText="autre:" />
+						<obs conceptId="2216" labelText="Résultats: " size="80" />
+					</td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="2214">
+					<td>
+						<obs conceptId="3267" labelText="2." />
+					</td>
+					<td>
+						<obs conceptId="1271" answerConceptIds="678,729,653,654,849,1624"
+							answerLabels="GB,Plaquettes,ALT/SGOT,AST/SGPT,Proteinuria,TSH" />
+						<obs conceptId="2215" labelText="autre:" />
+						<obs conceptId="2216" labelText="Résultats: " size="80" />
+					</td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="3270">
+					<td>
+						<obs conceptId="3267" labelText="3." />
+					</td>
+					<td>
+						CHEM8+ au point d'intervention
+						<br />
+						<obs conceptId="1132" labelText="Na:" />
+						<obs conceptId="1133" labelText="K:" />
+						<obs conceptId="1134" labelText="Cl:" />
+						<obs conceptId="3056" labelText="iCa:" />
+						<obs conceptId="1135" labelText="CO2:" />
+						<obs conceptId="857" labelText="Urée:" />
+						<obs conceptId="790" labelText="Créat:" />
+						<obs conceptId="887" labelText="Glyc:" />
+						<obs conceptId="21" labelText="Hgb:" />
+					</td>
+				</obsgroup>
+			</tr>
+			<tr>
+				<obsgroup groupingConceptId="6247">
+					<td>
+						<obs conceptId="3267" labelText="4." />
+					</td>
+					<td>
+						INR/PT au point d'intervention
+						<br />
+						<obs conceptId="3796" labelText="INR:" />
+						<obs conceptId="3797" labelText="PT:" />
+					</td>
+				</obsgroup>
+			</tr>
+		</table>
+	</section>
+	<section headerLabel="7. Etudes préalables">
+		<obs conceptId="6201" labelText="La même que le consultation cardiaque"
+			style="checkbox" />
+		<table border="0" width="100%">
+			<tr>
+				<td></td>
+				<td>
+					Date
+				</td>
+				<td>
+					Résultats
+				</td>
+			</tr>
+			<obsgroup groupingConceptId="3400">
+				<tr>
+					<td>
+						<b>Cliché du thorax</b>
+					</td>
+					<td>
+						<obs conceptId="3302" />
+					</td>
+					<td>
+						<table>
+							<tr>
+								<td>
+									<obs conceptId="12" answerConceptId="1115" answerLabel="normale"
+										style="checkbox" />
+									<br />
+									<obs conceptId="12" answerConceptId="5158" answerLabel="cardiomélagie"
+										style="checkbox" />
+								</td>
+								<td>
+									<obs conceptId="3747" answerConceptId="1901" answerLabel="légère/mild"
+										style="checkbox" />
+									<br />
+									<obs conceptId="3747" answerConceptId="1900" answerLabel="moderée"
+										style="checkbox" />
+									<br />
+									<obs conceptId="3747" answerConceptId="1903" answerLabel="sévère"
+										style="checkbox" />
+								</td>
+								<td>
+									<obs conceptId="12" answerConceptId="6049" answerLabel="infiltrats"
+										style="checkbox" />
+									<obs conceptId="3749" labelText="(localisation" />
+									)
+									<br />
+									<obs conceptId="12" answerConceptId="1136" answerLabel="épanchement pleural"
+										style="checkbox" />
+									<obs conceptId="3748" answerConceptId="3398" answerLabel="petit"
+										style="checkbox" />
+									<obs conceptId="3748" answerConceptId="3399" answerLabel="grand"
+										style="checkbox" />
+									<br />
+									<obs conceptId="3750" labelText="(localisation" />
+									)
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</obsgroup>
+			<obsgroup groupingConceptId="3403">
+				<tr>
+					<td>
+						<b>EKG</b>
+					</td>
+					<td>
+						<obs conceptId="3302" />
+					</td>
+					<td>
+						<obs conceptId="3402" answerConceptId="1115" answerLabel="normale"
+							style="checkbox" />
+						<obs conceptId="3402" answerConceptId="3470" answerLabel="HVG"
+							style="checkbox" />
+						<obs conceptId="3402" answerConceptId="3177"
+							answerLabel="fibrillation auriculaire" style="checkbox" />
+						<obs conceptId="3402" answerConceptId="3405" answerLabel="infarction"
+							style="checkbox" />
+						<obs conceptId="3746" labelText="(localisation" />
+						)
+					</td>
+				</tr>
+			</obsgroup>
+
+		</table>
+	</section>
+	<section headerLabel="8. Résultat échocardiographique préliminaire">
+		<obs conceptId="3763" answerConceptId="1118" answerLabel="echo préliminaire pas fiat"
+			style="checkbox" />
+		<br />
+		<table>
+			<tr>
+				<td>
+					<obs conceptId="3763" answerConceptId="3759"
+						answerLabel="Fonction du ventricule gauche normale" style="checkbox" />
+					<obs conceptId="3763" answerConceptId="4007"
+						answerLabel="Fonction du ventricule gauche un peu faible" style="checkbox" />
+					<obs conceptId="3763" answerConceptId="3760"
+						answerLabel="Fonction du ventricule gauche très faible" style="checkbox" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<obs conceptId="3946" labelText="Estimation d'ejection fraction" />
+					%
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<obs conceptId="3763" answerConceptId="3761" answerLabel="Pas de sténose mitrale"
+						style="checkbox" />
+					<obs conceptId="3763" answerConceptId="3175" answerLabel="Sténose mitrale"
+						style="checkbox" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<obs conceptId="3763" answerConceptId="5622" answerLabel="Autres anormalies"
+						style="checkbox" />
+					<obs conceptId="3407" />
+				</td>
+			</tr>
+		</table>
+	</section>
+	<section headerLabel="9. Impression clinique">
+		<obs conceptId="6203" labelText="La même que le consultation cardiaque"
+			style="checkbox" />
+		<br />
+		<table border="1" width="100%">
+			<tr>
+				<td>
+					<b>A. Résumé / Summary</b>
+					<obs conceptId="2880" size="40" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>B. Diagnose</b>
+					<ul>
+						<obs conceptId="3683" answerConceptId="3468"
+							answerLabel="L'Insuffience Cardiaque" style="checkbox" />
+						<br />
+						<b>Type de l'insuffience cardiaque:</b>
+						<ul>
+							<obs conceptId="3765" answerConceptId="5016" answerLabel="Cardiomyopathie"
+								style="checkbox" />
+							<br />
+							<obs conceptId="3765" answerConceptId="221"
+								answerLabel="Maladie rheumatismale des valves" style="checkbox" />
+							<obs conceptId="3765" answerConceptId="3175" answerLabel="Sténose mitrale"
+								style="checkbox" />
+							<br />
+							<obs conceptId="3765" answerConceptId="3071"
+								answerLabel="Maladie hypertensive du coeur" style="checkbox" />
+							<br />
+							<obs conceptId="3765" answerConceptId="5622"
+								answerLabel="Autre type de l'insufficence cardiaque" style="checkbox" />
+						</ul>
+						<b>Sévérité des symptômes</b>
+						(Si c'est entre catégories, cochez deux
+						cases)
+						<ul>
+							<obs conceptId="3139" answerConceptId="3135"
+								answerLabel="NYHA classe I: (Asymptomatique) Pas de limitations d'activités"
+								style="checkbox" />
+							<br />
+							<obs conceptId="3139" answerConceptId="3114" answerLabel="NYHA classe I-II" />
+							<br />
+							<obs conceptId="3139" answerConceptId="3136"
+								answerLabel="NYHA classe II: (Moins symptomatique) Limitation légère d'activités.  Symptômes seulement avec effort moderé comme en montant les collines"
+								style="checkbox" />
+							<br />
+							<obs conceptId="3139" answerConceptId="3999" answerLabel="NYHA classe II-III" />
+							<br />
+							<obs conceptId="3139" answerConceptId="3137"
+								answerLabel="NYHA classe III: (Moderement symptomatique) Limitation marquée d'activités.  Symptômes avec effort légère mais confortable au repos"
+								style="checkbox" />
+							<br />
+							<obs conceptId="3139" answerConceptId="6246" answerLabel="NYHA classe III-IV" />
+							<br />
+							<obs conceptId="3139" answerConceptId="3138"
+								answerLabel="NYHA classe IV: (Severement symptomatique) Symptômes avec toute activité, peut être symptomatique au repos"
+								style="checkbox" />
+						</ul>
+
+						<obs conceptId="3683" answerConceptId="3681"
+							answerLabel="L'Insufficence Rénale / Renal Failure" style="checkbox" />
+						<br />
+						<obs conceptId="3683" answerConceptId="3682"
+							answerLabel="L'Insufficence Hépatique / Liver Failure" style="checkbox" />
+						<br />
+						<obs conceptId="3683" answerConceptId="5622" answerLabel="Autre / Other"
+							style="checkbox" />
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>C. Hémodynamie du patient</b>
+					<obs conceptId="3271" answerConceptId="3272" answerLabel="hypervolémique"
+						style="checkbox" />
+					<obs conceptId="3271" answerConceptId="3273" answerLabel="euvolémique"
+						style="checkbox" />
+					<obs conceptId="3271" answerConceptId="3274" answerLabel="hypovolémique"
+						style="checkbox" />
+				</td>
+			</tr>
+		</table>
+	</section>
+	<section headerLabel="10. Plan Final">
+		<obs conceptId="6202" labelText="La même que le consultation cardiaque"
+			style="checkbox" />
+		<br />
+		<table border="1" width="100%">
+			<tr>
+				<td>
+					<table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td>
+								<b>A. Labo, etudes:</b>
+							</td>
+							<td>
+
+								<obs conceptId="1271" answerConceptId="1477" answerLabel="VS"
+									style="checkbox" />
+								<obs conceptId="1271" answerConceptId="1040" answerLabel="VIH"
+									style="checkbox" />
+								<obs conceptId="1271" answerConceptId="1444" answerLabel="crachat x3"
+									style="checkbox" />
+								<obs conceptId="1271" answerConceptId="12" answerLabel="Cliche du thorax"
+									style="checkbox" />
+								<obs conceptId="1271" answerConceptId="5622" answerLabel="Autre"
+									style="checkbox" />
+								<obs conceptId="2216" />
+								<br />
+								<obs conceptId="1271" answerConceptId="848" answerLabel="Albumine"
+									style="checkbox" />
+								<obs conceptId="1271" answerConceptId="653" answerLabel="SGOT"
+									style="checkbox" />
+								<obs conceptId="1271" answerConceptId="654" answerLabel="SGPT"
+									style="checkbox" />
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>
+						B and C:
+						<i>Medications should be entered ONLINE</i>
+					</b>
+					<br />
+					Record in the regimen section of patient dashboard
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>D. Disposition</b>
+					<obs conceptId="3798" answerConceptId="3799" answerLabel="Admis a l'hôpital"
+						style="checkbox" />
+					<obs conceptId="3798" answerConceptId="6198"
+						answerLabel="Patient déjà  hospitalisé" style="checkbox" />
+					<obs conceptId="3798" answerConceptId="4016" answerLabel="CCC RDV:"
+						style="checkbox" />
+					<obs conceptId="5096" ShowDate="true"
+allowFutureDates="true" />
+				</td>
+			</tr>
+		</table>
+	</section>
+
+	<section>
+		Nom/ Signature:
+		<encounterProvider role="NCD Provider" />
+		<br />
+	</section>
+	<br />
+	<center>
+		<submit />
+	</center>
+	<br />
+</htmlform>

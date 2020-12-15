@@ -1,0 +1,138 @@
+<htmlform 
+	htmlformUuid="52b5681e-8f82-4607-8287-3cf5c7d06e18" 
+	formUuid="08af7816-f8b1-4b57-a4e7-34f417b55d16" 
+	formName="Fiche de Suivie L&#8217;insuffisance Cardiaque - RENDEZ-VOUS" 
+	formDescription="Heart failure flowsheet - Clinic visit section." 
+	formVersion="1.5" 
+	formEncounterType="d889bcb3-c99d-4648-a3ea-b373335b9efd" 
+	formPublished="false" 
+	formRetired="false"
+>
+    <!-- Heart Failure flowsheet:  Clinic visit
+         matches paper form: Flow-HF-RW. V1.5akb.26Apr09.doc
+    -->
+	<style>
+		.formName { background-color:#e0e0ff; }
+		.section { border: 1px
+		solid #8FABC7; width:99%; padding:2px; text-align:left;
+		margin-bottom:10px; }
+		.sectionHeader { background-color: #8FABC7;
+		color: white; display: block; padding: 2px; font-weight:bold; }
+		table.symptoms th {text-align: right;}
+		.note {color:red;}
+		td
+		{vertical-align:top;}
+		table.labTable td { color:red; }
+		table.labTable
+		td.dateField { text-align:right; }
+		table.identifierTable td
+		{padding-right:10px;}
+		div.paddedTable span {padding-right:20px;}
+	</style>
+
+	<table border="2" cellspacing="0" cellpadding="6" width="100%">
+		<tr>
+			<td>
+				<b>
+					IMB ID:
+					<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				</b>
+			</td>
+			<td>
+				Date:
+				<encounterDate />
+			</td>
+			<td>
+				Clinique / Clinic:
+				<encounterLocation />
+			</td>
+			<td>
+				Clinician Nom/ Signature:
+				<encounterProvider role="NCD Provider"/>
+			</td>
+		</tr>
+	</table>
+
+	<section headerLabel="RENDEZ-VOUS / CLINIC VISIT">
+		<table border="1" width="100%" class="rdv">
+			<tr class="strong">
+				<td>Poids/Weight(kg)</td>
+				<td>T/A/ BP</td>
+				<td>Pouls/ Pulse</td>
+				<td>NYHA Class</td>
+				<td>Hémodynamiques/ Hemodynamics</td>
+				<td>Sur contrôle des naissances? / On birth control ?</td>
+				<td>Suivi/ Follow-up</td>
+			</tr>
+			<tr>
+				<td>
+					<!-- weight -->
+					<obs conceptId="5089"/>
+				</td>
+				<td>
+					<!-- bp -->
+					<obs conceptId="5085"/> / <obs conceptId="5086"/>
+				</td>
+				<td>
+					<!-- pulse -->
+					<obs conceptId="5087"/>
+				</td>
+				<td>
+					<!-- NYHA -->
+					<obs conceptId="3139"/>
+				</td>
+				<td>
+					<!-- hemodynamics -->
+					<obs conceptId="3271"/>
+				</td>
+				<td>
+					<!-- birth control -->
+					<obs conceptId="1717" style="yes_no" yesLabel="oui/yes" noLabel="non/no" />
+				</td>
+				<td>
+					<!-- follow up -->
+					RDV: <obs conceptId="5096" allowFutureDates="true"/>
+				</td>
+			</tr>
+			<tr/>
+		</table>
+		<br/>
+		<table border="1" width="100%" class="rdv">
+			<tr class="strong">
+				<td colspan="10">CHEM8+/iSTAT</td>
+			</tr>
+			<tr class="strong">
+				<td>Na</td>
+				<td>K</td>
+				<td>CO2</td>
+				<td>Cr</td>
+				<td>Hgb</td>
+				<td>INR</td>
+				<td width="40%"></td>
+			</tr>
+			<tr>
+				<td><obs conceptId="1132"/></td>
+				<td><obs conceptId="1133"/></td>
+				<td><obs conceptId="1135"/></td>
+				<td><obs conceptId="790"/></td>
+				<td><obs conceptId="21"/></td>
+				<td><obs conceptId="3796"/></td>
+				<td width="40%">  </td>
+			</tr>
+			<tr>
+				<td colspan="10">
+					Commentaires/Comments :<obs conceptId="1620" rows="10" cols="80"/>
+				</td>
+			</tr>
+		</table>
+		<br/>
+	</section>
+
+
+	<br />
+	<center>
+		<submit />
+	</center>
+	<br />
+
+</htmlform>

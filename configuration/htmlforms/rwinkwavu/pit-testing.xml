@@ -1,0 +1,72 @@
+<htmlform 
+	htmlformUuid="fef09032-dab9-4661-886d-ad42024a9756" 
+	formUuid="0c529945-bb56-4c30-9e38-54edf860147e" 
+	formName="PIT TESTING" 
+	formDescription="PIT TESTING" 
+	formVersion="1.0" 
+	formEncounterType="6f75c231-240a-4a7d-a1c4-03a621be1867" 
+	formPublished="true" 
+	formRetired="false"
+>
+    <macros>
+        @PATIENT_IDENTIFIER@=VCT NUMBER
+        @TESTING_CODE@=a28ea8a3-e82f-4ad7-8ba3-2542efffa3c0
+    </macros>
+    <link type="text/css" rel="stylesheet" href="/openmrs/moduleResources/rwandahivflowsheet/hiv_flowsheet_new_row.css" />
+    <section headerLabel="CLIENT TESTING">
+
+        <table cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td>
+                    <b>
+                        $@PATIENT_IDENTIFIER@:
+                    </b>
+                </td>
+                <td>
+                    <b>
+                        <lookup class="value" expression="patientIdentifiers.get(&quot;$@PATIENT_IDENTIFIER@&quot;)" />
+                    </b>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Encounter Date:
+                </td>
+                <td>
+                    <encounterDate default="today" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Location:
+                </td>
+                <td>
+                    <encounterLocation/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Provider:
+                </td>
+
+                <td>
+                    <encounterProvider/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Testing code:
+                </td>
+
+                <td>
+                    <obs conceptId="$@TESTING_CODE@"/><br/>
+                </td>
+            </tr>
+        </table>
+
+    </section>
+    <br />
+    <center><submit /></center>
+    <encounterVoided/>
+    <br />
+</htmlform>

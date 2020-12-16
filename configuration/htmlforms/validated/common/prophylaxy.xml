@@ -1,11 +1,11 @@
-<htmlform 
+<htmlform
 	htmlformUuid="79fa9cd5-0a48-4795-8a27-387296fba716" 
 	formUuid="5f1e6f0b-a4d9-4afc-bc83-67b66560b450" 
 	formName="Prophylaxy" 
 	formDescription="Prophylaxy" 
 	formVersion="1.0" 
 	formEncounterType="afa9251e-5d99-44dd-96d9-c0c8f54614d6" 
-	formPublished="false" 
+	formPublished="${trueIfRwinkwavu}"
 	formRetired="false"
 >
     <!-- Pedi HIV top level form.

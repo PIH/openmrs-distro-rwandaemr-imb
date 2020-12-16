@@ -1,11 +1,11 @@
 <htmlform 
-	htmlformUuid="60b73789-dab3-45f8-bece-35f30eb56f89" 
-	formUuid="02b009e5-f398-4cb4-b822-6c8602410c1d" 
-	formName="PrePex Data Base (Entry)" 
-	formDescription="PrePex Data Base" 
+	htmlformUuid="47e76c6d-0d54-47d6-87e7-110eb0eb9431" 
+	formUuid="74b9fb5f-369e-4e12-b4b2-7d1e33889d11" 
+	formName="Prepex removal Procedure" 
+	formDescription="Prepex removal Procedure" 
 	formVersion="1.0" 
 	formEncounterType="1f3d532e-bab3-4801-a805-82096bc4c11f" 
-	formPublished="true" 
+	formPublished="${trueIfRwinkwavu}"
 	formRetired="false"
 >
     <macros>
@@ -42,7 +42,7 @@
             <tr>
                 <td>
                     <b>
-                        HTC NUMBER:
+                       HTC NUMBER:
                         <lookup class="value" expression="patientIdentifiers.get(&quot;HTC NUMBER&quot;)" />
                     </b>
                 </td>
@@ -67,14 +67,35 @@
         <table class="baseline-aligned">
             <tr>
                 <td>
-                    <obs conceptId="9016c1d7-d5b7-4c77-b6ad-0b3662177de3" style="no_yes" noLabel="non" yesLabel="oui" labelText="Client card data fully validated and entered into database:"/>
+                    <obs conceptId="f67a96dc-f4ad-4f47-90fc-8455584fe414" labelText="Removal date:"/>
+                </td>
+            </tr>
+            <Th>Removal Team</Th>
+            <tr>
+                <td>
+                Operator:<encounterProvider role="Provider"/>
                 </td>
             </tr>
             <tr>
                 <td>
-                    Data manager  Signature:
-                    <encounterProvider role="Provider"/>
+                Assistant:<encounterProvider role="Provider"/>
                 </td>
+            </tr>
+            <tr>
+                <td><obs conceptId="3ce93694-26fe-102b-80cb-0017a47871b2" labelText="DIASTOLIC BLOOD PRESSURE:"/></td>
+                <td><obs conceptId="3ce934fa-26fe-102b-80cb-0017a47871b2" labelText="SYSTOLIC BLOOD PRESSURE:"/></td>
+                <td><obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" labelText="Pulse:"/></td>
+                <td><obs conceptId="3ce939d2-26fe-102b-80cb-0017a47871b2" labelText="Temperature:"/>(C)</td>
+            </tr>
+            <tr>
+                <td>
+                    <obs conceptId="05c1fdbc-dcf1-4a19-adaf-4fbabe56aded" style="no_yes" noLabel="non" yesLabel="oui" labelText="Leaflet Provided:"/>
+                </td>
+            </tr>
+           <tr>
+            <td>
+                <obs conceptId="6dccc986-8418-4d56-b528-85289dd1bc22" style="no_yes" noLabel="non" yesLabel="oui" labelText="Ibuprofen Tablets Provided:"/>
+            </td>
             </tr>
         </table>
     </section>

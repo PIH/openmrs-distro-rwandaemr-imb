@@ -1,4 +1,13 @@
-<htmlform>
+<htmlform 
+	htmlformUuid="bcc3d7a4-173c-4e67-9e68-749af214f29d" 
+	formUuid="0dbac4dc-f3cb-48de-a34b-338fe4f9f12a" 
+	formName="Prepex Placement Procedure Form" 
+	formDescription="PrePex Act Form" 
+	formVersion="1.0" 
+	formEncounterType="1f3d532e-bab3-4801-a805-82096bc4c11f" 
+	formPublished="${trueIfRwinkwavu}"
+	formRetired="false"
+>
     <macros>
         paperFormId = (Fill this in)
         headerColor =#009d8e
@@ -33,7 +42,7 @@
             <tr>
                 <td>
                     <b>
-                       HTC NUMBER:
+                        HTC NUMBER:
                         <lookup class="value" expression="patientIdentifiers.get(&quot;HTC NUMBER&quot;)" />
                     </b>
                 </td>
@@ -44,7 +53,7 @@
 
                 <td>
                     Clinique / Clinic:
-                    <encounterLocation id="location" />
+                    <encounterLocation id="location"/>
                 </td>
                 <td>
                     Clinician Nom/ Signature:
@@ -53,46 +62,52 @@
             </tr>
         </table>
     </section>
-
-    <section headerLabel="Prepex removal Procedure">
+    <section headerLabel="Prepex Placement Procedure">
         <table class="baseline-aligned">
             <tr>
-                <td>
-                    <obs conceptId="f67a96dc-f4ad-4f47-90fc-8455584fe414" labelText="Removal date:"/>
+                <td>Placement Date</td>
+                <td><obs conceptId="3d45b3e2-f498-4d63-9988-abe04bc3df9e"/>
                 </td>
             </tr>
-            <Th>Removal Team</Th>
+            
+            <th>Placement Team</th>
             <tr>
-                <td>
-                Operator:<encounterProvider role="Provider"/>
-                </td>
+                <td>Operator </td>
+                <td><encounterProvider/></td>
             </tr>
             <tr>
-                <td>
-                Assistant:<encounterProvider role="Provider"/>
-                </td>
+                <td>Assistant </td>
+                <td><encounterProvider/></td>
             </tr>
             <tr>
-                <td><obs conceptId="3ce93694-26fe-102b-80cb-0017a47871b2" labelText="DIASTOLIC BLOOD PRESSURE:"/></td>
-                <td><obs conceptId="3ce934fa-26fe-102b-80cb-0017a47871b2" labelText="SYSTOLIC BLOOD PRESSURE:"/></td>
-                <td><obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" labelText="Pulse:"/></td>
-                <td><obs conceptId="3ce939d2-26fe-102b-80cb-0017a47871b2" labelText="Temperature:"/>(C)</td>
+                <td>PrePex Size</td>
+                <td><obs conceptId="dd025f76-cad8-470e-a71a-1ff0a9b21302"/></td>
             </tr>
             <tr>
-                <td>
-                    <obs conceptId="05c1fdbc-dcf1-4a19-adaf-4fbabe56aded" style="no_yes" noLabel="non" yesLabel="oui" labelText="Leaflet Provided:"/>
-                </td>
+                <td>Prepex Lot</td>
+                <td><obs conceptId="41405d5b-eb28-4258-8db2-ca63ec3e0cef"/></td>
             </tr>
-           <tr>
-            <td>
-                <obs conceptId="6dccc986-8418-4d56-b528-85289dd1bc22" style="no_yes" noLabel="non" yesLabel="oui" labelText="Ibuprofen Tablets Provided:"/>
-            </td>
+            <tr>
+                <td>Start Time:</td>
+                <td><obs conceptId="6314f906-9694-4885-b3fb-a99f847f4dc5" required ="true"/></td>
+                <td>End Time:</td>
+                <td><obs conceptId="1bcaa8f2-e0ff-4a6b-976d-dd1ee78070e1" required ="true"/></td>
+            </tr>
+            <tr>
+                <td>Derma cream Used</td>
+                <td><obs conceptId="2db5524d-9af6-46c7-9336-e6f31c41b968"/></td>
+                <td>Other Derma cream Used</td>
+                <td><obs conceptId="5289471a-e3c4-413f-bef3-ac9c8a002d28"/></td>
+            </tr>
+            <tr>
+                <td>Disinfectant Used</td>
+                <td><obs conceptId="31382142-95ef-4e68-8ba1-842f97489c6f"/></td>
             </tr>
         </table>
     </section>
 
     <left>
-        <submit />
+            <submit />
     </left>
 </includeIf>
     <includeIf velocityTest="$patient.gender == 'F' ">

@@ -1,11 +1,11 @@
 <htmlform 
-	htmlformUuid="60b73789-dab3-45f8-bece-35f30eb56f89" 
-	formUuid="02b009e5-f398-4cb4-b822-6c8602410c1d" 
-	formName="PrePex Data Base (Entry)" 
-	formDescription="PrePex Data Base" 
+	htmlformUuid="29cc8f97-9527-4473-b692-45afb700a7d2" 
+	formUuid="3e466f6c-85b1-4333-8a5d-2cb68e933e4b" 
+	formName="PrePex Unscheduled visit" 
+	formDescription="PrePex Unscheduled visit" 
 	formVersion="1.0" 
 	formEncounterType="1f3d532e-bab3-4801-a805-82096bc4c11f" 
-	formPublished="false" 
+	formPublished="${trueIfRwinkwavu}"
 	formRetired="false"
 >
     <macros>
@@ -37,13 +37,15 @@
 		}
 	</style>
 <includeIf velocityTest="$patient.gender == 'M' ">
+
     <section headerLabel=" INFORMATION DEMOGRAPHIQUE" >
         <table border="2" cellspacing="0" cellpadding="6" width="100%">
             <tr>
                 <td>
                     <b>
-                        HTC NUMBER:
+                        HTC NUMBER: 
                         <lookup class="value" expression="patientIdentifiers.get(&quot;HTC NUMBER&quot;)" />
+
                     </b>
                 </td>
                 <td>
@@ -66,15 +68,18 @@
     <section headerLabel="Prepex removal Procedure">
         <table class="baseline-aligned">
             <tr>
-                <td>
-                    <obs conceptId="9016c1d7-d5b7-4c77-b6ad-0b3662177de3" style="no_yes" noLabel="non" yesLabel="oui" labelText="Client card data fully validated and entered into database:"/>
-                </td>
+            <td>
+                Date:
+                <encounterDate />
+            </td>
             </tr>
             <tr>
                 <td>
-                    Data manager  Signature:
-                    <encounterProvider role="Provider"/>
+                    <obs conceptId="432d65ba-63b5-42e8-a2ee-500ad7bdc59c" labelText="Problem description:"/>
                 </td>
+            </tr>
+            <tr>
+                <td><obs conceptId="3cd7c6fc-26fe-102b-80cb-0017a47871b2" labelText="Treatment:"/></td>
             </tr>
         </table>
     </section>

@@ -1,4 +1,13 @@
-<htmlform>
+<htmlform 
+	htmlformUuid="1f1150c4-2059-44ca-bba6-b051313fef87" 
+	formUuid="13694a74-d995-4088-8e67-f6d5248541a8" 
+	formName="Prepex Post Placement discharge session" 
+	formDescription="Post Prepex Placement discharge session" 
+	formVersion="1.0" 
+	formEncounterType="1f3d532e-bab3-4801-a805-82096bc4c11f" 
+	formPublished="${trueIfRwinkwavu}"
+	formRetired="false"
+>
     <macros>
         paperFormId = (Fill this in)
         headerColor =#009d8e
@@ -28,15 +37,13 @@
 		}
 	</style>
 <includeIf velocityTest="$patient.gender == 'M' ">
-
     <section headerLabel=" INFORMATION DEMOGRAPHIQUE" >
         <table border="2" cellspacing="0" cellpadding="6" width="100%">
             <tr>
                 <td>
                     <b>
-                        HTC NUMBER: 
+                       HTC NUMBER:
                         <lookup class="value" expression="patientIdentifiers.get(&quot;HTC NUMBER&quot;)" />
-
                     </b>
                 </td>
                 <td>
@@ -55,23 +62,34 @@
             </tr>
         </table>
     </section>
-
-    <section headerLabel="Prepex removal Procedure">
+    <section headerLabel="Post Prepex Placement discharge session">
         <table class="baseline-aligned">
             <tr>
+                <td><obs conceptId="5e8eb0d4-f075-41d1-895b-1ab519a63d60" style="no_yes" noLabel="non" yesLabel="oui" labelText="Discharge session performed:"/></td>
+
+            </tr>
+            <tr>
+                <td><obs conceptId="3ce93694-26fe-102b-80cb-0017a47871b2" labelText="DIASTOLIC BLOOD PRESSURE:"/></td>
+                <td><obs conceptId="3ce934fa-26fe-102b-80cb-0017a47871b2" labelText="SYSTOLIC BLOOD PRESSURE:"/></td>
+                <td><obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" labelText="Pulse:"/></td>
+            </tr>
+            <tr>
+                <td><obs conceptId="05c1fdbc-dcf1-4a19-adaf-4fbabe56aded" style="no_yes" noLabel="non" yesLabel="oui" labelText="Leaflet Provided:"/></td>
+            </tr>
+            <tr>
+                <td><obs conceptId="6dccc986-8418-4d56-b528-85289dd1bc22" style="no_yes" noLabel="non" yesLabel="oui" labelText="Ibuprofen Tablets provided:"/></td>
+            </tr>
+            <tr>
             <td>
-                Date:
-                <encounterDate />
+                Counselor Signature:<encounterProvider role="Provider"/>
             </td>
             </tr>
             <tr>
-                <td>
-                    <obs conceptId="432d65ba-63b5-42e8-a2ee-500ad7bdc59c" labelText="Problem description:"/>
-                </td>
-            </tr>
-            <tr>
-                <td><obs conceptId="3cd7c6fc-26fe-102b-80cb-0017a47871b2" labelText="Treatment:"/></td>
-            </tr>
+            <td>
+                Date: <encounterDate />
+            </td>
+            </tr>          
+            
         </table>
     </section>
 

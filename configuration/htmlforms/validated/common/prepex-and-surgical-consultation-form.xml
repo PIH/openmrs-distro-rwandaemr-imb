@@ -5,7 +5,7 @@
 	formDescription="PrePex Form" 
 	formVersion="1.0" 
 	formEncounterType="1f3d532e-bab3-4801-a805-82096bc4c11f" 
-	formPublished="true" 
+	formPublished="${trueIfRwinkwavu}"
 	formRetired="false"
 >
     <macros>

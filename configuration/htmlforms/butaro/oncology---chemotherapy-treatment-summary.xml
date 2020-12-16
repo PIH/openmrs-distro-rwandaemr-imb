@@ -5,7 +5,7 @@
 	formDescription="Chemotherapy Treatment Summary" 
 	formVersion="1.0" 
 	formEncounterType="0b3925f9-0336-47a6-931e-5c356e9cc82f" 
-	formPublished="true" 
+	formPublished="${trueIfButaro}" 
 	formRetired="false"
 > <!-- Chemotherapy Treatment Form
          Written by gneza

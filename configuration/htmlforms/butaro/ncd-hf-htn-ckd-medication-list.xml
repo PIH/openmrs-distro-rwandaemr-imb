@@ -5,7 +5,7 @@
 	formDescription="This is a medication list that was created for CKD flowsheet" 
 	formVersion="1.0" 
 	formEncounterType="4a9ae9dd-52c1-4841-828a-60cb03cc4afa" 
-	formPublished="false" 
+	formPublished="${trueIfRwinkwavu}" 
 	formRetired="false"
 >
     <!-- Diabetes flowsheet:  Insulin list

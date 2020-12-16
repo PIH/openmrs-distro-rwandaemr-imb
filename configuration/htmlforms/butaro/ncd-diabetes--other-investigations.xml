@@ -5,7 +5,7 @@
 	formDescription="Other investiation for diabetes" 
 	formVersion="0.1" 
 	formEncounterType="d8327a41-a0cc-49c5-af0e-63f0ba960330" 
-	formPublished="false" 
+	formPublished="${trueIfRwinkwavu}" 
 	formRetired="false"
 >
     <!-- Heart Failure flowsheet:  Other Investigation

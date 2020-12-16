@@ -5,7 +5,7 @@
 	formDescription="The other investigations for Asthma patient" 
 	formVersion="0.1" 
 	formEncounterType="820004cd-5f2b-40a9-bf26-bf6f5a945790" 
-	formPublished="false" 
+	formPublished="${trueIfRwinkwavu}" 
 	formRetired="false"
 >
     <!-- Heart Failure flowsheet:  Other Investigation

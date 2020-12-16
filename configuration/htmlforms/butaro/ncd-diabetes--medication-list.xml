@@ -5,7 +5,7 @@
 	formDescription="Medication List for Diabetes" 
 	formVersion="0.1" 
 	formEncounterType="d8327a41-a0cc-49c5-af0e-63f0ba960330" 
-	formPublished="false" 
+	formPublished="${trueIfRwinkwavu}" 
 	formRetired="false"
 >
     <!-- Diabetes flowsheet:  Insulin list

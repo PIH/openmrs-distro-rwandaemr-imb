@@ -1,11 +1,11 @@
 <htmlform 
-	htmlformUuid="21981885-dd23-4d59-a65d-c1531a342e6b" 
+	htmlformUuid="2134a6ec-c3c1-434b-aa8a-64f1d1693e01" 
 	formUuid="ce1aa1c1-f284-45f9-b62c-b18c26bc2ef0" 
 	formName="NCD Diabetes: Medication List" 
 	formDescription="Medication List for Diabetes" 
 	formVersion="0.1" 
 	formEncounterType="d8327a41-a0cc-49c5-af0e-63f0ba960330" 
-	formPublished="true" 
+	formPublished="${trueIfRwinkwavu}" 
 	formRetired="false"
 >
     <!-- Diabetes flowsheet:  Insulin list

@@ -1,6 +1,6 @@
 <htmlform 
-	htmlformUuid="b95ecff1-392f-4ab0-ace9-e427a32cba45" 
-	formUuid="d82e68fe-37ba-40a6-9bb0-ada5fcba66d8" 
+	htmlformUuid="1a6bca5a-5c3d-4ab4-aca6-d25eed37b6e6" 
+	formUuid="2796fb09-afd5-4104-a02b-5378279591bf" 
 	formName="Adult HIV Intake form" 
 	formDescription="top level Adult intake form" 
 	formVersion="0.1" 
@@ -49,7 +49,7 @@
 					<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
 				</b>
 			</td>
-<td><encounterDate default="today"  /></td>
+<td><encounterDate default="today" /></td>
 		</tr>
 
     	<tr>

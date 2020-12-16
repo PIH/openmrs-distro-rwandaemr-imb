@@ -1,11 +1,11 @@
 <htmlform 
-	htmlformUuid="0995b5ea-2c31-4080-a57a-fd8dd4dcf76a" 
-	formUuid="bfbad5cf-c580-4c00-828d-186a813e0cba" 
+	htmlformUuid="a2262057-65a3-4da3-abfa-f71b05b5cbb9" 
+	formUuid="dbd15612-cb86-49c1-ad7f-8573002ce0d1" 
 	formName="Oncology - Chemotherapy Treatment Summary" 
 	formDescription="Chemotherapy Treatment Summary" 
 	formVersion="1.0" 
 	formEncounterType="0b3925f9-0336-47a6-931e-5c356e9cc82f" 
-	formPublished="false" 
+	formPublished="${trueIfButaro}" 
 	formRetired="false"
 > <!-- Chemotherapy Treatment Form
          Written by gneza

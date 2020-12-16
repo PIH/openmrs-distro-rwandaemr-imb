@@ -5,7 +5,7 @@
 	formDescription="Pedi HIV flowsheet New OI" 
 	formVersion="1.0" 
 	formEncounterType="5e8fecc0-0cae-43a2-896d-9f8477e16392" 
-	formPublished="false" 
+	formPublished="${trueIfRwinkwavu}" 
 	formRetired="false"
 >
 

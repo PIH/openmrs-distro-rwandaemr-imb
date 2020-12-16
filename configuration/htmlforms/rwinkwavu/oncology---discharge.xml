@@ -1,11 +1,11 @@
 <htmlform 
-	htmlformUuid="bafc630b-39b0-4202-8d8c-b3ab7526326a" 
-	formUuid="7503391a-5945-41a8-9538-082decb80ebf" 
+	htmlformUuid="7025bfde-76ce-47df-9487-50adf928ee84" 
+	formUuid="c9c10924-2e65-4470-b6a7-a0c776c8dfbc" 
 	formName="Oncology - Discharge" 
 	formDescription="Oncology Discharge" 
 	formVersion="0.1" 
 	formEncounterType="0b3925f9-0336-47a6-931e-5c356e9cc82f" 
-	formPublished="false" 
+	formPublished="${trueIfButaro}" 
 	formRetired="false"
 > <!--
 	   Oncology Discharge Form

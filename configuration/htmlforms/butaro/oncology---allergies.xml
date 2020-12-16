@@ -5,7 +5,7 @@
 	formDescription="Oncology Allergies" 
 	formVersion="0.1" 
 	formEncounterType="b1c2d207-7221-4c23-b580-6c5de5385847" 
-	formPublished="false" 
+	formPublished="${trueIfRwinkwavu}" 
 	formRetired="false"
 > <!--
 	   Oncology - Allergies

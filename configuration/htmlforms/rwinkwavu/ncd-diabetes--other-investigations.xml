@@ -1,11 +1,11 @@
 <htmlform 
-	htmlformUuid="df12224f-f09f-4b44-83a6-15000e1965c8" 
+	htmlformUuid="9683e15b-4101-4e7b-a954-6a5baa962893" 
 	formUuid="eb0ee4ea-0a3c-431d-a461-8b5cac492f9a" 
 	formName="NCD Diabetes: Other Investigations" 
 	formDescription="Other investiation for diabetes" 
 	formVersion="0.1" 
 	formEncounterType="d8327a41-a0cc-49c5-af0e-63f0ba960330" 
-	formPublished="true" 
+	formPublished="${trueIfRwinkwavu}" 
 	formRetired="false"
 >
     <!-- Heart Failure flowsheet:  Other Investigation

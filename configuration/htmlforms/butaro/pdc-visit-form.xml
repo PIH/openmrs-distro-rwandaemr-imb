@@ -5,7 +5,7 @@
 	formDescription="Pediatric Development Visit form" 
 	formVersion="0.1" 
 	formEncounterType="71826dd4-330d-4548-9fd8-6703682fbd3a" 
-	formPublished="false" 
+	formPublished="${trueIfRwinkwavu}" 
 	formRetired="false"
 > <!--
 	   PDC Visit Form

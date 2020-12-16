@@ -5,7 +5,7 @@
 	formDescription="HIV Transfer In Form - Diagnostique du VIH" 
 	formVersion="1.0" 
 	formEncounterType="504ca1b7-ae18-434a-89d9-cf80f1ad3407" 
-	formPublished="true" 
+	formPublished="${trueIfRwinkwavu}"
 	formRetired="false"
 >
 

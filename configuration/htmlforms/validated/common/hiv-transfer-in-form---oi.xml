@@ -1,4 +1,13 @@
-<htmlform>
+<htmlform 
+	htmlformUuid="0fad0062-4477-4bba-8578-b2acbe040527" 
+	formUuid="d802e26e-593a-4496-a8b4-1f8368357b5c" 
+	formName="HIV Transfer In Form - OI" 
+	formDescription="Adult Transfer Flowsheet OI" 
+	formVersion="1.0" 
+	formEncounterType="504ca1b7-ae18-434a-89d9-cf80f1ad3407" 
+	formPublished="${trueIfRwinkwavu}"
+	formRetired="false"
+>
 
     <macros>
 		@PATIENT_IDENTIFIER@=IMB ID
@@ -82,4 +91,4 @@ $j(document).ready(function() {
 
 </script>
 
-</htmlform>		
+</htmlform>

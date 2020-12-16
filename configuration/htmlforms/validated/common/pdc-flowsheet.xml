@@ -93,13 +93,13 @@
         </div>
         <div>
             <section headerLabel="3. Visit Form">
-                <htmlformflowsheet formId="98906e08-00ac-41de-8a2b-a318694c33dc" windowHeight="450" />
+                <htmlformflowsheet formId="98906e08-00ac-41de-8a2b-a318694c33dc" windowHeight="450" conceptsToShow="5096"/>
             </section>
         </div>
 
            <div>
             <section headerLabel="4. PDC Standard Visit Form">
-                <htmlformflowsheet formId="872c4766-74ac-42a1-a385-060bb29b18aa" />
+                <htmlformflowsheet formId="872c4766-74ac-42a1-a385-060bb29b18aa" conceptsToShow="1284" />
             </section>
         </div>
         <div>

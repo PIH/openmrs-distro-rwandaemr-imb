@@ -1,18 +1,54 @@
-<htmlform>
+<htmlform 
+	htmlformUuid="ae20ab2f-323b-4c55-98cf-1fdb0ead1c24" 
+	formUuid="2d54e7bd-9ad6-449a-a15c-3a6dac2a5f5d" 
+	formName="PIT PATIENT ENROLLMENT" 
+	formDescription="PIT PATIENT ENROLLMENT" 
+	formVersion="1.0" 
+	formEncounterType="6f75c231-240a-4a7d-a1c4-03a621be1867" 
+	formPublished="${trueIfRwinkwavu}"
+	formRetired="false"
+>
     <macros>
         @PATIENT_IDENTIFIER@=VCT NUMBER
-        @TESTING_CODE@=a28ea8a3-e82f-4ad7-8ba3-2542efffa3c0
+        <!--@PATIENT_IDENTIFIER@=TRACnet ID-->
         @RESULT_OF_HIV_TEST@=3ce17cec-26fe-102b-80cb-0017a47871b2
-        @DATE_RESULT_OF_HIV_TEST_RECEIVED@=092e2163-e657-4961-b554-96ce2c21d051
-        @NUMBER_OF_CONDOMS_TAKEN@=144dba89-fe55-4253-bc09-9bd1f6832c0a
         @ENROLLED_IN_HIV_PROGRAM@=e3e27876-bb33-410b-9ddd-6bd1d5c5d13d
-        @HTC_RECEPTION_OF_RESULTS@=b111b3b2-ea5d-43f8-a8ee-c1d7928f3f78
-        @REFUSED_TO_JOIN_HIV_PROGRAM@=7ee63b55-82e2-4786-bba5-155e52c22649
         @Transfered@=3a296bb6-5fc8-40ee-84fc-97c13cacf8d8
 
+        @RETURN VISIT DATE@=3ce94df0-26fe-102b-80cb-0017a47871b2
+        @ENROLLMENT DATE@=badacf97-0970-4dde-aee4-5e1c2bb125f7
+
+    <!--declaration of header colors--> 
+        headerColor =#009d8e
+        fontOnHeaderColor = white
     </macros>
+    <style>
+		.section {
+			border: 1px solid $headerColor;
+			padding: 2px;
+			text-align: left;
+			margin-bottom: 1em;
+		}
+		.sectionHeader {
+			background-color: $headerColor;
+			color: $fontOnHeaderColor;
+			display: block;
+			padding: 2px;
+			font-weight: bold;
+		}
+		table.baseline-aligned td {
+			vertical-align: baseline;
+		}
+		th.subheader { 
+		background-color: $headerColor; 
+		color:white 
+		}
+	</style>
+<!--
     <link type="text/css" rel="stylesheet" href="/openmrs/moduleResources/rwandahivflowsheet/hiv_flowsheet_new_row.css" />
-    <section headerLabel="Reception of Results">
+-->
+
+    <section headerLabel="HIV program enrollment">
 
         <table cellspacing="0" cellpadding="6" width="100%">
             <tr>
@@ -29,10 +65,18 @@
             </tr>
             <tr>
                 <td>
-                    Encounter Date:
+                    Return visit Date:
                 </td>
                 <td>
                     <encounterDate default="today" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    enrollment Date:
+                </td>
+                <td>
+                    <encounterDate default="today" disallowMultipleEncountersOnDate="warn"/>
                 </td>
             </tr>
             <tr>
@@ -63,60 +107,17 @@
                     Gender: <patient field="gender" />
                 </td>
                 <td>
-                    Age: <patient field="age" />
+                    Age: <patient field="age"/>
                 </td>
                 <td>
                     Results: <font color="red"><lookup expression="fn.latestObs(&quot;$@RESULT_OF_HIV_TEST@&quot;).getValueCoded().getName()"/></font>
                 </td>
             </tr>
         </table>
+ID: <patient field="identifier" />
+<enrollInProgram programId="cf7c0e30-2700-102b-80cb-0017a47871b2" />
+        </section>
 
-        <table>
-            <tr>
-                <td>
-                    <obs conceptId="$@HTC_RECEPTION_OF_RESULTS@" answerConceptId="$@ENROLLED_IN_HIV_PROGRAM@" answerLabel="Enrolled in HIV program "/>
-                </td>
-                <td>
-                    <obs conceptId="$@HTC_RECEPTION_OF_RESULTS@" answerConceptId="$@Transfered@" answerLabel="Transferred"/>
-                </td>
-                <td>
-                    <obs conceptId="$@HTC_RECEPTION_OF_RESULTS@" answerConceptId="$@REFUSED_TO_JOIN_HIV_PROGRAM@" answerLabel="refused to join HIV program "/>
-                </td>
-
-            </tr>
-        </table>
-
-
-        <table cellspacing="0" cellpadding="6" width="100%">
-            <tr>
-                <td>
-                    Client test code:
-                </td>
-                <td>
-                    <lookup expression="fn.latestObs(&quot;$@TESTING_CODE@&quot;).valueText"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Date HIV test Result received:
-                </td>
-                <td>
-                    <obs conceptId="$@DATE_RESULT_OF_HIV_TEST_RECEIVED@" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Number of condoms taken:
-                </td>
-
-                <td>
-                    <obs conceptId="$@NUMBER_OF_CONDOMS_TAKEN@" />
-                </td>
-            </tr>
-
-        </table>
-
-    </section>
     <br />
     <center><submit /></center>
     <encounterVoided/>

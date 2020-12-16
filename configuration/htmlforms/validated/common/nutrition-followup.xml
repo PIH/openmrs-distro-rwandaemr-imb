@@ -1,4 +1,13 @@
-<htmlform>
+<htmlform 
+	htmlformUuid="4790ab11-6a25-4966-8958-0335f8b67132" 
+	formUuid="eb6e718c-409f-425e-b545-e1bd2bf6ef83" 
+	formName="Nutrition followup" 
+	formDescription="Nutrition followup" 
+	formVersion="1.0" 
+	formEncounterType="62935462-e0cd-4f0d-8de3-d6db8f058183" 
+	formPublished="${trueIfRwinkwavu}"
+	formRetired="false"
+>
     <!-- Pedi HIV top level form.
          HIV-RW.V1.akb.July13.doc
          Created by gneza 2013

@@ -1,4 +1,13 @@
-<htmlform>
+<htmlform 
+	htmlformUuid="b97bfa0a-0e75-4869-b8ce-8adff590a855" 
+	formUuid="0dc05f6f-5945-4c43-ab9e-95e9591e80a7" 
+	formName="Nursing and midwife assessment" 
+	formDescription="Nursing and midwife assessment" 
+	formVersion="1.0" 
+	formEncounterType="daf32375-d293-4e27-a68d-2a58494c96e1" 
+	formPublished="${trueIfRwinkwavu}"
+	formRetired="false"
+>
     <!-- Pedi HIV top level form.
          HIV-RW.V1.akb.Juky13.doc
          Created by gneza 2013

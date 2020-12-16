@@ -5,7 +5,7 @@
 	formDescription="Nutrition Demographics" 
 	formVersion="1.0" 
 	formEncounterType="62935462-e0cd-4f0d-8de3-d6db8f058183" 
-	formPublished="false" 
+	formPublished="${trueIfRwinkwavu}"
 	formRetired="false"
 >
     <!-- Pedi HIV top level form.

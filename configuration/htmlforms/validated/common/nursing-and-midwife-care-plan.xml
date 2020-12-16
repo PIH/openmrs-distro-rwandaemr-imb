@@ -5,7 +5,7 @@
 	formDescription="Midwife care plan" 
 	formVersion="1.0" 
 	formEncounterType="daf32375-d293-4e27-a68d-2a58494c96e1" 
-	formPublished="false" 
+	formPublished="${trueIfRwinkwavu}"
 	formRetired="false"
 >
 

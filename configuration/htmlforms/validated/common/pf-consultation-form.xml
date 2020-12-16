@@ -1,4 +1,13 @@
-<htmlform>
+<htmlform 
+	htmlformUuid="e7c1cf52-a585-45e7-b76e-b4520d6a811b" 
+	formUuid="c9e2b656-7b79-40ca-b15b-8283045fd4a4" 
+	formName="PF Consultation Form" 
+	formDescription="PF Consultation Form" 
+	formVersion="1.0" 
+	formEncounterType="36167d4a-2a8b-4de2-a392-5e365107856e" 
+	formPublished="${trueIfRwinkwavu}"
+	formRetired="false"
+>
     <!-- Pedi HIV top level form.
          HIV-RW.V1.akb.Juky13.doc
          Created by gneza 2013

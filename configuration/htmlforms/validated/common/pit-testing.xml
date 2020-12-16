@@ -1,4 +1,13 @@
-<htmlform>
+<htmlform 
+	htmlformUuid="fef09032-dab9-4661-886d-ad42024a9756" 
+	formUuid="0c529945-bb56-4c30-9e38-54edf860147e" 
+	formName="PIT TESTING" 
+	formDescription="PIT TESTING" 
+	formVersion="1.0" 
+	formEncounterType="6f75c231-240a-4a7d-a1c4-03a621be1867" 
+	formPublished="${trueIfRwinkwavu}"
+	formRetired="false"
+>
     <macros>
         @PATIENT_IDENTIFIER@=VCT NUMBER
         @TESTING_CODE@=a28ea8a3-e82f-4ad7-8ba3-2542efffa3c0

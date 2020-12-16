@@ -5,7 +5,7 @@
 	formDescription="PIT RESULTS" 
 	formVersion="1.0" 
 	formEncounterType="6f75c231-240a-4a7d-a1c4-03a621be1867" 
-	formPublished="true" 
+	formPublished="${trueIfRwinkwavu}"
 	formRetired="false"
 >
     <macros>

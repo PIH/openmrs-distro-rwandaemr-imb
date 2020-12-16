@@ -1,4 +1,14 @@
-<htmlform>
+<htmlform 
+<htmlform
+	htmlformUuid="a2e7a282-bc07-4e0a-ab54-2d0cf433b504"
+	formUuid="2af4fdc8-4468-4541-8a3a-36317525c5ae" 
+	formName="PIT CONSELING AND TESTING" 
+	formDescription="PIT CONSELING AND TESTING" 
+	formVersion="1.0" 
+	formEncounterType="6f75c231-240a-4a7d-a1c4-03a621be1867" 
+	formPublished="${trueIfRwinkwavu}"
+	formRetired="false"
+>
     <macros>
         @PATIENT_IDENTIFIER@=VCT NUMBER
         @PARTNER_COUNSELING_CONSTRUCT@=9d3be98f-9885-420c-84b0-270327fde564

@@ -5,7 +5,7 @@
 	formDescription="PF Individual Followup Form" 
 	formVersion="1.0" 
 	formEncounterType="36167d4a-2a8b-4de2-a392-5e365107856e" 
-	formPublished="true" 
+	formPublished="${trueIfRwinkwavu}"
 	formRetired="false"
 >
     <!-- Pedi HIV top level form.

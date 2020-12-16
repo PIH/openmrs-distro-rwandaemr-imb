@@ -5,7 +5,7 @@
 	formDescription="RHEA ANC2: Physical Examination" 
 	formVersion="1.0" 
 	formEncounterType="a703372d-28b7-4831-9817-ee385c8c47d8" 
-	formPublished="false" 
+	formPublished="${trueIfRwinkwavu}"
 	formRetired="false"
 > 
 <translations defaultLocale="en">

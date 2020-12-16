@@ -1,4 +1,13 @@
-<htmlform>
+<htmlform 
+	htmlformUuid="4c36a0df-b249-4248-a609-56bcbe443af8" 
+	formUuid="7febe8fd-aacd-408b-98ba-97b76a9bbf70" 
+	formName="ANC Referral Form" 
+	formDescription="RHEA ANC4: Referral Form" 
+	formVersion="1.0" 
+	formEncounterType="a703372d-28b7-4831-9817-ee385c8c47d8" 
+	formPublished="${trueIfRwinkwavu}"
+	formRetired="false"
+>
     <translations defaultLocale="en">
         <!--New-->
         <code name="anemia">

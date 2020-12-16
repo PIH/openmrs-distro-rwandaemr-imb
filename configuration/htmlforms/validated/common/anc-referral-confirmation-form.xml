@@ -1,4 +1,13 @@
-<htmlform>
+<htmlform 
+	htmlformUuid="a4728603-325c-49df-bd04-8b96f77dfe91" 
+	formUuid="a048c60f-f141-4c5c-87ab-008a2db1c218" 
+	formName="ANC Referral Confirmation Form" 
+	formDescription="RHEA ANC5: Referral Confirmation Form" 
+	formVersion="1.0" 
+	formEncounterType="a703372d-28b7-4831-9817-ee385c8c47d8" 
+	formPublished="${trueIfRwinkwavu}"
+	formRetired="false"
+>
     <translations defaultLocale="en">
         <code name="Has Patient come in for Referral?">
             <variant locale="en" value="Has Patient come in for Referral?"/>

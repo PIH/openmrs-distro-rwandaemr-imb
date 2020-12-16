@@ -1,4 +1,13 @@
-<htmlform> <!--
+<htmlform 
+	htmlformUuid="fe6c10ed-a56a-4b54-99c0-78c78efbec5e" 
+	formUuid="4e269404-5bd2-4e67-aa09-b0b4b7e585ad" 
+	formName="PDC Conditional Specific (Cleft Lip)" 
+	formDescription="PDC Conditional Specific (Cleft Lip)" 
+	formVersion="0.1" 
+	formEncounterType="71826dd4-330d-4548-9fd8-6703682fbd3a" 
+	formPublished="true" 
+	formRetired="false"
+> <!--
            PDC - Malnutrition
             Pilot_4July_v1.3NT
                 Author:
@@ -206,120 +215,132 @@
             $j("input#IntakeAssessment").click(function(){
                 $j("#theWholeTable").show();
                 $j("#intakeAssessmentDiplay").show();
-                $j("#motorDevelopemt").hide();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").hide();
-                $j("#commentsOnEIPGroup").hide();
-
+                $j("#noActiveConcerns").hide();
+                $j("#painAndDischarge").hide();
+                $j("#IMCI").hide();
+                $j("#referToDH").hide();
+                $j("#surgeryStatus").hide();
+                $j("#surgeryCompleted").hide();
             });
             $j("input#firstmonth").click(function(){
-                $j("#theWholeTable").hide();
+                $j("#theWholeTable").show();
                 $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").hide();
-                $j("#cerebralPalsy").hide();
-                $j("#bonePain").hide();
-                $j("#familyInEIPGroup").hide();
-                $j("#commentsOnEIPGroup").hide();
+                $j("#noActiveConcerns").hide();
+                $j("#painAndDischarge").show();
+                $j("#IMCI").hide();
+                $j("#referToDH").show();
+                $j("#surgeryStatus").hide();
+                $j("#surgeryCompleted").hide();
             });
             $j("input#secondmonth").click(function(){
-                $j("#theWholeTable").hide();
+                $j("#theWholeTable").show();
                 $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").hide();
-                $j("#cerebralPalsy").hide();
-                $j("#bonePain").hide();
-                $j("#familyInEIPGroup").hide();
-                $j("#commentsOnEIPGroup").hide();
+                $j("#noActiveConcerns").hide();
+                $j("#painAndDischarge").show();
+                $j("#IMCI").show();
+                $j("#referToDH").show();
+                $j("#surgeryStatus").show();
+                $j("#surgeryCompleted").hide();
             });
             $j("input#forthmonth").click(function(){
                 $j("#theWholeTable").show();
                 $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").show();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").hide();
-                $j("#commentsOnEIPGroup").hide();
+                $j("#noActiveConcerns").hide();
+                $j("#painAndDischarge").show();
+                $j("#IMCI").show();
+                $j("#referToDH").show();
+                $j("#surgeryStatus").show();
+                $j("#surgeryCompleted").show();
             });
             $j("input#sixthmonth").click(function(){
                 $j("#theWholeTable").show();
                 $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").show();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").hide();
-                $j("#commentsOnEIPGroup").hide();
+                $j("#noActiveConcerns").hide();
+                $j("#painAndDischarge").show();
+                $j("#IMCI").show();
+                $j("#referToDH").show();
+                $j("#surgeryStatus").show();
+                $j("#surgeryCompleted").show();
             });
             $j("input#ninethmonth").click(function(){
                 $j("#theWholeTable").show();
                 $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").show();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").show();
-                $j("#commentsOnEIPGroup").show();
+                $j("#noActiveConcerns").hide();
+                $j("#painAndDischarge").show();
+                $j("#IMCI").show();
+                $j("#referToDH").show();
+                $j("#surgeryStatus").show();
+                $j("#surgeryCompleted").show();
             });
             $j("input#twelvethmonth").click(function(){
                 $j("#theWholeTable").show();
                 $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").show();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").show();
-                $j("#commentsOnEIPGroup").show();
+                $j("#noActiveConcerns").hide();
+                $j("#painAndDischarge").show();
+                $j("#IMCI").show();
+                $j("#referToDH").show();
+                $j("#surgeryStatus").show();
+                $j("#surgeryCompleted").show();
             });
             $j("input#eighteenthmonth").click(function(){
                 $j("#theWholeTable").show();
                 $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").show();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").show();
-                $j("#commentsOnEIPGroup").show();
+                $j("#noActiveConcerns").hide();
+                $j("#painAndDischarge").show();
+                $j("#IMCI").show();
+                $j("#referToDH").show();
+                $j("#surgeryStatus").show();
+                $j("#surgeryCompleted").show();
             });
             $j("input#twentyfourthmonth").click(function(){
                 $j("#theWholeTable").show();
                 $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").show();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").show();
-                $j("#commentsOnEIPGroup").show();
+                $j("#noActiveConcerns").show();
+                $j("#painAndDischarge").show();
+                $j("#IMCI").show();
+                $j("#referToDH").show();
+                $j("#surgeryStatus").show();
+                $j("#surgeryCompleted").show();
             });
             $j("input#thirtiethmonth").click(function(){
                 $j("#theWholeTable").show();
                 $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").show();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").show();
-                $j("#commentsOnEIPGroup").show();
+                $j("#noActiveConcerns").hide();
+                $j("#painAndDischarge").show();
+                $j("#IMCI").show();
+                $j("#referToDH").show();
+                $j("#surgeryStatus").show();
+                $j("#surgeryCompleted").show();
             });
             $j("input#thirtysixthmonth").click(function(){
                 $j("#theWholeTable").show();
                 $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").show();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").show();
-                $j("#commentsOnEIPGroup").show();
+                $j("#noActiveConcerns").hide();
+                $j("#painAndDischarge").show();
+                $j("#IMCI").show();
+                $j("#referToDH").show();
+                $j("#surgeryStatus").show();
+                $j("#surgeryCompleted").show();
             });
             $j("input#fortyeighthfmonth").click(function(){
                 $j("#theWholeTable").show();
                 $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").show();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").hide();
-                $j("#commentsOnEIPGroup").hide();
+                $j("#noActiveConcerns").hide();
+                $j("#painAndDischarge").show();
+                $j("#IMCI").show();
+                $j("#referToDH").show();
+                $j("#surgeryStatus").show();
+                $j("#surgeryCompleted").show();
             });
             $j("input#sixtiethmonth").click(function(){
                 $j("#theWholeTable").show();
                 $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").show();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").hide();
-                $j("#commentsOnEIPGroup").hide();
+                $j("#noActiveConcerns").hide();
+                $j("#painAndDischarge").show();
+                $j("#IMCI").show();
+                $j("#referToDH").show();
+                $j("#surgeryStatus").show();
+                $j("#surgeryCompleted").show();
             });
 
 
@@ -354,7 +375,7 @@
                             Inshuti Mu Buzima <br /> PIH Rwanda
                         </h2>
                     </td>
-                    <td><strong> PDC Condition specific form</strong> <br />
+                    <td><strong> PDC Condition specific form(Cleft Lip/Palate)</strong> <br />
                     </td>
                 </tr>
                 <tr>
@@ -387,87 +408,78 @@
 
                 <tr>
                     <th class="tableHeader">
-                        Global Developmental Delay
+                        Cleft Lip/Palate
                     </th>
                 </tr>
-
                 <tr>
                     <td>
                         <span id="intakeAssessmentDiplay">
-                        <strong>History and Potential Underlying Causes of Delay</strong>
-                        <br/>
-                        - Mother experienced repeated miscarriages
-                        <obs conceptId="$@experienced_repeated_miscarriages@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
-                        <br/>
-                        - Perinatal asphyxia
-                        <obs conceptId="$@Perinatal_Asphyxia@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
-                        <br/>
-                        -Maternal history of syphilis
-                        <obs conceptId="$@Maternal_history_of_syphilis@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes(refer to DH)" style="radio"/>
-                        <br/>
-                        <obs conceptId="$@HIV-exposed@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
-                        : child's HIV status
-                        <obs conceptId="$@HIV_STATUS@" answerConceptIds="$@NEGATIVE@,$@POSITIVE@" answerLabels="HIV-,HIV+" style="radio"/>
-                        <br/>
-                        -Was there any regression where child lost developmental milestones?
-                        <obs conceptId="$@developmental_regression@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes(refer to DH)" style="radio"/>
-                        <br/>
-                        -Hypothyroidism (Large tongue,course hair, or poor growth)? <br/>
-                        <obs conceptId="$@Hypothyroidism@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes(refer to DH for TSH testing)" style="radio"/>
-                        <br/>
+                            - Types of Defect
+                            <obs conceptId="$@Type_of_Defect@" answerConceptIds="$@Cleft_Lip@,$@Cleft_Palate@" answerLabels="Cleft Lip,Cleft Palate" style="radio"/>
+                            <br/><br/>
 
-                        -Anemia (pallor, low hemoglobin, tachypnea/tachycardia with no cough/fever)? <br/>
-                        <obs conceptId="$@ANEMIA@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes(initiate iron treatment)" style="radio"/>
-                        <br/>
-                        -Genetic Syndrome Diagnosis confirmed by karyotype <br/>
-                        <obs conceptId="$@Genetic_Syndrome_Diagnosis_confirmed@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
-                        on
-                        <obs conceptId="$@Date_of_Genetic_Syndrome_Diagnosis@"/> <br/>
+                            - Cleft breastfeeding counselling provided?
+                            <obs conceptId="$@Cleft_breastfeeding_counselling_provided@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                            <br/><br/>
 
-                        Results:
-                        <obs conceptId="$@Genetic_Syndrome_Diagnosis_results@"/> <br/> <br/>
+                            - Assessment of other abnormalities:
+                            <obs conceptId="$@Assessment_of_other_abnormalities@" answerConceptId="$@Difficulty_Breathing@" answerLabel="Difficulty Respiration" style="checkbox"/>
+                            <obs conceptId="$@Assessment_of_other_abnormalities@" answerConceptId="$@small_jaw@" answerLabel="Small jaw" style="checkbox"/>
+                            <obs conceptId="$@Assessment_of_other_abnormalities@" answerConceptId="$@ear_pain_or_ear_discharge@" answerLabel="Ear pain/discharge" style="checkbox"/>
+                            <obs conceptId="$@Assessment_of_other_abnormalities@" answerConceptId="$@CARDIAC_MURMUR@" answerLabel="Heart murmur" style="checkbox"/>
+                            <obs conceptId="$@Assessment_of_other_abnormalities@" answerConceptId="$@Facial_abnormalities@" answerLabel="Facial abnormalities(aside from cleft)" style="checkbox"/>
+                            <br/><br/>
 
-                        <strong>Assessment</strong>
-                        <br/>
+                            - If abnormality referred to DH?
+                            <obs conceptId="$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                            <br/><br/>
+
+                            - Anticipated surgery Age
+                            <obs conceptId="$@Anticipated_surgery_age@" answerConceptIds="$@3_to_6_months_for_cleft_lip@,$@9_to_10_months_for_cleft_palate@" answerLabels="3-6 months for cleft lip,9-10 months for cleft palate" style="radio"/>
+
+                            <br/><br/> <br/> <br/>
                         </span>
-                        <span id="motorDevelopemt">
-                            Any increase or decrease in tone or delays in motor development? <br/>
-                            <obs conceptId="$@increase_or_decrease_in_tone_or_delays_in_motor_development@" answerConceptIds="$@NO@,$@Yes_referred_to_physiotherapy@,$@Yes_already_under_physio_care@" answerLabels="No,Yes refer to physiotherapy,Yes already under physio care" style="radio"/>
+                        <span id="noActiveConcerns">
+                            If no active concerns, and surgical repair complete,child may be discharged from PDC
                             <br/><br/>
                         </span>
-                        <span id="cerebralPalsy">
-                            -Any signs of cerebral palsy (spasticity, increased tone,floppy)?
-                            <br/>
-
-                            <obs conceptId="$@CEREBRAL_PALSY@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
+                        <span id="painAndDischarge">
+                            - Any ear pain or ear discharge? <br/>
+                            <obs conceptId="$@ear_pain_or_ear_discharge@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
                             , then:
-                            <obs conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptIds="$@Referred_to_mental_health@,$@already_under_Mental_health_care@" answerLabels="refer to mental health (MH),already under MH care" style="radio"/>
-                            <br/><br/>
-                        </span>
-                        <span id="bonePain">
-                            -Any localized bone pain (pathologic fracture)?
-
-                            <obs conceptId="$@localized_bone_pain@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
-                            <br/><br/>
-                        </span>
-                        <span id="familyInEIPGroup">
-                            Is child and family part of EIP group?<br/>
-                            <obs conceptId="$@Is_child_and_family_part_of_EIP_group@" answerConceptId="$@NO@" answerLabel="No" style="checkbox"/>
-                            :
-                            <obs conceptId="$@referred_to_EIP_group@" answerConceptIds="$@Referred_today@,$@Not_interested@" answerLabels="Referred today,Not interested" style="radio"/>
                             <br/>
-                            <obs conceptId="$@Is_child_and_family_part_of_EIP_group@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox"/>
-                            <br/><br/>
+                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                <obs conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_IMCI@" answerLabel="Refer to IMCI" style="checkbox" id="IMCI"/>
+                                <br/>
+                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                <obs conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@" answerLabel="Refer to the hospital (chronic,mastoiditis)" style="checkbox" id="referToDH"/>
+                                <br/><br/>
                         </span>
-                        <span id="commentsOnEIPGroup">
-                            comments on EIP Group(satisfaction, questions,and progress at home)?
+
+                        <span id="surgeryStatus">
+                            <strong>- Surgery status </strong> <br/>
+                            <span id="surgeryCompleted">
+                                <obs conceptId="$@SURGERY_STATUS@" answerConceptId="$@COMPLETED@" answerLabel="Completed" style="checkbox"/>
+                                <obs conceptId="$@Date_surgery_completed@"/>
+                                <br/>
+                            </span>
+                            <obs conceptId="$@SURGERY_STATUS@" answerConceptId="$@Planned@" answerLabel="Scheduled for date" style="checkbox"/>
+                            <obs conceptId="$@DATE_OF_SURGERY@"/>
+                            <br/>
+                            <obs conceptId="$@SURGERY_STATUS@" answerConceptId="$@Not_planned@" answerLabel="Not yet scheduled" style="checkbox"/>
+                            <br/><br/>
+
+                            Recommendations/follow-up
+                            <br/>
                             <obs conceptId="$@Clinican_notes@" cols="70"/>
                         </span>
 
 
+
+
+
                     </td>
                 </tr>
-
 
 
 

@@ -103,48 +103,53 @@
             </section>
         </div>
         <div>
-            <section headerLabel="5. Malnutrition form under 6 months">
+            <section headerLabel="5. PDC Progress Note">
+                <htmlformflowsheet formId="f30280de-5efb-4f5e-b409-2da6f1fa7eff" windowHeight="450" />
+            </section>
+        </div>
+        <div>
+            <section headerLabel="6. Malnutrition form under 6 months">
                 <htmlformflowsheet formId="e290d58d-b404-4e86-851b-e0bf79bc929e" windowHeight="450" />
             </section>
         </div>
         <div>
-            <section headerLabel="6. Malnutrition form 6-59 months">
+            <section headerLabel="7. Malnutrition form 6-59 months">
                 <htmlformflowsheet formId="d7ebfec2-0266-4c2f-9c1f-346e5355e47f" />
             </section>
         </div>
         <div>
-            <section headerLabel="7. PDC Condition specific (Trisomy 21)">
+            <section headerLabel="8. PDC Condition specific (Trisomy 21)">
                 <htmlformflowsheet formId="025ce56f-fee8-4e8a-bc62-b552c797d3ad" />
             </section>
         </div>
         <div>
-            <section headerLabel="8. PDC Conditional Specific (Cleft Lip)">
+            <section headerLabel="9. PDC Conditional Specific (Cleft Lip)">
                 <htmlformflowsheet formId="4e269404-5bd2-4e67-aa09-b0b4b7e585ad" windowHeight="450" />
             </section>
         </div>
         <div>
-            <section headerLabel="9. PDC Conditional Specific (Global Developmental Delay)">
+            <section headerLabel="10. PDC Conditional Specific (Global Developmental Delay)">
                 <htmlformflowsheet formId="7356b5df-dc1d-41ff-a70a-b45378dbffc4" windowHeight="450" />
             </section>
         </div>
    <div>
-            <section headerLabel="10. ECD Intervention">
+            <section headerLabel="11. ECD Intervention">
                 <htmlformflowsheet formId="89826b97-c8da-453d-a9bc-b1f529e9726a" windowHeight="450" />
             </section>
         </div>
         <div>
-            <section headerLabel="11. ECD Strengths">
+            <section headerLabel="12. ECD Strengths">
                 <htmlformflowsheet formId="26d44dfc-348a-4e03-b135-32bc9ebffe7b" windowHeight="450" />
             </section>
         </div>
 
 <div>
-            <section headerLabel="12. Referral">
+            <section headerLabel="13. Referral">
                 <htmlformflowsheet formId="c0107214-0064-4fc1-b948-0bd21fcd2c69" windowHeight="450" />
             </section>
         </div>
 <div>
-            <section headerLabel="13. Intake">
+            <section headerLabel="14. Intake">
                 <htmlformflowsheet formId="510a0e66-b526-4dce-aeb6-9857d98f4bf3" windowHeight="450" />
             </section>
         </div>

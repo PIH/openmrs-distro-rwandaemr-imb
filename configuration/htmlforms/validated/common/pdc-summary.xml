@@ -311,48 +311,45 @@
 		@NO_UBUDEHE@=80e9cba8-b507-4989-bdf8-5e6ac2acbe24
 		
 		@OTHER_PROBLEM@=467160ae-9f0b-40d8-9a2d-2ecab1292173
-		
+        @WT_AGE_Z_SCORE@=c9d8c9db-518c-4a00-985d-d2fc8ac1f739
+        @CLINICIAN_NOTE@=6602a73b-b8d3-40bc-bae8-f00ff3b9cceb
+        @FEEDING_ASSESSMENT@=c3322e03-a654-4191-82f8-8da31a8a2e1e
 		
     </macros>
 
 
-        <section>
+    <section>
 
-            <table border="1" cellspacing="0" cellpadding="6" width="100%">
-                <tr>
-                    
-                    <td>Date and Time: <encounterDate id="encounterDate" default="today" />
-                    </td>
-                </tr>
-                
+        <table border="1" cellspacing="0" cellpadding="6" width="100%">
+            <tr>
 
-                
-                <tr>
-                    <td>Clinique / Clinic: <encounterLocation />
-                    </td>
-                    <td>Author:<encounterProvider />
-                    </td>
-                </tr>
-            </table>
-        
-    <obs conceptId="$@WEIGHT@"/>
-    <obs conceptId="$@HEIGHT@"/>
-    <obs conceptId="$@WEIGHT_FOR_HEIGHT_Z_SCORE@"/>
-    <obs conceptId="$@HEIGHT_FOR_AGE_Z_SCORE@"/>
-    <obs conceptId="$@HEAD_CIRCUMFERENCE@"/>
-    <obs conceptId="$@VISIT_CLASSIFICATION@"/>
-    <obs conceptId="$@ANTICONVULSANT@"/>
-    <obs conceptId="$@GMCD_CLASS@"/>
-    <obs conceptId="$@HEARING_CONCERN@"/>
-    <obs conceptId="$@EYE_CONCERNS@"/>
-    <obs conceptId="$@IRON_DOSE@" />
-    <obs conceptId="$@PROBLEM_LIST@"/>
-    <obs conceptId="$@REASON_FOR_REFERRAL_FROM_PDC@" />
-                            
+                <td>Date and Time: <encounterDate id="encounterDate" default="today" />
+                </td>
+            </tr>
+            <tr>
+                <td>Clinique / Clinic: <encounterLocation />
+                </td>
+                <td>Author:<encounterProvider />
+                </td>
+            </tr>
+        </table>
 
-                      
-        </section>
-     
+        <obs conceptId="$@WEIGHT@"/>
+        <obs conceptId="$@HEIGHT@"/>
+        <obs conceptId="$@WEIGHT_FOR_AGE_Z_SCORE@"/>
+        <obs conceptId="$@WEIGHT_FOR_HEIGHT_Z_SCORE@"/>
+        <obs conceptId="$@HEIGHT_FOR_AGE_Z_SCORE@"/>
+        <obs conceptId="$@HEAD_CIRCUMFERENCE@"/>
+        <obs conceptId="$@ANTICONVULSANT@"/>
+        <obs conceptId="$@GMCD_CLASS@"/>
+        <obs conceptId="$@IRON_DOSE@" />
+        <obs conceptId="$@PROBLEM_LIST@"/>
+        <obs conceptId="$@REASON_FOR_REFERRAL_FROM_PDC@" />
 
-    
+        <obs conceptId="$@WT_AGE_Z_SCORE@"/>
+        <obs conceptId="$@CLINICIAN_NOTE@"/>
+        <obs conceptId="$@FEEDING_ASSESSMENT@"/>
+
+    </section>
+
 </htmlform>

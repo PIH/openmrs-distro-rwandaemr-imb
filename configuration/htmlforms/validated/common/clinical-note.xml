@@ -35,13 +35,13 @@
 	</style>
 
 	<section headerLabel="Encounter Details">
-		Date: <encounterDate default="today"/> Location: <encounterLocation/> Provider: <encounterProvider role="Oncology Provider"/>
+		Date: <encounterDate default="today"/> Location: <encounterLocation order="80" /> Provider: <encounterProvider role="Oncology Provider"/>
 	</section>
 
 	<section headerLabel="Note">
 		<table class="baseline-aligned">
 			<tr>
-				<td><obs conceptId="1364" style="textarea" rows="10" cols="140" /></td>
+				<td><obs conceptId="3cd9d956-26fe-102b-80cb-0017a47871b2" style="textarea" rows="10" cols="140" /></td>
 			</tr>
 		</table>
 	</section>

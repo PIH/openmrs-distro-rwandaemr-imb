@@ -4,7 +4,7 @@
 	formName="Adult HIV Flowsheet - New OI" 
 	formVersion="1" 
 	formEncounterType="c1c39e98-2f2d-432b-8cc9-b2f273209c29" 
-	formPublished="false" 
+	formPublished="${trueIfButaro}"
 	formRetired="false"
 >
 

@@ -5,7 +5,7 @@
 	formDescription="Fiche de Suive Postop&#233;ratoire Cardiaque - DEMOGRAPHIQUE" 
 	formVersion="0.1" 
 	formEncounterType="93c83fb3-52c8-462f-a9e7-58c463906ed5" 
-	formPublished="false" 
+	formPublished="${trueIfButaro}"
 	formRetired="false"
 >
       <!-- Post cardiac surgery flowsheet: Demographics

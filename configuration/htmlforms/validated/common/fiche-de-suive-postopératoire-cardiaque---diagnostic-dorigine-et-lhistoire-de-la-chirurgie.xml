@@ -1,4 +1,13 @@
-<htmlform>
+<htmlform 
+	htmlformUuid="8e2af6e1-0542-4fd9-898f-838a60397379" 
+	formUuid="096eafc1-052a-42c1-bad7-5e4ccc3de449" 
+	formName="Fiche de Suive Postop&#233;ratoire Cardiaque - DIAGNOSTIC D&apos;ORIGINE ET L&apos;HISTOIRE DE LA CHIRURGIE" 
+	formDescription="Fiche de Suive Postop&#233;ratoire - DIAGNOSTIC D&apos;ORIGINE ET L&apos;HISTOIRE DE LA CHIRURGIE" 
+	formVersion="0.1" 
+	formEncounterType="93c83fb3-52c8-462f-a9e7-58c463906ed5" 
+	formPublished="${trueIfButaro}"
+	formRetired="false"
+>
     <!-- Post cardiac surgery flowsheet:  Original diagnosis and surgical history
          written by jberchmas 
          -->

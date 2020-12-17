@@ -143,7 +143,7 @@ table {
 <br /><br />
 </section>
 <section headerLabel="OUTPATIENT CLINIC VISITS">
-<htmlformflowsheet formId="d4142144-5fc4-48e5-a3ee-df2410abc094" windowHeight="1000"/>
+<htmlformflowsheet formId="${oncologyOutpatientClinicVisitsForm}" windowHeight="1000"/>
 </section>
 
 <section headerLabel="OUTPATIENT MEDICATIONS">

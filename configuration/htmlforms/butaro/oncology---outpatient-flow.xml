@@ -78,9 +78,11 @@ table {
 <section>
 <table border="0" cellspacing="0" cellpadding="6" width="100%">
 	<tr>
-		<td><b> IMB ID: <lookup class="value"
-					expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> </b>
-		</td>
+		<td><b>
+			IMB ID: 
+			<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> 
+			<lookup class="value" expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" />
+		</b></td>
 		<td><!-- Date: <encounterDate default="today" /> -->
 		</td>
 	</tr>
@@ -127,7 +129,7 @@ table {
 <br /><br />
 </section>
 <section headerLabel="DRUG ALLERGIES">
-<htmlformflowsheet formId="378539c1-012a-447a-8e89-add30937857a" />
+<htmlformflowsheet formId="378539c1-012a-447a-8e89-add30937857a" windowHeight="500"/>
 </section>
 <section headerLabel="NON-MEDICAL LIFE EVENTS SINCE INTAKE">
 <br />
@@ -141,7 +143,7 @@ table {
 <br /><br />
 </section>
 <section headerLabel="OUTPATIENT CLINIC VISITS">
-<htmlformflowsheet formId="0589bf89-efdc-4b71-92fc-951d9c1c7342" />
+<htmlformflowsheet formId="0589bf89-efdc-4b71-92fc-951d9c1c7342" windowHeight="1000"/>
 </section>
 
 <section headerLabel="OUTPATIENT MEDICATIONS">

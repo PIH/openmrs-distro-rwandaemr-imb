@@ -132,8 +132,11 @@ getField('reactionNonCoded3.value')[0].disabled = true;
 </script>
 <table border="1" cellspacing="0" cellpadding="6" width="100%">
 	<tr>
-		<td><b> IMB ID: <lookup class="value"
-					expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> </b></td>
+		<td><b> 
+			IMB ID: 
+			<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> 
+			<lookup class="value" expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" />
+		</b></td>
 		<td>Date: <encounterDate /></td>
 
 		<td>Clinique / Clinic: <encounterLocation order="80" default="Butaro Hospital" /></td>

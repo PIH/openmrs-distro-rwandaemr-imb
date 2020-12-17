@@ -1753,8 +1753,10 @@ if(jQuery){
 		</tr>
 		<tr class="diagnosisPrintArea">
 			<td class="lables">IMB ID</td>
-			<td colspan="2" class="values"><lookup class="value"
-					expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /></td>
+			<td colspan="2" class="values">
+				<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				<lookup class="value" expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" />
+			</td>
 		</tr>
 		<tr class="diagnosisPrintArea">
 			<td class="lables">Name</td>
@@ -2495,9 +2497,11 @@ if(jQuery){
 
 	<table border="1" cellspacing="0" cellpadding="6" width="100%">
 		<tr>
-			<td><b> IMB ID: <lookup class="value"
-						expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> </b>
-			</td>
+			<td><b> 
+				IMB ID: 
+				<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> 
+				<lookup class="value" expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" />
+			</b></td>
 			<td>Date: <encounterDate id="encounterDate" default="today" />
 			</td>
 		</tr>

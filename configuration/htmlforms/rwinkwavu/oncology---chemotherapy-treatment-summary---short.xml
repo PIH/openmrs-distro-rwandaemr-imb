@@ -190,10 +190,13 @@ function Toggle(theDiv) {
 <section>
 <table border="0" cellspacing="0" cellpadding="6" width="100%">
     	<tr>
-<td><b> IMB ID: <lookup class="value"
-						expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
-						expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
-			</td>
+          <td>
+		<b> 
+			IMB ID: 
+			<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> 
+			<lookup class="value" expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" />
+		</b>
+          </td>
 	   <td>
              Nom /Last Name:<lookup class="value" expression="patient.personName.familyName" /></td>
            <td>

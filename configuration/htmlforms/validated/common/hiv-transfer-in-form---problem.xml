@@ -53,10 +53,10 @@
 				<th width="20%">CHRONIQUE DE DIAGNOSTIC DE SOINS /<br/>CHRONIC CARE DIAGNOSIS</th>
 				<td>
 					<obs conceptId="$@CHRONIC_CARE_DIAGNOSIS@" answerConceptId="$@ASTHMA@" answerLabel="Asthme/Asthma"/><br/>
-					<obs conceptId="$@CHRONIC_CARE_DIAGNOSIS@" answerConceptId="$@DIABETES@" answerLabel="Diabete/Diabetes"/><br/>
+					<obs conceptId="$@CHRONIC_CARE_DIAGNOSIS@" answerConceptId="$@DIABETES@" answerLabel="Diabète/Diabetes"/><br/>
 					<obs conceptId="$@CHRONIC_CARE_DIAGNOSIS@" answerConceptId="$@EPILEPSY@" answerLabel="Epilepsie/Epilepsy"/><br/>
 					<obs conceptId="$@CHRONIC_CARE_DIAGNOSIS@" answerConceptId="$@HEART_FAILURE@" answerLabel="Cardiopathie/Heart Failure"/><br/>
-					<obs conceptId="$@CHRONIC_CARE_DIAGNOSIS@" answerConceptId="$@RENAL_FAILURE@" answerLabel="Insuffisance renale/Renal Failure"/><br/>
+					<obs conceptId="$@CHRONIC_CARE_DIAGNOSIS@" answerConceptId="$@RENAL_FAILURE@" answerLabel="Insuffisance rènale/Renal Failure"/><br/>
 					Autre/Other:
 					<obs conceptId="$@CHRONIC_CARE_DIAGNOSIS@" id="chronicCareDiagnosis" /> 
 					<obs conceptId="$@CHRONIC_CARE_DIAGNOSIS_NON_CODED@" id="chronicCareDiagnosisNonCoded" size="40"/>

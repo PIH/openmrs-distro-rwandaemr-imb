@@ -415,7 +415,7 @@ getField('reactionNonCoded3.value')[0].disabled = true;
 <table border="1" cellspacing="0" cellpadding="6" width="100%">
 	<tr>
 		<td>Intake site</td>
-		<td><encounterLocation order="80" default="Butaro Hospital" /></td>
+		<td><encounterLocation order="${oncologyLocation}" default="${oncologyLocation}" /></td>
 	</tr>
 	<tr class="disabled">
 		<td>Intake setting</td>

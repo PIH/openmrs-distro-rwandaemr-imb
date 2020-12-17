@@ -289,7 +289,7 @@ table {
 				Demographic </strong> <br /> Demographics_ONCOLOGY_2013Mar21_JJWv2.doc</td>
 	</tr>
 	<tr>
-		<td>Clinic: <encounterLocation order="80" default="Butaro Hospital"/>
+		<td>Clinic: <encounterLocation order="${oncologyLocation}" default="${oncologyLocation}"/>
 		</td>
 		<td></td>
 	</tr>

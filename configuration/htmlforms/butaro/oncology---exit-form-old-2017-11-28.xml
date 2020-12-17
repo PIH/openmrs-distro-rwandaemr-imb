@@ -322,8 +322,7 @@ table {
 				Exit Program Form</strong> <br /></td>
 	</tr>
 	<tr align="left">
-		<td>Clinic: <encounterLocation
-				default="Butaro Hospital" />
+		<td>Clinic: <encounterLocation order="${oncologyLocation}" default="${oncologyLocation}" />
 		</td>
 		<td></td>
 	</tr>

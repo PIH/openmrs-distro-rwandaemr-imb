@@ -203,7 +203,7 @@ function Toggle(theDiv) {
              Prénom/ First Name:<lookup class="value" expression="patient.personName.givenName" /> <lookup class="value" expression="patient.personName.middleName" /></td>
 			</tr>
 
-<tr><td>Clinique / Clinic:<encounterLocation order="43" default="Rwinkwavu Hospital"/></td>
+<tr><td>Clinique / Clinic:<encounterLocation order="${oncologyLocation}" default="${oncologyLocation}"/></td>
        <td>Clinicien / Provider:<encounterProvider role="Oncology Provider" /></td>
        <td>Administration Date:<encounterDate default="today" /></td>
 </tr>

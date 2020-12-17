@@ -87,7 +87,7 @@ border-collapse:collapse;
 			
 			</td>
 			<td>
-				Clinique / Clinic: <encounterLocation order="43" default="Rwinkwavu Hospital"/>
+				Clinique / Clinic: <encounterLocation order="${oncologyLocation}" default="${oncologyLocation}"/>
 			</td>
 			<td>
 			

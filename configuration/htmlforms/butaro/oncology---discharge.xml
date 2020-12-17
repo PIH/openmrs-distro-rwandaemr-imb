@@ -143,8 +143,7 @@ document.getElementById("completed").style.display = "block";
 	</tr>
 
 	<tr>
-		<td><img src="/openmrs/images/emr_hands.gif" align="left"
-			height="75" width="56"></img>
+		<td><img src="/openmrs/images/emr_hands.gif" align="left" height="75" width="56"></img>
 			<h2>
 				Inshuti Mu Buzima <br /> PIH Rwanda
 			</h2></td>
@@ -152,7 +151,7 @@ document.getElementById("completed").style.display = "block";
 				Discharge Form </strong> <br /> Pilot_4July_v1.3NT</td>
 	</tr>
 	<tr>
-		<td>Clinique / Clinic: <encounterLocation order="80" default="Butaro Hospital" /></td>
+		<td>Clinique / Clinic: <encounterLocation order="${oncologyLocation}" default="${oncologyLocation}" /></td>
 		<td><!-- Clinicien/Provider:<encounterProvider
 				role="Oncology Provider" /> --></td>
 	</tr>

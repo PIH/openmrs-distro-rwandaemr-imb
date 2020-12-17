@@ -227,7 +227,7 @@ if(jQuery){
 <table border="1" cellspacing="0" cellpadding="6" width="100%">
 	<tr>
 		<td><br />
-		<b>Admission Site:</b> &#160;<encounterLocation order="43"/> </td>
+		<b>Admission Site:</b> &#160;<encounterLocation order="${oncologyLocation}" default="${oncologyLocation}" /> </td>
 	</tr>
 	<tr>
 		<td><b>Indication for Admission: </b> <br /> &#160;&#160;&#160;<obs

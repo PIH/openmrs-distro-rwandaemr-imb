@@ -139,7 +139,7 @@ getField('reactionNonCoded3.value')[0].disabled = true;
 		</b></td>
 		<td>Date: <encounterDate /></td>
 
-		<td>Clinique / Clinic: <encounterLocation order="80" default="Butaro Hospital" /></td>
+		<td>Clinique / Clinic: <encounterLocation order="${oncologyLocation}" default="${oncologyLocation}" /></td>
 		<td>Nom/ Signature:<encounterProvider role="Oncology Provider" />
 		</td>
 	</tr>

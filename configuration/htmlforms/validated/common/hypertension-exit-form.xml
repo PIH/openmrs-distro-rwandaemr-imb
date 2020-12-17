@@ -1,7 +1,8 @@
 <htmlform 
-	htmlformUuid="c21243a8-da92-4b04-9042-71d485fcecc1" 
-	formUuid="3b5e8867-0991-4b0b-bcb9-d3eb6e464378" 
-	formName="Asthma Exit" 
+	htmlformUuid="ece0db12-a023-4039-b3bd-78ec4e834e56" 
+	formUuid="0346beaa-a1c7-4900-8944-516c05ae4275" 
+	formName="Hypertension Exit Form" 
+	formDescription="Hypertension Exit Form" 
 	formVersion="1.0" 
 	formEncounterType="609cd2f6-6acf-4a08-8557-16de80fb403c" 
 	formPublished="true" 
@@ -10,7 +11,8 @@
 	Author: Todd
 	Prime copy source: Breast DST
 	Start date of programming: 2016 February 02
-	 --> <macros> @YES@=3cd6f600-26fe-102b-80cb-0017a47871b2
+	 --> 
+<macros> @YES@=3cd6f600-26fe-102b-80cb-0017a47871b2
 @NO@=3cd6f86c-26fe-102b-80cb-0017a47871b2
 
 @X-RAY_CHEST@=3ccc6186-26fe-102b-80cb-0017a47871b2
@@ -478,6 +480,7 @@ Other_Non_coded
 @REASON_FOR_EXIT@=3cde5ef4-26fe-102b-80cb-0017a47871b2
 @TOP_NCD_REASON_FOR_EXIT@=bedc579c-cfdc-4a94-9b13-112ce21145f0
 
+@PATIENT_DIED_GROUP@=145bb1bf-2e48-43c6-9444-c8a3d91f0880
 
 
 
@@ -540,7 +543,7 @@ td {
 
 @media print {
 	#container {
-		display: none;
+		display: block;
 	}
 	#printArea {
 		display: block;
@@ -609,8 +612,8 @@ td {
 </style>
 
 		 
-<div id="50">Chronic Respiratory Disease<completeProgram programId="6b825913-ab44-4e49-9ea0-c9e5919f94af"/></div> 
-<script>
+<div id="50">Hypertension<completeProgram programId="a39cb21d-5f5e-4013-9b6b-139453ab93ec" id="32"/></div> 
+ <script>
 	$j(function() {
 		$j('.disdiv').find('input').attr('disabled', 'true');
 	});
@@ -845,6 +848,8 @@ td {
 					answerConceptId="$@PATIENT_DIED@" answerLabel="Décès (si oui, remplir ci-dessous) / Death(if yes, fill out below)" /> <br/>
 				<obs conceptId="$@TOP_NCD_REASON_FOR_EXIT@" 
 					answerConceptId="$@TRANSFERED@" answerLabel="Transfert a l'autre centre (si oui, completer si-dessous) / Transfer to another facility (if yes, fill out below) " /> <br/>
+				
+				
                     <obs conceptId="$@NCD_OUTCOMES@"
                          answerConceptId="$@NOT_NCD@" answerLabel="Patient n'a pas NCD apres consultation par specialiste / Patient does not have NCD after consultation by specialist" /> <br/>
                     <obs conceptId="$@NCD_OUTCOMES@"
@@ -855,11 +860,14 @@ td {
                          answerConceptId="$@OTHER_CAUSE_OF_EXIT@" answerLabel="Autre / Other" /> <br/>
 			</td>
 		</tr>
+     <!--
+        refer to RWA-506 ticket-->
 		<tr><td colspan="2">
 			Fill out the treatment status here
-
-			<workflowState workflowId="31" style="dropdown"/> Asthma <br/>
+			
+			<workflowState workflowId="6db3cc1b-0d86-458b-ac88-43124fcbf2f7" style="dropdown"/>Hypertension 
 		</td></tr>
+
 		<th class="tableHeader" colspan="3">Si Deces / If Death </th>
 		<tr>
 			<td colspan="2"><span class="disabled">Date de deces / Death Date:    ___ / ___ / _____</span></td>

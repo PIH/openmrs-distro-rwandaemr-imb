@@ -1,7 +1,7 @@
 <htmlform 
-	htmlformUuid="81410495-1c56-4a60-9c73-2f7e0f4c2838" 
-	formUuid="4df0cd77-8343-43a9-b739-36af93e2765a" 
-	formName="Heart Failure Exit" 
+	htmlformUuid="c21243a8-da92-4b04-9042-71d485fcecc1" 
+	formUuid="3b5e8867-0991-4b0b-bcb9-d3eb6e464378" 
+	formName="Asthma Exit" 
 	formVersion="1.0" 
 	formEncounterType="609cd2f6-6acf-4a08-8557-16de80fb403c" 
 	formPublished="true" 
@@ -609,7 +609,7 @@ td {
 </style>
 
 		 
-<div id="50">Heart Failure<completeProgram programId="e60a89ad-de11-421a-b5bf-b489e264ffa6" /></div> 
+<div id="50">Chronic Respiratory Disease<completeProgram programId="6b825913-ab44-4e49-9ea0-c9e5919f94af"/></div> 
 <script>
 	$j(function() {
 		$j('.disdiv').find('input').attr('disabled', 'true');
@@ -845,25 +845,24 @@ td {
 					answerConceptId="$@PATIENT_DIED@" answerLabel="Décès (si oui, remplir ci-dessous) / Death(if yes, fill out below)" /> <br/>
 				<obs conceptId="$@TOP_NCD_REASON_FOR_EXIT@" 
 					answerConceptId="$@TRANSFERED@" answerLabel="Transfert a l'autre centre (si oui, completer si-dessous) / Transfer to another facility (if yes, fill out below) " /> <br/>
-				
-				<obs conceptId="$@NCD_OUTCOMES@" 
-					answerConceptId="$@NOT_NCD@" answerLabel="Patient n'a pas NCD apres consultation par specialiste / Patient does not have NCD after consultation by specialist" /> <br/>
-				<obs conceptId="$@NCD_OUTCOMES@" 
-					answerConceptId="$@LTFU@" answerLabel="Perdu de vue / Lost to Follow-up" /> <br/>
-				<obs conceptId="$@NCD_OUTCOMES@" 
-					answerConceptId="$@DECLINED_CARE@" answerLabel="Refus de soins / Declined Care" /> <br/>
-				<obs conceptId="$@NCD_OUTCOMES@" 
-					answerConceptId="$@OTHER_CAUSE_OF_EXIT@" answerLabel="Autre / Other" /> <br/>	
+                    <obs conceptId="$@NCD_OUTCOMES@"
+                         answerConceptId="$@NOT_NCD@" answerLabel="Patient n'a pas NCD apres consultation par specialiste / Patient does not have NCD after consultation by specialist" /> <br/>
+                    <obs conceptId="$@NCD_OUTCOMES@"
+                         answerConceptId="$@LTFU@" answerLabel="Perdu de vue / Lost to Follow-up" /> <br/>
+                    <obs conceptId="$@NCD_OUTCOMES@"
+                         answerConceptId="$@DECLINED_CARE@" answerLabel="Refus de soins / Declined Care" /> <br/>
+                    <obs conceptId="$@NCD_OUTCOMES@"
+                         answerConceptId="$@OTHER_CAUSE_OF_EXIT@" answerLabel="Autre / Other" /> <br/>
 			</td>
 		</tr>
-     <!--
-        refer to RWA-506 ticket
-		<tr><td>
+		<tr><td colspan="2">
 			Fill out the treatment status here
-			<workflowState workflowId="22" style="dropdown"/> Heart Failure <br/>
+      <!--
+        refer to RWA-506 ticket
 
+			<workflowState workflowId="31" style="dropdown"/> Asthma <br/>
+      -->
 		</td></tr>
-     -->
 		<th class="tableHeader" colspan="3">Si Deces / If Death </th>
 		<tr>
 			<td colspan="2"><span class="disabled">Date de deces / Death Date:    ___ / ___ / _____</span></td>

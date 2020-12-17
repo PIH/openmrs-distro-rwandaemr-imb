@@ -80,7 +80,7 @@
 				</b>
 			</td>
 			<td>
-				Date: <encounterDate default="today" disallowMultipleEncountersOnDate="warn"/>
+				Date: <encounterDate default="today" />
 			</td>
 			<td>
 				Clinique / Clinic: <encounterLocation />

@@ -107,73 +107,66 @@
 <br />
 <div>
 		<section headerLabel="1. INFORMATION DEMOGRAPHIQUE">
-			<htmlformflowsheet formId="153" windowHeight="1000" sharedEncounter="true" showHtmlForm="true"/>
+			<htmlformflowsheet formId="b2cefdb8-90fe-4ff0-ad17-3d25e4cb488a" sharedEncounter="true" showHtmlForm="true" windowHeight="1000"/>
 		</section>
 	</div>
          <div>
 	   <section headerLabel="2. SEROLOGIE VIH DE LA FAMILLE">
-			     <htmlformflowsheet formId="155" sharedEncounter="true" showHtmlForm="true" windowHeight="750"/>
+			     <htmlformflowsheet formId="18a2e8d0-f4ad-43d8-b7ca-8ee0fb272b9d" sharedEncounter="true" showHtmlForm="true" windowHeight="750"/>
 	  </section>
 	</div>
 
 <div>
 	   <section headerLabel="3. ACCOUCHEMENT">
-			     <htmlformflowsheet formId="149" sharedEncounter="true" showHtmlForm="true" windowHeight="400"/>
+			     <htmlformflowsheet formId="26620c8b-fdbc-45e7-8796-e21224b7412e" sharedEncounter="true" showHtmlForm="true" windowHeight="400"/>
 	  </section>
 	</div>
-     <!--
-	<div>
-	   <section headerLabel="4. TRAITEMENT ANTERIEURS DE LA MERE">
-			     <htmlformflowsheet formId="187" sharedEncounter="true" showHtmlForm="true" windowHeight="400"/>
-	  </section>
-	</div>
-      -->
 	<div>
 	   <section headerLabel="4. ANAMNESE SYSTEMATIQUE ET DEPISTAGE TBC DE L'ENFANT">
-			     <htmlformflowsheet formId="150" sharedEncounter="true" showHtmlForm="true" windowHeight="700"/>
+			     <htmlformflowsheet formId="b2d41fe2-1f51-4a39-adb0-673e6c3700cd" sharedEncounter="true" showHtmlForm="true" windowHeight="700"/>
 	  </section>
 	</div>
 	
 	<div>
 	   <section headerLabel="5. EXAMEN CLINIQUE">
-			     <htmlformflowsheet formId="154" sharedEncounter="true" showHtmlForm="true" windowHeight="800"/>
+			     <htmlformflowsheet formId="e451cdcb-574b-411f-bc69-1b67abe2dde5" sharedEncounter="true" showHtmlForm="true" windowHeight="800"/>
 	  </section>
 	</div>
            <div>
 		<section headerLabel="6. INFECTIONS OPPORTUNISTES ET AUTRES MALADIES">
-			<htmlformflowsheet formId="56" sharedEncounter="true" showHtmlForm="true" windowHeight="450"/>
+			<htmlformflowsheet formId="ba2d62c0-8296-4b19-9c46-2160f3c4ee6a" sharedEncounter="true" showHtmlForm="true" windowHeight="500"/>
 		</section>
 	     </div>
 	<div>
 		<section headerLabel="7. PROPHYLAXIS">
-			<htmlformflowsheet formId="57" windowHeight="400" sharedEncounter="true" showHtmlForm="true"/>
+			<htmlformflowsheet formId="07808ae5-0866-4f76-baac-68b934ee9555" windowHeight="400" sharedEncounter="true" showHtmlForm="true"/>
 		</section>
 	</div>
 	<div>
 		<section headerLabel="8. SUIVI BIOLOGIQUE">
-			<htmlformflowsheet formId="156" windowHeight="450" sharedEncounter="true" showHtmlForm="true"/>
+			<htmlformflowsheet formId="52668bfd-feb4-4154-8bf5-37c0df1efe53" windowHeight="450" sharedEncounter="true" showHtmlForm="true"/>
 		</section>
 	</div>
 
 <div>
 		<section headerLabel="9. ARV TRITHERAPIE (Si PCR positive)">
-			<htmlformflowsheet formId="151" windowHeight="400" sharedEncounter="true" showHtmlForm="true"/>
+			<htmlformflowsheet formId="2281032c-44f9-461c-b329-0fbb898bec85" windowHeight="400" sharedEncounter="true" showHtmlForm="true"/>
 		</section>
 	</div>
 	
 	<div>
 		<section headerLabel="10. ALLERGIES ET EFFETS SECONDAIRES ">
-			<htmlformflowsheet formId="55" windowHeight="450" sharedEncounter="true" showHtmlForm="true"/>
+			<htmlformflowsheet formId="3ebb039b-75c5-4f12-81a4-5e1c19e8e8c4" windowHeight="450" sharedEncounter="true" showHtmlForm="true"/>
 		</section>
 	</div>
 	<div>
 		<section headerLabel="11. RÉSUMÉ DES VISITES">
-		     <htmlformflowsheet formId="54" windowHeight="500" sharedEncounter="true" showHtmlForm="true" />
+		     <htmlformflowsheet formId="c0f737d3-ee80-4c09-a473-a68208fa71dc" windowHeight="500" sharedEncounter="true" showHtmlForm="true" />
 		</section>
 	</div>
 	<div>
 		<section headerLabel="12. CONCLUSION DE SUIVI">
-			     <htmlformflowsheet formId="152" sharedEncounter="true" showHtmlForm="true" windowHeight="1000"/>
+			     <htmlformflowsheet formId="8be3dcce-7b1c-4800-8382-0ac91e50d0a6" sharedEncounter="true" showHtmlForm="true" windowHeight="1000"/>
 	</section>
 	</div>
 <div>

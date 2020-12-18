@@ -2,8 +2,8 @@
 	htmlformUuid="34d985b0-4c30-4037-911c-4c170a6ca2fd" 
 	formUuid="185fcc81-64bb-4797-a792-1cdba7646343" 
 	formName="Fiche de Suivie L&#8217;insuffisance Cardiaque" 
-	formDescription="Basis for RW HF flowsheet in html." 
-	formVersion="0.1" 
+	formDescription="The Heart Failure flowsheet top level. Flow-HF-RW. V1.5akb.26Apr09.doc" 
+	formVersion="1.5" 
 	formEncounterType="d889bcb3-c99d-4648-a3ea-b373335b9efd" 
 	formPublished="false" 
 	formRetired="false"
@@ -51,7 +51,7 @@
 				<lookup class="value" expression="patient.personName.familyName" />
 			</td>
 			<td>
-				Prenom/ First name:
+				Prénom/ First name:
 				<lookup class="value" expression="patient.personName.givenName" />
 			</td>
 		</tr>
@@ -68,7 +68,7 @@
 				<strong>
 					Clinique des Maladies Chroniques/ Chronic Disease Clinic
 					<br/>
-					Fiche de Suivie -- L'insuffisance Cardiaque/Flow Sheet -- Heart Failure
+					Fiche de Suivie -- L’insuffisance Cardiaque/Flow Sheet -- Heart Failure
 				</strong>
 				<br />
 				<br />
@@ -91,9 +91,14 @@
           <td>Sex :  <lookup expression="patient.gender" class="value"/></td>
 				</tr>
 				<tr>
-				  <td><addressHierarchyRwanda/>
-
-  				  </td>
+				  <td>Province: <lookup expression="patient.personAddress.stateProvince" class="value"/> </td>
+					<td>District: <lookup expression="patient.personAddress.countyDistrict" class="value"/> </td>
+          <td>Secteur: <lookup expression="patient.personAddress.cityVillage" class="value"/></td>
+				</tr>
+ 				<tr>
+ 					<td>Cell: <lookup expression="patient.personAddress.neighborhoodCell" class="value"/> </td>
+					<td>Umudugudu: <lookup expression="patient.personAddress.address1" class="value"/></td>
+					<td/>
 				</tr>
      </table>
 </div>
@@ -137,8 +142,8 @@
 <div class="notEntered">
 	The Following information is not entered into EMR at this time.
 	<ul>
-		<li>Consultation sociale complete/ Social work consultation completed</li>
-		<li>Consultation avec cardiologue complete / Cardiology consultation completed</li>
+		<li>Consultation sociale complètée/ Social work consultation completed</li>
+		<li>Consultation avec cardiologue complètée / Cardiology consultation completed</li>
 		<li>Candidat pour chirugie?/ Surgical candidate?</li>
 			<ul>
 				<li>Passeport/ Passport </li>
@@ -148,11 +153,11 @@
 </div>
 
 <section headerLabel="5. HOSPITALISATIONS/ HOSPITALIZATIONS">
-	<htmlformflowsheet formId="35" windowHeight="450" />
+	<htmlformflowsheet formId="8f6f610f-1742-42b4-baf4-183c34fd0aec" windowHeight="450" sharedEncounter="true" />
 </section>
 <br />
 <section headerLabel="6. ASSISTANCE OU EVALUATION SOCIALE / SOCIAL ASSISTANCE OR ASSESSMENT">
-	<htmlformflowsheet formId="33" windowHeight="550"/>
+	<htmlformflowsheet formId="601bbd0a-f6f9-485f-bbbd-f093eb66e13a" windowHeight="550" sharedEncounter="true" />
 </section>
 <br />
 <section headerLabel="7. CHANGEMENT EN ACCOMPAGNATEUR, RESIDENCE OU NUMERO DE TELEPHONE / CHANGE IN ACCOMPAGNATEUR, ADDRESS OR TELEPHONE">
@@ -166,11 +171,11 @@
 </section>
 <br />
 <section headerLabel="8. EVENMENTS NON-MEDICAUX DE LA VIE DEPUIS LA DIAGNOSTIC/ NON-MEDICAL LIFE EVENTS SINCE DIAGNOSIS">
-	<htmlformflowsheet formId="34" windowHeight="450"/>
+	<htmlformflowsheet formId="693ee335-0462-4863-80d6-fb73339cc25b" windowHeight="450" sharedEncounter="true" />
 </section>
 <br />
 <section headerLabel="9. RENDEZ-VOUS/ CLINIC VISIT">
-	<htmlformflowsheet formId="32" windowHeight="650"/>
+	<htmlformflowsheet formId="08af7816-f8b1-4b57-a4e7-34f417b55d16" windowHeight="650" sharedEncounter="true" />
 </section>
 <br />
 <section headerLabel="10. AUTRE INVESTIGATIONS/ OTHER INVESTIGATIONS">
@@ -202,6 +207,6 @@
 	<center>
 		<submit submitLabel="Close Flowsheet" />
 	</center>
-
+	<br />
 <br />
 </htmlform>

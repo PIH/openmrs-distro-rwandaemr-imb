@@ -49,7 +49,7 @@
 
 	<section headerLabel="ASSISTANCE OU EVALUATION SOCIALE / SOCIAL ASSISTANCE OR ASSESSMENT">
 		<table id="social" border="1" width="100%">
-		<obsgroup groupingConceptId="2156">
+		<obsgroup groupingConceptId="3ce169b4-26fe-102b-80cb-0017a47871b2">
 			<tr>
 				<td><b>Date</b></td>
 				<td colspan="2"><b>Type d’assistance/ évaluation<br/>Type of assistance or  assessment</b></td>

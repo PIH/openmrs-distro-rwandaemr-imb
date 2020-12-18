@@ -2,7 +2,7 @@
 	htmlformUuid="a63fa4fa-438e-41ce-a9b0-b7706ae8a52c" 
 	formUuid="693ee335-0462-4863-80d6-fb73339cc25b" 
 	formName="Fiche de Suivie L&#8217;insuffisance Cardiaque - NON-MEDICAUX DE LA VIE DEPUIS" 
-	formDescription="Fiche de Suivie L?insuffisance Cardiaque - NON-MEDICAUX DE LA VIE DEPUIS.  Heart failure flowsheet - Non medical life events since diagnosis section." 
+	formDescription="Heart failure flowsheet - Non medical life events since diagnosis section." 
 	formVersion="1.5" 
 	formEncounterType="d889bcb3-c99d-4648-a3ea-b373335b9efd" 
 	formPublished="false" 
@@ -52,7 +52,7 @@
 		<table id="nonmedEvents" border="1" width="100%">
 			<tr>
 				<td><b>Date</b></td>
-				<td><b>Evenement/Event</b></td>
+				<td><b>Evénement/Event</b></td>
 			</tr>
 			<tr>
 				<td>
@@ -62,7 +62,7 @@
 			</tr>
 			<tr>
 			  <td colspan="2">
-			  	(ex. un mariage, un divorce, une grossesse, un accouchement, la morte d'un membre de la famille, un changement de situation socioeconomique, un changement de residence depuis le diagnostic)
+			  	(ex. un mariage, un divorce, une grossesse, un accouchement, la morte d’un membre de la famille, un changement de situation socioéconomique, un changement de résidence depuis le diagnostic)
 			  	<br/>
 					(e.g. marriage, divorce, pregnancy, births, death of family members, change in socioeconomic status, change in residence since diagnosis) 
 			  </td>

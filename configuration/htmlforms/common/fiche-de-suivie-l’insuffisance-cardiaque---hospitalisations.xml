@@ -2,12 +2,15 @@
 	htmlformUuid="87c6d777-48f9-47a9-bfb6-8d1b01d0bf0c" 
 	formUuid="8f6f610f-1742-42b4-baf4-183c34fd0aec" 
 	formName="Fiche de Suivie L&#8217;insuffisance Cardiaque - HOSPITALISATIONS" 
-	formDescription="Basis for RW HF flowsheet in html." 
-	formVersion="0.1" 
+	formDescription="Heart failure flowsheet - hospitalisations section." 
+	formVersion="1.5" 
 	formEncounterType="d889bcb3-c99d-4648-a3ea-b373335b9efd" 
 	formPublished="false" 
 	formRetired="false"
 >
+    <!-- Heart Failure flowsheet:  Hospitalizations
+         matches paper form: Flow-HF-RW. V1.5akb.26Apr09.doc 
+         -->
 	<style>
 		.formName { background-color:#e0e0ff; }
 		.section { border: 1px
@@ -30,22 +33,17 @@
 	<table border="2" cellspacing="0" cellpadding="6" width="100%">
 		<tr>
 			<td>
-				<b>
-					IMB ID:
-					<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+				<b>IMB ID:<lookup class="value" expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
 				</b>
 			</td>
 			<td>
-				Date:
-				<encounterDate />
+				Date:<encounterDate default="today"/>
 			</td>
 			<td>
-				Clinique / Clinic:
-				<encounterLocation />
+				Clinique / Clinic:<encounterLocation />
 			</td>
 			<td>
-				Nom/ Signature:
-				<encounterProvider role="NCD Provider"/>
+				Nom/ Signature:<encounterProvider role="NCD Provider"/>
 			</td>
 		</tr>
 	</table>
@@ -53,9 +51,9 @@
 	<section headerLabel="HOSPITALISATIONS / HOSPITALIZATIONS">
 		<table border="1" width="100%">
 			<tr>
-				<td>Date d'admission/ Date of admission</td>
-				<td>Date de de charge/ Date of discharge</td>
-				<td>Hopital/ Hospital</td>
+				<td>Date d’admission/ Date of admission</td>
+				<td>Date de décharge/ Date of discharge</td>
+				<td>Hôpital/ Hospital</td>
 				<td>Raison pour hospitalisation/ Reason for hospitalization</td>
 			</tr>
 			<tr>

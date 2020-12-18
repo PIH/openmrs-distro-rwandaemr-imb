@@ -76,7 +76,7 @@
 					<obs conceptId="3ce1492a-26fe-102b-80cb-0017a47871b2" answerConceptId="1eb800a1-b9f8-4a5d-866b-19b6282eaf79"
 						answerLabel="commencer l'insuline/started insulin" />
 					<br />
-					<obs conceptId="cfd246e2-db79-4ab9-bc7a-a45813734a3b" answerConceptId="3cd6f600-26fe-102b-80cb-0017a47871b2"
+					<obs conceptId="3ce1492a-26fe-102b-80cb-0017a47871b2" answerConceptId="641f4fe3-cac2-46c4-aa94-c8b6d05e9407"
 						answerLabel="hypoglycémie/hypoglycemia" />
 					<obs conceptId="3ce1492a-26fe-102b-80cb-0017a47871b2" answerConceptId="145047AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 						answerLabel="infection" />

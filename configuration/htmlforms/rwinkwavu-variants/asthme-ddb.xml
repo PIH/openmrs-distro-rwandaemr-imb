@@ -8,6 +8,16 @@
 	formPublished="false" 
 	formRetired="false"
 >
+	<!--
+		Asthma Intake form for PIH/IMB Rwanda Version 1.5 
+		
+		DDB-Asthma-RW.V1.akb.7Feb09.doc 
+
+		form author:  Gene and Alice Bukhman
+		htmlform author/testers: Cordt, Ellen, Manisha and Zeke
+		Partners In Health 
+		2 November 2010
+	-->
 	<style type="text/css">
 		.formName { background-color:#e0e0ff; }
 		.section {
@@ -38,7 +48,6 @@
 		}
 	</style>
 	
-	<!-- jquery loaded for nonessential purposes. -->
 	<script type="text/javascript">
 		if(jQuery){
 		$(document).ready(function(){
@@ -1255,7 +1264,7 @@
 		Nom/
 		<span class="english">Signature</span>
 		:
-		<encounterProvider role="NCD Provider"/>
+		<encounterProvider role="Provider"/>
 		<br />
 	</section>
 	<br />
@@ -1264,7 +1273,7 @@
 	</center>
 	<br />
 
-	<enrollInProgram programId="13" />
+	<enrollInProgram programId="6b825913-ab44-4e49-9ea0-c9e5919f94af" />
 		<!-- 13 for staging and rwanda (rwink)
 		       16 for butaro -->
 

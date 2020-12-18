@@ -491,8 +491,7 @@
 
                 </td>
                 <td>
-                    <lookup expression="fn.message('Provider')"/>:<encounterProvider id="encounterProvider"
-                                                                                     />
+                    <lookup expression="fn.message('Provider')"/>:<encounterProvider id="encounterProvider" />
                 </td>
             </tr>
         </table>

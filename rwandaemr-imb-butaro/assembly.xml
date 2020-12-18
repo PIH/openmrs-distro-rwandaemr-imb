@@ -21,63 +21,63 @@
             </includes>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../configuration</directory>
+            <directory>${build.directory}/configuration</directory>
             <outputDirectory>openmrs_config</outputDirectory>
             <includes>
                 <include>addresshierarchy/*</include>
             </includes>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../configuration/htmlforms/burera</directory>
+            <directory>${build.directory}/configuration/htmlforms/burera</directory>
             <outputDirectory>openmrs_config/htmlforms</outputDirectory>
             <includes>
                 <include>**/*.xml</include>
             </includes>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../configuration/htmlforms/hiv</directory>
+            <directory>${build.directory}/configuration/htmlforms/hiv</directory>
             <outputDirectory>openmrs_config/htmlforms</outputDirectory>
             <includes>
                 <include>**/*.xml</include>
             </includes>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../configuration/htmlforms/mentalhealth</directory>
+            <directory>${build.directory}/configuration/htmlforms/mentalhealth</directory>
             <outputDirectory>openmrs_config/htmlforms</outputDirectory>
             <includes>
                 <include>**/*.xml</include>
             </includes>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../configuration/htmlforms/moh</directory>
+            <directory>${build.directory}/configuration/htmlforms/moh</directory>
             <outputDirectory>openmrs_config/htmlforms</outputDirectory>
             <includes>
                 <include>**/*.xml</include>
             </includes>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../configuration/htmlforms/ncd</directory>
+            <directory>${build.directory}/configuration/htmlforms/ncd</directory>
             <outputDirectory>openmrs_config/htmlforms</outputDirectory>
             <includes>
                 <include>**/*.xml</include>
             </includes>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../configuration/htmlforms/oncology</directory>
+            <directory>${build.directory}/configuration/htmlforms/oncology</directory>
             <outputDirectory>openmrs_config/htmlforms</outputDirectory>
             <includes>
                 <include>**/*.xml</include>
             </includes>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../configuration/htmlforms/pdc</directory>
+            <directory>${build.directory}/configuration/htmlforms/pdc</directory>
             <outputDirectory>openmrs_config/htmlforms</outputDirectory>
             <includes>
                 <include>**/*.xml</include>
             </includes>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../configuration/htmlforms/socialsupport</directory>
+            <directory>${build.directory}/configuration/htmlforms/socialsupport</directory>
             <outputDirectory>openmrs_config/htmlforms</outputDirectory>
             <includes>
                 <include>**/*.xml</include>

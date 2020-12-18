@@ -12,6 +12,13 @@
     <name>RwandaEMR - IMB Butaro</name>
     <description>Butaro Distribution of the Rwanda EMR</description>
 
+    <properties>
+        <trueIfRwinkwavu>false</trueIfRwinkwavu>
+        <trueIfButaro>true</trueIfButaro>
+        <oncologyLocation>Butaro Hospital</oncologyLocation>
+        <oncologyOutpatientClinicVisitsForm>0589bf89-efdc-4b71-92fc-951d9c1c7342</oncologyOutpatientClinicVisitsForm>
+    </properties>
+
     <build>
         <plugins>
             <!-- Use the SDK to retrieve the war, modules, and owas -->
@@ -34,7 +41,27 @@
                     </execution>
                 </executions>
             </plugin>
-            <!-- Assemble this into a zip archive -->
+            <!--
+                Use the resources plugin to copy the configuration and process variable replacements
+                This allows us to maintain a common form xml with minor differences between Rwinkwavu and Butaro
+            -->
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <resources>
+                        <resource>
+                            <directory>${basedir}/../configuration</directory>
+                            <filtering>true</filtering>
+                        </resource>
+                    </resources>
+                    <outputDirectory>${build.directory}/configuration</outputDirectory>
+                </configuration>
+            </plugin>
+            <!--
+                Assemble this into a zip archive
+                The assembly.xml file indicates exactly which configuration folders should be included in this distro
+            -->
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.3.0</version>

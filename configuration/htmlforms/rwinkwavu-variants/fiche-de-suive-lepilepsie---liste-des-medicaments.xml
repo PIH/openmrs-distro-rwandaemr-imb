@@ -45,7 +45,7 @@
 
 			<td>
 				Clinique / Clinic:
-				<encounterLocation order="Rwinkwavu Hospital,Kabarondo Health Center,Ndego Health Center,Ruramira Health Center,Cyarubare Health Center,Kirehe Hospital,Gahara Health Center,Rusumo Health Center,Mulindi Health Center,Nyarubuye Health Center, Mushikiri Health Center, Musaza Health Center,Karama Health Center"/>
+				<encounterLocation />
 			</td>
 			<td>
 				Nom/ Signature:<encounterProvider role="NCD Provider"/>

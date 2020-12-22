@@ -35,7 +35,7 @@
 	</style>
 
 	<section headerLabel="Encounter Details">
-		Date: <encounterDate default="today"/> Location: <encounterLocation order="80" /> Provider: <encounterProvider role="Oncology Provider"/>
+		Date: <encounterDate default="today"/> Location: <encounterLocation /> Provider: <encounterProvider role="Oncology Provider"/>
 	</section>
 
 	<section headerLabel="Note">

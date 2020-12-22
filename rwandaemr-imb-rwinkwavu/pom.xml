@@ -55,7 +55,7 @@
                             <filtering>true</filtering>
                         </resource>
                     </resources>
-                    <outputDirectory>${build.directory}/configuration</outputDirectory>
+                    <outputDirectory>${project.build.directory}/configuration</outputDirectory>
                 </configuration>
             </plugin>
             <!--

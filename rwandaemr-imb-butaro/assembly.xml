@@ -21,63 +21,28 @@
             </includes>
         </fileSet>
         <fileSet>
-            <directory>${build.directory}/configuration</directory>
+            <directory>${project.build.directory}/configuration</directory>
             <outputDirectory>openmrs_config</outputDirectory>
             <includes>
                 <include>addresshierarchy/*</include>
             </includes>
         </fileSet>
         <fileSet>
-            <directory>${build.directory}/configuration/htmlforms/burera</directory>
+            <directory>${project.build.directory}/configuration/htmlforms/common</directory>
             <outputDirectory>openmrs_config/htmlforms</outputDirectory>
             <includes>
                 <include>**/*.xml</include>
             </includes>
         </fileSet>
         <fileSet>
-            <directory>${build.directory}/configuration/htmlforms/hiv</directory>
+            <directory>${project.build.directory}/configuration/htmlforms/butaro-only</directory>
             <outputDirectory>openmrs_config/htmlforms</outputDirectory>
             <includes>
                 <include>**/*.xml</include>
             </includes>
         </fileSet>
         <fileSet>
-            <directory>${build.directory}/configuration/htmlforms/mentalhealth</directory>
-            <outputDirectory>openmrs_config/htmlforms</outputDirectory>
-            <includes>
-                <include>**/*.xml</include>
-            </includes>
-        </fileSet>
-        <fileSet>
-            <directory>${build.directory}/configuration/htmlforms/moh</directory>
-            <outputDirectory>openmrs_config/htmlforms</outputDirectory>
-            <includes>
-                <include>**/*.xml</include>
-            </includes>
-        </fileSet>
-        <fileSet>
-            <directory>${build.directory}/configuration/htmlforms/ncd</directory>
-            <outputDirectory>openmrs_config/htmlforms</outputDirectory>
-            <includes>
-                <include>**/*.xml</include>
-            </includes>
-        </fileSet>
-        <fileSet>
-            <directory>${build.directory}/configuration/htmlforms/oncology</directory>
-            <outputDirectory>openmrs_config/htmlforms</outputDirectory>
-            <includes>
-                <include>**/*.xml</include>
-            </includes>
-        </fileSet>
-        <fileSet>
-            <directory>${build.directory}/configuration/htmlforms/pdc</directory>
-            <outputDirectory>openmrs_config/htmlforms</outputDirectory>
-            <includes>
-                <include>**/*.xml</include>
-            </includes>
-        </fileSet>
-        <fileSet>
-            <directory>${build.directory}/configuration/htmlforms/socialsupport</directory>
+            <directory>${project.build.directory}/configuration/htmlforms/butaro-variants</directory>
             <outputDirectory>openmrs_config/htmlforms</outputDirectory>
             <includes>
                 <include>**/*.xml</include>

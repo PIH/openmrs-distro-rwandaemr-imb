@@ -28,56 +28,21 @@
             </includes>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../configuration/htmlforms/east</directory>
+            <directory>${project.build.directory}/configuration/htmlforms/common</directory>
             <outputDirectory>openmrs_config/htmlforms</outputDirectory>
             <includes>
                 <include>**/*.xml</include>
             </includes>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../configuration/htmlforms/hiv</directory>
+            <directory>${project.build.directory}/configuration/htmlforms/rwinkwavu-only</directory>
             <outputDirectory>openmrs_config/htmlforms</outputDirectory>
             <includes>
                 <include>**/*.xml</include>
             </includes>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../configuration/htmlforms/mentalhealth</directory>
-            <outputDirectory>openmrs_config/htmlforms</outputDirectory>
-            <includes>
-                <include>**/*.xml</include>
-            </includes>
-        </fileSet>
-        <fileSet>
-            <directory>${basedir}/../configuration/htmlforms/moh</directory>
-            <outputDirectory>openmrs_config/htmlforms</outputDirectory>
-            <includes>
-                <include>**/*.xml</include>
-            </includes>
-        </fileSet>
-        <fileSet>
-            <directory>${basedir}/../configuration/htmlforms/ncd</directory>
-            <outputDirectory>openmrs_config/htmlforms</outputDirectory>
-            <includes>
-                <include>**/*.xml</include>
-            </includes>
-        </fileSet>
-        <fileSet>
-            <directory>${basedir}/../configuration/htmlforms/oncology</directory>
-            <outputDirectory>openmrs_config/htmlforms</outputDirectory>
-            <includes>
-                <include>**/*.xml</include>
-            </includes>
-        </fileSet>
-        <fileSet>
-            <directory>${basedir}/../configuration/htmlforms/pdc</directory>
-            <outputDirectory>openmrs_config/htmlforms</outputDirectory>
-            <includes>
-                <include>**/*.xml</include>
-            </includes>
-        </fileSet>
-        <fileSet>
-            <directory>${basedir}/../configuration/htmlforms/socialsupport</directory>
+            <directory>${project.build.directory}/configuration/htmlforms/rwinkwavu-variants</directory>
             <outputDirectory>openmrs_config/htmlforms</outputDirectory>
             <includes>
                 <include>**/*.xml</include>

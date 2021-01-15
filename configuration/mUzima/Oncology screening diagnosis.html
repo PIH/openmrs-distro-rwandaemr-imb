@@ -99,14 +99,14 @@
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.yesCancerConfimed" name="obs.CancerConfimed" type="radio"
+                <input class="activate" id="obs.yesCancerConfimed" name="CancerConfimed" type="radio"
                        data-concept="3d762b82-f951-4d13-b147-6aaba63b25d1^CONFIRMED DIAGNOSIS^99DCT"
                        value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
                 Cancer Confirmed
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.noCancerConfimed" name="obs.CancerConfimed" type="radio"
+                <input class="deactivate" id="obs.noCancerConfimed" name="CancerConfimed" type="radio"
                        data-concept="3d762b82-f951-4d13-b147-6aaba63b25d1^CONFIRMED DIAGNOSIS^99DCT"
                        value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
                 Not Cancer
@@ -115,51 +115,65 @@
     </div>
     <div class="form-group">
         <fieldset>
-            <label>
-                Cancer Diagnosis:
-            </label>
+            <div class="CancerConfimed">
+                <label>
+                    Cancer Diagnosis:
+                </label>
+            </div>
             <br/>
-            <label class="font-normal">
-                <input id="obs.BreastCancer" name="obs.CancerDiagnosis" type="radio"
-                       data-concept="3dc2eb50-6981-43d3-b907-e3dd8b5ed620^Confirmed cancer diagnosis^99DCT"
-                       value="e1bd83f4-e9fa-4564-b8aa-74a9b199aca8^Breast Cancer^99DCT">
-                Breast Cancer
-            </label>
+            <div class="CancerConfimed">
+                <label class="font-normal">
+                    <input id="obs.BreastCancer" name="obs.CancerDiagnosis" type="radio"
+                           data-concept="3dc2eb50-6981-43d3-b907-e3dd8b5ed620^Confirmed cancer diagnosis^99DCT"
+                           value="e1bd83f4-e9fa-4564-b8aa-74a9b199aca8^Breast Cancer^99DCT">
+                    Breast Cancer
+                </label>
+            </div>
             <br/>
-            <label class="font-normal">
-                Histology:
-                <textarea class="form-control" id="obs.BreastCancerHistory"
-                          name="obs.BreastCancerHistory" type="text"  cols="80"
-                          data-concept="7625e1b7-7571-485e-b023-20a7d03dc7dc^Breast Cancer Histology^99DCT"></textarea>
-            </label>
+            <div class="CancerConfimed">
+                <label class="font-normal">
+                    Histology:
+                    <textarea class="form-control" id="obs.BreastCancerHistory"
+                              name="obs.BreastCancerHistory" type="text"  cols="80"
+                              data-concept="7625e1b7-7571-485e-b023-20a7d03dc7dc^Breast Cancer Histology^99DCT"></textarea>
+                </label>
+            </div>
             <br/>
-            <label class="font-normal">
-                <input id="obs.cervicalCancer" name="obs.CancerDiagnosis" type="radio"
-                       data-concept="3dc2eb50-6981-43d3-b907-e3dd8b5ed620^Confirmed cancer diagnosis^99DCT"
-                       value="36052b70-ba49-466f-a4eb-bc99581be7a2^Cervical cancer^99DCT">
-                Cervical Cancer
-            </label>
+            <div class="CancerConfimed">
+                <label class="font-normal">
+                    <input id="obs.cervicalCancer" name="obs.CancerDiagnosis" type="radio"
+                           data-concept="3dc2eb50-6981-43d3-b907-e3dd8b5ed620^Confirmed cancer diagnosis^99DCT"
+                           value="36052b70-ba49-466f-a4eb-bc99581be7a2^Cervical cancer^99DCT">
+                    Cervical Cancer
+                </label>
+            </div>
             <br/>
-            <label class="font-normal">
-                Histology:
-                <textarea class="form-control" id="obs.CervicalCancerHistory"
-                          name="obs.CervicalCancerHistory" type="text"  cols="80"
-                          data-concept="3cef6fc6-49e1-490c-829f-d9003a7b50ad^Cervical cancer Histology^99DCT"></textarea>
-            </label>
+            <div class="CancerConfimed">
+                <label class="font-normal">
+                    Histology:
+                    <textarea class="form-control" id="obs.CervicalCancerHistory"
+                              name="obs.CervicalCancerHistory" type="text"  cols="80"
+                              data-concept="3cef6fc6-49e1-490c-829f-d9003a7b50ad^Cervical cancer Histology^99DCT"></textarea>
+                </label>
+            </div>
             <br/>
-            <label class="font-normal">
-                <input id="obs.other" name="obs.CancerDiagnosis" type="radio"
-                       data-concept="3dc2eb50-6981-43d3-b907-e3dd8b5ed620^Confirmed cancer diagnosis^99DCT"
-                       value="3cee7fb4-26fe-102b-80cb-0017a47871b2^OTHER NON-CODED^99DCT">
-                Other cancer
-            </label>
+            <div class="CancerConfimed">
+                <label class="font-normal">
+                    <input id="obs.other" name="obs.CancerDiagnosis" type="radio"
+                           data-concept="3dc2eb50-6981-43d3-b907-e3dd8b5ed620^Confirmed cancer diagnosis^99DCT"
+                           value="3cee7fb4-26fe-102b-80cb-0017a47871b2^OTHER NON-CODED^99DCT">
+                    Other cancer
+                </label>
+            </div>
             <br/>
-            <label class="font-normal">
-                Histology:
-                <textarea class="form-control" id="obs.otherCancerHistory"
-                          name="obs.otherCancerHistory" type="text"
-                          data-concept="b99ff54e-4e1b-4277-89ab-136eab980621^Other Histology^99DCT"></textarea>
-            </label>
+            <div class="CancerConfimed">
+                <label class="font-normal">
+                    Histology:
+                    <textarea class="form-control" id="obs.otherCancerHistory"
+                              name="obs.otherCancerHistory" type="text"
+                              data-concept="b99ff54e-4e1b-4277-89ab-136eab980621^Other Histology^99DCT"></textarea>
+                </label>
+            </div>
             <br/>
             <label class="font-normal"> <strong> Date of next visit:  </strong> </label>
             <br/>
@@ -221,6 +235,32 @@
                     toggleValidationMessages(errors);
                 }
             });
+            // helps in hide and show. Just set name of checkbox/radio to equate
+            // the class on div to hide, set activate/deactive class on the checkbox/radio
+            // to be clicked
+            $(document).on("click", function(event){
+                var classOfClicked = event.target.className;
+                var nameOfClicked = event.target.name;
+                var idOfClicked = event.target.id
+
+                if($("input[id='"+idOfClicked+"']").prop('checked')){
+                    if(classOfClicked=="activate" ){
+                        $("div."+nameOfClicked).show();
+                    }
+                    else if (classOfClicked=="deactivate"){
+                        $("div."+nameOfClicked).hide();
+                    }
+                }
+                else if(!$("input[id='"+idOfClicked+"']").prop('checked')){
+                    if(classOfClicked=="activate" ){
+                        $("div."+nameOfClicked).hide();
+                    }
+                    else if (classOfClicked=="deactivate"){
+                        $("div."+nameOfClicked).show();
+                    }
+                }
+            });
+            $(".initialHide").hide();
         });
 </script>
 

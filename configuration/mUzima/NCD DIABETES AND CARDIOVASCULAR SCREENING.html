@@ -17,9 +17,57 @@
 <body class="col-md-10 col-md-offset-1">
 <div id="pre_populate_data"></div>
 <form id="DiabetesCardiovascularCheckup_form" name="DiabetesCardiovascularCheckup_form">
-    <h2 class="text-center">Diabetes and Cardiovascular</h2>
+    <fieldset>
+        <div class="section">
+            <h3>Encounter Details</h3>
+
+            <div class="form-group">
+                <label for="encounter.location_id">Location Name:<span class="required">*</span></label>
+                <input class="form-control valid-location-only" id="encounter.location_id" type="text" placeholder="Start typing something..."
+                       required="required">
+                <input class="form-control" name="encounter.location_id" type="hidden">
+            </div>
+            <div class="form-group">
+                <label for="obs.SiteofScreening">Site of screening: </label>
+                <input id="obs.SiteofScreening" class="form-control" name="obs.SiteofScreening" type="text" data-concept="e4c9a259-1e9e-4155-8f87-ce0b8f591f80^Site of screening^99DCT"/>
+            </div>
+            <div class="form-group">
+                <label for="encounter.provider_id_select">Provider:</label>
+                <input class="form-control valid-provider-only" id="encounter.provider_id_select" type="text" placeholder="Start typing something...">
+                <input class="form-control" name="encounter.provider_id_select" type="hidden">
+            </div>
+            <div class="form-group hidden">
+                <select id="select_providers"></select>
+            </div>
+            <div class="form-group show_provider_id_text">
+                <label for="encounter.provider_id">Provider's system-id:<span class="required">*</span></label>
+                <input class="form-control checkDigit" id="encounter.provider_id" name="encounter.provider_id"
+                       type="text" required="required" disabled="disabled">
+            </div>
+            <div class="form-group">
+                <label for="encounter.encounter_datetime">Encounter Date:<span class="required">*</span></label>
+                <input class="form-control datepicker nonFutureDate past-date" id="encounter.encounter_datetime"
+                       name="encounter.encounter_datetime" type="text" readonly="readonly"
+                       required="required">
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="encounter.form_uuid" name="encounter.form_uuid"
+                       type="hidden" required="required">
+            </div>
+            <div class="form-group">
+                <label for="obs.EducationLevel">Patient education level: </label>
+                <input id="obs.EducationLevel" class="form-control" name="obs.EducationLevel" type="text" data-concept="eb879ed2-1fcd-465e-a841-f83c2b55662b^Education Level (text)^99DCT"/>
+            </div>
+            <div class="form-group">
+                <label for="obs.CurrentEmployment">Patient current employment: </label>
+                <input id="obs.CurrentEmployment" class="form-control" name="obs.CurrentEmployment" type="text" data-concept="6e16e8bb-5f34-4d34-aa91-5fe3a08d254d^Current employment^99DCT"/>
+            </div>
+
+        </div>
+
+    </fieldset>
     <div class="section">
-        <h3>DEMOGRAPHICS & CLINICAL MEASUREMENTS</h3>
+        <h3>DEMOGRAPHICS</h3>
 
         <div class="form-group">
             <input class="form-control" id="patient.uuid"
@@ -59,495 +107,624 @@
                    readonly="readonly" disabled="disabled">
         </div>
     </div>
+
     <div class="section">
-        <h3>RISK FACTORS ASSESSMENT</h3>
+        <h2 class="text-center">DIABETES AND CARDIOVASCULAR</h2>
+        <fieldset>
+            <h3>Risk Factors Assessment</h3>
 
-        <div class="form-group">
-            Age & gender
-            <label for="obs.Female_age">Female:</label>
-            <select class="form-control" id="obs.Female_age" name="obs.Female_age"
-                    data-concept="b3d3a3bf-bc36-46b4-8e73-55b139e83097^Female age^99DCT">
-                <option value="">...</option>
-                <option value="2aeae293-0134-4bc9-b36a-485570bdb79b^less than 35 years^99DCT"> <35 years</option>
-                <option value="96474a47-d1c3-4990-bce2-a8e84010c983^greater than 35 years^99DCT"> >35 years</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="obs.Male_age">Male:</label>
-            <select class="form-control" id="obs.Male_age" name="obs.Male_age"
-                    data-concept="3c2ccaf9-4a54-4b48-aa43-a3a361dc0d28^Male age^99DCT">
-                <option value="">...</option>
-                <option value="1dd37d61-32cc-4188-a14b-b7dd91f03a34^less than 40 years^99DCT"> <40 years</option>
-                <option value="a73108a1-263a-45de-994a-04bef8ddb5a6^greater than 40 years^99DCT"> >40 years</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="obs.Weight">Weight (kg):</label>
-            <input id="obs.Weight" class="form-control" name="obs.Weight" type="number" data-concept="3ce93b62-26fe-102b-80cb-0017a47871b2^WEIGHT (KG)^99DCT"/>
-        </div>
-        <div class="form-group">
-            <label for="obs.height">HEIGHT (CM):</label>
-            <input id="obs.height" class="form-control" name="obs.height" type="number" data-concept="3ce93cf2-26fe-102b-80cb-0017a47871b2^HEIGHT (CM)^99DCT"/>
-        </div>
-        <div class="form-group">
-            <label for="obs.BMI">BMI:</label>
-            <input id="obs.BMI" class="form-control" name="obs.BMI" type="number" data-concept="3ce14da8-26fe-102b-80cb-0017a47871b2^BMI^99DCT"/>
-            <label for="obs.BMI">kg/m<sup>2</sup></label>
-            &#8805; 25kg/m<sup>2</sup>?
-            <label class="font-normal">
-                <input id="obs.YesBMIgreaterthanorequal25" name="obs.BMIgreaterthanorequal25" type="radio"
-                       data-concept="446bf204-6037-49dd-bde1-60732df58c36^BMI greater that or equal 25 kg/m^2^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <label class="font-normal">
-                <input id="obs.NoBMIgreaterthanorequal25" name="obs.BMIgreaterthanorequal25" type="radio"
-                       data-concept="446bf204-6037-49dd-bde1-60732df58c36^BMI greater that or equal 25 kg/m^2^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-            <!--                &#8805; 25kg/m<sup>2</sup>?-->
-            <!--                <input type="radio" id="obs.YesBMIgreaterthanorequal25" name="obs.BMIgreaterthanorequal25" value="Yes"/>-->
-            <!--                <input type="radio" id="obs.NoBMIgreaterthanorequal25" name="obs.BMIgreaterthanorequal25" value="No"/>-->
-
-        </div>
-        <div class="form-group">
-
-            <label for="obs.Waistcircumference"> Waist circumference (cm) :</label>
-            <input class="form-control" id="obs.Waistcircumference" name="obs.Waistcircumference" type="number" data-concept="a84e4d3a-5fb6-44b0-b01f-fa36d9b33c1e^Waist circumference^99DCT"/>
-
-            <u>Men</u> &#8805;94cm? Women &#8805;80cm?
-
-            <label class="font-normal">
-                <input id="obs.YesWaistcircumferencegreaterthanorequalto94" name="obs.Waistcircumferencegreaterthanorequalto94" type="radio"
-                       data-concept="af50540e-b943-4e1f-b7d5-e0898f16d3e0^Waist circumference greater than or equal to 94 on men and 80 for women^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <label class="font-normal">
-                <input id="obs.NoWaistcircumferencegreaterthanorequalto94" name="obs.Waistcircumferencegreaterthanorequalto94" type="radio"
-                       data-concept="af50540e-b943-4e1f-b7d5-e0898f16d3e0^Waist circumference greater than or equal to 94 on men and 80 for women^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-
-        </div>
-        <div class="form-group">
-            <label for="obs.SystolicBloodpressure"> Blood pressure (BP):</label>
-            <input class="form-control" placeholder="Systolic" id="obs.SystolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>
-            <input class="form-control" placeholder="Diastolic" id="obs.diastolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>
-            mmHg
-            S&#8805;140? or D&gt;90?
-            <label class="font-normal">
-                <input id="obs.YesSystolicgreaterthanorequal140ordistolicgreaterthan90" name="obs.Systolicgreaterthanorequal140ordistolicgreaterthan90" type="radio"
-                       data-concept="79f5410c-7708-4643-ac41-87a6bafc8521^Is Systolic greater than or equal 140 or distolic greater than 90^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <label class="font-normal">
-                <input id="obs.NoSystolicgreaterthanorequal140ordistolicgreaterthan90" name="obs.Systolicgreaterthanorequal140ordistolicgreaterthan90" type="radio"
-                       data-concept="79f5410c-7708-4643-ac41-87a6bafc8521^Is Systolic greater than or equal 140 or distolic greater than 90^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-
-        </div>
-
-
-        <div class="form-group">
-            <h3>Screening test</h3>
-            One or more of a "yes" response,
-            order the following:
-            <strong>
-                <label for="obs.Glycemia">Glycemia:</label>
-                <input id="obs.Glycemia" class="form-control" name="obs.Glycemia" type="number" data-concept="887^SERUM GLUCOSE^99DCT"/>
-                mg/dl
-            </strong>
-            <strong>
+            <!--        <div class="form-group">-->
+            <!--            Age & gender-->
+            <!--            <label for="obs.Female_age">Female:</label>-->
+            <!--            <select class="form-control" id="obs.Female_age" name="obs.Female_age"-->
+            <!--                    data-concept="b3d3a3bf-bc36-46b4-8e73-55b139e83097^Female age^99DCT">-->
+            <!--                <option value="">...</option>-->
+            <!--                <option value="2aeae293-0134-4bc9-b36a-485570bdb79b^less than 35 years^99DCT"> <35 years</option>-->
+            <!--                <option value="96474a47-d1c3-4990-bce2-a8e84010c983^greater than 35 years^99DCT"> >35 years</option>-->
+            <!--            </select>-->
+            <!--        </div>-->
+            <!--        <div class="form-group">-->
+            <!--            <label for="obs.Male_age">Male:</label>-->
+            <!--            <select class="form-control" id="obs.Male_age" name="obs.Male_age"-->
+            <!--                    data-concept="3c2ccaf9-4a54-4b48-aa43-a3a361dc0d28^Male age^99DCT">-->
+            <!--                <option value="">...</option>-->
+            <!--                <option value="1dd37d61-32cc-4188-a14b-b7dd91f03a34^less than 40 years^99DCT"> <40 years</option>-->
+            <!--                <option value="a73108a1-263a-45de-994a-04bef8ddb5a6^greater than 40 years^99DCT"> >40 years</option>-->
+            <!--            </select>-->
+            <!--        </div>-->
+            <div class="form-group">
+                <label class="font-normal">Weight (kg):</label>
+                <input id="obs.Weight" class="form-control" name="obs.Weight" type="number" data-concept="3ce93b62-26fe-102b-80cb-0017a47871b2^WEIGHT (KG)^99DCT"/>
+            </div>
+            <div class="form-group">
+                <label class="font-normal">HEIGHT (CM):</label>
+                <input id="obs.height" class="form-control" name="obs.height" type="number" data-concept="3ce93cf2-26fe-102b-80cb-0017a47871b2^HEIGHT (CM)^99DCT"/>
+            </div>
+            <div class="form-group">
+                <label class="font-normal">BMI:</label>
+                <input id="obs.BMI" class="form-control" name="obs.BMI" type="number" data-concept="3ce14da8-26fe-102b-80cb-0017a47871b2^BMI^99DCT"/>
+                <label class="font-normal">kg/m<sup>2</sup></label>
+                &#8805; 25kg/m<sup>2</sup>?
                 <label class="font-normal">
-                    <input id="obs.fastingGlucoseTest" name="obs.GlucoseTest" type="radio"
-                           data-concept="b8de5533-e263-49fe-bb3f-62298365e268^Glucose Test^99DCT"
-                           value="2effb850-0384-4a09-8ae0-a7b5f7e7289f^Fasting for blood glucose test^99DCT">
-                    Fasting
+                    <input id="obs.YesBMIgreaterthanorequal25" name="obs.BMIgreaterthanorequal25" type="radio"
+                           data-concept="ba32325d-799e-44d4-a588-2bd392c1ab1e^BMI greater that or equal 25 kg/m^2^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
                 </label>
                 <label class="font-normal">
-                    <input id="obs.randomGlucoseTest" name="obs.GlucoseTest" type="radio"
-                           data-concept="b8de5533-e263-49fe-bb3f-62298365e268^Glucose Test^99DCT"
-                           value="d2d34adf-9f22-4897-97a1-dbbda02b19dd^Random for blood glucose test^99DCT">
-                    Random
+                    <input id="obs.NoBMIgreaterthanorequal25" name="obs.BMIgreaterthanorequal25" type="radio"
+                           data-concept="ba32325d-799e-44d4-a588-2bd392c1ab1e^BMI greater that or equal 25 kg/m^2^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
                 </label>
-            </strong>
-        </div>
-        <div class="form-group">
-            <h3>Shared risk factors</h3>
+                <!--                &#8805; 25kg/m<sup>2</sup>?-->
+                <!--                <input type="radio" id="obs.YesBMIgreaterthanorequal25" name="obs.BMIgreaterthanorequal25" value="Yes"/>-->
+                <!--                <input type="radio" id="obs.NoBMIgreaterthanorequal25" name="obs.BMIgreaterthanorequal25" value="No"/>-->
 
-            <label for="obs.yesPhysicalActive"> Aren't you physical active for more than 30 min daily?</label>
-            <label class="font-normal">
-                <input id="obs.yesPhysicalActive" name="obs.PhysicalActive" type="radio"
-                       data-concept="1884ab94-1b9a-4df4-9a4b-3054146b9dbb^aran't you Physical active for more than 30 min daily^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <label class="font-normal">
-                <input id="obs.noPhysicalActive" name="obs.PhysicalActive" type="radio"
-                       data-concept="1884ab94-1b9a-4df4-9a4b-3054146b9dbb^aran't you Physical active for more than 30 min daily^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-        </div>
-        <div class="form-group">
+            </div>
+            <div class="form-group">
 
-            <label for="obs.yesEatVegetablesAndFruitsDaily"> Don't you eat vegetables and fruits daily?</label>
-            <label class="font-normal">
-                <input id="obs.yesEatVegetablesAndFruitsDaily" name="obs.EatVegetablesAndFruitsDaily" type="radio"
-                       data-concept="db3a4c09-636c-4b01-b654-9bd59fbf0ef6^Don't you eat vegetables and fruits daily^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <label class="font-normal">
-                <input id="obs.noEatVegetablesAndFruitsDaily" name="obs.EatVegetablesAndFruitsDaily" type="radio"
-                       data-concept="db3a4c09-636c-4b01-b654-9bd59fbf0ef6^Don't you eat vegetables and fruits daily"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-        </div>
-        <div class="form-group">
-            <label for="obs.yesHistoryOfSmoking"> History of Smoking?</label>
-            <label class="font-normal">
-                <input id="obs.yesHistoryOfSmoking" name="obs.HistoryOfSmoking" type="radio"
-                       data-concept="3cdbdca6-26fe-102b-80cb-0017a47871b2^SMOKING HISTORY^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <label class="font-normal">
-                <input id="obs.noHistoryOfSmoking" name="obs.HistoryOfSmoking" type="radio"
-                       data-concept="3cdbdca6-26fe-102b-80cb-0017a47871b2^SMOKING HISTORY^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-        </div>
-        <div class="form-group">
+                <label class="font-normal"> Waist circumference (cm) :</label>
+                <input class="form-control" id="obs.Waistcircumference" name="obs.Waistcircumference" type="number" data-concept="d735afe6-8fd3-4802-8465-197d324b3085^Waist circumference^99DCT"/>
+                <br/>
+                <br/>
+                <u>Men</u> &#8805;94cm? Women &#8805;80cm?
 
-            <label for="obs.yesExcessiveAlcoholConsumption"> Excessive alcohol consumption?</label>
-            <label class="font-normal">
-                <input id="obs.yesExcessiveAlcoholConsumption" name="obs.ExcessiveAlcoholConsumption" type="radio"
-                       data-concept="ac40a8bc-2c87-4e1a-b024-424625e82d24^excessive Alcohol Consumption^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <label class="font-normal">
-                <input id="obs.noExcessiveAlcoholConsumption" name="obs.ExcessiveAlcoholConsumption" type="radio"
-                       data-concept="ac40a8bc-2c87-4e1a-b024-424625e82d24^excessive Alcohol Consumption^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-        </div>
-        <div class="form-group">
-            <label for="obs.yesHistoryOfTakingChronicMeds"> History of taking chronic meds? (HIV,NCD,etc)</label>
-            <label class="font-normal">
-                <input id="obs.yesHistoryOfTakingChronicMeds" name="obs.HistoryOfTakingChronicMeds" type="radio"
-                       data-concept="047815d4-5810-41d7-b6e3-87cc81f5b767^History of taking chronic meds^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <label class="font-normal">
-                <input id="obs.noHistoryOfTakingChronicMeds" name="obs.HistoryOfTakingChronicMeds" type="radio"
-                       data-concept="047815d4-5810-41d7-b6e3-87cc81f5b767^History of taking chronic meds^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-        </div>
-        <div class="form-group">
-            <strong>Refer to national guidelines</strong>
-        </div>
-        <div class="form-group">
-            <h3>Diabetes</h3>
-            <label for="obs.yesHistoryOfUnexplainedWeightLoss"> History of unxplained weight loss?</label>
-            <label class="font-normal">
-                <input id="obs.yesHistoryOfUnexplainedWeightLoss" name="obs.HistoryOfUnexplainedWeightLoss" type="radio"
-                       data-concept="5a25ae5c-e054-4f34-85eb-bd185176556a^History of unxplained weight loss^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <label class="font-normal">
-                <input class="form-group" id="obs.noHistoryOfUnexplainedWeightLoss" name="obs.HistoryOfUnexplainedWeightLoss" type="radio"
-                       data-concept="5a25ae5c-e054-4f34-85eb-bd185176556a^History of unxplained weight loss^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-        </div>
-        <div class="form-group">
-            <label for="obs.yesHistoryOfUnusualThirst"> History of unusual thirst?</label>
-            <label class="font-normal">
-                <input class="form-group" id="obs.yesHistoryOfUnusualThirst" name="obs.HistoryOfUnusualThirst" type="radio"
-                       data-concept="df91fea8-2980-4d5c-b011-38927e0e6478^History of unusual thirst^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <label class="font-normal">
-                <input class="form-group" id="obs.noHistoryOfUnusualThirst" name="obs.HistoryOfUnusualThirst" type="radio"
-                       data-concept="df91fea8-2980-4d5c-b011-38927e0e6478^History of unusual thirst^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-        </div>
-        <div class="form-group">
-            <label for="obs.yesHistoryOfFrequentorAbundantUrination"> History of frequent/abundant urination?</label>
-            <label class="font-normal">
-                <input id="obs.yesHistoryOfFrequentorAbundantUrination" name="obs.HistoryOfFrequentorAbundantUrination" type="radio"
-                       data-concept="a3b6f43f-9af9-441a-8305-f42a0469715d^History of frequent or abundant urination^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <label class="font-normal">
-                <input class="form-group" id="obs.noHistoryOfFrequentorAbundantUrination" name="obs.HistoryOfFrequentorAbundantUrination" type="radio"
-                       data-concept="a3b6f43f-9af9-441a-8305-f42a0469715d^History of frequent or abundant urination^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-        </div>
-        <div class="form-group">
-            <label for="obs.yesHistoryOfMalnutritionInChildhood"> History of malnutrition in childhood?</label>
-            <label class="font-normal">
-                <input class="form-group" id="obs.yesHistoryOfMalnutritionInChildhood" name="obs.HistoryOfMalnutritionInChildhood" type="radio"
-                       data-concept="0d237103-f191-40f9-8225-b3c11126014e^History of malnutrition in childhood^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <label class="font-normal">
-                <input class="form-group" id="obs.noHistoryOfMalnutritionInChildhood" name="obs.HistoryOfMalnutritionInChildhood" type="radio"
-                       data-concept="0d237103-f191-40f9-8225-b3c11126014e^History of malnutrition in childhood^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-        </div>
-        <div class="form-group">
-            <label for="obs.yesHistoryOfDiabetesType1or2"> History of blood relative family member with type 1 or 2 diabetes?</label>
-            <label class="font-normal">
-                <input class="form-group" id="obs.yesHistoryOfDiabetesType1or2" name="obs.HistoryOfDiabetesType1or2" type="radio"
-                       data-concept="522e937f-ef83-4519-b769-48d228a4680c^History of blood relative family member with type 1 or 2 diabetes^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <label class="font-normal">
-                <input class="form-group" id="obs.noHistoryOfDiabetesType1or2" name="obs.HistoryOfDiabetesType1or2" type="radio"
-                       data-concept="522e937f-ef83-4519-b769-48d228a4680c^History of blood relative family member with type 1 or 2 diabetes^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-        </div>
-        <div class="form-group">
-            <label for="obs.yesHistoryOfHighBloodGlucose"> History of high blood glucose (exam, illness,pregnance)?</label>
-            <label class="font-normal">
-                <input class="form-group" id="obs.yesHistoryOfHighBloodGlucose" name="obs.HistoryOfHighBloodGlucose" type="radio"
-                       data-concept="4b91b9cc-d587-45f3-8068-60f5248a8351^History of high blood glucose^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <label class="font-normal">
-                <input class="form-group" id="obs.noHistoryOfHighBloodGlucose" name="obs.HistoryOfHighBloodGlucose" type="radio"
-                       data-concept="4b91b9cc-d587-45f3-8068-60f5248a8351^History of high blood glucose^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-        </div>
-
-        <div class="form-group">
-            <h3>Screening test</h3>
-            One or more of a "yes" response,
-            order the following:
-            <strong>
-                <label for="obs.Glycemia">Glycemia:</label>
-                <input id="obs.Glycemia" class="form-control" name="obs.Glycemia" type="number" data-concept="887^SERUM GLUCOSE^99DCT"/>
-                mg/dl
-            </strong>
-        </div>
-        <div class="form-group">
-            <strong>
                 <label class="font-normal">
-                    <input id="obs.fastingGlucoseTest" name="obs.GlucoseTest" type="radio"
-                           data-concept="b8de5533-e263-49fe-bb3f-62298365e268^Glucose Test^99DCT"
-                           value="2effb850-0384-4a09-8ae0-a7b5f7e7289f^Fasting for blood glucose test^99DCT">
-                    Fasting
+                    <input id="obs.YesWaistcircumferencegreaterthanorequalto94" name="obs.Waistcircumferencegreaterthanorequalto94" type="radio"
+                           data-concept="2ecaa1f3-130c-44ad-ac33-7948c4db36c5^Waist circumference greater than or equal to 94 on men and 80 for women^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
                 </label>
                 <label class="font-normal">
-                    <input id="obs.randomGlucoseTest" name="obs.GlucoseTest" type="radio"
-                           data-concept="b8de5533-e263-49fe-bb3f-62298365e268^Glucose Test^99DCT"
-                           value="d2d34adf-9f22-4897-97a1-dbbda02b19dd^Random for blood glucose test^99DCT">
-                    Random
+                    <input id="obs.NoWaistcircumferencegreaterthanorequalto94" name="obs.Waistcircumferencegreaterthanorequalto94" type="radio"
+                           data-concept="2ecaa1f3-130c-44ad-ac33-7948c4db36c5^Waist circumference greater than or equal to 94 on men and 80 for women^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
                 </label>
-            </strong>
-        </div>
-        <div class="form-group">
-            <h3>Cardiovascular diseases</h3>
 
-            <label for="obs.yesExertionShortnessOfBreath"> Do you have exertion shortness of breath?</label>
-            <label class="font-normal">
-                <input class="form-group" id="obs.yesExertionShortnessOfBreath" name="obs.ExertionShortnessOfBreath" type="radio"
-                       data-concept="3cf1ae14-26fe-102b-80cb-0017a47871b2^SHORTNESS OF BREATH WITH EXERTION^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <label class="font-normal">
-                <input class="form-group" id="obs.noExertionShortnessOfBreath" name="obs.ExertionShortnessOfBreath" type="radio"
-                       data-concept="3cf1ae14-26fe-102b-80cb-0017a47871b2^SHORTNESS OF BREATH WITH EXERTION^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-        </div>
-        <div class="form-group">
-            <label for="obs.yesOrthopnea"> Do you have orthopnea?</label>
-            <label class="font-normal">
-                <input class="form-group"id="obs.yesOrthopnea" name="obs.Orthopnea" type="radio"
-                       data-concept="afd6d18b-5f0e-4fe0-a2df-426126cd1c59^ORTHOPNEA^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <label class="font-normal">
-                <input class="form-group" id="obs.noOrthopnea" name="obs.Orthopnea" type="radio"
-                       data-concept="afd6d18b-5f0e-4fe0-a2df-426126cd1c59^ORTHOPNEA^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-        </div>
-        <div class="form-group">
-            <label for="obs.yesCurrentChestPain"> Do you have current chest pain?</label>
-            <label class="font-normal">
-                <input class="form-group" id="obs.yesCurrentChestPain" name="obs.CurrentChestPain" type="radio"
-                       data-concept="3ccd2364-26fe-102b-80cb-0017a47871b2^CHEST PAIN"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <label class="font-normal">
-                <input class="form-group" id="obs.noCurrentChestPain" name="obs.CurrentChestPain" type="radio"
-                       data-concept="3ccd2364-26fe-102b-80cb-0017a47871b2^CHEST PAIN"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-        </div>
-        <div class="form-group">
-            <label for="obs.yesHistoryOfUntreatedSoreThroat"> Do you have History of untreated sore throat?</label>
-            <label class="font-normal">
-                <input class="form-group" id="obs.yesHistoryOfUntreatedSoreThroat" name="obs.HistoryOfUntreatedSoreThroat" type="radio"
-                       data-concept="b1c3a6fb-90b0-4382-9702-60a8536200cf^History of untreated sore throat^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <label class="font-normal">
-                <input class="form-group" id="obs.noHistoryOfUntreatedSoreThroat" name="obs.HistoryOfUntreatedSoreThroat" type="radio"
-                       data-concept="b1c3a6fb-90b0-4382-9702-60a8536200cf^History of untreated sore throat^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-        </div>
-        <div class="form-group">
-            <label for="obs.yesHistoryOfBodySwelling"> Do you have History of body swelling?</label>
-            <label class="font-normal">
-                <input class="form-group" id="obs.yesHistoryOfBodySwelling" name="obs.HistoryOfBodySwelling" type="radio"
-                       data-concept="e09b0cbe-6b73-414b-b69f-6708f651b788^History of body swelling^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <label class="font-normal">
-                <input class="form-group" id="obs.noHistoryOfBodySwelling" name="obs.HistoryOfBodySwelling" type="radio"
-                       data-concept="e09b0cbe-6b73-414b-b69f-6708f651b788^History of body swelling^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-        </div>
+            </div>
+            <div class="form-group">
+                <label class="font-normal"> Blood pressure (BP):</label>
+                <input class="form-control" placeholder="Systolic" id="obs.SystolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>
+                <input class="form-control" placeholder="Diastolic" id="obs.diastolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>
+                mmHg
+                <br/>
+                <br/>
+                S&#8805;140? or D&gt;90?
+                <label class="font-normal">
+                    <input id="obs.YesSystolicgreaterthanorequal140ordistolicgreaterthan90" name="obs.Systolicgreaterthanorequal140ordistolicgreaterthan90" type="radio"
+                           data-concept="d8414d40-41ef-46ff-bef1-899f261be8a0^Is Systolic greater than or equal 140 or diastolic greater than 90^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
+                </label>
+                <label class="font-normal">
+                    <input id="obs.NoSystolicgreaterthanorequal140ordistolicgreaterthan90" name="obs.Systolicgreaterthanorequal140ordistolicgreaterthan90" type="radio"
+                           data-concept="d8414d40-41ef-46ff-bef1-899f261be8a0^Is Systolic greater than or equal 140 or diastolic greater than 90^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
+                </label>
 
+            </div>
+            <div class="form-group">
+                <label class="font-normal">
+                    <strong>
+                        If women</strong> between 15 and 49 years old, <br/>
+                    <strong>Is she pregnant ?
+                    </strong>
+                </label>
+
+                <label class="font-normal">
+                    <input id="obs.IsPregnantYes" name="obs.IsPregnant" type="radio"
+                           data-concept="3ceb4880-26fe-102b-80cb-0017a47871b2^PREGNANCY STATUS^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
+                </label>
+                <label class="font-normal">
+                    <input id="obs.IsPregnantNo" name="obs.IsPregnant" type="radio"
+                           data-concept="3ceb4880-26fe-102b-80cb-0017a47871b2^PREGNANCY STATUS^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
+                </label>
+
+            </div>
+
+            <div class="form-group">
+                <h3>Screening test</h3>
+                One or more of a "yes" response,
+                order the following:
+                <br/>
+                <br/>
+                <strong>
+                    <label class="font-normal">Glycemia:</label>
+                    <input id="obs.Glycemia" class="form-control" name="obs.Glycemia" type="number" data-concept="3cd4e194-26fe-102b-80cb-0017a47871b2^SERUM GLUCOSE^99DCT"/>
+                    mg/dl
+                </strong>
+                <br/><br/>
+                <strong>
+                    <label class="font-normal">
+                        <input id="obs.fastingGlucoseTest" name="obs.GlucoseTest" type="radio"
+                               data-concept="b8de5533-e263-49fe-bb3f-62298365e268^Glucose Test^99DCT"
+                               value="2effb850-0384-4a09-8ae0-a7b5f7e7289f^Fasting for blood glucose test^99DCT">
+                        Fasting
+                    </label>
+                    <label class="font-normal">
+                        <input id="obs.randomGlucoseTest" name="obs.GlucoseTest" type="radio"
+                               data-concept="b8de5533-e263-49fe-bb3f-62298365e268^Glucose Test^99DCT"
+                               value="d2d34adf-9f22-4897-97a1-dbbda02b19dd^Random for blood glucose test^99DCT">
+                        Random
+                    </label>
+                </strong>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="form-group">
+                <h3>A.  Shared risk factors</h3>
+
+                <label class="font-normal">A1. Do you do physical activity for more than 30 min daily?</label>
+                <label class="font-normal">
+                    <input id="obs.yesPhysicalActive" name="obs.PhysicalActive" type="radio"
+                           data-concept="12e15ec1-1c50-4b56-8829-74a1e9a628f0^Do you do physical activity for more than 30 min daily^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
+                </label>
+                <label class="font-normal">
+                    <input id="obs.noPhysicalActive" name="obs.PhysicalActive" type="radio"
+                           data-concept="12e15ec1-1c50-4b56-8829-74a1e9a628f0^Do you do physical activity for more than 30 min daily^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
+                </label>
+            </div>
+            <div class="form-group">
+
+                <label class="font-normal">A2. Do you eat vegetables and fruits daily?</label>
+                <label class="font-normal">
+                    <input id="obs.yesEatVegetablesAndFruitsDaily" name="obs.EatVegetablesAndFruitsDaily" type="radio"
+                           data-concept="d4d80ac9-e6ba-4ab7-bfd7-9b79c26cc051^Do you eat vegetables and fruits daily^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
+                </label>
+                <label class="font-normal">
+                    <input id="obs.noEatVegetablesAndFruitsDaily" name="obs.EatVegetablesAndFruitsDaily" type="radio"
+                           data-concept="d4d80ac9-e6ba-4ab7-bfd7-9b79c26cc051^Do you eat vegetables and fruits daily"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="font-normal">A3. History of Smoking?</label>
+                <label class="font-normal">
+                    <input id="obs.yesHistoryOfSmoking" name="obs.HistoryOfSmoking" type="radio"
+                           data-concept="3cdbdca6-26fe-102b-80cb-0017a47871b2^SMOKING HISTORY^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
+                </label>
+                <label class="font-normal">
+                    <input id="obs.noHistoryOfSmoking" name="obs.HistoryOfSmoking" type="radio"
+                           data-concept="3cdbdca6-26fe-102b-80cb-0017a47871b2^SMOKING HISTORY^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
+                </label>
+            </div>
+            <div class="form-group">
+
+                <label class="font-normal">A4. Excessive alcohol consumption?</label>
+                <label class="font-normal">
+                    <input id="obs.yesExcessiveAlcoholConsumption" name="obs.ExcessiveAlcoholConsumption" type="radio"
+                           data-concept="de7ca0b6-fc93-487f-8a0a-a170ecbbb943^excessive Alcohol Consumption^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
+                </label>
+                <label class="font-normal">
+                    <input id="obs.noExcessiveAlcoholConsumption" name="obs.ExcessiveAlcoholConsumption" type="radio"
+                           data-concept="de7ca0b6-fc93-487f-8a0a-a170ecbbb943^excessive Alcohol Consumption^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="font-normal">A5. History of taking chronic meds? (HIV,NCD,etc)</label>
+                <label class="font-normal">
+                    <input id="obs.yesHistoryOfTakingChronicMeds" name="obs.HistoryOfTakingChronicMeds" type="radio"
+                           data-concept="9837776f-9363-4fe5-9a2c-c4bec9543318^History of taking chronic meds^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
+                </label>
+                <label class="font-normal">
+                    <input id="obs.noHistoryOfTakingChronicMeds" name="obs.HistoryOfTakingChronicMeds" type="radio"
+                           data-concept="9837776f-9363-4fe5-9a2c-c4bec9543318^History of taking chronic meds^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
+                </label>
+            </div>
+            <div class="form-group">
+                If any "<strong>No</strong>" to question A1 or  <br/>
+                A2 or any "<strong>Yes</strong>" from A3 to <br/>
+                A5: <stong> Give appropriate counselling on <br/>
+                lifestyle modification</stong>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="form-group">
+                <h3>B. Diabetes</h3>
+                <label class="font-normal">B1. History of unxplained weight loss?</label>
+                <label class="font-normal">
+                    <input id="obs.yesHistoryOfUnexplainedWeightLoss" name="obs.HistoryOfUnexplainedWeightLoss" type="radio"
+                           data-concept="104a674d-3691-44cd-a5fa-a30578c34c40^History of unxplained weight loss^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
+                </label>
+                <label class="font-normal">
+                    <input class="form-group" id="obs.noHistoryOfUnexplainedWeightLoss" name="obs.HistoryOfUnexplainedWeightLoss" type="radio"
+                           data-concept="104a674d-3691-44cd-a5fa-a30578c34c40^History of unxplained weight loss^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="font-normal">B2. History of unusual thirst?</label>
+                <label class="font-normal">
+                    <input class="form-group" id="obs.yesHistoryOfUnusualThirst" name="obs.HistoryOfUnusualThirst" type="radio"
+                           data-concept="f44d6f03-6b95-4a39-8f5f-b14f7feb07a0^History of unusual thirst^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
+                </label>
+                <label class="font-normal">
+                    <input class="form-group" id="obs.noHistoryOfUnusualThirst" name="obs.HistoryOfUnusualThirst" type="radio"
+                           data-concept="f44d6f03-6b95-4a39-8f5f-b14f7feb07a0^History of unusual thirst^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="font-normal">B3. History of frequent/abundant urination?</label>
+                <label class="font-normal">
+                    <input id="obs.yesHistoryOfFrequentorAbundantUrination" name="obs.HistoryOfFrequentorAbundantUrination" type="radio"
+                           data-concept="3020cc9a-b3ee-4293-8f7b-f4489f71164b^History of frequent or abundant urination^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
+                </label>
+                <label class="font-normal">
+                    <input class="form-group" id="obs.noHistoryOfFrequentorAbundantUrination" name="obs.HistoryOfFrequentorAbundantUrination" type="radio"
+                           data-concept="3020cc9a-b3ee-4293-8f7b-f4489f71164b^History of frequent or abundant urination^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
+                </label>
+            </div>
+            <!--        <div class="form-group">-->
+            <!--            <label for="obs.yesHistoryOfMalnutritionInChildhood"> History of malnutrition in childhood?</label>-->
+            <!--            <label class="font-normal">-->
+            <!--                <input class="form-group" id="obs.yesHistoryOfMalnutritionInChildhood" name="obs.HistoryOfMalnutritionInChildhood" type="radio"-->
+            <!--                       data-concept="0d237103-f191-40f9-8225-b3c11126014e^History of malnutrition in childhood^99DCT"-->
+            <!--                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">-->
+            <!--                Yes-->
+            <!--            </label>-->
+            <!--            <label class="font-normal">-->
+            <!--                <input class="form-group" id="obs.noHistoryOfMalnutritionInChildhood" name="obs.HistoryOfMalnutritionInChildhood" type="radio"-->
+            <!--                       data-concept="0d237103-f191-40f9-8225-b3c11126014e^History of malnutrition in childhood^99DCT"-->
+            <!--                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">-->
+            <!--                No-->
+            <!--            </label>-->
+            <!--        </div>-->
+            <div class="form-group">
+                <label class="font-normal">B4. History of blood relative family member with type 1 or 2 diabetes?</label>
+                <label class="font-normal">
+                    <input class="form-group" id="obs.yesHistoryOfDiabetesType1or2" name="obs.HistoryOfDiabetesType1or2" type="radio"
+                           data-concept="4512b014-cfce-4a4b-91a1-8f815fff3da9^History of blood relative family member with type 1 or 2 diabetes^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
+                </label>
+                <label class="font-normal">
+                    <input class="form-group" id="obs.noHistoryOfDiabetesType1or2" name="obs.HistoryOfDiabetesType1or2" type="radio"
+                           data-concept="4512b014-cfce-4a4b-91a1-8f815fff3da9^History of blood relative family member with type 1 or 2 diabetes^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="font-normal">B5. History of high blood glucose (exam, illness,pregnance)?</label>
+                <label class="font-normal">
+                    <input class="form-group" id="obs.yesHistoryOfHighBloodGlucose" name="obs.HistoryOfHighBloodGlucose" type="radio"
+                           data-concept="abd72056-ab0d-45de-9620-65569436c8ed^History of high blood glucose^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
+                </label>
+                <label class="font-normal">
+                    <input class="form-group" id="obs.noHistoryOfHighBloodGlucose" name="obs.HistoryOfHighBloodGlucose" type="radio"
+                           data-concept="abd72056-ab0d-45de-9620-65569436c8ed^History of high blood glucose^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
+                </label>
+            </div>
+
+            <div class="form-group">
+                <h3>Screening test</h3>
+                One or more of a "yes" response, <br/>
+                order the following:
+                <br/>
+                <br/>
+                <strong>
+                    <label class="font-normal">Glycemia:</label>
+                    <input id="obs.Glycemia" class="form-control" name="obs.Glycemia" type="number" data-concept="3cd4e194-26fe-102b-80cb-0017a47871b2^SERUM GLUCOSE^99DCT"/>
+                    mg/dl
+                </strong>
+            </div>
+            <div class="form-group">
+                <br/>
+                <strong>
+                    <label class="font-normal">
+                        <input id="obs.fastingGlucoseTest" name="obs.GlucoseTest" type="radio"
+                               data-concept="b8de5533-e263-49fe-bb3f-62298365e268^Glucose Test^99DCT"
+                               value="2effb850-0384-4a09-8ae0-a7b5f7e7289f^Fasting for blood glucose test^99DCT">
+                        Fasting
+                    </label>
+                    <label class="font-normal">
+                        <input id="obs.randomGlucoseTest" name="obs.GlucoseTest" type="radio"
+                               data-concept="b8de5533-e263-49fe-bb3f-62298365e268^Glucose Test^99DCT"
+                               value="d2d34adf-9f22-4897-97a1-dbbda02b19dd^Random for blood glucose test^99DCT">
+                        Random
+                    </label>
+                </strong>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="form-group">
+                <h3>C. Cardiovascular diseases</h3>
+
+                <label class="font-normal">C1. Do you have exertion shortness of breath?</label>
+                <label class="font-normal">
+                    <input class="form-group" id="obs.yesExertionShortnessOfBreath" name="obs.ExertionShortnessOfBreath" type="radio"
+                           data-concept="3cf1ae14-26fe-102b-80cb-0017a47871b2^SHORTNESS OF BREATH WITH EXERTION^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
+                </label>
+                <label class="font-normal">
+                    <input class="form-group" id="obs.noExertionShortnessOfBreath" name="obs.ExertionShortnessOfBreath" type="radio"
+                           data-concept="3cf1ae14-26fe-102b-80cb-0017a47871b2^SHORTNESS OF BREATH WITH EXERTION^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="font-normal">C2. Do you have orthopnea?</label>
+                <label class="font-normal">
+                    <input class="form-group"id="obs.yesOrthopnea" name="obs.Orthopnea" type="radio"
+                           data-concept="afd6d18b-5f0e-4fe0-a2df-426126cd1c59^ORTHOPNEA^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
+                </label>
+                <label class="font-normal">
+                    <input class="form-group" id="obs.noOrthopnea" name="obs.Orthopnea" type="radio"
+                           data-concept="afd6d18b-5f0e-4fe0-a2df-426126cd1c59^ORTHOPNEA^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="font-normal">C3. Do you have current chest pain?</label>
+                <label class="font-normal">
+                    <input class="form-group" id="obs.yesCurrentChestPain" name="obs.CurrentChestPain" type="radio"
+                           data-concept="3ccd2364-26fe-102b-80cb-0017a47871b2^CHEST PAIN^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
+                </label>
+                <label class="font-normal">
+                    <input class="form-group" id="obs.noCurrentChestPain" name="obs.CurrentChestPain" type="radio"
+                           data-concept="3ccd2364-26fe-102b-80cb-0017a47871b2^CHEST PAIN^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="font-normal">C4. Do you have History of untreated sore throat?</label>
+                <label class="font-normal">
+                    <input class="form-group" id="obs.yesHistoryOfUntreatedSoreThroat" name="obs.HistoryOfUntreatedSoreThroat" type="radio"
+                           data-concept="653b04a6-677f-4805-ab82-20782ca856fb^History of untreated sore throat^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
+                </label>
+                <label class="font-normal">
+                    <input class="form-group" id="obs.noHistoryOfUntreatedSoreThroat" name="obs.HistoryOfUntreatedSoreThroat" type="radio"
+                           data-concept="653b04a6-677f-4805-ab82-20782ca856fb^History of untreated sore throat^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="font-normal">C5. Do you have History of body swelling?</label>
+                <label class="font-normal">
+                    <input class="form-group" id="obs.yesHistoryOfBodySwelling" name="obs.HistoryOfBodySwelling" type="radio"
+                           data-concept="baa1918e-bb31-4359-84ed-927ea0ddef85^History of body swelling^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
+                </label>
+                <label class="font-normal">
+                    <input class="form-group" id="obs.noHistoryOfBodySwelling" name="obs.HistoryOfBodySwelling" type="radio"
+                           data-concept="baa1918e-bb31-4359-84ed-927ea0ddef85^History of body swelling^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
+                </label>
+            </div>
+            <div>
+                One or more of a "yes" <br/>
+                response: <br/>
+                <b>
+                    Rule out heart problem; <br/>
+                    Heart ultrasound
+                </b>
+            </div>
+        </fieldset>
     </div>
 
-    <h3>Decision: Summary</h3>
-    <div class="section">
-        <div class="form-group">
-            <label for="obs.identifiedProblemOrDisease"> Identified problem/Disease</label>
-            <input class="form-group" id="obs.identifiedProblemOrDisease" name="obs.identifiedProblemOrDisease" type="text" data-concept="533171^identified Problem or Disease^99DCT"/>
 
-            <label for="obs.Interventions"> Interventions</label>
-                <strong>New Case? </strong>
-                <i>--If participant screened positive (have high BP or High Blood glucose), is this their first NCD diagnosis?</i>
+
+    <h3>Section III. DECISION, SUMMARY OF SCREENING RESULT</h3>
+    <fieldset>
+        <div>
+            <strong>
+                Identified problem/Disease
+            </strong>
+            <br/>
+            <label class="font-normal">
+                <input class="form-group" id="obs.NormalIdentifiedProblemOrDisease" name="obs.IdentifiedProblemOrDisease" type="radio"
+                       data-concept="55f90db6-2503-40cc-bedf-3855dd3a19dc^Identified problem or disease^99DCT"
+                       value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">
+                Normal
+            </label>
+            <label class="font-normal">
+                <input class="form-group" id="obs.OverweightOrObesityIdentifiedProblemOrDisease" name="obs.IdentifiedProblemOrDisease" type="radio"
+                       data-concept="55f90db6-2503-40cc-bedf-3855dd3a19dc^Identified problem or disease^99DCT"
+                       value="48237ce3-087f-4f24-9ea9-5165c92c06a6^Overweight or Obesity^99DCT">
+                Overweight/Obesity
+            </label>
+            <label class="font-normal">
+                <input class="form-group" id="obs.HypertensionIdentifiedProblemOrDisease" name="obs.IdentifiedProblemOrDisease" type="radio"
+                       data-concept="55f90db6-2503-40cc-bedf-3855dd3a19dc^Identified problem or disease^99DCT"
+                       value="3cd50188-26fe-102b-80cb-0017a47871b2^HYPERTENSION^99DCT">
+                Hypertension
+            </label>
+            <label class="font-normal">
+                <input class="form-group" id="obs.DiabetesIdentifiedProblemOrDisease" name="obs.IdentifiedProblemOrDisease" type="radio"
+                       data-concept="55f90db6-2503-40cc-bedf-3855dd3a19dc^Identified problem or disease^99DCT"
+                       value="edf4ecc4-44f6-457a-b561-179f4426b16a^DIABETES^99DCT">
+                Diabetes
+            </label>
+            <label class="font-normal">
+                <input class="form-group" id="obs.HeartDiseaseIdentifiedProblemOrDisease" name="obs.IdentifiedProblemOrDisease" type="radio"
+                       data-concept="55f90db6-2503-40cc-bedf-3855dd3a19dc^Identified problem or disease^99DCT"
+                       value="f40bf9bb-fcaa-4f90-8199-197bc6cb2b03^HEART DISEASE^99DCT">
+                Heart Disease
+            </label>
+            <label class="font-normal">
+                <input class="form-group" id="obs.OtherIdentifiedProblemOrDisease" name="obs.IdentifiedProblemOrDisease" type="radio"
+                       data-concept="55f90db6-2503-40cc-bedf-3855dd3a19dc^Identified problem or disease^99DCT"
+                       value="3cee7fb4-26fe-102b-80cb-0017a47871b2^OTHER NON-CODED^99DCT">
+                Other (specify:
+            </label>
+            <label>
+                <input class="form-group" id="obs.OtherProblem" name="OtherProblem" type="text" data-concept="c548a633-9931-496d-9ade-4b7c971e6600^Other^99DCT"/>
+            </label>
+        </div>
+        <div>
+            <label >
+                If participant screened positive <br/>
+                (have high BP or High blood glucose, <br/>
+                he/she is new case?
+            </label>
             <label class="font-normal">
                 <input class="form-group" id="obs.yesNewCase" name="obs.NewCase" type="radio"
-                       data-concept="e1db38da-893a-4c1a-b164-153d5528c47f^new NCD Case^99DCT"
+                       data-concept="0c47054a-6681-48da-8477-53c8fa52ce44^New case^99DCT"
                        value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
                 Yes
             </label>
             <label class="font-normal">
                 <input class="form-group" id="obs.noNewCase" name="obs.NewCase" type="radio"
-                       data-concept="e1db38da-893a-4c1a-b164-153d5528c47f^new NCD Case^99DCT"
+                       data-concept="0c47054a-6681-48da-8477-53c8fa52ce44^New case^99DCT"
                        value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
                 No
             </label>
-        </div>
-        <div class="form-group">
-            <label class="font-normal">
 
-                <input class="form-group" id="obs.Interventions" name="obs.Interventions" type="radio"
-                       data-concept="73ec6edc-6bd5-48e7-b818-8c3d164e060e^Interventions"
-                       value="43b0b907-c80b-4ae6-8198-dbb0c3434625^annual Checkup and Lifestyle Counselling^99DCT">
-                Annual checkup and lifestyle counselling
+        </div>
+
+        <div>
+            <strong>
+                Interventions
+            </strong>
+            <br/>
+
+            <label class="font-normal">
+                <input class="form-group" id="obs.AnnualCheckupIntervantion" name="obs.Intervention" type="radio"
+                       data-concept="5c3b38d3-651d-48f2-a8fe-1f54662ef7a1^Interventions^99DCT"
+                       value="ceb09f38-a9e1-47b2-9541-31f4de40a434^Annual checkup and lifestyle counselling^99DCT">
+                Annual checkup and lifestyle counseling
             </label>
             <label class="font-normal">
-                <input class="form-group" id="obs.referral" name="obs.Interventions" type="radio"
-                       data-concept="73ec6edc-6bd5-48e7-b818-8c3d164e060e^Interventions^99DCT"
+                <input class="form-group" id="obs.DiagnosisWorkupIntervention" name="obs.Intervention" type="radio"
+                       data-concept="5c3b38d3-651d-48f2-a8fe-1f54662ef7a1^Interventions^99DCT"
+                       value="0e63603a-47f7-42c5-b7e7-f920add874c0^Scheduled for diagnosis work up^99DCT">
+                Scheduled for diagnosis work up (at site of screening)
+            </label>
+            <label class="font-normal">
+                <input class="form-group" id="obs.ReferralIntervention" name="obs.Intervention" type="radio"
+                       data-concept="5c3b38d3-651d-48f2-a8fe-1f54662ef7a1^Interventions^99DCT"
                        value="25782f2c-074f-4834-b7d2-4668cd645a57^referred to^99DCT">
-                Referral
+                Referral to health facility for management or other special investigation/exams
+            </label>
+            <label>
+                <br/>
+                Facility:
+            </label>
+            <label class="font-normal">
+                <input class="form-group" id="obs.ReferreToHealthCenter" name="obs.ReferreTo" type="radio"
+                       data-concept="4c12ce40-d2d9-42dc-8202-3ffc91e1e642^Patient referred to where^99DCT"
+                       value="7e327a1a-c1df-4712-ab5d-e05dc0dac35d^HEALTH CENTER^99DCT">
+                Health Center
+            </label>
+            <label class="font-normal">
+                <input class="form-group" id="obs.ReferreToDistrictHospital" name="obs.ReferreTo" type="radio"
+                       data-concept="4c12ce40-d2d9-42dc-8202-3ffc91e1e642^Patient referred to where^99DCT"
+                       value="e3f356b2-a340-47df-8b87-b70224437833^DISTRICT HOSPITAL^99DCT">
+                District Hospital
             </label>
         </div>
-        <div class="form-group">
-            <label for="obs.referringReason"> Reason: </label>
-<!--            <input id="obs.referringReason" name="obs.referringReason" type="text" data-concept="530214^Reasons for Referral, non coded^99DCT"/>-->
-            <textarea class="form-control" id="obs.referringReason"
-                      name="obs.referringReason" type="text"  rows="5"
-                      data-concept="9c140c92-44bb-4070-ad8f-ed22affc1d8d^Reasons for Referral, non coded^99DCT"></textarea>
 
-        </div>
-        <div class="form-group">
-            <label for="obs.facilityReferredTo"> Facility:</label>
-            <input class="form-group" id="obs.facilityReferredTo" name="obs.facilityReferredTo" type="text" data-concept="25782f2c-074f-4834-b7d2-4668cd645a57^referred to^99DCT"/>
+    </fieldset>
 
-            <label for="obs.dateOfReferring"> Date:</label>
-            <input class="form-group" id="obs.dateOfReferring" name="obs.dateOfReferring" type="text" data-concept="5f96394b-2620-4ce3-b5d1-a4aa6108c70f^Date of Referring^99DCT"/>
+    <!--    <div class="section">-->
+    <!--        <div class="form-group">-->
+    <!--            <label for="obs.identifiedProblemOrDisease"> Identified problem/Disease</label>-->
+    <!--            <input class="form-group" id="obs.identifiedProblemOrDisease" name="obs.identifiedProblemOrDisease" type="text" data-concept="533171^identified Problem or Disease^99DCT"/>-->
 
-        </div>
-    </div>
-    <div class="section">
-        <h3>Encounter Details</h3>
+    <!--            <label for="obs.Interventions"> Interventions</label>-->
+    <!--                <strong>New Case? </strong>-->
+    <!--                <i>&#45;&#45;If participant screened positive (have high BP or High Blood glucose), is this their first NCD diagnosis?</i>-->
+    <!--            <label class="font-normal">-->
+    <!--                <input class="form-group" id="obs.yesNewCase" name="obs.NewCase" type="radio"-->
+    <!--                       data-concept="e1db38da-893a-4c1a-b164-153d5528c47f^new NCD Case^99DCT"-->
+    <!--                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">-->
+    <!--                Yes-->
+    <!--            </label>-->
+    <!--            <label class="font-normal">-->
+    <!--                <input class="form-group" id="obs.noNewCase" name="obs.NewCase" type="radio"-->
+    <!--                       data-concept="e1db38da-893a-4c1a-b164-153d5528c47f^new NCD Case^99DCT"-->
+    <!--                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">-->
+    <!--                No-->
+    <!--            </label>-->
+    <!--        </div>-->
+    <!--        <div class="form-group">-->
+    <!--            <label class="font-normal">-->
 
-        <div class="form-group">
-            <label for="encounter.location_id">Location Name:<span class="required">*</span></label>
-            <input class="form-control valid-location-only" id="encounter.location_id" type="text" placeholder="Start typing something..."
-                   required="required">
-            <input class="form-control" name="encounter.location_id" type="hidden">
-        </div>
-        <div class="form-group">
-            <label for="encounter.provider_id_select">Provider ID:</label>
-            <input class="form-control valid-provider-only" id="encounter.provider_id_select" type="text" placeholder="Start typing something...">
-            <input class="form-control" name="encounter.provider_id_select" type="hidden">
-        </div>
-        <div class="form-group hidden">
-            <select id="select_providers"></select>
-        </div>
-        <div class="form-group show_provider_id_text">
-            <label for="encounter.provider_id">Provider's system-id:<span class="required">*</span></label>
-            <input class="form-control checkDigit" id="encounter.provider_id" name="encounter.provider_id"
-                   type="text" required="required" disabled="disabled">
-        </div>
-        <div class="form-group">
-            <label for="encounter.encounter_datetime">Encounter Date:<span class="required">*</span></label>
-            <input class="form-control datepicker nonFutureDate past-date" id="encounter.encounter_datetime"
-                   name="encounter.encounter_datetime" type="text" readonly="readonly"
-                   required="required">
-        </div>
-        <div class="form-group">
-            <input class="form-control" id="encounter.form_uuid" name="encounter.form_uuid"
-                   type="hidden" required="required">
-        </div>
-    </div>
+    <!--                <input class="form-group" id="obs.Interventions" name="obs.Interventions" type="radio"-->
+    <!--                       data-concept="73ec6edc-6bd5-48e7-b818-8c3d164e060e^Interventions"-->
+    <!--                       value="43b0b907-c80b-4ae6-8198-dbb0c3434625^annual Checkup and Lifestyle Counselling^99DCT">-->
+    <!--                Annual checkup and lifestyle counselling-->
+    <!--            </label>-->
+    <!--            <label class="font-normal">-->
+    <!--                <input class="form-group" id="obs.referral" name="obs.Interventions" type="radio"-->
+    <!--                       data-concept="73ec6edc-6bd5-48e7-b818-8c3d164e060e^Interventions^99DCT"-->
+    <!--                       value="25782f2c-074f-4834-b7d2-4668cd645a57^referred to^99DCT">-->
+    <!--                Referral-->
+    <!--            </label>-->
+    <!--        </div>-->
+    <!--        <div class="form-group">-->
+    <!--            <label for="obs.referringReason"> Reason: </label>-->
+    <!--&lt;!&ndash;            <input id="obs.referringReason" name="obs.referringReason" type="text" data-concept="530214^Reasons for Referral, non coded^99DCT"/>&ndash;&gt;-->
+    <!--            <textarea class="form-control" id="obs.referringReason"-->
+    <!--                      name="obs.referringReason" type="text"  rows="5"-->
+    <!--                      data-concept="9c140c92-44bb-4070-ad8f-ed22affc1d8d^Reasons for Referral, non coded^99DCT"></textarea>-->
 
+    <!--        </div>-->
+    <!--        <div class="form-group">-->
+    <!--            <label for="obs.facilityReferredTo"> Facility:</label>-->
+    <!--            <input class="form-group" id="obs.facilityReferredTo" name="obs.facilityReferredTo" type="text" data-concept="25782f2c-074f-4834-b7d2-4668cd645a57^referred to^99DCT"/>-->
+
+    <!--            <label for="obs.dateOfReferring"> Date:</label>-->
+    <!--            <input class="form-group" id="obs.dateOfReferring" name="obs.dateOfReferring" type="text" data-concept="5f96394b-2620-4ce3-b5d1-a4aa6108c70f^Date of Referring^99DCT"/>-->
+
+    <!--        </div>-->
+    <!--    </div>-->
     <div>
-        <input id="save_draft" name="save_draft" type="submit" value="Draft"/>
+<!--        <input id="save_draft" name="save_draft" type="submit" value="Draft"/>-->
         <input id="submit_form" name="submit_form" type="submit" value="submit"/>
     </div>
 </form>

@@ -1,0 +1,547 @@
+<htmlform>
+    <!-- Diabetes flowsheet:  Insulin list
+         Written by jberchmas
+           -->
+    <macros>
+        paperFormId = Flow-DM-RW.V2.0.akb.15May09
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+
+        @WEIGHT_(KG)@ = 3ce93b62-26fe-102b-80cb-0017a47871b2
+        @HEIGHT_(CM)@ = 3ce93cf2-26fe-102b-80cb-0017a47871b2
+        @BMI@ = 3ce14da8-26fe-102b-80cb-0017a47871b2
+        @BMI_greater_that_or_equal_25-kg/m^2@ = ba32325d-799e-44d4-a588-2bd392c1ab1e
+        @YES@ = 3cd6f600-26fe-102b-80cb-0017a47871b2
+        @NO@ = 3cd6f86c-26fe-102b-80cb-0017a47871b2
+        @SERUM_GLUCOSE@ = 3cd4e194-26fe-102b-80cb-0017a47871b2
+        @Glucose_Test@ = b8de5533-e263-49fe-bb3f-62298365e268
+        @Fasting_for_blood_glucose_test@ = 2effb850-0384-4a09-8ae0-a7b5f7e7289f
+        @Random_for_blood_glucose_test@ = d2d34adf-9f22-4897-97a1-dbbda02b19dd
+        @Waist_circumference@ = d735afe6-8fd3-4802-8465-197d324b3085
+        @Waist_circumference_greater_than_or_equal_to_94_on_men_and_80_for_women@ = 2ecaa1f3-130c-44ad-ac33-7948c4db36c5
+        @SYSTOLIC_BLOOD_PRESSURE@ = 3ce934fa-26fe-102b-80cb-0017a47871b2
+        @DIASTOLIC_BLOOD_PRESSURE@ = 3ce93694-26fe-102b-80cb-0017a47871b2
+        @Is_Systolic_greater_than_or_equal_140_or_diastolic_greater_than_90@ = d8414d40-41ef-46ff-bef1-899f261be8a0
+        @PREGNANCY_STATUS@ = 3ceb4880-26fe-102b-80cb-0017a47871b2
+        @Do_you_do_physical_activity_for_more_than_30_min_daily@ = 12e15ec1-1c50-4b56-8829-74a1e9a628f0
+        @Do_you_eat_vegetables_and_fruits_daily@ = d4d80ac9-e6ba-4ab7-bfd7-9b79c26cc051
+        @SMOKING_HISTORY@ = 3cdbdca6-26fe-102b-80cb-0017a47871b2
+        @excessive_Alcohol_Consumption@ = de7ca0b6-fc93-487f-8a0a-a170ecbbb943
+        @History_of_taking_chronic_meds@ = 9837776f-9363-4fe5-9a2c-c4bec9543318
+        @History_of_unxplained_weight_loss@ = 104a674d-3691-44cd-a5fa-a30578c34c40
+        @History_of_unusual_thirst@ = f44d6f03-6b95-4a39-8f5f-b14f7feb07a0
+        @History_of_frequent_or_abundant_urination@ = 3020cc9a-b3ee-4293-8f7b-f4489f71164b
+        @History_of_blood_relative_family_member_with_type_1_or_2_diabetes@ = 4512b014-cfce-4a4b-91a1-8f815fff3da9
+        @History_of_high_blood_glucose@ = abd72056-ab0d-45de-9620-65569436c8ed
+        @SHORTNESS_OF_BREATH_WITH_EXERTION@ = 3cf1ae14-26fe-102b-80cb-0017a47871b2
+        @ORTHOPNEA@ = afd6d18b-5f0e-4fe0-a2df-426126cd1c59
+        @CHEST_PAIN@ = 3ccd2364-26fe-102b-80cb-0017a47871b2
+        @History_of_untreated_sore_throat@ = 653b04a6-677f-4805-ab82-20782ca856fb
+        @History_of_body_swelling@ = baa1918e-bb31-4359-84ed-927ea0ddef85
+        @New_case@ = 0c47054a-6681-48da-8477-53c8fa52ce44
+        @Identified_problem_or_disease@ = 55f90db6-2503-40cc-bedf-3855dd3a19dc
+        @NORMAL@ = 3cd750a0-26fe-102b-80cb-0017a47871b2
+        @Overweight_or_Obesity@ = 48237ce3-087f-4f24-9ea9-5165c92c06a6
+        @HYPERTENSION@ = 3cd50188-26fe-102b-80cb-0017a47871b2
+        @DIABETES@ = edf4ecc4-44f6-457a-b561-179f4426b16a
+        @HEART_DISEASE@ = f40bf9bb-fcaa-4f90-8199-197bc6cb2b03
+        @OTHER_NON-CODED@ = 3cee7fb4-26fe-102b-80cb-0017a47871b2
+        @Other@ = c548a633-9931-496d-9ade-4b7c971e6600
+        @Patient_referred_to_where@ = 4c12ce40-d2d9-42dc-8202-3ffc91e1e642
+        @HEALTH_CENTER@ = 7e327a1a-c1df-4712-ab5d-e05dc0dac35d
+        @DISTRICT_HOSPITAL@ = e3f356b2-a340-47df-8b87-b70224437833
+        @Site_of_screening@ = e4c9a259-1e9e-4155-8f87-ce0b8f591f80
+        @Education_Level_(text)@ = eb879ed2-1fcd-465e-a841-f83c2b55662b
+        @Current_employment@ = 6e16e8bb-5f34-4d34-aa91-5fe3a08d254d
+        @Interventions@ = 5c3b38d3-651d-48f2-a8fe-1f54662ef7a1
+        @Annual_checkup_and_lifestyle_counselling@ = ceb09f38-a9e1-47b2-9541-31f4de40a434
+        @Scheduled_for_diagnosis_work_up@ = 0e63603a-47f7-42c5-b7e7-f920add874c0
+        @referred_to@ = 25782f2c-074f-4834-b7d2-4668cd645a57
+
+    </macros>
+    <style>
+        th.tableHeader {
+        background-color: #009d8e;
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: left;
+        }
+        .sectionHeader { background-color: #009d8e;
+        color: white; display: block; padding: 2px; font-weight:bold; }
+        ul {
+        list-style-type: square;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        }
+
+        tr.spaceUnder>td {
+        padding-bottom: 1em;
+        }
+
+        td {
+        font-size: 15px;
+        }
+
+        #container {
+        position: relative;
+        margin: auto;
+        width: 1400px;
+        height: auto;
+        }
+
+        @media print {
+        #container {
+        display: none;
+        }
+
+        #printArea {
+        display: block;
+        }
+
+        #userBar {
+        display: none;
+        }
+
+        #banner {
+        display: none;
+        }
+
+        #footer {
+        display: none;
+        }
+
+        #htmlFormEntryBanner {
+        display: none;
+        }
+
+        .error {
+        display: none;
+        }
+
+        .lables {
+        width: 200px;
+        }
+
+        table {
+        width: 100%;
+        }
+
+        table,td,th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+
+        th {
+        text-align: left;
+        background-color: #D9D9D9;
+        font-size: 10px;
+        }
+
+        td {
+        font-size: 10px;
+        }
+
+        .selectedCancerStagingKeys {
+        page-break-before: always;
+        border: 0px;
+        }
+
+        table.selectedCancerStagingKeys td {
+        border: 0px;
+        }
+
+        #signature {
+        border: none;
+        }
+        #signature td {
+        border: none;
+        }
+        }
+
+        @media screen {
+        table {
+        border: 1px solid #DFDFDF;
+        width: 100%;
+        border-color: #009d8e;
+        }
+
+        #container {
+        display: block;
+        }
+
+        #printArea {
+        display: none;
+        }
+        }
+    </style>
+
+    <table cellspacing="0" cellpadding="6" width="100%" border="1">
+        <tr>
+            <td><img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left"
+                     height="65" ></img>
+                <b>REPUBLIC OF RWANDA
+                    <br />MINISTRY OF HEALTH</b>
+            </td>
+            <td><strong> NCD Community Checkup: </strong> Diabetes and Cardiovascular Diseases<br/>
+                <b> IMB ID: <lookup class="value"
+                                    expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
+                                                                                                       expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
+                <br/>
+                Nom / Last name: <lookup class="value" expression="patient.personName.familyName" />
+                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                Prénom/ First name: <lookup class="value" expression="patient.personName.givenName" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Facility name: <encounterLocation />
+
+            </td>
+            <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
+                <br/><br/>
+                Provider:<encounterProvider id="encounterProvider"
+                                            role="Provider" default="currentUser"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Site of screening:
+                <obs conceptId="$@Site_of_screening@" />
+            </td>
+            <td>
+                Patient education level:
+                <obs conceptId="$@Education_Level_(text)@" />
+                <br/>
+                <br/>
+                Pantient current employment:
+                <obs conceptId="$@Current_employment@" />
+
+            </td>
+        </tr>
+    </table>
+
+    <section>
+        <table border="1">
+            <tr>
+                <th class="tableHeader" colspan="2">
+                    <center> SECTION II. RISK FACTORS ASSESSMENT</center>
+                </th>
+                <th class="tableHeader" >
+                    <center>Screening test</center>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Weight (kg):
+                    <obs conceptId="$@WEIGHT_(KG)@" />
+                    Height(cm):
+                    <obs conceptId="$@HEIGHT_(CM)@" />
+                    BMI:
+                    <obs conceptId="$@BMI@" />
+                    kg/m
+<!--                    &#160;&#160;&#160;&#160;-->
+
+                </td>
+                <td>
+                    <strong>
+                        &#8805; 25kg/m<sup>2</sup>?
+                    </strong>
+                    <br/><br/>
+                    <obs conceptId="$@BMI_greater_that_or_equal_25-kg/m^2@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                </td>
+                <td rowspan="4">
+                    Screening test One or more of a "yes" <br/>
+                    response, order the following:
+                    <br/>
+                    <strong>
+                        Glycemia:
+                        <obs conceptId="$@SERUM_GLUCOSE@"/>
+                        mg/dl
+                        <br/>
+                        <br/>
+                        <obs conceptId="$@Glucose_Test@" answerConceptIds="$@Fasting_for_blood_glucose_test@,$@Random_for_blood_glucose_test@" answerLabels="Fasting,Random" style="radio"/>
+                    </strong>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Waist circumference (cm):
+                    <obs conceptId="$@Waist_circumference@"/>
+<!--                    &#160;&#160;&#160;&#160;-->
+
+                </td>
+                <td>
+                    <strong>
+                        <u>Men</u> &#8805;94cm? Women &#8805;80cm?
+                    </strong>
+                    <br/><br/>
+                    <obs conceptId="$@Waist_circumference_greater_than_or_equal_to_94_on_men_and_80_for_women@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Blood pressure (BP):
+                    <obs placeholder="Systolic" conceptId="$@SYSTOLIC_BLOOD_PRESSURE@"/> / <obs placeholder="Diastolic" conceptId="$@DIASTOLIC_BLOOD_PRESSURE@" style="radio"/>
+                    mmHg
+                    &#160;&#160;&#160;&#160;
+
+                </td>
+                <td>
+                    <strong>
+                        S&#8805;140? or D&gt;90?
+                    </strong>
+                    <br/><br/>
+                    <obs conceptId="$@Is_Systolic_greater_than_or_equal_140_or_diastolic_greater_than_90@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>If woman</strong> between 15 and 49 years old
+                </td>
+                <td>
+                    <strong>Is she pregnant ?</strong>
+                    <br/><br/>
+                    <obs conceptId="$@PREGNANCY_STATUS@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <th class="tableHeader" colspan="3">
+                    <center>A. Shared risk factors</center>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    A1. Do you do physical activity for more than 30 min daily?
+
+                </td>
+                <td>
+                    <obs conceptId="$@Do_you_do_physical_activity_for_more_than_30_min_daily@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                </td>
+                <td rowspan="5">
+                    If any "<strong>No</strong>" to question A1 or A2
+                    or any "<strong>Yes</strong>" from A3 to A5 :
+                    <br/>
+                    <strong>
+                        Give appropriate counselling on lifestyle modification
+                    </strong>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    A2. Do you eat vegetables and fruits daily?
+                </td>
+                <td>
+                    <obs conceptId="$@Do_you_eat_vegetables_and_fruits_daily@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    A3. History of Smoking?
+                </td>
+                <td>
+                    <obs conceptId="$@SMOKING_HISTORY@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    A4. Excessive alcohol consumption?
+                </td>
+                <td>
+                    <obs conceptId="$@excessive_Alcohol_Consumption@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    A5. History of taking chronic meds? (HIV,NCD,etc)
+                </td>
+                <td>
+                    <obs conceptId="$@History_of_taking_chronic_meds@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <th class="tableHeader" colspan="2">
+                    <center>B. Diabetes</center>
+                </th>
+                <th class="tableHeader" >
+                    <center>Screening test</center>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    B1. History of unxplained weight loss?
+                </td>
+                <td>
+                    <obs conceptId="$@History_of_unxplained_weight_loss@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                </td>
+                <td rowspan="5">
+                    Screening test One or more of a "yes" <br/>
+                    response, order the following:
+                    <br/>
+                    <strong>
+                        Glycemia:
+                        <obs conceptId="$@SERUM_GLUCOSE@"/>
+                        mg/dl
+                        <br/>
+                        <br/>
+                        <obs conceptId="$@Glucose_Test@" answerConceptIds="$@Fasting_for_blood_glucose_test@,$@Random_for_blood_glucose_test@" answerLabels="Fasting,Random" style="radio"/>
+                    </strong>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    B2. History of unusual thirst?
+                </td>
+                <td>
+                    <obs conceptId="$@History_of_unusual_thirst@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    B3. History of frequent/abundant urination?
+                </td>
+                <td>
+                    <obs conceptId="$@History_of_frequent_or_abundant_urination@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    B4. History of blood relative family member with type 1 or 2 diabetes?
+                </td>
+                <td>
+                    <obs conceptId="$@History_of_blood_relative_family_member_with_type_1_or_2_diabetes@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    B5. History of high blood glucose (exam, illness,pregnance)?
+                </td>
+                <td>
+                    <obs conceptId="$@History_of_high_blood_glucose@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <th class="tableHeader" colspan="2">
+                    <center>C. Cardiovascular diseases</center>
+                </th>
+                <th class="tableHeader" >
+                    <center>Screening test</center>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    C1. Do you have exertion shortness of breath?
+                </td>
+                <td>
+                    <obs conceptId="$@SHORTNESS_OF_BREATH_WITH_EXERTION@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                </td>
+                <td rowspan="5">
+                    One or more of a "yes" <br/>
+                    response: <br/>
+                    <b>
+                        Rule out heart problem; <br/>
+                        Heart ultrasound
+                    </b>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    C2. Do you have orthopnea?
+                </td>
+                <td>
+                    <obs conceptId="$@ORTHOPNEA@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    C3. Do you have current chest pain?
+                </td>
+                <td>
+                    <obs conceptId="$@CHEST_PAIN@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    C4. Do you have History of untreated sore throat?
+                </td>
+                <td>
+                    <obs conceptId="$@History_of_untreated_sore_throat@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    C5. Do you have History of body swelling?
+                </td>
+                <td>
+                    <obs conceptId="$@History_of_body_swelling@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <section headerLabel="Section III. DECISION, SUMMARY OF SCREENING RESULT">
+        <table border="1">
+            <tr>
+                <td>
+                    <strong>
+                        Identified problem/Disease
+                    </strong>
+                </td>
+                <td>
+                    <strong>
+                        Interventions
+                    </strong>
+                </td>
+                <td>
+                    If participant screened positive <br/>
+                    (have high BP or High blood glucose, <br/>
+                    <strong>
+                        he/she is new case?
+                    </strong>
+                    <br/><br/>
+                    <obs conceptId="$@New_case@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <obs conceptId="$@Identified_problem_or_disease@" answerConceptId="$@NORMAL@" answerLabel="NORMAL" style="chechbox"/>
+                    <br/>
+                    <obs conceptId="$@Identified_problem_or_disease@" answerConceptId="$@Overweight_or_Obesity@" answerLabel="Overweight/Obesity" style="chechbox"/>
+                    <br/>
+                    <obs conceptId="$@Identified_problem_or_disease@" answerConceptId="$@HYPERTENSION@" answerLabel="Hypertension" style="chechbox"/>
+                    <br/>
+                    <obs conceptId="$@Identified_problem_or_disease@" answerConceptId="$@DIABETES@" answerLabel="DIABETES" style="chechbox"/>
+                    <br/>
+                    <obs conceptId="$@Identified_problem_or_disease@" answerConceptId="$@HEART_DISEASE@" answerLabel="Heart Disease" style="chechbox"/>
+                    <br/>
+                    <obs conceptId="$@Identified_problem_or_disease@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other" style="chechbox"/>
+                    <br/>
+                    (specify:
+                    <obs conceptId="$@Other@"/>
+                </td>
+                <td colspan="2">
+
+
+                    <obs conceptId="$@Interventions@" answerConceptId="$@Annual_checkup_and_lifestyle_counselling@" answerLabel="Annual checkup and lifestyle counseling" style="chechbox"/>
+                    <br/>
+                    <obs conceptId="$@Interventions@" answerConceptId="$@Scheduled_for_diagnosis_work_up@" answerLabel="Scheduled for diagnosis work up (at site of screening)" style="chechbox"/>
+                    <br/>
+                    <obs conceptId="$@Interventions@" answerConceptId="$@referred_to@" answerLabel="Referral to health facility for management or other special investigation/exams" style="chechbox"/>
+                    <br/>
+                    <br/>
+
+                    <strong>
+                        Facility:
+                    </strong>
+                    <obs conceptId="$@Patient_referred_to_where@" answerConceptIds="$@HEALTH_CENTER@,$@DISTRICT_HOSPITAL@" answerLabels="Health Center,District Hospital" style="radio"/>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <center>
+        <submit />
+    </center>
+
+</htmlform>

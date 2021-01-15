@@ -97,23 +97,44 @@
     <div class="form-group">
         <fieldset>
             <div>
+                <label>Level of Care:</label>
+            </div>
+            <label class="font-normal">
+                <input  class="deactivate" id="obs.LevelOfCareHealthCenter" name="LevelOfCare" type="radio"
+                        data-concept="4893bd7a-8943-4a75-82da-67ef0ed86db2^Level of Care^99DCT"
+                        value="7e327a1a-c1df-4712-ab5d-e05dc0dac35d^HEALTH CENTER^99DCT">
+                Health center
+            </label>
+            <label class="font-normal">
+                <input class="activate" id="obs.LevelOfCareHospital" name="LevelOfCare" type="radio"
+                       data-concept="4893bd7a-8943-4a75-82da-67ef0ed86db2^Level of Care^99DCT"
+                       value="3ce0d472-26fe-102b-80cb-0017a47871b2^HOSPITAL^99DCT">
+                Hospital
+            </label>
+        </fieldset>
+    </div>
+    <div class="form-group">
+        <fieldset>
+            <div>
                 <label>Entry mode:</label>
             </div>
             <label class="font-normal">
-                <input id="obs.EntryModeVoluntary" name="obs.EntryMode" type="radio"
+                <input class="deactivate" id="obs.EntryModeVoluntary" name="EntryMode" type="radio"
                        data-concept="5c1c525c-07f0-4a76-bcff-f64cf1f7108d^Entry mode^99DCT"
                        value="6c31b035-4a63-48e0-bfed-e8dd32c00475^Voluntary^99DCT">
                 Voluntary check-up/screening
             </label>
             <label class="font-normal">
-                <input id="obs.EntryModeTRANSFER" name="obs.EntryMode" type="radio"
+                <input class="activate" id="obs.EntryModeTRANSFER" name="EntryMode" type="radio"
                        data-concept="5c1c525c-07f0-4a76-bcff-f64cf1f7108d^Entry mode^99DCT"
                        value="3cda3efa-26fe-102b-80cb-0017a47871b2^TRANSFER IN FROM^99DCT">
                 Referred from Health Facility
             </label>
-            <label class="font-normal">
-                <input id="obs.NameOfReferring" class="form-control" name="obs.NameOfReferring" type="text" data-concept="3cda3efa-26fe-102b-80cb-0017a47871b2^TRANSFER IN FROM^99DCT"/>
-            </label>
+            <div class="EntryMode">
+                <label class="font-normal">
+                    <input id="obs.NameOfReferring" class="form-control" name="obs.NameOfReferring" type="text" data-concept="3cda3efa-26fe-102b-80cb-0017a47871b2^TRANSFER IN FROM^99DCT"/>
+                </label>
+            </div>
         </fieldset>
     </div>
     <hr/>
@@ -121,50 +142,52 @@
         <fieldset>
             <label> Service/unit: </label>
             <label class="font-normal">
-                <input id="obs.HIVCLINICEntryPoint" name="obs.EntryPoint" type="radio"
+                <input class="deactivate" id="obs.HIVCLINICEntryPoint" name="EntryPoint" type="radio"
                        data-concept="3cdc85ac-26fe-102b-80cb-0017a47871b2^METHOD OF ENROLLMENT^99DCT"
                        value="398996ac-93bd-4a95-884f-3b58132d2367^HIV clinic^99DCT">
                 HIV clinic
             </label>
             <label class="font-normal">
-                <input id="obs.OPDEntryPoint" name="obs.EntryPoint" type="radio"
+                <input class="deactivate" id="obs.OPDEntryPoint" name="EntryPoint" type="radio"
                        data-concept="3cdc85ac-26fe-102b-80cb-0017a47871b2^METHOD OF ENROLLMENT^99DCT"
                        value="9e5e7ffc-6eb8-4d0f-a1a8-319eed6399fb^OUTPATIENT Department^99DCT">
                 OPD
             </label>
             <label class="font-normal">
-                <input id="obs.familyPlanningEntryPoint" name="obs.EntryPoint" type="radio"
+                <input class="deactivate" id="obs.familyPlanningEntryPoint" name="EntryPoint" type="radio"
                        data-concept="3cdc85ac-26fe-102b-80cb-0017a47871b2^METHOD OF ENROLLMENT^99DCT"
                        value="3ce6a212-26fe-102b-80cb-0017a47871b2^FAMILY PLANNING CLINIC^99DCT">
                 Family planning
             </label>
             <label class="font-normal">
-                <input id="obs.vaccinationEntryPoint" name="obs.EntryPoint" type="radio"
+                <input class="deactivate" id="obs.vaccinationEntryPoint" name="EntryPoint" type="radio"
                        data-concept="3cdc85ac-26fe-102b-80cb-0017a47871b2^METHOD OF ENROLLMENT^99DCT"
                        value="16edb286-a2c0-4b35-a3b6-101ea2bbb231^VACCINATION SERVICE^99DCT">
                 Vaccination
             </label>
             <label class="font-normal">
-                <input id="obs.ANCEntryPoint" name="obs.EntryPoint" type="radio"
+                <input class="deactivate" id="obs.ANCEntryPoint" name="EntryPoint" type="radio"
                        data-concept="3cdc85ac-26fe-102b-80cb-0017a47871b2^METHOD OF ENROLLMENT^99DCT"
                        value="29ce8244-5251-4c76-8e99-bbad280be2ef^Consultation ANC^99DCT">
                 ANC
             </label>
             <label class="font-normal">
-                <input id="obs.WCEDEntryPoint" name="obs.EntryPoint" type="radio"
+                <input class="deactivate" id="obs.WCEDEntryPoint" name="EntryPoint" type="radio"
                        data-concept="3cdc85ac-26fe-102b-80cb-0017a47871b2^METHOD OF ENROLLMENT^99DCT"
                        value="e8e6a8fa-0aab-427d-9960-8501de238ad7^woman cancer early detection CLINIC^99DCT">
                 WCED Clinic
             </label>
             <label class="font-normal">
-                <input id="obs.OtherEntryPoint" name="obs.EntryPoint" type="radio"
+                <input class="activate"  id="obs.OtherEntryPoint" name="EntryPoint" type="radio"
                        data-concept="3cdc85ac-26fe-102b-80cb-0017a47871b2^METHOD OF ENROLLMENT^99DCT"
                        value="3cee7fb4-26fe-102b-80cb-0017a47871b2^OTHER NON-CODED^99DCT">
                 Other
             </label>
-            <label class="font-normal">
-                <input id="obs.NameOfOtherEntryPoint" class="form-control" name="obs.EntryPoint" type="text" data-concept="cd5fc859-79e6-4184-af6c-e493c95a4749^OTHER METHOD OF ENROLLMENT^99DCT"/>
-            </label>
+            <div class="initialHide EntryPoint">
+                <label class="font-normal">
+                    <input id="obs.NameOfOtherEntryPoint" class="form-control" name="obs.EntryPoint" type="text" data-concept="cd5fc859-79e6-4184-af6c-e493c95a4749^OTHER METHOD OF ENROLLMENT^99DCT"/>
+                </label>
+            </div>
         </fieldset>
     </div>
     <hr/>
@@ -180,16 +203,16 @@
             <!--            <label for="obs.phoneTWO">Phone(2)</label>-->
             <!--            <input id="obs.phoneTWO" class="form-control" name="obs.phoneTWO" type="tel" data-concept="bcddbe7e-04dc-4494-a330-d5b54c4a4dd0^Emergency contact phone number^99DCT"/>-->
             <!--        </div>-->
+            <!--            <div class="form-group">-->
+            <!--                <label for="obs.CHWNames">CHW Names</label>-->
+            <!--                <input id="obs.CHWNames" class="form-control" name="obs.CHWNames" type="text" data-concept="899c6350-b3b0-409f-9e13-34d23fc5f1bb^Community health worker Names^99DCT"/>-->
+            <!--            </div>-->
+            <!--            <div class="form-group">-->
+            <!--                <label for="obs.CHWPhone">CHW Phone No.</label>-->
+            <!--                <input id="obs.CHWPhone" class="form-control" name="obs.CHWPhone" type="tel" data-concept="5c9cb4a0-7b67-4c00-a926-ff7eaa8f0089^ACCOMPAGNATEUR PHONE NUMBER^99DCT"/>-->
+            <!--            </div>-->
             <div class="form-group">
-                <label for="obs.CHWNames">CHW Names</label>
-                <input id="obs.CHWNames" class="form-control" name="obs.CHWNames" type="text" data-concept="899c6350-b3b0-409f-9e13-34d23fc5f1bb^Community health worker Names^99DCT"/>
-            </div>
-            <div class="form-group">
-                <label for="obs.CHWPhone">CHW Phone No.</label>
-                <input id="obs.CHWPhone" class="form-control" name="obs.CHWPhone" type="tel" data-concept="5c9cb4a0-7b67-4c00-a926-ff7eaa8f0089^ACCOMPAGNATEUR PHONE NUMBER^99DCT"/>
-            </div>
-            <div class="form-group">
-                <label for="obs.visitReason">Reason for visit (check one)</label>
+                <label >Reason for visit (check one)</label>
                 <label class="font-normal">
                     <input id="obs.BreastScreening" name="obs.visitReason" type="radio"
                            data-concept="86a2cf11-1ea5-4b8a-9e4b-08f4cdbe1346^REASON FOR VISIT^99DCT"
@@ -253,137 +276,150 @@
             <label class="font-normal"> Screened for cervical cancer in the past: </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.PreviousCervicalScreeningYes" name="obs.PreviousCervicalScreening" type="radio"
+                <input class="activate"id="obs.PreviousCervicalScreeningYes" name="PreviousCervicalScreening" type="radio"
                        data-concept="51f341af-9e34-4624-b614-65c50caa23c3^previous Screening^99DCT"
                        value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
                 Yes
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.PreviousCervicalScreeningNo" name="obs.PreviousCervicalScreening" type="radio"
+                <input class="deactivate" id="obs.PreviousCervicalScreeningNo" name="PreviousCervicalScreening" type="radio"
                        data-concept="51f341af-9e34-4624-b614-65c50caa23c3^previous Screening^99DCT"
                        value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
                 No
             </label>
             <br/>
-            <label class="font-normal"> If yes, screening was through: </label>
+            <div class="PreviousCervicalScreening">
+                <label class="font-normal"> If yes, screening was through: </label>
+                <br/>
+                <label>
+                    <input id="obs.ScreeningThoughVIA" name="obs.ScreeningThough" type="radio"
+                           data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
+                           value="6178405e-c115-4e78-b9e0-fb0811a2bb2d^visual inspection with Acetic Acid^99DCT">
+                    VIA
+                </label>
+                <br/>
+                <label>
+                    <input id="obs.ScreeningThoughPapSmear" name="obs.ScreeningThough" type="radio"
+                           data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
+                           value="3cd4de2e-26fe-102b-80cb-0017a47871b2^PAPANICOLAOU SMEAR^99DCT">
+                    Pap smear
+                </label>
+                <br/>
+                <label>
+                    <input id="obs.ScreeningThoughHPVDNATest" name="obs.ScreeningThough" type="radio"
+                           data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
+                           value="f7c2d59d-2043-42ce-b04d-08564d54b0c7^HPV DNA test^99DCT">
+                    HPV DNA test
+                </label>
+            </div>
             <br/>
-            <label>
-                <input id="obs.ScreeningThoughVIA" name="obs.ScreeningThough" type="checkbox"
-                       data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
-                       value="6178405e-c115-4e78-b9e0-fb0811a2bb2d^visual inspection with Acetic Acid^99DCT">
-                VIA
-            </label>
+            <div class="PreviousCervicalScreening">
+
+                <label class="font-normal">Result of past screening</label>
+                <br/>
+                <label class="font-normal">
+                    <input class="activate" id="obs.PositivePastScreeningResult" name="PastScreeningResult" type="radio"
+                           data-concept="5dafee1b-3763-47a9-bb82-1c1fce4fd4cd^Result of past screening^99DCT"
+                           value="3cd3a7a2-26fe-102b-80cb-0017a47871b2^POSITIVE^99DCT">
+                    Positive
+                </label>
+                <br/>
+                <label class="font-normal">
+                    <input class="deactivate" id="obs.NegativePastScreeningResult" name="PastScreeningResult" type="radio"
+                           data-concept="5dafee1b-3763-47a9-bb82-1c1fce4fd4cd^Result of past screening^99DCT"
+                           value="3cd28732-26fe-102b-80cb-0017a47871b2^NEGATIVE^99DCT">
+                    Negative
+                </label>
+                <br/>
+                <label class="font-normal">
+                    <input class="deactivate" id="obs.ResultsNotReceivedPastScreeningResult" name="PastScreeningResult" type="radio"
+                           data-concept="5dafee1b-3763-47a9-bb82-1c1fce4fd4cd^Result of past screening^99DCT"
+                           value="1f51f817-bdcc-494d-b4d9-f15ed2ac60d4^Not received^99DCT">
+                    Results not received
+                </label>
+            </div>
             <br/>
-            <label>
-                <input id="obs.ScreeningThoughPapSmear" name="obs.ScreeningThough" type="checkbox"
-                       data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
-                       value="3cd4de2e-26fe-102b-80cb-0017a47871b2^PAPANICOLAOU SMEAR^99DCT">
-                Pap smear
-            </label>
+            <div class="PreviousCervicalScreening PastScreeningResult">
+                <label> If positive, was treatment performed? </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.TreatmentPerformedYes" name="obs.TreatmentPerformed" type="radio"
+                           data-concept="ae47a54a-9111-475c-9cc2-76951d78b0c8^Treatment performed^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
+                </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.TreatmentPerformedNo" name="obs.TreatmentPerformed" type="radio"
+                           data-concept="ae47a54a-9111-475c-9cc2-76951d78b0c8^Treatment performed^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
+                </label>
+            </div>
             <br/>
-            <label>
-                <input id="obs.ScreeningThoughHPVDNATest" name="obs.ScreeningThough" type="checkbox"
-                       data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
-                       value="f7c2d59d-2043-42ce-b04d-08564d54b0c7^HPV DNA test^99DCT">
-                HPV DNA test
-            </label>
+            <div class="PreviousCervicalScreening PastScreeningResult">
+                <label class="font-normal">Type of treatment performed</label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.TypeOfTreatmentPerformedCryotherapy" name="obs.TypeOfTreatmentPerformed" type="checkbox"
+                           data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"
+                           value="e48bc8db-8f6e-4556-9083-0a000a136e95^Cryotherapy^99DCT">
+                    Cryotherapy
+                </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.TypeOfTreatmentPerformedThermoAblation" name="obs.TypeOfTreatmentPerformed" type="checkbox"
+                           data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"
+                           value="ef4d5bd3-2c4e-4ac2-9b91-9d4ba12b44f8^thermo-ablation^99DCT">
+                    Thermo-ablation
+                </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.TypeOfTreatmentPerformedLEEP" name="obs.TypeOfTreatmentPerformed" type="checkbox"
+                           data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"
+                           value="55040927-bae5-410c-80da-c79f7574167f^Loop Electrosurgical Excision Procedure^99DCT">
+                    LEEP
+                </label>
+            </div>
             <br/>
-            <label class="font-normal">Result of past screening</label>
+            <div class="PreviousCervicalScreening PastScreeningResult">
+                <label class="font-normal"> Date of last screening
+                    <input id="obs.LastScreeningDate" class="form-control" name="obs.LastScreeningDate" type="Date" data-concept="a2ea8dce-bd26-40f5-b55f-a754e7ac78b1^Last Screening Date^99DCT"/>
+                </label>
+            </div>
             <br/>
-            <label class="font-normal">
-                <input id="obs.PositivePastScreeningResult" name="obs.PastScreeningResult" type="checkbox"
-                       data-concept="5dafee1b-3763-47a9-bb82-1c1fce4fd4cd^Result of past screening^99DCT"
-                       value="3cd3a7a2-26fe-102b-80cb-0017a47871b2^POSITIVE^99DCT">
-                Positive
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.NegativePastScreeningResult" name="obs.PastScreeningResult" type="checkbox"
-                       data-concept="5dafee1b-3763-47a9-bb82-1c1fce4fd4cd^Result of past screening^99DCT"
-                       value="3cd28732-26fe-102b-80cb-0017a47871b2^NEGATIVE^99DCT">
-                Negative
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.ResultsNotReceivedPastScreeningResult" name="obs.PastScreeningResult" type="checkbox"
-                       data-concept="5dafee1b-3763-47a9-bb82-1c1fce4fd4cd^Result of past screening^99DCT"
-                       value="1f51f817-bdcc-494d-b4d9-f15ed2ac60d4^Not received^99DCT">
-                Results not received
-            </label>
-            <br/>
-            <label> If positive, was treatment performed? </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.TreatmentPerformedYes" name="obs.TreatmentPerformed" type="radio"
-                       data-concept="ae47a54a-9111-475c-9cc2-76951d78b0c8^Treatment performed^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.TreatmentPerformedNo" name="obs.TreatmentPerformed" type="radio"
-                       data-concept="ae47a54a-9111-475c-9cc2-76951d78b0c8^Treatment performed^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-            <br/>
-            <label class="font-normal">Type of treatment performed</label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.TypeOfTreatmentPerformedCryotherapy" name="obs.TypeOfTreatmentPerformed" type="checkbox"
-                       data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"
-                       value="e48bc8db-8f6e-4556-9083-0a000a136e95^Cryotherapy^99DCT">
-                Cryotherapy
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.TypeOfTreatmentPerformedThermoAblation" name="obs.TypeOfTreatmentPerformed" type="checkbox"
-                       data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"
-                       value="ef4d5bd3-2c4e-4ac2-9b91-9d4ba12b44f8^thermo-ablation^99DCT">
-                Thermo-ablation
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.TypeOfTreatmentPerformedLEEP" name="obs.TypeOfTreatmentPerformed" type="checkbox"
-                       data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"
-                       value="55040927-bae5-410c-80da-c79f7574167f^Loop Electrosurgical Excision Procedure^99DCT">
-                LEEP
-            </label>
-            <br/>
-            <label class="font-normal"> Date of last screening
-                <input id="obs.LastScreeningDate" class="form-control" name="obs.LastScreeningDate" type="Date" data-concept="a2ea8dce-bd26-40f5-b55f-a754e7ac78b1^Last Screening Date^99DCT"/>
-            </label>
-            <br/>
-            <label class="font-normal"> Date of last treatment
-                <input id="obs.LastTreatmentDate" class="form-control" name="obs.LastTreatmentDate" type="Date" data-concept="d1514c0f-efaf-4dcc-90a2-9f488745e142^Last Treatment Date^99DCT"/>
-            </label>
+            <div class="PreviousCervicalScreening PastScreeningResult">
+                <label class="font-normal"> Date of last treatment
+                    <input id="obs.LastTreatmentDate" class="form-control" name="obs.LastTreatmentDate" type="Date" data-concept="d1514c0f-efaf-4dcc-90a2-9f488745e142^Last Treatment Date^99DCT"/>
+                </label>
+            </div>
         </div>
         <div class="form-group">
-            <label for="obs.HIVStatusHistory">HIV Status: </label>
+            <label>HIV Status: </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.positiveHIVStatusHistory" name="obs.HIVStatusHistory" type="radio"
+                <input class="activate" id="obs.positiveHIVStatusHistory" name="HIVStatusHistory" type="radio"
                        data-concept="aec6ad18-f4dd-4cfa-b68d-3d7bb6ea908e^HIV STATUS^99DCT"
                        value="3cd3a7a2-26fe-102b-80cb-0017a47871b2^POSITIVE^99DCT">
                 Positive
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.negativeHIVStatusHistory" name="obs.HIVStatusHistory" type="radio"
+                <input class="deactivate" id="obs.negativeHIVStatusHistory" name="HIVStatusHistory" type="radio"
                        data-concept="aec6ad18-f4dd-4cfa-b68d-3d7bb6ea908e^HIV STATUS^99DCT"
                        value="3cd28732-26fe-102b-80cb-0017a47871b2^NEGATIVE^99DCT">
                 Negative
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.unknownHIVStatusHistory" name="obs.HIVStatusHistory" type="radio"
+                <input class="deactivate" id="obs.unknownHIVStatusHistory" name="HIVStatusHistory" type="radio"
                        data-concept="aec6ad18-f4dd-4cfa-b68d-3d7bb6ea908e^HIV STATUS^99DCT"
                        value="3cd6fac4-26fe-102b-80cb-0017a47871b2^UNKNOWN^99DCT">
                 Unknown
             </label>
         </div>
-        <div class="form-group">
+        <div class="form-group HIVStatusHistory">
             <label> If HIV positive on ARV: </label>
             <br/>
             <label class="font-normal">
@@ -440,7 +476,7 @@
         <!--            </label>-->
         <!--        </div>-->
         <div class="form-group">
-            <label>Currently pregant? </label>
+            <label>Currently pregnant? </label>
             <br/>
             <label class="font-normal">
                 <input id="obs.pregnantYes" name="obs.pregnant" type="radio"
@@ -456,51 +492,51 @@
                 No
             </label>
         </div>
-        <div class="form-group">
-            <label>Currently breastfeeding? </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.breastfeedingYes" name="obs.breastfeeding" type="radio"
-                       data-concept="3cd4860e-26fe-102b-80cb-0017a47871b2^BREASTFEEDING^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.breastfeedingNo" name="obs.breastfeeding" type="radio"
-                       data-concept="3cd4860e-26fe-102b-80cb-0017a47871b2^BREASTFEEDING^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
+        <!--        <div class="form-group">-->
+        <!--            <label>Currently breastfeeding? </label>-->
+        <!--            <br/>-->
+        <!--            <label class="font-normal">-->
+        <!--                <input id="obs.breastfeedingYes" name="obs.breastfeeding" type="radio"-->
+        <!--                       data-concept="3cd4860e-26fe-102b-80cb-0017a47871b2^BREASTFEEDING^99DCT"-->
+        <!--                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">-->
+        <!--                Yes-->
+        <!--            </label>-->
+        <!--            <br/>-->
+        <!--            <label class="font-normal">-->
+        <!--                <input id="obs.breastfeedingNo" name="obs.breastfeeding" type="radio"-->
+        <!--                       data-concept="3cd4860e-26fe-102b-80cb-0017a47871b2^BREASTFEEDING^99DCT"-->
+        <!--                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">-->
+        <!--                No-->
+        <!--            </label>-->
 
 
-        </div>
+        <!--        </div>-->
     </fieldset>
     <hr/>
     <h3>CERVICAL CANCER SCREENING RESULTS AND MANAGEMENT</h3>
     <hr/>
     <fieldset>
         <div class="section">
-<!--            <label class="font-normal"> Screening <strong>completed</strong> today? </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.ScreeningCompletedTodayYes" name="obs.ScreeningCompletedToday" type="radio"-->
-<!--                       data-concept="0f867365-2314-4b12-9cbf-5a4f51c7004b^Screening completed today^99DCT"-->
-<!--                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">-->
-<!--                Yes (enter results below)-->
-<!--            </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.ScreeningCompletedTodayNo" name="obs.ScreeningCompletedToday" type="radio"-->
-<!--                       data-concept="0f867365-2314-4b12-9cbf-5a4f51c7004b^Screening completed today^99DCT"-->
-<!--                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">-->
-<!--                No (list reason):-->
-<!--                <input id="obs.NoScreeningCompletedTodayWhy" class="form-control" name="obs.NoScreeningCompletedTodayWhy" type="text" data-concept="b2c52e96-52ec-4ba8-bee9-68be43969971^Why not Screened today^99DCT"/>-->
+            <!--            <label class="font-normal"> Screening <strong>completed</strong> today? </label>-->
+            <!--            <label class="font-normal">-->
+            <!--                <input id="obs.ScreeningCompletedTodayYes" name="obs.ScreeningCompletedToday" type="radio"-->
+            <!--                       data-concept="0f867365-2314-4b12-9cbf-5a4f51c7004b^Screening completed today^99DCT"-->
+            <!--                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">-->
+            <!--                Yes (enter results below)-->
+            <!--            </label>-->
+            <!--            <label class="font-normal">-->
+            <!--                <input id="obs.ScreeningCompletedTodayNo" name="obs.ScreeningCompletedToday" type="radio"-->
+            <!--                       data-concept="0f867365-2314-4b12-9cbf-5a4f51c7004b^Screening completed today^99DCT"-->
+            <!--                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">-->
+            <!--                No (list reason):-->
+            <!--                <input id="obs.NoScreeningCompletedTodayWhy" class="form-control" name="obs.NoScreeningCompletedTodayWhy" type="text" data-concept="b2c52e96-52ec-4ba8-bee9-68be43969971^Why not Screened today^99DCT"/>-->
 
-<!--            </label>-->
+            <!--            </label>-->
 
             <label class="font-normal">Screening type: </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.ScreeningTypeHPV" name="obs.ScreeningType" type="radio"
+                <input class="activate" id="obs.ScreeningTypeHPV" name="ScreeningTypeHPV" type="checkbox"
                        data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
                        value="f7c2d59d-2043-42ce-b04d-08564d54b0c7^HPV DNA test^99DCT">
                 HPV
@@ -508,24 +544,55 @@
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.ScreeningTypeVIA" name="obs.ScreeningType" type="radio"
+                <input class="activate" id="obs.ScreeningTypeVIA" name="ScreeningTypeVIA" type="checkbox"
                        data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
                        value="6178405e-c115-4e78-b9e0-fb0811a2bb2d^visual inspection with Acetic Acid^99DCT">
                 VIA
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.ScreeningTypePapSmear" name="obs.ScreeningType" type="checkbox"
+                <input class="activate" id="obs.ScreeningTypePapSmear" name="ScreeningTypePAPSmear" type="checkbox"
                        data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
                        value="3cd4de2e-26fe-102b-80cb-0017a47871b2^PAPANICOLAOU SMEAR^99DCT">
                 Pap smear
             </label>
+            <br/>
+            <!--            <label class="font-normal">-->
+            <!--                <input  class="activate" id="obs.ScreeningTypeOtherfindings" name="ScreeningTypeOtherfindings" type="checkbox"-->
+            <!--                       data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"-->
+            <!--                       value="f7eecd50-82d9-4c0d-8eb4-a03469c8189d^Other findings^99DCT">-->
+            <!--                Other findings-->
+            <!--            </label>-->
+            <!--            <div class="initialHide ScreeningTypeOtherfindings">-->
+            <!--                <label class="font-normal">-->
+            <!--                    <input id="obs.OtherFindingsSTI" name="OtherFindings" type="checkbox"-->
+            <!--                           data-concept="f7eecd50-82d9-4c0d-8eb4-a03469c8189d^Other findings^99DCT"-->
+            <!--                           value="3cce6116-26fe-102b-80cb-0017a47871b2^SEXUALLY TRANSMITTED INFECTION DIAGNOSIS^99DCT">-->
+            <!--                    STI-->
+            <!--                </label>-->
+            <!--                <label class="font-normal">-->
+            <!--                    <input id="obs.OtherFindingsSuspectedCancer" name="OtherFindings" type="checkbox"-->
+            <!--                           data-concept="f7eecd50-82d9-4c0d-8eb4-a03469c8189d^Other findings^99DCT"-->
+            <!--                           value="476123d7-54f1-4278-92f1-2de4f19ae951^Suspected cancer diagnosis^99DCT">-->
+            <!--                    Suspected cancer-->
+            <!--                </label>-->
+            <!--                <label class="font-normal">-->
+            <!--                    <input id="obs.OtherFindings" name="OtherFindings" type="checkbox"-->
+            <!--                           data-concept="f7eecd50-82d9-4c0d-8eb4-a03469c8189d^Other findings^99DCT"-->
+            <!--                           value="3cee7fb4-26fe-102b-80cb-0017a47871b2^OTHER NON-CODED^99DCT">-->
+            <!--                    Other-->
+            <!--                </label>-->
+            <!--                <label class="font-normal">-->
+            <!--                    <input id="obs.OtherAbnormal" class="form-control" name="obs.OtherAbnormal"-->
+            <!--                           type="text" data-concept="dc7d0fb5-0c33-488d-bfab-a1f1a68e1f07^Other abnormal^99DCT"/>-->
+            <!--                </label>-->
+            <!--            </div>-->
 
         </div>
     </fieldset>
     <fieldset>
 
-        <div class="form-group">
+        <div class="form-group initialHide ScreeningTypeHPV">
             <label>
                 Specimen code
             </label>
@@ -536,7 +603,7 @@
 
             </label>
         </div>
-        <div class="form-group">
+        <div class="form-group initialHide ScreeningTypeHPV">
             <label class="font-normal">
                 Sample collection method:
             </label>
@@ -556,7 +623,7 @@
             </label>
         </div>
 
-        <div class="form-group">
+        <div class="form-group initialHide ScreeningTypeHPV">
             <label>
                 Other clinical information
             </label>
@@ -569,72 +636,72 @@
         </div>
 
 
-        <div class="form-group">
-            <label>
-                Test result:
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.positiveHPVTestResult" name="obs.HPVTestResult" type="radio"
-                       data-concept="bfb3eb1e-db98-4846-9915-0168511c6298^Test Result^99DCT"
-                       value="1b4a5f67-6106-4a4d-a389-2f430be543e4^HPV positive^99DCT">
-                HPV Positive
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.negativeHPVTestResult" name="obs.HPVTestResult" type="radio"
-                       data-concept="bfb3eb1e-db98-4846-9915-0168511c6298^Test Result^99DCT"
-                       value="64c23192-54e4-4750-9155-2ed0b736a0db^HPV negative^99DCT">
-                HPV Negative
-            </label>
+        <!--        <div class="form-group ScreeningTypeHPV">-->
+        <!--            <label>-->
+        <!--                Test result:-->
+        <!--            </label>-->
+        <!--            <br/>-->
+        <!--            <label class="font-normal">-->
+        <!--                <input id="obs.positiveHPVTestResult" name="obs.HPVTestResult" type="radio"-->
+        <!--                       data-concept="bfb3eb1e-db98-4846-9915-0168511c6298^Test Result^99DCT"-->
+        <!--                       value="1b4a5f67-6106-4a4d-a389-2f430be543e4^HPV positive^99DCT">-->
+        <!--                HPV Positive-->
+        <!--            </label>-->
+        <!--            <br/>-->
+        <!--            <label class="font-normal">-->
+        <!--                <input id="obs.negativeHPVTestResult" name="obs.HPVTestResult" type="radio"-->
+        <!--                       data-concept="bfb3eb1e-db98-4846-9915-0168511c6298^Test Result^99DCT"-->
+        <!--                       value="64c23192-54e4-4750-9155-2ed0b736a0db^HPV negative^99DCT">-->
+        <!--                HPV Negative-->
+        <!--            </label>-->
 
-        </div>
-        <div class="form-group">
-            <label>If Positive specify</label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.positiveHPV16" name="obs.positiveHPVType" type="radio"
-                       data-concept="1b4a5f67-6106-4a4d-a389-2f430be543e4^HPV positive Type^99DCT"
-                       value="059fddd3-711f-47ab-818f-087984aeecc3^HPV 16^99DCT">
-                HPV 16
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.positiveHPV16" name="obs.positiveHPVType" type="radio"
-                       data-concept="1b4a5f67-6106-4a4d-a389-2f430be543e4^HPV positive Type^99DCT"
-                       value="b672c3ff-96c9-41cd-9ae6-aa0811ce347f^HPV 18^99DCT">
-                HPV 18
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.positiveHPVotherHR" name="obs.positiveHPVType" type="radio"
-                       data-concept="1b4a5f67-6106-4a4d-a389-2f430be543e4^HPV positive Type^99DCT"
-                       value="6c3428c6-f406-4ef9-b2dd-4fe5a79f3432^Other HR HPV^99DCT">
-                Other HR HPV
-            </label>
-        </div>
-<!--    <div> -->
-<!--        <label class="font-normal">-->
-<!--            <strong> Test result: </strong>-->
-<!--        </label>-->
+        <!--        </div>-->
+        <!--        <div class="form-group ScreeningTypeHPV">-->
+        <!--            <label>If Positive specify</label>-->
+        <!--            <br/>-->
+        <!--            <label class="font-normal">-->
+        <!--                <input id="obs.positiveHPV16" name="obs.positiveHPVType" type="radio"-->
+        <!--                       data-concept="1b4a5f67-6106-4a4d-a389-2f430be543e4^HPV positive Type^99DCT"-->
+        <!--                       value="059fddd3-711f-47ab-818f-087984aeecc3^HPV 16^99DCT">-->
+        <!--                HPV 16-->
+        <!--            </label>-->
+        <!--            <br/>-->
+        <!--            <label class="font-normal">-->
+        <!--                <input id="obs.positiveHPV16" name="obs.positiveHPVType" type="radio"-->
+        <!--                       data-concept="1b4a5f67-6106-4a4d-a389-2f430be543e4^HPV positive Type^99DCT"-->
+        <!--                       value="b672c3ff-96c9-41cd-9ae6-aa0811ce347f^HPV 18^99DCT">-->
+        <!--                HPV 18-->
+        <!--            </label>-->
+        <!--            <br/>-->
+        <!--            <label class="font-normal">-->
+        <!--                <input id="obs.positiveHPVotherHR" name="obs.positiveHPVType" type="radio"-->
+        <!--                       data-concept="1b4a5f67-6106-4a4d-a389-2f430be543e4^HPV positive Type^99DCT"-->
+        <!--                       value="6c3428c6-f406-4ef9-b2dd-4fe5a79f3432^Other HR HPV^99DCT">-->
+        <!--                Other HR HPV-->
+        <!--            </label>-->
+        <!--        </div>-->
+        <!--    <div> -->
+        <!--        <label class="font-normal">-->
+        <!--            <strong> Test result: </strong>-->
+        <!--        </label>-->
 
-<!--        <label class="font-normal">-->
-<!--            <input id="obs.TestResultsHPVPositive" name="obs.TestResultsHPV" type="checkbox"-->
-<!--                   data-concept="bfb3eb1e-db98-4846-9915-0168511c6298^Test Result^99DCT"-->
-<!--                   value="1b4a5f67-6106-4a4d-a389-2f430be543e4^HPV positive^99DCT">-->
-<!--            HPV+-->
+        <!--        <label class="font-normal">-->
+        <!--            <input id="obs.TestResultsHPVPositive" name="obs.TestResultsHPV" type="checkbox"-->
+        <!--                   data-concept="bfb3eb1e-db98-4846-9915-0168511c6298^Test Result^99DCT"-->
+        <!--                   value="1b4a5f67-6106-4a4d-a389-2f430be543e4^HPV positive^99DCT">-->
+        <!--            HPV+-->
 
-<!--        </label>-->
-<!--        <label class="font-normal">-->
-<!--            <input id="obs.TestResultsHPVNegative" name="obs.TestResultsHPV" type="checkbox"-->
-<!--                   data-concept="bfb3eb1e-db98-4846-9915-0168511c6298^Test Result^99DCT"-->
-<!--                   value="64c23192-54e4-4750-9155-2ed0b736a0db^HPV negative^99DCT">-->
-<!--            HPV- -->
-<!--        </label>-->
-<!--    </div>-->
+        <!--        </label>-->
+        <!--        <label class="font-normal">-->
+        <!--            <input id="obs.TestResultsHPVNegative" name="obs.TestResultsHPV" type="checkbox"-->
+        <!--                   data-concept="bfb3eb1e-db98-4846-9915-0168511c6298^Test Result^99DCT"-->
+        <!--                   value="64c23192-54e4-4750-9155-2ed0b736a0db^HPV negative^99DCT">-->
+        <!--            HPV- -->
+        <!--        </label>-->
+        <!--    </div>-->
     </fieldset>
     <fieldset>
-        <div class="form-group">
+        <div class="form-group initialHide ScreeningTypePAPSmear">
             <h3> <u> Pap smear </u></h3>
             <br/>
             <label class="font-normal">
@@ -652,14 +719,14 @@
             </label>
 
         </div>
-<!--        <div class="form-group">-->
-<!--            <label> Date performed:</label>-->
-<!--            <label  class="font-normal">-->
-<!--                <input id="obs.DatePapSmearPerformed" name="obs.DatePapSmearPerformed" type="date"-->
-<!--                       data-concept="cc221455-d628-4b6e-b03b-b475d68accb2^papa smear performed date^99DCT">-->
-<!--            </label>-->
-<!--        </div>-->
-        <div>
+        <!--        <div class="form-group">-->
+        <!--            <label> Date performed:</label>-->
+        <!--            <label  class="font-normal">-->
+        <!--                <input id="obs.DatePapSmearPerformed" name="obs.DatePapSmearPerformed" type="date"-->
+        <!--                       data-concept="cc221455-d628-4b6e-b03b-b475d68accb2^papa smear performed date^99DCT">-->
+        <!--            </label>-->
+        <!--        </div>-->
+        <div class="form-group initialHide ScreeningTypePAPSmear">
             <label >Result</label>
             <br/>
             <label class="font-normal">
@@ -687,29 +754,29 @@
 
     </fieldset>
     <fieldset>
-        <div class="section concept-set">
+        <div class="section concept-set initialHide ScreeningTypeVIA">
             <h3> <u>VIA </u> </h3>
-            <label class="font-normal"> <strong> VIA  performed? </strong> </label>
+            <!--            <label class="font-normal"> <strong> VIA  performed? </strong> </label>-->
+            <!--            <br/>-->
+            <!--            <label class="font-normal">-->
+            <!--                <input id="obs.VIAPerformedYes" name="obs.VIAPerformed" type="radio"-->
+            <!--                       data-concept="68414f14-22c4-480d-b805-dc40252a461c^VIA performed^99DCT"-->
+            <!--                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">-->
+            <!--                Yes-->
+            <!--            </label>-->
+            <!--            <br/>-->
+            <!--            <label class="font-normal">-->
+            <!--                <input id="obs.VIAPerformedNo" name="obs.VIAPerformed" type="radio"-->
+            <!--                       data-concept="68414f14-22c4-480d-b805-dc40252a461c^VIA performed^99DCT"-->
+            <!--                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">-->
+            <!--                No-->
+            <!--            </label>-->
             <br/>
-            <label class="font-normal">
-                <input id="obs.VIAPerformedYes" name="obs.VIAPerformed" type="radio"
-                       data-concept="68414f14-22c4-480d-b805-dc40252a461c^VIA performed^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.VIAPerformedNo" name="obs.VIAPerformed" type="radio"
-                       data-concept="68414f14-22c4-480d-b805-dc40252a461c^VIA performed^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-            <br/>
-<!--            <label><u>Date performed: </u></label>-->
-<!--            <label>-->
-<!--                <input id="obs.DateVIAPerformed" name="obs.VIAPerformed" type="date"-->
-<!--                       data-concept="0ba3f75e-5568-428a-83dc-c61414a718a1^VIA performed date^99DCT">-->
-<!--            </label>-->
+            <!--            <label><u>Date performed: </u></label>-->
+            <!--            <label>-->
+            <!--                <input id="obs.DateVIAPerformed" name="obs.VIAPerformed" type="date"-->
+            <!--                       data-concept="0ba3f75e-5568-428a-83dc-c61414a718a1^VIA performed date^99DCT">-->
+            <!--            </label>-->
             <label class="font-normal"> <strong> Type of VIA performed: </strong> </label>
             <br/>
             <label class="font-normal">
@@ -729,64 +796,64 @@
             <label><u>Result</u></label>
             <br/>
             <label class="font-normal">
-                <input id="obs.VIATriageResultThermalablation" name="obs.VIATriageResults" type="checkbox"
+                <input id="obs.VIATriageResultThermalablation" name="obs.VIATriageResults" type="radio"
                        data-concept="a37a937a-a2a6-4c22-975f-986fb3599ea3^VIA Results^99DCT"
                        value="3fe69559-cc82-48cb-926e-5d925aca088b^VIA+ Eligible for Thermal ablation^99DCT">
                 VIA+ Eligible for Thermal ablation
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.VIATriageResultLEEP" name="obs.VIATriageResults" type="checkbox"
+                <input id="obs.VIATriageResultLEEP" name="obs.VIATriageResults" type="radio"
                        data-concept="a37a937a-a2a6-4c22-975f-986fb3599ea3^VIA Results^99DCT"
                        value="402f3951-420e-4c09-9a9a-955bc0cff140^VIA+ Eligible for LEEP^99DCT">
                 VIA+ Eligible for LEEP
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.VIATriageResultNegative" name="obs.VIATriageResults" type="checkbox"
+                <input id="obs.VIATriageResultNegative" name="obs.VIATriageResults" type="radio"
                        data-concept="a37a937a-a2a6-4c22-975f-986fb3599ea3^VIA Results^99DCT"
                        value="a7b08a37-0380-49dd-8f12-c2c2c76c8b13^VIA Negative^99DCT">
                 VIA-
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.VIATriageResultSuspectedCancer" name="obs.VIATriageResults" type="checkbox"
+                <input id="obs.VIATriageResultSuspectedCancer" name="obs.VIATriageResults" type="radio"
                        data-concept="a37a937a-a2a6-4c22-975f-986fb3599ea3^VIA Results^99DCT"
                        value="476123d7-54f1-4278-92f1-2de4f19ae951^Suspected cancer diagnosis^99DCT">
                 Suspected cancer
             </label>
         </div>
     </fieldset>
-<!--    <fieldset>-->
-<!--        <div class="section concept-set">-->
-<!--            <h3 class="font-normal"> <u>VIA screen</u> </h3>-->
-<!--            <label><u>Result</u></label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.VIAScreenResultThermalablation" name="obs.VIAScreenResult" type="checkbox"-->
-<!--                       data-concept="6fa6ba8b-189a-468c-bede-9e134fe69e90^VIA screen Results^99DCT"-->
-<!--                       value="3fe69559-cc82-48cb-926e-5d925aca088b^VIA+ Eligible for Thermal ablation^99DCT">-->
-<!--                VIA+ Eligible for Thermal ablation-->
-<!--            </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.VIAScreenResultLEEP" name="obs.VIAScreenResult" type="checkbox"-->
-<!--                       data-concept="6fa6ba8b-189a-468c-bede-9e134fe69e90^VIA screen Results^99DCT"-->
-<!--                       value="402f3951-420e-4c09-9a9a-955bc0cff140^VIA+ Eligible for LEEP^99DCT">-->
-<!--                VIA+ Eligible for LEEP-->
-<!--            </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.VIAScreenResultNegative" name="obs.VIAScreenResult" type="checkbox"-->
-<!--                       data-concept="6fa6ba8b-189a-468c-bede-9e134fe69e90^VIA screen Results^99DCT"-->
-<!--                       value="a7b08a37-0380-49dd-8f12-c2c2c76c8b13^VIA Negative^99DCT">-->
-<!--                VIA- -->
-<!--            </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.VIAScreenResultSuspectedCancer" name="obs.VIAScreenResult" type="checkbox"-->
-<!--                       data-concept="6fa6ba8b-189a-468c-bede-9e134fe69e90^VIA screen Results^99DCT"-->
-<!--                       value="476123d7-54f1-4278-92f1-2de4f19ae951^Suspected cancer diagnosis^99DCT">-->
-<!--                Suspected cancer-->
-<!--            </label>-->
-<!--        </div>-->
-<!--    </fieldset>-->
+    <!--    <fieldset>-->
+    <!--        <div class="section concept-set">-->
+    <!--            <h3 class="font-normal"> <u>VIA screen</u> </h3>-->
+    <!--            <label><u>Result</u></label>-->
+    <!--            <label class="font-normal">-->
+    <!--                <input id="obs.VIAScreenResultThermalablation" name="obs.VIAScreenResult" type="checkbox"-->
+    <!--                       data-concept="6fa6ba8b-189a-468c-bede-9e134fe69e90^VIA screen Results^99DCT"-->
+    <!--                       value="3fe69559-cc82-48cb-926e-5d925aca088b^VIA+ Eligible for Thermal ablation^99DCT">-->
+    <!--                VIA+ Eligible for Thermal ablation-->
+    <!--            </label>-->
+    <!--            <label class="font-normal">-->
+    <!--                <input id="obs.VIAScreenResultLEEP" name="obs.VIAScreenResult" type="checkbox"-->
+    <!--                       data-concept="6fa6ba8b-189a-468c-bede-9e134fe69e90^VIA screen Results^99DCT"-->
+    <!--                       value="402f3951-420e-4c09-9a9a-955bc0cff140^VIA+ Eligible for LEEP^99DCT">-->
+    <!--                VIA+ Eligible for LEEP-->
+    <!--            </label>-->
+    <!--            <label class="font-normal">-->
+    <!--                <input id="obs.VIAScreenResultNegative" name="obs.VIAScreenResult" type="checkbox"-->
+    <!--                       data-concept="6fa6ba8b-189a-468c-bede-9e134fe69e90^VIA screen Results^99DCT"-->
+    <!--                       value="a7b08a37-0380-49dd-8f12-c2c2c76c8b13^VIA Negative^99DCT">-->
+    <!--                VIA- -->
+    <!--            </label>-->
+    <!--            <label class="font-normal">-->
+    <!--                <input id="obs.VIAScreenResultSuspectedCancer" name="obs.VIAScreenResult" type="checkbox"-->
+    <!--                       data-concept="6fa6ba8b-189a-468c-bede-9e134fe69e90^VIA screen Results^99DCT"-->
+    <!--                       value="476123d7-54f1-4278-92f1-2de4f19ae951^Suspected cancer diagnosis^99DCT">-->
+    <!--                Suspected cancer-->
+    <!--            </label>-->
+    <!--        </div>-->
+    <!--    </fieldset>-->
     <fieldset>
         <div class="section">
             <label class="font-normal"> <u><strong> Suspicion of STIs:  </strong> </u> </label>
@@ -822,151 +889,159 @@
         </div>
     </fieldset>
     <fieldset>
-        <div class="section">
+        <div class="section LevelOfCare">
             <h3 class="font-normal"> <u>Colposcopy</u> </h3>
 
             <label class="font-normal"> <strong> Colposcopy performed? </strong> </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.ColposcopyPerformedYes" name="obs.ColposcopyPerformed" type="radio"
+                <input class="activate" id="obs.ColposcopyPerformedYes" name="ColposcopyPerformed" type="radio"
                        data-concept="f29096a3-c692-4972-964e-bdf5c0b27681^colposcopy performed^99DCT"
                        value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
                 Yes
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.ColposcopyPerformedNo" name="obs.ColposcopyPerformed" type="radio"
+                <input class="deactivate" id="obs.ColposcopyPerformedNo" name="ColposcopyPerformed" type="radio"
                        data-concept="f29096a3-c692-4972-964e-bdf5c0b27681^colposcopy performed^99DCT"
                        value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
                 No
             </label>
             <br/>
-            <label class="font-normal">  Satisfactory (the entire squamo-columnar junction[SCJ] is seen and entire abnormal region well seen) </label>
+            <div class="ColposcopyPerformed">
+                <label class="font-normal">  Satisfactory (the entire squamo-columnar junction[SCJ] is seen and entire abnormal region well seen) </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.ColposcopySatisfactoryYes" name="obs.ColposcopySatisfactory" type="radio"
+                           data-concept="4c615b25-e5de-47d7-85ae-2bb5b076761a^colposcopy Satisfactory^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
+                </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.ColposcopySatisfactoryNo" name="obs.ColposcopySatisfactory" type="radio"
+                           data-concept="4c615b25-e5de-47d7-85ae-2bb5b076761a^colposcopy Satisfactory^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
+                </label>
+            </div>
             <br/>
-            <label class="font-normal">
-                <input id="obs.ColposcopySatisfactoryYes" name="obs.ColposcopySatisfactory" type="radio"
-                       data-concept="4c615b25-e5de-47d7-85ae-2bb5b076761a^colposcopy Satisfactory^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
+            <div class="ColposcopyPerformed">
+                <label class="font-normal"> <strong>Results</strong> </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.ColposcopyResultsNormal" name="obs.ColposcopyResults" type="radio"
+                           data-concept="6c5293e6-266f-4608-86e7-3e783587cc3f^colposcopy Results^99DCT"
+                           value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">
+                    Normal
+                </label>
+                <br/>
+                <!--            <label class="font-normal">-->
+                <!--                <input id="obs.ColposcopyResultsLGSIL" name="obs.ColposcopyResults" type="radio"-->
+                <!--                       data-concept="6c5293e6-266f-4608-86e7-3e783587cc3f^colposcopy Results^99DCT"-->
+                <!--                       value="882b43ea-d072-4b14-9191-7bc18104e792^Low-grade squamous intraepithelial lesion seen (LGSIL)^99DCT">-->
+                <!--                LGSIL (Low-grade squamous intraepithelial lesion seen)-->
+                <!--            </label>-->
+                <!--            <label class="font-normal">-->
+                <!--                <input id="obs.ColposcopyResultsHGSIL" name="obs.ColposcopyResults" type="radio"-->
+                <!--                       data-concept="6c5293e6-266f-4608-86e7-3e783587cc3f^colposcopy Results^99DCT"-->
+                <!--                       value="b5ca1084-b177-4f45-9406-5758a15ab54d^High-grade squamous intraepithelial lesion seen (HGSIL)^99DCT">-->
+                <!--                HGSIL (High-grade squamous intraepithelial lesion seen)-->
+                <!--            </label>-->
+                <!--            <label class="font-normal">-->
+                <!--                <input id="obs.ColposcopyResultsSuspicionOfCancer" name="obs.ColposcopyResults" type="radio"-->
+                <!--                       data-concept="6c5293e6-266f-4608-86e7-3e783587cc3f^colposcopy Results^99DCT"-->
+                <!--                       value="476123d7-54f1-4278-92f1-2de4f19ae951^Suspected cancer diagnosis^99DCT">-->
+                <!--                Suspicion of cancer-->
+                <!--            </label>-->
+                <label class="font-normal">
+                    <input id="obs.abnormalColposcopyResults" name="obs.ColposcopyResults" type="radio"
+                           data-concept="6c5293e6-266f-4608-86e7-3e783587cc3f^colposcopy Results^99DCT"
+                           value="3cd75230-26fe-102b-80cb-0017a47871b2^ABNORMAL^99DCT">
+                    Abnormal
+                </label>
+            </div>
             <br/>
-            <label class="font-normal">
-                <input id="obs.ColposcopySatisfactoryNo" name="obs.ColposcopySatisfactory" type="radio"
-                       data-concept="4c615b25-e5de-47d7-85ae-2bb5b076761a^colposcopy Satisfactory^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-            <br/>
-            <label class="font-normal"> <strong>Results</strong> </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.ColposcopyResultsNormal" name="obs.ColposcopyResults" type="radio"
-                       data-concept="6c5293e6-266f-4608-86e7-3e783587cc3f^colposcopy Results^99DCT"
-                       value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">
-                Normal
-            </label>
-            <br/>
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.ColposcopyResultsLGSIL" name="obs.ColposcopyResults" type="radio"-->
-<!--                       data-concept="6c5293e6-266f-4608-86e7-3e783587cc3f^colposcopy Results^99DCT"-->
-<!--                       value="882b43ea-d072-4b14-9191-7bc18104e792^Low-grade squamous intraepithelial lesion seen (LGSIL)^99DCT">-->
-<!--                LGSIL (Low-grade squamous intraepithelial lesion seen)-->
-<!--            </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.ColposcopyResultsHGSIL" name="obs.ColposcopyResults" type="radio"-->
-<!--                       data-concept="6c5293e6-266f-4608-86e7-3e783587cc3f^colposcopy Results^99DCT"-->
-<!--                       value="b5ca1084-b177-4f45-9406-5758a15ab54d^High-grade squamous intraepithelial lesion seen (HGSIL)^99DCT">-->
-<!--                HGSIL (High-grade squamous intraepithelial lesion seen)-->
-<!--            </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.ColposcopyResultsSuspicionOfCancer" name="obs.ColposcopyResults" type="radio"-->
-<!--                       data-concept="6c5293e6-266f-4608-86e7-3e783587cc3f^colposcopy Results^99DCT"-->
-<!--                       value="476123d7-54f1-4278-92f1-2de4f19ae951^Suspected cancer diagnosis^99DCT">-->
-<!--                Suspicion of cancer-->
-<!--            </label>-->
-            <label class="font-normal">
-                <input id="obs.abnormalColposcopyResults" name="obs.ColposcopyResults" type="radio"
-                       data-concept="6c5293e6-266f-4608-86e7-3e783587cc3f^colposcopy Results^99DCT"
-                       value="3cd75230-26fe-102b-80cb-0017a47871b2^ABNORMAL^99DCT">
-                Abnormal
-            </label>
-            <br/>
-            <label class="font-normal"> <strong> Other Findings  </strong> </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.otherColposcopyResultsFindins" class="form-control" name="obs.otherColposcopyResultsFindins"
-                       type="text" data-concept="60a522f9-3c8b-4b2f-85fc-56ec1151e778^other colposcopy findings^99DCT"/>
-            </label>
+            <div class="ColposcopyPerformed">
+                <label class="font-normal"> <strong> Other Findings  </strong> </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.otherColposcopyResultsFindins" class="form-control" name="obs.otherColposcopyResultsFindins"
+                           type="text" data-concept="60a522f9-3c8b-4b2f-85fc-56ec1151e778^other colposcopy findings^99DCT"/>
+                </label>
+            </div>
         </div>
     </fieldset>
     <fieldset>
-        <div class="section">
+        <div class="section LevelOfCare">
             <h3 class="font-normal">Biopsy</h3>
             <br/>
-            <label class="font-normal"> <strong> Biopsy performed? </strong> </label>
+            <label class="font-normal"> <strong> Biopsy performed today? </strong> </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.BiopsyPerformedYes" name="obs.BiopsyPerformed" type="radio"
-                       data-concept="5563e827-9a1e-40eb-b05b-81d55981ce6d^Biopsy performed^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                <input  id="obs.BiopsyPerformedYes" name="BiopsyPerformed" type="radio"
+                        data-concept="5563e827-9a1e-40eb-b05b-81d55981ce6d^Biopsy performed^99DCT"
+                        value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
                 Yes
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.BiopsyPerformedNo" name="obs.BiopsyPerformed" type="radio"
-                       data-concept="5563e827-9a1e-40eb-b05b-81d55981ce6d^Biopsy performed^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                <input  id="obs.BiopsyPerformedNo" name="BiopsyPerformed" type="radio"
+                        data-concept="5563e827-9a1e-40eb-b05b-81d55981ce6d^Biopsy performed^99DCT"
+                        value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
                 No
             </label>
             <br/>
-<!--            <label class="font-normal">  Date Performed: </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.DateBiopsyPerformed" class="form-control" name="obs.DateBiopsyPerformed"-->
-<!--                       type="Date" data-concept="a9a2d145-e50e-4ceb-9fa9-9ad467c5dda2^BIOPSY DATE^99DCT"/>-->
-<!--            </label>-->
+            <!--            <label class="font-normal">  Date Performed: </label>-->
+            <!--            <label class="font-normal">-->
+            <!--                <input id="obs.DateBiopsyPerformed" class="form-control" name="obs.DateBiopsyPerformed"-->
+            <!--                       type="Date" data-concept="a9a2d145-e50e-4ceb-9fa9-9ad467c5dda2^BIOPSY DATE^99DCT"/>-->
+            <!--            </label>-->
             <br/><br/>
-            <label class="font-normal">
-                <input id="obs.BiopsyResultsSquamousMetaplasia" name="obs.BiopsyResults" type="checkbox"
-                       data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"
-                       value="8303e328-bf92-4cbc-bb23-a81312de0cff^Squamous metaplasia^99DCT">
-                Squamous metaplasia
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.BiopsyResultsCIN1" name="obs.BiopsyResults" type="checkbox"
-                       data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"
-                       value="56db2876-4469-4e2d-9f95-01972592d964^cervical intraepithelial neoplasia 1^99DCT">
-                CIN 1
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.BiopsyResultsCIN2" name="obs.BiopsyResults" type="checkbox"
-                       data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"
-                       value="853dd92d-f9bc-4b4d-b806-c763c01e4378^cervical intraepithelial neoplasia 2^99DCT">
-                CIN 2
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.BiopsyResultsCIN3" name="obs.BiopsyResults" type="checkbox"
-                       data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"
-                       value="d98f5c34-6158-42cd-b7bd-0934749dee25^cervical intraepithelial neoplasia 3^99DCT">
-                CIN 3
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.BiopsyResultsCIS" name="obs.BiopsyResults" type="checkbox"
-                       data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"
-                       value="f8a41deb-0549-414e-abaa-cc20141b9d20^carcinoma in-situ^99DCT">
-                CIS
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.BiopsyResultsInvasiveCancer" name="obs.BiopsyResults" type="checkbox"
-                       data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"
-                       value="3ce5d01c-26fe-102b-80cb-0017a47871b2^INVASIVE CERVICAL CARCINOMA^99DCT">
-                Invasive cancer
-            </label>
-
+            <div>
+                <label class="font-normal"><strong> Biopsy results received since last visit </strong></label>
+                <label class="font-normal">
+                    <input id="obs.BiopsyResultsSquamousMetaplasia" name="obs.BiopsyResults" type="checkbox"
+                           data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"
+                           value="8303e328-bf92-4cbc-bb23-a81312de0cff^Squamous metaplasia^99DCT">
+                    Squamous metaplasia
+                </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.BiopsyResultsCIN1" name="obs.BiopsyResults" type="checkbox"
+                           data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"
+                           value="56db2876-4469-4e2d-9f95-01972592d964^cervical intraepithelial neoplasia 1^99DCT">
+                    CIN 1
+                </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.BiopsyResultsCIN2" name="obs.BiopsyResults" type="checkbox"
+                           data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"
+                           value="853dd92d-f9bc-4b4d-b806-c763c01e4378^cervical intraepithelial neoplasia 2^99DCT">
+                    CIN 2
+                </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.BiopsyResultsCIN3" name="obs.BiopsyResults" type="checkbox"
+                           data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"
+                           value="d98f5c34-6158-42cd-b7bd-0934749dee25^cervical intraepithelial neoplasia 3^99DCT">
+                    CIN 3
+                </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.BiopsyResultsCIS" name="obs.BiopsyResults" type="checkbox"
+                           data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"
+                           value="f8a41deb-0549-414e-abaa-cc20141b9d20^carcinoma in-situ^99DCT">
+                    CIS
+                </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.BiopsyResultsInvasiveCancer" name="obs.BiopsyResults" type="checkbox"
+                           data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"
+                           value="3ce5d01c-26fe-102b-80cb-0017a47871b2^INVASIVE CERVICAL CARCINOMA^99DCT">
+                    Invasive cancer
+                </label>
+            </div>
         </div>
     </fieldset>
     <fieldset>
@@ -975,128 +1050,162 @@
             <label class="font-normal"> <strong> Treatment performed: </strong> </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.ManagementTreatmentPerformedYes" name="obs.ManagementTreatmentPerformed" type="radio"
+                <input class="activate" id="obs.ManagementTreatmentPerformedYes" name="ManagementTreatmentPerformed" type="radio"
                        data-concept="ae47a54a-9111-475c-9cc2-76951d78b0c8^Treatment performed^99DCT"
                        value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
                 Yes
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.ManagementTreatmentPerformedNo" name="obs.ManagementTreatmentPerformed" type="radio"
+                <input class="deactivate" id="obs.ManagementTreatmentPerformedNo" name="ManagementTreatmentPerformed" type="radio"
                        data-concept="ae47a54a-9111-475c-9cc2-76951d78b0c8^Treatment performed^99DCT"
                        value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
                 No
             </label>
             <br/>
-            <label class="font-normal">Treatment type: </label>
+            <div class="ManagementTreatmentPerformed">
+                <label class="font-normal">Treatment type: </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.ManagementTypeOfTreatmentPerformedThermoAblation" name="obs.ManagementTypeOfTreatmentPerformed" type="radio"
+                           data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"
+                           value="ef4d5bd3-2c4e-4ac2-9b91-9d4ba12b44f8^thermal-ablation^99DCT">
+                    Thermal-ablation
+                </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.ManagementTypeOfTreatmentPerformedCryotherapy" name="obs.ManagementTypeOfTreatmentPerformed" type="radio"
+                           data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"
+                           value="e48bc8db-8f6e-4556-9083-0a000a136e95^Cryotherapy^99DCT">
+                    Cryotherapy(DH)
+                </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.ManagementTypeOfTreatmentPerformedLEEP" name="obs.ManagementTypeOfTreatmentPerformed" type="radio"
+                           data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"
+                           value="55040927-bae5-410c-80da-c79f7574167f^Loop Electrosurgical Excision Procedure^99DCT">
+                    LEEP(DH)
+                </label>
+            </div>
+            <br/>
+            <div class="ManagementTreatmentPerformed">
+                <label class="font-normal"> <strong> Other treatment (if other diagnosis)  </strong> </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.othertreatment" class="form-control" name="obs.othertreatment"
+                           type="text" data-concept="96f682a8-fcca-445a-ad61-9209740daf8d^Other Treatment^99DCT"/>
+                </label>
+            </div>
+            <br/>
+            <label class="font-normal"> <strong> Disposition:  </strong> </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.ManagementTypeOfTreatmentPerformedThermoAblation" name="obs.ManagementTypeOfTreatmentPerformed" type="checkbox"
-                       data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"
-                       value="ef4d5bd3-2c4e-4ac2-9b91-9d4ba12b44f8^thermal-ablation^99DCT">
-                Thermal-ablation
+                <input class="deactivate" id="obs.DispositionDischarged" name="Disposition" type="radio"
+                       data-concept="0af3dbde-15f5-102d-96e4-000c29c2a5d7^DISPOSITION^99DCT"
+                       value="6340fd67-facb-4a6c-a9d9-f629c9e53053^DISCHARGED^99DCT">
+                Discharged,no follow up needed
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.ManagementTypeOfTreatmentPerformedCryotherapy" name="obs.ManagementTypeOfTreatmentPerformed" type="checkbox"
-                       data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"
-                       value="e48bc8db-8f6e-4556-9083-0a000a136e95^Cryotherapy^99DCT">
-                Cryotherapy(DH)
+                <input class="deactivate" id="obs.Disposition" name="Disposition" type="radio"
+                       data-concept="0af3dbde-15f5-102d-96e4-000c29c2a5d7^DISPOSITION^99DCT"
+                       value="d0e94536-0b91-40a1-b994-04bb4f5cd15d^Follow-up at this health facility^99DCT">
+                Follow-up at this health facility
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.ManagementTypeOfTreatmentPerformedLEEP" name="obs.ManagementTypeOfTreatmentPerformed" type="checkbox"
-                       data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"
-                       value="55040927-bae5-410c-80da-c79f7574167f^Loop Electrosurgical Excision Procedure^99DCT">
-                LEEP(DH)
+                <input class="activate" id="Disposition" name="Disposition" type="radio"
+                       data-concept="0af3dbde-15f5-102d-96e4-000c29c2a5d7^DISPOSITION^99DCT"
+                       value="3cdd5c02-26fe-102b-80cb-0017a47871b2^PATIENT TRANSFERRED OUT^99DCT">
+                referred to (facility name):
             </label>
-            <br/>
-
-            <label class="font-normal"> <strong> Other treatment (if other diagnosis)  </strong> </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.othertreatment" class="form-control" name="obs.othertreatment"
-                       type="text" data-concept="96f682a8-fcca-445a-ad61-9209740daf8d^Other Treatment^99DCT"/>
-            </label>
-            <br/>
-            <label class="font-normal"> <strong> Referred:  </strong> </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.PatientReferredOutYes" name="obs.PatientReferredOut" type="radio"
-                       data-concept="805f40f2-4720-4474-b761-5880c9d3870e^has patient been referred^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.PatientReferredOutNo" name="obs.PatientReferredOut" type="radio"
-                       data-concept="805f40f2-4720-4474-b761-5880c9d3870e^has patient been referred^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-            <br/>
-            <label class="font-normal"> <strong> Referral reason: </strong> </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.ManagementReferralReasonSuspectedCancer" name="obs.ManagementReferralReason" type="radio"
-                       data-concept="1aa373f4-4db5-4b01-bce0-c10a636bb931^Reasons for Referral^99DCT"
-                       value="476123d7-54f1-4278-92f1-2de4f19ae951^Suspected cancer diagnosis^99DCT">
-                Suspected cancer
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.ManagementReferralReasonThermoAblation" name="obs.ManagementReferralReason" type="radio"
-                       data-concept="1aa373f4-4db5-4b01-bce0-c10a636bb931^Reasons for Referral^99DCT"
-                       value="ef4d5bd3-2c4e-4ac2-9b91-9d4ba12b44f8^thermo-ablation^99DCT">
-                Thermal ablation
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.ManagementReferralReasonCryotherapy" name="obs.ManagementReferralReason" type="radio"
-                       data-concept="1aa373f4-4db5-4b01-bce0-c10a636bb931^Reasons for Referral^99DCT"
-                       value="e48bc8db-8f6e-4556-9083-0a000a136e95^Cryotherapy^99DCT">
-                Cryotherapy
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.ManagementReferralReasonLEEP" name="obs.ManagementReferralReason" type="radio"
-                       data-concept="1aa373f4-4db5-4b01-bce0-c10a636bb931^Reasons for Referral^99DCT"
-                       value="55040927-bae5-410c-80da-c79f7574167f^Loop Electrosurgical Excision Procedure^99DCT">
-                LEEP
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.ManagementReferralReasonOther" name="obs.ManagementReferralReason" type="radio"
-                       data-concept="1aa373f4-4db5-4b01-bce0-c10a636bb931^Reasons for Referral^99DCT"
-                       value="3cee7fb4-26fe-102b-80cb-0017a47871b2^OTHER NON-CODED^99DCT">
-                Other reasons
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.ManagementReferralOtherReasonText" class="form-control" name="obs.ManagementReferralOtherReasonText"
-                       type="text" data-concept="eea065ac-117b-4be9-976b-2948b29046b7^Other reason for referral^99DCT"/>
-            </label>
-
-<!--            <label class="font-normal"> <strong> Date of referral: </strong> </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.ManagementDateOfReferral" class="form-control" name="obs.ManagementDateOfReferral"-->
-<!--                       type="Date" data-concept="5f96394b-2620-4ce3-b5d1-a4aa6108c70f^Date of Referring^99DCT"/>-->
-<!--            </label>-->
-            <br/>
-            <label class="font-normal"> <strong> Referred to (facility name):  </strong> </label>
             <br/>
             <label class="font-normal">
                 <input class="form-control " id="obs.healthFacility" type="text" placeholder="Start typing something...">
                 <input class="form-control" name="obs.healthFacility" type="hidden" data-concept="3a84ab37-f75c-48ad-8bcf-322c927f36bb^referred to (coded)^99DCT">
             </label>
+            <!--            <br/>-->
+            <!--            <label class="font-normal"> <strong> Referred:  </strong> </label>-->
+            <!--            <br/>-->
+            <!--            <label class="font-normal">-->
+            <!--                <input class="activate" id="obs.PatientReferredOutYes" name="PatientReferredOut" type="radio"-->
+            <!--                       data-concept="805f40f2-4720-4474-b761-5880c9d3870e^has patient been referred^99DCT"-->
+            <!--                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">-->
+            <!--                Yes-->
+            <!--            </label>-->
+            <!--            <br/>-->
+            <!--            <label class="font-normal">-->
+            <!--                <input class="activate" id="obs.PatientReferredOutNo" name="PatientReferredOut" type="radio"-->
+            <!--                       data-concept="805f40f2-4720-4474-b761-5880c9d3870e^has patient been referred^99DCT"-->
+            <!--                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">-->
+            <!--                No-->
+            <!--            </label>-->
             <br/>
-<!--            <label class="font-normal"> <strong> referral completion date: </strong> </label>-->
-<!--            <br/>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.ManagementReferralCompletionDate" class="form-control" name="obs.ManagementReferralCompletionDate"-->
-<!--                       type="Date" data-concept="2ec83708-c126-48f2-b5f8-0ce37500e11b^Referral completion Date^99DCT"/>-->
-<!--            </label>-->
-            <label class="font-normal"> <strong> Date of next visit:  </strong> </label>
+            <div class="Disposition">
+                <label class="font-normal"> <strong> Referral reason: </strong> </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.ManagementReferralReasonSuspectedCancer" name="obs.ManagementReferralReason" type="radio"
+                           data-concept="1aa373f4-4db5-4b01-bce0-c10a636bb931^Reasons for Referral^99DCT"
+                           value="476123d7-54f1-4278-92f1-2de4f19ae951^Suspected cancer diagnosis^99DCT">
+                    Suspected cancer
+                </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.ManagementReferralReasonThermoAblation" name="obs.ManagementReferralReason" type="radio"
+                           data-concept="1aa373f4-4db5-4b01-bce0-c10a636bb931^Reasons for Referral^99DCT"
+                           value="ef4d5bd3-2c4e-4ac2-9b91-9d4ba12b44f8^thermo-ablation^99DCT">
+                    Thermal ablation
+                </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.ManagementReferralReasonCryotherapy" name="obs.ManagementReferralReason" type="radio"
+                           data-concept="1aa373f4-4db5-4b01-bce0-c10a636bb931^Reasons for Referral^99DCT"
+                           value="e48bc8db-8f6e-4556-9083-0a000a136e95^Cryotherapy^99DCT">
+                    Cryotherapy
+                </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.ManagementReferralReasonLEEP" name="obs.ManagementReferralReason" type="radio"
+                           data-concept="1aa373f4-4db5-4b01-bce0-c10a636bb931^Reasons for Referral^99DCT"
+                           value="55040927-bae5-410c-80da-c79f7574167f^Loop Electrosurgical Excision Procedure^99DCT">
+                    LEEP
+                </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.ManagementReferralReasonOther" name="obs.ManagementReferralReason" type="radio"
+                           data-concept="1aa373f4-4db5-4b01-bce0-c10a636bb931^Reasons for Referral^99DCT"
+                           value="3cee7fb4-26fe-102b-80cb-0017a47871b2^OTHER NON-CODED^99DCT">
+                    Other reasons
+                </label>
+            </div>
+            <br/>
+            <div class="Disposition">
+                <label class="font-normal">
+                    <input id="obs.ManagementReferralOtherReasonText" class="form-control" name="obs.ManagementReferralOtherReasonText"
+                           type="text" data-concept="eea065ac-117b-4be9-976b-2948b29046b7^Other reason for referral^99DCT"/>
+                </label>
+            </div>
+            <!--            <label class="font-normal"> <strong> Date of referral: </strong> </label>-->
+            <!--            <label class="font-normal">-->
+            <!--                <input id="obs.ManagementDateOfReferral" class="form-control" name="obs.ManagementDateOfReferral"-->
+            <!--                       type="Date" data-concept="5f96394b-2620-4ce3-b5d1-a4aa6108c70f^Date of Referring^99DCT"/>-->
+            <!--            </label>-->
+            <br/>
+            <!--            <label class="font-normal"> <strong> Referred to (facility name):  </strong> </label>-->
+            <!--            <br/>-->
+            <!--            <label class="font-normal">-->
+            <!--                <input class="form-control " id="obs.healthFacility" type="text" placeholder="Start typing something...">-->
+            <!--                <input class="form-control" name="obs.healthFacility" type="hidden" data-concept="3a84ab37-f75c-48ad-8bcf-322c927f36bb^referred to (coded)^99DCT">-->
+            <!--            </label>-->
+            <!--            <br/>-->
+            <!--            <label class="font-normal"> <strong> referral completion date: </strong> </label>-->
+            <!--            <br/>-->
+            <!--            <label class="font-normal">-->
+            <!--                <input id="obs.ManagementReferralCompletionDate" class="form-control" name="obs.ManagementReferralCompletionDate"-->
+            <!--                       type="Date" data-concept="2ec83708-c126-48f2-b5f8-0ce37500e11b^Referral completion Date^99DCT"/>-->
+            <!--            </label>-->
+            <label class="font-normal"> <strong>Next visit date:  </strong> </label>
             <br/>
             <label class="font-normal">
                 <input class="form-control datepicker future-or-today-date" id="obs.BreastDispositionNextDate" name="obs.BreastDispositionNextDate" type="text"
@@ -1104,102 +1213,102 @@
             </label>
         </div>
     </fieldset>
-<!--    <fieldset>-->
-<!--        <div class="section">-->
-<!--            <h3 class="font-normal">Biopsy</h3>-->
-<!--            <label class="font-normal"> <strong> Biopsy performed? </strong> </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.BiopsyPerformedYes" name="obs.BiopsyPerformed" type="radio"-->
-<!--                       data-concept="5563e827-9a1e-40eb-b05b-81d55981ce6d^Biopsy performed^99DCT"-->
-<!--                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">-->
-<!--                Yes-->
-<!--            </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.BiopsyPerformedNo" name="obs.BiopsyPerformed" type="radio"-->
-<!--                       data-concept="5563e827-9a1e-40eb-b05b-81d55981ce6d^Biopsy performed^99DCT"-->
-<!--                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">-->
-<!--                No-->
-<!--            </label>-->
-<!--            <label class="font-normal">  Date Performed: </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.DateBiopsyPerformed" class="form-control" name="obs.DateBiopsyPerformed"-->
-<!--                       type="Date" data-concept="a9a2d145-e50e-4ceb-9fa9-9ad467c5dda2^BIOPSY DATE^99DCT"/>-->
-<!--            </label>-->
+    <!--    <fieldset>-->
+    <!--        <div class="section">-->
+    <!--            <h3 class="font-normal">Biopsy</h3>-->
+    <!--            <label class="font-normal"> <strong> Biopsy performed? </strong> </label>-->
+    <!--            <label class="font-normal">-->
+    <!--                <input id="obs.BiopsyPerformedYes" name="obs.BiopsyPerformed" type="radio"-->
+    <!--                       data-concept="5563e827-9a1e-40eb-b05b-81d55981ce6d^Biopsy performed^99DCT"-->
+    <!--                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">-->
+    <!--                Yes-->
+    <!--            </label>-->
+    <!--            <label class="font-normal">-->
+    <!--                <input id="obs.BiopsyPerformedNo" name="obs.BiopsyPerformed" type="radio"-->
+    <!--                       data-concept="5563e827-9a1e-40eb-b05b-81d55981ce6d^Biopsy performed^99DCT"-->
+    <!--                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">-->
+    <!--                No-->
+    <!--            </label>-->
+    <!--            <label class="font-normal">  Date Performed: </label>-->
+    <!--            <label class="font-normal">-->
+    <!--                <input id="obs.DateBiopsyPerformed" class="form-control" name="obs.DateBiopsyPerformed"-->
+    <!--                       type="Date" data-concept="a9a2d145-e50e-4ceb-9fa9-9ad467c5dda2^BIOPSY DATE^99DCT"/>-->
+    <!--            </label>-->
 
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.BiopsyResultsSquamousMetaplasia" name="obs.BiopsyResults" type="checkbox"-->
-<!--                       data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"-->
-<!--                       value="8303e328-bf92-4cbc-bb23-a81312de0cff^Squamous metaplasia^99DCT">-->
-<!--                Squamous metaplasia-->
-<!--            </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.BiopsyResultsCIN1" name="obs.BiopsyResults" type="checkbox"-->
-<!--                       data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"-->
-<!--                       value="56db2876-4469-4e2d-9f95-01972592d964^cervical intraepithelial neoplasia 1^99DCT">-->
-<!--                CIN 1-->
-<!--            </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.BiopsyResultsCIN2" name="obs.BiopsyResults" type="checkbox"-->
-<!--                       data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"-->
-<!--                       value="853dd92d-f9bc-4b4d-b806-c763c01e4378^cervical intraepithelial neoplasia 2^99DCT">-->
-<!--                CIN 2-->
-<!--            </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.BiopsyResultsCIN3" name="obs.BiopsyResults" type="checkbox"-->
-<!--                       data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"-->
-<!--                       value="d98f5c34-6158-42cd-b7bd-0934749dee25^cervical intraepithelial neoplasia 3^99DCT">-->
-<!--                CIN 3-->
-<!--            </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.BiopsyResultsCIS" name="obs.BiopsyResults" type="checkbox"-->
-<!--                       data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"-->
-<!--                       value="f8a41deb-0549-414e-abaa-cc20141b9d20^carcinoma in-situ^99DCT">-->
-<!--                CIS-->
-<!--            </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.BiopsyResultsInvasiveCancer" name="obs.BiopsyResults" type="checkbox"-->
-<!--                       data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"-->
-<!--                       value="3ce5d01c-26fe-102b-80cb-0017a47871b2^INVASIVE CERVICAL CARCINOMA^99DCT">-->
-<!--                Invasive cancer-->
-<!--            </label>-->
+    <!--            <label class="font-normal">-->
+    <!--                <input id="obs.BiopsyResultsSquamousMetaplasia" name="obs.BiopsyResults" type="checkbox"-->
+    <!--                       data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"-->
+    <!--                       value="8303e328-bf92-4cbc-bb23-a81312de0cff^Squamous metaplasia^99DCT">-->
+    <!--                Squamous metaplasia-->
+    <!--            </label>-->
+    <!--            <label class="font-normal">-->
+    <!--                <input id="obs.BiopsyResultsCIN1" name="obs.BiopsyResults" type="checkbox"-->
+    <!--                       data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"-->
+    <!--                       value="56db2876-4469-4e2d-9f95-01972592d964^cervical intraepithelial neoplasia 1^99DCT">-->
+    <!--                CIN 1-->
+    <!--            </label>-->
+    <!--            <label class="font-normal">-->
+    <!--                <input id="obs.BiopsyResultsCIN2" name="obs.BiopsyResults" type="checkbox"-->
+    <!--                       data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"-->
+    <!--                       value="853dd92d-f9bc-4b4d-b806-c763c01e4378^cervical intraepithelial neoplasia 2^99DCT">-->
+    <!--                CIN 2-->
+    <!--            </label>-->
+    <!--            <label class="font-normal">-->
+    <!--                <input id="obs.BiopsyResultsCIN3" name="obs.BiopsyResults" type="checkbox"-->
+    <!--                       data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"-->
+    <!--                       value="d98f5c34-6158-42cd-b7bd-0934749dee25^cervical intraepithelial neoplasia 3^99DCT">-->
+    <!--                CIN 3-->
+    <!--            </label>-->
+    <!--            <label class="font-normal">-->
+    <!--                <input id="obs.BiopsyResultsCIS" name="obs.BiopsyResults" type="checkbox"-->
+    <!--                       data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"-->
+    <!--                       value="f8a41deb-0549-414e-abaa-cc20141b9d20^carcinoma in-situ^99DCT">-->
+    <!--                CIS-->
+    <!--            </label>-->
+    <!--            <label class="font-normal">-->
+    <!--                <input id="obs.BiopsyResultsInvasiveCancer" name="obs.BiopsyResults" type="checkbox"-->
+    <!--                       data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"-->
+    <!--                       value="3ce5d01c-26fe-102b-80cb-0017a47871b2^INVASIVE CERVICAL CARCINOMA^99DCT">-->
+    <!--                Invasive cancer-->
+    <!--            </label>-->
 
-<!--        </div>-->
-<!--    </fieldset>-->
-<!--    <fieldset>-->
-<!--        <div class="section">-->
-<!--            <label class="font-normal"> <u><strong> Suspicion of STIs:  </strong> </u> </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.STIsSuspicionYes" name="obs.STIsSuspicion" type="radio"-->
-<!--                       data-concept="b7397d58-bee5-48c7-a5fd-aedca2ec1fec^Sexual transmitted Infection suspicion^99DCT"-->
-<!--                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">-->
-<!--                Yes-->
-<!--            </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.STIsSuspicionNo" name="obs.STIsSuspicion" type="radio"-->
-<!--                       data-concept="b7397d58-bee5-48c7-a5fd-aedca2ec1fec^Sexual transmitted Infection suspicion^99DCT"-->
-<!--                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">-->
-<!--                No-->
-<!--            </label>-->
+    <!--        </div>-->
+    <!--    </fieldset>-->
+    <!--    <fieldset>-->
+    <!--        <div class="section">-->
+    <!--            <label class="font-normal"> <u><strong> Suspicion of STIs:  </strong> </u> </label>-->
+    <!--            <label class="font-normal">-->
+    <!--                <input id="obs.STIsSuspicionYes" name="obs.STIsSuspicion" type="radio"-->
+    <!--                       data-concept="b7397d58-bee5-48c7-a5fd-aedca2ec1fec^Sexual transmitted Infection suspicion^99DCT"-->
+    <!--                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">-->
+    <!--                Yes-->
+    <!--            </label>-->
+    <!--            <label class="font-normal">-->
+    <!--                <input id="obs.STIsSuspicionNo" name="obs.STIsSuspicion" type="radio"-->
+    <!--                       data-concept="b7397d58-bee5-48c7-a5fd-aedca2ec1fec^Sexual transmitted Infection suspicion^99DCT"-->
+    <!--                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">-->
+    <!--                No-->
+    <!--            </label>-->
 
-<!--            <label class="font-normal"> <strong> Other abnormal:  </strong> </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input id="obs.OtherAbnormal" class="form-control" name="obs.OtherAbnormal"-->
-<!--                       type="text" data-concept="dc7d0fb5-0c33-488d-bfab-a1f1a68e1f07^Other abnormal^99DCT"/>-->
-<!--            </label>-->
+    <!--            <label class="font-normal"> <strong> Other abnormal:  </strong> </label>-->
+    <!--            <label class="font-normal">-->
+    <!--                <input id="obs.OtherAbnormal" class="form-control" name="obs.OtherAbnormal"-->
+    <!--                       type="text" data-concept="dc7d0fb5-0c33-488d-bfab-a1f1a68e1f07^Other abnormal^99DCT"/>-->
+    <!--            </label>-->
 
-<!--            <label class="font-normal"> <strong> Date of next visit:  </strong> </label>-->
-<!--            <label class="font-normal">-->
-<!--                <input class="form-control datepicker future-or-today-date" id="obs.BreastDispositionNextDate" name="obs.BreastDispositionNextDate" type="date"-->
-<!--                       data-concept="3ce94df0-26fe-102b-80cb-0017a47871b2^RETURN VISIT DATE^99DCT"/>-->
-<!--            </label>-->
+    <!--            <label class="font-normal"> <strong> Date of next visit:  </strong> </label>-->
+    <!--            <label class="font-normal">-->
+    <!--                <input class="form-control datepicker future-or-today-date" id="obs.BreastDispositionNextDate" name="obs.BreastDispositionNextDate" type="date"-->
+    <!--                       data-concept="3ce94df0-26fe-102b-80cb-0017a47871b2^RETURN VISIT DATE^99DCT"/>-->
+    <!--            </label>-->
 
-<!--        </div>-->
-<!--    </fieldset>-->
+    <!--        </div>-->
+    <!--    </fieldset>-->
 
-<!--    <div>-->
-<!--        <input id="save_draft" name="save_draft" type="submit" value="Draft"/>-->
-<!--        <input id="submit_form" name="submit_form" type="submit" value="submit"/>-->
-<!--    </div>-->
+    <!--    <div>-->
+    <!--        <input id="save_draft" name="save_draft" type="submit" value="Draft"/>-->
+    <!--        <input id="submit_form" name="submit_form" type="submit" value="submit"/>-->
+    <!--    </div>-->
 </form>
 
 </body>
@@ -1297,6 +1406,32 @@
                 {"val": "3cee7fb4-26fe-102b-80cb-0017a47871b2^OTHER NON-CODED^99DCT", "label": "Other "}
             ];
             document.setupAutoComplete('obs\\.healthFacility', WhereToRefer);
+            // helps in hide and show. Just set name of checkbox/radio to equate
+            // the class on div to hide, set activate/deactive class on the checkbox/radio
+            // to be clicked
+            $(document).on("click", function(event){
+                var classOfClicked = event.target.className;
+                var nameOfClicked = event.target.name;
+                var idOfClicked = event.target.id
+
+                if($("input[id='"+idOfClicked+"']").prop('checked')){
+                    if(classOfClicked=="activate" ){
+                        $("div."+nameOfClicked).show();
+                    }
+                    else if (classOfClicked=="deactivate"){
+                        $("div."+nameOfClicked).hide();
+                    }
+                }
+                else if(!$("input[id='"+idOfClicked+"']").prop('checked')){
+                    if(classOfClicked=="activate" ){
+                        $("div."+nameOfClicked).hide();
+                    }
+                    else if (classOfClicked=="deactivate"){
+                        $("div."+nameOfClicked).show();
+                    }
+                }
+            });
+            $(".initialHide").hide();
         });
 </script>
 

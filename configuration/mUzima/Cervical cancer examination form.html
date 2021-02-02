@@ -396,12 +396,12 @@
             </div>
         </div>
         <div class="form-group">
-            <label>HIV Status: </label>
+            <label>HIV Status: <span class="required">*</span> </label>
             <br/>
             <label class="font-normal">
                 <input class="activate" id="obs.positiveHIVStatusHistory" name="HIVStatusHistory" type="radio"
                        data-concept="aec6ad18-f4dd-4cfa-b68d-3d7bb6ea908e^HIV STATUS^99DCT"
-                       value="3cd3a7a2-26fe-102b-80cb-0017a47871b2^POSITIVE^99DCT">
+                       value="3cd3a7a2-26fe-102b-80cb-0017a47871b2^POSITIVE^99DCT" required>
                 Positive
             </label>
             <br/>
@@ -979,14 +979,14 @@
             <label class="font-normal"> <strong> Biopsy performed today? </strong> </label>
             <br/>
             <label class="font-normal">
-                <input  id="obs.BiopsyPerformedYes" name="BiopsyPerformed" type="radio"
+                <input  class="activate" id="obs.BiopsyPerformedYes" name="BiopsyPerformed" type="radio"
                         data-concept="5563e827-9a1e-40eb-b05b-81d55981ce6d^Biopsy performed^99DCT"
                         value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
                 Yes
             </label>
             <br/>
             <label class="font-normal">
-                <input  id="obs.BiopsyPerformedNo" name="BiopsyPerformed" type="radio"
+                <input  class="deactivate" id="obs.BiopsyPerformedNo" name="BiopsyPerformed" type="radio"
                         data-concept="5563e827-9a1e-40eb-b05b-81d55981ce6d^Biopsy performed^99DCT"
                         value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
                 No
@@ -998,7 +998,7 @@
             <!--                       type="Date" data-concept="a9a2d145-e50e-4ceb-9fa9-9ad467c5dda2^BIOPSY DATE^99DCT"/>-->
             <!--            </label>-->
             <br/><br/>
-            <div>
+            <div class="BiopsyPerformed">
                 <label class="font-normal"><strong> Biopsy results received since last visit </strong></label>
                 <label class="font-normal">
                     <input id="obs.BiopsyResultsSquamousMetaplasia" name="obs.BiopsyResults" type="checkbox"
@@ -1107,14 +1107,14 @@
             </label>
             <br/>
             <label class="font-normal">
-                <input class="deactivate" id="obs.Disposition" name="Disposition" type="radio"
+                <input class="deactivate" id="obs.DispositionFollowup" name="Disposition" type="radio"
                        data-concept="0af3dbde-15f5-102d-96e4-000c29c2a5d7^DISPOSITION^99DCT"
                        value="d0e94536-0b91-40a1-b994-04bb4f5cd15d^Follow-up at this health facility^99DCT">
                 Follow-up at this health facility
             </label>
             <br/>
             <label class="font-normal">
-                <input class="activate" id="Disposition" name="Disposition" type="radio"
+                <input class="activate" id="DispositionReferred" name="Disposition" type="radio"
                        data-concept="0af3dbde-15f5-102d-96e4-000c29c2a5d7^DISPOSITION^99DCT"
                        value="3cdd5c02-26fe-102b-80cb-0017a47871b2^PATIENT TRANSFERRED OUT^99DCT">
                 referred to (facility name):
@@ -1205,7 +1205,7 @@
             <!--                <input id="obs.ManagementReferralCompletionDate" class="form-control" name="obs.ManagementReferralCompletionDate"-->
             <!--                       type="Date" data-concept="2ec83708-c126-48f2-b5f8-0ce37500e11b^Referral completion Date^99DCT"/>-->
             <!--            </label>-->
-            <label class="font-normal"> <strong>Next visit date:  </strong> </label>
+            <label class="font-normal"> <strong>Date of next visit:  </strong> </label>
             <br/>
             <label class="font-normal">
                 <input class="form-control datepicker future-or-today-date" id="obs.BreastDispositionNextDate" name="obs.BreastDispositionNextDate" type="text"

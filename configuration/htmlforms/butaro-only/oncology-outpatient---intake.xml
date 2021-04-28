@@ -700,6 +700,9 @@ getField('reactionNonCoded3.value')[0].disabled = true;
                 </td>
                 <td>Prénom/ First name: <lookup class="value"
                                                 expression="patient.personName.givenName" />
+												
+                                                      <lookup class="value" 
+                                                expression="patient.personName.middleName" />
                 </td>
             </tr>
 

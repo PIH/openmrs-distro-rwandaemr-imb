@@ -1419,11 +1419,15 @@
                         $("div."+nameOfClicked).show();
                     }
                     else if (classOfClicked=="deactivate"){
+                        $("."+nameOfClicked).find("input").attr("checked",false);
+                        $("."+nameOfClicked).find("input").val("");
                         $("div."+nameOfClicked).hide();
                     }
                 }
                 else if(!$("input[id='"+idOfClicked+"']").prop('checked')){
                     if(classOfClicked=="activate" ){
+                        $("."+nameOfClicked).find("input").attr("checked",false);
+                        $("."+nameOfClicked).find("input").val("");
                         $("div."+nameOfClicked).hide();
                     }
                     else if (classOfClicked=="deactivate"){

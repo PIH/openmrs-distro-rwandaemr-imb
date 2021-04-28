@@ -338,11 +338,15 @@
                         var titleOfTheClicked = $j(this).attr('title');
 
                         if($j("#"+idOfTheClicked ).children().prop("checked")){
-                            console.log("show 1111");
+
                             $j("."+titleOfTheClicked).show();
                         }
                         else if(!$j("#"+idOfTheClicked ).children().prop("checked")){
-                            console.log("hide 1111");
+
+                            $j("."+titleOfTheClicked).find("input").attr("checked",false);
+                            $j("."+titleOfTheClicked).find("select").val("");
+                            $j("."+titleOfTheClicked).find("input").val("");
+
                             $j("."+titleOfTheClicked).hide();
                         }
                     });
@@ -353,11 +357,15 @@
                         var titleOfTheClicked = $j(this).attr('title');
 
                         if($j("#"+idOfTheClicked ).children().prop("checked")){
-                            console.log("hide 2222");
+
+                            $j("."+titleOfTheClicked).find("input").attr("checked",false);
+                            $j("."+titleOfTheClicked).find("select").val("");
+                            $j("."+titleOfTheClicked).find("input").val("");
                             $j("."+titleOfTheClicked).hide();
+
                         }
                         else if(!$j("#"+idOfTheClicked ).children().prop("checked")){
-                            console.log("show 2222");
+
                             $j("."+titleOfTheClicked).show();
                         }
 
@@ -366,6 +374,19 @@
 
                 });
             }
+        </script>
+
+        <script>
+
+            beforeSubmit.push(function() {
+                var val = getValue('HIVStatus.value');
+                if (val == null || val == '') {
+                    getField('HIVStatus.error').html('HIV status is required').show();
+                    alert("HIV status is required")
+                    return false;
+                }
+                return true;
+            });
         </script>
 
 
@@ -648,21 +669,25 @@
                 </tr>
 
                 <tr class="form-group">
-                    <td for="obs.HIVStatusHistory">HIV Status: </td>
+                    <td for="obs.HIVStatusHistory">
+                        HIV Status <span style="color:red;">*</span>:
+                    </td>
                     <td class="font-normal checkboxGroup">
                         <!--                <input id="obs.positiveHIVStatusHistory" name="obs.HIVStatusHistory" type="radio"-->
                         <!--                       data-concept="aec6ad18-f4dd-4cfa-b68d-3d7bb6ea908e^HIV STATUS^99DCT"-->
                         <!--                       value="3cd3a7a2-26fe-102b-80cb-0017a47871b2^POSITIVE^99DCT">-->
                         <!--                    <obs conceptId="$@HIV_STATUS@" answerConceptIds="$@POSITIVE@,$@NEGATIVE@,$@UNKNOWN@" answerLabels="Positive,Negative,Unknown" style="radio" />-->
-                        <span class="activate" id="HIVStatusPositive" title="HIVStatus">
-                            <obs conceptId="$@HIV_STATUS@" answerConceptId="$@POSITIVE@" answerLabel="Positive"/>
-                        </span>
-                        <span class="deactivate" id="HIVStatusNegative" title="HIVStatus">
-                            <obs  conceptId="$@HIV_STATUS@" answerConceptId="$@NEGATIVE@" answerLabel="Negative"/>
-                        </span>
-                        <span class="deactivate" id="HIVStatusUnknown" title="HIVStatus">
-                            <obs  conceptId="$@HIV_STATUS@" answerConceptId="$@UNKNOWN@" answerLabel="Unknown"/>
-                        </span>
+<!--                        <span class="activate" id="HIVStatusPositive" title="HIVStatus">-->
+<!--                            <obs conceptId="$@HIV_STATUS@" answerConceptId="$@POSITIVE@" answerLabel="Positive"/>-->
+<!--                        </span>-->
+<!--                        <span class="deactivate" id="HIVStatusNegative" title="HIVStatus">-->
+<!--                            <obs  conceptId="$@HIV_STATUS@" answerConceptId="$@NEGATIVE@" answerLabel="Negative"/>-->
+<!--                        </span>-->
+<!--                        <span class="deactivate" id="HIVStatusUnknown" title="HIVStatus">-->
+<!--                            <obs  conceptId="$@HIV_STATUS@" answerConceptId="$@UNKNOWN@" answerLabel="Unknown"/>-->
+<!--                        </span>-->
+
+                        <obs id="HIVStatus" conceptId="$@HIV_STATUS@" answerConceptIds="$@POSITIVE@,$@NEGATIVE@,$@UNKNOWN@" answerLabels="Positive,Negative,Unknown" style="radio" required="true"/>
 
                         <!--                <input id="obs.negativeHIVStatusHistory" name="obs.HIVStatusHistory" type="radio"-->
                         <!--                       data-concept="aec6ad18-f4dd-4cfa-b68d-3d7bb6ea908e^HIV STATUS^99DCT"-->
@@ -680,7 +705,7 @@
                 <tr class="form-group">
                     <td> If HIV positive on ARV: </td>
                     <td class="font-normal">
-                        <div class="HIVStatus">
+                        <div >
                             <!--                <input id="obs.onARVYes" name="obs.onARV" type="radio"-->
                             <!--                       data-concept="6086ea54-d658-44ec-84fe-ab898c2f0cf6^On ARVs^99DCT"-->
                             <!--                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">-->

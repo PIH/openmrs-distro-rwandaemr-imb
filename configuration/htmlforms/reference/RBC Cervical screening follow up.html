@@ -402,11 +402,14 @@
                         var titleOfTheClicked = $j(this).attr('title');
 
                         if($j("#"+idOfTheClicked ).children().prop("checked")){
-                            console.log("show 1111");
+
                             $j("."+titleOfTheClicked).show();
                         }
                         else if(!$j("#"+idOfTheClicked ).children().prop("checked")){
-                            console.log("hide 1111");
+
+                            $j("."+titleOfTheClicked).find("input").attr("checked",false);
+                            $j("."+titleOfTheClicked).find("input").val("");
+                            $j("."+titleOfTheClicked).find("select").val("");
                             $j("."+titleOfTheClicked).hide();
                         }
                     });
@@ -417,11 +420,15 @@
                         var titleOfTheClicked = $j(this).attr('title');
 
                         if($j("#"+idOfTheClicked ).children().prop("checked")){
-                            console.log("hide 2222");
+
+                            $j("."+titleOfTheClicked).find("input").attr("checked",false);
+                            $j("."+titleOfTheClicked).find("input").val("");
+                            $j("."+titleOfTheClicked).find("select").val("");
                             $j("."+titleOfTheClicked).hide();
+
                         }
                         else if(!$j("#"+idOfTheClicked ).children().prop("checked")){
-                            console.log("show 2222");
+
                             $j("."+titleOfTheClicked).show();
                         }
 

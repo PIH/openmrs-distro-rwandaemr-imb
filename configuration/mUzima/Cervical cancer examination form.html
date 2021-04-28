@@ -401,7 +401,7 @@
             <label class="font-normal">
                 <input class="activate" id="obs.positiveHIVStatusHistory" name="HIVStatusHistory" type="radio"
                        data-concept="aec6ad18-f4dd-4cfa-b68d-3d7bb6ea908e^HIV STATUS^99DCT"
-                       value="3cd3a7a2-26fe-102b-80cb-0017a47871b2^POSITIVE^99DCT" required>
+                       value="3cd3a7a2-26fe-102b-80cb-0017a47871b2^POSITIVE^99DCT" required="required">
                 Positive
             </label>
             <br/>
@@ -1419,11 +1419,15 @@
                         $("div."+nameOfClicked).show();
                     }
                     else if (classOfClicked=="deactivate"){
+                        $("."+nameOfClicked).find("input").attr("checked",false);
+                        $("."+nameOfClicked).find("input").val("");
                         $("div."+nameOfClicked).hide();
                     }
                 }
                 else if(!$("input[id='"+idOfClicked+"']").prop('checked')){
                     if(classOfClicked=="activate" ){
+                        $("."+nameOfClicked).find("input").attr("checked",false);
+                        $("."+nameOfClicked).find("input").val("");
                         $("div."+nameOfClicked).hide();
                     }
                     else if (classOfClicked=="deactivate"){

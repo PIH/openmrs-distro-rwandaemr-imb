@@ -57,6 +57,18 @@
         @Annual_checkup_and_lifestyle_counselling@ = ceb09f38-a9e1-47b2-9541-31f4de40a434
         @Scheduled_for_diagnosis_work_up@ = 0e63603a-47f7-42c5-b7e7-f920add874c0
         @referred_to@ = 25782f2c-074f-4834-b7d2-4668cd645a57
+        @HIGHEST_LEVEL_OF_SCHOOL_COMPLETED@ = 3cdcc5e4-26fe-102b-80cb-0017a47871b2
+        @PRIMARY_EDUCATION_COMPLETE@ = 4e64f4b8-d71c-43e6-a603-265f7464a633
+        @SECONDARY_EDUCATION_COMPLETE@ = 2aa11f5e-6478-4ba0-b8ab-89cea5e5e66e
+        @UNIVERSITY_EDUCATION_COMPLETE@ = 7cee1a26-5092-4373-b5cd-7bad591d0c73
+        @Illiterate@ = c4fe25b6-86ed-46ac-b24f-a9f42e2a0c2a
+        @Current_employement_coded@ = a752750c-eda8-4d4a-a82d-8475e5e2f17b
+        @No_employment@ = 3de617c6-ad12-495d-beac-8035f22a78b4
+        @FARMER@ = 3cd9757e-26fe-102b-80cb-0017a47871b2
+        @Business_man@ = b30e5317-a359-4672-b8de-542d57e630d1
+        @Students@ = 3d391f2c-2567-47a2-8721-f363e34568a9
+        @Public_servant@ = 1b3fa1f4-4646-4232-a556-c0d8d3321ce6
+        @Private_or_NGO_servant@ = 895444a1-930c-4129-800d-232af5ed9b28
 
     </macros>
     <style>
@@ -175,47 +187,426 @@
         }
     </style>
 
+    <script>
+        $j(document).ready(function() {
+            $j("#Height").change(function() {
+
+                var height = $j("#Height").children().val();
+                var weight = $j("#Weight").children().val();
+
+                if(height>0 &amp;&amp; weight>0){
+                    var bmi = (weight/(height*height))*10000;
+                    $j("#BMI").children().val(bmi.toFixed(1));
+                }
+            });
+            $j("#Weight").change(function() {
+                var height = $j("#Height").children().val();
+                var weight = $j("#Weight").children().val();
+
+                if(height>0 &amp;&amp; weight>0){
+                    var bmi = (weight/(height*height))*10000;
+                    $j("#BMI").children().val(bmi.toFixed(1));
+                }
+            });
+
+        });
+    </script>
+
+    <translations defaultLocale="en">
+        <!--header-->
+        <code name="REPUBLIC_OF_RWANDA">
+            <variant locale="en" value="REPUBLIC OF RWANDA"/>
+            <variant locale="rw" value="REPUBULIKA Y' URWANDA "/>
+        </code>
+        <code name="MINISTRY_OF_HEALTH">
+            <variant locale="en" value="MINISTRY OF HEALTH"/>
+            <variant locale="rw" value="MINISITERI Y' UBUZIMA "/>
+        </code>
+        <code name="Form_title">
+            <variant locale="en" value="NCD COMMUNITY CHECKUP QUESTIONNAIRE: DIABETES AND CARDIOVASCULAR DISEASES"/>
+            <variant locale="rw" value="IFISHI YO KWISUZUMISHA INDWARA ZITANDURA "/>
+        </code>
+        <code name="IMB_ID">
+            <variant locale="en" value="IMB ID"/>
+            <variant locale="rw" value="NIMERO IRANGA UMURWAYI "/>
+        </code>
+        <code name="Last_name">
+            <variant locale="en" value="Nom / Last name"/>
+            <variant locale="rw" value="Izina ry'ikinyarwanda"/>
+        </code>
+        <code name="First_name">
+            <variant locale="en" value="Prénom/ First name"/>
+            <variant locale="rw" value="Izina ry' irikirisito "/>
+        </code>
+        <code name="Facility_name">
+            <variant locale="en" value="Facility name"/>
+            <variant locale="rw" value="Ikigo nderabuzima"/>
+        </code>
+        <code name="Provider">
+            <variant locale="en" value="Provider"/>
+            <variant locale="rw" value="Uwakoze isuzuma"/>
+        </code>
+        <code name="Date">
+            <variant locale="en" value="Date"/>
+            <variant locale="rw" value="Italiki"/>
+        </code>
+        <code name="Site_of_screening">
+            <variant locale="en" value="Site of screening"/>
+            <variant locale="rw" value="Ahabereye isuzuma"/>
+        </code>
+        <code name="Patient_education_level">
+            <variant locale="en" value="Patient education level"/>
+            <variant locale="rw" value="Amashuri warangije"/>
+        </code>
+        <code name="Patient_current_employment">
+            <variant locale="en" value="Patient current employment"/>
+            <variant locale="rw" value="Icyo ukora ubu"/>
+        </code>
+        <code name="SECTION">
+            <variant locale="en" value="SECTION"/>
+            <variant locale="rw" value="IGIKA CYA"/>
+        </code>
+        <code name="RISK_FACTORS_ASSESSMENT">
+            <variant locale="en" value="RISK FACTORS ASSESSMENT"/>
+            <variant locale="rw" value="IBIPIMO BY’UBUZIMA"/>
+        </code>
+        <code name="Screening_test">
+            <variant locale="en" value="Screening test"/>
+            <variant locale="rw" value="Gusaba ikizamini"/>
+        </code>
+        <code name="Weight">
+            <variant locale="en" value="Weight"/>
+            <variant locale="rw" value="Ibiro"/>
+        </code>
+        <code name="Height">
+            <variant locale="en" value="Height"/>
+            <variant locale="rw" value="Uburebure"/>
+        </code>
+        <code name="BMI">
+            <variant locale="en" value="BMI"/>
+            <variant locale="rw" value="Umubyibuho"/>
+        </code>
+        <code name="Screening_test_One_or_more_of_a_yes">
+            <variant locale="en" value='Screening test One or more of a "yes" response'/>
+            <variant locale="rw" value='Mu gihe ari “yego” ku kibazo kimwe cg byinshi'/>
+        </code>
+        <code name="response_order_the_following">
+            <variant locale="en" value="response, order the following"/>
+            <variant locale="rw" value="saba ikizamini cya"/>
+        </code>
+        <code name="YES">
+            <variant locale="en" value="YES"/>
+            <variant locale="rw" value="YEGO"/>
+        </code>
+        <code name="Yes">
+            <variant locale="en" value="Yes"/>
+            <variant locale="rw" value="Yego"/>
+        </code>
+        <code name="No">
+            <variant locale="en" value="No"/>
+            <variant locale="rw" value="Oya"/>
+        </code>
+        <code name="Fasting">
+            <variant locale="en" value="Fasting"/>
+            <variant locale="rw" value="Nta kintu ararya"/>
+        </code>
+        <code name="Random">
+            <variant locale="en" value="Random"/>
+            <variant locale="rw" value="Yari yariye"/>
+        </code>
+        <code name="Waist_circumference">
+            <variant locale="en" value="Waist circumference"/>
+            <variant locale="rw" value="Umuzenguruko w’inda"/>
+        </code>
+        <code name="Men">
+            <variant locale="en" value="Men"/>
+            <variant locale="rw" value="Umugabo"/>
+        </code>
+        <code name="Women">
+            <variant locale="en" value="Women"/>
+            <variant locale="rw" value="Umugore"/>
+        </code>
+        <code name="Blood_pressure">
+            <variant locale="en" value="Blood pressure"/>
+            <variant locale="rw" value="Umuvuduko w’amaraso"/>
+        </code>
+        <code name="If_woman">
+            <variant locale="en" value="If woman"/>
+            <variant locale="rw" value="Niba ari umugore"/>
+        </code>
+        <code name="between_15_and_49_years_old">
+            <variant locale="en" value="between 15 and 49 years old"/>
+            <variant locale="rw" value="ufite imyaka 15 kugeza kuri 49"/>
+        </code>
+        <code name="Is_she_pregnant">
+            <variant locale="en" value="Is she pregnant"/>
+            <variant locale="rw" value="ese aratwite"/>
+        </code>
+        <code name="Shared_risk_factors">
+            <variant locale="en" value="Shared risk factors"/>
+            <variant locale="rw" value="Kubaza ku myitwarire yatuma abantu barwara indwara zitandura"/>
+        </code>
+        <code name="Do_you_do_physical_activity_for_more_than_30_min_daily">
+            <variant locale="en" value="Do you do physical activity for more than 30 min daily"/>
+            <variant locale="rw" value="Ese mwaba mukora imyitozo ngororamubiri nibura iminota 30 ku munsi"/>
+        </code>
+        <code name="If_any">
+            <variant locale="en" value="If any"/>
+            <variant locale="rw" value="Mu gihe akubwiye"/>
+        </code>
+        <code name="to_question_A1_or_A2">
+            <variant locale="en" value="to question A1 or A2"/>
+            <variant locale="rw" value="kuri A1 na A2"/>
+        </code>
+        <code name="or_any">
+            <variant locale="en" value="or any"/>
+            <variant locale="rw" value="cg se"/>
+        </code>
+        <code name="from_A3_to_A5">
+            <variant locale="en" value="from A3 to A5"/>
+            <variant locale="rw" value="kuri A3 kugeza kuri A5"/>
+        </code>
+        <code name="Give_appropriate_counselling_on_lifestyle_modification">
+            <variant locale="en" value="Give appropriate counselling on lifestyle modification"/>
+            <variant locale="rw" value="Mugire inama ku byerekeye guhindura imyitwarire"/>
+        </code>
+        <code name="Do_you_eat_vegetables_and_fruits_daily">
+            <variant locale="en" value="Do you eat vegetables and fruits daily"/>
+            <variant locale="rw" value="Ese mwaba murya imboga n’imbuto buri munsi"/>
+        </code>
+        <code name="History_of_Smoking">
+            <variant locale="en" value="History of Smoking"/>
+            <variant locale="rw" value="Ese mwaba munywa itabi cg se mwarigeze kurinywaho"/>
+        </code>
+        <code name="Excessive_alcohol_consumption">
+            <variant locale="en" value="Excessive alcohol consumption"/>
+            <variant locale="rw" value="Ese mwaba munywa inzoga nyinshi"/>
+        </code>
+        <code name="History_of_taking_chronic_meds">
+            <variant locale="en" value="History of taking chronic meds? (HIV,NCD,etc)"/>
+            <variant locale="rw" value="Hari imiti ufata mu buryo buhoraho (Imiti ya SIDA, Indwara zitandura,…."/>
+        </code>
+        <code name="Diabetes">
+            <variant locale="en" value="Diabetes"/>
+            <variant locale="rw" value="Indwara ya Diyabete"/>
+        </code>
+        <code name="History_of_unxplained_weight_loss">
+            <variant locale="en" value="History of unxplained weight loss"/>
+            <variant locale="rw" value="Ese waba warananutse cyane ku buryo bugaragara"/>
+        </code>
+        <code name="History_of_unusual_thirst">
+            <variant locale="en" value="History of unusual thirst"/>
+            <variant locale="rw" value="Ese waba ugira inyota nyinshi wumva ushaka kunywa amazi kenshi"/>
+        </code>
+        <code name="History_of_frequent_or_abundant_urination">
+            <variant locale="en" value="History of frequent/abundant urination"/>
+            <variant locale="rw" value="Ese waba wihagarika kenshi kandi kuri wihagarika inkari nyinshi cyane"/>
+        </code>
+        <code name="History_of_blood_relative_family_member_with_type_1_or_2_diabetes">
+            <variant locale="en" value="History of blood relative family member with type 1 or 2 diabetes"/>
+            <variant locale="rw" value="Ese waba ufite umuntu mu muryango wanyu wa hafi urwara indwara ya diyabeti"/>
+        </code>
+        <code name="History_of_high_blood_glucose_exam_illness_pregnance">
+            <variant locale="en" value="History of high blood glucose (exam, illness,pregnance)"/>
+            <variant locale="rw" value="Ese waba warigeze kwipimisha ikizami cy’isukari mu maraso bakakubwira ko ari nyinshi?(mu gihe wari urwaye cg se utwite)"/>
+        </code>
+        <code name="Cardiovascular_diseases">
+            <variant locale="en" value="Cardiovascular diseases"/>
+            <variant locale="rw" value="Indwara z’umutima"/>
+        </code>
+        <code name="Do_you_have_exertion_shortness_of_breath">
+            <variant locale="en" value="Do you have exertion shortness of breath"/>
+            <variant locale="rw" value="Ese waba uhumeka nabi mu gihe uri gukora imirimo isanzwe (gukina,guhinga,kuzamuka agasozi kadakabije n’ibindi….)"/>
+        </code>
+        <code name="Rule_out_heart_problem_Heart_ultrasound">
+            <variant locale="en" value="Rule out heart problem; Heart ultrasound"/>
+            <variant locale="rw" value="Agomba gukorerwa isuzuma ryimbitse ku ndwara z’umutima ."/>
+        </code>
+        <code name="Do_you_have_orthopnea">
+            <variant locale="en" value="Do you have orthopnea"/>
+            <variant locale="rw" value="Ese iyo uryamye ahantu harambuye utiseguye uhumeka nabi"/>
+        </code>
+        <code name="Do_you_have_current_chest_pain">
+            <variant locale="en" value="Do you have current chest pain"/>
+            <variant locale="rw" value="Ese waba ukunda kubabara mu gatuza cyane"/>
+        </code>
+        <code name="Do_you_have_History_of_untreated_sore_throat">
+            <variant locale="en" value="Do you have History of untreated sore throat"/>
+            <variant locale="rw" value="Ese waba warigeze kurwara gapfura mu mihogo ariko ntivurwe neza"/>
+        </code>
+        <code name="Do_you_have_History_of_body_swelling">
+            <variant locale="en" value="Do you have History of body swelling"/>
+            <variant locale="rw" value="Ese waba ubyimba umubiri wose (ibirenge,mu nda mu maso n’ahandi)"/>
+        </code>
+        <code name="Identified_problem_Disease">
+            <variant locale="en" value="Identified problem/Disease"/>
+            <variant locale="rw" value="Ikibazo cg se uburwayi bwagaragaye  mu isuzuma"/>
+        </code>
+        <code name="Interventions">
+            <variant locale="en" value="Interventions"/>
+            <variant locale="rw" value="Icyakozwe"/>
+        </code>
+        <code name="If_participant_screened_positive">
+            <variant locale="en" value="If participant screened positive"/>
+            <variant locale="rw" value="Mu gihe usanze afite"/>
+        </code>
+        <code name="have_high_BP_or_High_blood_glucose">
+            <variant locale="en" value="have high BP or High blood glucose"/>
+            <variant locale="rw" value="umuvuduko mwinshi w’amaraso cg se isukari nyinshi mu maraso: Mubaze ko ari ubwa mbere bamusanzemo ubwo burwayi"/>
+        </code>
+        <code name="he_she_is_new_case">
+            <variant locale="en" value="he/she is new case"/>
+            <variant locale="rw" value="Ese ni ubwa mbere bagusuzumye  uburwayi"/>
+        </code>
+        <code name="NORMAL">
+            <variant locale="en" value="NORMAL"/>
+            <variant locale="rw" value="Ni muzima"/>
+        </code>
+        <code name="Overweight_Obesity">
+            <variant locale="en" value="Overweight/Obesity"/>
+            <variant locale="rw" value="Arengeje ibiro/umubyibuho ukabije"/>
+        </code>
+        <code name="Hypertension">
+            <variant locale="en" value="Hypertension"/>
+            <variant locale="rw" value="Umuvuduko w’amaraso"/>
+        </code>
+        <code name="DIABETES">
+            <variant locale="en" value="DIABETES"/>
+            <variant locale="rw" value="Diyabeti"/>
+        </code>
+        <code name="Heart_Disease">
+            <variant locale="en" value="Heart Disease"/>
+            <variant locale="rw" value="Indwara z’umutima"/>
+        </code>
+        <code name="Other">
+            <variant locale="en" value="Heart Disease"/>
+            <variant locale="rw" value="Iyindi"/>
+        </code>
+        <code name="specify">
+            <variant locale="en" value="specify"/>
+            <variant locale="rw" value="yivuge"/>
+        </code>
+        <code name="Annual_checkup_and_lifestyle_counseling">
+            <variant locale="en" value="Annual checkup and lifestyle counseling"/>
+            <variant locale="rw" value="Yagiriwe inama yo kwisuzumisha buri mwaka no guhindura imyitwarire"/>
+        </code>
+        <code name="Scheduled_for_diagnosis_work_up_at_site_of_screening">
+            <variant locale="en" value="Scheduled for diagnosis work up (at site of screening)"/>
+            <variant locale="rw" value="Yahawe gahunda yo kongera kwisuzumisha mu gihe cya vuba"/>
+        </code>
+        <code name="Referral_to_health_facility_for_management_or_other_special_investigation_exams">
+            <variant locale="en" value="Referral to health facility for management or other special investigation/exams"/>
+            <variant locale="rw" value="Yoherejwe ku ivuriro rimwegereye kugirango abashe kwitabwaho no gupimwa ibindi bizamini byisumbuye"/>
+        </code>
+        <code name="Facility">
+            <variant locale="en" value="Facility"/>
+            <variant locale="rw" value="Aho yoherejwe"/>
+        </code>
+        <code name="Health_Center">
+            <variant locale="en" value="Health Center"/>
+            <variant locale="rw" value="Ku kigonderabuzima"/>
+        </code>
+        <code name="District_Hospital">
+            <variant locale="en" value="District Hospital"/>
+            <variant locale="rw" value="Ku bitaro by’Akarere"/>
+        </code>
+        <code name="DECISION_SUMMARY_OF_SCREENING_RESULT">
+            <variant locale="en" value="DECISION, SUMMARY OF SCREENING RESULT"/>
+            <variant locale="rw" value="UMWANZURO, INCAMAKE Y’IBIVUYE MU ISUZUMA"/>
+        </code>
+        <code name="Illiterate">
+            <variant locale="en" value="Illiterate"/>
+            <variant locale="rw" value="Ntabwo yize"/>
+        </code>
+        <code name="Primary">
+            <variant locale="en" value="Primary"/>
+            <variant locale="rw" value="Abanza"/>
+        </code>
+        <code name="Secondary">
+            <variant locale="en" value="Secondary"/>
+            <variant locale="rw" value="Ayisumbuye"/>
+        </code>
+        <code name="University">
+            <variant locale="en" value="University"/>
+            <variant locale="rw" value="Kaminuza"/>
+        </code>
+        <code name="No_employment">
+            <variant locale="en" value="No employment"/>
+            <variant locale="rw" value="Nta kazi afite"/>
+        </code>
+        <code name="Farmer">
+            <variant locale="en" value="Farmer"/>
+            <variant locale="rw" value="Umuhinzi mworozi"/>
+        </code>
+        <code name="Business_man">
+            <variant locale="en" value="Business man"/>
+            <variant locale="rw" value="Umucuruzi"/>
+        </code>
+        <code name="Students">
+            <variant locale="en" value="Students"/>
+            <variant locale="rw" value="Umunyeshuri"/>
+        </code>
+        <code name="Public_servant">
+            <variant locale="en" value="Public servant"/>
+            <variant locale="rw" value="Umukozi wa Leta"/>
+        </code>
+        <code name="Private_or_NGO_servant">
+            <variant locale="en" value="Private  or NGO servant"/>
+            <variant locale="rw" value="Akorera abandi"/>
+        </code>
+
+    </translations>
+
     <table cellspacing="0" cellpadding="6" width="100%" border="1">
         <tr>
             <td><img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left"
                      height="65" ></img>
-                <b>REPUBLIC OF RWANDA
-                    <br />MINISTRY OF HEALTH</b>
+                <b><lookup expression="fn.message('REPUBLIC_OF_RWANDA')"/>
+                    <br /><lookup expression="fn.message('MINISTRY_OF_HEALTH')"/></b>
+
+
+
+
             </td>
-            <td><strong> NCD Community Checkup: </strong> Diabetes and Cardiovascular Diseases<br/>
-                <b> IMB ID: <lookup class="value"
+            <td><strong> <lookup expression="fn.message('Form_title')"/> </strong> <br/>
+
+                <b> <lookup expression="fn.message('IMB_ID')"/>: <lookup class="value"
                                     expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
                                                                                                        expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
                 <br/>
-                Nom / Last name: <lookup class="value" expression="patient.personName.familyName" />
+                <lookup expression="fn.message('Last_name')"/>: <lookup class="value" expression="patient.personName.familyName" />
                 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                Prénom/ First name: <lookup class="value" expression="patient.personName.givenName" />
+                <lookup expression="fn.message('First_name')"/>: <lookup class="value" expression="patient.personName.givenName" />
             </td>
         </tr>
         <tr>
             <td>
-                Facility name: <encounterLocation />
+                <lookup expression="fn.message('Facility_name')"/>: <encounterLocation />
 
             </td>
-            <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+            <td><lookup expression="fn.message('Date')"/>: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
 
                 <br/><br/>
-                Provider:<encounterProvider id="encounterProvider"
+                <lookup expression="fn.message('Provider')"/>:<encounterProvider id="encounterProvider"
                                             role="Provider" default="currentUser"/>
             </td>
         </tr>
         <tr>
             <td>
-                Site of screening:
+                <lookup expression="fn.message('Site_of_screening')"/>:
                 <obs conceptId="$@Site_of_screening@" />
             </td>
             <td>
-                Patient education level:
-                <obs conceptId="$@Education_Level_(text)@" />
+                <lookup expression="fn.message('Patient_education_level')"/>:
+                <obs conceptId="$@HIGHEST_LEVEL_OF_SCHOOL_COMPLETED@" answerConceptIds="$@Illiterate@,$@PRIMARY_EDUCATION_COMPLETE@,$@SECONDARY_EDUCATION_COMPLETE@,$@UNIVERSITY_EDUCATION_COMPLETE@"
+                     answerCodes="Illiterate,Primary,Secondary,University"/>
                 <br/>
                 <br/>
-                Pantient current employment:
-                <obs conceptId="$@Current_employment@" />
+                <lookup expression="fn.message('Patient_current_employment')"/>:
+<!--                <obs conceptId="$@Current_employment@" />-->
+                <obs conceptId="$@Current_employement_coded@"
+                     answerConceptIds="$@No_employment@,$@FARMER@,$@Business_man@,$@Students@,$@Public_servant@,$@Private_or_NGO_servant@"
+                     answerCodes="No_employment,Farmer,Business_man,Students,Public_servant,Private_or_NGO_servant"/>
 
             </td>
         </tr>
@@ -225,20 +616,20 @@
         <table border="1">
             <tr>
                 <th class="tableHeader" colspan="2">
-                    <center> SECTION II. RISK FACTORS ASSESSMENT</center>
+                    <center> <lookup expression="fn.message('SECTION')"/> II. <lookup expression="fn.message('RISK_FACTORS_ASSESSMENT')"/></center>
                 </th>
                 <th class="tableHeader" >
-                    <center>Screening test</center>
+                    <center><lookup expression="fn.message('Screening_test')"/></center>
                 </th>
             </tr>
             <tr>
                 <td>
-                    Weight (kg):
-                    <obs conceptId="$@WEIGHT_(KG)@" />
-                    Height(cm):
-                    <obs conceptId="$@HEIGHT_(CM)@" />
-                    BMI:
-                    <obs conceptId="$@BMI@" />
+                    <lookup expression="fn.message('Weight')"/> (kg):
+                    <obs id="Weight" conceptId="$@WEIGHT_(KG)@" />
+                    <lookup expression="fn.message('Height')"/>(cm):
+                    <obs id="Height" conceptId="$@HEIGHT_(CM)@"/>
+                    <lookup expression="fn.message('BMI')"/>:
+                    <obs id="BMI" conceptId="$@BMI@" />
                     kg/m
 <!--                    &#160;&#160;&#160;&#160;-->
 
@@ -248,11 +639,12 @@
                         &#8805; 25kg/m<sup>2</sup>?
                     </strong>
                     <br/><br/>
-                    <obs conceptId="$@BMI_greater_that_or_equal_25-kg/m^2@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                    <obs conceptId="$@BMI_greater_that_or_equal_25-kg/m^2@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
                 </td>
                 <td rowspan="4">
-                    Screening test One or more of a "yes" <br/>
-                    response, order the following:
+                    <lookup expression="fn.message('Screening_test_One_or_more_of_a_yes')"/> <br/>
+                    <lookup expression="fn.message('response_order_the_following')"/>:
+
                     <br/>
                     <strong>
                         Glycemia:
@@ -260,29 +652,29 @@
                         mg/dl
                         <br/>
                         <br/>
-                        <obs conceptId="$@Glucose_Test@" answerConceptIds="$@Fasting_for_blood_glucose_test@,$@Random_for_blood_glucose_test@" answerLabels="Fasting,Random" style="radio"/>
+                        <obs conceptId="$@Glucose_Test@" answerConceptIds="$@Fasting_for_blood_glucose_test@,$@Random_for_blood_glucose_test@" answerCodes="Fasting,Random" style="radio"/>
                     </strong>
                 </td>
             </tr>
             <tr>
                 <td>
-                    Waist circumference (cm):
+                    <lookup expression="fn.message('Waist_circumference')"/> (cm):
                     <obs conceptId="$@Waist_circumference@"/>
 <!--                    &#160;&#160;&#160;&#160;-->
 
                 </td>
                 <td>
                     <strong>
-                        <u>Men</u> &#8805;94cm? Women &#8805;80cm?
+                        <u><lookup expression="fn.message('Men')"/></u> &#8805;94cm? <lookup expression="fn.message('Women')"/> &#8805;80cm?
                     </strong>
                     <br/><br/>
-                    <obs conceptId="$@Waist_circumference_greater_than_or_equal_to_94_on_men_and_80_for_women@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                    <obs conceptId="$@Waist_circumference_greater_than_or_equal_to_94_on_men_and_80_for_women@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
 
                 </td>
             </tr>
             <tr>
                 <td>
-                    Blood pressure (BP):
+                    <lookup expression="fn.message('Blood_pressure')"/> (BP):
                     <obs placeholder="Systolic" conceptId="$@SYSTOLIC_BLOOD_PRESSURE@"/> / <obs placeholder="Diastolic" conceptId="$@DIASTOLIC_BLOOD_PRESSURE@" style="radio"/>
                     mmHg
                     &#160;&#160;&#160;&#160;
@@ -293,91 +685,94 @@
                         S&#8805;140? or D&gt;90?
                     </strong>
                     <br/><br/>
-                    <obs conceptId="$@Is_Systolic_greater_than_or_equal_140_or_diastolic_greater_than_90@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                    <obs conceptId="$@Is_Systolic_greater_than_or_equal_140_or_diastolic_greater_than_90@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <strong>If woman</strong> between 15 and 49 years old
+                    <strong><lookup expression="fn.message('If_woman')"/></strong> <lookup expression="fn.message('between_15_and_49_years_old')"/>
+
                 </td>
                 <td>
-                    <strong>Is she pregnant ?</strong>
+                    <strong><lookup expression="fn.message('Is_she_pregnant')"/> ?</strong>
                     <br/><br/>
-                    <obs conceptId="$@PREGNANCY_STATUS@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                    <obs conceptId="$@PREGNANCY_STATUS@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
                 </td>
             </tr>
             <tr>
                 <th class="tableHeader" colspan="3">
-                    <center>A. Shared risk factors</center>
+                    <center>A. <lookup expression="fn.message('Shared_risk_factors')"/></center>
                 </th>
             </tr>
             <tr>
                 <td>
-                    A1. Do you do physical activity for more than 30 min daily?
+                    A1. <lookup expression="fn.message('Do_you_do_physical_activity_for_more_than_30_min_daily')"/>?
 
                 </td>
                 <td>
-                    <obs conceptId="$@Do_you_do_physical_activity_for_more_than_30_min_daily@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                    <obs conceptId="$@Do_you_do_physical_activity_for_more_than_30_min_daily@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
                 </td>
                 <td rowspan="5">
-                    If any "<strong>No</strong>" to question A1 or A2
-                    or any "<strong>Yes</strong>" from A3 to A5 :
+                    <lookup expression="fn.message('If_any')"/> "<strong><lookup expression="fn.message('No')"/></strong>" <lookup expression="fn.message('to_question_A1_or_A2')"/>
+                    <lookup expression="fn.message('or_any')"/> "<strong><lookup expression="fn.message('Yes')"/></strong>" <lookup expression="fn.message('from_A3_to_A5')"/> :
                     <br/>
                     <strong>
-                        Give appropriate counselling on lifestyle modification
+                        <lookup expression="fn.message('Give_appropriate_counselling_on_lifestyle_modification')"/>
                     </strong>
                 </td>
             </tr>
+
             <tr>
                 <td>
-                    A2. Do you eat vegetables and fruits daily?
+                    A2. <lookup expression="fn.message('Do_you_eat_vegetables_and_fruits_daily')"/>?
                 </td>
                 <td>
-                    <obs conceptId="$@Do_you_eat_vegetables_and_fruits_daily@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                    <obs conceptId="$@Do_you_eat_vegetables_and_fruits_daily@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
                 </td>
             </tr>
             <tr>
                 <td>
-                    A3. History of Smoking?
+                    A3. <lookup expression="fn.message('History_of_Smoking')"/>?
                 </td>
                 <td>
-                    <obs conceptId="$@SMOKING_HISTORY@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    A4. Excessive alcohol consumption?
-                </td>
-                <td>
-                    <obs conceptId="$@excessive_Alcohol_Consumption@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                    <obs conceptId="$@SMOKING_HISTORY@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
                 </td>
             </tr>
             <tr>
                 <td>
-                    A5. History of taking chronic meds? (HIV,NCD,etc)
+                    A4. <lookup expression="fn.message('Excessive_alcohol_consumption')"/>?
                 </td>
                 <td>
-                    <obs conceptId="$@History_of_taking_chronic_meds@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                    <obs conceptId="$@excessive_Alcohol_Consumption@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    A5. <lookup expression="fn.message('History_of_taking_chronic_meds')"/>
+                </td>
+                <td>
+                    <obs conceptId="$@History_of_taking_chronic_meds@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
                 </td>
             </tr>
             <tr>
                 <th class="tableHeader" colspan="2">
-                    <center>B. Diabetes</center>
+                    <center>B. <lookup expression="fn.message('Diabetes')"/></center>
                 </th>
                 <th class="tableHeader" >
-                    <center>Screening test</center>
+                    <center><lookup expression="fn.message('Screening_test')"/></center>
                 </th>
             </tr>
             <tr>
                 <td>
-                    B1. History of unxplained weight loss?
+                    B1. <lookup expression="fn.message('History_of_unxplained_weight_loss')"/>?
                 </td>
                 <td>
-                    <obs conceptId="$@History_of_unxplained_weight_loss@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                    <obs conceptId="$@History_of_unxplained_weight_loss@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
                 </td>
-                <td rowspan="5">
-                    Screening test One or more of a "yes" <br/>
-                    response, order the following:
+                <td rowspan="4">
+                    <lookup expression="fn.message('Screening_test_One_or_more_of_a_yes')"/> <br/>
+                    <lookup expression="fn.message('response_order_the_following')"/>:
+
                     <br/>
                     <strong>
                         Glycemia:
@@ -385,156 +780,160 @@
                         mg/dl
                         <br/>
                         <br/>
-                        <obs conceptId="$@Glucose_Test@" answerConceptIds="$@Fasting_for_blood_glucose_test@,$@Random_for_blood_glucose_test@" answerLabels="Fasting,Random" style="radio"/>
+                        <obs conceptId="$@Glucose_Test@" answerConceptIds="$@Fasting_for_blood_glucose_test@,$@Random_for_blood_glucose_test@" answerCodes="Fasting,Random" style="radio"/>
                     </strong>
                 </td>
             </tr>
-
             <tr>
                 <td>
-                    B2. History of unusual thirst?
+                    B2. <lookup expression="fn.message('History_of_unusual_thirst')"/>?
                 </td>
                 <td>
-                    <obs conceptId="$@History_of_unusual_thirst@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                    <obs conceptId="$@History_of_unusual_thirst@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
                 </td>
             </tr>
             <tr>
                 <td>
-                    B3. History of frequent/abundant urination?
+                    B3. <lookup expression="fn.message('History_of_frequent_or_abundant_urination')"/>?
                 </td>
                 <td>
-                    <obs conceptId="$@History_of_frequent_or_abundant_urination@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    B4. History of blood relative family member with type 1 or 2 diabetes?
-                </td>
-                <td>
-                    <obs conceptId="$@History_of_blood_relative_family_member_with_type_1_or_2_diabetes@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                    <obs conceptId="$@History_of_frequent_or_abundant_urination@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
                 </td>
             </tr>
             <tr>
                 <td>
-                    B5. History of high blood glucose (exam, illness,pregnance)?
+                    B4. <lookup expression="fn.message('History_of_blood_relative_family_member_with_type_1_or_2_diabetes')"/>?
                 </td>
                 <td>
-                    <obs conceptId="$@History_of_high_blood_glucose@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                    <obs conceptId="$@History_of_blood_relative_family_member_with_type_1_or_2_diabetes@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    B5. <lookup expression="fn.message('History_of_high_blood_glucose_exam_illness_pregnance')"/>?
+                </td>
+                <td>
+                    <obs conceptId="$@History_of_high_blood_glucose@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
                 </td>
             </tr>
             <tr>
                 <th class="tableHeader" colspan="2">
-                    <center>C. Cardiovascular diseases</center>
+                    <center>C. <lookup expression="fn.message('Cardiovascular_diseases')"/></center>
                 </th>
                 <th class="tableHeader" >
-                    <center>Screening test</center>
+                    <center><lookup expression="fn.message('Screening_test')"/></center>
                 </th>
             </tr>
             <tr>
                 <td>
-                    C1. Do you have exertion shortness of breath?
+                    C1. <lookup expression="fn.message('Do_you_have_exertion_shortness_of_breath')"/>?
                 </td>
                 <td>
-                    <obs conceptId="$@SHORTNESS_OF_BREATH_WITH_EXERTION@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                    <obs conceptId="$@SHORTNESS_OF_BREATH_WITH_EXERTION@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
                 </td>
                 <td rowspan="5">
-                    One or more of a "yes" <br/>
-                    response: <br/>
+                    <lookup expression="fn.message('Screening_test_One_or_more_of_a_yes')"/> : <br/>
                     <b>
-                        Rule out heart problem; <br/>
-                        Heart ultrasound
+                        <lookup expression="fn.message('Rule_out_heart_problem_Heart_ultrasound')"/>
+
                     </b>
                 </td>
             </tr>
             <tr>
                 <td>
-                    C2. Do you have orthopnea?
+                    C2. <lookup expression="fn.message('Do_you_have_orthopnea')"/>?
                 </td>
                 <td>
-                    <obs conceptId="$@ORTHOPNEA@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    C3. Do you have current chest pain?
-                </td>
-                <td>
-                    <obs conceptId="$@CHEST_PAIN@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                    <obs conceptId="$@ORTHOPNEA@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
                 </td>
             </tr>
             <tr>
                 <td>
-                    C4. Do you have History of untreated sore throat?
+                    C3. <lookup expression="fn.message('Do_you_have_current_chest_pain')"/>?
                 </td>
                 <td>
-                    <obs conceptId="$@History_of_untreated_sore_throat@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                    <obs conceptId="$@CHEST_PAIN@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
                 </td>
             </tr>
             <tr>
                 <td>
-                    C5. Do you have History of body swelling?
+                    C4. <lookup expression="fn.message('Do_you_have_History_of_untreated_sore_throat')"/>?
                 </td>
                 <td>
-                    <obs conceptId="$@History_of_body_swelling@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                    <obs conceptId="$@History_of_untreated_sore_throat@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    C5. <lookup expression="fn.message('Do_you_have_History_of_body_swelling')"/>?
+                </td>
+                <td>
+                    <obs conceptId="$@History_of_body_swelling@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
                 </td>
             </tr>
         </table>
     </section>
-    <section headerLabel="Section III. DECISION, SUMMARY OF SCREENING RESULT">
+    <section >
         <table border="1">
+            <tr>
+                <th class="tableHeader" colspan="3">
+                     <lookup expression="fn.message('SECTION')"/> III. <lookup expression="fn.message('DECISION_SUMMARY_OF_SCREENING_RESULT')"/>
+                </th>
+            </tr>
             <tr>
                 <td>
                     <strong>
-                        Identified problem/Disease
+                        <lookup expression="fn.message('Identified_problem_Disease')"/>
                     </strong>
                 </td>
                 <td>
                     <strong>
-                        Interventions
+
+                        <lookup expression="fn.message('Interventions')"/>
                     </strong>
                 </td>
                 <td>
-                    If participant screened positive <br/>
-                    (have high BP or High blood glucose, <br/>
-                    <strong>
-                        he/she is new case?
-                    </strong>
+                    <lookup expression="fn.message('If_participant_screened_positive')"/> <br/>
+                    <lookup expression="fn.message('Interventions')"/> <br/>
+                    (<strong>
+                    <lookup expression="fn.message('he_she_is_new_case')"/>?
+                    </strong>)
                     <br/><br/>
-                    <obs conceptId="$@New_case@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                    <obs conceptId="$@New_case@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <obs conceptId="$@Identified_problem_or_disease@" answerConceptId="$@NORMAL@" answerLabel="NORMAL" style="chechbox"/>
+                    <obs conceptId="$@Identified_problem_or_disease@" answerConceptId="$@NORMAL@" answerCode="NORMAL" style="checkbox"/>
                     <br/>
-                    <obs conceptId="$@Identified_problem_or_disease@" answerConceptId="$@Overweight_or_Obesity@" answerLabel="Overweight/Obesity" style="chechbox"/>
+                    <obs conceptId="$@Identified_problem_or_disease@" answerConceptId="$@Overweight_or_Obesity@" answerCode="Overweight_Obesity" style="checkbox"/>
                     <br/>
-                    <obs conceptId="$@Identified_problem_or_disease@" answerConceptId="$@HYPERTENSION@" answerLabel="Hypertension" style="chechbox"/>
+                    <obs conceptId="$@Identified_problem_or_disease@" answerConceptId="$@HYPERTENSION@" answerCode="Hypertension" style="checkbox"/>
                     <br/>
-                    <obs conceptId="$@Identified_problem_or_disease@" answerConceptId="$@DIABETES@" answerLabel="DIABETES" style="chechbox"/>
+                    <obs conceptId="$@Identified_problem_or_disease@" answerConceptId="$@DIABETES@" answerCode="DIABETES" style="checkbox"/>
                     <br/>
-                    <obs conceptId="$@Identified_problem_or_disease@" answerConceptId="$@HEART_DISEASE@" answerLabel="Heart Disease" style="chechbox"/>
+                    <obs conceptId="$@Identified_problem_or_disease@" answerConceptId="$@HEART_DISEASE@" answerCode="Heart_Disease" style="checkbox"/>
                     <br/>
-                    <obs conceptId="$@Identified_problem_or_disease@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other" style="chechbox"/>
+                    <obs conceptId="$@Identified_problem_or_disease@" answerConceptId="$@OTHER_NON-CODED@" answerCode="Other" style="checkbox"/>
                     <br/>
-                    (specify:
+                    (<lookup expression="fn.message('specify')"/>):
                     <obs conceptId="$@Other@"/>
                 </td>
                 <td colspan="2">
 
 
-                    <obs conceptId="$@Interventions@" answerConceptId="$@Annual_checkup_and_lifestyle_counselling@" answerLabel="Annual checkup and lifestyle counseling" style="chechbox"/>
+                    <obs conceptId="$@Interventions@" answerConceptId="$@Annual_checkup_and_lifestyle_counselling@" answerCode="Annual_checkup_and_lifestyle_counseling" style="checkbox"/>
                     <br/>
-                    <obs conceptId="$@Interventions@" answerConceptId="$@Scheduled_for_diagnosis_work_up@" answerLabel="Scheduled for diagnosis work up (at site of screening)" style="chechbox"/>
+                    <obs conceptId="$@Interventions@" answerConceptId="$@Scheduled_for_diagnosis_work_up@" answerCode="Scheduled_for_diagnosis_work_up_at_site_of_screening" style="checkbox"/>
                     <br/>
-                    <obs conceptId="$@Interventions@" answerConceptId="$@referred_to@" answerLabel="Referral to health facility for management or other special investigation/exams" style="chechbox"/>
+                    <obs conceptId="$@Interventions@" answerConceptId="$@referred_to@" answerCode="Referral_to_health_facility_for_management_or_other_special_investigation_exams" style="checkbox"/>
                     <br/>
                     <br/>
 
                     <strong>
-                        Facility:
+                        <lookup expression="fn.message('Facility')"/>:
                     </strong>
-                    <obs conceptId="$@Patient_referred_to_where@" answerConceptIds="$@HEALTH_CENTER@,$@DISTRICT_HOSPITAL@" answerLabels="Health Center,District Hospital" style="radio"/>
+                    <obs conceptId="$@Patient_referred_to_where@" answerConceptIds="$@HEALTH_CENTER@,$@DISTRICT_HOSPITAL@" answerCodes="Health_Center,District_Hospital" style="radio"/>
                 </td>
             </tr>
         </table>

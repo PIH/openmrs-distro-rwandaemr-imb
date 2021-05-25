@@ -478,12 +478,16 @@ getField('reactionNonCoded3.value')[0].disabled = true;
                 <td>
                     Confirmed cancer?:
                 </td>
-                <td>
-
-                    <obs conceptId="$@CONFIRMED_DIAGNOSIS@" answerConceptIds="$@YES@,$@NO@" answerLabels="Cancer confirmed, Not Cancer" style="radio"/>
+                <td class="checkboxGroup">
+                    <span class="activate" id="yesCancerConfimed" title="CancerConfimed">
+                        <obs conceptId="$@CONFIRMED_DIAGNOSIS@" answerConceptId="$@YES@" answerLabel="Cancer confirmed" style="checkbox"/>
+                    </span>
+                    <span class="deactivate" id="noCancerConfimed" title="CancerConfimed">
+                        <obs conceptId="$@CONFIRMED_DIAGNOSIS@" answerConceptId="$@NO@" answerLabel="Not Cancer" style="checkbox"/>
+                    </span>
                 </td>
             </tr>
-            <tr>
+            <tr class="CancerConfimed">
                 <td>
                     Cancer Diagnosis
                 </td>
@@ -504,7 +508,7 @@ getField('reactionNonCoded3.value')[0].disabled = true;
             </tr>
         </table>
     </section>
-    <section headerLabel="Biopsy">
+    <section >
         <table border="1">
             <tr>
                 <td class="font-normal"> <strong> Date of next visit:  </strong> </td>

@@ -11,28 +11,55 @@
     <script src="js/additional-methods.min.js"></script>
     <script src="js/jquery-autocomplete-min.js"></script>
     <script src="js/muzima.js"></script>
+    <style>
+        .float-container {
+          border: solid 1px #ccc;
+          position: fixed;
+          background-color:black;
+          color: white;
+        }
 
-    <title>NCD DIABETES AND CARDIOVASCULAR COMMUNITY CHECKUP Form</title>
+    </style>
+
+    <title class="language en">NCD DIABETES AND CARDIOVASCULAR COMMUNITY CHECKUP Form</title>
+    <title class="language kiny">IFISHI YO KWISUZUMISHA INDWARA ZITANDURA</title>
 </head>
 <body class="col-md-10 col-md-offset-1">
 <div id="pre_populate_data"></div>
 <form id="DiabetesCardiovascularCheckup_form" name="DiabetesCardiovascularCheckup_form">
+    <div id="floatContainer" class="float-container" >
+        <center>
+            <input id="en" name="language" type="radio" > EN
+            &nbsp &nbsp &nbsp
+            <input id="kiny" name="language" type="radio" > KINY
+
+        </center>
+
+    </div>
+    <br/><br/>
+    <h2 class="text-center" class="language en">DIABETES AND CARDIOVASCULAR</h2>
+    <h2 class="text-center" class="language kiny">DIYABETE N' INDWARA Z' UMUTIMA</h2>
+    <br/><br/>
+    <h3 class="language en">Encounter Details</h3>
+    <h3 class="language kiny">IGIKA CYA I. IMYIRONDORO Y’UWISUZUMISHA</h3>
     <fieldset>
         <div class="section">
-            <h3>Encounter Details</h3>
 
             <div class="form-group">
-                <label for="encounter.location_id">Location Name:<span class="required">*</span></label>
+                <label for="encounter.location_id" class="language en">Location Name:<span class="required">*</span></label>
+                <label for="encounter.location_id" class="language kiny">Izina ry’Ikigo:<span class="required">*</span></label>
                 <input class="form-control valid-location-only" id="encounter.location_id" type="text" placeholder="Start typing something..."
                        required="required">
                 <input class="form-control" name="encounter.location_id" type="hidden">
             </div>
             <div class="form-group">
-                <label for="obs.SiteofScreening">Site of screening: </label>
+                <label for="obs.SiteofScreening" class="language en">Site of screening: </label>
+                <label for="obs.SiteofScreening" class="language kiny">Ahabereye isuzuma </label>
                 <input id="obs.SiteofScreening" class="form-control" name="obs.SiteofScreening" type="text" data-concept="e4c9a259-1e9e-4155-8f87-ce0b8f591f80^Site of screening^99DCT"/>
             </div>
             <div class="form-group">
-                <label for="encounter.provider_id_select">Provider:</label>
+                <label for="encounter.provider_id_select" class="language en">Provider:</label>
+                <label for="encounter.provider_id_select" class="language kiny">Uwakoze isuzuma:</label>
                 <input class="form-control valid-provider-only" id="encounter.provider_id_select" type="text" placeholder="Start typing something...">
                 <input class="form-control" name="encounter.provider_id_select" type="hidden">
             </div>
@@ -40,12 +67,14 @@
                 <select id="select_providers"></select>
             </div>
             <div class="form-group show_provider_id_text">
-                <label for="encounter.provider_id">Provider's system-id:<span class="required">*</span></label>
+                <label for="encounter.provider_id" class="language en">Provider's system-id:<span class="required">*</span></label>
+                <label for="encounter.provider_id" class="language kiny">Ikiranga uwakoze isuzuma:<span class="required">*</span></label>
                 <input class="form-control checkDigit" id="encounter.provider_id" name="encounter.provider_id"
                        type="text" required="required" disabled="disabled">
             </div>
             <div class="form-group">
-                <label for="encounter.encounter_datetime">Encounter Date:<span class="required">*</span></label>
+                <label for="encounter.encounter_datetime" class="language en">Encounter Date:<span class="required">*</span></label>
+                <label for="encounter.encounter_datetime" class="language kiny">Itariki:<span class="required">*</span></label>
                 <input class="form-control datepicker nonFutureDate past-date" id="encounter.encounter_datetime"
                        name="encounter.encounter_datetime" type="text" readonly="readonly"
                        required="required">
@@ -55,340 +84,468 @@
                        type="hidden" required="required">
             </div>
             <div class="form-group">
-                <label for="obs.EducationLevel">Patient education level: </label>
-                <input id="obs.EducationLevel" class="form-control" name="obs.EducationLevel" type="text" data-concept="eb879ed2-1fcd-465e-a841-f83c2b55662b^Education Level (text)^99DCT"/>
+                <label for="obs.EducationLevel" class="language en">Patient education level: </label>
+                <label for="obs.EducationLevel" class="language kiny">Amashuri warangije: </label>
+<!--                <input id="obs.EducationLevel" class="form-control" name="obs.EducationLevel" type="text" data-concept="eb879ed2-1fcd-465e-a841-f83c2b55662b^Education Level (text)^99DCT"/>-->
+
+
+
+                <select id="obs.EducationLevel" class="form-control" name="obs.EducationLevel" data-concept="3cdcc5e4-26fe-102b-80cb-0017a47871b2^HIGHEST LEVEL OF SCHOOL COMPLETED^99DCT">
+                    <option value="">...</option>
+                    <option value="c4fe25b6-86ed-46ac-b24f-a9f42e2a0c2a^Illiterate^99DCT" class="language en">Illiterate</option>
+                    <option value="c4fe25b6-86ed-46ac-b24f-a9f42e2a0c2a^Illiterate^99DCT" class="language kiny">Ntabwo yize</option>
+                    <option value="4e64f4b8-d71c-43e6-a603-265f7464a633^PRIMARY EDUCATION COMPLETE^99DCT" class="language en">Primary</option>
+                    <option value="4e64f4b8-d71c-43e6-a603-265f7464a633^PRIMARY EDUCATION COMPLETE^99DCT" class="language kiny">Abanza</option>
+                    <option value="2aa11f5e-6478-4ba0-b8ab-89cea5e5e66e^SECONDARY EDUCATION COMPLETE^99DCT" class="language en">Secondary</option>
+                    <option value="2aa11f5e-6478-4ba0-b8ab-89cea5e5e66e^SECONDARY EDUCATION COMPLETE^99DCT" class="language kiny">Ayisumbuye</option>
+
+                    <option value="7cee1a26-5092-4373-b5cd-7bad591d0c73^UNIVERSITY EDUCATION COMPLETE^99DCT" class="language en">University</option>
+                    <option value="7cee1a26-5092-4373-b5cd-7bad591d0c73^UNIVERSITY EDUCATION COMPLETE^99DCT" class="language kiny">Kaminuza</option>
+                </select>
+
+
             </div>
             <div class="form-group">
-                <label for="obs.CurrentEmployment">Patient current employment: </label>
-                <input id="obs.CurrentEmployment" class="form-control" name="obs.CurrentEmployment" type="text" data-concept="6e16e8bb-5f34-4d34-aa91-5fe3a08d254d^Current employment^99DCT"/>
+                <label for="obs.CurrentEmployment" class="language en">Patient current employment: </label>
+                <label for="obs.CurrentEmployment" class="language kiny">Icyo ukora ubu: </label>
+<!--                <input id="obs.CurrentEmployment" class="form-control" name="obs.CurrentEmployment" type="text" data-concept="6e16e8bb-5f34-4d34-aa91-5fe3a08d254d^Current employment^99DCT"/>-->
+
+                <select id="obs.CurrentEmployment" class="form-control" name="obs.CurrentEmployment" data-concept="a752750c-eda8-4d4a-a82d-8475e5e2f17b^Current employement coded^99DCT">
+                    <option value="">...</option>
+                    <option value="3de617c6-ad12-495d-beac-8035f22a78b4^No employment^99DCT" class="language en">No employment</option>
+                    <option value="3de617c6-ad12-495d-beac-8035f22a78b4^No employment^99DCT" class="language kiny">Nta kazi afite</option>
+                    <option value="3cd9757e-26fe-102b-80cb-0017a47871b2^FARMER^99DCT" class="language en">Farmer</option>
+                    <option value="3cd9757e-26fe-102b-80cb-0017a47871b2^FARMER^99DCT" class="language kiny">Umuhinzi mworozi</option>
+                    <option value="b30e5317-a359-4672-b8de-542d57e630d1^Business man^99DCT" class="language en">Business man</option>
+                    <option value="b30e5317-a359-4672-b8de-542d57e630d1^Business man^99DCT" class="language kiny">Umucuruzi</option>
+                    <option value="3d391f2c-2567-47a2-8721-f363e34568a9^Students^99DCT" class="language en">Students</option>
+                    <option value="3d391f2c-2567-47a2-8721-f363e34568a9^Students^99DCT" class="language kiny">Umunyeshuri</option>
+                    <option value="1b3fa1f4-4646-4232-a556-c0d8d3321ce6^Public servant^99DCT" class="language en">Public servant</option>
+                    <option value="1b3fa1f4-4646-4232-a556-c0d8d3321ce6^Public servant^99DCT" class="language kiny">Umukozi wa Leta</option>
+                    <option value="895444a1-930c-4129-800d-232af5ed9b28^Private or NGO servant^99DCT" class="language en">Private  or NGO servant</option>
+                    <option value="895444a1-930c-4129-800d-232af5ed9b28^Private or NGO servant^99DCT" class="language kiny">Akorera abandi</option>
+                </select>
+
+
+
             </div>
 
         </div>
 
     </fieldset>
+    <h3 class="language en">DEMOGRAPHICS</h3>
+    <h3 class="language kiny">Umwirondoro w'umurwayi</h3>
     <div class="section">
-        <h3>DEMOGRAPHICS</h3>
 
         <div class="form-group">
             <input class="form-control" id="patient.uuid"
                    name="patient.uuid" type="hidden" readonly="readonly">
         </div>
         <div class="form-group">
-            <label for="patient.medical_record_number">Patient identifier:</label>
+            <label for="patient.medical_record_number" class="language en">Patient identifier:</label>
+            <label for="patient.medical_record_number" class="language kiny">Nomero Imuranga:</label>
             <input class="form-control" id="patient.medical_record_number"
                    name="patient.medical_record_number" type="text" readonly="readonly">
         </div>
         <div class="form-group">
-            <label for="patient.family_name">Family Name:</label>
+            <label for="patient.family_name" class="language en">Family Name:</label>
+            <label for="patient.family_name" class="language kiny">Izina Ry' ikinyarwanda:</label>
             <input class="form-control" id="patient.family_name" name="patient.family_name" type="text"
                    readonly="readonly">
         </div>
         <div class="form-group">
-            <label for="patient.given_name">Given Name:</label>
+            <label for="patient.given_name" class="language en">Given Name:</label>
+            <label for="patient.given_name" class="language kiny">Izina ry' irikirisitu:</label>
             <input class="form-control" id="patient.given_name" name="patient.given_name" type="text"
                    readonly="readonly">
         </div>
         <div class="form-group">
-            <label for="patient.middle_name">Middle Name:</label>
+            <label for="patient.middle_name" class="language en">Middle Name:</label>
+            <label for="patient.middle_name" class="language kiny">Irindi zina:</label>
             <input class="form-control" id="patient.middle_name" name="patient.middle_name" type="text"
                    readonly="readonly">
         </div>
         <div class="form-group">
-            <label for="patient.sex">Gender:</label>
+            <label for="patient.sex" class="language en">Gender:</label>
+            <label for="patient.sex" class="language kiny">igitsina:</label>
             <select class="form-control" id="patient.sex" name="patient.sex" disabled="disabled">
                 <option value="">...</option>
-                <option value="M">Male</option>
-                <option value="F">Female</option>
+                <option value="M" class="language en">Male</option>
+                <option value="M" class="language kiny">Gabo</option>
+                <option value="F" class="language en">Female</option>
+                <option value="F" class="language kiny">Gore</option>
             </select>
         </div>
         <div class="form-group">
-            <label for="patient.birth_date">Date Of Birth:</label>
+            <label for="patient.birth_date" class="language en">Date Of Birth:</label>
+            <label for="patient.birth_date" class="language kiny">Itariki y'amavuko:</label>
             <input class="form-control" id="patient.birth_date" name="patient.birth_date" type="text"
                    readonly="readonly" disabled="disabled">
         </div>
     </div>
+    <h3 class="language en">Risk Factors Assessment</h3>
+    <h3 class="language kiny">Ibipimo by' ubuzima</h3>
+    <div>
 
-    <div class="section">
-        <h2 class="text-center">DIABETES AND CARDIOVASCULAR</h2>
-        <fieldset>
-            <h3>Risk Factors Assessment</h3>
+            <fieldset class="section">
 
-            <!--        <div class="form-group">-->
-            <!--            Age & gender-->
-            <!--            <label for="obs.Female_age">Female:</label>-->
-            <!--            <select class="form-control" id="obs.Female_age" name="obs.Female_age"-->
-            <!--                    data-concept="b3d3a3bf-bc36-46b4-8e73-55b139e83097^Female age^99DCT">-->
-            <!--                <option value="">...</option>-->
-            <!--                <option value="2aeae293-0134-4bc9-b36a-485570bdb79b^less than 35 years^99DCT"> <35 years</option>-->
-            <!--                <option value="96474a47-d1c3-4990-bce2-a8e84010c983^greater than 35 years^99DCT"> >35 years</option>-->
-            <!--            </select>-->
-            <!--        </div>-->
-            <!--        <div class="form-group">-->
-            <!--            <label for="obs.Male_age">Male:</label>-->
-            <!--            <select class="form-control" id="obs.Male_age" name="obs.Male_age"-->
-            <!--                    data-concept="3c2ccaf9-4a54-4b48-aa43-a3a361dc0d28^Male age^99DCT">-->
-            <!--                <option value="">...</option>-->
-            <!--                <option value="1dd37d61-32cc-4188-a14b-b7dd91f03a34^less than 40 years^99DCT"> <40 years</option>-->
-            <!--                <option value="a73108a1-263a-45de-994a-04bef8ddb5a6^greater than 40 years^99DCT"> >40 years</option>-->
-            <!--            </select>-->
-            <!--        </div>-->
-            <div class="form-group">
-                <label class="font-normal">Weight (kg):</label>
-                <input id="obs.Weight" class="form-control" name="obs.Weight" type="number" data-concept="3ce93b62-26fe-102b-80cb-0017a47871b2^WEIGHT (KG)^99DCT"/>
-            </div>
-            <div class="form-group">
-                <label class="font-normal">HEIGHT (CM):</label>
-                <input id="obs.height" class="form-control" name="obs.height" type="number" data-concept="3ce93cf2-26fe-102b-80cb-0017a47871b2^HEIGHT (CM)^99DCT"/>
-            </div>
-            <div class="form-group">
-                <label class="font-normal">BMI:</label>
-                <input id="obs.BMI" class="form-control" name="obs.BMI" type="number" data-concept="3ce14da8-26fe-102b-80cb-0017a47871b2^BMI^99DCT"/>
-                <label class="font-normal">kg/m<sup>2</sup></label>
-                &#8805; 25kg/m<sup>2</sup>?
-                <label class="font-normal">
-                    <input id="obs.YesBMIgreaterthanorequal25" name="obs.BMIgreaterthanorequal25" type="radio"
-                           data-concept="ba32325d-799e-44d4-a588-2bd392c1ab1e^BMI greater that or equal 25 kg/m^2^99DCT"
-                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                    Yes
-                </label>
-                <label class="font-normal">
-                    <input id="obs.NoBMIgreaterthanorequal25" name="obs.BMIgreaterthanorequal25" type="radio"
-                           data-concept="ba32325d-799e-44d4-a588-2bd392c1ab1e^BMI greater that or equal 25 kg/m^2^99DCT"
-                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                    No
-                </label>
-                <!--                &#8805; 25kg/m<sup>2</sup>?-->
-                <!--                <input type="radio" id="obs.YesBMIgreaterthanorequal25" name="obs.BMIgreaterthanorequal25" value="Yes"/>-->
-                <!--                <input type="radio" id="obs.NoBMIgreaterthanorequal25" name="obs.BMIgreaterthanorequal25" value="No"/>-->
+                <!--        <div class="form-group">-->
+                <!--            Age & gender-->
+                <!--            <label for="obs.Female_age">Female:</label>-->
+                <!--            <select class="form-control" id="obs.Female_age" name="obs.Female_age"-->
+                <!--                    data-concept="b3d3a3bf-bc36-46b4-8e73-55b139e83097^Female age^99DCT">-->
+                <!--                <option value="">...</option>-->
+                <!--                <option value="2aeae293-0134-4bc9-b36a-485570bdb79b^less than 35 years^99DCT"> <35 years</option>-->
+                <!--                <option value="96474a47-d1c3-4990-bce2-a8e84010c983^greater than 35 years^99DCT"> >35 years</option>-->
+                <!--            </select>-->
+                <!--        </div>-->
+                <!--        <div class="form-group">-->
+                <!--            <label for="obs.Male_age">Male:</label>-->
+                <!--            <select class="form-control" id="obs.Male_age" name="obs.Male_age"-->
+                <!--                    data-concept="3c2ccaf9-4a54-4b48-aa43-a3a361dc0d28^Male age^99DCT">-->
+                <!--                <option value="">...</option>-->
+                <!--                <option value="1dd37d61-32cc-4188-a14b-b7dd91f03a34^less than 40 years^99DCT"> <40 years</option>-->
+                <!--                <option value="a73108a1-263a-45de-994a-04bef8ddb5a6^greater than 40 years^99DCT"> >40 years</option>-->
+                <!--            </select>-->
+                <!--        </div>-->
+                <div class="form-group">
+                    <label class="font-normal" class="language en">Weight (kg):</label>
+                    <label class="font-normal" class="language kiny">Ibiro (kg):</label>
+                    <input id="Weight" class="form-control" name="obs.Weight" type="number" data-concept="3ce93b62-26fe-102b-80cb-0017a47871b2^WEIGHT (KG)^99DCT"/>
+                </div>
+                <div class="form-group">
+                    <label class="font-normal" class="language en">HEIGHT (CM):</label>
+                    <label class="font-normal" class="language kiny">Uburebure (CM):</label>
+                    <input id="Height" class="form-control" name="obs.height" type="number" min="3" data-concept="3ce93cf2-26fe-102b-80cb-0017a47871b2^HEIGHT (CM)^99DCT"/>
+                </div>
+                <div class="form-group">
+                    <label class="font-normal" class="language en">BMI:</label>
+                    <label class="font-normal" class="language kiny">Umubyibuho:</label>
+                    <input id="BMI" class="form-control" name="obs.BMI" type="number" data-concept="3ce14da8-26fe-102b-80cb-0017a47871b2^BMI^99DCT"/>
+                    <label class="font-normal">kg/m<sup>2</sup></label>
+                    &#8805; 25kg/m<sup>2</sup>?
+                    <br/>
+                    <label class="font-normal">
+                        <input id="obs.YesBMIgreaterthanorequal25" name="obs.BMIgreaterthanorequal25" type="radio"
+                               data-concept="ba32325d-799e-44d4-a588-2bd392c1ab1e^BMI greater that or equal 25 kg/m^2^99DCT"
+                               value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                        <span class="language en"> Yes </span>
+                        <span class="language kiny"> Yego </span>
+                    </label>
+                    <br/>
+                    <label class="font-normal">
+                        <input id="obs.NoBMIgreaterthanorequal25" name="obs.BMIgreaterthanorequal25" type="radio"
+                               data-concept="ba32325d-799e-44d4-a588-2bd392c1ab1e^BMI greater that or equal 25 kg/m^2^99DCT"
+                               value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                        <span class="language en"> No </span>
+                        <span class="language kiny"> Oya </span>
+                    </label>
+                    <!--                &#8805; 25kg/m<sup>2</sup>?-->
+                    <!--                <input type="radio" id="obs.YesBMIgreaterthanorequal25" name="obs.BMIgreaterthanorequal25" value="Yes"/>-->
+                    <!--                <input type="radio" id="obs.NoBMIgreaterthanorequal25" name="obs.BMIgreaterthanorequal25" value="No"/>-->
 
-            </div>
-            <div class="form-group">
+                </div>
+                <div class="form-group">
 
-                <label class="font-normal"> Waist circumference (cm) :</label>
-                <input class="form-control" id="obs.Waistcircumference" name="obs.Waistcircumference" type="number" data-concept="d735afe6-8fd3-4802-8465-197d324b3085^Waist circumference^99DCT"/>
-                <br/>
-                <br/>
-                <u>Men</u> &#8805;94cm? Women &#8805;80cm?
+                    <label class="font-normal" class="language en"> Waist circumference (cm) :</label>
+                    <label class="font-normal" class="language kiny"> Umuzenguruko w’inda (cm) :</label>
+                    <input class="form-control" id="obs.Waistcircumference" name="obs.Waistcircumference" type="number" data-concept="d735afe6-8fd3-4802-8465-197d324b3085^Waist circumference^99DCT"/>
+                    <br/>
+                    <u class="language en">Men</u> <u class="language kiny">Umugabo</u>&#8805;94cm? <u class="language en">Women </u> <u class="language kiny">Umugore </u>  &#8805;80cm?
+                    <br/>
+                    <label class="font-normal">
+                        <input id="obs.YesWaistcircumferencegreaterthanorequalto94" name="obs.Waistcircumferencegreaterthanorequalto94" type="radio"
+                               data-concept="2ecaa1f3-130c-44ad-ac33-7948c4db36c5^Waist circumference greater than or equal to 94 on men and 80 for women^99DCT"
+                               value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                        <span class="language en"> Yes </span>
+                        <span class="language kiny"> Yego </span>
+                    </label>
+                    <br/>
+                    <label class="font-normal">
+                        <input id="obs.NoWaistcircumferencegreaterthanorequalto94" name="obs.Waistcircumferencegreaterthanorequalto94" type="radio"
+                               data-concept="2ecaa1f3-130c-44ad-ac33-7948c4db36c5^Waist circumference greater than or equal to 94 on men and 80 for women^99DCT"
+                               value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                        <span class="language en"> No </span>
+                        <span class="language kiny"> Oya </span>
+                    </label>
 
-                <label class="font-normal">
-                    <input id="obs.YesWaistcircumferencegreaterthanorequalto94" name="obs.Waistcircumferencegreaterthanorequalto94" type="radio"
-                           data-concept="2ecaa1f3-130c-44ad-ac33-7948c4db36c5^Waist circumference greater than or equal to 94 on men and 80 for women^99DCT"
-                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                    Yes
-                </label>
-                <label class="font-normal">
-                    <input id="obs.NoWaistcircumferencegreaterthanorequalto94" name="obs.Waistcircumferencegreaterthanorequalto94" type="radio"
-                           data-concept="2ecaa1f3-130c-44ad-ac33-7948c4db36c5^Waist circumference greater than or equal to 94 on men and 80 for women^99DCT"
-                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                    No
-                </label>
+                </div>
+                <div class="form-group">
+                    <label class="font-normal" class="language en"> Blood pressure (BP):</label>
+                    <label class="font-normal" class="language kiny"> Umuvuduko w’amaraso (BP):</label>
+                    <input class="form-control" placeholder="Systolic" id="obs.SystolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>
+                    <input class="form-control" placeholder="Diastolic" id="obs.diastolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>
+                    mmHg
+                    <br/>
+                    <br/>
+                    S&#8805;140? or D&gt;90?
+                    <br/>
+                    <label class="font-normal">
+                        <input id="obs.YesSystolicgreaterthanorequal140ordistolicgreaterthan90" name="obs.Systolicgreaterthanorequal140ordistolicgreaterthan90" type="radio"
+                               data-concept="d8414d40-41ef-46ff-bef1-899f261be8a0^Is Systolic greater than or equal 140 or diastolic greater than 90^99DCT"
+                               value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                        <span class="language en"> Yes </span>
+                        <span class="language kiny"> Yego </span>
+                    </label>
+                    <br/>
+                    <label class="font-normal">
+                        <input id="obs.NoSystolicgreaterthanorequal140ordistolicgreaterthan90" name="obs.Systolicgreaterthanorequal140ordistolicgreaterthan90" type="radio"
+                               data-concept="d8414d40-41ef-46ff-bef1-899f261be8a0^Is Systolic greater than or equal 140 or diastolic greater than 90^99DCT"
+                               value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                        <span class="language en"> No </span>
+                        <span class="language kiny"> Oya </span>
+                    </label>
 
-            </div>
-            <div class="form-group">
-                <label class="font-normal"> Blood pressure (BP):</label>
-                <input class="form-control" placeholder="Systolic" id="obs.SystolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>
-                <input class="form-control" placeholder="Diastolic" id="obs.diastolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>
-                mmHg
-                <br/>
-                <br/>
-                S&#8805;140? or D&gt;90?
-                <label class="font-normal">
-                    <input id="obs.YesSystolicgreaterthanorequal140ordistolicgreaterthan90" name="obs.Systolicgreaterthanorequal140ordistolicgreaterthan90" type="radio"
-                           data-concept="d8414d40-41ef-46ff-bef1-899f261be8a0^Is Systolic greater than or equal 140 or diastolic greater than 90^99DCT"
-                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                    Yes
-                </label>
-                <label class="font-normal">
-                    <input id="obs.NoSystolicgreaterthanorequal140ordistolicgreaterthan90" name="obs.Systolicgreaterthanorequal140ordistolicgreaterthan90" type="radio"
-                           data-concept="d8414d40-41ef-46ff-bef1-899f261be8a0^Is Systolic greater than or equal 140 or diastolic greater than 90^99DCT"
-                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                    No
-                </label>
+                </div>
+                <div class="form-group">
+                    <label class="font-normal" class="language en">
+                        <strong>
+                            If women</strong> between 15 and 49 years old, <br/>
+                        <strong>Is she pregnant ?
+                        </strong>
+                    </label>
+                    <label class="font-normal" class="language kiny">
+                        <strong>
+                            Niba ari umugore</strong> ufite imyaka 15 kugeza kuri 49, <br/>
+                        <strong>ese aratwite ?
+                        </strong>
+                    </label>
 
-            </div>
-            <div class="form-group">
-                <label class="font-normal">
+                    <label class="font-normal">
+                        <input id="obs.IsPregnantYes" name="obs.IsPregnant" type="radio"
+                               data-concept="3ceb4880-26fe-102b-80cb-0017a47871b2^PREGNANCY STATUS^99DCT"
+                               value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                        <span class="language en"> Yes </span>
+                        <span class="language kiny"> Yego </span>
+                    </label>
+                    <br/>
+                    <label class="font-normal">
+                        <input id="obs.IsPregnantNo" name="obs.IsPregnant" type="radio"
+                               data-concept="3ceb4880-26fe-102b-80cb-0017a47871b2^PREGNANCY STATUS^99DCT"
+                               value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                        <span class="language en"> No </span>
+                        <span class="language kiny"> Oya </span>
+                    </label>
+
+                </div>
+                <div class="form-group section">
+                    <u>
+                        <h3 class="language en">Screening test</h3>
+                        <h3 class="language kiny">Gusaba ikizamini</h3>
+                    </u>
+                    <label class="language en">
+                    One or more of a "yes" response,
+                    order the following:
+                    </label>
+                    <label class="language kiny">
+                        Mu gihe ari “yego” ku kibazo
+                        kimwe cg byinshi saba ikizamini cya:
+                    </label>
+                    <br/>
+                    <br/>
                     <strong>
-                        If women</strong> between 15 and 49 years old, <br/>
-                    <strong>Is she pregnant ?
+                        <label class="font-normal">Glycemia:</label>
+                        <input id="obs.Glycemia" class="form-control" name="obs.Glycemia" type="number" data-concept="3cd4e194-26fe-102b-80cb-0017a47871b2^SERUM GLUCOSE^99DCT"/>
+                        mg/dl
                     </strong>
-                </label>
+                    <br/><br/>
+                    <strong>
+                        <label class="font-normal">
+                            <input id="obs.fastingGlucoseTest" name="obs.GlucoseTest" type="radio"
+                                   data-concept="b8de5533-e263-49fe-bb3f-62298365e268^Glucose Test^99DCT"
+                                   value="2effb850-0384-4a09-8ae0-a7b5f7e7289f^Fasting for blood glucose test^99DCT">
+                            <span class="language en"> Fasting </span>
+                            <span class="language kiny"> Nta kintu  ararya </span>
+                        </label>
+                        <br/>
+                        <label class="font-normal">
+                            <input id="obs.randomGlucoseTest" name="obs.GlucoseTest" type="radio"
+                                   data-concept="b8de5533-e263-49fe-bb3f-62298365e268^Glucose Test^99DCT"
+                                   value="d2d34adf-9f22-4897-97a1-dbbda02b19dd^Random for blood glucose test^99DCT">
 
-                <label class="font-normal">
-                    <input id="obs.IsPregnantYes" name="obs.IsPregnant" type="radio"
-                           data-concept="3ceb4880-26fe-102b-80cb-0017a47871b2^PREGNANCY STATUS^99DCT"
-                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                    Yes
-                </label>
-                <label class="font-normal">
-                    <input id="obs.IsPregnantNo" name="obs.IsPregnant" type="radio"
-                           data-concept="3ceb4880-26fe-102b-80cb-0017a47871b2^PREGNANCY STATUS^99DCT"
-                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                    No
-                </label>
-
-            </div>
-
-            <div class="form-group">
-                <h3>Screening test</h3>
-                One or more of a "yes" response,
-                order the following:
-                <br/>
-                <br/>
-                <strong>
-                    <label class="font-normal">Glycemia:</label>
-                    <input id="obs.Glycemia" class="form-control" name="obs.Glycemia" type="number" data-concept="3cd4e194-26fe-102b-80cb-0017a47871b2^SERUM GLUCOSE^99DCT"/>
-                    mg/dl
-                </strong>
-                <br/><br/>
-                <strong>
-                    <label class="font-normal">
-                        <input id="obs.fastingGlucoseTest" name="obs.GlucoseTest" type="radio"
-                               data-concept="b8de5533-e263-49fe-bb3f-62298365e268^Glucose Test^99DCT"
-                               value="2effb850-0384-4a09-8ae0-a7b5f7e7289f^Fasting for blood glucose test^99DCT">
-                        Fasting
-                    </label>
-                    <label class="font-normal">
-                        <input id="obs.randomGlucoseTest" name="obs.GlucoseTest" type="radio"
-                               data-concept="b8de5533-e263-49fe-bb3f-62298365e268^Glucose Test^99DCT"
-                               value="d2d34adf-9f22-4897-97a1-dbbda02b19dd^Random for blood glucose test^99DCT">
-                        Random
-                    </label>
-                </strong>
-            </div>
+                            <span class="language en"> Random </span>
+                            <span class="language kiny"> Yari yariye </span>
+                        </label>
+                    </strong>
+                </div>
         </fieldset>
-        <fieldset>
-            <div class="form-group">
-                <h3>A.  Shared risk factors</h3>
 
-                <label class="font-normal">A1. Do you do physical activity for more than 30 min daily?</label>
+            <h3 class="language en">A.  Shared risk factors</h3>
+            <h3 class="language kiny">A.  Kubaza ku myitwarire yatuma abantu barwara indwara zitandura</h3>
+
+        <fieldset class="section">
+            <div class="form-group">
+                <label class="font-normal" class="language en">A1. Do you do physical activity for more than 30 min daily?</label>
+                <label class="font-normal" class="language kiny">A1. Ese mwaba mukora imyitozo ngororamubiri nibura iminota 30 ku munsi?</label>
                 <label class="font-normal">
                     <input id="obs.yesPhysicalActive" name="obs.PhysicalActive" type="radio"
                            data-concept="12e15ec1-1c50-4b56-8829-74a1e9a628f0^Do you do physical activity for more than 30 min daily^99DCT"
                            value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                    Yes
+                    <span class="language en"> Yes </span>
+                    <span class="language kiny"> Yego </span>
                 </label>
+                <br/>
                 <label class="font-normal">
                     <input id="obs.noPhysicalActive" name="obs.PhysicalActive" type="radio"
                            data-concept="12e15ec1-1c50-4b56-8829-74a1e9a628f0^Do you do physical activity for more than 30 min daily^99DCT"
                            value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                    No
+                    <span class="language en"> No </span>
+                    <span class="language kiny"> Oya </span>
                 </label>
             </div>
             <div class="form-group">
 
-                <label class="font-normal">A2. Do you eat vegetables and fruits daily?</label>
+                <label class="font-normal" class="language en">A2. Do you eat vegetables and fruits daily?</label>
+                <label class="font-normal" class="language kiny">A2. Ese mwaba murya imboga n’imbuto buri munsi?</label>
                 <label class="font-normal">
                     <input id="obs.yesEatVegetablesAndFruitsDaily" name="obs.EatVegetablesAndFruitsDaily" type="radio"
                            data-concept="d4d80ac9-e6ba-4ab7-bfd7-9b79c26cc051^Do you eat vegetables and fruits daily^99DCT"
                            value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                    Yes
+                    <span class="language en"> Yes </span>
+                    <span class="language kiny"> Yego </span>
                 </label>
+                <br/>
                 <label class="font-normal">
                     <input id="obs.noEatVegetablesAndFruitsDaily" name="obs.EatVegetablesAndFruitsDaily" type="radio"
                            data-concept="d4d80ac9-e6ba-4ab7-bfd7-9b79c26cc051^Do you eat vegetables and fruits daily"
                            value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                    No
+                    <span class="language en"> No </span>
+                    <span class="language kiny"> Oya </span>
                 </label>
             </div>
             <div class="form-group">
-                <label class="font-normal">A3. History of Smoking?</label>
+                <label class="font-normal" class="language en">A3. History of Smoking?</label>
+                <label class="font-normal" class="language kiny">A3. Ese mwaba munywa itabi cg se mwarigeze kurinywaho?</label>
+                <br/>
                 <label class="font-normal">
                     <input id="obs.yesHistoryOfSmoking" name="obs.HistoryOfSmoking" type="radio"
                            data-concept="3cdbdca6-26fe-102b-80cb-0017a47871b2^SMOKING HISTORY^99DCT"
                            value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                    Yes
+                    <span class="language en"> Yes </span>
+                    <span class="language kiny"> Yego </span>
                 </label>
+                <br/>
                 <label class="font-normal">
                     <input id="obs.noHistoryOfSmoking" name="obs.HistoryOfSmoking" type="radio"
                            data-concept="3cdbdca6-26fe-102b-80cb-0017a47871b2^SMOKING HISTORY^99DCT"
                            value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                    No
+                    <span class="language en"> No </span>
+                    <span class="language kiny"> Oya </span>
                 </label>
             </div>
             <div class="form-group">
 
-                <label class="font-normal">A4. Excessive alcohol consumption?</label>
+                <label class="font-normal" class="language en">A4. Excessive alcohol consumption?</label>
+                <label class="font-normal" class="language kiny">A4. Ese mwaba munywa inzoga nyinshi?</label>
                 <label class="font-normal">
                     <input id="obs.yesExcessiveAlcoholConsumption" name="obs.ExcessiveAlcoholConsumption" type="radio"
                            data-concept="de7ca0b6-fc93-487f-8a0a-a170ecbbb943^excessive Alcohol Consumption^99DCT"
                            value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                    Yes
+                    <span class="language en"> Yes </span>
+                    <span class="language kiny"> Yego </span>
                 </label>
+                <br/>
                 <label class="font-normal">
                     <input id="obs.noExcessiveAlcoholConsumption" name="obs.ExcessiveAlcoholConsumption" type="radio"
                            data-concept="de7ca0b6-fc93-487f-8a0a-a170ecbbb943^excessive Alcohol Consumption^99DCT"
                            value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                    No
+                    <span class="language en"> No </span>
+                    <span class="language kiny"> Oya </span>
                 </label>
             </div>
             <div class="form-group">
-                <label class="font-normal">A5. History of taking chronic meds? (HIV,NCD,etc)</label>
+                <label class="font-normal" class="language en">A5. History of taking chronic meds? (HIV,NCD,etc)</label>
+                <label class="font-normal" class="language kiny">A5. Hari imiti ufata mu buryo buhoraho (Imiti ya SIDA, Indwara zitandura</label>
                 <label class="font-normal">
                     <input id="obs.yesHistoryOfTakingChronicMeds" name="obs.HistoryOfTakingChronicMeds" type="radio"
                            data-concept="9837776f-9363-4fe5-9a2c-c4bec9543318^History of taking chronic meds^99DCT"
                            value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                    Yes
+                    <span class="language en"> Yes </span>
+                    <span class="language kiny"> Yego </span>
                 </label>
+                <br/>
                 <label class="font-normal">
                     <input id="obs.noHistoryOfTakingChronicMeds" name="obs.HistoryOfTakingChronicMeds" type="radio"
                            data-concept="9837776f-9363-4fe5-9a2c-c4bec9543318^History of taking chronic meds^99DCT"
                            value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                    No
+                    <span class="language en"> No </span>
+                    <span class="language kiny"> Oya </span>
                 </label>
             </div>
-            <div class="form-group">
+            <div class="form-group" class="language en section">
                 If any "<strong>No</strong>" to question A1 or  <br/>
                 A2 or any "<strong>Yes</strong>" from A3 to <br/>
                 A5: <stong> Give appropriate counselling on <br/>
                 lifestyle modification</stong>
             </div>
+            <div class="form-group" class="language kiny section">
+                Mu gihe akubwiye "<strong>Oya</strong>" kuri A1 na
+                A2 cg se "<strong>Yes</strong>" kuri A3 kugeza kuri
+                A5: <stong> Mugire inama ku byerekeye
+                guhindura imyitwarire</stong>
+            </div>
         </fieldset>
-        <fieldset>
+
+        <h3 class="language en">B. Diabetes</h3>
+        <h3 class="language kiny">B. Indwara ya Diyabete</h3>
+
+        <fieldset class="section">
             <div class="form-group">
-                <h3>B. Diabetes</h3>
-                <label class="font-normal">B1. History of unxplained weight loss?</label>
+                <label class="font-normal" class="language en">B1. History of unxplained weight loss?</label>
+                <label class="font-normal" class="language kiny">B1. Ese waba warananutse cyane ku buryo bugaragara?</label>
                 <label class="font-normal">
                     <input id="obs.yesHistoryOfUnexplainedWeightLoss" name="obs.HistoryOfUnexplainedWeightLoss" type="radio"
                            data-concept="104a674d-3691-44cd-a5fa-a30578c34c40^History of unxplained weight loss^99DCT"
                            value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                    Yes
+                    <span class="language en"> Yes </span>
+                    <span class="language kiny"> Yego </span>
                 </label>
+                <br/>
                 <label class="font-normal">
                     <input class="form-group" id="obs.noHistoryOfUnexplainedWeightLoss" name="obs.HistoryOfUnexplainedWeightLoss" type="radio"
                            data-concept="104a674d-3691-44cd-a5fa-a30578c34c40^History of unxplained weight loss^99DCT"
                            value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                    No
+                    <span class="language en"> No </span>
+                    <span class="language kiny"> Oya </span>
                 </label>
             </div>
             <div class="form-group">
-                <label class="font-normal">B2. History of unusual thirst?</label>
+                <label class="font-normal" class="language en">B2. History of unusual thirst?</label>
+                <label class="font-normal" class="language kiny">B2. Ese waba ugira inyota nyinshi wumva ushaka kunywa amazi kenshi?</label>
+                <br/>
                 <label class="font-normal">
                     <input class="form-group" id="obs.yesHistoryOfUnusualThirst" name="obs.HistoryOfUnusualThirst" type="radio"
                            data-concept="f44d6f03-6b95-4a39-8f5f-b14f7feb07a0^History of unusual thirst^99DCT"
                            value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                    Yes
+                    <span class="language en"> Yes </span>
+                    <span class="language kiny"> Yego </span>
                 </label>
+                <br/>
                 <label class="font-normal">
                     <input class="form-group" id="obs.noHistoryOfUnusualThirst" name="obs.HistoryOfUnusualThirst" type="radio"
                            data-concept="f44d6f03-6b95-4a39-8f5f-b14f7feb07a0^History of unusual thirst^99DCT"
                            value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                    No
+                    <span class="language en"> No </span>
+                    <span class="language kiny"> Oya </span>
                 </label>
             </div>
             <div class="form-group">
-                <label class="font-normal">B3. History of frequent/abundant urination?</label>
+                <label class="font-normal" class="language en">B3. History of frequent/abundant urination?</label>
+                <label class="font-normal" class="language kiny">B3. Ese waba wihagarika kenshi kandi kuri wihagarika inkari nyinshi cyane?</label>
                 <label class="font-normal">
                     <input id="obs.yesHistoryOfFrequentorAbundantUrination" name="obs.HistoryOfFrequentorAbundantUrination" type="radio"
                            data-concept="3020cc9a-b3ee-4293-8f7b-f4489f71164b^History of frequent or abundant urination^99DCT"
                            value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                    Yes
+                    <span class="language en"> Yes </span>
+                    <span class="language kiny"> Yego </span>
                 </label>
+                <br/>
                 <label class="font-normal">
                     <input class="form-group" id="obs.noHistoryOfFrequentorAbundantUrination" name="obs.HistoryOfFrequentorAbundantUrination" type="radio"
                            data-concept="3020cc9a-b3ee-4293-8f7b-f4489f71164b^History of frequent or abundant urination^99DCT"
                            value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                    No
+                    <span class="language en"> No </span>
+                    <span class="language kiny"> Oya </span>
                 </label>
             </div>
             <!--        <div class="form-group">-->
@@ -407,40 +564,58 @@
             <!--            </label>-->
             <!--        </div>-->
             <div class="form-group">
-                <label class="font-normal">B4. History of blood relative family member with type 1 or 2 diabetes?</label>
+                <label class="font-normal" class="language en">B4. History of blood relative family member with type 1 or 2 diabetes?</label>
+                <label class="font-normal" class="language kiny">B4. Ese waba ufite umuntu mu muryango wanyu wa hafi urwara indwara ya diyabeti?</label>
+                <br/>
                 <label class="font-normal">
                     <input class="form-group" id="obs.yesHistoryOfDiabetesType1or2" name="obs.HistoryOfDiabetesType1or2" type="radio"
                            data-concept="4512b014-cfce-4a4b-91a1-8f815fff3da9^History of blood relative family member with type 1 or 2 diabetes^99DCT"
                            value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                    Yes
+                    <span class="language en"> Yes </span>
+                    <span class="language kiny"> Yego </span>
                 </label>
+                <br/>
                 <label class="font-normal">
                     <input class="form-group" id="obs.noHistoryOfDiabetesType1or2" name="obs.HistoryOfDiabetesType1or2" type="radio"
                            data-concept="4512b014-cfce-4a4b-91a1-8f815fff3da9^History of blood relative family member with type 1 or 2 diabetes^99DCT"
                            value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                    No
+                    <span class="language en"> No </span>
+                    <span class="language kiny"> Oya </span>
                 </label>
             </div>
             <div class="form-group">
-                <label class="font-normal">B5. History of high blood glucose (exam, illness,pregnance)?</label>
+                <label class="font-normal" class="language en">B5. History of high blood glucose (exam, illness,pregnance)?</label>
+                <label class="font-normal" class="language kiny">B5. Ese waba warigeze kwipimisha ikizami cy’isukari mu maraso bakakubwira ko ari nyinshi?(mu gihe wari urwaye cg se utwite)</label>
+                <br/>
                 <label class="font-normal">
                     <input class="form-group" id="obs.yesHistoryOfHighBloodGlucose" name="obs.HistoryOfHighBloodGlucose" type="radio"
                            data-concept="abd72056-ab0d-45de-9620-65569436c8ed^History of high blood glucose^99DCT"
                            value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                    Yes
+                    <span class="language en"> Yes </span>
+                    <span class="language kiny"> Yego </span>
                 </label>
+                <br/>
                 <label class="font-normal">
                     <input class="form-group" id="obs.noHistoryOfHighBloodGlucose" name="obs.HistoryOfHighBloodGlucose" type="radio"
                            data-concept="abd72056-ab0d-45de-9620-65569436c8ed^History of high blood glucose^99DCT"
                            value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                    No
+                    <span class="language en"> No </span>
+                    <span class="language kiny"> Oya </span>
                 </label>
             </div>
-
-            <div class="form-group">
-                <h3>Screening test</h3>
-                One or more of a "yes" response, <br/>
-                order the following:
+            <div class="form-group section">
+                <u>
+                    <h3 class="language en">Screening test</h3>
+                    <h3 class="language kiny">Gusaba ikizamini</h3>
+                </u>
+                <label class="language en">
+                    One or more of a "yes" response, <br/>
+                    order the following:
+                </label>
+                <label class="language kiny">
+                    Mu gihe ari “yego” ku kibazo kimwe cg <br/>
+                    byinshi order the following:
+                </label>
                 <br/>
                 <br/>
                 <strong>
@@ -448,104 +623,136 @@
                     <input id="obs.Glycemia" class="form-control" name="obs.Glycemia" type="number" data-concept="3cd4e194-26fe-102b-80cb-0017a47871b2^SERUM GLUCOSE^99DCT"/>
                     mg/dl
                 </strong>
-            </div>
-            <div class="form-group">
+            <br/><br/>
                 <br/>
                 <strong>
                     <label class="font-normal">
                         <input id="obs.fastingGlucoseTest" name="obs.GlucoseTest" type="radio"
                                data-concept="b8de5533-e263-49fe-bb3f-62298365e268^Glucose Test^99DCT"
                                value="2effb850-0384-4a09-8ae0-a7b5f7e7289f^Fasting for blood glucose test^99DCT">
-                        Fasting
+                        <span class="language en"> Fasting </span>
+                        <span class="language kiny"> Nta kintu  ararya </span>
                     </label>
+                    <br/>
                     <label class="font-normal">
                         <input id="obs.randomGlucoseTest" name="obs.GlucoseTest" type="radio"
                                data-concept="b8de5533-e263-49fe-bb3f-62298365e268^Glucose Test^99DCT"
                                value="d2d34adf-9f22-4897-97a1-dbbda02b19dd^Random for blood glucose test^99DCT">
-                        Random
+                        <span class="language en"> Random </span>
+                        <span class="language kiny"> Yari yariye </span>
                     </label>
                 </strong>
             </div>
         </fieldset>
-        <fieldset>
-            <div class="form-group">
-                <h3>C. Cardiovascular diseases</h3>
+        <h3 class="language en">C. Cardiovascular diseases</h3>
+        <h3 class="language kiny">C. Indwara z’umutima</h3>
+        <fieldset class="section">
+            <div class="form-group" >
 
-                <label class="font-normal">C1. Do you have exertion shortness of breath?</label>
+                <label class="font-normal" class="language en">C1. Do you have exertion shortness of breath?</label>
+                <label class="font-normal" class="language kiny">C1. Ese waba uhumeka nabi mu gihe uri gukora <br/>
+                                                                imirimo isanzwe (gukina,guhinga,kuzamuka agasozi <br/>
+                                                                kadakabije n’ibindi….)?</label>
+                <br/>
                 <label class="font-normal">
                     <input class="form-group" id="obs.yesExertionShortnessOfBreath" name="obs.ExertionShortnessOfBreath" type="radio"
                            data-concept="3cf1ae14-26fe-102b-80cb-0017a47871b2^SHORTNESS OF BREATH WITH EXERTION^99DCT"
                            value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                    Yes
+                    <span class="language en"> Yes </span>
+                    <span class="language kiny"> Yego </span>
                 </label>
+                <br/>
                 <label class="font-normal">
                     <input class="form-group" id="obs.noExertionShortnessOfBreath" name="obs.ExertionShortnessOfBreath" type="radio"
                            data-concept="3cf1ae14-26fe-102b-80cb-0017a47871b2^SHORTNESS OF BREATH WITH EXERTION^99DCT"
                            value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                    No
+                    <span class="language en"> No </span>
+                    <span class="language kiny"> Oya </span>
                 </label>
             </div>
             <div class="form-group">
-                <label class="font-normal">C2. Do you have orthopnea?</label>
+                <label class="font-normal" class="language en">C2. Do you have orthopnea?</label>
+                <label class="font-normal" class="language kiny">C2. Ese iyo uryamye ahantu harambuye <br/>
+                                                                    utiseguye uhumeka nabi?</label>
+                <br/>
                 <label class="font-normal">
                     <input class="form-group"id="obs.yesOrthopnea" name="obs.Orthopnea" type="radio"
                            data-concept="afd6d18b-5f0e-4fe0-a2df-426126cd1c59^ORTHOPNEA^99DCT"
                            value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                    Yes
+                    <span class="language en"> Yes </span>
+                    <span class="language kiny"> Yego </span>
                 </label>
+                <br/>
                 <label class="font-normal">
                     <input class="form-group" id="obs.noOrthopnea" name="obs.Orthopnea" type="radio"
                            data-concept="afd6d18b-5f0e-4fe0-a2df-426126cd1c59^ORTHOPNEA^99DCT"
                            value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                    No
+                    <span class="language en"> No </span>
+                    <span class="language kiny"> Oya </span>
                 </label>
             </div>
             <div class="form-group">
-                <label class="font-normal">C3. Do you have current chest pain?</label>
+                <label class="font-normal" class="language en">C3. Do you have current chest pain?</label>
+                <label class="font-normal" class="language kiny">C3. Ese waba ukunda kubabara mu gatuza cyane?</label>
+                <br/>
                 <label class="font-normal">
                     <input class="form-group" id="obs.yesCurrentChestPain" name="obs.CurrentChestPain" type="radio"
                            data-concept="3ccd2364-26fe-102b-80cb-0017a47871b2^CHEST PAIN^99DCT"
                            value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                    Yes
+                    <span class="language en"> Yes </span>
+                    <span class="language kiny"> Yego </span>
                 </label>
+                <br/>
                 <label class="font-normal">
                     <input class="form-group" id="obs.noCurrentChestPain" name="obs.CurrentChestPain" type="radio"
                            data-concept="3ccd2364-26fe-102b-80cb-0017a47871b2^CHEST PAIN^99DCT"
                            value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                    No
+                    <span class="language en"> No </span>
+                    <span class="language kiny"> Oya </span>
                 </label>
             </div>
             <div class="form-group">
-                <label class="font-normal">C4. Do you have History of untreated sore throat?</label>
+                <label class="font-normal" class="language en">C4. Do you have History of untreated sore throat?</label>
+                <label class="font-normal" class="language kiny">C4. Ese waba warigeze kurwara gapfura mu mihogo ariko ntivurwe neza?</label>
+                <br/>
                 <label class="font-normal">
                     <input class="form-group" id="obs.yesHistoryOfUntreatedSoreThroat" name="obs.HistoryOfUntreatedSoreThroat" type="radio"
                            data-concept="653b04a6-677f-4805-ab82-20782ca856fb^History of untreated sore throat^99DCT"
                            value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                    Yes
+                    <span class="language en"> Yes </span>
+                    <span class="language kiny"> Yego </span>
                 </label>
+                <br/>
                 <label class="font-normal">
                     <input class="form-group" id="obs.noHistoryOfUntreatedSoreThroat" name="obs.HistoryOfUntreatedSoreThroat" type="radio"
                            data-concept="653b04a6-677f-4805-ab82-20782ca856fb^History of untreated sore throat^99DCT"
                            value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                    No
+                    <span class="language en"> No </span>
+                    <span class="language kiny"> Oya </span>
                 </label>
             </div>
             <div class="form-group">
-                <label class="font-normal">C5. Do you have History of body swelling?</label>
+                <label class="font-normal" class="language en">C5. Do you have History of body swelling?</label>
+                <label class="font-normal" class="language kiny">C5. Ese waba ubyimba umubiri wose <br/>
+                                                                (ibirenge,mu nda mu maso n’ahandi?</label>
+                <br/>
                 <label class="font-normal">
                     <input class="form-group" id="obs.yesHistoryOfBodySwelling" name="obs.HistoryOfBodySwelling" type="radio"
                            data-concept="baa1918e-bb31-4359-84ed-927ea0ddef85^History of body swelling^99DCT"
                            value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                    Yes
+                    <span class="language en"> Yes </span>
+                    <span class="language kiny"> Yego </span>
                 </label>
+                <br/>
                 <label class="font-normal">
                     <input class="form-group" id="obs.noHistoryOfBodySwelling" name="obs.HistoryOfBodySwelling" type="radio"
                            data-concept="baa1918e-bb31-4359-84ed-927ea0ddef85^History of body swelling^99DCT"
                            value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                    No
+                    <span class="language en"> No </span>
+                    <span class="language kiny"> Oya </span>
                 </label>
             </div>
-            <div>
+            <div class="language en section">
                 One or more of a "yes" <br/>
                 response: <br/>
                 <b>
@@ -553,118 +760,172 @@
                     Heart ultrasound
                 </b>
             </div>
+            <div class="language kiny section">
+                Mu gihe ari “yego” ku <br/>
+                kibazo kimwe cg byinshi:
+                <b>
+                    Agomba gukorerwa isuzuma <br/>
+                    ryimbitse ku ndwara z’umutima .
+                </b>
+            </div>
         </fieldset>
     </div>
 
 
 
-    <h3>Section III. DECISION, SUMMARY OF SCREENING RESULT</h3>
-    <fieldset>
-        <div>
-            <strong>
+    <h3 class="language en">Section III. DECISION, SUMMARY OF SCREENING RESULT</h3>
+    <h3 class="language kiny">Igika cya III. UMWANZURO, INCAMAKE Y’IBIVUYE MU ISUZUMA</h3>
+    <fieldset class="section">
+        <div >
+            <strong class="language en">
                 Identified problem/Disease
+            </strong>
+            <strong class="language kiny">
+                Ikibazo cg se uburwayi bwagaragaye  mu isuzuma
             </strong>
             <br/>
             <label class="font-normal">
-                <input class="form-group" id="obs.NormalIdentifiedProblemOrDisease" name="obs.IdentifiedProblemOrDisease" type="radio"
+                <input class="form-group" id="obs.NormalIdentifiedProblemOrDisease" name="obs.IdentifiedProblemOrDisease" type="checkbox"
                        data-concept="55f90db6-2503-40cc-bedf-3855dd3a19dc^Identified problem or disease^99DCT"
                        value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">
-                Normal
+                <span class="language en"> Normal </span>
+                <span class="language kiny"> Ni muzima </span>
             </label>
+            <br/>
             <label class="font-normal">
-                <input class="form-group" id="obs.OverweightOrObesityIdentifiedProblemOrDisease" name="obs.IdentifiedProblemOrDisease" type="radio"
+                <input class="form-group" id="obs.OverweightOrObesityIdentifiedProblemOrDisease" name="obs.IdentifiedProblemOrDisease" type="checkbox"
                        data-concept="55f90db6-2503-40cc-bedf-3855dd3a19dc^Identified problem or disease^99DCT"
                        value="48237ce3-087f-4f24-9ea9-5165c92c06a6^Overweight or Obesity^99DCT">
-                Overweight/Obesity
+                <span class="language en"> Overweight/Obesity </span>
+                <span class="language kiny"> Arengeje ibiro/umubyibuho ukabije </span>
             </label>
+            <br/>
             <label class="font-normal">
-                <input class="form-group" id="obs.HypertensionIdentifiedProblemOrDisease" name="obs.IdentifiedProblemOrDisease" type="radio"
+                <input class="form-group" id="obs.HypertensionIdentifiedProblemOrDisease" name="obs.IdentifiedProblemOrDisease" type="checkbox"
                        data-concept="55f90db6-2503-40cc-bedf-3855dd3a19dc^Identified problem or disease^99DCT"
                        value="3cd50188-26fe-102b-80cb-0017a47871b2^HYPERTENSION^99DCT">
-                Hypertension
+                <span class="language en"> Hypertension </span>
+                <span class="language kiny"> Umuvuduko w'amaraso </span>
             </label>
+            <br/>
             <label class="font-normal">
-                <input class="form-group" id="obs.DiabetesIdentifiedProblemOrDisease" name="obs.IdentifiedProblemOrDisease" type="radio"
+                <input class="form-group" id="obs.DiabetesIdentifiedProblemOrDisease" name="obs.IdentifiedProblemOrDisease" type="checkbox"
                        data-concept="55f90db6-2503-40cc-bedf-3855dd3a19dc^Identified problem or disease^99DCT"
                        value="edf4ecc4-44f6-457a-b561-179f4426b16a^DIABETES^99DCT">
-                Diabetes
+                <span class="language en"> Diabetes </span>
+                <span class="language kiny"> Diyabeti </span>
             </label>
+            <br/>
             <label class="font-normal">
-                <input class="form-group" id="obs.HeartDiseaseIdentifiedProblemOrDisease" name="obs.IdentifiedProblemOrDisease" type="radio"
+                <input class="form-group" id="obs.HeartDiseaseIdentifiedProblemOrDisease" name="obs.IdentifiedProblemOrDisease" type="checkbox"
                        data-concept="55f90db6-2503-40cc-bedf-3855dd3a19dc^Identified problem or disease^99DCT"
                        value="f40bf9bb-fcaa-4f90-8199-197bc6cb2b03^HEART DISEASE^99DCT">
-                Heart Disease
+                <span class="language en"> Heart Disease </span>
+                <span class="language kiny"> Indwara z'umutima </span>
             </label>
+            <br/>
             <label class="font-normal">
-                <input class="form-group" id="obs.OtherIdentifiedProblemOrDisease" name="obs.IdentifiedProblemOrDisease" type="radio"
+                <input class="form-group" id="obs.OtherIdentifiedProblemOrDisease" name="obs.IdentifiedProblemOrDisease" type="checkbox"
                        data-concept="55f90db6-2503-40cc-bedf-3855dd3a19dc^Identified problem or disease^99DCT"
                        value="3cee7fb4-26fe-102b-80cb-0017a47871b2^OTHER NON-CODED^99DCT">
                 Other (specify:
+                <span class="language en"> Other (specify </span>
+                <span class="language kiny"> Iyindi (yivuge): </span>
             </label>
             <label>
                 <input class="form-group" id="obs.OtherProblem" name="OtherProblem" type="text" data-concept="c548a633-9931-496d-9ade-4b7c971e6600^Other^99DCT"/>
             </label>
         </div>
-        <div>
-            <label >
+        <div class="form-group">
+            <label class="language en">
                 If participant screened positive <br/>
                 (have high BP or High blood glucose, <br/>
                 he/she is new case?
             </label>
+            <label class="language kiny">
+                Mu gihe usanze afite umuvuduko <br/>
+                mwinshi w’amaraso cg se isukari <br/>
+                nyinshi mu maraso:Mubaze ko ari <br/>
+                ubwa mbere bamusanzemo ubwo burwayi
+                (<strong>Ese ni ubwa mbere bagusuzumye  uburwayi?</strong>)
+            </label>
+            <br/>
             <label class="font-normal">
                 <input class="form-group" id="obs.yesNewCase" name="obs.NewCase" type="radio"
                        data-concept="0c47054a-6681-48da-8477-53c8fa52ce44^New case^99DCT"
                        value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
+                <span class="language en"> Yes </span>
+                <span class="language kiny"> Yego </span>
             </label>
+            <br/>
             <label class="font-normal">
                 <input class="form-group" id="obs.noNewCase" name="obs.NewCase" type="radio"
                        data-concept="0c47054a-6681-48da-8477-53c8fa52ce44^New case^99DCT"
                        value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
+                <span class="language en"> No </span>
+                <span class="language kiny"> Oya </span>
             </label>
 
         </div>
 
-        <div>
-            <strong>
-                Interventions
-            </strong>
+        <div class="form-group">
+            <u>
+                <strong class="language en">
+                    Interventions
+                </strong>
+                <strong class="language kiny">
+                    Icyakozwe
+                </strong>
+            </u>
             <br/>
 
             <label class="font-normal">
-                <input class="form-group" id="obs.AnnualCheckupIntervantion" name="obs.Intervention" type="radio"
+                <input class="form-group" id="obs.AnnualCheckupIntervantion" name="obs.Intervention" type="checkbox"
                        data-concept="5c3b38d3-651d-48f2-a8fe-1f54662ef7a1^Interventions^99DCT"
                        value="ceb09f38-a9e1-47b2-9541-31f4de40a434^Annual checkup and lifestyle counselling^99DCT">
-                Annual checkup and lifestyle counseling
+                <span class="language en"> Annual checkup and lifestyle <br/>counseling </span>
+                <span class="language kiny"> Yagiriwe inama yo kwisuzumisha buri mwaka no guhindura imyitwarire </span>
             </label>
             <label class="font-normal">
-                <input class="form-group" id="obs.DiagnosisWorkupIntervention" name="obs.Intervention" type="radio"
+                <input class="form-group" id="obs.DiagnosisWorkupIntervention" name="obs.Intervention" type="checkbox"
                        data-concept="5c3b38d3-651d-48f2-a8fe-1f54662ef7a1^Interventions^99DCT"
                        value="0e63603a-47f7-42c5-b7e7-f920add874c0^Scheduled for diagnosis work up^99DCT">
-                Scheduled for diagnosis work up (at site of screening)
+                <span class="language en"> Scheduled for diagnosis work <br/> up (at site of screening) </span>
+                <span class="language kiny"> Yahawe gahunda yo kongera <br/> kwisuzumisha mu gihe cya vuba. </span>
             </label>
             <label class="font-normal">
-                <input class="form-group" id="obs.ReferralIntervention" name="obs.Intervention" type="radio"
+                <input class="form-group" id="obs.ReferralIntervention" name="obs.Intervention" type="checkbox"
                        data-concept="5c3b38d3-651d-48f2-a8fe-1f54662ef7a1^Interventions^99DCT"
                        value="25782f2c-074f-4834-b7d2-4668cd645a57^referred to^99DCT">
-                Referral to health facility for management or other special investigation/exams
+
+                <span class="language en"> Referral to health facility for <br/> management or other special <br/>investigation/exams </span>
+                <span class="language kiny"> Yoherejwe ku ivuriro <br/> rimwegereye kugirango abashe <br/>kwitabwaho no gupimwa ibindi <br/> bizamini byisumbuye. </span>
             </label>
-            <label>
+            <label class="language en">
                 <br/>
                 Facility:
             </label>
+            <label class="language kiny">
+                <br/>
+                Aho yoherejwe:
+            </label>
+            <br/>
             <label class="font-normal">
                 <input class="form-group" id="obs.ReferreToHealthCenter" name="obs.ReferreTo" type="radio"
                        data-concept="4c12ce40-d2d9-42dc-8202-3ffc91e1e642^Patient referred to where^99DCT"
                        value="7e327a1a-c1df-4712-ab5d-e05dc0dac35d^HEALTH CENTER^99DCT">
-                Health Center
+                <span class="language en"> Health Center </span>
+                <span class="language kiny"> Ku kigonderabuzima </span>
+
             </label>
+            <br/>
             <label class="font-normal">
                 <input class="form-group" id="obs.ReferreToDistrictHospital" name="obs.ReferreTo" type="radio"
                        data-concept="4c12ce40-d2d9-42dc-8202-3ffc91e1e642^Patient referred to where^99DCT"
                        value="e3f356b2-a340-47df-8b87-b70224437833^DISTRICT HOSPITAL^99DCT">
-                District Hospital
+                <span class="language en"> District Hospital </span>
+                <span class="language kiny"> Ku bitaro by’Akarere </span>
+
             </label>
         </div>
 
@@ -760,7 +1021,64 @@
                        $('.show_provider_id_text').show();
                 }
             });
+
+
+            // Add checkboxes representing languages you want to involve in the form.
+            // Each checkbox needs to have an id represting the language it represent and name as "language".
+            // Each label needs to have different translation and a class ressembling the id of the checkbox representing the language.
+
+
+            $(document).on("click", function(event){
+                var classOfClicked = event.target.className;
+                var nameOfClicked = event.target.name;
+                var idOfClicked = event.target.id
+
+
+                if(nameOfClicked =="language" ){
+                    if($("input[id='"+idOfClicked+"']").prop('checked')){
+                            $(".language").hide();
+                            $("."+idOfClicked).show();
+                    }
+                }
+
+            });
+            //setting default language
+            var defaultLang= "en";
+            $("#"+defaultLang).prop("checked", true);
+            $(".language").hide();
+            $("."+defaultLang).show();
+
+            // calculting bmi
+
+            $("#Height").change(function() {
+
+                var height = $("#Height").val();
+                var weight = $("#Weight").val();
+                if(height<10){
+                    alert("height can't be less than 10");
+                    height=0;
+                }
+
+                if(height>0 && weight>0){
+                    var bmi = (weight/(height*height))*10000;
+                    $("#BMI").val(bmi.toFixed(1));
+                }
+            });
+            $("#Weight").change(function() {
+                var height = $("#Height").val();
+                var weight = $("#Weight").val();
+
+                if(height>0 && weight>0){
+                    var bmi = (weight/(height*height))*10000;
+                    $("#BMI").val(bmi.toFixed(1));
+                }
+            });
+
+
+
         });
 </script>
+
+
 
 </html>

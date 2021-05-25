@@ -20,6 +20,7 @@
         @LABORATORY_TESTS_OTHER@ = 3cd9b714-26fe-102b-80cb-0017a47871b2
         @OTHER_LAB_TEST_RESULT@ = 3ce1ca8a-26fe-102b-80cb-0017a47871b2
         @Specimen_Code@ = 16cd65e3-45af-4291-88fd-fe4d91847e4f
+        @Failed_results@ = 3b989534-ca6b-4bef-b99c-cd8397b1cdbe
 
     </macros>
 
@@ -503,7 +504,9 @@ getField('reactionNonCoded3.value')[0].disabled = true;
                 </td>
                 <td>
 
-                    <obs conceptId="$@Test_Result@" answerConceptIds="$@HPV_positive@,$@HPV_negative@" answerLabels="HPV Positive,HPV Negative" style="radio"/>
+                    <obs conceptId="$@Test_Result@" answerConceptIds="$@HPV_positive@,$@HPV_negative@,$@Failed_results@" answerLabels="HPV Positive,HPV Negative,Failed results. Take sample again" style="radio"/>
+
+
 
 <!--                    <obs conceptId="$@Test_Result@" answerConceptId="$@HPV_negative@" answerLabel="HPV Negative" style="checkbox"/>-->
                     <br/><br/>

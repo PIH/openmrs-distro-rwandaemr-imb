@@ -12,7 +12,7 @@
     <script src="js/jquery-autocomplete-min.js"></script>
     <script src="js/muzima.js"></script>
 
-    <title>Call Log or CHW Visit</title>
+    <title>Diagnosis</title>
 </head>
 <body class="col-md-10 col-md-offset-1">
 <div id="pre_populate_data"></div>
@@ -91,128 +91,119 @@
         </div>
     </div>
     <hr/>
-    <h3>Call log or CHW Visit </h3>
+    <h3>Diagnosis </h3>
     <div class="form-group">
         <fieldset>
-            <div>
-                <label>This was a:</label>
-            </div>
-            <label class="font-normal">
-                <input id="obs.CalllogMean" name="obs.logMean" type="radio"
-                       data-concept="98672ac7-510e-4871-a0a1-81de095cf326^Type of Attempt^99DCT"
-                       value="ce01fc27-05c3-425e-877a-5dbb52a9ae6a^Phone call^99DCT">
-                Call
+            <label>
+                Confirmed cancer?
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.CHWVisitlogMean" name="obs.logMean" type="radio"
-                       data-concept="98672ac7-510e-4871-a0a1-81de095cf326^Type of Attempt^99DCT"
-                       value="355b7292-69af-414e-8985-086ec802e017^CHW Visit^99DCT">
-                CHW Visit
+                <input id="obs.yesCancerConfimed" name="obs.CancerConfimed" type="radio"
+                       data-concept="3d762b82-f951-4d13-b147-6aaba63b25d1^CONFIRMED DIAGNOSIS^99DCT"
+                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                Cancer Confirmed
             </label>
-
+            <br/>
+            <label class="font-normal">
+                <input id="obs.noCancerConfimed" name="obs.CancerConfimed" type="radio"
+                       data-concept="3d762b82-f951-4d13-b147-6aaba63b25d1^CONFIRMED DIAGNOSIS^99DCT"
+                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                Not Cancer
+            </label>
         </fieldset>
     </div>
     <div class="form-group">
         <fieldset>
-            <div>
-                <label>Next Step:</label>
+            <label>
+                Cancer Diagnosis:
+            </label>
+            <br/>
+            <label class="font-normal">
+                <input id="obs.BreastCancer" name="obs.CancerDiagnosis" type="radio"
+                       data-concept="3dc2eb50-6981-43d3-b907-e3dd8b5ed620^Confirmed cancer diagnosis^99DCT"
+                       value="e1bd83f4-e9fa-4564-b8aa-74a9b199aca8^Breast Cancer^99DCT">
+                Breast Cancer
+            </label>
+            <br/>
+            <label class="font-normal">
+                Histology:
+                <textarea class="form-control" id="obs.BreastCancerHistory"
+                          name="obs.BreastCancerHistory" type="text"  cols="80"
+                          data-concept="7625e1b7-7571-485e-b023-20a7d03dc7dc^Breast Cancer Histology^99DCT"></textarea>
+            </label>
+            <br/>
+            <label class="font-normal">
+                <input id="obs.cervicalCancer" name="obs.CancerDiagnosis" type="radio"
+                       data-concept="3dc2eb50-6981-43d3-b907-e3dd8b5ed620^Confirmed cancer diagnosis^99DCT"
+                       value="36052b70-ba49-466f-a4eb-bc99581be7a2^Cervical cancer^99DCT">
+                Cervical Cancer
+            </label>
+            <br/>
+            <label class="font-normal">
+                Histology:
+                <textarea class="form-control" id="obs.CervicalCancerHistory"
+                          name="obs.CervicalCancerHistory" type="text"  cols="80"
+                          data-concept="3cef6fc6-49e1-490c-829f-d9003a7b50ad^Cervical cancer Histology^99DCT"></textarea>
+            </label>
+            <br/>
+            <label class="font-normal">
+                <input id="obs.other" name="obs.CancerDiagnosis" type="radio"
+                       data-concept="3dc2eb50-6981-43d3-b907-e3dd8b5ed620^Confirmed cancer diagnosis^99DCT"
+                       value="3cee7fb4-26fe-102b-80cb-0017a47871b2^OTHER NON-CODED^99DCT">
+                Other cancer
+            </label>
+            <br/>
+            <label class="font-normal">
+                Histology:
+                <textarea class="form-control" id="obs.otherCancerHistory"
+                          name="obs.otherCancerHistory" type="text"
+                          data-concept="b99ff54e-4e1b-4277-89ab-136eab980621^Other Histology^99DCT"></textarea>
+            </label>
+            <br/>
+            <label class="font-normal"> <strong> Date of next visit:  </strong> </label>
+            <br/>
+            <label class="font-normal">
+                <input class="form-control datepicker future-or-today-date" id="obs.BreastDispositionNextDate" name="obs.BreastDispositionNextDate" type="text"
+                       data-concept="3ce94df0-26fe-102b-80cb-0017a47871b2^RETURN VISIT DATE^99DCT"/>
+            </label>
+
+
+
+            <!--            <label class="font-normal"> <strong> Obs image:  </strong> </label>-->
+            <!--            <br/>-->
+            <!--            <label class="font-normal">-->
+            <!--                <input  id="obs.complexobs" name="obs.complexobs" type="file"-->
+            <!--                       data-concept="508a631a-5db4-419e-b90f-a27c51dfa105^testing muzima media^99DCT"/>-->
+            <!--            </label>-->
+
+
+            <div class="section repeat consultation_image" id="consultation_image" data-name="consultation_image"
+                 data-concept="9058^testing muzima media, IMAGE, DETAILED^99DCT">
+                <h4><b>Attach Image</b></h4>
+
+                <div class="form-group">
+                    <label for="obs.consultation_image">Consultation Image:<span class="required">*</span></label>
+                    <input type="button" class='btn image_btn'>
+                    <input class="image_text form-control" id="obs.consultation_image" readonly="readonly"
+                           name="obs.consultation_image" type="hidden" data-concept="9027^CAPTURED CLINICAL MEDIA, IMAGE^99DCT"/>
+                    <div class="form-group">
+                        <label for="obs.consultation_image_caption">Image Caption:</label>
+                        <input class="form-control" id="obs.consultation_image_caption" readonly="readonly"
+                               name="obs.consultation_image_caption" type="text" required="required"
+                               data-concept="9057^CAPTURED CLINICAL MEDIA FREETEXT CAPTION, IMAGE^99DCT">
+                    </div>
+                </div>
             </div>
-            <label class="font-normal">
-                <input id="obs.CallAsNextStep" name="obs.NextStep" type="radio"
-                       data-concept="e79ccc1c-903a-453f-871b-2e40a47ad23e^call log next step^99DCT"
-                       value="ce01fc27-05c3-425e-877a-5dbb52a9ae6a^Phone call^99DCT">
-                Call again
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.CHWVisitAsNextStep" name="obs.NextStep" type="radio"
-                       data-concept="e79ccc1c-903a-453f-871b-2e40a47ad23e^call log next step^99DCT"
-                       value="355b7292-69af-414e-8985-086ec802e017^CHW Visit^99DCT">
-                CHW Visit
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.NewAppointmentAsNextStep" name="obs.NextStep" type="radio"
-                       data-concept="e79ccc1c-903a-453f-871b-2e40a47ad23e^call log next step^99DCT"
-                       value="5a2cd0f1-aeb1-4f9d-ae56-1023a336acfb^RDV Changed^99DCT">
-                New Appointment
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.PatientWillNotReturnAsNextStep" name="obs.NextStep" type="radio"
-                       data-concept="e79ccc1c-903a-453f-871b-2e40a47ad23e^call log next step^99DCT"
-                       value="95fc1647-ddc8-4a78-80cb-2049c6cb706a^patient will not return^99DCT">
-                patient will not return
-            </label>
-
-        </fieldset>
-    </div>
-    <div class="section">
-        <fieldset>
-        <label class="font-normal">
-            Date of next visit:
-            <input class="form-control datepicker future-or-today-date" id="obs.NextDate" name="obs.NextDate" type="text"
-                   readonly="readonly" data-concept="3ce94df0-26fe-102b-80cb-0017a47871b2^RETURN VISIT DATE^99DCT"/>
-        </label>
-            <br/>
-        <label class="font-normal">
-            Next appointment location (if different from before)
-            <br/>
-            <input class="form-control" id="obs.NextVisitLocation" name="obs.NextVisitLocation" type="text"
-                   data-concept="4c80b141-2287-4397-bfe6-3e06b8aa2604^Other return visit location^99DCT"/>
-        </label>
-        </fieldset>
-    </div>
-
-    <div class="form-group">
-        <fieldset>
-            <div>
-                <label>Result of call:</label>
-            </div>
-            <label class="font-normal">
-                <input id="obs.PatientDiedResultOfCall" name="obs.ResultOfCall" type="radio"
-                       data-concept="f89b3523-c37a-4d50-ace7-cc50f2292d77^Result of Call^99DCT"
-                       value="3cdd446a-26fe-102b-80cb-0017a47871b2^PATIENT DIED^99DCT">
-                Patient Died
-
-            </label>
-            <br/>
-            <label class="font-normal">
-                Date:
-                <input class="form-control datepicker" id="obs.DeathDate" name="obs.DeathDate" type="text"
-                       readonly="readonly" data-concept="ce0afb8a-35b3-496e-8ac9-37c3b8f6592e^Date of Death^99DCT"/>
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.lostToFollowUpResultOfCall" name="obs.ResultOfCall" type="radio"
-                       data-concept="f89b3523-c37a-4d50-ace7-cc50f2292d77^Result of Call^99DCT"
-                       value="3ceb0ed8-26fe-102b-80cb-0017a47871b2^LOST TO FOLLOWUP^99DCT">
-                Patient Lost to follow-up
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.TransferResultOfCall" name="obs.ResultOfCall" type="radio"
-                       data-concept="f89b3523-c37a-4d50-ace7-cc50f2292d77^Result of Call^99DCT"
-                       value="3a296bb6-5fc8-40ee-84fc-97c13cacf8d8^Transfered^99DCT">
-                Transfer
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.DecidedNotToReturnResultOfCall" name="obs.ResultOfCall" type="radio"
-                       data-concept="f89b3523-c37a-4d50-ace7-cc50f2292d77^Result of Call^99DCT"
-                       value="3cdd5176-26fe-102b-80cb-0017a47871b2^PATIENT DEFAULTED^99DCT">
-                Decided not to return
-            </label>
 
         </fieldset>
     </div>
 
 
-<!--    <div>-->
-<!--        <input id="save_draft" name="save_draft" type="submit" value="Draft"/>-->
-<!--        <input id="submit_form" name="submit_form" type="submit" value="submit"/>-->
-<!--    </div>-->
+    <div>
+        <input id="save_draft" name="save_draft" type="submit" value="Draft"/>
+        <input id="submit_form" name="submit_form" type="submit" value="submit"/>
+    </div>
 </form>
 
 </body>

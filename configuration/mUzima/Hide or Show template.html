@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery Get Class of Clicked Element</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+    // helps in hide and show. Just set name of checkbox/radio to equate
+    // the class on div to hide, set activate/deactive class on the checkbox/radio
+    // to be clicked
+    $(document).on("click", function(event){
+        var classOfClicked = event.target.className;
+        var nameOfClicked = event.target.name;
+        var idOfClicked = event.target.id
+
+        if($("input[id='"+idOfClicked+"']").prop('checked')){
+            if(classOfClicked=="activate" ){
+                $("div."+nameOfClicked).show();
+            }
+            else if (classOfClicked=="deactivate"){
+                $("div."+nameOfClicked).hide();
+            }
+        }
+        else if(!$("input[id='"+idOfClicked+"']").prop('checked')){
+            if(classOfClicked=="activate" ){
+                $("div."+nameOfClicked).hide();
+            }
+            else if (classOfClicked=="deactivate"){
+                $("div."+nameOfClicked).show();
+            }
+        }
+    });
+</script>
+</head>
+<body>
+<label class="font-normal"> Screened for cervical cancer in the past: </label>
+<br/>
+<div class="rebaaa ScreeningThough">
+    <label class="font-normal">
+        <input class="activate" id="obs.PreviousCervicalScreeningYes" name="PreviousCervicalScreening" type="radio"
+               data-concept="51f341af-9e34-4624-b614-65c50caa23c3^previous Screening^99DCT"
+               value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+        Yes
+    </label>
+    <br/>
+    <label class="font-normal">
+        <input class="deactivate" id="obs.PreviousCervicalScreeningNo" name="PreviousCervicalScreening" type="radio"
+               data-concept="51f341af-9e34-4624-b614-65c50caa23c3^previous Screening^99DCT"
+               value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+        No
+    </label>
+</div>
+<br/>
+<div class="PreviousCervicalScreening">
+    <label class="font-normal"> If yes, screening was through: </label>
+    <br/>
+    <label>
+        <input id="obs.ScreeningThoughVIA" name="ScreeningThough" type="checkbox"
+               data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
+               value="6178405e-c115-4e78-b9e0-fb0811a2bb2d^visual inspection with Acetic Acid^99DCT">
+        VIA
+    </label>
+    <br/>
+    <label>
+        <input id="obs.ScreeningThoughPapSmear" name="obs.ScreeningThough" type="checkbox"
+               data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
+               value="3cd4de2e-26fe-102b-80cb-0017a47871b2^PAPANICOLAOU SMEAR^99DCT">
+        Pap smear
+    </label>
+    <br/>
+    <label>
+        <input id="obs.ScreeningThoughHPVDNATest" name="obs.ScreeningThough" type="checkbox"
+               data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
+               value="f7c2d59d-2043-42ce-b04d-08564d54b0c7^HPV DNA test^99DCT">
+        HPV DNA test
+    </label>
+    <br/>
+    <label class="font-normal">Result of past screening</label>
+    <br/>
+    <label class="font-normal">
+        <input id="obs.PositivePastScreeningResult" name="obs.PastScreeningResult" type="checkbox"
+               data-concept="5dafee1b-3763-47a9-bb82-1c1fce4fd4cd^Result of past screening^99DCT"
+               value="3cd3a7a2-26fe-102b-80cb-0017a47871b2^POSITIVE^99DCT">
+        Positive
+    </label>
+    <br/>
+    <label class="font-normal">
+        <input id="obs.NegativePastScreeningResult" name="obs.PastScreeningResult" type="checkbox"
+               data-concept="5dafee1b-3763-47a9-bb82-1c1fce4fd4cd^Result of past screening^99DCT"
+               value="3cd28732-26fe-102b-80cb-0017a47871b2^NEGATIVE^99DCT">
+        Negative
+    </label>
+    <br/>
+    <label class="font-normal">
+        <input id="obs.ResultsNotReceivedPastScreeningResult" name="obs.PastScreeningResult" type="checkbox"
+               data-concept="5dafee1b-3763-47a9-bb82-1c1fce4fd4cd^Result of past screening^99DCT"
+               value="1f51f817-bdcc-494d-b4d9-f15ed2ac60d4^Not received^99DCT">
+        Results not received
+    </label>
+</div>
+</body>
+</html>

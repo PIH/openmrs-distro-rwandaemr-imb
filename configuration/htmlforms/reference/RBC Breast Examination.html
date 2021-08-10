@@ -137,6 +137,12 @@
             @Follow-up_at_this_health_facility@ = d0e94536-0b91-40a1-b994-04bb4f5cd15d
             @nipple_retraction@ = 65df0c5e-a638-41dc-857f-129e32ff1af9
             @suspicion_of_benign_mass@ = f1e01159-b28d-427a-a6bb-e05ce0768324
+            @Suspected_cancer_diagnosis@ = 476123d7-54f1-4278-92f1-2de4f19ae951
+            @thermal-ablation@ = ef4d5bd3-2c4e-4ac2-9b91-9d4ba12b44f8
+            @Cryotherapy@ = e48bc8db-8f6e-4556-9083-0a000a136e95
+
+            @Reasons_for_Referral_In@ = cc227602-a240-43fb-926d-b6ad3f42edab
+            @Other_reason_for_referral_in@ = be706af6-f25d-4bfa-aec7-0f6b3ede600e
 
 
         </macros>
@@ -370,7 +376,7 @@
                         }
 
                     });
-                    $(".initialHide").hide();
+                    $j(".initialHide").hide();
 
                 });
             }
@@ -455,29 +461,39 @@
         </section>
         <section >
             <table class="form-group">
-                <!--            <tr>-->
-                <!--                <td>-->
-                <!--                    <label>Entry mode:</label>-->
-                <!--                </td>-->
-                <!--                <td>-->
-                <!--&lt;!&ndash;                <label class="font-normal">&ndash;&gt;-->
-                <!--&lt;!&ndash;                    <input id="obs.EntryModeVoluntary" name="obs.EntryMode" type="radio"&ndash;&gt;-->
-                <!--&lt;!&ndash;                           data-concept="5c1c525c-07f0-4a76-bcff-f64cf1f7108d^Entry mode^99DCT"&ndash;&gt;-->
-                <!--&lt;!&ndash;                           value="6c31b035-4a63-48e0-bfed-e8dd32c00475^Voluntary^99DCT">&ndash;&gt;-->
-                <!--                    <obs conceptId="$@Entry_mode@" answerConceptIds="$@Voluntary@,$@TRANSFER_IN_FROM@" answerLabels="Voluntary check-up/screening,Referred from Health Facility" style="radio" />-->
-                <!--&lt;!&ndash;                    Voluntary check-up/screening&ndash;&gt;-->
-                <!--&lt;!&ndash;                </label>&ndash;&gt;-->
-                <!--&lt;!&ndash;                <label class="font-normal">&ndash;&gt;-->
-                <!--&lt;!&ndash;                    <input id="obs.EntryModeTRANSFER" name="obs.EntryMode" type="radio"&ndash;&gt;-->
-                <!--&lt;!&ndash;                           data-concept="5c1c525c-07f0-4a76-bcff-f64cf1f7108d^Entry mode^99DCT"&ndash;&gt;-->
-                <!--&lt;!&ndash;                           value="3cda3efa-26fe-102b-80cb-0017a47871b2^TRANSFER IN FROM^99DCT">&ndash;&gt;-->
-                <!--&lt;!&ndash;                    Referred from Health Facility&ndash;&gt;-->
-                <!--&lt;!&ndash;                </label>&ndash;&gt;-->
-                <!--&lt;!&ndash;                <label class="font-normal">&ndash;&gt;-->
-                <!--&lt;!&ndash;                    <input id="obs.NameOfReferring" class="form-control" name="obs.NameOfReferring" type="text" data-concept="3cda3efa-26fe-102b-80cb-0017a47871b2^TRANSFER IN FROM^99DCT"/>&ndash;&gt;-->
-                <!--                    <obs id="obs.NameOfReferring" conceptId="$@TRANSFER_IN_FROM@" />-->
-                <!--                </td>-->
-                <!--            </tr>-->
+                <tr>
+                    <td>
+                        <label>Entry mode:</label>
+                    </td>
+                    <td>
+    <!--                <label class="font-normal">-->
+    <!--                    <input id="obs.EntryModeVoluntary" name="obs.EntryMode" type="radio"-->
+    <!--                           data-concept="5c1c525c-07f0-4a76-bcff-f64cf1f7108d^Entry mode^99DCT"-->
+    <!--                           value="6c31b035-4a63-48e0-bfed-e8dd32c00475^Voluntary^99DCT">-->
+                        <obs conceptId="$@Entry_mode@" answerConceptIds="$@Voluntary@,$@TRANSFER_IN_FROM@" answerLabels="Voluntary check-up/screening,Referred from Health Facility" style="radio" />
+    <!--                    Voluntary check-up/screening-->
+    <!--                </label>-->
+    <!--                <label class="font-normal">-->
+    <!--                    <input id="obs.EntryModeTRANSFER" name="obs.EntryMode" type="radio"-->
+    <!--                           data-concept="5c1c525c-07f0-4a76-bcff-f64cf1f7108d^Entry mode^99DCT"-->
+    <!--                           value="3cda3efa-26fe-102b-80cb-0017a47871b2^TRANSFER IN FROM^99DCT">-->
+    <!--                    Referred from Health Facility-->
+    <!--                </label>-->
+    <!--                <label class="font-normal">-->
+    <!--                    <input id="obs.NameOfReferring" class="form-control" name="obs.NameOfReferring" type="text" data-concept="3cda3efa-26fe-102b-80cb-0017a47871b2^TRANSFER IN FROM^99DCT"/>-->
+                        <obs id="obs.NameOfReferring" conceptId="$@TRANSFER_IN_FROM@" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Reason for referral In:</label>
+                    </td>
+                    <td>
+                        <obs conceptId="$@Reasons_for_Referral_In@" answerConceptIds="$@Further_management@,$@Medical_Imaging@,$@BIOPSY@,$@OTHER_NON-CODED@"
+                             answerLabels="Further management,Imaging,biopsy,Other reasons" />
+                        Other reasons: <obs conceptId="$@Other_reason_for_referral_in@"/>
+                    </td>
+                </tr>
                 <tr class="form-group">
                     <td for="obs.visitReason">Reason for visit (check one)</td>
 

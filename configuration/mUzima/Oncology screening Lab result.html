@@ -112,27 +112,27 @@
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.positiveHPVTestResult" name="obs.HPVTestResult" type="radio"
+                <input  class="activate" id="obs.positiveHPVTestResult" name="HPVTestResult" type="radio"
                        data-concept="bfb3eb1e-db98-4846-9915-0168511c6298^Test Result^99DCT"
                        value="1b4a5f67-6106-4a4d-a389-2f430be543e4^HPV positive^99DCT">
                 HPV Positive
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.negativeHPVTestResult" name="obs.HPVTestResult" type="radio"
+                <input  class="deactivate" id="obs.negativeHPVTestResult" name="HPVTestResult" type="radio"
                        data-concept="bfb3eb1e-db98-4846-9915-0168511c6298^Test Result^99DCT"
                        value="64c23192-54e4-4750-9155-2ed0b736a0db^HPV negative^99DCT">
                 HPV Negative
             </label>
             <label class="font-normal">
-                <input id="obs.failedResultHPVTestResult" name="obs.HPVTestResult" type="radio"
+                <input  class="deactivate" id="obs.failedResultHPVTestResult" name="HPVTestResult" type="radio"
                        data-concept="bfb3eb1e-db98-4846-9915-0168511c6298^Test Result^99DCT"
                        value="3b989534-ca6b-4bef-b99c-cd8397b1cdbe^Failed results^99DCT">
                 Failed results. Take sample again
             </label>
 
         </div>
-        <div class="form-group">
+        <div class="form-group HPVTestResult">
             <label>If Positive specify</label>
             <br/>
             <label class="font-normal">
@@ -226,7 +226,38 @@
                     toggleValidationMessages(errors);
                 }
             });
+            // helps in hide and show. Just set name of checkbox/radio to equate
+        // the class on div to hide, set activate/deactive class on the checkbox/radio
+        // to be clicked
+        $(document).on("click", function(event){
+            var classOfClicked = event.target.className;
+            var nameOfClicked = event.target.name;
+            var idOfClicked = event.target.id
+
+            if($("input[id='"+idOfClicked+"']").prop('checked')){
+                if(classOfClicked=="activate" ){
+                    $("div."+nameOfClicked).show();
+                }
+                else if (classOfClicked=="deactivate"){
+                    $("."+nameOfClicked).find("input").attr("checked",false);
+                    $("."+nameOfClicked).find("input").val("");
+                    $("div."+nameOfClicked).hide();
+                }
+            }
+            else if(!$("input[id='"+idOfClicked+"']").prop('checked')){
+                if(classOfClicked=="activate" ){
+                    $("."+nameOfClicked).find("input").attr("checked",false);
+                    $("."+nameOfClicked).find("input").val("");
+                    $("div."+nameOfClicked).hide();
+                }
+                else if (classOfClicked=="deactivate"){
+                    $("div."+nameOfClicked).show();
+                }
+            }
         });
+        $(".initialHide").hide();
+        });
+
 </script>
 
 </html>

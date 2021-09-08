@@ -557,7 +557,7 @@
     <h3>CERVICAL CANCER SCREENING RESULTS AND MANAGEMENT</h3>
     <hr/>
     <fieldset>
-        <div class="section">
+        <div class="section checkboxGroup">
             <!--            <label class="font-normal"> Screening <strong>completed</strong> today? </label>-->
             <!--            <label class="font-normal">-->
             <!--                <input id="obs.ScreeningCompletedTodayYes" name="obs.ScreeningCompletedToday" type="radio"-->
@@ -1537,8 +1537,18 @@
             $(document).on("click", function(event){
                 var classOfClicked = event.target.className;
                 var nameOfClicked = event.target.name;
-                var idOfClicked = event.target.id
-
+                var idOfClicked = event.target.id;
+                var parentElement = $("input[id='"+idOfClicked+"']").parent().parent();
+                if(parentElement.hasClass("checkboxGroup")) {
+                    parentElement.children().each(function () {
+                        var nameOfElement = $(this).find("input").attr("name");
+                        var idOfElement = $(this).find("input").attr("id");
+                        if(idOfElement!=idOfClicked){
+                           $("input[id='"+idOfElement+"']").prop('checked', false)
+                        }
+                        $("."+nameOfElement).hide();
+                    })
+                }
                 if($("input[id='"+idOfClicked+"']").prop('checked')){
                     if(classOfClicked=="activate" ){
                         $("div."+nameOfClicked).show();

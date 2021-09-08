@@ -414,7 +414,13 @@
                         //var classesOfTheClicked = $j(this).prop('class');
                         var idOfTheClicked = $j(this).attr('id');
                         var titleOfTheClicked = $j(this).attr('title');
-
+                        var parentElement = $j("#"+idOfTheClicked ).parent()
+                        if(parentElement.hasClass("checkboxGroup")) {
+                            parentElement.children().each(function () {
+                                var titleOfelement = $j(this).attr('title');
+                                $j("."+titleOfelement).hide();
+                            })
+                        }
                         if($j("#"+idOfTheClicked ).children().prop("checked")){
 
                             $j("."+titleOfTheClicked).show();
@@ -432,7 +438,13 @@
                         //var classesOfTheClicked = $j(this).prop('class');
                         var idOfTheClicked = $j(this).attr('id');
                         var titleOfTheClicked = $j(this).attr('title');
-
+                        var parentElement = $j("#"+idOfTheClicked ).parent()
+                        if(parentElement.hasClass("checkboxGroup")) {
+                            parentElement.children().each(function () {
+                                var titleOfelement = $j(this).attr('title');
+                                $j("."+titleOfelement).show();
+                            })
+                        }
                         if($j("#"+idOfTheClicked ).children().prop("checked")){
 
                             $j("."+titleOfTheClicked).find("input").attr("checked",false);

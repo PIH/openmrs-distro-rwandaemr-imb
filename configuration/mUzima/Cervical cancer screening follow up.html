@@ -137,6 +137,47 @@
             </div>
         </fieldset>
     </div>
+    <div >
+        <label class="font-normal"> <strong> Reason for referral in: </strong> </label>
+        <br/>
+        <label class="font-normal">
+            <input id="obs.ReasonForReferralInSuspectedCancer" name="obs.ReasonForReferralInSuspectedCancer" type="radio"
+                   data-concept="cc227602-a240-43fb-926d-b6ad3f42edab^Reasons for Referral In^99DCT"
+                   value="476123d7-54f1-4278-92f1-2de4f19ae951^Suspected cancer diagnosis^99DCT">
+            Suspected cancer
+        </label>
+        <br/>
+        <label class="font-normal">
+            <input id="obs.ReasonForReferralInThermoAblation" name="obs.ReasonForReferralInThermoAblation" type="radio"
+                   data-concept="cc227602-a240-43fb-926d-b6ad3f42edab^Reasons for Referral In^99DCT"
+                   value="ef4d5bd3-2c4e-4ac2-9b91-9d4ba12b44f8^thermo-ablation^99DCT">
+            Thermal ablation
+        </label>
+        <br/>
+        <label class="font-normal">
+            <input id="obs.ReasonForReferralInCryotherapy" name="obs.ReasonForReferralInCryotherapy" type="radio"
+                   data-concept="cc227602-a240-43fb-926d-b6ad3f42edab^Reasons for Referral In^99DCT"
+                   value="e48bc8db-8f6e-4556-9083-0a000a136e95^Cryotherapy^99DCT">
+            Cryotherapy
+        </label>
+        <br/>
+        <label class="font-normal">
+            <input id="obs.ReasonForReferralInLEEP" name="obs.ReasonForReferralInLEEP" type="radio"
+                   data-concept="cc227602-a240-43fb-926d-b6ad3f42edab^Reasons for Referral In^99DCT"
+                   value="55040927-bae5-410c-80da-c79f7574167f^Loop Electrosurgical Excision Procedure^99DCT">
+            LEEP
+        </label>
+        <br/>
+        <label class="font-normal">
+            <input id="obs.ReasonForReferralInOther" name="obs.ReasonForReferralInOther" type="radio"
+                   data-concept="cc227602-a240-43fb-926d-b6ad3f42edab^Reasons for Referral In^99DCT"
+                   value="3cee7fb4-26fe-102b-80cb-0017a47871b2^OTHER NON-CODED^99DCT">
+            Other reasons
+            <br/>
+            <input id="obs.OtherReasonForReferralIn" class="form-control" name="obs.OtherReasonForReferralIn" type="text" data-concept="be706af6-f25d-4bfa-aec7-0f6b3ede600e^Other reason for referral in^99DCT"/>
+
+        </label>
+    </div>
     <hr/>
     <!--    <div class="form-group">-->
     <!--        <fieldset>-->
@@ -536,7 +577,7 @@
             <label class="font-normal">Screening type: </label>
             <br/>
             <label class="font-normal">
-                <input class="activate" id="obs.ScreeningTypeHPV" name="ScreeningTypeHPV" type="checkbox"
+                <input class="activate" id="obs.ScreeningTypeHPV" name="ScreeningTypeHPV" type="radio"
                        data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
                        value="f7c2d59d-2043-42ce-b04d-08564d54b0c7^HPV DNA test^99DCT">
                 HPV
@@ -544,14 +585,14 @@
             </label>
             <br/>
             <label class="font-normal">
-                <input class="activate" id="obs.ScreeningTypeVIA" name="ScreeningTypeVIA" type="checkbox"
+                <input class="activate" id="obs.ScreeningTypeVIA" name="ScreeningTypeVIA" type="radio"
                        data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
                        value="6178405e-c115-4e78-b9e0-fb0811a2bb2d^visual inspection with Acetic Acid^99DCT">
                 VIA
             </label>
             <br/>
             <label class="font-normal">
-                <input class="activate" id="obs.ScreeningTypePapSmear" name="ScreeningTypePAPSmear" type="checkbox"
+                <input class="activate" id="obs.ScreeningTypePapSmear" name="ScreeningTypePAPSmear" type="radio"
                        data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
                        value="3cd4de2e-26fe-102b-80cb-0017a47871b2^PAPANICOLAOU SMEAR^99DCT">
                 Pap smear
@@ -859,25 +900,27 @@
             <label class="font-normal"> <u><strong> Suspicion of STIs:  </strong> </u> </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.STIsSuspicionYes" name="obs.STIsSuspicion" type="radio"
+                <input class="activate" id="obs.STIsSuspicionYes" name="STIsSuspicion" type="radio"
                        data-concept="b7397d58-bee5-48c7-a5fd-aedca2ec1fec^Sexual transmitted Infection suspicion^99DCT"
                        value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
                 Yes
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.STIsSuspicionNo" name="obs.STIsSuspicion" type="radio"
+                <input class="deactivate" id="obs.STIsSuspicionNo" name="STIsSuspicion" type="radio"
                        data-concept="b7397d58-bee5-48c7-a5fd-aedca2ec1fec^Sexual transmitted Infection suspicion^99DCT"
                        value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
                 No
             </label>
             <br/>
-            <label>, if yes specify</label>
-            <br/>
-            <label class="font-normal">
-                <input id="obs.STIsSuspicionSpecify" class="form-control" name="obs.STIsSuspicionSpecify"
-                       type="text" data-concept="a8b35975-7680-4ef1-8298-de222d361eb8^SEXUALLY TRANSMITTED INFECTION NON-CODED^99DCT"/>
-            </label>
+            <span class="STIsSuspicion">
+                <label>, if yes specify</label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.STIsSuspicionSpecify" class="form-control" name="obs.STIsSuspicionSpecify"
+                           type="text" data-concept="a8b35975-7680-4ef1-8298-de222d361eb8^SEXUALLY TRANSMITTED INFECTION NON-CODED^99DCT"/>
+                </label>
+            </span>
             <br/>
             <label class="font-normal"> <strong> Other Diagnosis:  </strong> </label>
             <br/>
@@ -976,7 +1019,7 @@
         <div class="section LevelOfCare">
             <h3 class="font-normal">Biopsy</h3>
             <br/>
-            <label class="font-normal"> <strong> Biopsy performed today? </strong> </label>
+            <label class="font-normal"> <strong> Biopsy performed ? </strong> </label>
             <br/>
             <label class="font-normal">
                 <input  id="obs.BiopsyPerformedYes" name="BiopsyPerformed" type="radio"
@@ -1036,11 +1079,93 @@
                 </label>
                 <br/>
                 <label class="font-normal">
-                    <input id="obs.BiopsyResultsInvasiveCancer" name="obs.BiopsyResults" type="checkbox"
+                    <input class="activate" id="BiopsyResultsInvasiveCancer" name="obs.BiopsyResults" type="checkbox"
                            data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"
                            value="3ce5d01c-26fe-102b-80cb-0017a47871b2^INVASIVE CERVICAL CARCINOMA^99DCT">
                     Invasive cancer
                 </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.BiopsyResultsOther" name="obs.BiopsyResults" type="checkbox"
+                           data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"
+                           value="3cee7fb4-26fe-102b-80cb-0017a47871b2^OTHER NON-CODED^99DCT">
+                    Other:
+                </label>
+                <br/>
+                <label class="font-normal">
+                    <input id="obs.BiopsyResultsOtherSpecify" class="form-control" name="obs.BiopsyResults"
+                           type="text" data-concept="bd551dfc-e4c8-4bf1-bea1-96e831d934b2^BIOPSY RESULT Text^99DCT"/>
+                </label>
+            </div>
+            <div class="form-group initialHide BiopsyResults">
+                <fieldset>
+                    <div class="CancerConfimed">
+                        <label>
+                            Cancer Diagnosis:
+                        </label>
+                    </div>
+                    <br/>
+                    <div class="CancerConfimed">
+                        <label class="font-normal">
+                            <input id="obs.BreastCancer" name="obs.CancerDiagnosis" type="radio"
+                                   data-concept="3dc2eb50-6981-43d3-b907-e3dd8b5ed620^Confirmed cancer diagnosis^99DCT"
+                                   value="e1bd83f4-e9fa-4564-b8aa-74a9b199aca8^Breast Cancer^99DCT">
+                            Breast Cancer
+                        </label>
+                    </div>
+                    <br/>
+                    <div class="CancerConfimed">
+                        <label class="font-normal">
+                            Histology:
+                            <textarea class="form-control" id="obs.BreastCancerHistory"
+                                      name="obs.BreastCancerHistory" type="text"  cols="80"
+                                      data-concept="7625e1b7-7571-485e-b023-20a7d03dc7dc^Breast Cancer Histology^99DCT"></textarea>
+                        </label>
+                    </div>
+                    <br/>
+                    <div class="CancerConfimed">
+                        <label class="font-normal">
+                            <input id="obs.cervicalCancer" name="obs.CancerDiagnosis" type="radio"
+                                   data-concept="3dc2eb50-6981-43d3-b907-e3dd8b5ed620^Confirmed cancer diagnosis^99DCT"
+                                   value="36052b70-ba49-466f-a4eb-bc99581be7a2^Cervical cancer^99DCT">
+                            Cervical Cancer
+                        </label>
+                    </div>
+                    <br/>
+                    <div class="CancerConfimed">
+                        <label class="font-normal">
+                            Histology:
+                            <textarea class="form-control" id="obs.CervicalCancerHistory"
+                                      name="obs.CervicalCancerHistory" type="text"  cols="80"
+                                      data-concept="3cef6fc6-49e1-490c-829f-d9003a7b50ad^Cervical cancer Histology^99DCT"></textarea>
+                        </label>
+                    </div>
+                    <br/>
+                    <div class="CancerConfimed">
+                        <label class="font-normal">
+                            <input id="obs.other" name="obs.CancerDiagnosis" type="radio"
+                                   data-concept="3dc2eb50-6981-43d3-b907-e3dd8b5ed620^Confirmed cancer diagnosis^99DCT"
+                                   value="3cee7fb4-26fe-102b-80cb-0017a47871b2^OTHER NON-CODED^99DCT">
+                            Other cancer
+                        </label>
+                    </div>
+                    <br/>
+                    <div class="CancerConfimed">
+                        <label class="font-normal">
+                            Histology:
+                            <textarea class="form-control" id="obs.otherCancerHistory"
+                                      name="obs.otherCancerHistory" type="text" cols="80"
+                                      data-concept="b99ff54e-4e1b-4277-89ab-136eab980621^Other Histology^99DCT"></textarea>
+                        </label>
+                    </div>
+                    <br/>
+                    <label class="font-normal"> <strong> Date of next visit:  </strong> </label>
+                    <br/>
+                    <label class="font-normal">
+                        <input readonly="readonly" class="form-control datepicker future-or-today-date" id="obs.BreastDispositionNextDate" name="obs.BreastDispositionNextDate" type="text"
+                               data-concept="3ce94df0-26fe-102b-80cb-0017a47871b2^RETURN VISIT DATE^99DCT"/>
+                    </label>
+                </fieldset>
             </div>
         </div>
     </fieldset>
@@ -1209,7 +1334,7 @@
             <br/>
             <label class="font-normal">
                 <input class="form-control datepicker future-or-today-date" id="obs.BreastDispositionNextDate" name="obs.BreastDispositionNextDate" type="text"
-                       data-concept="3ce94df0-26fe-102b-80cb-0017a47871b2^RETURN VISIT DATE^99DCT"/>
+                       readonly="readonly" data-concept="3ce94df0-26fe-102b-80cb-0017a47871b2^RETURN VISIT DATE^99DCT"/>
             </label>
         </div>
     </fieldset>

@@ -1,0 +1,1375 @@
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/muzima.css" rel="stylesheet">
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="css/ui-darkness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/additional-methods.min.js"></script>
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
+    <script src="js/muzima.js"></script>
+
+    <title>CLINICAL EXAMX</title>
+</head>
+<body class="col-md-10 col-md-offset-1">
+<div id="pre_populate_data"></div>
+<form id="VitalSigns_form" name="VitalSigns_form">
+    <div class="section">
+        <fieldset>
+            <h3>Encounter Details</h3>
+            <div class="form-group">
+                <label for="encounter.location_id">Location Name:<span class="required">*</span></label>
+                <input class="form-control valid-location-only" id="encounter.location_id" type="text" placeholder="Start typing something..."
+                       required="required">
+                <input class="form-control" name="encounter.location_id" type="hidden">
+            </div>
+            <div class="form-group">
+                <label for="encounter.provider_id_select">Provider:</label>
+                <input class="form-control valid-provider-only" id="encounter.provider_id_select" type="text" placeholder="Start typing something...">
+                <input class="form-control" name="encounter.provider_id_select" type="hidden">
+            </div>
+            <div class="form-group hidden">
+                <select id="select_providers"></select>
+            </div>
+            <div class="form-group show_provider_id_text">
+                <label for="encounter.provider_id">Provider's system-id:<span class="required">*</span></label>
+                <input class="form-control checkDigit" id="encounter.provider_id" name="encounter.provider_id"
+                       type="text" required="required" disabled="disabled">
+            </div>
+            <div class="form-group">
+                <label for="encounter.encounter_datetime">Encounter Date:<span class="required">*</span></label>
+                <input class="form-control datepicker nonFutureDate past-date" id="encounter.encounter_datetime"
+                       name="encounter.encounter_datetime" type="text" readonly="readonly"
+                       required="required">
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="encounter.form_uuid" name="encounter.form_uuid"
+                       type="hidden" required="required">
+            </div>
+        </fieldset>
+    </div>
+    <div class="section">
+        <fieldset>
+            <h3>DEMOGRAPHICS & CLINICAL MEASUREMENTS</h3>
+
+            <div class="form-group">
+                <input class="form-control" id="patient.uuid"
+                       name="patient.uuid" type="hidden" readonly="readonly">
+            </div>
+            <div class="form-group">
+                <label for="patient.medical_record_number">Patient identifier:</label>
+                <input class="form-control" id="patient.medical_record_number"
+                       name="patient.medical_record_number" type="text" readonly="readonly">
+            </div>
+            <div class="form-group">
+                <label for="patient.given_name">Given Name:</label>
+                <input class="form-control" id="patient.given_name" name="patient.given_name" type="text"
+                       readonly="readonly">
+            </div>
+            <div class="form-group">
+                <label for="patient.middle_name">Middle Name:</label>
+                <input class="form-control" id="patient.middle_name" name="patient.middle_name" type="text"
+                       readonly="readonly">
+            </div>
+            <div class="form-group">
+                <label for="patient.family_name">Family Name:</label>
+                <input class="form-control" id="patient.family_name" name="patient.family_name" type="text"
+                       readonly="readonly">
+            </div>
+            <div class="form-group">
+                <label for="patient.sex">Gender:</label>
+                <select class="form-control" id="patient.sex" name="patient.sex" disabled="disabled">
+                    <option value="">...</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="patient.birth_date">Date Of Birth:</label>
+                <input class="form-control" id="patient.birth_date" name="patient.birth_date" type="text"
+                       readonly="readonly" disabled="disabled">
+            </div>
+        </fieldset>
+    </div>
+
+
+    <div class="sub-section">
+        <h3>Exam List</h3>
+        <div class="sub-section" >
+            <div class="form-group">
+                <label for="exam">Exam:</label>
+                <select class="form-control" id="obs.LAB_EXAMS" name="obs.LAB_EXAMS" data-concept="3cd937e4-26fe-102b-80cb-0017a47871b2^TESTS ORDERED^99DCT">
+                    <option value="">...</option>
+                    <option value="9^BLOOD SUGAR (retired)^99DCT">BLOOD SUGAR (retired)</option>
+                    <option value="12^X-RAY, CHEST^99DCT">X-RAY, CHEST</option>
+                    <option value="21^HEMOGLOBIN^99DCT">HEMOGLOBIN</option>
+                    <option value="32^MALARIAL SMEAR^99DCT">MALARIAL SMEAR</option>
+                    <option value="41^PAPANICOLAOU SMEAR retired (retired)^99DCT">PAPANICOLAOU SMEAR retired (retired)</option>
+                    <option value="45^URINE PREGNANCY TEST^99DCT">URINE PREGNANCY TEST</option>
+                    <option value="53^STOOL MICROSCOPY (retired)^99DCT">STOOL MICROSCOPY (retired)</option>
+                    <option value="56^URINE MICROSCOPY^99DCT">URINE MICROSCOPY</option>
+                    <option value="101^X-RAY, ABDOMEN^99DCT">X-RAY, ABDOMEN</option>
+                    <option value="103^HIV ANTIBODY (retired)^99DCT">HIV ANTIBODY (retired)</option>
+                    <option value="192^HVS TEST (retired)^99DCT">HVS TEST (retired)</option>
+                    <option value="299^VDRL^99DCT">VDRL</option>
+                    <option value="300^BLOOD GROUP^99DCT">BLOOD GROUP</option>
+                    <option value="301^HB (retired)^99DCT">HB (retired)</option>
+                    <option value="303^UA (retired)^99DCT">UA (retired)</option>
+                    <option value="304^STOOL EXAM^99DCT">STOOL EXAM</option>
+                    <option value="305^BRUCELLA TEST^99DCT">BRUCELLA TEST</option>
+                    <option value="306^WIDAL TEST^99DCT">WIDAL TEST</option>
+                    <option value="307^SPUTUM FOR ACID FAST BACILLI (retired)^99DCT">SPUTUM FOR ACID FAST BACILLI (retired)</option>
+                    <option value="308^AFB SMEAR SPUTUM v2 (retired)^99DCT">AFB SMEAR SPUTUM v2 (retired)</option>
+                    <option value="309^X-RAY, OTHER^99DCT">X-RAY, OTHER</option>
+                    <option value="375^X-RAY CHEST (retired)^99DCT">X-RAY CHEST (retired)</option>
+                    <option value="376^X-RAY ABDOMEN (retired)^99DCT">X-RAY ABDOMEN (retired)</option>
+                    <option value="377^X-RAY, ARM^99DCT">X-RAY, ARM</option>
+                    <option value="378^X-RAY ARM (retired)^99DCT">X-RAY ARM (retired)</option>
+                    <option value="380^X-RAY, LEG^99DCT">X-RAY, LEG</option>
+                    <option value="381^X-RAY LEG (retired)^99DCT">X-RAY LEG (retired)</option>
+                    <option value="382^X-RAY, HAND^99DCT">X-RAY, HAND</option>
+                    <option value="383^X-RAY HAND (retired)^99DCT">X-RAY HAND (retired)</option>
+                    <option value="384^X-RAY, FOOT^99DCT">X-RAY, FOOT</option>
+                    <option value="385^X-RAY FOOT (retired)^99DCT">X-RAY FOOT (retired)</option>
+                    <option value="386^X-RAY, SKULL^99DCT">X-RAY, SKULL</option>
+                    <option value="387^X-RAY SKULL (retired)^99DCT">X-RAY SKULL (retired)</option>
+                    <option value="388^X-RAY HEAD (retired)^99DCT">X-RAY HEAD (retired)</option>
+                    <option value="389^X-RAY SPINE (retired)^99DCT">X-RAY SPINE (retired)</option>
+                    <option value="390^X-RAY, SPINE^99DCT">X-RAY, SPINE</option>
+                    <option value="391^X-RAY PELVIS (retired)^99DCT">X-RAY PELVIS (retired)</option>
+                    <option value="392^X-RAY, PELVIS^99DCT">X-RAY, PELVIS</option>
+                    <option value="393^X-RAY SHOULDER (retired)^99DCT">X-RAY SHOULDER (retired)</option>
+                    <option value="394^X-RAY, SHOULDER^99DCT">X-RAY, SHOULDER</option>
+                    <option value="395^X-RAY OTHER (retired)^99DCT">X-RAY OTHER (retired)</option>
+                    <option value="396^OTHER X-RAY (retired)^99DCT">OTHER X-RAY (retired)</option>
+                    <option value="457^TT1 (retired)^99DCT">TT1 (retired)</option>
+                    <option value="458^TT2 (retired)^99DCT">TT2 (retired)</option>
+                    <option value="601^BICEPS REFLEX^99DCT">BICEPS REFLEX</option>
+                    <option value="602^PATELLAR REFLEX^99DCT">PATELLAR REFLEX</option>
+                    <option value="603^ANKLE REFLEX^99DCT">ANKLE REFLEX</option>
+                    <option value="605^RHOMBERG (retired)^99DCT">RHOMBERG (retired)</option>
+                    <option value="645^CXR (retired)^99DCT">CXR (retired)</option>
+                    <option value="646^ELISA (retired)^99DCT">ELISA (retired)</option>
+                    <option value="648^HGB (retired)^99DCT">HGB (retired)</option>
+                    <option value="649^WBC (retired)^99DCT">WBC (retired)</option>
+                    <option value="650^ALC (retired)^99DCT">ALC (retired)</option>
+                    <option value="651^PLTS (retired)^99DCT">PLTS (retired)</option>
+                    <option value="653^SERUM GLUTAMIC-OXALOACETIC TRANSAMINASE^99DCT">SERUM GLUTAMIC-OXALOACETIC TRANSAMINASE</option>
+                    <option value="654^SERUM GLUTAMIC-PYRUVIC TRANSAMINASE^99DCT">SERUM GLUTAMIC-PYRUVIC TRANSAMINASE</option>
+                    <option value="655^TOTAL BILIRUBIN^99DCT">TOTAL BILIRUBIN</option>
+                    <option value="677^WBCS (retired)^99DCT">WBCS (retired)</option>
+                    <option value="678^WHITE BLOOD CELLS^99DCT">WHITE BLOOD CELLS</option>
+                    <option value="679^RED BLOOD CELLS^99DCT">RED BLOOD CELLS</option>
+                    <option value="680^WHITE CELLS (retired)^99DCT">WHITE CELLS (retired)</option>
+                    <option value="681^RB CELLS (retired)^99DCT">RB CELLS (retired)</option>
+                    <option value="682^RBCS (retired)^99DCT">RBCS (retired)</option>
+                    <option value="717^TOTAL PROTEIN^99DCT">TOTAL PROTEIN</option>
+                    <option value="729^PLATELETS^99DCT">PLATELETS</option>
+                    <option value="730^CD4%^99DCT">CD4%</option>
+                    <option value="785^ALKALINE PHOSPHATASE^99DCT">ALKALINE PHOSPHATASE</option>
+                    <option value="790^SERUM CREATININE^99DCT">SERUM CREATININE</option>
+                    <option value="844^HIV DNA POLYMERASE CHAIN REACTION^99DCT">HIV DNA POLYMERASE CHAIN REACTION</option>
+                    <option value="845^ULTRASOUND, ABDOMEN^99DCT">ULTRASOUND, ABDOMEN</option>
+                    <option value="846^COMPUTED TOMOGRAPHY SCAN, HEAD^99DCT">COMPUTED TOMOGRAPHY SCAN, HEAD</option>
+                    <option value="847^BS FOR MPS (retired)^99DCT">BS FOR MPS (retired)</option>
+                    <option value="848^SERUM ALBUMIN^99DCT">SERUM ALBUMIN</option>
+                    <option value="849^URINARY ALBUMIN^99DCT">URINARY ALBUMIN</option>
+                    <option value="850^ALP (retired)^99DCT">ALP (retired)</option>
+                    <option value="851^MEAN CORPUSCULAR VOLUME^99DCT">MEAN CORPUSCULAR VOLUME</option>
+                    <option value="852^ULTRASOUND, HEPATIC^99DCT">ULTRASOUND, HEPATIC</option>
+                    <option value="853^CD8 COUNT^99DCT">CD8 COUNT</option>
+                    <option value="854^CD4/CD8^99DCT">CD4/CD8</option>
+                    <option value="855^ERYTHROCYTE SEDIMENTATION RATE retired (retired)^99DCT">ERYTHROCYTE SEDIMENTATION RATE retired (retired)</option>
+                    <option value="856^HIV VIRAL LOAD^99DCT">HIV VIRAL LOAD</option>
+                    <option value="857^BLOOD UREA NITROGEN^99DCT">BLOOD UREA NITROGEN</option>
+                    <option value="858^ZN STAIN v2 (retired)^99DCT">ZN STAIN v2 (retired)</option>
+                    <option value="883^ZIEHL NIELSEN STAIN v2(retired)^99DCT">ZIEHL NIELSEN STAIN v2(retired)</option>
+                    <option value="885^PAPANICOLAOU SMEAR^99DCT">PAPANICOLAOU SMEAR</option>
+                    <option value="887^SERUM GLUCOSE^99DCT">SERUM GLUCOSE</option>
+                    <option value="908^HERPES SIMPLEX VIRUS, QUALITATIVE^99DCT">HERPES SIMPLEX VIRUS, QUALITATIVE</option>
+                    <option value="952^ABSOLUTE LYMPHOCYTE COUNT^99DCT">ABSOLUTE LYMPHOCYTE COUNT</option>
+                    <option value="1006^TOTAL CHOLESTEROL^99DCT">TOTAL CHOLESTEROL</option>
+                    <option value="1007^HIGH-DENSITY LIPOPROTEIN CHOLESTEROL^99DCT">HIGH-DENSITY LIPOPROTEIN CHOLESTEROL</option>
+                    <option value="1008^LOW-DENSITY LIPOPROTEIN CHOLESTEROL^99DCT">LOW-DENSITY LIPOPROTEIN CHOLESTEROL</option>
+                    <option value="1009^TRIGLYCERIDES^99DCT">TRIGLYCERIDES</option>
+                    <option value="1011^CREATINE KINASE^99DCT">CREATINE KINASE</option>
+                    <option value="1012^SERUM LACTATE^99DCT">SERUM LACTATE</option>
+                    <option value="1013^SERUM LIPASE^99DCT">SERUM LIPASE</option>
+                    <option value="1014^LACTATE DEHYDROGENASE^99DCT">LACTATE DEHYDROGENASE</option>
+                    <option value="1015^HEMATOCRIT^99DCT">HEMATOCRIT</option>
+                    <option value="1016^RED CELL DISTRIBUTION WIDTH^99DCT">RED CELL DISTRIBUTION WIDTH</option>
+                    <option value="1017^MEAN CELL HEMOGLOBIN CONCENTRATION^99DCT">MEAN CELL HEMOGLOBIN CONCENTRATION</option>
+                    <option value="1018^MEAN CORPUSCULAR HEMOGLOBIN^99DCT">MEAN CORPUSCULAR HEMOGLOBIN</option>
+                    <option value="1020^BANDS^99DCT">BANDS</option>
+                    <option value="1021^LYMPHOCYTES^99DCT">LYMPHOCYTES</option>
+                    <option value="1022^NEUTROPHILS^99DCT">NEUTROPHILS</option>
+                    <option value="1023^MONOCYTES^99DCT">MONOCYTES</option>
+                    <option value="1024^EOSINOPHILS^99DCT">EOSINOPHILS</option>
+                    <option value="1025^BASOPHILS^99DCT">BASOPHILS</option>
+                    <option value="1027^CD8%^99DCT">CD8%</option>
+                    <option value="1028^CD3 COUNT^99DCT">CD3 COUNT</option>
+                    <option value="1029^VDRL TITRE^99DCT">VDRL TITRE</option>
+                    <option value="1030^HIV DNA POLYMERASE CHAIN REACTION, QUALITATIVE^99DCT">HIV DNA POLYMERASE CHAIN REACTION, QUALITATIVE</option>
+                    <option value="1031^TREPONEMA PALLIDUM HEMAGGLUTINATION ASSAY^99DCT">TREPONEMA PALLIDUM HEMAGGLUTINATION ASSAY</option>
+                    <option value="1032^TREPONEMA PALLIDUM HEMAGGLUTINATION ASSAY, QUALITATIVE^99DCT">TREPONEMA PALLIDUM HEMAGGLUTINATION ASSAY, QUALITATIVE</option>
+                    <option value="1033^CHLAMYDIA TRACHOMATIS POLYMERASE CHAIN REACTION^99DCT">CHLAMYDIA TRACHOMATIS POLYMERASE CHAIN REACTION</option>
+                    <option value="1034^CHLAMYDIA TRACHOMATIS POLYMERASE CHAIN REACTION, QUALITATIVE^99DCT">CHLAMYDIA TRACHOMATIS POLYMERASE CHAIN REACTION, QUALITATIVE</option>
+                    <option value="1035^HERPES SIMPLEX VIRUS SEROLOGY, QUANTITATIVE^99DCT">HERPES SIMPLEX VIRUS SEROLOGY, QUANTITATIVE</option>
+                    <option value="1036^NEISSERIA GONORRHOEAE POLYMERASE CHAIN REACTION^99DCT">NEISSERIA GONORRHOEAE POLYMERASE CHAIN REACTION</option>
+                    <option value="1037^HERPES SIMPLEX VIRUS THRESHHOLD PERCENTAGE, QUANTITATIVE^99DCT">HERPES SIMPLEX VIRUS THRESHHOLD PERCENTAGE, QUANTITATIVE</option>
+                    <option value="1038^NEISSERIA GONORRHOEAE POLYMERASE CHAIN REACTION, QUALITATIVE^99DCT">NEISSERIA GONORRHOEAE POLYMERASE CHAIN REACTION, QUALITATIVE</option>
+                    <option value="1039^TRICHOMONAS VAGINALIS POLYMERASE CHAIN REACTION, QUALITATIVE^99DCT">TRICHOMONAS VAGINALIS POLYMERASE CHAIN REACTION, QUALITATIVE</option>
+                    <option value="1040^HIV RAPID TEST, QUALITATIVE^99DCT">HIV RAPID TEST, QUALITATIVE</option>
+                    <option value="1041^HIV ENZYME IMMUNOASSAY, QUANTITATIVE^99DCT">HIV ENZYME IMMUNOASSAY, QUANTITATIVE</option>
+                    <option value="1042^HIV ENZYME IMMUNOASSAY, QUALITATIVE^99DCT">HIV ENZYME IMMUNOASSAY, QUALITATIVE</option>
+                    <option value="1043^TRICHOMONAS VAGINALIS POLYMERASE CHAIN REACTION^99DCT">TRICHOMONAS VAGINALIS POLYMERASE CHAIN REACTION</option>
+                    <option value="1044^HERPES SIMPLEX VIRUS POLYMERASE CHAIN REACTION^99DCT">HERPES SIMPLEX VIRUS POLYMERASE CHAIN REACTION</option>
+                    <option value="1045^HIV WESTERN BLOT BANDS^99DCT">HIV WESTERN BLOT BANDS</option>
+                    <option value="1046^HERPES SIMPLEX VIRUS POLYMERASE CHAIN REACTION, QUALITATIVE^99DCT">HERPES SIMPLEX VIRUS POLYMERASE CHAIN REACTION, QUALITATIVE</option>
+                    <option value="1047^HIV WESTERN BLOT, QUALITATIVE^99DCT">HIV WESTERN BLOT, QUALITATIVE</option>
+                    <option value="1132^SERUM SODIUM^99DCT">SERUM SODIUM</option>
+                    <option value="1133^SERUM POTASSIUM^99DCT">SERUM POTASSIUM</option>
+                    <option value="1134^SERUM CHLORIDE^99DCT">SERUM CHLORIDE</option>
+                    <option value="1135^SERUM CARBON DIOXIDE^99DCT">SERUM CARBON DIOXIDE</option>
+                    <option value="1290^MIDDLE UPPER ARM CIRCUMFERENCE (CM)^99DCT">MIDDLE UPPER ARM CIRCUMFERENCE (CM)</option>
+                    <option value="1338^CULTURE FOR TUBERCULOSIS, QUALITATIVE^99DCT">CULTURE FOR TUBERCULOSIS, QUALITATIVE</option>
+                    <option value="1340^STI OTHER TESTS^99DCT">STI OTHER TESTS</option>
+                    <option value="1435^PPD, QUALITATIVE^99DCT">PPD, QUALITATIVE</option>
+                    <option value="1436^CULTURE FOR TUBERCULOSIS, GENERAL^99DCT">CULTURE FOR TUBERCULOSIS, GENERAL</option>
+                    <option value="1437^PPD, QUANTITATIVE^99DCT">PPD, QUANTITATIVE</option>
+                    <option value="1440^DRUG SENSITIVITY TEST FOR TUBERCULOSIS (retired)^99DCT">DRUG SENSITIVITY TEST FOR TUBERCULOSIS (retired)</option>
+                    <option value="1444^AFB SPUTUM SMEAR^99DCT">AFB SPUTUM SMEAR</option>
+                    <option value="1476^BLOOD SMEAR^99DCT">BLOOD SMEAR</option>
+                    <option value="1477^ERYTHROCYTE SEDIMENTATION RATE^99DCT">ERYTHROCYTE SEDIMENTATION RATE</option>
+                    <option value="1478^RAPID PLASMA REAGENT^99DCT">RAPID PLASMA REAGENT</option>
+                    <option value="1479^URINE ANALYSIS^99DCT">URINE ANALYSIS</option>
+                    <option value="1542^URINALYSIS retired (retired)^99DCT">URINALYSIS retired (retired)</option>
+                    <option value="1562^NORMAL WEIGHT^99DCT">NORMAL WEIGHT</option>
+                    <option value="1624^TSH^99DCT">TSH</option>
+                    <option value="1625^CREATININE CLEARANCE^99DCT">CREATININE CLEARANCE</option>
+                    <option value="1626^BICARBONATE^99DCT">BICARBONATE</option>
+                    <option value="1627^URINE SEDIMENT^99DCT">URINE SEDIMENT</option>
+                    <option value="2439^HBsAG^99DCT">HBsAG</option>
+                    <option value="2473^PREGNANCY TEST^99DCT">PREGNANCY TEST</option>
+                    <option value="2507^DRUG SENSITIVITY TEST CONTAMINATED^99DCT">DRUG SENSITIVITY TEST CONTAMINATED</option>
+                    <option value="2508^CULTURE AND DST^99DCT">CULTURE AND DST</option>
+                    <option value="2509^SMEAR, CULTURE, AND DST^99DCT">SMEAR, CULTURE, AND DST</option>
+                    <option value="2510^SMEAR AND CULTURE^99DCT">SMEAR AND CULTURE</option>
+                    <option value="2711^ULTRASOUND, GENERIC^99DCT">ULTRASOUND, GENERIC</option>
+                    <option value="3007^SERUM GLUTAMIC OXALOACETIC/PYRUVIC TRANSAMINASE^99DCT">SERUM GLUTAMIC OXALOACETIC/PYRUVIC TRANSAMINASE</option>
+                    <option value="3052^TUBERCULOSIS SMEAR RESULT^99DCT">TUBERCULOSIS SMEAR RESULT</option>
+                    <option value="3054^SERUM AMYLASE^99DCT">SERUM AMYLASE</option>
+                    <option value="3055^URIC ACID^99DCT">URIC ACID</option>
+                    <option value="3056^SERUM CALCIUM^99DCT">SERUM CALCIUM</option>
+                    <option value="3057^SERUM PHOSPHATE^99DCT">SERUM PHOSPHATE</option>
+                    <option value="3058^SERUM MAGNESIUM^99DCT">SERUM MAGNESIUM</option>
+                    <option value="3059^GRANULOCYTE^99DCT">GRANULOCYTE</option>
+                    <option value="3060^GRANULOCYTE PERCENT^99DCT">GRANULOCYTE PERCENT</option>
+                    <option value="3408^TUBERCULOSIS SPUTUM TEST^99DCT">TUBERCULOSIS SPUTUM TEST</option>
+                    <option value="3409^ERYTHROCYTE SEDIMENTATION RATE retired2 (retired)^99DCT">ERYTHROCYTE SEDIMENTATION RATE retired2 (retired)</option>
+                    <option value="3491^SMEAR^99DCT">SMEAR</option>
+                    <option value="3492^CULTURE^99DCT">CULTURE</option>
+                    <option value="3493^DRUG SENSITIVITY TEST^99DCT">DRUG SENSITIVITY TEST</option>
+                    <option value="3494^SIMPLE TUBERCULOSIS TEST TYPE^99DCT">SIMPLE TUBERCULOSIS TEST TYPE</option>
+                    <option value="3495^SIMPLE TUBERCULOSIS TEST RESULT^99DCT">SIMPLE TUBERCULOSIS TEST RESULT</option>
+                    <option value="3496^PATIENT CONTACT TUBERCULOSIS TEST RESULT^99DCT">PATIENT CONTACT TUBERCULOSIS TEST RESULT</option>
+                    <option value="3520^TUBERCULOSIS CASE CLASSIFICATION^99DCT">TUBERCULOSIS CASE CLASSIFICATION</option>
+                    <option value="3553^LUMBAR PUNCTURE^99DCT">LUMBAR PUNCTURE</option>
+                    <option value="3574^BILAT EDEMA^99DCT">BILAT EDEMA</option>
+                    <option value="3584^MOTHER CD4 COUNT^99DCT">MOTHER CD4 COUNT</option>
+                    <option value="3612^STOOL GUAIAC (OCCULT BLOOD TEST) RESULT^99DCT">STOOL GUAIAC (OCCULT BLOOD TEST) RESULT</option>
+                    <option value="3641^DIRECT BILIRUBIN^99DCT">DIRECT BILIRUBIN</option>
+                    <option value="3796^INTERNATIONAL NORMALIZED RATIO^99DCT">INTERNATIONAL NORMALIZED RATIO</option>
+                    <option value="3797^PROTHROMBIN TIME v2^99DCT">PROTHROMBIN TIME v2</option>
+                    <option value="5001^DEATHCODE (retired)^99DCT">DEATHCODE (retired)</option>
+                    <option value="5085^SYSTOLIC BLOOD PRESSURE^99DCT">SYSTOLIC BLOOD PRESSURE</option>
+                    <option value="5086^DIASTOLIC BLOOD PRESSURE^99DCT">DIASTOLIC BLOOD PRESSURE</option>
+                    <option value="5087^PULSE^99DCT">PULSE</option>
+                    <option value="5088^TEMPERATURE (C)^99DCT">TEMPERATURE (C)</option>
+                    <option value="5089^WEIGHT (KG)^99DCT">WEIGHT (KG)</option>
+                    <option value="5090^HEIGHT (CM)^99DCT">HEIGHT (CM)</option>
+                    <option value="5091^PULSUS PARADOXUS (retired)^99DCT">PULSUS PARADOXUS (retired)</option>
+                    <option value="5092^BLOOD OXYGEN SATURATION^99DCT">BLOOD OXYGEN SATURATION</option>
+                    <option value="5220^FEBRILE ILLNESS (retired)^99DCT">FEBRILE ILLNESS (retired)</option>
+                    <option value="5221^FEBRILE ILLNESS TIME (retired)^99DCT">FEBRILE ILLNESS TIME (retired)</option>
+                    <option value="5230^FETAL HEMOGLOBIN (retired)^99DCT">FETAL HEMOGLOBIN (retired)</option>
+                    <option value="5268^POOR WT GAIN TIME (retired)^99DCT">POOR WT GAIN TIME (retired)</option>
+                    <option value="5281^FAMILY PLANNING OTHER SPEC^99DCT">FAMILY PLANNING OTHER SPEC</option>
+                    <option value="5283^KARNOFSKY PERFORMANCE SCORE^99DCT">KARNOFSKY PERFORMANCE SCORE</option>
+                    <option value="5284^SKIN (retired)^99DCT">SKIN (retired)</option>
+                    <option value="5285^SKIN COMMENT (retired)^99DCT">SKIN COMMENT (retired)</option>
+                    <option value="5286^LYMPH NODES (retired)^99DCT">LYMPH NODES (retired)</option>
+                    <option value="5287^LYMPH NODES COMMENT (retired)^99DCT">LYMPH NODES COMMENT (retired)</option>
+                    <option value="5288^ENT (retired)^99DCT">ENT (retired)</option>
+                    <option value="5289^HEAD NECK (retired)^99DCT">HEAD NECK (retired)</option>
+                    <option value="5290^HEAD NECK COMMENT (retired)^99DCT">HEAD NECK COMMENT (retired)</option>
+                    <option value="5291^CHEST (retired)^99DCT">CHEST (retired)</option>
+                    <option value="5292^HEART (retired)^99DCT">HEART (retired)</option>
+                    <option value="5293^ABDOMEN (retired)^99DCT">ABDOMEN (retired)</option>
+                    <option value="5294^UROGENITAL (retired)^99DCT">UROGENITAL (retired)</option>
+                    <option value="5295^UROGENITAL COMMENT (retired)^99DCT">UROGENITAL COMMENT (retired)</option>
+                    <option value="5296^EXTREMITIES (retired)^99DCT">EXTREMITIES (retired)</option>
+                    <option value="5297^MUSCULOSKELETAL (retired)^99DCT">MUSCULOSKELETAL (retired)</option>
+                    <option value="5298^NEUROLOGIC (retired)^99DCT">NEUROLOGIC (retired)</option>
+                    <option value="5299^PSYCHIATRIC (retired)^99DCT">PSYCHIATRIC (retired)</option>
+                    <option value="5300^OTHER PHYSICAL EXAM (retired)^99DCT">OTHER PHYSICAL EXAM (retired)</option>
+                    <option value="5301^OTHER PHYSICAL EXAM DESC (retired)^99DCT">OTHER PHYSICAL EXAM DESC (retired)</option>
+                    <option value="5302^OTHER PHYSICAL EXAM COMMENT (retired)^99DCT">OTHER PHYSICAL EXAM COMMENT (retired)</option>
+                    <option value="5304^INITIAL VISIT (retired)^99DCT">INITIAL VISIT (retired)</option>
+                    <option value="5305^TIME TO RETURN VISIT (retired)^99DCT">TIME TO RETURN VISIT (retired)</option>
+                    <option value="5306^TIME TO RETURN VISIT OTHER (retired)^99DCT">TIME TO RETURN VISIT OTHER (retired)</option>
+                    <option value="5307^DEVELOPMENT (retired)^99DCT">DEVELOPMENT (retired)</option>
+                    <option value="5308^DEVELOPMENT COMMENT (retired)^99DCT">DEVELOPMENT COMMENT (retired)</option>
+                    <option value="5309^APPROPRIATE MILESTONES (retired)^99DCT">APPROPRIATE MILESTONES (retired)</option>
+                    <option value="5314^HEAD CIRCUMFERENCE^99DCT">HEAD CIRCUMFERENCE</option>
+                    <option value="5315^VISIT TYPE (retired)^99DCT">VISIT TYPE (retired)</option>
+                    <option value="5316^CURRENTLY BREASTFED FU (retired)^99DCT">CURRENTLY BREASTFED FU (retired)</option>
+                    <option value="5317^BREASTFED OTHERFOOD FU (retired)^99DCT">BREASTFED OTHERFOOD FU (retired)</option>
+                    <option value="5318^CURRENTLY IN SCHOOL FU (retired)^99DCT">CURRENTLY IN SCHOOL FU (retired)</option>
+                    <option value="5322^ALCOHOL USE COMMENT (retired)^99DCT">ALCOHOL USE COMMENT (retired)</option>
+                    <option value="5323^DEVELOPMENT MILESTONES (retired)^99DCT">DEVELOPMENT MILESTONES (retired)</option>
+                    <option value="5324^LOST DEVELOPMENT MILESTONES (retired)^99DCT">LOST DEVELOPMENT MILESTONES (retired)</option>
+                    <option value="5325^PATIENT ID (retired)^99DCT">PATIENT ID (retired)</option>
+                    <option value="5352^WHO HIV - PCP retired (retired)^99DCT">WHO HIV - PCP retired (retired)</option>
+                    <option value="5355^TOXOPLASMOSIS^99DCT">TOXOPLASMOSIS</option>
+                    <option value="5357^WH OSTAGE (retired)^99DCT">WH OSTAGE (retired)</option>
+                    <option value="5358^CR XNORMAL (retired)^99DCT">CR XNORMAL (retired)</option>
+                    <option value="5359^CR XREADING (retired)^99DCT">CR XREADING (retired)</option>
+                    <option value="5360^CURRENT OI THERAPY (retired)^99DCT">CURRENT OI THERAPY (retired)</option>
+                    <option value="5361^OI ELIGIBILITY (retired)^99DCT">OI ELIGIBILITY (retired)</option>
+                    <option value="5362^OI INELIGIBLE HIV STATUS (retired)^99DCT">OI INELIGIBLE HIV STATUS (retired)</option>
+                    <option value="5363^OI NEWLY ELIGIBLE CD4 (retired)^99DCT">OI NEWLY ELIGIBLE CD4 (retired)</option>
+                    <option value="5364^OI NEWLY ELIGIBLE WHO (retired)^99DCT">OI NEWLY ELIGIBLE WHO (retired)</option>
+                    <option value="5365^OI NEWLY ELIGIBLE HIV EXPOSED (retired)^99DCT">OI NEWLY ELIGIBLE HIV EXPOSED (retired)</option>
+                    <option value="5366^OI NEWLY ELIGIBLE OTHER (retired)^99DCT">OI NEWLY ELIGIBLE OTHER (retired)</option>
+                    <option value="5367^OI NEWLY ELIGIBLE OTHER SPECIFY (retired)^99DCT">OI NEWLY ELIGIBLE OTHER SPECIFY (retired)</option>
+                    <option value="5368^OI PREVIOUSLY ELIGIBLE (retired)^99DCT">OI PREVIOUSLY ELIGIBLE (retired)</option>
+                    <option value="5369^OI PREVIOUSLY ELIGIBLE DESC (retired)^99DCT">OI PREVIOUSLY ELIGIBLE DESC (retired)</option>
+                    <option value="5370^OI PRESCRIBED (retired)^99DCT">OI PRESCRIBED (retired)</option>
+                    <option value="5371^REASON OI NOT PRESCRIBED (retired)^99DCT">REASON OI NOT PRESCRIBED (retired)</option>
+                    <option value="5372^CURRENT ARV THERAPY (retired)^99DCT">CURRENT ARV THERAPY (retired)</option>
+                    <option value="5373^ARV ELIGIBILITY (retired)^99DCT">ARV ELIGIBILITY (retired)</option>
+                    <option value="5374^ARV INELIGIBLE HIV STATUS (retired)^99DCT">ARV INELIGIBLE HIV STATUS (retired)</option>
+                    <option value="5375^ARV NEWLY ELIGIBLE CD4 (retired)^99DCT">ARV NEWLY ELIGIBLE CD4 (retired)</option>
+                    <option value="5376^ARV NEWLY ELIGIBLE WHO (retired)^99DCT">ARV NEWLY ELIGIBLE WHO (retired)</option>
+                    <option value="5377^ARV PREVIOUSLY ELIGIBLE (retired)^99DCT">ARV PREVIOUSLY ELIGIBLE (retired)</option>
+                    <option value="5378^ARV PREVIOUSLY ELIGIBLE DESC (retired)^99DCT">ARV PREVIOUSLY ELIGIBLE DESC (retired)</option>
+                    <option value="5379^ARV PRESCRIBED (retired)^99DCT">ARV PRESCRIBED (retired)</option>
+                    <option value="5380^REASON ARV NOT PRESCRIBED (retired)^99DCT">REASON ARV NOT PRESCRIBED (retired)</option>
+                    <option value="5381^PERSCOMP (retired)^99DCT">PERSCOMP (retired)</option>
+                    <option value="5382^PROVIDER (retired)^99DCT">PROVIDER (retired)</option>
+                    <option value="5383^AZT RECOMMENDATION (retired)^99DCT">AZT RECOMMENDATION (retired)</option>
+                    <option value="5384^AZT START STOP DATE (retired)^99DCT">AZT START STOP DATE (retired)</option>
+                    <option value="5385^AZT DISCONTINUATION1 TODAY (retired)^99DCT">AZT DISCONTINUATION1 TODAY (retired)</option>
+                    <option value="5386^AZT DISCONTINUATION2 TODAY (retired)^99DCT">AZT DISCONTINUATION2 TODAY (retired)</option>
+                    <option value="5387^AZT SIG (retired)^99DCT">AZT SIG (retired)</option>
+                    <option value="5388^LAMIVUDINE RECOMMENDATION (retired)^99DCT">LAMIVUDINE RECOMMENDATION (retired)</option>
+                    <option value="5389^LAMIVUDINE START STOP DATE (retired)^99DCT">LAMIVUDINE START STOP DATE (retired)</option>
+                    <option value="5390^LAMIVUDINE DISCONTINUATION1 TODAY (retired)^99DCT">LAMIVUDINE DISCONTINUATION1 TODAY (retired)</option>
+                    <option value="5391^LAMIVUDINE DISCONTINUATION2 TODAY (retired)^99DCT">LAMIVUDINE DISCONTINUATION2 TODAY (retired)</option>
+                    <option value="5392^LAMIVUDINE SIG (retired)^99DCT">LAMIVUDINE SIG (retired)</option>
+                    <option value="5393^STAVUDINE RECOMMENDATION (retired)^99DCT">STAVUDINE RECOMMENDATION (retired)</option>
+                    <option value="5394^STAVUDINE START STOP DATE (retired)^99DCT">STAVUDINE START STOP DATE (retired)</option>
+                    <option value="5395^STAVUDINE DISCONTINUATION1 TODAY (retired)^99DCT">STAVUDINE DISCONTINUATION1 TODAY (retired)</option>
+                    <option value="5396^STAVUDINE DISCONTINUATION2 TODAY (retired)^99DCT">STAVUDINE DISCONTINUATION2 TODAY (retired)</option>
+                    <option value="5397^STAVUDINE SIG (retired)^99DCT">STAVUDINE SIG (retired)</option>
+                    <option value="5398^DIDANOSINE RECOMMENDATION (retired)^99DCT">DIDANOSINE RECOMMENDATION (retired)</option>
+                    <option value="5399^DIDANOSINE START STOP DATE (retired)^99DCT">DIDANOSINE START STOP DATE (retired)</option>
+                    <option value="5400^DIDANOSINE DISCONTINUATION1 TODAY (retired)^99DCT">DIDANOSINE DISCONTINUATION1 TODAY (retired)</option>
+                    <option value="5401^DIDANOSINE DISCONTINUATION2 TODAY (retired)^99DCT">DIDANOSINE DISCONTINUATION2 TODAY (retired)</option>
+                    <option value="5402^DIDANOSINE SIG (retired)^99DCT">DIDANOSINE SIG (retired)</option>
+                    <option value="5403^ABACAVIR RECOMMENDATION (retired)^99DCT">ABACAVIR RECOMMENDATION (retired)</option>
+                    <option value="5404^ABACAVIR START STOP DATE (retired)^99DCT">ABACAVIR START STOP DATE (retired)</option>
+                    <option value="5405^ABACAVIR DISCONTINUATION1 TODAY (retired)^99DCT">ABACAVIR DISCONTINUATION1 TODAY (retired)</option>
+                    <option value="5406^ABACAVIR DISCONTINUATION2 TODAY (retired)^99DCT">ABACAVIR DISCONTINUATION2 TODAY (retired)</option>
+                    <option value="5407^ABACAVIR SIG (retired)^99DCT">ABACAVIR SIG (retired)</option>
+                    <option value="5408^NEVIRAPINE RECOMMENDATION (retired)^99DCT">NEVIRAPINE RECOMMENDATION (retired)</option>
+                    <option value="5409^NEVIRAPINE START STOP DATE (retired)^99DCT">NEVIRAPINE START STOP DATE (retired)</option>
+                    <option value="5410^NEVIRAPINE DISCONTINUATION1 TODAY (retired)^99DCT">NEVIRAPINE DISCONTINUATION1 TODAY (retired)</option>
+                    <option value="5411^NEVIRAPINE DISCONTINUATION2 TODAY (retired)^99DCT">NEVIRAPINE DISCONTINUATION2 TODAY (retired)</option>
+                    <option value="5412^NEVIRAPINE SIG (retired)^99DCT">NEVIRAPINE SIG (retired)</option>
+                    <option value="5413^EFAVIRENZ RECOMMENDATION (retired)^99DCT">EFAVIRENZ RECOMMENDATION (retired)</option>
+                    <option value="5414^EFAVIRENZ START STOP DATE (retired)^99DCT">EFAVIRENZ START STOP DATE (retired)</option>
+                    <option value="5415^EFAVIRENZ DISCONTINUATION1 TODAY (retired)^99DCT">EFAVIRENZ DISCONTINUATION1 TODAY (retired)</option>
+                    <option value="5416^EFAVIRENZ DISCONTINUATION2 TODAY (retired)^99DCT">EFAVIRENZ DISCONTINUATION2 TODAY (retired)</option>
+                    <option value="5417^EFAVIRENZ SIG (retired)^99DCT">EFAVIRENZ SIG (retired)</option>
+                    <option value="5418^NELFINAVIR RECOMMENDATION (retired)^99DCT">NELFINAVIR RECOMMENDATION (retired)</option>
+                    <option value="5419^NELFINAVIR START STOP DATE (retired)^99DCT">NELFINAVIR START STOP DATE (retired)</option>
+                    <option value="5420^NELFINAVIR DISCONTINUATION1 TODAY (retired)^99DCT">NELFINAVIR DISCONTINUATION1 TODAY (retired)</option>
+                    <option value="5421^NELFINAVIR DISCONTINUATION2 TODAY (retired)^99DCT">NELFINAVIR DISCONTINUATION2 TODAY (retired)</option>
+                    <option value="5422^NELFINAVIR SIG (retired)^99DCT">NELFINAVIR SIG (retired)</option>
+                    <option value="5423^ARV COMMENTS (retired)^99DCT">ARV COMMENTS (retired)</option>
+                    <option value="5425^ARV OTHER1 RECOMMENDATION (retired)^99DCT">ARV OTHER1 RECOMMENDATION (retired)</option>
+                    <option value="5426^ARV OTHER1 START STOP DATE (retired)^99DCT">ARV OTHER1 START STOP DATE (retired)</option>
+                    <option value="5427^ARV OTHER1 DISCONTINUATION1 (retired)^99DCT">ARV OTHER1 DISCONTINUATION1 (retired)</option>
+                    <option value="5428^ARV OTHER1 DISCONTINUATION2 (retired)^99DCT">ARV OTHER1 DISCONTINUATION2 (retired)</option>
+                    <option value="5429^ARV OTHER1 SIG (retired)^99DCT">ARV OTHER1 SIG (retired)</option>
+                    <option value="5430^ARV OTHER2 SPECIFY (retired)^99DCT">ARV OTHER2 SPECIFY (retired)</option>
+                    <option value="5431^ARV OTHER2 RECOMMENDATION (retired)^99DCT">ARV OTHER2 RECOMMENDATION (retired)</option>
+                    <option value="5432^ARV OTHER2 START STOP DATE (retired)^99DCT">ARV OTHER2 START STOP DATE (retired)</option>
+                    <option value="5433^ARV OTHER2 DISCONTINUATION1 (retired)^99DCT">ARV OTHER2 DISCONTINUATION1 (retired)</option>
+                    <option value="5434^ARV OTHER2 DISCONTINUATION2 (retired)^99DCT">ARV OTHER2 DISCONTINUATION2 (retired)</option>
+                    <option value="5435^ARV OTHER2 SIG (retired)^99DCT">ARV OTHER2 SIG (retired)</option>
+                    <option value="5436^COTRIMOXAZOLE RECOMMENDATION (retired)^99DCT">COTRIMOXAZOLE RECOMMENDATION (retired)</option>
+                    <option value="5437^COTRIMOXAZOLE START STOP DATE (retired)^99DCT">COTRIMOXAZOLE START STOP DATE (retired)</option>
+                    <option value="5438^COTRIMOXAZOLE DISCONTINUATION1 TODAY (retired)^99DCT">COTRIMOXAZOLE DISCONTINUATION1 TODAY (retired)</option>
+                    <option value="5439^COTRIMOXAZOLE DISCONTINUATION2 TODAY (retired)^99DCT">COTRIMOXAZOLE DISCONTINUATION2 TODAY (retired)</option>
+                    <option value="5440^COTRIMOXAZOLE SIG (retired)^99DCT">COTRIMOXAZOLE SIG (retired)</option>
+                    <option value="5441^DAPSONE RECOMMENDATION (retired)^99DCT">DAPSONE RECOMMENDATION (retired)</option>
+                    <option value="5442^DAPSONE START STOP DATE (retired)^99DCT">DAPSONE START STOP DATE (retired)</option>
+                    <option value="5443^DAPSONE DISCONTINUATION1 TODAY (retired)^99DCT">DAPSONE DISCONTINUATION1 TODAY (retired)</option>
+                    <option value="5444^DAPSONE DISCONTINUATION2 TODAY (retired)^99DCT">DAPSONE DISCONTINUATION2 TODAY (retired)</option>
+                    <option value="5445^DAPSONE SIG (retired)^99DCT">DAPSONE SIG (retired)</option>
+                    <option value="5446^FLUCONAZOLE RECOMMENDATION (retired)^99DCT">FLUCONAZOLE RECOMMENDATION (retired)</option>
+                    <option value="5447^FLUCONAZOLE START STOP DATE (retired)^99DCT">FLUCONAZOLE START STOP DATE (retired)</option>
+                    <option value="5448^FLUCONAZOLE DISCONTINUATION1 TODAY (retired)^99DCT">FLUCONAZOLE DISCONTINUATION1 TODAY (retired)</option>
+                    <option value="5449^FLUCONAZOLE DISCONTINUATION2 TODAY (retired)^99DCT">FLUCONAZOLE DISCONTINUATION2 TODAY (retired)</option>
+                    <option value="5450^FLUCONAZOLE SIG (retired)^99DCT">FLUCONAZOLE SIG (retired)</option>
+                    <option value="5451^ISONIAZID RECOMMENDATION (retired)^99DCT">ISONIAZID RECOMMENDATION (retired)</option>
+                    <option value="5452^ISONIAZID START STOP DATE (retired)^99DCT">ISONIAZID START STOP DATE (retired)</option>
+                    <option value="5453^ISONIAZID DISCONTINUATION1 TODAY (retired)^99DCT">ISONIAZID DISCONTINUATION1 TODAY (retired)</option>
+                    <option value="5454^ISONIAZID DISCONTINUATION2 TODAY (retired)^99DCT">ISONIAZID DISCONTINUATION2 TODAY (retired)</option>
+                    <option value="5455^ISONIAZID SIG (retired)^99DCT">ISONIAZID SIG (retired)</option>
+                    <option value="5456^OTHER1 SPECIFY (retired)^99DCT">OTHER1 SPECIFY (retired)</option>
+                    <option value="5457^OTHER1 RECOMMENDATION (retired)^99DCT">OTHER1 RECOMMENDATION (retired)</option>
+                    <option value="5458^OTHER1 START STOP DATE (retired)^99DCT">OTHER1 START STOP DATE (retired)</option>
+                    <option value="5459^OTHER1 DISCONTINUATION1 (retired)^99DCT">OTHER1 DISCONTINUATION1 (retired)</option>
+                    <option value="5460^OTHER1 DISCONTINUATION2 (retired)^99DCT">OTHER1 DISCONTINUATION2 (retired)</option>
+                    <option value="5461^OTHER1 SIG (retired)^99DCT">OTHER1 SIG (retired)</option>
+                    <option value="5462^OTHER2 SPECIFY (retired)^99DCT">OTHER2 SPECIFY (retired)</option>
+                    <option value="5463^OTHER2 RECOMMENDATION (retired)^99DCT">OTHER2 RECOMMENDATION (retired)</option>
+                    <option value="5464^OTHER2 START STOP DATE (retired)^99DCT">OTHER2 START STOP DATE (retired)</option>
+                    <option value="5465^OTHER2 DISCONTINUATION1 (retired)^99DCT">OTHER2 DISCONTINUATION1 (retired)</option>
+                    <option value="5466^OTHER2 DISCONTINUATION2 (retired)^99DCT">OTHER2 DISCONTINUATION2 (retired)</option>
+                    <option value="5467^OTHER2 SIG (retired)^99DCT">OTHER2 SIG (retired)</option>
+                    <option value="5468^OI COMMENTS (retired)^99DCT">OI COMMENTS (retired)</option>
+                    <option value="5469^ORDER NONE (retired)^99DCT">ORDER NONE (retired)</option>
+                    <option value="5470^ORDER COMPLETE BLOOD COUNT (retired)^99DCT">ORDER COMPLETE BLOOD COUNT (retired)</option>
+                    <option value="5471^ORDER AST (retired)^99DCT">ORDER AST (retired)</option>
+                    <option value="5472^ORDER CREATININE (retired)^99DCT">ORDER CREATININE (retired)</option>
+                    <option value="5474^ORDER INFANT HIV (retired)^99DCT">ORDER INFANT HIV (retired)</option>
+                    <option value="5475^TUBERCULIN SKIN TEST^99DCT">TUBERCULIN SKIN TEST</option>
+                    <option value="5476^ORDER AFB (retired)^99DCT">ORDER AFB (retired)</option>
+                    <option value="5477^ORDER PREGNANCY TEST (retired)^99DCT">ORDER PREGNANCY TEST (retired)</option>
+                    <option value="5478^ORDER RADIOLOGY TEST (retired)^99DCT">ORDER RADIOLOGY TEST (retired)</option>
+                    <option value="5479^ORDER RADIOLOGY TEST SPEC (retired)^99DCT">ORDER RADIOLOGY TEST SPEC (retired)</option>
+                    <option value="5480^ORDER OTHER (retired)^99DCT">ORDER OTHER (retired)</option>
+                    <option value="5481^ORDER OTHER SPEC (retired)^99DCT">ORDER OTHER SPEC (retired)</option>
+                    <option value="5482^NO REFERRAL (retired)^99DCT">NO REFERRAL (retired)</option>
+                    <option value="5484^NUTRITIONAL SUPPORT^99DCT">NUTRITIONAL SUPPORT</option>
+                    <option value="5486^SOCIAL SUPPORT SERVICES^99DCT">SOCIAL SUPPORT SERVICES</option>
+                    <option value="5487^TUBERCULOSIS TREATMENT OR DOT PROGRAM^99DCT">TUBERCULOSIS TREATMENT OR DOT PROGRAM</option>
+                    <option value="5488^ADHERENCE COUNSELING^99DCT">ADHERENCE COUNSELING</option>
+                    <option value="5489^MENTAL HEALTH SERVICES^99DCT">MENTAL HEALTH SERVICES</option>
+                    <option value="5490^PSYCHOSOCIAL COUNSELING^99DCT">PSYCHOSOCIAL COUNSELING</option>
+                    <option value="5491^OTHER REFERRAL (retired)^99DCT">OTHER REFERRAL (retired)</option>
+                    <option value="5492^REFERRAL OTHER SPEC (retired)^99DCT">REFERRAL OTHER SPEC (retired)</option>
+                    <option value="5493^REFERRAL IMMUNIZATION (retired)^99DCT">REFERRAL IMMUNIZATION (retired)</option>
+                    <option value="5494^REFERRAL IMMUNIZATION SPEC (retired)^99DCT">REFERRAL IMMUNIZATION SPEC (retired)</option>
+                    <option value="5495^OI ALTERATION (retired)^99DCT">OI ALTERATION (retired)</option>
+                    <option value="5496^OI ELIGIBLE (retired)^99DCT">OI ELIGIBLE (retired)</option>
+                    <option value="5497^CD4 COUNT^99DCT">CD4 COUNT</option>
+                    <option value="5500^ARV ELIGIBLE (retired)^99DCT">ARV ELIGIBLE (retired)</option>
+                    <option value="5501^ARV MEDICINE CHANGE (retired)^99DCT">ARV MEDICINE CHANGE (retired)</option>
+                    <option value="5502^TB FURTHER WORK UP (retired)^99DCT">TB FURTHER WORK UP (retired)</option>
+                    <option value="5503^ADDITIONAL EVALUATION (retired)^99DCT">ADDITIONAL EVALUATION (retired)</option>
+                    <option value="5504^ADDITIONAL EVALUATION DESC (retired)^99DCT">ADDITIONAL EVALUATION DESC (retired)</option>
+                    <option value="5505^OI ALTERATION COMMENT (retired)^99DCT">OI ALTERATION COMMENT (retired)</option>
+                    <option value="5507^CONSULTANT^99DCT">CONSULTANT</option>
+                    <option value="5508^HOSPITALIZED SINCE LAST VISIT (retired)^99DCT">HOSPITALIZED SINCE LAST VISIT (retired)</option>
+                    <option value="5509^HOSPITALIZATION LAST VISIT NUMBER (retired)^99DCT">HOSPITALIZATION LAST VISIT NUMBER (retired)</option>
+                    <option value="5510^HOSPITALIZATION LAST VISIT DESC (retired)^99DCT">HOSPITALIZATION LAST VISIT DESC (retired)</option>
+                    <option value="5511^OUTSIDE HC (retired)^99DCT">OUTSIDE HC (retired)</option>
+                    <option value="5512^OUTSIDE HC PUBLIC DR (retired)^99DCT">OUTSIDE HC PUBLIC DR (retired)</option>
+                    <option value="5513^OUTSIDE HC PHARMACIST (retired)^99DCT">OUTSIDE HC PHARMACIST (retired)</option>
+                    <option value="5514^OUTSIDE HC PRIVATE DR (retired)^99DCT">OUTSIDE HC PRIVATE DR (retired)</option>
+                    <option value="5515^OUTSIDE HC TRADITIONAL CARE (retired)^99DCT">OUTSIDE HC TRADITIONAL CARE (retired)</option>
+                    <option value="5516^OUTSIDE HC OTHER (retired)^99DCT">OUTSIDE HC OTHER (retired)</option>
+                    <option value="5517^OUTSIDE HC OTHER DESC (retired)^99DCT">OUTSIDE HC OTHER DESC (retired)</option>
+                    <option value="5518^MTCT SERVICE NONE (retired)^99DCT">MTCT SERVICE NONE (retired)</option>
+                    <option value="5519^MTCT SERVICE PSYCHOSOCIAL (retired)^99DCT">MTCT SERVICE PSYCHOSOCIAL (retired)</option>
+                    <option value="5520^MTCT SERVICE MENTAL HEALTH (retired)^99DCT">MTCT SERVICE MENTAL HEALTH (retired)</option>
+                    <option value="5521^MTCT SERVICE ADHERENCE (retired)^99DCT">MTCT SERVICE ADHERENCE (retired)</option>
+                    <option value="5522^MTCT SERVICE SOCIAL SUPPORT (retired)^99DCT">MTCT SERVICE SOCIAL SUPPORT (retired)</option>
+                    <option value="5523^MTCT SERVICE NUTRITIONAL (retired)^99DCT">MTCT SERVICE NUTRITIONAL (retired)</option>
+                    <option value="5524^MTCT SERVICE OTHER (retired)^99DCT">MTCT SERVICE OTHER (retired)</option>
+                    <option value="5525^MTCT SERVICE OTHER DESC (retired)^99DCT">MTCT SERVICE OTHER DESC (retired)</option>
+                    <option value="5528^TB COMMENT (retired)^99DCT">TB COMMENT (retired)</option>
+                    <option value="5529^HEPATIC DISEASE COMMENT (retired)^99DCT">HEPATIC DISEASE COMMENT (retired)</option>
+                    <option value="5530^RENAL DISEASE COMMENT (retired)^99DCT">RENAL DISEASE COMMENT (retired)</option>
+                    <option value="5531^ANEMIA COMMENT (retired)^99DCT">ANEMIA COMMENT (retired)</option>
+                    <option value="5532^MENTAL ILLNESS COMMENT (retired)^99DCT">MENTAL ILLNESS COMMENT (retired)</option>
+                    <option value="5534^OTHER CONDITION1 SPEC (retired)^99DCT">OTHER CONDITION1 SPEC (retired)</option>
+                    <option value="5535^OTHER CONDITION1 COMMENT (retired)^99DCT">OTHER CONDITION1 COMMENT (retired)</option>
+                    <option value="5537^OTHER CONDITION2 SPEC (retired)^99DCT">OTHER CONDITION2 SPEC (retired)</option>
+                    <option value="5538^OTHER CONDITION2 COMMENT (retired)^99DCT">OTHER CONDITION2 COMMENT (retired)</option>
+                    <option value="5539^SIGN SYMPTOM YES NO (retired)^99DCT">SIGN SYMPTOM YES NO (retired)</option>
+                    <option value="5540^DIFFICULTY BREATHING (retired)^99DCT">DIFFICULTY BREATHING (retired)</option>
+                    <option value="5541^NUMBNESS (retired)^99DCT">NUMBNESS (retired)</option>
+                    <option value="5545^SIGN SYMPTOM OTHER1 (retired)^99DCT">SIGN SYMPTOM OTHER1 (retired)</option>
+                    <option value="5546^SIGN SYMPTOM OTHER DESC (retired)^99DCT">SIGN SYMPTOM OTHER DESC (retired)</option>
+                    <option value="5547^CONGENITAL ABNORMALITY^99DCT">CONGENITAL ABNORMALITY</option>
+                    <option value="5549^RAPID BREATHING TIME (retired)^99DCT">RAPID BREATHING TIME (retired)</option>
+                    <option value="5556^DIVORCED/SEPARATED (retired)^99DCT">DIVORCED/SEPARATED (retired)</option>
+                    <option value="5559^FIRST CHILD AGE (retired)^99DCT">FIRST CHILD AGE (retired)</option>
+                    <option value="5560^LAST CHILD AGE (retired)^99DCT">LAST CHILD AGE (retired)</option>
+                    <option value="5561^SPOUSE DEAD^99DCT">SPOUSE DEAD</option>
+                    <option value="5562^DISCORDED COUPLE (retired)^99DCT">DISCORDED COUPLE (retired)</option>
+                    <option value="5565^SPOUSE AWARE HIV (retired)^99DCT">SPOUSE AWARE HIV (retired)</option>
+                    <option value="5572^HIV THERAPY (retired)^99DCT">HIV THERAPY (retired)</option>
+                    <option value="5576^ARV FOR MOTHER (retired)^99DCT">ARV FOR MOTHER (retired)</option>
+                    <option value="5579^BREASTFEEDING EX (retired)^99DCT">BREASTFEEDING EX (retired)</option>
+                    <option value="5581^FORMULA FEEDS (retired)^99DCT">FORMULA FEEDS (retired)</option>
+                    <option value="5582^OTHER FEEDS (retired)^99DCT">OTHER FEEDS (retired)</option>
+                    <option value="5583^RESTARTED BREAST FEED (retired)^99DCT">RESTARTED BREAST FEED (retired)</option>
+                    <option value="5594^MTCT PATIENT TYPE (retired)^99DCT">MTCT PATIENT TYPE (retired)</option>
+                    <option value="5595^ANTEPARTUM POSTPARTUM (retired)^99DCT">ANTEPARTUM POSTPARTUM (retired)</option>
+                    <option value="5597^EST DELIVERY MO (retired)^99DCT">EST DELIVERY MO (retired)</option>
+                    <option value="5598^EST DELIVERY YR (retired)^99DCT">EST DELIVERY YR (retired)</option>
+                    <option value="5600^DELIVERY MO (retired)^99DCT">DELIVERY MO (retired)</option>
+                    <option value="5601^DELIVERY YR (retired)^99DCT">DELIVERY YR (retired)</option>
+                    <option value="5602^HOUSEHOLD MEMBER ENR (retired)^99DCT">HOUSEHOLD MEMBER ENR (retired)</option>
+                    <option value="5603^RELATIONHIP TO MTCT WOMAN (retired)^99DCT">RELATIONHIP TO MTCT WOMAN (retired)</option>
+                    <option value="5604^INDEX WOMAN MTCT (retired)^99DCT">INDEX WOMAN MTCT (retired)</option>
+                    <option value="5613^CHILDREN BETWEEN5 AND14 (retired)^99DCT">CHILDREN BETWEEN5 AND14 (retired)</option>
+                    <option value="5614^INDIVIDUALS15 AND OVER (retired)^99DCT">INDIVIDUALS15 AND OVER (retired)</option>
+                    <option value="5615^NOT MARRIED^99DCT">NOT MARRIED</option>
+                    <option value="5626^PATIENT RELATION TO MTCT WOMAN (retired)^99DCT">PATIENT RELATION TO MTCT WOMAN (retired)</option>
+                    <option value="5627^CHILD ATTENDED SCHOOL (retired)^99DCT">CHILD ATTENDED SCHOOL (retired)</option>
+                    <option value="5628^SCHOOL YEARS COMPLETED (retired)^99DCT">SCHOOL YEARS COMPLETED (retired)</option>
+                    <option value="5631^METHOD OF DELIVERY OTHER (retired)^99DCT">METHOD OF DELIVERY OTHER (retired)</option>
+                    <option value="5635^MOTHER RECEIVED ARV (retired)^99DCT">MOTHER RECEIVED ARV (retired)</option>
+                    <option value="5636^MOTHER NVP ANTEPARTUM (retired)^99DCT">MOTHER NVP ANTEPARTUM (retired)</option>
+                    <option value="5637^MOTHER NVP ANTE DOSE (retired)^99DCT">MOTHER NVP ANTE DOSE (retired)</option>
+                    <option value="5638^MOTHER NVP ANTE TX WEEKS (retired)^99DCT">MOTHER NVP ANTE TX WEEKS (retired)</option>
+                    <option value="5639^MOTHER NVP INTRAPARTUM (retired)^99DCT">MOTHER NVP INTRAPARTUM (retired)</option>
+                    <option value="5640^MOTHER NVP POSTPARTUM (retired)^99DCT">MOTHER NVP POSTPARTUM (retired)</option>
+                    <option value="5641^MOTHER NVP POST DOSE (retired)^99DCT">MOTHER NVP POST DOSE (retired)</option>
+                    <option value="5642^MOTHER NVP POST TX WEEKS (retired)^99DCT">MOTHER NVP POST TX WEEKS (retired)</option>
+                    <option value="5643^MOTHER AZT ANTEPARTUM (retired)^99DCT">MOTHER AZT ANTEPARTUM (retired)</option>
+                    <option value="5644^MOTHER AZT ANTE DOSE (retired)^99DCT">MOTHER AZT ANTE DOSE (retired)</option>
+                    <option value="5645^MOTHER AZT ANTE TX WEEKS (retired)^99DCT">MOTHER AZT ANTE TX WEEKS (retired)</option>
+                    <option value="5646^MOTHER AZT INTRAPARTUM (retired)^99DCT">MOTHER AZT INTRAPARTUM (retired)</option>
+                    <option value="5647^MOTHER AZT POST PARTUM (retired)^99DCT">MOTHER AZT POST PARTUM (retired)</option>
+                    <option value="5648^MOTHER AZT POST DOSE (retired)^99DCT">MOTHER AZT POST DOSE (retired)</option>
+                    <option value="5649^MOTHER AZT POST TX WEEKS (retired)^99DCT">MOTHER AZT POST TX WEEKS (retired)</option>
+                    <option value="5650^MOTHER3 TC ANTEPARTUM (retired)^99DCT">MOTHER3 TC ANTEPARTUM (retired)</option>
+                    <option value="5651^MOTHER3 TC ANTE DOSE (retired)^99DCT">MOTHER3 TC ANTE DOSE (retired)</option>
+                    <option value="5652^MOTHER3 TC ANTE TX WEEKS (retired)^99DCT">MOTHER3 TC ANTE TX WEEKS (retired)</option>
+                    <option value="5653^MOTHER3 TC INTRAPARTUM (retired)^99DCT">MOTHER3 TC INTRAPARTUM (retired)</option>
+                    <option value="5654^MOTHER3 TC POSTPARTUM (retired)^99DCT">MOTHER3 TC POSTPARTUM (retired)</option>
+                    <option value="5655^MOTHER3 TC POST DOSE (retired)^99DCT">MOTHER3 TC POST DOSE (retired)</option>
+                    <option value="5656^MOTHER3 TC POST TX WEEKS (retired)^99DCT">MOTHER3 TC POST TX WEEKS (retired)</option>
+                    <option value="5657^MOTHER OTHER DESC (retired)^99DCT">MOTHER OTHER DESC (retired)</option>
+                    <option value="5658^MOTHER OTHER ANTEPARTUM (retired)^99DCT">MOTHER OTHER ANTEPARTUM (retired)</option>
+                    <option value="5659^MOTHER OTHER ANTE DOSE (retired)^99DCT">MOTHER OTHER ANTE DOSE (retired)</option>
+                    <option value="5660^MOTHER OTHER ANTE TX WEEKS (retired)^99DCT">MOTHER OTHER ANTE TX WEEKS (retired)</option>
+                    <option value="5661^MOTHER OTHER INTRAPARTUM (retired)^99DCT">MOTHER OTHER INTRAPARTUM (retired)</option>
+                    <option value="5662^MOTHER OTHER POSTPARTUM (retired)^99DCT">MOTHER OTHER POSTPARTUM (retired)</option>
+                    <option value="5663^MOTHER OTHER POST DOSE (retired)^99DCT">MOTHER OTHER POST DOSE (retired)</option>
+                    <option value="5664^MOTHER OTHER POST TX WEEKS (retired)^99DCT">MOTHER OTHER POST TX WEEKS (retired)</option>
+                    <option value="5666^CHILD NVP DOSE (retired)^99DCT">CHILD NVP DOSE (retired)</option>
+                    <option value="5667^CHILD NVP TX WEEKS (retired)^99DCT">CHILD NVP TX WEEKS (retired)</option>
+                    <option value="5668^CHILD AZT DOSE (retired)^99DCT">CHILD AZT DOSE (retired)</option>
+                    <option value="5669^CHILD AZT TX WEEKS (retired)^99DCT">CHILD AZT TX WEEKS (retired)</option>
+                    <option value="5670^CHILD3 TC DOSE (retired)^99DCT">CHILD3 TC DOSE (retired)</option>
+                    <option value="5671^CHILD3 TC TX WEEKS (retired)^99DCT">CHILD3 TC TX WEEKS (retired)</option>
+                    <option value="5672^CHILD OTHER DOSE (retired)^99DCT">CHILD OTHER DOSE (retired)</option>
+                    <option value="5673^CHILD OTHER DESC (retired)^99DCT">CHILD OTHER DESC (retired)</option>
+                    <option value="5674^CHILD OTHER TX WEEKS (retired)^99DCT">CHILD OTHER TX WEEKS (retired)</option>
+                    <option value="5688^SYMPTOM (retired)^99DCT">SYMPTOM (retired)</option>
+                    <option value="5690^SEVERITY (retired)^99DCT">SEVERITY (retired)</option>
+                    <option value="5697^KSH (retired)^99DCT">KSH (retired)</option>
+                    <option value="5702^INH PROPHYLAXIS (retired)^99DCT">INH PROPHYLAXIS (retired)</option>
+                    <option value="5705^HOSPITALIZATION DESCRIPTION (retired)^99DCT">HOSPITALIZATION DESCRIPTION (retired)</option>
+                    <option value="5707^ZIDOVUDINE PAST (retired)^99DCT">ZIDOVUDINE PAST (retired)</option>
+                    <option value="5708^ZIDOVUDINE PRESENT (retired)^99DCT">ZIDOVUDINE PRESENT (retired)</option>
+                    <option value="5709^ZIDOVUDINEP MTCT (retired)^99DCT">ZIDOVUDINEP MTCT (retired)</option>
+                    <option value="5710^ZIDOVUDINE ARV (retired)^99DCT">ZIDOVUDINE ARV (retired)</option>
+                    <option value="5711^ZIDOVUDINE START CONTINUE (retired)^99DCT">ZIDOVUDINE START CONTINUE (retired)</option>
+                    <option value="5712^ZIDOVUDINE START DATE (retired)^99DCT">ZIDOVUDINE START DATE (retired)</option>
+                    <option value="5713^ZIDOVUDINE DISCONTINUED (retired)^99DCT">ZIDOVUDINE DISCONTINUED (retired)</option>
+                    <option value="5714^ZIDOVUDINE STOP DATE (retired)^99DCT">ZIDOVUDINE STOP DATE (retired)</option>
+                    <option value="5715^ZIDOVUDINE DISCONTINUATION1 (retired)^99DCT">ZIDOVUDINE DISCONTINUATION1 (retired)</option>
+                    <option value="5716^ZIDOVUDINE DISCONTINUATION2 (retired)^99DCT">ZIDOVUDINE DISCONTINUATION2 (retired)</option>
+                    <option value="5717^ZIDOVUDINE COMMENT (retired)^99DCT">ZIDOVUDINE COMMENT (retired)</option>
+                    <option value="5718^LAMIVUDINE PAST (retired)^99DCT">LAMIVUDINE PAST (retired)</option>
+                    <option value="5719^LAMIVUDINE PRESENT (retired)^99DCT">LAMIVUDINE PRESENT (retired)</option>
+                    <option value="5720^LAMIVUDINEP MTCT (retired)^99DCT">LAMIVUDINEP MTCT (retired)</option>
+                    <option value="5721^LAMIVUDINE ARV (retired)^99DCT">LAMIVUDINE ARV (retired)</option>
+                    <option value="5722^LAMIVUDINE START CONTINUE (retired)^99DCT">LAMIVUDINE START CONTINUE (retired)</option>
+                    <option value="5723^LAMIVUDINE START DATE (retired)^99DCT">LAMIVUDINE START DATE (retired)</option>
+                    <option value="5724^LAMIVUDINE DISCONTINUED (retired)^99DCT">LAMIVUDINE DISCONTINUED (retired)</option>
+                    <option value="5725^LAMIVUDINE STOP DATE (retired)^99DCT">LAMIVUDINE STOP DATE (retired)</option>
+                    <option value="5726^LAMIVUDINE DISCONTINUATION1 (retired)^99DCT">LAMIVUDINE DISCONTINUATION1 (retired)</option>
+                    <option value="5727^LAMIVUDINE DISCONTINUATION2 (retired)^99DCT">LAMIVUDINE DISCONTINUATION2 (retired)</option>
+                    <option value="5728^LAMIVUDINE COMMENT (retired)^99DCT">LAMIVUDINE COMMENT (retired)</option>
+                    <option value="5729^STAVUDINE PAST (retired)^99DCT">STAVUDINE PAST (retired)</option>
+                    <option value="5730^STAVUDINE PRESENT (retired)^99DCT">STAVUDINE PRESENT (retired)</option>
+                    <option value="5731^STAVUDINEP MTCT (retired)^99DCT">STAVUDINEP MTCT (retired)</option>
+                    <option value="5732^STAVUDINE ARV (retired)^99DCT">STAVUDINE ARV (retired)</option>
+                    <option value="5733^STAVUDINE START CONTINUE (retired)^99DCT">STAVUDINE START CONTINUE (retired)</option>
+                    <option value="5734^STAVUDINE START DATE (retired)^99DCT">STAVUDINE START DATE (retired)</option>
+                    <option value="5735^STAVUDINE DISCONTINUED (retired)^99DCT">STAVUDINE DISCONTINUED (retired)</option>
+                    <option value="5736^STAVUDINE STOP DATE (retired)^99DCT">STAVUDINE STOP DATE (retired)</option>
+                    <option value="5737^STAVUDINE DISCONTINUATION1 (retired)^99DCT">STAVUDINE DISCONTINUATION1 (retired)</option>
+                    <option value="5738^STAVUDINE DISCONTINUATION2 (retired)^99DCT">STAVUDINE DISCONTINUATION2 (retired)</option>
+                    <option value="5739^STAVUDINE COMMENT (retired)^99DCT">STAVUDINE COMMENT (retired)</option>
+                    <option value="5740^DIDANOSINE PAST (retired)^99DCT">DIDANOSINE PAST (retired)</option>
+                    <option value="5741^DIDANOSINE PRESENT (retired)^99DCT">DIDANOSINE PRESENT (retired)</option>
+                    <option value="5742^DIDANOSINEP MTCT (retired)^99DCT">DIDANOSINEP MTCT (retired)</option>
+                    <option value="5743^DIDANOSINE ARV (retired)^99DCT">DIDANOSINE ARV (retired)</option>
+                    <option value="5744^DIDANOSINE START CONTINUE (retired)^99DCT">DIDANOSINE START CONTINUE (retired)</option>
+                    <option value="5745^DIDANOSINE START DATE (retired)^99DCT">DIDANOSINE START DATE (retired)</option>
+                    <option value="5746^DIDANOSINE DISCONTINUED (retired)^99DCT">DIDANOSINE DISCONTINUED (retired)</option>
+                    <option value="5747^DIDANOSINE STOP DATE (retired)^99DCT">DIDANOSINE STOP DATE (retired)</option>
+                    <option value="5748^DIDANOSINE DISCONTINUATION1 (retired)^99DCT">DIDANOSINE DISCONTINUATION1 (retired)</option>
+                    <option value="5749^DIDANOSINE DISCONTINUATION2 (retired)^99DCT">DIDANOSINE DISCONTINUATION2 (retired)</option>
+                    <option value="5750^DIDANOSINE COMMENT (retired)^99DCT">DIDANOSINE COMMENT (retired)</option>
+                    <option value="5751^ABACAVIR PAST (retired)^99DCT">ABACAVIR PAST (retired)</option>
+                    <option value="5752^ABACAVIR PRESENT (retired)^99DCT">ABACAVIR PRESENT (retired)</option>
+                    <option value="5753^ABACAVIRP MTCT (retired)^99DCT">ABACAVIRP MTCT (retired)</option>
+                    <option value="5754^ABACAVIR ARV (retired)^99DCT">ABACAVIR ARV (retired)</option>
+                    <option value="5755^ABACAVIR START CONTINUE (retired)^99DCT">ABACAVIR START CONTINUE (retired)</option>
+                    <option value="5756^ABACAVIR START DATE (retired)^99DCT">ABACAVIR START DATE (retired)</option>
+                    <option value="5757^ABACAVIR DISCONTINUED (retired)^99DCT">ABACAVIR DISCONTINUED (retired)</option>
+                    <option value="5758^ABACAVIR STOP DATE (retired)^99DCT">ABACAVIR STOP DATE (retired)</option>
+                    <option value="5759^ABACAVIR DISCONTINUATION1 (retired)^99DCT">ABACAVIR DISCONTINUATION1 (retired)</option>
+                    <option value="5760^ABACAVIR DISCONTINUATION2 (retired)^99DCT">ABACAVIR DISCONTINUATION2 (retired)</option>
+                    <option value="5761^ABACAVIR COMMENT (retired)^99DCT">ABACAVIR COMMENT (retired)</option>
+                    <option value="5762^NEVIRAPINE PAST (retired)^99DCT">NEVIRAPINE PAST (retired)</option>
+                    <option value="5763^NEVIRAPINE PRESENT (retired)^99DCT">NEVIRAPINE PRESENT (retired)</option>
+                    <option value="5764^NEVIRAPINEP MTCT (retired)^99DCT">NEVIRAPINEP MTCT (retired)</option>
+                    <option value="5765^NEVIRAPINE ARV (retired)^99DCT">NEVIRAPINE ARV (retired)</option>
+                    <option value="5766^NEVIRAPINE START CONTINUE (retired)^99DCT">NEVIRAPINE START CONTINUE (retired)</option>
+                    <option value="5767^NEVIRAPINE START DATE (retired)^99DCT">NEVIRAPINE START DATE (retired)</option>
+                    <option value="5768^NEVIRAPINE DISCONTINUED (retired)^99DCT">NEVIRAPINE DISCONTINUED (retired)</option>
+                    <option value="5769^NEVIRAPINE STOP DATE (retired)^99DCT">NEVIRAPINE STOP DATE (retired)</option>
+                    <option value="5770^NEVIRAPINE DISCONTINUATION1 (retired)^99DCT">NEVIRAPINE DISCONTINUATION1 (retired)</option>
+                    <option value="5771^NEVIRAPINE DISCONTINUATION2 (retired)^99DCT">NEVIRAPINE DISCONTINUATION2 (retired)</option>
+                    <option value="5772^NEVIRAPINE COMMENT (retired)^99DCT">NEVIRAPINE COMMENT (retired)</option>
+                    <option value="5773^EFAVIRENZ PAST (retired)^99DCT">EFAVIRENZ PAST (retired)</option>
+                    <option value="5774^EFAVIRENZ PRESENT (retired)^99DCT">EFAVIRENZ PRESENT (retired)</option>
+                    <option value="5775^EFAVIRENZP MTCT (retired)^99DCT">EFAVIRENZP MTCT (retired)</option>
+                    <option value="5776^EFAVIRENZ ARV (retired)^99DCT">EFAVIRENZ ARV (retired)</option>
+                    <option value="5777^EFAVIRENZ START CONTINUE (retired)^99DCT">EFAVIRENZ START CONTINUE (retired)</option>
+                    <option value="5778^EFAVIRENZ START DATE (retired)^99DCT">EFAVIRENZ START DATE (retired)</option>
+                    <option value="5779^EFAVIRENZ DISCONTINUED (retired)^99DCT">EFAVIRENZ DISCONTINUED (retired)</option>
+                    <option value="5780^EFAVIRENZ STOP DATE (retired)^99DCT">EFAVIRENZ STOP DATE (retired)</option>
+                    <option value="5781^EFAVIRENZ DISCONTINUATION1 (retired)^99DCT">EFAVIRENZ DISCONTINUATION1 (retired)</option>
+                    <option value="5782^EFAVIRENZ DISCONTINUATION2 (retired)^99DCT">EFAVIRENZ DISCONTINUATION2 (retired)</option>
+                    <option value="5783^EFAVIRENZ COMMENT (retired)^99DCT">EFAVIRENZ COMMENT (retired)</option>
+                    <option value="5784^NELFINAVIR PAST (retired)^99DCT">NELFINAVIR PAST (retired)</option>
+                    <option value="5785^NELFINAVIR PRESENT (retired)^99DCT">NELFINAVIR PRESENT (retired)</option>
+                    <option value="5786^NELFINAVIRP MTCT (retired)^99DCT">NELFINAVIRP MTCT (retired)</option>
+                    <option value="5787^NELFINAVIR ARV (retired)^99DCT">NELFINAVIR ARV (retired)</option>
+                    <option value="5788^NELFINAVIR START CONTINUE (retired)^99DCT">NELFINAVIR START CONTINUE (retired)</option>
+                    <option value="5789^NELFINAVIR START DATE (retired)^99DCT">NELFINAVIR START DATE (retired)</option>
+                    <option value="5790^NELFINAVIR DISCONTINUED (retired)^99DCT">NELFINAVIR DISCONTINUED (retired)</option>
+                    <option value="5791^NELFINAVIR STOP DATE (retired)^99DCT">NELFINAVIR STOP DATE (retired)</option>
+                    <option value="5792^NELFINAVIR DISCONTINUATION1 (retired)^99DCT">NELFINAVIR DISCONTINUATION1 (retired)</option>
+                    <option value="5793^NELFINAVIR DISCONTINUATION2 (retired)^99DCT">NELFINAVIR DISCONTINUATION2 (retired)</option>
+                    <option value="5794^NELFINAVIR COMMENT (retired)^99DCT">NELFINAVIR COMMENT (retired)</option>
+                    <option value="5795^OTHER SPEC (retired)^99DCT">OTHER SPEC (retired)</option>
+                    <option value="5796^OTHER PAST (retired)^99DCT">OTHER PAST (retired)</option>
+                    <option value="5797^OTHER PRESENT (retired)^99DCT">OTHER PRESENT (retired)</option>
+                    <option value="5798^OTHERP MTCT (retired)^99DCT">OTHERP MTCT (retired)</option>
+                    <option value="5799^OTHER ARV (retired)^99DCT">OTHER ARV (retired)</option>
+                    <option value="5800^OTHER START CONTINUE (retired)^99DCT">OTHER START CONTINUE (retired)</option>
+                    <option value="5801^OTHER START DATE (retired)^99DCT">OTHER START DATE (retired)</option>
+                    <option value="5802^OTHER DISCONTINUED (retired)^99DCT">OTHER DISCONTINUED (retired)</option>
+                    <option value="5803^OTHER STOP DATE (retired)^99DCT">OTHER STOP DATE (retired)</option>
+                    <option value="5804^OTHER DISCONTINUATION1 (retired)^99DCT">OTHER DISCONTINUATION1 (retired)</option>
+                    <option value="5805^OTHER DISCONTINUATION2 (retired)^99DCT">OTHER DISCONTINUATION2 (retired)</option>
+                    <option value="5806^OTHER COMMENT (retired)^99DCT">OTHER COMMENT (retired)</option>
+                    <option value="5807^UNKNOWN SPEC (retired)^99DCT">UNKNOWN SPEC (retired)</option>
+                    <option value="5808^UNKNOWN PAST (retired)^99DCT">UNKNOWN PAST (retired)</option>
+                    <option value="5809^UNKNOWN PRESENT (retired)^99DCT">UNKNOWN PRESENT (retired)</option>
+                    <option value="5810^UNKNOWNP MTCT (retired)^99DCT">UNKNOWNP MTCT (retired)</option>
+                    <option value="5812^UNKNOWN START CONINUE (retired)^99DCT">UNKNOWN START CONINUE (retired)</option>
+                    <option value="5813^UNKNOWN START DATE (retired)^99DCT">UNKNOWN START DATE (retired)</option>
+                    <option value="5814^UNKNOWN DISCONTINUED (retired)^99DCT">UNKNOWN DISCONTINUED (retired)</option>
+                    <option value="5815^UNKNOWN DISCONTINUATION1 (retired)^99DCT">UNKNOWN DISCONTINUATION1 (retired)</option>
+                    <option value="5816^UNKNOWN DISCONTINUATION2 (retired)^99DCT">UNKNOWN DISCONTINUATION2 (retired)</option>
+                    <option value="5817^UNKNOWN STOP DATE (retired)^99DCT">UNKNOWN STOP DATE (retired)</option>
+                    <option value="5818^UNKNOWN COMMENT (retired)^99DCT">UNKNOWN COMMENT (retired)</option>
+                    <option value="5819^AR VS COMMENT (retired)^99DCT">AR VS COMMENT (retired)</option>
+                    <option value="5820^CURRENT MEDS (retired)^99DCT">CURRENT MEDS (retired)</option>
+                    <option value="5821^COTRIMOXAZOLE CURRENT (retired)^99DCT">COTRIMOXAZOLE CURRENT (retired)</option>
+                    <option value="5822^COTRIMOXAZOLE COMMENT (retired)^99DCT">COTRIMOXAZOLE COMMENT (retired)</option>
+                    <option value="5823^DAPSONE CURRENT (retired)^99DCT">DAPSONE CURRENT (retired)</option>
+                    <option value="5824^DAPSONE COMMENT (retired)^99DCT">DAPSONE COMMENT (retired)</option>
+                    <option value="5825^FLUCONAZOLE CURRENT (retired)^99DCT">FLUCONAZOLE CURRENT (retired)</option>
+                    <option value="5826^FLUCONAZOLE COMMENT (retired)^99DCT">FLUCONAZOLE COMMENT (retired)</option>
+                    <option value="5827^ISONIAZID CURRENT (retired)^99DCT">ISONIAZID CURRENT (retired)</option>
+                    <option value="5828^ISONIAZID COMMENT (retired)^99DCT">ISONIAZID COMMENT (retired)</option>
+                    <option value="5830^PYRAZINAMIDE COMMENT (retired)^99DCT">PYRAZINAMIDE COMMENT (retired)</option>
+                    <option value="5831^RIFAMPIN CURRENT (retired)^99DCT">RIFAMPIN CURRENT (retired)</option>
+                    <option value="5832^RIFAMPIN COMMENT (retired)^99DCT">RIFAMPIN COMMENT (retired)</option>
+                    <option value="5833^ETHAMBUTOL CURRENT (retired)^99DCT">ETHAMBUTOL CURRENT (retired)</option>
+                    <option value="5834^ETHAMBUTOL COMMENT (retired)^99DCT">ETHAMBUTOL COMMENT (retired)</option>
+                    <option value="5835^STREPTOMYCIN CURRENT (retired)^99DCT">STREPTOMYCIN CURRENT (retired)</option>
+                    <option value="5836^STREPTOMYCIN COMMENT (retired)^99DCT">STREPTOMYCIN COMMENT (retired)</option>
+                    <option value="5837^NYSTATIN CURRENT (retired)^99DCT">NYSTATIN CURRENT (retired)</option>
+                    <option value="5838^NYSTATIN COMMENT (retired)^99DCT">NYSTATIN COMMENT (retired)</option>
+                    <option value="5840^ANTIMALARIAL MED COMMENT (retired)^99DCT">ANTIMALARIAL MED COMMENT (retired)</option>
+                    <option value="5842^HERBAL MED COMMENT (retired)^99DCT">HERBAL MED COMMENT (retired)</option>
+                    <option value="5844^MINERAL COMMENT (retired)^99DCT">MINERAL COMMENT (retired)</option>
+                    <option value="5845^MULTIVITAMIN CURRENT (retired)^99DCT">MULTIVITAMIN CURRENT (retired)</option>
+                    <option value="5846^MULTIVITAMIN COMMENT (retired)^99DCT">MULTIVITAMIN COMMENT (retired)</option>
+                    <option value="5847^OTHER1 SPEC (retired)^99DCT">OTHER1 SPEC (retired)</option>
+                    <option value="5848^OTHER1 CURRENT (retired)^99DCT">OTHER1 CURRENT (retired)</option>
+                    <option value="5849^OTHER1 COMMENT (retired)^99DCT">OTHER1 COMMENT (retired)</option>
+                    <option value="5850^OTHER2 SPEC (retired)^99DCT">OTHER2 SPEC (retired)</option>
+                    <option value="5851^OTHER2 CURRENT (retired)^99DCT">OTHER2 CURRENT (retired)</option>
+                    <option value="5852^OTHER2 COMMENT (retired)^99DCT">OTHER2 COMMENT (retired)</option>
+                    <option value="5854^PAST BCG (retired)^99DCT">PAST BCG (retired)</option>
+                    <option value="5855^PAST BCG DOSES (retired)^99DCT">PAST BCG DOSES (retired)</option>
+                    <option value="5856^PAST HBV (retired)^99DCT">PAST HBV (retired)</option>
+                    <option value="5857^PAST HBV DOSES (retired)^99DCT">PAST HBV DOSES (retired)</option>
+                    <option value="5858^PAST DPT (retired)^99DCT">PAST DPT (retired)</option>
+                    <option value="5859^PAST DPT DOSES (retired)^99DCT">PAST DPT DOSES (retired)</option>
+                    <option value="5860^PAST OPV (retired)^99DCT">PAST OPV (retired)</option>
+                    <option value="5861^PAST OPV DOSES (retired)^99DCT">PAST OPV DOSES (retired)</option>
+                    <option value="5862^PAST MEASLES (retired)^99DCT">PAST MEASLES (retired)</option>
+                    <option value="5863^PAST MEASLES DOSES (retired)^99DCT">PAST MEASLES DOSES (retired)</option>
+                    <option value="5865^PAST YELLOW FEVER DOSES (retired)^99DCT">PAST YELLOW FEVER DOSES (retired)</option>
+                    <option value="5866^PAST OTHER (retired)^99DCT">PAST OTHER (retired)</option>
+                    <option value="5867^PAST OTHER DESC (retired)^99DCT">PAST OTHER DESC (retired)</option>
+                    <option value="5868^PAST OTHER DOSES (retired)^99DCT">PAST OTHER DOSES (retired)</option>
+                    <option value="5869^ARV START DATE (retired)^99DCT">ARV START DATE (retired)</option>
+                    <option value="5870^ARV COMMENT (retired)^99DCT">ARV COMMENT (retired)</option>
+                    <option value="5871^PILLS TAKEN LAST7 DAYS (retired)^99DCT">PILLS TAKEN LAST7 DAYS (retired)</option>
+                    <option value="5872^MISSED ARV FORGOT (retired)^99DCT">MISSED ARV FORGOT (retired)</option>
+                    <option value="5873^MISSED ARV TOO ILL (retired)^99DCT">MISSED ARV TOO ILL (retired)</option>
+                    <option value="5874^MISSED ARV SIDE EFFECTS (retired)^99DCT">MISSED ARV SIDE EFFECTS (retired)</option>
+                    <option value="5875^MISSED ARV CLINIC RAN OUT (retired)^99DCT">MISSED ARV CLINIC RAN OUT (retired)</option>
+                    <option value="5876^MISSED ARV LOST MED (retired)^99DCT">MISSED ARV LOST MED (retired)</option>
+                    <option value="5877^MISSED ARV DISCLOSURE ISSUES (retired)^99DCT">MISSED ARV DISCLOSURE ISSUES (retired)</option>
+                    <option value="5878^MISSED ARV PT RAN OUT (retired)^99DCT">MISSED ARV PT RAN OUT (retired)</option>
+                    <option value="5879^MISSED ARV OTHER (retired)^99DCT">MISSED ARV OTHER (retired)</option>
+                    <option value="5880^MISSED ARV OTHER DESC (retired)^99DCT">MISSED ARV OTHER DESC (retired)</option>
+                    <option value="5881^MISSED ARV VOMITED (retired)^99DCT">MISSED ARV VOMITED (retired)</option>
+                    <option value="5882^MISSED ARV REFUSED (retired)^99DCT">MISSED ARV REFUSED (retired)</option>
+                    <option value="5883^PROVIDED INFO MOTHER (retired)^99DCT">PROVIDED INFO MOTHER (retired)</option>
+                    <option value="5884^PROVIDED INFO FATHER (retired)^99DCT">PROVIDED INFO FATHER (retired)</option>
+                    <option value="5885^PROVIDED INFO PATIENT (retired)^99DCT">PROVIDED INFO PATIENT (retired)</option>
+                    <option value="5886^PROVIDED INFO SIBLING (retired)^99DCT">PROVIDED INFO SIBLING (retired)</option>
+                    <option value="5887^PROVIDED INFO OTHER (retired)^99DCT">PROVIDED INFO OTHER (retired)</option>
+                    <option value="5889^MED HX COMMENT (retired)^99DCT">MED HX COMMENT (retired)</option>
+                    <option value="5906^OTHER TESTS (retired)^99DCT">OTHER TESTS (retired)</option>
+                    <option value="5909^MTRHID (retired)^99DCT">MTRHID (retired)</option>
+                    <option value="5913^FIRST NAME (retired)^99DCT">FIRST NAME (retired)</option>
+                    <option value="5914^MIDDLE NAME (retired)^99DCT">MIDDLE NAME (retired)</option>
+                    <option value="5915^LAST NAME (retired)^99DCT">LAST NAME (retired)</option>
+                    <option value="5916^BIRTH WEIGHT^99DCT">BIRTH WEIGHT</option>
+                    <option value="5918^BIRTH MONTH (retired)^99DCT">BIRTH MONTH (retired)</option>
+                    <option value="5919^BIRTH YEAR (retired)^99DCT">BIRTH YEAR (retired)</option>
+                    <option value="5921^MOTHER FIRST NAME (retired)^99DCT">MOTHER FIRST NAME (retired)</option>
+                    <option value="5922^FATHER NAME (retired)^99DCT">FATHER NAME (retired)</option>
+                    <option value="5923^SEX (retired)^99DCT">SEX (retired)</option>
+                    <option value="5924^TRIBE (retired)^99DCT">TRIBE (retired)</option>
+                    <option value="5925^MOD (retired)^99DCT">MOD (retired)</option>
+                    <option value="5926^GESTATION AT BIRTH (retired)^99DCT">GESTATION AT BIRTH (retired)</option>
+                    <option value="5927^MOSORIOT CATCHMENT AREA (retired)^99DCT">MOSORIOT CATCHMENT AREA (retired)</option>
+                    <option value="5928^DEATH DATE (retired)^99DCT">DEATH DATE (retired)</option>
+                    <option value="5930^LOST TO FOLLOWUP GT 3 (retired)^99DCT">LOST TO FOLLOWUP GT 3 (retired)</option>
+                    <option value="5931^OTHER TRIBE (retired)^99DCT">OTHER TRIBE (retired)</option>
+                    <option value="5932^DATE (retired)^99DCT">DATE (retired)</option>
+                    <option value="5934^PT PAYS FOR WORK UP RX (retired)^99DCT">PT PAYS FOR WORK UP RX (retired)</option>
+                    <option value="5936^MRCT PLUS ID (retired)^99DCT">MRCT PLUS ID (retired)</option>
+                    <option value="5937^FACILITY CODE (retired)^99DCT">FACILITY CODE (retired)</option>
+                    <option value="5938^SITE CODE (retired)^99DCT">SITE CODE (retired)</option>
+                    <option value="5939^MOTHER(APOSTROPHE)S AMPATHID (retired)^99DCT">MOTHER(APOSTROPHE)S AMPATHID (retired)</option>
+                    <option value="5968^TB CURRENT TREATMENT TYPE (retired)^99DCT">TB CURRENT TREATMENT TYPE (retired)</option>
+                    <option value="5977^ROS CP COMMENT (retired)^99DCT">ROS CP COMMENT (retired)</option>
+                    <option value="5982^VOMITING CONTINUOUS (retired)^99DCT">VOMITING CONTINUOUS (retired)</option>
+                    <option value="5985^DIARRHEA CONTINUOUS (retired)^99DCT">DIARRHEA CONTINUOUS (retired)</option>
+                    <option value="6009^TB DRUGS (retired)^99DCT">TB DRUGS (retired)</option>
+                    <option value="6010^TB DRUGS CONTINUE (retired)^99DCT">TB DRUGS CONTINUE (retired)</option>
+                    <option value="6026^INDUCTION (retired)^99DCT">INDUCTION (retired)</option>
+                    <option value="6027^CONTINUATION (retired)^99DCT">CONTINUATION (retired)</option>
+                    <option value="6040^ROS DEV COMMENT (retired)^99DCT">ROS DEV COMMENT (retired)</option>
+                    <option value="6041^CURRENT PAST DX VARIOUS SYMPTOMS (retired)^99DCT">CURRENT PAST DX VARIOUS SYMPTOMS (retired)</option>
+                    <option value="6043^OI ELIGIBLE TOTAL PMTCT (retired)^99DCT">OI ELIGIBLE TOTAL PMTCT (retired)</option>
+                    <option value="6044^ARV ELIGIBLE TOTAL PMTCT (retired)^99DCT">ARV ELIGIBLE TOTAL PMTCT (retired)</option>
+                    <option value="6045^FEED BREAST FEED (retired)^99DCT">FEED BREAST FEED (retired)</option>
+                    <option value="6047^FEEDING CHANGED (retired)^99DCT">FEEDING CHANGED (retired)</option>
+                    <option value="6051^CXR PI EFF (retired)^99DCT">CXR PI EFF (retired)</option>
+                    <option value="6053^CXR NOS (retired)^99DCT">CXR NOS (retired)</option>
+                    <option value="6054^CURRENT ARV (retired)^99DCT">CURRENT ARV (retired)</option>
+                    <option value="6055^CURRENT OI (retired)^99DCT">CURRENT OI (retired)</option>
+                    <option value="6056^CURRENT TB TX (retired)^99DCT">CURRENT TB TX (retired)</option>
+                    <option value="6057^ADMIT MOSORIOT (retired)^99DCT">ADMIT MOSORIOT (retired)</option>
+                    <option value="6058^TURBO (retired)^99DCT">TURBO (retired)</option>
+                    <option value="6059^BURNT FOREST (retired)^99DCT">BURNT FOREST (retired)</option>
+                    <option value="6060^INP WARD (retired)^99DCT">INP WARD (retired)</option>
+                    <option value="6062^IMMUNIZATIONS ON SCHEDULE (retired)^99DCT">IMMUNIZATIONS ON SCHEDULE (retired)</option>
+                    <option value="6063^ANTI TB ADHERENCE (retired)^99DCT">ANTI TB ADHERENCE (retired)</option>
+                    <option value="6064^OI ADHERENCE (retired)^99DCT">OI ADHERENCE (retired)</option>
+                    <option value="6066^MISSED OI FORGOT (retired)^99DCT">MISSED OI FORGOT (retired)</option>
+                    <option value="6067^MISSED OI TOO ILL (retired)^99DCT">MISSED OI TOO ILL (retired)</option>
+                    <option value="6068^MISSED OI SIDE EFFECTS (retired)^99DCT">MISSED OI SIDE EFFECTS (retired)</option>
+                    <option value="6069^MISSED OI CLINIC RAN OUT (retired)^99DCT">MISSED OI CLINIC RAN OUT (retired)</option>
+                    <option value="6070^MISSED OI LOST MED (retired)^99DCT">MISSED OI LOST MED (retired)</option>
+                    <option value="6071^MISSED OI DISCLOSURE (retired)^99DCT">MISSED OI DISCLOSURE (retired)</option>
+                    <option value="6072^MISSED OI PT RAN OUT (retired)^99DCT">MISSED OI PT RAN OUT (retired)</option>
+                    <option value="6073^MISSED OI OTHER (retired)^99DCT">MISSED OI OTHER (retired)</option>
+                    <option value="6074^MISSED OI OTHER DESC (retired)^99DCT">MISSED OI OTHER DESC (retired)</option>
+                    <option value="6075^MISSED OI VOMITED (retired)^99DCT">MISSED OI VOMITED (retired)</option>
+                    <option value="6076^MISSED OI REFUSED (retired)^99DCT">MISSED OI REFUSED (retired)</option>
+                    <option value="6078^MISSED TB FORGOT (retired)^99DCT">MISSED TB FORGOT (retired)</option>
+                    <option value="6079^MISSED TB TO ILL (retired)^99DCT">MISSED TB TO ILL (retired)</option>
+                    <option value="6080^MISSED TB SIDE EFFECTS (retired)^99DCT">MISSED TB SIDE EFFECTS (retired)</option>
+                    <option value="6081^MISSED TB CLINIC RAN OUT (retired)^99DCT">MISSED TB CLINIC RAN OUT (retired)</option>
+                    <option value="6082^MISSED TB LOST MED (retired)^99DCT">MISSED TB LOST MED (retired)</option>
+                    <option value="6083^MISSED TB DISCLOSURE (retired)^99DCT">MISSED TB DISCLOSURE (retired)</option>
+                    <option value="6084^MISSED TB PT RAN OUT (retired)^99DCT">MISSED TB PT RAN OUT (retired)</option>
+                    <option value="6085^MISSED TB OTHER (retired)^99DCT">MISSED TB OTHER (retired)</option>
+                    <option value="6086^MISSED TB OTHER DESC (retired)^99DCT">MISSED TB OTHER DESC (retired)</option>
+                    <option value="6087^MISSED TB VOMITED (retired)^99DCT">MISSED TB VOMITED (retired)</option>
+                    <option value="6088^MISSED TB REFUSED (retired)^99DCT">MISSED TB REFUSED (retired)</option>
+                    <option value="6089^ARV MEDS MISSED (retired)^99DCT">ARV MEDS MISSED (retired)</option>
+                    <option value="6090^OI MEDS MISSED (retired)^99DCT">OI MEDS MISSED (retired)</option>
+                    <option value="6091^TB MEDS MISSED (retired)^99DCT">TB MEDS MISSED (retired)</option>
+                    <option value="6092^PAST HIB^99DCT">PAST HIB</option>
+                    <option value="6093^PAST HIB DOSES^99DCT">PAST HIB DOSES</option>
+                    <option value="6094^NVP PRIOR TO DELIVERY (retired)^99DCT">NVP PRIOR TO DELIVERY (retired)</option>
+                    <option value="6238^SCHEDULED IN COUNTRY^99DCT">SCHEDULED IN COUNTRY</option>
+                    <option value="6293^3.0 - 3.5^99DCT">3.0 - 3.5</option>
+                    <option value="6362^PHYSICIAN-REPORTED MYCOBACTERIA CULTURE RESULT^99DCT">PHYSICIAN-REPORTED MYCOBACTERIA CULTURE RESULT</option>
+                    <option value="6408^PAP SMEAR COMMENT^99DCT">PAP SMEAR COMMENT</option>
+                    <option value="6414^WHEN WAS THE LAST TIME YOU MISSED AT LEAST 7 DAYS OF ARV PICKUPS (DAYS WEEKS OR MONTHS)^99DCT">WHEN WAS THE LAST TIME YOU MISSED AT LEAST 7 DAYS OF ARV PICKUPS (DAYS WEEKS OR MONTHS)</option>
+                    <option value="6438^TUBERCULOSIS SMEAR RESULT AT BASELINE^99DCT">TUBERCULOSIS SMEAR RESULT AT BASELINE</option>
+                    <option value="6439^TUBERCULOSIS SMEAR HALFWAY THROUGH DOTS TREATMENT^99DCT">TUBERCULOSIS SMEAR HALFWAY THROUGH DOTS TREATMENT</option>
+                    <option value="6440^TUBERCULOSIS SMEAR RESULT AT END OF TREATMENT^99DCT">TUBERCULOSIS SMEAR RESULT AT END OF TREATMENT</option>
+                    <option value="6674^Absolute Monocyte Count^99DCT">Absolute Monocyte Count</option>
+                    <option value="6675^Absolute Neutrophil Count^99DCT">Absolute Neutrophil Count</option>
+                    <option value="6676^EOS v2^99DCT">EOS v2</option>
+                    <option value="6677^Absolute Basophil Count^99DCT">Absolute Basophil Count</option>
+                    <option value="6702^PRIMARY CARE SERVICE REQUESTED^99DCT">PRIMARY CARE SERVICE REQUESTED</option>
+                    <option value="6736^Sensation in left foot^99DCT">Sensation in left foot</option>
+                    <option value="6737^Sensation in right foot^99DCT">Sensation in right foot</option>
+                    <option value="6761^Débit de pointe prédit^99DCT">Débit de pointe prédit</option>
+                    <option value="6762^Percent peak flow change after salbutamol^99DCT">Percent peak flow change after salbutamol</option>
+                    <option value="6763^Peak flow before salbutamol^99DCT">Peak flow before salbutamol</option>
+                    <option value="6765^Peak flow after salbutamol^99DCT">Peak flow after salbutamol</option>
+                    <option value="6766^Peak flow percent best effort vs peak flow predicted^99DCT">Peak flow percent best effort vs peak flow predicted</option>
+                    <option value="6767^Lung sound location^99DCT">Lung sound location</option>
+                    <option value="6771^Cardiac echo^99DCT">Cardiac echo</option>
+                    <option value="6827^Lab test for phenytoin, carbamazepine, depakene^99DCT">Lab test for phenytoin, carbamazepine, depakene</option>
+                    <option value="6842^EEG^99DCT">EEG</option>
+                    <option value="6865^Systolic blood pressure at referral time^99DCT">Systolic blood pressure at referral time</option>
+                    <option value="6866^Diastolic blood pressure at referral time^99DCT">Diastolic blood pressure at referral time</option>
+                    <option value="6882^GROUP 85^99DCT">GROUP 85</option>
+                    <option value="6961^Initial HIV PCR^99DCT">Initial HIV PCR</option>
+                    <option value="6962^Confirming HIV PCR DBS^99DCT">Confirming HIV PCR DBS</option>
+                    <option value="6968^PHYSICIAN-REPORTED TUBERCULOSIS SMEAR RESULT^99DCT">PHYSICIAN-REPORTED TUBERCULOSIS SMEAR RESULT</option>
+                    <option value="7194^Coloration de Gram^99DCT">Coloration de Gram</option>
+                    <option value="7195^Cytology^99DCT">Cytology</option>
+                    <option value="7201^APPEARANCE AND COLOR^99DCT">APPEARANCE AND COLOR</option>
+                    <option value="7203^Mobilite 30min apres emission (retired)^99DCT">Mobilite 30min apres emission (retired)</option>
+                    <option value="7204^Motility 3 hours after collection^99DCT">Motility 3 hours after collection</option>
+                    <option value="7205^Motility 9 hours after collection^99DCT">Motility 9 hours after collection</option>
+                    <option value="7206^Motility 1 hour after collection^99DCT">Motility 1 hour after collection</option>
+                    <option value="7207^Mobilite 2h apres emission (retired)^99DCT">Mobilite 2h apres emission (retired)</option>
+                    <option value="7208^Motility 12 hours after collection^99DCT">Motility 12 hours after collection</option>
+                    <option value="7209^Motility 6 hours after collection^99DCT">Motility 6 hours after collection</option>
+                    <option value="7210^SPERM COUNT^99DCT">SPERM COUNT</option>
+                    <option value="7211^Cypermocytograme^99DCT">Cypermocytograme</option>
+                    <option value="7212^Motility 24 hours after collection^99DCT">Motility 24 hours after collection</option>
+                    <option value="7213^PH^99DCT">PH</option>
+                    <option value="7214^Spermocytogram^99DCT">Spermocytogram</option>
+                    <option value="7215^E^99DCT">E</option>
+                    <option value="7216^Exam Direct^99DCT">Exam Direct</option>
+                    <option value="7218^BLEEDING TIME^99DCT">BLEEDING TIME</option>
+                    <option value="7219^CLOTTING  TIME^99DCT">CLOTTING  TIME</option>
+                    <option value="7220^ACTIVATED PARTIAL THROMBOLASTIN TIME^99DCT">ACTIVATED PARTIAL THROMBOLASTIN TIME</option>
+                    <option value="7221^Fibrinogène^99DCT">Fibrinogène</option>
+                    <option value="7223^G.E^99DCT">G.E</option>
+                    <option value="7236^UROBILINOGEN^99DCT">UROBILINOGEN</option>
+                    <option value="7241^DENSITE^99DCT">DENSITE</option>
+                    <option value="7242^NITRITE^99DCT">NITRITE</option>
+                    <option value="7245^UREA/UREE^99DCT">UREA/UREE</option>
+                    <option value="7246^GAMMA GT^99DCT">GAMMA GT</option>
+                    <option value="7247^ALPHA AMYLASE^99DCT">ALPHA AMYLASE</option>
+                    <option value="7248^BIOCHEMISTRY^99DCT">BIOCHEMISTRY</option>
+                    <option value="7251^SRV^99DCT">SRV</option>
+                    <option value="7253^RHESUS^99DCT">RHESUS</option>
+                    <option value="7254^Ag HBs^99DCT">Ag HBs</option>
+                    <option value="7255^ANTI HEPATITIS C VIRUS^99DCT">ANTI HEPATITIS C VIRUS</option>
+                    <option value="7258^RUBEOLE^99DCT">RUBEOLE</option>
+                    <option value="7259^HELICOBACTER -PYLORI^99DCT">HELICOBACTER -PYLORI</option>
+                    <option value="7260^CRP^99DCT">CRP</option>
+                    <option value="7261^ANTI STREPTOLYSINE O^99DCT">ANTI STREPTOLYSINE O</option>
+                    <option value="7262^ARHRITEST^99DCT">ARHRITEST</option>
+                    <option value="7263^PROSTATE SPECIFIC ANTIGEN^99DCT">PROSTATE SPECIFIC ANTIGEN</option>
+                    <option value="7264^AP^99DCT">AP</option>
+                    <option value="7265^IMMUNOSEROLOGY^99DCT">IMMUNOSEROLOGY</option>
+                    <option value="7823^COCAINE METABOLITES^99DCT">COCAINE METABOLITES</option>
+                    <option value="7824^AMP^99DCT">AMP</option>
+                    <option value="7825^METAMPHETAMINE^99DCT">METAMPHETAMINE</option>
+                    <option value="7826^MDMA^99DCT">MDMA</option>
+                    <option value="7828^OPIATE^99DCT">OPIATE</option>
+                    <option value="7829^PCP v2^99DCT">PCP v2</option>
+                    <option value="7830^BAR^99DCT">BAR</option>
+                    <option value="7831^THC^99DCT">THC</option>
+                    <option value="7832^BZO^99DCT">BZO</option>
+                    <option value="7833^METADONE^99DCT">METADONE</option>
+                    <option value="7834^OXYCODONE^99DCT">OXYCODONE</option>
+                    <option value="7837^MPV^99DCT">MPV</option>
+                    <option value="7838^LEUCOCYTES^99DCT">LEUCOCYTES</option>
+                    <option value="7917^MGG STAIN^99DCT">MGG STAIN</option>
+                    <option value="7920^CETONES^99DCT">CETONES</option>
+                    <option value="7921^BLOOD^99DCT">BLOOD</option>
+                    <option value="7940^Examinations^99DCT">Examinations</option>
+                    <option value="7941^Extra-Oral^99DCT">Extra-Oral</option>
+                    <option value="7942^Intra-Oral examinations^99DCT">Intra-Oral examinations</option>
+                    <option value="7949^Types d'Anesthesie^99DCT">Types d'Anesthesie</option>
+                    <option value="8046^FROTTIS VAGINAL^99DCT">FROTTIS VAGINAL</option>
+                    <option value="8222^PrePex other (retired)^99DCT">PrePex other (retired)</option>
+                    <option value="8511^Weight change v2^99DCT">Weight change v2</option>
+                    <option value="8518^Height Risk Factor^99DCT">Height Risk Factor</option>
+                    <option value="8532^Give birth to a child who died the same day^99DCT">Give birth to a child who died the same day</option>
+                    <option value="9721^Nyagatare Police Station^99DCT">Nyagatare Police Station</option>
+                    <option value="9739^Kabagari Police Station^99DCT">Kabagari Police Station</option>
+                    <option value="10006^WHITE BLOOD CELLS v2^99DCT">WHITE BLOOD CELLS v2</option>
+                    <option value="10007^RED BLOOD CELLS ^99DCT">RED BLOOD CELLS </option>
+                    <option value="10008^RED BLOOD CELLS ^99DCT">RED BLOOD CELLS </option>
+                    <option value="10009^WHITE BLOOD CELLS CYTOLOGY^99DCT">WHITE BLOOD CELLS CYTOLOGY</option>
+                    <option value="10010^EPITHELIAL CELLS CYTOLOGY^99DCT">EPITHELIAL CELLS CYTOLOGY</option>
+                    <option value="10011^RED BLOOD CELLS EFFUSION FLUID^99DCT">RED BLOOD CELLS EFFUSION FLUID</option>
+                    <option value="10012^WHITE BLOOD CELLS EFFUSION FLUID^99DCT">WHITE BLOOD CELLS EFFUSION FLUID</option>
+                    <option value="10013^EPITHELIAL CELLS EFFUSION FLUID^99DCT">EPITHELIAL CELLS EFFUSION FLUID</option>
+                    <option value="10014^RED BLOOD CELLS VAGINAL SMEAR^99DCT">RED BLOOD CELLS VAGINAL SMEAR</option>
+                    <option value="10015^WHITE BLOOD CELLS VAGINAL SMEAR^99DCT">WHITE BLOOD CELLS VAGINAL SMEAR</option>
+                    <option value="10016^EPITHELIAL CELLS VAGINAL SMEAR^99DCT">EPITHELIAL CELLS VAGINAL SMEAR</option>
+                    <option value="10017^RED BLOOD CELLS URETHRAL SMEAR^99DCT">RED BLOOD CELLS URETHRAL SMEAR</option>
+                    <option value="10018^WHITE BLOOD CELLS URETHRAL SMEAR^99DCT">WHITE BLOOD CELLS URETHRAL SMEAR</option>
+                    <option value="10019^EPITHELIAL CELLS URETHRAL SMEAR^99DCT">EPITHELIAL CELLS URETHRAL SMEAR</option>
+                    <option value="10020^GRAM STAIN URETHRAL SMEAR^99DCT">GRAM STAIN URETHRAL SMEAR</option>
+                    <option value="10022^VAGINAL SMEAR GRAM STAIN^99DCT">VAGINAL SMEAR GRAM STAIN</option>
+                    <option value="10024^EFFUSION FLUID GRAM STAIN^99DCT">EFFUSION FLUID GRAM STAIN</option>
+                    <option value="10026^URINE GRAM STAIN^99DCT">URINE GRAM STAIN</option>
+                    <option value="10030^CERTIFICAT MEDICALE DE CONSOLIDATION (retired)^99DCT">CERTIFICAT MEDICALE DE CONSOLIDATION (retired)</option>
+                    <option value="10089^NEUTROPHILIS^99DCT">NEUTROPHILIS</option>
+                    <option value="10090^LYMPHOCYTES v2^99DCT">LYMPHOCYTES v2</option>
+                    <option value="10091^BASOPHILIS^99DCT">BASOPHILIS</option>
+                    <option value="10092^MONOCYTES^99DCT">MONOCYTES</option>
+                    <option value="10093^EOSINOPHILIS^99DCT">EOSINOPHILIS</option>
+                    <option value="10094^RETICULOCYTES^99DCT">RETICULOCYTES</option>
+                    <option value="10095^SICKLE CELL SLIDE TEST ^99DCT">SICKLE CELL SLIDE TEST </option>
+                    <option value="10096^AMPHETAMINES METABOLITES^99DCT">AMPHETAMINES METABOLITES</option>
+                    <option value="10097^BARBITURATES^99DCT">BARBITURATES</option>
+                    <option value="10098^ETHANOL^99DCT">ETHANOL</option>
+                    <option value="10099^METHADONES^99DCT">METHADONES</option>
+                    <option value="10100^METHADONES METABOLITES^99DCT">METHADONES METABOLITES</option>
+                    <option value="10101^OPIATES^99DCT">OPIATES</option>
+                    <option value="10102^PROPOXYPHENE^99DCT">PROPOXYPHENE</option>
+                    <option value="10103^RUBELLA^99DCT">RUBELLA</option>
+                    <option value="10104^RHEUMATOID FACTORS^99DCT">RHEUMATOID FACTORS</option>
+                    <option value="10105^ARTHRI-TEST^99DCT">ARTHRI-TEST</option>
+                    <option value="10106^GLYCOSURIA^99DCT">GLYCOSURIA</option>
+                    <option value="10107^BILIRUBIN v2^99DCT">BILIRUBIN v2</option>
+                    <option value="10108^THIN BLOOD SMEAR ^99DCT">THIN BLOOD SMEAR </option>
+                    <option value="10110^THIN SMEAR^99DCT">THIN SMEAR</option>
+                    <option value="10139^ACTIVITY AND MUSCLE TONE^99DCT">ACTIVITY AND MUSCLE TONE</option>
+                    <option value="10140^APPEARANCE^99DCT">APPEARANCE</option>
+                    <option value="10141^GRIMACE RESPONSE^99DCT">GRIMACE RESPONSE</option>
+                    <option value="10396^Clearance urée. ^99DCT">Clearance urée. </option>
+                    <option value="10398^Acide urique ^99DCT">Acide urique </option>
+                    <option value="10400^SGOT - ASAT ^99DCT">SGOT - ASAT </option>
+                    <option value="10402^SGPT -ALAT ^99DCT">SGPT -ALAT </option>
+                    <option value="10404^PAC (PHOSPHATASES ACIDE TOTAL) ^99DCT">PAC (PHOSPHATASES ACIDE TOTAL) </option>
+                    <option value="10405^PACP (Phosphatases ac.prostat) ^99DCT">PACP (Phosphatases ac.prostat) </option>
+                    <option value="10409^Cholestérol estérifié ^99DCT">Cholestérol estérifié </option>
+                    <option value="10414^Fer sérique ^99DCT">Fer sérique </option>
+                    <option value="10415^TIBC ^99DCT">TIBC </option>
+                    <option value="10416^Sidérophilline/Transferrine ^99DCT">Sidérophilline/Transferrine </option>
+                    <option value="10417^Ferritine ^99DCT">Ferritine </option>
+                    <option value="10470^Audiométrie ^99DCT">Audiométrie </option>
+                    <option value="10472^Electronystagmographie ^99DCT">Electronystagmographie </option>
+                    <option value="10473^Impédancemétrie ^99DCT">Impédancemétrie </option>
+                    <option value="10474^Pontentiels évoqués ^99DCT">Pontentiels évoqués </option>
+                    <option value="10475^Sinuscopie ^99DCT">Sinuscopie </option>
+                    <option value="10563^Infiltration ^99DCT">Infiltration </option>
+                    <option value="10581^Vitamine B12^99DCT">Vitamine B12</option>
+                    <option value="10592^bêta-HCGqualitatif ^99DCT">bêta-HCGqualitatif </option>
+                    <option value="10617^PROTEINES SUR URINE,LIQ.PONCTION^99DCT">PROTEINES SUR URINE,LIQ.PONCTION</option>
+                    <option value="10622^HB GLYQUEE A1C^99DCT">HB GLYQUEE A1C</option>
+                    <option value="10623^Ordonnance ^99DCT">Ordonnance </option>
+                    <option value="10631^CETO STEROIDES^99DCT">CETO STEROIDES</option>
+                    <option value="10637^Oestriol ^99DCT">Oestriol </option>
+                    <option value="10643^Toxoplasmose IgM ^99DCT">Toxoplasmose IgM </option>
+                    <option value="10648^Hémoculture ^99DCT">Hémoculture </option>
+                    <option value="10649^Coproculture ^99DCT">Coproculture </option>
+                    <option value="10651^Toxoplasmose IgG ^99DCT">Toxoplasmose IgG </option>
+                    <option value="10662^EXAMEN  D'UNE BIOPSIE ^99DCT">EXAMEN  D'UNE BIOPSIE </option>
+                    <option value="10663^EXAMEN D'UNE PIECE OPERATOIRE ^99DCT">EXAMEN D'UNE PIECE OPERATOIRE </option>
+                    <option value="10664^EXAMEN  D'UNE BIOPSIE EXTEMPORANEE ^99DCT">EXAMEN  D'UNE BIOPSIE EXTEMPORANEE </option>
+                    <option value="10665^CYTOLOGIE CERVICO-VAGINALE ^99DCT">CYTOLOGIE CERVICO-VAGINALE </option>
+                    <option value="10666^CYTOLOGIE DES LIQUIDES D'ASCITE ET PONCTIONS DIVERSES ^99DCT">CYTOLOGIE DES LIQUIDES D'ASCITE ET PONCTIONS DIVERSES </option>
+                    <option value="10667^CYTOLOGIE DU LIQUIDE DE LAVAGE BRONCHOALVéOLAIRE ^99DCT">CYTOLOGIE DU LIQUIDE DE LAVAGE BRONCHOALVéOLAIRE </option>
+                    <option value="10668^Coombs direct ^99DCT">Coombs direct </option>
+                    <option value="10669^Coombs indirect ^99DCT">Coombs indirect </option>
+                    <option value="10671^Groupes sanguins Rhésus, antigènes Du ^99DCT">Groupes sanguins Rhésus, antigènes Du </option>
+                    <option value="10674^Culture(sabouraud) ^99DCT">Culture(sabouraud) </option>
+                    <option value="10675^Recherche Pneumocystis C.^99DCT">Recherche Pneumocystis C.</option>
+                    <option value="10689^Ac anti HBs ^99DCT">Ac anti HBs </option>
+                    <option value="10690^Ac anti HBc ^99DCT">Ac anti HBc </option>
+                    <option value="10691^Ag Hbe ^99DCT">Ag Hbe </option>
+                    <option value="10692^Ac anti Hbe ^99DCT">Ac anti Hbe </option>
+                    <option value="10724^Below elbow (avant bras)^99DCT">Below elbow (avant bras)</option>
+                    <option value="10754^Kyste du périnée^99DCT">Kyste du périnée</option>
+                    <option value="10760^RECHERCHE D'AUTRES PARASITES SANGUICOLES^99DCT">RECHERCHE D'AUTRES PARASITES SANGUICOLES</option>
+                    <option value="10844^Auscultation cardiaque Pouls (/min)^99DCT">Auscultation cardiaque Pouls (/min)</option>
+                    <option value="10963^viscosité du sperme^99DCT">viscosité du sperme</option>
+                    <option value="10964^volume de sperme^99DCT">volume de sperme</option>
+                    <option value="10966^CHLAMYDIA TRACHOMATIS TEST^99DCT">CHLAMYDIA TRACHOMATIS TEST</option>
+                    <option value="10972^MIDDLE UPPER ARM CIRCUMFERENCE (CM) < 21cm^99DCT">MIDDLE UPPER ARM CIRCUMFERENCE (CM) < 21cm</option>
+                    <option value="11010^Masse du cerveau^99DCT">Masse du cerveau</option>
+                    <option value="11015^SPERM MORPHOLOGY^99DCT">SPERM MORPHOLOGY</option>
+                    <option value="11023^SPERM LIQUEFACTION ^99DCT">SPERM LIQUEFACTION </option>
+                    <option value="11052^HIV VIRAL LOAD LESS THAN 20^99DCT">HIV VIRAL LOAD LESS THAN 20</option>
+                    <option value="11144^Sérologie^99DCT">Sérologie</option>
+                    <option value="11153^Farr or Ballard score^99DCT">Farr or Ballard score</option>
+                    <option value="11220^TEST DE HOWEL^99DCT">TEST DE HOWEL</option>
+                    <option value="11221^GLYCèMIE EN 3 TEMPS^99DCT">GLYCèMIE EN 3 TEMPS</option>
+                    <option value="11222^BILIRUBINE INDIRECTE^99DCT">BILIRUBINE INDIRECTE</option>
+                    <option value="11223^PROTEINEMIE^99DCT">PROTEINEMIE</option>
+                    <option value="11325^Urine test^99DCT">Urine test</option>
+                    <option value="11326^DNA TEST^99DCT">DNA TEST</option>
+                    <option value="11327^HIV test in case of alleged gender based violence^99DCT">HIV test in case of alleged gender based violence</option>
+                    <option value="11328^Hepatitis test in case of alleged gender based violence^99DCT">Hepatitis test in case of alleged gender based violence</option>
+                    <option value="11329^Syphilis Test in case of alleged gender based violence^99DCT">Syphilis Test in case of alleged gender based violence</option>
+                    <option value="11330^Pregnancy test in case of alleged gender based violence^99DCT">Pregnancy test in case of alleged gender based violence</option>
+                    <option value="11622^Test d'Emmel^99DCT">Test d'Emmel</option>
+                    <option value="11707^Pneumothorax^99DCT">Pneumothorax</option>
+                    <option value="12053^Test sphérique de l'œil gauche^99DCT">Test sphérique de l'œil gauche</option>
+                    <option value="12054^Test cylindrique de l'œil gauche^99DCT">Test cylindrique de l'œil gauche</option>
+                    <option value="12055^Axe visuel de l'oeil gauche^99DCT">Axe visuel de l'oeil gauche</option>
+                    <option value="12056^Test sphérique de l'œil droit^99DCT">Test sphérique de l'œil droit</option>
+                    <option value="12057^Test cylindrique de l'œil droit^99DCT">Test cylindrique de l'œil droit</option>
+                    <option value="12059^Axe visuel de l'oeil droit^99DCT">Axe visuel de l'oeil droit</option>
+                    <option value="12060^Test de vision de loin^99DCT">Test de vision de loin</option>
+                    <option value="12061^Test de vision de près ^99DCT">Test de vision de près </option>
+                    <option value="12062^Examen de Refraction^99DCT">Examen de Refraction</option>
+                    <option value="12131^Acuité visuelle Oeil Droit^99DCT">Acuité visuelle Oeil Droit</option>
+                    <option value="12132^Acuité visuelle Oeil Gauche^99DCT">Acuité visuelle Oeil Gauche</option>
+                    <option value="12133^Acuité visuelle^99DCT">Acuité visuelle</option>
+                    <option value="12162^Examen général du foie ^99DCT">Examen général du foie </option>
+                    <option value="12437^Respiratory Complication^99DCT">Respiratory Complication</option>
+                    <option value="12488^Bariatric Surgery^99DCT">Bariatric Surgery</option>
+                    <option value="12679^Distance inter pupillaire oeil droit^99DCT">Distance inter pupillaire oeil droit</option>
+                    <option value="12680^Distance inter pupillaire oeil gauche^99DCT">Distance inter pupillaire oeil gauche</option>
+                    <option value="12689^Weight for height percentile^99DCT">Weight for height percentile</option>
+                    <option value="12690^BMI for age z-score^99DCT">BMI for age z-score</option>
+                    <option value="12691^Height-for-age z-score^99DCT">Height-for-age z-score</option>
+                    <option value="12894^non distention swelling^99DCT">non distention swelling</option>
+                    <option value="12930^HbA1c^99DCT">HbA1c</option>
+                    <option value="12969^ketone^99DCT">ketone</option>
+                    <option value="12970^Xrays^99DCT">Xrays</option>
+                    <option value="12971^fundoscopy^99DCT">fundoscopy</option>
+                    <option value="12972^ECG DIAGNOSIS (text)^99DCT">ECG DIAGNOSIS (text)</option>
+                    <option value="13013^dental care (text)^99DCT">dental care (text)</option>
+                    <option value="13014^Pulmonary Artery Systolic Pressure Numeric^99DCT">Pulmonary Artery Systolic Pressure Numeric</option>
+                    <option value="13311^Where^99DCT">Where</option>
+                    <option value="13327^Weight for age z-score^99DCT">Weight for age z-score</option>
+                    <option value="13328^Weight for Height z-score^99DCT">Weight for Height z-score</option>
+                    <option value="13329^BMI/Age (Z-score)^99DCT">BMI/Age (Z-score)</option>
+                    <option value="13330^Weight for Height %^99DCT">Weight for Height %</option>
+                    <option value="13345^Prophylaxy Dossier Number^99DCT">Prophylaxy Dossier Number</option>
+                    <option value="13376^BMI>19 Years^99DCT">BMI>19 Years</option>
+                    <option value="13377^BMI/Age(5-19 Years)^99DCT">BMI/Age(5-19 Years)</option>
+                    <option value="13384^Nutrition program observation^99DCT">Nutrition program observation</option>
+                    <option value="13390^Prepex^99DCT">Prepex</option>
+                    <option value="13391^Surgical^99DCT">Surgical</option>
+                    <option value="13392^C.I^99DCT">C.I</option>
+                    <option value="13394^Operator^99DCT">Operator</option>
+                    <option value="13395^Assistant^99DCT">Assistant</option>
+                    <option value="13417^fvc^99DCT">fvc</option>
+                    <option value="13418^FEV1^99DCT">FEV1</option>
+                    <option value="13456^Patient Exited^99DCT">Patient Exited</option>
+                    <option value="13465^drug prescription construct^99DCT">drug prescription construct</option>
+                    <option value="13571^PF TYPES OF EXAMENS COMPLEMENTAIRES DEMANDE^99DCT">PF TYPES OF EXAMENS COMPLEMENTAIRES DEMANDE</option>
+                    <option value="13572^PF COMPLEMENTAIRES EXAMENS RESULTS^99DCT">PF COMPLEMENTAIRES EXAMENS RESULTS</option>
+                    <option value="13579^Vulva^99DCT">Vulva</option>
+                    <option value="13592^Col^99DCT">Col</option>
+                    <option value="13595^Attachment^99DCT">Attachment</option>
+                    <option value="13598^Signature^99DCT">Signature</option>
+                    <option value="13600^period^99DCT">period</option>
+                    <option value="13605^Jambes^99DCT">Jambes</option>
+                    <option value="13615^CPoN Commentaires^99DCT">CPoN Commentaires</option>
+                    <option value="13627^Conjoctivitis Color^99DCT">Conjoctivitis Color</option>
+                    <option value="13629^Membre inferieur^99DCT">Membre inferieur</option>
+                    <option value="13630^Montee Laiteuse^99DCT">Montee Laiteuse</option>
+                    <option value="13631^Position sein^99DCT">Position sein</option>
+                    <option value="13632^Paroi abdominale^99DCT">Paroi abdominale</option>
+                    <option value="13633^Organomegalie^99DCT">Organomegalie</option>
+                    <option value="13634^Uterus (Fond, Sensibilite)^99DCT">Uterus (Fond, Sensibilite)</option>
+                    <option value="13635^Lochies^99DCT">Lochies</option>
+                    <option value="13636^Cicatrice du perinee^99DCT">Cicatrice du perinee</option>
+                    <option value="13637^Prolapsus^99DCT">Prolapsus</option>
+                    <option value="13638^Incotinence^99DCT">Incotinence</option>
+                    <option value="13639^Sign de danger^99DCT">Sign de danger</option>
+                    <option value="13640^Nutrition et allaitement et Evaluation^99DCT">Nutrition et allaitement et Evaluation</option>
+                    <option value="13641^Allaitement exclusit respecte^99DCT">Allaitement exclusit respecte</option>
+                    <option value="13642^Hygienne et Soins du nouveau ne^99DCT">Hygienne et Soins du nouveau ne</option>
+                    <option value="13643^Sexualite et planification familiale^99DCT">Sexualite et planification familiale</option>
+                    <option value="13644^Nursing assessment^99DCT">Nursing assessment</option>
+                    <option value="13645^Nursing Diagnosis^99DCT">Nursing Diagnosis</option>
+                    <option value="13646^Nursing objectives^99DCT">Nursing objectives</option>
+                    <option value="13647^Nursing intervention^99DCT">Nursing intervention</option>
+                    <option value="13648^Nursing Evaluation^99DCT">Nursing Evaluation</option>
+                    <option value="13651^PROGRESS NOTE, INVESTIGATION/TREATMENT^99DCT">PROGRESS NOTE, INVESTIGATION/TREATMENT</option>
+                    <option value="13653^Immunization (VAT)^99DCT">Immunization (VAT)</option>
+                    <option value="13660^Improved^99DCT">Improved</option>
+                    <option value="13662^Unimproved^99DCT">Unimproved</option>
+                    <option value="13663^Other diagnosis^99DCT">Other diagnosis</option>
+                    <option value="13664^Voluntary^99DCT">Voluntary</option>
+                    <option value="13668^TRANSFERRED FROM (code)^99DCT">TRANSFERRED FROM (code)</option>
+                    <option value="105406^TUMOUR MARKERS^99DCT">TUMOUR MARKERS</option>
+                    <option value="105407^ALPHA FETOPROTEIN (AFP)^99DCT">ALPHA FETOPROTEIN (AFP)</option>
+                    <option value="105408^CA19-9 MONITORING OF PANCREATIC CANCER^99DCT">CA19-9 MONITORING OF PANCREATIC CANCER</option>
+                    <option value="105409^CA-125 MONITORING OF OVARIAN CANCER^99DCT">CA-125 MONITORING OF OVARIAN CANCER</option>
+                    <option value="105410^PROSTATE SPECIFIC ANTIGEN (PSA)^99DCT">PROSTATE SPECIFIC ANTIGEN (PSA)</option>
+                    <option value="105411^THYROID FUNCTION HORMONES^99DCT">THYROID FUNCTION HORMONES</option>
+                    <option value="105412^THYROID STIMULATING HORMONE(TSH)^99DCT">THYROID STIMULATING HORMONE(TSH)</option>
+                    <option value="105413^FREE THYROXINE (FT4)^99DCT">FREE THYROXINE (FT4)</option>
+                    <option value="105414^TOTAL THYROXINE^99DCT">TOTAL THYROXINE</option>
+                    <option value="105415^FREE TRIIODOTHYRONINE (FT3)^99DCT">FREE TRIIODOTHYRONINE (FT3)</option>
+                    <option value="105416^TOTAL TRIIODOTHYRONINE^99DCT">TOTAL TRIIODOTHYRONINE</option>
+                    <option value="105417^FERTILITY HORMONES^99DCT">FERTILITY HORMONES</option>
+                    <option value="105418^TESTOSTERONE V3^99DCT">TESTOSTERONE V3</option>
+                    <option value="105419^PROGESTERONE V3^99DCT">PROGESTERONE V3</option>
+                    <option value="105420^FOLLICLE-STIMULATING HORMONE (FSH)^99DCT">FOLLICLE-STIMULATING HORMONE (FSH)</option>
+                    <option value="105421^LUTEINIZING HORMONE (LH)^99DCT">LUTEINIZING HORMONE (LH)</option>
+                    <option value="105422^ESTRADIOL (AN ESTROGEN)^99DCT">ESTRADIOL (AN ESTROGEN)</option>
+                    <option value="105423^FREE BETA HCG^99DCT">FREE BETA HCG</option>
+                    <option value="105424^PROLACTINE^99DCT">PROLACTINE</option>
+                    <option value="105425^COMBS INDIRECT^99DCT">COMBS INDIRECT</option>
+                    <option value="105426^COMBS DIRECT^99DCT">COMBS DIRECT</option>
+                    <option value="105427^COMPATIBILITY TEST^99DCT">COMPATIBILITY TEST</option>
+                    <option value="105428^EXP^99DCT">EXP</option>
+                    <option value="105429^HCV Viral Load^99DCT">HCV Viral Load</option>
+                    <option value="105430^DBS^99DCT">DBS</option>
+                    <option value="105460^PH Ophtalmology^99DCT">PH Ophtalmology</option>
+                    <option value="105461^PH AV OG^99DCT">PH AV OG</option>
+                    <option value="105465^Morning^99DCT">Morning</option>
+                    <option value="105469^Medicaments prescrits et liquide IV^99DCT">Medicaments prescrits et liquide IV</option>
+                    <option value="105470^Oxytocin per littre^99DCT">Oxytocin per littre</option>
+                    <option value="105471^Oxytocin Goutte^99DCT">Oxytocin Goutte</option>
+                    <option value="105474^CPoN followup date^99DCT">CPoN followup date</option>
+                    <option value="105475^New born respiratory status^99DCT">New born respiratory status</option>
+                    <option value="105478^Temoin de Jehova^99DCT">Temoin de Jehova</option>
+                    <option value="105505^Names^99DCT">Names</option>
+                    <option value="105535^Temps depuis sexuel rapports sexuels^99DCT">Temps depuis sexuel rapports sexuels</option>
+                    <option value="105581^TOXOPLASMOSE IgM^99DCT">TOXOPLASMOSE IgM</option>
+                    <option value="105582^TOXOPLASMOSE IgG^99DCT">TOXOPLASMOSE IgG</option>
+                    <option value="105583^RUBELLA IgM^99DCT">RUBELLA IgM</option>
+                    <option value="105584^RUBELLA IgG^99DCT">RUBELLA IgG</option>
+                    <option value="105585^CRYPTOCOCCAL ANTIGEN^99DCT">CRYPTOCOCCAL ANTIGEN</option>
+                    <option value="105586^LACTATE DEHYDROGENATE^99DCT">LACTATE DEHYDROGENATE</option>
+                    <option value="105587^PHOSPHORUS^99DCT">PHOSPHORUS</option>
+                    <option value="105588^MAGNESIUM v1^99DCT">MAGNESIUM v1</option>
+                    <option value="105589^MONITOR BREAST CANCER^99DCT">MONITOR BREAST CANCER</option>
+                    <option value="105592^ASPECT^99DCT">ASPECT</option>
+                    <option value="105593^INDIA INK^99DCT">INDIA INK</option>
+                    <option value="105597^CBS CONTACT GENDER^99DCT">CBS CONTACT GENDER</option>
+                    <option value="105605^PROVIDER INITIATED HIV TESTING^99DCT">PROVIDER INITIATED HIV TESTING</option>
+                    <option value="105633^CBS_CONTACT_HIV_RESULT^99DCT">CBS_CONTACT_HIV_RESULT</option>
+                    <option value="105650^RECENCY VIRAL LOAD RESULT^99DCT">RECENCY VIRAL LOAD RESULT</option>
+                    <option value="105655^RECENCY VIRAL LOAD RESULT DATE^99DCT">RECENCY VIRAL LOAD RESULT DATE</option>
+                    <option value="105665^CBS FINAL RITA RECENCY RESULT^99DCT">CBS FINAL RITA RECENCY RESULT</option>
+                    <option value="105678^CBS CONTACT HIV STATUS^99DCT">CBS CONTACT HIV STATUS</option>
+                    <option value="105694^RECENCY ASSAY RESULTS^99DCT">RECENCY ASSAY RESULTS</option>
+                    <option value="105994^Other Suicide Risk Factors^99DCT">Other Suicide Risk Factors</option>
+                    <option value="106048^Laboratory tests other result^99DCT">Laboratory tests other result</option>
+                    <option value="106049^Laboratory tests other comments^99DCT">Laboratory tests other comments</option>
+                    <option value="106790^GROUP PEDI 9^99DCT">GROUP PEDI 9</option>
+                    <option value="106798^Peripheral Blood Film(PBF)^99DCT">Peripheral Blood Film(PBF)</option>
+                    <option value="106799^Urinoculture^99DCT">Urinoculture</option>
+                    <option value="106800^Vaginal Swabs culture^99DCT">Vaginal Swabs culture</option>
+                    <option value="106801^urethral swab cultue^99DCT">urethral swab cultue</option>
+                    <option value="106802^Exam du liquide de ponction^99DCT">Exam du liquide de ponction</option>
+                    <option value="106803^Cluster of differentiation 4 (CD4 count)^99DCT">Cluster of differentiation 4 (CD4 count)</option>
+                    <option value="106804^HB viral load^99DCT">HB viral load</option>
+                    <option value="106805^Free Prostate Specific Antigen(Free PSA)^99DCT">Free Prostate Specific Antigen(Free PSA)</option>
+                    <option value="106806^Total Prostate Specific Antigen(TPSA)^99DCT">Total Prostate Specific Antigen(TPSA)</option>
+                    <option value="106807^Cancer Antigen 15-3 (CA 15-3)^99DCT">Cancer Antigen 15-3 (CA 15-3)</option>
+                    <option value="106808^Calcinoembryonic Antigen(CEA)^99DCT">Calcinoembryonic Antigen(CEA)</option>
+                    <option value="106809^Dehydroepiandrosterone (DHEA)^99DCT">Dehydroepiandrosterone (DHEA)</option>
+                    <option value="106810^Clarence urea^99DCT">Clarence urea</option>
+                    <option value="106811^Clearence creatinine^99DCT">Clearence creatinine</option>
+                    <option value="106813^MICROBACTERIOLOGY(TB)^99DCT">MICROBACTERIOLOGY(TB)</option>
+                    <option value="106814^Coproculture^99DCT">Coproculture</option>
+                    <option value="106815^CANCERS^99DCT">CANCERS</option>
+                    <option value="106816^Total calcium^99DCT">Total calcium</option>
+                    <option value="106817^MYCOBACTERIOLOGY(TB)^99DCT">MYCOBACTERIOLOGY(TB)</option>
+                    <option value="106818^Frottis sanguin^99DCT">Frottis sanguin</option>
+                    <option value="107139^Medical Imaging^99DCT">Medical Imaging</option>
+                    <option value="107217^Other HR HPV^99DCT">Other HR HPV</option>
+                    <option value="107218^HPV 16^99DCT">HPV 16</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="results">Results:</label>
+                <input class="form-control " id="obs.Results" type="text" placeholder="Start typing something...">
+                <input class="form-control" name="obs.Results" type="text" data-concept="39ed201e-c0e8-48dd-8944-551a14428a4b^Laboratory results^99DCT">
+
+
+<!--                <select class="form-control" id="obs.Results" name="obs.Results" data-concept="39ed201e-c0e8-48dd-8944-551a14428a4b^Laboratory results^99DCT">-->
+<!--                    <option value="">...</option>-->
+<!--                    <option value="703^POSITIVE^99DCT">POSITIVE  </option>-->
+<!--                    <option value="664^NEGATIVE^99DCT">NEGATIVE  </option>-->
+<!--                    <option value="1115^NORMAL^99DCT">NORMAL  </option>-->
+<!--                    <option value="1116^ABNORMAL^99DCT">ABNORMAL </option>-->
+<!--                </select>-->
+                <div class="form-group">
+                    <label for="testsotherresult">Tests other result:</label>
+                    <input class="form-control" id="obs.testsotherresult" name="obs.testsotherresult" data-concept="c963d117-f6eb-4e98-aa64-0d52a3476c20^Laboratory tests other result^99DCT" type="text">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+</body>
+<script type="text/javascript">
+$(document).ready(function () {
+	$('#save_draft').click(function () {
+		$(this).prop('disabled', true);
+		document.saveDraft();
+		$(this).prop('disabled', false);
+	});
+
+	$('#submit_form').click(function () {
+		$(this).prop('disabled', true);
+		document.submit();
+		$(this).prop('disabled', false);
+	});
+
+	$('#obs\\.apoio_nutricional').change(function(){
+		if($('input[name=obs\\.apoio_nutricional]:checked').val() == "1065^SIM^99DCT"){
+			$('.apoio_nutricional_div').show();
+		} else{
+			$('.apoio_nutricional_div').hide();
+		}
+	});
+	$('#obs\\.apoio_nutricional').trigger('change');
+
+	$('#obs\\.tratamento_de_tb').change(function(){
+		if($('input[name=obs\\.tratamento_de_tb]:checked').val() == "1065^SIM^99DCT"){
+			$('.tratamento_de_tb_div').show();
+		} else{
+			$('.tratamento_de_tb_div').hide();
+		}
+	});
+	$('#obs\\.tratamento_de_tb').trigger('change');
+
+	$('#obs\\.profilaxia_com_cotrimoxazol').change(function(){
+		if($('input[name=obs\\.profilaxia_com_cotrimoxazol]:checked').val() == "1065^SIM^99DCT"){
+			$('.profilaxia_com_cotrimoxazol_div').show();
+		} else{
+			$('.profilaxia_com_cotrimoxazol_div').hide();
+		}
+	});
+	$('#obs\\.profilaxia_com_cotrimoxazol').trigger('change');
+
+	$('#obs\\.profilaxia_com_inh').change(function(){
+		if($('input[name=obs\\.profilaxia_com_inh]:checked').val() == "1065^SIM^99DCT"){
+			$('.profilaxia_com_inh_div').show();
+		} else{
+			$('.profilaxia_com_inh_div').hide();
+		}
+	});
+	$('#obs\\.profilaxia_com_inh').trigger('change');
+
+	$('#effeitos_sec_outros').change(function(){
+		if($('#effeitos_sec_outros').is(":checked")){
+			$('.effeitos_sec_outros_div').show();
+		} else{
+			$('.effeitos_sec_outros_div').hide();
+		}
+	});
+	$('#effeitos_sec_outros').trigger('change');
+
+	if($('#patient\\.sex').val() == "M"){
+		$('.female_gender_check_div').hide();
+		$('.male_gender_check_div').show();
+	}else{
+		$('.female_gender_check_div').show();
+		$('.male_gender_check_div').hide();
+	}
+
+	$.validator.addMethod("eligibleAgeOnly", function (value, element) {
+		if ($.fn.isNotRequiredAndEmpty(value, element)) return true;
+		return value > 14;
+	}, " "
+	);
+
+	// attach 'nonFutureDate' class to perform validation.
+	jQuery.validator.addClassRules({
+		eligibleAgeOnly: { eligibleAgeOnly: true }
+	});
+
+	calculateBMI();
+	document.setupAutoCompleteData('encounter\\.location_id');
+	document.setupAutoCompleteDataForProvider('encounter\\.provider_id_select');
+	document.setupValidationForLocation("$('#encounter\\.location_id').val()","encounter\\.location_id");
+	document.setupValidationForProvider("$('#encounter\\.provider_id_select').val()","encounter\\.provider_id");
+
+	var prePopulateData = $.trim($('#pre_populate_data').html());
+	var prePopulateJSON = JSON.parse(prePopulateData);
+	$.each(prePopulateJSON, function(key, value) {
+		if (key === 'patient') {
+			var names = "";
+			$.each(value, function(keys, values) {
+				if(keys === 'patient.given_name' || keys === 'patient.middle_name' || keys === 'patient.family_name' || keys === 'patient.names'){
+				   names=names+" "+values;
+				}
+
+				if(keys === "patient.birth_date"){
+					var tmp = values.split('-');
+					if(tmp[2].length==4){
+                    	var birthDate = new Date(tmp[2],tmp[1]-1,tmp[0]);
+					}else{
+						var birthDate = new Date(tmp[0],tmp[1]-1,tmp[2]);
+					}
+					var today = new Date();
+					var milliSecondsInAYear = 1000 * 60 * 60 * 24 * 365.26;
+					var age = (today - birthDate) / milliSecondsInAYear;
+					$('#patient\\.age').val((Math.floor(age)));
+				}
+			});
+			$('#patient\\.names').val(names);
+		}
+	});
+
+     var dataDictionary = [
+             {"val": "703^POSITIVE^99DCT", "label": "POSITIVE "},
+             {"val": "664^NEGATIVE^99DCT", "label": "NEGATIVE "},
+             {"val": "1115^NORMAL^99DCT", "label": "NORMAL "},
+             {"val": "1116^ABNORMAL^99DCT", "label": "ABNORMAL"}
+         ];
+     document.setupAutoComplete('obs\\.Results', dataDictionary);
+
+});
+function calculateBMI(){
+	var weightKG = parseFloat($('#obs\\.peso').val());
+	var heightCm = parseFloat($('#obs\\.altura').val());
+	var heightM;
+	var IMC;
+	if(!isNaN(heightCm) && !isNaN(weightKG)){
+		heightM = heightCm/100;
+		IMC = weightKG/(heightM*heightM);
+		$('#obs\\.imc').val(IMC.toFixed(2));
+	}
+}
+
+
+</script>
+</html>

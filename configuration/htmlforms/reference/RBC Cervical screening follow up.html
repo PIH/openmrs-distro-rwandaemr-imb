@@ -205,6 +205,20 @@
         @DISCHARGED@ = 6340fd67-facb-4a6c-a9d9-f629c9e53053
         @Follow-up_at_this_health_facility@ = d0e94536-0b91-40a1-b994-04bb4f5cd15d
         @PATIENT_TRANSFERRED_OUT@ = 3cdd5c02-26fe-102b-80cb-0017a47871b2
+        @Reasons_for_Referral_In@ = cc227602-a240-43fb-926d-b6ad3f42edab
+        @Other_reason_for_referral_in@ = be706af6-f25d-4bfa-aec7-0f6b3ede600e
+        @BIOPSY_RESULT_Text@ = bd551dfc-e4c8-4bf1-bea1-96e831d934b2
+        @Confirmed_cancer_diagnosis@ = 3dc2eb50-6981-43d3-b907-e3dd8b5ed620
+        @Breast_Cancer@ = e1bd83f4-e9fa-4564-b8aa-74a9b199aca8
+        @Breast_Cancer_Histology@ = 7625e1b7-7571-485e-b023-20a7d03dc7dc
+        @Cervical_cancer@ = 36052b70-ba49-466f-a4eb-bc99581be7a2
+        @Cervical_cancer_Histology@ = 3cef6fc6-49e1-490c-829f-d9003a7b50ad
+        @OTHER_NON-CODED@ = 3cee7fb4-26fe-102b-80cb-0017a47871b2
+        @Other_Histology@ = b99ff54e-4e1b-4277-89ab-136eab980621
+        @RETURN_VISIT_DATE@ = 3ce94df0-26fe-102b-80cb-0017a47871b2
+
+
+
 
     </macros>
 
@@ -433,7 +447,7 @@
                         }
 
                     });
-                    $(".initialHide").hide();
+                    $j(".initialHide").hide();
 
                 });
             }
@@ -550,6 +564,16 @@
                     <span class="EntryMode">
                         <obs id="NameOfReferring" conceptId="$@TRANSFER_IN_FROM@" />
                     </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Reason for referral In:</label>
+                </td>
+                <td>
+                    <obs conceptId="$@Reasons_for_Referral_In@" answerConceptIds="$@Suspected_cancer_diagnosis@,$@thermal-ablation@,$@Cryotherapy@,$@Loop_Electrosurgical_Excision_Procedure@,$@OTHER_NON-CODED@"
+                         answerLabels="Suspected cancer,Thermal ablation,Cryotherapy,LEEP,Other reasons" />
+                    Other reasons: <obs conceptId="$@Other_reason_for_referral_in@"/>
                 </td>
             </tr>
 <!--            <tr class="form-group">-->
@@ -967,8 +991,8 @@
 <!--            &lt;!&ndash;            </tr>&ndash;&gt;-->
 <!--        </table>-->
 <!--    </section>-->
-<!--    <section headerLabel="CERVICAL CANCER SCREENING RESULTS AND MANAGEMENT">-->
-<!--        <table border="1">-->
+    <section headerLabel="CERVICAL CANCER SCREENING RESULTS AND MANAGEMENT">
+        <table border="1">
 <!--            &lt;!&ndash;            <tr class="section">&ndash;&gt;-->
 <!--            &lt;!&ndash;                <td class="font-normal"> Screening <strong>completed</strong> today? </td>&ndash;&gt;-->
 <!--            &lt;!&ndash;                <td class="font-normal">&ndash;&gt;-->
@@ -986,21 +1010,21 @@
 <!--            &lt;!&ndash;                    <obs  conceptId="$@Why_not_Screened_today@"/>&ndash;&gt;-->
 <!--            &lt;!&ndash;                </td>&ndash;&gt;-->
 <!--            &lt;!&ndash;            </tr>&ndash;&gt;-->
-<!--            <tr>-->
-<!--                <td class="font-normal">Screening type: </td>-->
-<!--                <td class="font-normal">-->
-<!--                    &lt;!&ndash;                    <input id="obs.ScreeningTypeHPV" name="obs.ScreeningType" type="checkbox"&ndash;&gt;-->
-<!--                    &lt;!&ndash;                           data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"&ndash;&gt;-->
-<!--                    &lt;!&ndash;                           value="f7c2d59d-2043-42ce-b04d-08564d54b0c7^HPV DNA test^99DCT">&ndash;&gt;-->
-<!--                    <span class="activate" id="ScreeningTypeHPV" title="ScreeningTypeHPV">-->
-<!--                        <obs conceptId="$@Screening_through@" answerConceptId="$@HPV_DNA_test@" answerLabel="HPV" />-->
-<!--                    </span>-->
-<!--                    <span class="activate" id="ScreeningTypeVIA" title="ScreeningTypeVIA">-->
-<!--                        <obs conceptId="$@Screening_through@" answerConceptId="$@visual_inspection_with_Acetic_Acid@" answerLabel="VIA" />-->
-<!--                    </span>-->
-<!--                    <span class="activate" id="ScreeningTypePapSmear" title="ScreeningTypePAPSmear">-->
-<!--                        <obs conceptId="$@Screening_through@" answerConceptId="$@PAPANICOLAOU_SMEAR@" answerLabel="Pap Smear" />-->
-<!--                    </span>-->
+            <tr>
+                <td class="font-normal">Screening type: </td>
+                <td class="font-normal checkboxGroup">
+                    <!--                    <input id="obs.ScreeningTypeHPV" name="obs.ScreeningType" type="checkbox"-->
+                    <!--                           data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"-->
+                    <!--                           value="f7c2d59d-2043-42ce-b04d-08564d54b0c7^HPV DNA test^99DCT">-->
+                    <span class="activate" id="ScreeningTypeHPV" title="ScreeningTypeHPV">
+                        <obs conceptId="$@Screening_through@" answerConceptId="$@HPV_DNA_test@" answerLabel="HPV" />
+                    </span>
+                    <span class="activate" id="ScreeningTypeVIA" title="ScreeningTypeVIA">
+                        <obs conceptId="$@Screening_through@" answerConceptId="$@visual_inspection_with_Acetic_Acid@" answerLabel="VIA" />
+                    </span>
+                    <span class="activate" id="ScreeningTypePapSmear" title="ScreeningTypePAPSmear">
+                        <obs conceptId="$@Screening_through@" answerConceptId="$@PAPANICOLAOU_SMEAR@" answerLabel="Pap Smear" />
+                    </span>
 
 
 
@@ -1011,11 +1035,11 @@
 
 <!--                    &lt;!&ndash;                    <obs conceptId="$@Screening_through@" answerConceptId="$@PAPANICOLAOU_SMEAR@" answerLabel="Pap Smear" />&ndash;&gt;-->
 
-<!--                </td>-->
+                </td>
 
-<!--            </tr>-->
-<!--        </table>-->
-<!--    </section>-->
+            </tr>
+        </table>
+    </section>
 
     <section headerLabel="HPV test">
         <table border="1">
@@ -1153,24 +1177,25 @@
                     <!--                           data-concept="a37a937a-a2a6-4c22-975f-986fb3599ea3^VIA triage Results^99DCT"-->
                     <!--                           value="3fe69559-cc82-48cb-926e-5d925aca088b^VIA+ Eligible for Thermal ablation^99DCT">-->
 
-                    <obs conceptId="$@VIA_Results@" answerConceptId="$@VIA+_Eligible_for_Thermal_ablation@" answerLabel="VIA+ Eligible for Thermal ablation" />
+                    <obs conceptId="$@VIA_Results@" answerConceptIds="$@VIA+_Eligible_for_Thermal_ablation@,$@VIA+_Eligible_for_LEEP@,$@VIA_Negative@,$@Suspected_cancer_diagnosis@"
+                         answerLabels="VIA+ Eligible for Thermal ablation,VIA+ Eligible for LEEP,VIA-,Suspected cancer" style="radio"/>
 
                     <!--                    <input id="obs.VIATriageResultLEEP" name="obs.VIATriageResults" type="checkbox"-->
                     <!--                           data-concept="a37a937a-a2a6-4c22-975f-986fb3599ea3^VIA triage Results^99DCT"-->
                     <!--                           value="402f3951-420e-4c09-9a9a-955bc0cff140^VIA+ Eligible for LEEP^99DCT">-->
-                    <obs conceptId="$@VIA_Results@" answerConceptId="$@VIA+_Eligible_for_LEEP@" answerLabel="VIA+ Eligible for LEEP" />
+<!--                    <obs conceptId="$@VIA_Results@" answerConceptId="$@VIA+_Eligible_for_LEEP@" answerLabel="VIA+ Eligible for LEEP" />-->
 
 
                     <!--                    <input id="obs.VIATriageResultNegative" name="obs.VIATriageResults" type="checkbox"-->
                     <!--                           data-concept="a37a937a-a2a6-4c22-975f-986fb3599ea3^VIA triage Results^99DCT"-->
                     <!--                           value="a7b08a37-0380-49dd-8f12-c2c2c76c8b13^VIA Negative^99DCT">-->
-                    <obs conceptId="$@VIA_Results@" answerConceptId="$@VIA_Negative@" answerLabel="VIA-" />
+<!--                    <obs conceptId="$@VIA_Results@" answerConceptId="$@VIA_Negative@" answerLabel="VIA-" />-->
 
 
                     <!--                    <input id="obs.VIATriageResultSuspectedCancer" name="obs.VIATriageResults" type="checkbox"-->
                     <!--                           data-concept="a37a937a-a2a6-4c22-975f-986fb3599ea3^VIA triage Results^99DCT"-->
                     <!--                           value="476123d7-54f1-4278-92f1-2de4f19ae951^Suspected cancer diagnosis^99DCT">-->
-                    <obs conceptId="$@VIA_Results@" answerConceptId="$@Suspected_cancer_diagnosis@" answerLabel="Suspected cancer" />
+<!--                    <obs conceptId="$@VIA_Results@" answerConceptId="$@Suspected_cancer_diagnosis@" answerLabel="Suspected cancer" />-->
 
                 </td>
             </tr>
@@ -1209,15 +1234,20 @@
     <!--            </tr>-->
     <!--        </table>-->
     <!--    </section>-->
-    <section>
+    <section headerLabel="Other screening questions">
         <table border="1">
             <tr class="section">
                 <td class="font-normal"> <strong> Suspicion of STIs:  </strong> </td>
-                <td class="font-normal">
+                <td class="font-normal checkboxGroup">
                     <!--                    <input id="obs.STIsSuspicionYes" name="obs.STIsSuspicion" type="radio"-->
                     <!--                           data-concept="b7397d58-bee5-48c7-a5fd-aedca2ec1fec^Sexual transmitted Infection suspicion^99DCT"-->
                     <!--                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">-->
-                    <obs conceptId="$@Sexual_transmitted_Infection_suspicion@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" />
+                    <span class="activate" id="SuspicionOfSTIYes" title="SuspicionOfSTI">
+                        <obs conceptId="$@Sexual_transmitted_Infection_suspicion@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
+                    </span>
+                    <span class="deactivate" id="SuspicionOfSTINo" title="SuspicionOfSTI">
+                        <obs conceptId="$@Sexual_transmitted_Infection_suspicion@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
+                    </span>
                     <!--                    Yes-->
                     <!--                </label>-->
                     <!--                <label class="font-normal">-->
@@ -1225,8 +1255,11 @@
                     <!--                           data-concept="b7397d58-bee5-48c7-a5fd-aedca2ec1fec^Sexual transmitted Infection suspicion^99DCT"-->
                     <!--                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">-->
                     <!--                    No-->
-                    , if yes specify
+                    <span class="SuspicionOfSTI">
+                        , if yes specify
                     <obs conceptId="$@SEXUALLY_TRANSMITTED_INFECTION_NON-CODED@"/>
+                    </span>
+
 
                 </td>
             </tr>
@@ -1291,7 +1324,7 @@
                     <!--                    <input id="obs.ColposcopyResultsNormal" name="obs.ColposcopyResults" type="radio"-->
                     <!--                           data-concept="6c5293e6-266f-4608-86e7-3e783587cc3f^colposcopy Results^99DCT"-->
                     <!--                           value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">-->
-                    <obs conceptId="$@colposcopy_Results@" answerConceptId="$@NORMAL@" answerLabel="Normal" />
+                    <obs conceptId="$@colposcopy_Results@" answerConceptIds="$@NORMAL@,$@ABNORMAL@" answerLabels="Normal,Abnormal" style="radio"/>
                     <!--                    Normal (no abnormal lesion)-->
                     <!--                </label>-->
                     <!--                <label class="font-normal">-->
@@ -1315,7 +1348,7 @@
                     <!--                           value="476123d7-54f1-4278-92f1-2de4f19ae951^Suspected cancer diagnosis^99DCT">-->
                     <!--                    <obs conceptId="$@colposcopy_Results@" answerConceptId="$@Suspected_cancer_diagnosis@" answerLabel="Suspicion of cancer" />-->
                     <!--                    Suspicion of cancer-->
-                    <obs conceptId="$@colposcopy_Results@" answerConceptId="$@ABNORMAL@" answerLabel="Abnormal" />
+<!--                    <obs conceptId="$@colposcopy_Results@" answerConceptId="$@ABNORMAL@" answerLabel="Abnormal" />-->
 
                     <br/> <br/>
                     Other Findings
@@ -1399,10 +1432,36 @@
                     <!--                <input id="obs.BiopsyResultsInvasiveCancer" name="obs.BiopsyResults" type="checkbox"-->
                     <!--                       data-concept="89b01201-80c7-4690-93de-2e587d427bd5^BIOPSY RESULT coded^99DCT"-->
                     <!--                       value="3ce5d01c-26fe-102b-80cb-0017a47871b2^INVASIVE CERVICAL CARCINOMA^99DCT">-->
-                    <obs conceptId="$@BIOPSY_RESULT_coded@" answerConceptId="$@INVASIVE_CERVICAL_CARCINOMA@" answerLabel="Invasive cancer" />
+                    <span class="activate" id="invasiveBiopsyResultCoded" title="biopsyResultCoded">
+                        <obs conceptId="$@BIOPSY_RESULT_coded@" answerConceptId="$@INVASIVE_CERVICAL_CARCINOMA@" answerLabel="Invasive cancer" />
+                    </span>
                     <!--                Invasive cancer-->
-                </td>
 
+                    <obs conceptId="$@BIOPSY_RESULT_coded@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other" />
+
+                    <obs conceptId="$@BIOPSY_RESULT_Text@"/>
+                </td>
+                <br/>
+
+            </tr>
+            <tr class="initialHide biopsyResultCoded">
+                <td>
+                    Cancer Diagnosis
+                </td>
+                <td>
+
+                    <obs conceptId="$@Confirmed_cancer_diagnosis@" answerConceptId="$@Breast_Cancer@" answerLabel="Breast cancer" style="checkbox"/>
+                    ,Histology
+                    <obs conceptId="$@Breast_Cancer_Histology@" cols="40"/>
+                    <br/>
+                    <obs conceptId="$@Confirmed_cancer_diagnosis@" answerConceptId="$@Cervical_cancer@" answerLabel="Cervical cancer" style="checkbox"/>
+                    ,Histology
+                    <obs conceptId="$@Cervical_cancer_Histology@" cols="40"/>
+                    <br/>
+                    <obs conceptId="$@Confirmed_cancer_diagnosis@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other cancer" style="checkbox"/>
+                    ,Histology
+                    <obs conceptId="$@Other_Histology@" cols="40"/>
+                </td>
             </tr>
         </table>
     </section>
@@ -1437,19 +1496,19 @@
                     <!--                <input id="obs.ManagementTypeOfTreatmentPerformedThermoAblation" name="obs.ManagementTypeOfTreatmentPerformed" type="checkbox"-->
                     <!--                       data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"-->
                     <!--                       value="ef4d5bd3-2c4e-4ac2-9b91-9d4ba12b44f8^thermo-ablation^99DCT">-->
-                    <obs conceptId="$@Type_of_Treatment_performed@" answerConceptId="$@thermal-ablation@" answerLabel="Thermal ablation" />
+                    <obs conceptId="$@Type_of_Treatment_performed@" answerConceptIds="$@thermal-ablation@,$@Cryotherapy@,$@Loop_Electrosurgical_Excision_Procedure@" answerLabels="Thermal ablation,Cryotherapy(DH),LEEP(DH)" style="radio"/>
                     <!--                Thermo ablation-->
 
                     <!--                <input id="obs.ManagementTypeOfTreatmentPerformedCryotherapy" name="obs.ManagementTypeOfTreatmentPerformed" type="checkbox"-->
                     <!--                       data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"-->
                     <!--                       value="e48bc8db-8f6e-4556-9083-0a000a136e95^Cryotherapy^99DCT">-->
-                    <obs conceptId="$@Type_of_Treatment_performed@" answerConceptId="$@Cryotherapy@" answerLabel="Cryotherapy(DH)" />
+<!--                    <obs conceptId="$@Type_of_Treatment_performed@" answerConceptId="$@Cryotherapy@" answerLabel="Cryotherapy(DH)" />-->
                     <!--                    Cryotherapy(DH)-->
 
                     <!--                    <input id="obs.ManagementTypeOfTreatmentPerformedLEEP" name="obs.ManagementTypeOfTreatmentPerformed" type="checkbox"-->
                     <!--                           data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"-->
                     <!--                           value="55040927-bae5-410c-80da-c79f7574167f^Loop Electrosurgical Excision Procedure^99DCT">-->
-                    <obs conceptId="$@Type_of_Treatment_performed@" answerConceptId="$@Loop_Electrosurgical_Excision_Procedure@" answerLabel="LEEP(DH)" />
+<!--                    <obs conceptId="$@Type_of_Treatment_performed@" answerConceptId="$@Loop_Electrosurgical_Excision_Procedure@" answerLabel="LEEP(DH)" />-->
                     <!--                    LEEP(DH)-->
                     <br/>
                     other treatment (if other diagnosis):

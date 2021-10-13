@@ -412,8 +412,7 @@
                       <!--  If the patient is exiting permanently, fill this drop down. <exitFromCare/> -->
                         <br/>
 						<span id="checkboxRadio">
-						<obs conceptId="$@ONC_END_REASON@"
-                             answerConceptId="$@DATA_CLEANING_2021@" answerLabel="Data cleaning 2021" /> <br/>
+						
                                                 <obs conceptId="$@ONC_END_REASON@"
                              answerConceptId="$@BIOPSY_NEGATIVE@" answerLabel="Biopsy negative for cancer" /> <br/>
 						<obs conceptId="$@ONC_END_REASON@"

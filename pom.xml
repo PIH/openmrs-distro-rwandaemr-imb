@@ -16,7 +16,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <openMRSVersion>2.3.3-SNAPSHOT</openMRSVersion>
+        <openMRSVersion>2.3.4-SNAPSHOT</openMRSVersion>
         <addresshierarchyVersion>2.14.2</addresshierarchyVersion>
         <calculationVersion>1.2.1</calculationVersion>
         <formconceptsVersion>2.0.0-SNAPSHOT</formconceptsVersion>
@@ -54,6 +54,7 @@
         <webservicesRestVersion>2.29.0</webservicesRestVersion>
         <pathologyappVersion>1.0.0</pathologyappVersion>
         <legacyuinavbarappVersion>1.0.0</legacyuinavbarappVersion>
+        <imbpathologyrequestVersion>1.0.0-SNAPSHOT</imbpathologyrequestVersion>
     </properties>
 
     <scm>

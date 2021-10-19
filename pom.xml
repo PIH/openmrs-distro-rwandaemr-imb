@@ -54,7 +54,9 @@
         <webservicesRestVersion>2.29.0</webservicesRestVersion>
         <pathologyappVersion>1.0.1</pathologyappVersion>
         <legacyuinavbarappVersion>1.0.0</legacyuinavbarappVersion>
-<!--        <imbpathologyrequestVersion>1.0.0-SNAPSHOT</imbpathologyrequestVersion>-->
+        <imbpathologyrequestVersion>1.0.0-SNAPSHOT</imbpathologyrequestVersion>
+        <spamodulesVersion>1.0.9-SNAPSHOT</spamodulesVersion>
+        <reportingrestVersion>1.13.0-SNAPSHOT</reportingrestVersion>
     </properties>
 
     <scm>

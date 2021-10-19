@@ -52,9 +52,9 @@
         <usagestatisticsVersion>2.0.0-SNAPSHOT</usagestatisticsVersion>
         <validationVersion>2.0.0-SNAPSHOT</validationVersion>
         <webservicesRestVersion>2.29.0</webservicesRestVersion>
-        <pathologyappVersion>1.0.0</pathologyappVersion>
+        <pathologyappVersion>1.0.1</pathologyappVersion>
         <legacyuinavbarappVersion>1.0.0</legacyuinavbarappVersion>
-        <imbpathologyrequestVersion>1.0.0-SNAPSHOT</imbpathologyrequestVersion>
+<!--        <imbpathologyrequestVersion>1.0.0-SNAPSHOT</imbpathologyrequestVersion>-->
     </properties>
 
     <scm>

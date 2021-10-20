@@ -28,6 +28,13 @@
             </includes>
         </fileSet>
         <fileSet>
+            <directory>${project.build.directory}/configuration/frontend</directory>
+            <outputDirectory>openmrs_config/frontend</outputDirectory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
+        <fileSet>
             <directory>${project.build.directory}/configuration</directory>
             <outputDirectory>openmrs_config</outputDirectory>
             <includes>

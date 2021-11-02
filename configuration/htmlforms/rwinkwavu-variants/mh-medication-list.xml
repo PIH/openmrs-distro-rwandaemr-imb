@@ -129,7 +129,7 @@
         @Warfarin_(2mg)@=bb097866-f31f-4d22-b710-f878e7ca7ddd
         @Warfarin_@=94bcc86d-f0f8-472b-bd12-101a78cb4c67
         @Penicillin_VK_(Orale)@=00cff890-02c1-4026-86e4-33a010da49ba
-        @Benzathine_Penicillin_600,000_IU_IM@=2d4a4714-1fad-4fa9-af87-755a34ee1646
+        @Benzathine_Penicillin_600@=2d4a4714-1fad-4fa9-af87-755a34ee1646
         @Benzathine_Penicillin_1.2M_IU_IM@=0b7f6821-acee-4314-b79b-4d221f594634
         @Isosorbide_Dinitrate_(5_mg)@=037a5fcd-8635-46f9-b2a4-c743a42dbd64
         @Hydralazine@=4422d261-a13c-4ffd-bb15-04fa66efb120
@@ -366,6 +366,16 @@
         @Amlodipine@=c5dd6925-91eb-48f1-9b8e-7a0652ee576c
     </macros>
 
+	<style type="text/css">
+	  .orderwidget-drug-section { padding: 10px; border: 1px dotted black; }
+	  .order-field { display: inline-block; padding: 0px; }
+	  .order-field.action { display: block; }
+	  .order-field.dateActivated { padding-right: 20px; }
+	  .order-field-label { display: inline-block; padding-right: 5px; vertical-align: middle; }
+	  .order-field-label:after { content: ""; white-space: pre; }
+	  .order-field-widget { display: inline-block; }
+	</style>
+	
     <style>
         .section {
         border: 1px solid $headerColor;
@@ -593,12 +603,87 @@
                     <strong><lookup expression="fn.message('Mental_Health_Specific')"/></strong>
                 </td>
                 <td>
-                    <drugOrder drugNames="$@carbamazepine@,$@Phenobarbital@,$@Valproic_acid@,$@phenytoin@,$@Diazepam@,$@Haldol_Decanoate@,$@haloperidol@,
-                                $@AMITRIPTYLINE@,$@Biperiden@,$@Chlorpromazine@,$@Keppra@,$@FLUPENTHIXOL@,$@Cinnarizine@,$@Risperidone@,$@Levomepromazine@,$@FLUOXETINE@,$@Citalopram@"
-                               drugLabels="Carbamazepine/Tegretol,Phenobarbital/ Luminal,Depakene/Depakote/Valproic acid,Diphantoine/Phenytoine,
-                               Diazepam/ Valium,Haldol Decanoate,Haldol/ Haloperidol,Amytryptiline/ Triptizol,Akineton/ Biperiden,Largatil/Chlorpromazine,Keppra/Levetiracetam,
-                               Fluanxol/ Flupentixol,Stugeron/ Cinnarizine,Resperidone/ Risperdal,Nozinan/ Levomepromazine,Fluoxetine/Prozac,Citalopram/Celexa"
-                               discontinuedReasonConceptId="$@REASON_ORDER_STOPPED@"  />
+				
+	<drugOrder orderType="131168f4-15f5-102d-96e4-000c29c2a5d7" selectLabel="Order Drug">
+        <orderTemplate>
+            <orderProperty name="drug" label="Drug*">
+                <option value="$@carbamazepine@" label="Carbamazepine/Tegretol" />
+                <option value="$@Phenobarbital@" label="Phenobarbital/ Luminal"/>
+				<option value="$@Valproic_acid@" label="Depakene/Depakote/Valproic acid"/>
+				<option value="$@phenytoin@" label="Diphantoine/Phenytoine"/>
+				<option value="$@Diazepam@" label="Diazepam/ Valium"/>
+				<option value="$@Haldol_Decanoate@" label="Haldol Decanoate"/>
+				<option value="$@haloperidol@" label="Haldol/ Haloperidol"/>
+				<option value="$@AMITRIPTYLINE@" label="Amytryptiline/ Triptizol"/>
+				<option value="$@Biperiden@" label="Akineton/ Biperiden"/>
+				<option value="$@Chlorpromazine@" label="Largatil/Chlorpromazine"/>
+				<option value="$@Keppra@" label="Keppra/Levetiracetam"/>
+				<option value="$@FLUPENTHIXOL@" label="Fluanxol/ Flupentixol"/>
+				<option value="$@Cinnarizine@" label="Stugeron/ Cinnarizine"/>
+				<option value="$@Risperidone@" label="Resperidone/ Risperdal"/>
+				<option value="$@Levomepromazine@" label="Nozinan/ Levomepromazine"/>
+				<option value="$@FLUOXETINE@" label="Fluoxetine/Prozac"/>
+				<option value="$@Citalopram@" label="Citalopram/Celexa"/>
+				
+                
+            </orderProperty>
+            <orderProperty name="action">
+                <option value="NEW" label="Place a new Order"/>
+                <option value="REVISE" label="Revise this Order"/>
+                <option value="RENEW" label="Renew this Order"/>
+                <option value="DISCONTINUE" label="Discontinue this Order"/>
+            </orderProperty>
+            <div style="padding:0px;">
+            <orderProperty name="dose" label="Dose*"/>
+            <orderProperty name="doseUnits" label="Units*">
+                <option value="4020" label="tablets"/>
+                <option value="123042" label="milligrams"/>
+				<option value="123048" label="units"/>
+            </orderProperty>
+            <orderProperty name="frequency" label="Frequency*">
+                <option value="707ad8b7-d902-11ea-80fb-0242ac110002
+" label="1 / day"/> 
+                <option value="87ea7c89-d8f9-11ea-80fb-0242ac110002
+" label="2 / day"/>
+                <option value="d8290a00-d926-11ea-8b36-0242ac110002
+" label="3 / day"/>
+                <option value="405a5af1-d927-11ea-8b36-0242ac110002
+" label="4 / day"/>
+                <option value="405a5af1-d927-11ea-8b36-0242ac110002
+" label="5 / day"/>
+                <option value="f11513cb-eee1-11ea-b492-0242ac110002
+" label="6 / day"/>
+                <option value="9212ab7b-eee4-11ea-b492-0242ac110002
+" label="7 / day"/>
+            </orderProperty>
+			</div>
+               
+            <orderProperty name="asNeeded"/>
+			<div style="padding:0px;">
+				<orderProperty name="scheduledDate"/>
+				<orderProperty name="duration" label="Duration in days (blank=no end)"/>
+
+			</div>
+            <div style="display:none;">
+			    <orderProperty name="dateActivated"/>
+			    <orderProperty name="route" value="3327" />
+				<orderProperty name="urgency" value="ROUTINE"/>
+				<orderProperty name="dosingType" value="org.openmrs.SimpleDosingInstructions"/>
+				<orderProperty name="instructions" textArea="true" textAreaRows="4" textAreaColumns="100"/>
+                <orderProperty name="previousOrder"/>
+                <orderProperty name="careSetting" value="OUTPATIENT"/>
+                <orderProperty name="quantity" value="0"/>
+                <orderProperty name="quantityUnits" value="6735094c-8416-43e3-8a3c-091332a08cb7"/> <!-- unspecified -->
+                <orderProperty name="numRefills" value="0"/>
+								<orderProperty name="durationUnits" value="SNOMED CT:258703001">
+					<option value="SNOMED CT:258703001" label="Days"/>
+				</orderProperty>
+            </div>
+
+        </orderTemplate>
+    </drugOrder>
+
+                    
                 </td>
             </tr>
             <tr>
@@ -606,292 +691,357 @@
                     <strong><lookup expression="fn.message('General')"/></strong>
                 </td>
                 <td>
-                    <drugOrder drugNames="$@PHENOBARBITAL@,$@phenytoin@,$@carbamazepine@,$@VALPROIC_ACID@,$@HALOPERIDOL@,
-$@Triomune-30_(Stavudine_30_mg/Lamivudine_150_mg/Nevirapine_200_mg)@,
-$@Triomune-40@,
-$@d4T_30@,
-$@d4T_40@,
-$@DDI_125@,
-$@DDI_200@,
-$@SM@,
-$@RIF_300@,
-$@RHZ@,
-$@RHEZ@,
-$@RH@,
-$@PZA_500@,
-$@NVP_Susp@,
-$@NVP_(200_mg)@,
-$@LPV/r_(Kaletra)@,
-$@INH_100@,
-$@FCZ_150@,
-$@Lisinopril@,
-$@EMB_400@,
-$@EFV_100@,
-$@EFV_50@,
-$@EFV_200@,
-$@d4T_20@,
-$@d4T_15@,
-$@TMP/SMX_800/160@,
-$@TMP/SMX_400/80@,
-$@TMP/SMX_200/40@,
-$@AZT_Syrup_(10mg/ml)@,
-$@AZT_100@,
-$@AZT_300@,
-$@AZT+3TC_(Zidovudine_300mg/Lamivudine_150mg)@,
-$@ABC_(300_mg)@,
-$@3TC_Susp@,
-$@3TC_(150_mg)@,
-$@Isoniazid_(H)@,
-$@Rifampicin_(R)@,
-$@Ethambutol_(E)@,
-$@Pyrazinamide_(Z)@,
-$@Streptomycin_(S)@,
-$@Kanamycin_(Km)@,
-$@Amikacin_(Am)@,
-$@Capreomicin_(Cm)@,
-$@Viomycin_(Vi)@,
-$@Ciprofloxacin_(Cfx)@,
-$@Ofloxacin_(Ofx)@,
-$@Levofloxacin_(Lfx)@,
-$@Moxifloxacin_(Mfx)@,
-$@Gatifloxacin_(Gfx)@,
-$@Ethionamide_(Eto)@,
-$@Cycloserine_(Cs)@,
-$@Prothionamide_(Pto)@,
-$@Terizidone_(Trd)@,
-$@P-aminosalyicylic_acid_(PAS)@,
-$@Clofazimine_(Cfz)@,
-$@Amoxicillin/Clavulantic_Acid_(Amx/Clv)@,
-$@Clarithromycin_(Clr)@,
-$@Rifabutine_(Rfb)@,
-$@Pyridoxine_/_B6@,
-$@TDF_300@,
-$@Coviro-30@,
-$@Coviro-40@,
-$@Zidolam@,
-$@RHE@,
-$@Triomune-Baby@,
-$@Triomune-Junior@,
-$@Triomune-Baby@,
-$@Triomune-Junior@,
-$@Furosemide_(Lasix)_IV@,
-$@Captopril@,
-$@Furosemide_(Lasix)_Orale@,
-$@Aldactone@,
-$@Carvedilol@,
-$@Carvedilol_25@,
-$@Amlodipine_@,
-$@Amlodipine_10@,
-$@Nifedipine_retard@,
-$@Hydrochlorthiazide_(25mg)@,
-$@Potassium@,
-$@Prednisolone@,
-$@AAS@,
-$@AAS_500@,
-$@Warfarin_(2mg)@,
-$@Warfarin_@,
-$@Penicillin_VK_(Orale)@,
-$@Benzathine_Penicillin_600,000_IU_IM@,
-$@Benzathine_Penicillin_1.2M_IU_IM@,
-$@Isosorbide_Dinitrate_(5_mg)@,
-$@Hydralazine@,
-$@Atenolol_100@,
-$@Beclometasone@,
-$@Salbutamol_50@,
-$@Salbutamol_250@,
-$@Codeine_15@,
-$@Codeine_30@,
-$@Glibenclamide_5@,
-$@Aminophylline_100@,
-$@Aminophylline_25mg/mL_@,
-$@Metformin@,
-$@Digoxin_(0.25_mg)@,
-$@Zidolam-N@,
-$@Kaletra_Susp@,
-$@ABC_Susp_(10mg/ml)@,
-$@INSULIN_Regular@,
-$@Insulin_lente@,
-$@Insulin_70/30_mixte@,
-$@Captopril_(25mg)@,
-$@Clotrimazole_pommade@,
-$@Dapsone_(100mg_tablet)@,
-$@Hydrochlorthiazide_(50mg)_@,
-$@Methyldopa_(250_mg)@,
-$@Phenobarbital_(30_mg)@,
-$@Phenobarbital_(100_mg)@,
-$@Phenytoin_(100mg)@,
-$@Valproic_acid_(Depakene)_(150mg)@,
-$@Valproic_acid_(200_mg)@,
-$@Valproic_acid_(500_mg)@,
-$@Carbamazepine_(200_mg)@,
-$@Chlorpheniramine_(4mg_tablet)_@,
-$@MVI_(multivitamin_liquid)@,
-$@Amoxicillin_(125mg/5ml)@,
-$@Bactrim_(Trimethoprim_and_Sulfamethoxazole_liquid)@,
-$@Vitamin_A@,
-$@Coartem_(Artemether_+_Lumefantrine_20/120mg_tab)@,
-$@Griseofulvin_(125mg/5ml)@,
-$@Ibuprofen_(infant_drops)@,
-$@Mebendazole_(100mg/5mL_from_100mL_bottle)@,
-$@Paracetamol_(120mg/5mL_from_60mL_bottle)@,
-$@Miconazole_cream_(1%_strength)@,
-$@Hydralazine_(25mg)@,
-$@Isosorbide_Dinitrate(10mg)_@,
-$@Aspirin(100mg)@,
-$@Salbutamol(100mg)@,
-$@Digoxin(0.12mg)@,
-$@Fefol(65.4mg)@,
-$@Atenolol(5mg)@,
-$@Vit_B_Complex(12mg)@,
-$@Omeprazole(20mg)@,
-$@Amlodipine(4mg)@,
-$@Albendazole(400mg)@,
-$@Warfarin(5mg)@,
-$@Aldactone_(12.5mg)@,
-$@Prednisolone(5mg)@,
-$@Doxycycline(100mg)@,
-$@Ranitidine(150mg)@,
-$@Captopril_(25_mg_tablet)@,
-$@Metformin_(500mg)@,
-$@Glibenclamide_(5_mg)@,
-$@Propranalol_(10mg_tablet)@,
-$@Furosemide_(40_mg)@,
-$@Methyldopa_(250mg)@,
-$@Warfarin_(1_mg)@,
-$@Hydrochlorothiazide_(25_mg)@,
-$@Aminophylline_(100_mg)@,
-$@Beclometasone_Inhaler@,
-$@Furosemide_(20mg_tablet)@,
-$@Carvedilol_(12.5_mg_tablet)@,
-$@Carbamazepine_(100mg_tablet)@,
-$@Prednisone@,
-$@Phenobarbitol_(50mg_tablet)@,
-$@Salbutamol_(250_mcg)@,
-$@Aldactone_(25mg_tablet)@,
-$@Sodium_valproate_(57.64mg/ml_syrup)@,
-$@Penecillin_V_(250_mg_tablet)@,
-$@Aminophylline_(25mg/mL_from_10mL_ampule)@,
-$@Captopril_25_mg_tablet@,
-$@Phenytoin_(50mg_tablet)@,
-$@Aldactone_(50_mg_tablet)@,
-$@Carbamazepine_(100mg/5ml_suspension)_@,
-$@Warfarin_(Coumadin)_(2_mg_tablet)@,
-$@Lisinopril_(5_mg_tablet)@,
-$@Salbutamol_(50_mcg)@,
-$@Lisinopril_(10_mg)@,
-$@Amlodipine_5@,
-$@Hydralazine_(50_mg_tablet)@,
-$@Hydrochlorothiazide_(50_mg_tablet)_@,
-$@Carvedilol_(25mg)@,
-$@Amlodipine_(10_mg)@,
-$@Carvedilol_(6.25mg)@,
-$@Atenolol_(100mg)@,
-$@Warfarin_(5_mg)@,
-$@Atenolol_(50_mg_tablet)@,
-$@Captopril_(12.5mg_tablet)@,
-$@INDINAVIR@,
-$@Amitriptyline_25mg@,
-$@DDI_(250_mg)@,
-$@DDI_(400_mg)@,
-$@Kaletra_(Lopinavir_200mg/Ritonavir_50mg)@,
-$@Stavudine-Lamivudine_(30mg/150mg)@,
-$@Tenofovir-Lamivudine_(300mg/300mg)@,
-$@Losartan_(50_mg)@,
-$@Propranolol_(40_mg)@,
-$@Acetylsalicylic_Acid_(100_mg)@,
-$@Spironolactone@,
-$@Diazepam@,
-$@Vincristine_(1.5mg/m2)@,
-$@6-Mercaptopurine_(75mg/m2)@,
-$@Methotrexate_(12mg)@,
-$@Normal_Saline@,
-$@Ondansetron_(4_mg)@,
-$@Dactinomycin_(0.045mg/kg)@,
-$@Dexamethasone_(6mg/m2)@,
-$@Methotrexate_(20mg/m2)@,
-$@Dexamethasone_(16mg)@,
-$@Ondansetron_(8_mg)@,
-$@Doxorubicin_(60mg/m2)@,
-$@Cyclophosphamide_(600mg/m2)@,
-$@Oxaliplatin_(85mg/m2)@,
-$@Leucovorin_(400mg/m2)@,
-$@Fluorouracil_(400mg/m2)@,
-$@Fluorouracil_(1200mg/m2)@,
-$@Cyclophosphamide_(750mg/m2)@,
-$@Doxorubicin_(50mg/m2)@,
-$@Vincristine_(1.4mg/m2)@,
-$@Prednisone_(100_mg)@,
-$@Promethazine_(50_mg)@,
-$@Paclitaxel_(100mg/m2)@,
-$@Prednisone_(60_mg/m2)@,
-$@Prednisone_(40_mg/m2)@,
-$@L-asparaginase_(6000units/m2)@,
-$@Doxorubicin_(20mg/m2)@,
-$@Doxorubicin_(25mg/m2)@,
-$@VinBLastine_(6mg/m2)@,
-$@Bleomycin_(10units/m2)@,
-$@Dacarbazine_(375mg/m2)@,
-$@Paclitaxel_(175mg/m2)@,
-$@Carboplatin_(AUC_6)@,
-$@Atazanavir_-_Ritonavir_(300_mg/100_mg)@,
-$@Atazanavir@,
-$@Methotrexate_(30mg/m2)@,
-$@vinBLASTine_(3mg/m2)@,
-$@Doxorubicin_(30mg/m2__)@,
-$@Cisplatin_(70mg/m2)@,
-$@Leucovorin_(500mg/m2)@,
-$@Leucovorin_(500mg/m2)@,
-$@Fluorouracil_(500mg/m2)@,
-$@Paclitaxel_(80mg/m2)@,
-$@1L_NS_+_KCL_20mEq_+_Mg_sulfate_2gm@,
-$@Metoclopramide@,
-$@Doxorubicin_(37.5mg/m2)@,
-$@Normal_Saline_+_KCL_20_mEq_+_Mg_Sulfate_2gm@,
-$@Cisplatin_(100_mg)@,
-$@Dactinomycin_(0.5mg)@,
-$@Etoposide_(100mg)@,
-$@Methotrexate_(100mg)@,
-$@Methotrexate_(200mg)@,
-$@Leucovorin_(15mg)@,
-$@Vincristine_(1mg/m2)@,
-$@Dextrose_5%_(D5W)@,
-$@Dexamethasone_(20mg)@,
-$@Dexamethasone_(8mg)@,
-$@Cyclophosphamide_(1200mg/m2)@,
-$@ETV_(100mg_Etravirine)@,
-$@LPV/r_(200mg/50mg)@,
-$@LPV/r_(80mg/20mg)@,
-$@LPV/r_(100mg/25mg)@,
-$@ATV/r_(300mg/100mg)@,
-$@DRV_(300mg)@,
-$@DRV_(75mg)@,
-$@RAL_(400mg)@,
-$@3TC_(300mg)@,
-$@3TC_(10mg/ml)@,
-$@TDF_3TC_EFV_(300mg/300mg/600mg)@,
-$@ABC+3TC_(600mg/300mg)@,
-$@ABC_Susp_(20mg/ml)@,
-$@Bleomycin_(30_units)@,
-$@Etoposide_(100mg/m2)@,
-$@Cisplatin_20mg/m2@,
-$@AZT_(60mg)@,
-$@3TC_(30mg)@,
-$@AZT_+_3TC_(60mg/30mg)@,
-$@NVP_(50mg)@,
-$@Methotrexate_(100mg/m2)@,
-$@Methotrexate_(200mg/m2)@,
-$@Cisplatin_(100_mg/m2)@,
-$@Hydrocortisone_(50mg)@,
-$@Dexamethasone_(10mg/m2)@,
-$@Cytarabine_(75mg/m2)@,
-$@Cyclophosphamide_(1000mg/m2)@,
-$@6-Mercaptopurine_(60mg/m2)@,
-$@Methotrexate@,
-$@Hydrocortisone@,
-$@Prednisone_(100_mg/m2)@,
-$@Cyclophosphamide_(150mg/m2)@,
-$@Vincristine_(2mg/m2)@
-"  discontinuedReasonConceptId="$@REASON_ORDER_STOPPED@" discontinueReasonLabel="Raison pour l'arrêt/Reason for stopping" />
+                    
+	<drugOrder orderType="131168f4-15f5-102d-96e4-000c29c2a5d7	" selectLabel="Order Drug">
+        <orderTemplate>
+            <orderProperty name="drug" label="Drug*">
+                <option value="$@PHENOBARBITAL@" />
+                <option value="$@phenytoin@" />
+                <option value="$@carbamazepine@" />
+                <option value="$@VALPROIC_ACID@" />
+                <option value="$@HALOPERIDOL@" />
+                <option value="$@Triomune-30_(Stavudine_30_mg/Lamivudine_150_mg/Nevirapine_200_mg)@" />
+                <option value="$@Triomune-40@" />
+                <option value="$@d4T_30@" />
+                <option value="$@d4T_40@" />
+                <option value="$@DDI_125@" />
+                <option value="$@DDI_200@" />
+                <option value="$@SM@" />
+                <option value="$@RIF_300@" />
+                <option value="$@RHZ@" />
+                <option value="$@RHEZ@" />
+                <option value="$@RH@" />
+                <option value="$@PZA_500@" />
+                <option value="$@NVP_Susp@" />
+                <option value="$@NVP_(200_mg)@" />
+                <option value="$@LPV/r_(Kaletra)@" />
+                <option value="$@INH_100@" />
+                <option value="$@FCZ_150@" />
+                <option value="$@Lisinopril@" />
+                <option value="$@EMB_400@" />
+                <option value="$@EFV_100@" />
+                <option value="$@EFV_50@" />
+                <option value="$@EFV_200@" />
+                <option value="$@d4T_20@" />
+                <option value="$@d4T_15@" />
+                <option value="$@TMP/SMX_800/160@" />
+                <option value="$@TMP/SMX_400/80@" />
+                <option value="$@TMP/SMX_200/40@" />
+                <option value="$@AZT_Syrup_(10mg/ml)@" />
+                <option value="$@AZT_100@" />
+                <option value="$@AZT_300@" />
+                <option value="$@AZT+3TC_(Zidovudine_300mg/Lamivudine_150mg)@" />
+                <option value="$@ABC_(300_mg)@" />
+                <option value="$@3TC_Susp@" />
+                <option value="$@3TC_(150_mg)@" />
+                <option value="$@Isoniazid_(H)@" />
+                <option value="$@Rifampicin_(R)@" />
+                <option value="$@Ethambutol_(E)@" />
+                <option value="$@Pyrazinamide_(Z)@" />
+                <option value="$@Streptomycin_(S)@" />
+                <option value="$@Kanamycin_(Km)@" />
+                <option value="$@Amikacin_(Am)@" />
+                <option value="$@Capreomicin_(Cm)@" />
+                <option value="$@Viomycin_(Vi)@" />
+                <option value="$@Ciprofloxacin_(Cfx)@" />
+                <option value="$@Ofloxacin_(Ofx)@" />
+                <option value="$@Levofloxacin_(Lfx)@" />
+                <option value="$@Moxifloxacin_(Mfx)@" />
+                <option value="$@Gatifloxacin_(Gfx)@" />
+                <option value="$@Ethionamide_(Eto)@" />
+                <option value="$@Cycloserine_(Cs)@" />
+                <option value="$@Prothionamide_(Pto)@" />
+                <option value="$@Terizidone_(Trd)@" />
+                <option value="$@P-aminosalyicylic_acid_(PAS)@" />
+                <option value="$@Clofazimine_(Cfz)@" />
+                <option value="$@Amoxicillin/Clavulantic_Acid_(Amx/Clv)@" />
+                <option value="$@Clarithromycin_(Clr)@" />
+                <option value="$@Rifabutine_(Rfb)@" />
+                <option value="$@Pyridoxine_/_B6@" />
+                <option value="$@TDF_300@" />
+                <option value="$@Coviro-30@" />
+                <option value="$@Coviro-40@" />
+                <option value="$@Zidolam@" />
+                <option value="$@RHE@" />
+                <option value="$@Triomune-Baby@" />
+                <option value="$@Triomune-Junior@" />
+                <option value="$@Triomune-Baby@" />
+                <option value="$@Triomune-Junior@" />
+                <option value="$@Furosemide_(Lasix)_IV@" />
+                <option value="$@Captopril@" />
+                <option value="$@Furosemide_(Lasix)_Orale@" />
+                <option value="$@Aldactone@" />
+                <option value="$@Carvedilol@" />
+                <option value="$@Carvedilol_25@" />
+                <option value="$@Amlodipine_@" />
+                <option value="$@Amlodipine_10@" />
+                <option value="$@Nifedipine_retard@" />
+                <option value="$@Hydrochlorthiazide_(25mg)@" />
+                <option value="$@Potassium@" />
+                <option value="$@Prednisolone@" />
+                <option value="$@AAS@" />
+                <option value="$@AAS_500@" />
+                <option value="$@Warfarin_(2mg)@" />
+                <option value="$@Warfarin_@" />
+                <option value="$@Penicillin_VK_(Orale)@" />
+                <option value="$@Benzathine_Penicillin_600@" />
+                <option value="$@Benzathine_Penicillin_1.2M_IU_IM@" />
+                <option value="$@Isosorbide_Dinitrate_(5_mg)@" />
+                <option value="$@Hydralazine@" />
+                <option value="$@Atenolol_100@" />
+                <option value="$@Beclometasone@" />
+                <option value="$@Salbutamol_50@" />
+                <option value="$@Salbutamol_250@" />
+                <option value="$@Codeine_15@" />
+                <option value="$@Codeine_30@" />
+                <option value="$@Glibenclamide_5@" />
+                <option value="$@Aminophylline_100@" />
+                <option value="$@Aminophylline_25mg/mL_@" />
+                <option value="$@Metformin@" />
+                <option value="$@Digoxin_(0.25_mg)@" />
+                <option value="$@Zidolam-N@" />
+                <option value="$@Kaletra_Susp@" />
+                <option value="$@ABC_Susp_(10mg/ml)@" />
+                <option value="$@INSULIN_Regular@" />
+                <option value="$@Insulin_lente@" />
+                <option value="$@Insulin_70/30_mixte@" />
+                <option value="$@Captopril_(25mg)@" />
+                <option value="$@Clotrimazole_pommade@" />
+                <option value="$@Dapsone_(100mg_tablet)@" />
+                <option value="$@Hydrochlorthiazide_(50mg)_@" />
+                <option value="$@Methyldopa_(250_mg)@" />
+                <option value="$@Phenobarbital_(30_mg)@" />
+                <option value="$@Phenobarbital_(100_mg)@" />
+                <option value="$@Phenytoin_(100mg)@" />
+                <option value="$@Valproic_acid_(Depakene)_(150mg)@" />
+                <option value="$@Valproic_acid_(200_mg)@" />
+                <option value="$@Valproic_acid_(500_mg)@" />
+                <option value="$@Carbamazepine_(200_mg)@" />
+                <option value="$@Chlorpheniramine_(4mg_tablet)_@" />
+                <option value="$@MVI_(multivitamin_liquid)@" />
+                <option value="$@Amoxicillin_(125mg/5ml)@" />
+                <option value="$@Bactrim_(Trimethoprim_and_Sulfamethoxazole_liquid)@" />
+                <option value="$@Vitamin_A@" />
+                <option value="$@Coartem_(Artemether_+_Lumefantrine_20/120mg_tab)@" />
+                <option value="$@Griseofulvin_(125mg/5ml)@" />
+                <option value="$@Ibuprofen_(infant_drops)@" />
+                <option value="$@Mebendazole_(100mg/5mL_from_100mL_bottle)@" />
+                <option value="$@Paracetamol_(120mg/5mL_from_60mL_bottle)@" />
+                <option value="$@Miconazole_cream_(1%_strength)@" />
+                <option value="$@Hydralazine_(25mg)@" />
+                <option value="$@Isosorbide_Dinitrate(10mg)_@" />
+                <option value="$@Aspirin(100mg)@" />
+                <option value="$@Salbutamol(100mg)@" />
+                <option value="$@Digoxin(0.12mg)@" />
+                <option value="$@Fefol(65.4mg)@" />
+                <option value="$@Atenolol(5mg)@" />
+                <option value="$@Vit_B_Complex(12mg)@" />
+                <option value="$@Omeprazole(20mg)@" />
+                <option value="$@Amlodipine(4mg)@" />
+                <option value="$@Albendazole(400mg)@" />
+                <option value="$@Warfarin(5mg)@" />
+                <option value="$@Aldactone_(12.5mg)@" />
+                <option value="$@Prednisolone(5mg)@" />
+                <option value="$@Doxycycline(100mg)@" />
+                <option value="$@Ranitidine(150mg)@" />
+                <option value="$@Captopril_(25_mg_tablet)@" />
+                <option value="$@Metformin_(500mg)@" />
+                <option value="$@Glibenclamide_(5_mg)@" />
+                <option value="$@Propranalol_(10mg_tablet)@" />
+                <option value="$@Furosemide_(40_mg)@" />
+                <option value="$@Methyldopa_(250mg)@" />
+                <option value="$@Warfarin_(1_mg)@" />
+                <option value="$@Hydrochlorothiazide_(25_mg)@" />
+                <option value="$@Aminophylline_(100_mg)@" />
+                <option value="$@Beclometasone_Inhaler@" />
+                <option value="$@Furosemide_(20mg_tablet)@" />
+                <option value="$@Carvedilol_(12.5_mg_tablet)@" />
+                <option value="$@Carbamazepine_(100mg_tablet)@" />
+                <option value="$@Prednisone@" />
+                <option value="$@Phenobarbitol_(50mg_tablet)@" />
+                <option value="$@Salbutamol_(250_mcg)@" />
+                <option value="$@Aldactone_(25mg_tablet)@" />
+                <option value="$@Sodium_valproate_(57.64mg/ml_syrup)@" />
+                <option value="$@Penecillin_V_(250_mg_tablet)@" />
+                <option value="$@Aminophylline_(25mg/mL_from_10mL_ampule)@" />
+                <option value="$@Captopril_25_mg_tablet@" />
+                <option value="$@Phenytoin_(50mg_tablet)@" />
+                <option value="$@Aldactone_(50_mg_tablet)@" />
+                <option value="$@Carbamazepine_(100mg/5ml_suspension)_@" />
+                <option value="$@Warfarin_(Coumadin)_(2_mg_tablet)@" />
+                <option value="$@Lisinopril_(5_mg_tablet)@" />
+                <option value="$@Salbutamol_(50_mcg)@" />
+                <option value="$@Lisinopril_(10_mg)@" />
+                <option value="$@Amlodipine_5@" />
+                <option value="$@Hydralazine_(50_mg_tablet)@" />
+                <option value="$@Hydrochlorothiazide_(50_mg_tablet)_@" />
+                <option value="$@Carvedilol_(25mg)@" />
+                <option value="$@Amlodipine_(10_mg)@" />
+                <option value="$@Carvedilol_(6.25mg)@" />
+                <option value="$@Atenolol_(100mg)@" />
+                <option value="$@Warfarin_(5_mg)@" />
+                <option value="$@Atenolol_(50_mg_tablet)@" />
+                <option value="$@Captopril_(12.5mg_tablet)@" />
+                <option value="$@INDINAVIR@" />
+                <option value="$@Amitriptyline_25mg@" />
+                <option value="$@DDI_(250_mg)@" />
+                <option value="$@DDI_(400_mg)@" />
+                <option value="$@Kaletra_(Lopinavir_200mg/Ritonavir_50mg)@" />
+                <option value="$@Stavudine-Lamivudine_(30mg/150mg)@" />
+                <option value="$@Tenofovir-Lamivudine_(300mg/300mg)@" />
+                <option value="$@Losartan_(50_mg)@" />
+                <option value="$@Propranolol_(40_mg)@" />
+                <option value="$@Acetylsalicylic_Acid_(100_mg)@" />
+                <option value="$@Spironolactone@" />
+                <option value="$@Diazepam@" />
+                <option value="$@Vincristine_(1.5mg/m2)@" />
+                <option value="$@6-Mercaptopurine_(75mg/m2)@" />
+                <option value="$@Methotrexate_(12mg)@" />
+                <option value="$@Normal_Saline@" />
+                <option value="$@Ondansetron_(4_mg)@" />
+                <option value="$@Dactinomycin_(0.045mg/kg)@" />
+                <option value="$@Dexamethasone_(6mg/m2)@" />
+                <option value="$@Methotrexate_(20mg/m2)@" />
+                <option value="$@Dexamethasone_(16mg)@" />
+                <option value="$@Ondansetron_(8_mg)@" />
+                <option value="$@Doxorubicin_(60mg/m2)@" />
+                <option value="$@Cyclophosphamide_(600mg/m2)@" />
+                <option value="$@Oxaliplatin_(85mg/m2)@" />
+                <option value="$@Leucovorin_(400mg/m2)@" />
+                <option value="$@Fluorouracil_(400mg/m2)@" />
+                <option value="$@Fluorouracil_(1200mg/m2)@" />
+                <option value="$@Cyclophosphamide_(750mg/m2)@" />
+                <option value="$@Doxorubicin_(50mg/m2)@" />
+                <option value="$@Vincristine_(1.4mg/m2)@" />
+                <option value="$@Prednisone_(100_mg)@" />
+                <option value="$@Promethazine_(50_mg)@" />
+                <option value="$@Paclitaxel_(100mg/m2)@" />
+                <option value="$@Prednisone_(60_mg/m2)@" />
+                <option value="$@Prednisone_(40_mg/m2)@" />
+                <option value="$@L-asparaginase_(6000units/m2)@" />
+                <option value="$@Doxorubicin_(20mg/m2)@" />
+                <option value="$@Doxorubicin_(25mg/m2)@" />
+                <option value="$@VinBLastine_(6mg/m2)@" />
+                <option value="$@Bleomycin_(10units/m2)@" />
+                <option value="$@Dacarbazine_(375mg/m2)@" />
+                <option value="$@Paclitaxel_(175mg/m2)@" />
+                <option value="$@Carboplatin_(AUC_6)@" />
+                <option value="$@Atazanavir_-_Ritonavir_(300_mg/100_mg)@" />
+                <option value="$@Atazanavir@" />
+                <option value="$@Methotrexate_(30mg/m2)@" />
+                <option value="$@vinBLASTine_(3mg/m2)@" />
+                <option value="$@Doxorubicin_(30mg/m2__)@" />
+                <option value="$@Cisplatin_(70mg/m2)@" />
+                <option value="$@Leucovorin_(500mg/m2)@" />
+                <option value="$@Leucovorin_(500mg/m2)@" />
+                <option value="$@Fluorouracil_(500mg/m2)@" />
+                <option value="$@Paclitaxel_(80mg/m2)@" />
+                <option value="$@1L_NS_+_KCL_20mEq_+_Mg_sulfate_2gm@" />
+                <option value="$@Metoclopramide@" />
+                <option value="$@Doxorubicin_(37.5mg/m2)@" />
+                <option value="$@Normal_Saline_+_KCL_20_mEq_+_Mg_Sulfate_2gm@" />
+                <option value="$@Cisplatin_(100_mg)@" />
+                <option value="$@Dactinomycin_(0.5mg)@" />
+                <option value="$@Etoposide_(100mg)@" />
+                <option value="$@Methotrexate_(100mg)@" />
+                <option value="$@Methotrexate_(200mg)@" />
+                <option value="$@Leucovorin_(15mg)@" />
+                <option value="$@Vincristine_(1mg/m2)@" />
+                <option value="$@Dextrose_5%_(D5W)@" />
+                <option value="$@Dexamethasone_(20mg)@" />
+                <option value="$@Dexamethasone_(8mg)@" />
+                <option value="$@Cyclophosphamide_(1200mg/m2)@" />
+                <option value="$@ETV_(100mg_Etravirine)@" />
+                <option value="$@LPV/r_(200mg/50mg)@" />
+                <option value="$@LPV/r_(80mg/20mg)@" />
+                <option value="$@LPV/r_(100mg/25mg)@" />
+                <option value="$@ATV/r_(300mg/100mg)@" />
+                <option value="$@DRV_(300mg)@" />
+                <option value="$@DRV_(75mg)@" />
+                <option value="$@RAL_(400mg)@" />
+                <option value="$@3TC_(300mg)@" />
+                <option value="$@3TC_(10mg/ml)@" />
+                <option value="$@TDF_3TC_EFV_(300mg/300mg/600mg)@" />
+                <option value="$@ABC+3TC_(600mg/300mg)@" />
+                <option value="$@ABC_Susp_(20mg/ml)@" />
+                <option value="$@Bleomycin_(30_units)@" />
+                <option value="$@Etoposide_(100mg/m2)@" />
+                <option value="$@Cisplatin_20mg/m2@" />
+                <option value="$@AZT_(60mg)@" />
+                <option value="$@3TC_(30mg)@" />
+                <option value="$@AZT_+_3TC_(60mg/30mg)@" />
+                <option value="$@NVP_(50mg)@" />
+                <option value="$@Methotrexate_(100mg/m2)@" />
+                <option value="$@Methotrexate_(200mg/m2)@" />
+                <option value="$@Cisplatin_(100_mg/m2)@" />
+                <option value="$@Hydrocortisone_(50mg)@" />
+                <option value="$@Dexamethasone_(10mg/m2)@" />
+                <option value="$@Cytarabine_(75mg/m2)@" />
+                <option value="$@Cyclophosphamide_(1000mg/m2)@" />
+                <option value="$@6-Mercaptopurine_(60mg/m2)@" />
+                <option value="$@Methotrexate@" />
+                <option value="$@Hydrocortisone@" />
+                <option value="$@Prednisone_(100_mg/m2)@" />
+                <option value="$@Cyclophosphamide_(150mg/m2)@" />
+                <option value="$@Vincristine_(2mg/m2)@" />
+
+            </orderProperty>
+            <orderProperty name="action">
+                <option value="NEW" label="Place a new Order"/>
+                <option value="REVISE" label="Revise this Order"/>
+                <option value="RENEW" label="Renew this Order"/>
+                <option value="DISCONTINUE" label="Discontinue this Order"/>
+            </orderProperty>
+            <div style="padding:0px;">
+            <orderProperty name="dose" label="Dose*"/>
+            <orderProperty name="doseUnits" label="Units*">
+                <option value="4020" label="tablets"/>
+                <option value="123042" label="milligrams"/>
+				<option value="123048" label="units"/>
+            </orderProperty>
+            <orderProperty name="frequency" label="Frequency*">
+                <option value="707ad8b7-d902-11ea-80fb-0242ac110002
+" label="1 / day"/> 
+                <option value="87ea7c89-d8f9-11ea-80fb-0242ac110002
+" label="2 / day"/>
+                <option value="d8290a00-d926-11ea-8b36-0242ac110002
+" label="3 / day"/>
+                <option value="405a5af1-d927-11ea-8b36-0242ac110002
+" label="4 / day"/>
+                <option value="405a5af1-d927-11ea-8b36-0242ac110002
+" label="5 / day"/>
+                <option value="f11513cb-eee1-11ea-b492-0242ac110002
+" label="6 / day"/>
+                <option value="9212ab7b-eee4-11ea-b492-0242ac110002
+" label="7 / day"/>
+            </orderProperty>
+			</div>
+               
+            <orderProperty name="asNeeded"/>
+			<div style="padding:0px;">
+				<orderProperty name="scheduledDate"/>
+				<orderProperty name="duration" label="Duration in days (blank=no end)"/>
+
+			</div>
+            <div style="display:none;">
+			    <orderProperty name="dateActivated"/>
+			    <orderProperty name="route" value="3327" />
+				<orderProperty name="urgency" value="ROUTINE"/>
+				<orderProperty name="dosingType" value="org.openmrs.SimpleDosingInstructions"/>
+				<orderProperty name="instructions" textArea="true" textAreaRows="4" textAreaColumns="100"/>
+                <orderProperty name="previousOrder"/>
+                <orderProperty name="careSetting" value="OUTPATIENT"/>
+                <orderProperty name="quantity" value="0"/>
+                <orderProperty name="quantityUnits" value="6735094c-8416-43e3-8a3c-091332a08cb7"/> <!-- unspecified -->
+                <orderProperty name="numRefills" value="0"/>
+								<orderProperty name="durationUnits" value="SNOMED CT:258703001">
+					<option value="SNOMED CT:258703001" label="Days"/>
+				</orderProperty>
+            </div>
+
+        </orderTemplate>
+    </drugOrder>
+
                 </td>
             </tr>
         </table>

@@ -129,19 +129,7 @@
         text-align: left;
         }
     </style>
-    <script type="text/javascript">
-        jQuery(function() {
-             getField('diagnosis.value').change(function() {
 
-                 if(getValue('diagnosis.value')=='5622'){
-                    jQuery('#otherDiagnosis').show();
-                 }else{
-                    jQuery('#otherDiagnosis').hide();
-                 }
-             });
-             jQuery('#otherDiagnosis').hide();
-        });
-    </script>
 
     <span style="float:right">Paper Form ID: $paperFormId</span>
 
@@ -219,6 +207,8 @@
                         Diagnostic médical/Medical diagnosis,Epilepsie/Epilepsy,Psychose/Psychosis,Schizophrenie/Schizophrenia,Schizophrenie et autre psychose/Schizophrenia and other psychhoses
                         Trouble somatoforme/Somatoform disorder,Non-drug or alcohol-related disorders of behavior,Syndrome de PTSD/PTSD,Autres problèmes psychologiques/Other psychological problems,
                         Attempted suicide,Completed suicide,Autre/Other,Aucun enregistré/None recorded,Trouble mentale/Mental trouble,Disordre d'anxiété/Anxiety disorder" />
+						
+						
                 </td>
 
             </tr>
@@ -248,13 +238,88 @@
             <tr>
                 <td colspan="2">
                     <strong>Treatment/medications</strong>
-                    <drugOrder drugNames="$@carbamazepine@,$@Phenobarbital@,$@Valproic_acid@,$@phenytoin@,$@Diazepam@,$@Haldol_Decanoate@,$@haloperidol@,
-                                $@AMITRIPTYLINE@,$@Biperiden@,$@Chlorpromazine@,$@Keppra@,$@FLUPENTHIXOL@,$@Cinnarizine@,$@Risperidone@,$@Levomepromazine@,
-                                $@FLUOXETINE@,$@Citalopram@,$@Tegretol@,$@Depakote@"
-                               drugLabels="Carbamazepine,Phenobarbital,Depakine,Phenytoine,
-                               Diazepam,Haldol Decanoate,Haloperidol,Amytryptiline,Biperdene,Chlorpromazine,Keppra,
-                               Flupentixol,Cinnarizine,Respiridone,Levomepromazine,Fluoxetine,Citalopram,Tegretol,Depakote"
-                               discontinuedReasonConceptId="$@REASON_ORDER_STOPPED@"  />
+                                       <drugOrder orderType="131168f4-15f5-102d-96e4-000c29c2a5d7" selectLabel="Order Drug">
+        <orderTemplate>
+            <orderProperty name="drug" label="Drug*">
+                <option value="$@carbamazepine@" label="Carbamazepine"/>
+                <option value="$@Phenobarbital@" label="Phenobarbital"/>
+                <option value="$@Valproic_acid@" label="Depakine"/>
+                <option value="$@phenytoin@" label="Phenytoine"/>
+                <option value="$@Diazepam@" label="Diazepam"/>
+                <option value="$@Haldol_Decanoate@" label="Haldol Decanoate"/>
+                <option value="$@haloperidol@" label="Haloperidol"/>
+                <option value="$@AMITRIPTYLINE@" label="Amytryptiline"/>
+                <option value="$@Biperiden@" label="Biperdene"/>
+                <option value="$@Chlorpromazine@" label="Chlorpromazine"/>
+                <option value="$@Keppra@" label="Keppra"/>
+                <option value="$@FLUPENTHIXOL@" label="Flupentixol"/>
+                <option value="$@Cinnarizine@" label="Cinnarizine"/>
+                <option value="$@Risperidone@" label="Respiridone"/>
+                <option value="$@Levomepromazine@" label="Levomepromazine"/>
+                <option value="$@FLUOXETINE@" label="Fluoxetine"/>
+                <option value="$@Citalopram@" label="Citalopram"/>
+                <option value="$@Tegretol@" label="Tegretol"/>
+                <option value="$@Depakote@" label="Depakote"/>
+
+                
+            </orderProperty>
+            <orderProperty name="action">
+                <option value="NEW" label="Place a new Order"/>
+                <option value="REVISE" label="Revise this Order"/>
+                <option value="RENEW" label="Renew this Order"/>
+                <option value="DISCONTINUE" label="Discontinue this Order"/>
+            </orderProperty>
+            <div style="padding:0px;">
+            <orderProperty name="dose" label="Dose*"/>
+            <orderProperty name="doseUnits" label="Units*">
+                <option value="4020" label="tablets"/>
+                <option value="123042" label="milligrams"/>
+				<option value="123048" label="units"/>
+            </orderProperty>
+            <orderProperty name="frequency" label="Frequency*">
+                <option value="707ad8b7-d902-11ea-80fb-0242ac110002
+" label="1 / day"/> 
+                <option value="87ea7c89-d8f9-11ea-80fb-0242ac110002
+" label="2 / day"/>
+                <option value="d8290a00-d926-11ea-8b36-0242ac110002
+" label="3 / day"/>
+                <option value="405a5af1-d927-11ea-8b36-0242ac110002
+" label="4 / day"/>
+                <option value="405a5af1-d927-11ea-8b36-0242ac110002
+" label="5 / day"/>
+                <option value="f11513cb-eee1-11ea-b492-0242ac110002
+" label="6 / day"/>
+                <option value="9212ab7b-eee4-11ea-b492-0242ac110002
+" label="7 / day"/>
+            </orderProperty>
+			</div>
+               
+            <orderProperty name="asNeeded"/>
+			<div style="padding:0px;">
+				<orderProperty name="scheduledDate"/>
+				<orderProperty name="duration" label="Duration in days (blank=no end)"/>
+
+			</div>
+            <div style="display:none;">
+			    <orderProperty name="dateActivated"/>
+			    <orderProperty name="route" value="3327" />
+				<orderProperty name="urgency" value="ROUTINE"/>
+				<orderProperty name="dosingType" value="org.openmrs.SimpleDosingInstructions"/>
+				<orderProperty name="instructions" textArea="true" textAreaRows="4" textAreaColumns="100"/>
+                <orderProperty name="previousOrder"/>
+                <orderProperty name="careSetting" value="OUTPATIENT"/>
+                <orderProperty name="quantity" value="0"/>
+                <orderProperty name="quantityUnits" value="6735094c-8416-43e3-8a3c-091332a08cb7"/> <!-- unspecified -->
+                <orderProperty name="numRefills" value="0"/>
+								<orderProperty name="durationUnits" value="SNOMED CT:258703001">
+					<option value="SNOMED CT:258703001" label="Days"/>
+				</orderProperty>
+            </div>
+
+        </orderTemplate>
+    </drugOrder>   
+							   
+							   
                 </td>
             </tr>
             <tr>

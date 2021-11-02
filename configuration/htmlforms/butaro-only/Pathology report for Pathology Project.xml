@@ -1,7 +1,7 @@
 <htmlform
-	htmlformUuid="99ec763a-81ea-46f6-85c1-c26107271cd5" 
-	formUuid="2c8ca6c5-28ac-4098-b36d-247de1ef10ee" 
-	formName="Pathology Report on Pathology System" 
+	htmlformUuid="4566981f-ff21-4984-9771-e774de163e10" 
+	formUuid="17c48a32-d7d3-4b4e-bb2e-9b730e030070" 
+	formName="Pathology Report for Pathology System" 
 	formDescription="Pathology Report designed for the pathology software project" 
 	formVersion="1.0" 
 	formEncounterType="b1c2d207-7221-4c23-b580-6c5de5385847" 
@@ -85,7 +85,7 @@
 		@BREAST@=50b9f804-8540-49c9-9b92-0468b667dfb0
 		@OTHER_BREAST@=8da66be0-2cfe-4322-a53b-274bc1598691
 		
-		@HEART@=0f7ce58d-9f1e-487d-a383-75c8a9d80e34
+		@HEART@=3ceb7454-26fe-102b-80cb-0017a47871b2
 		@ARTERIES@=1503b0ae-7eef-440b-ae12-110e24118921
 		@VEINS@=da777a63-b92a-44b5-8453-8d80eebab37e
 		@LYMPH_VESSELS@=c543e575-3b3c-4c80-b031-ad5b7956af2b

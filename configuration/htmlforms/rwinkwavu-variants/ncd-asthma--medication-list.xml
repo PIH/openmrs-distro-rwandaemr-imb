@@ -516,7 +516,6 @@
             <tr>
                 <td> <strong> DISEASE SPECIFIC</strong></td>
                 <td >
-                  #Note, this does not have discontinue reason which breaks when drugs are selected	
 	<drugOrder orderType="131168f4-15f5-102d-96e4-000c29c2a5d7	" selectLabel="Order Drug">
         <orderTemplate>
             <orderProperty name="drug" label="Drug*">

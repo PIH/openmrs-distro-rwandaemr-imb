@@ -152,7 +152,7 @@
         @Warfarin_(2mg)@=bb097866-f31f-4d22-b710-f878e7ca7ddd
         @Warfarin_@=94bcc86d-f0f8-472b-bd12-101a78cb4c67
         @Penicillin_VK_(Orale)@=00cff890-02c1-4026-86e4-33a010da49ba
-        @Benzathine_Penicillin_600,000_IU_IM@=2d4a4714-1fad-4fa9-af87-755a34ee1646
+        @Benzathine_Penicillin_600@=2d4a4714-1fad-4fa9-af87-755a34ee1646
         @Benzathine_Penicillin_1.2M_IU_IM@=0b7f6821-acee-4314-b79b-4d221f594634
         @Isosorbide_Dinitrate_(5_mg)@=037a5fcd-8635-46f9-b2a4-c743a42dbd64
         @Hydralazine@=4422d261-a13c-4ffd-bb15-04fa66efb120
@@ -601,8 +601,8 @@
             <orderProperty name="dose" label="Dose*"/>
             <orderProperty name="doseUnits" label="Units*">
                 <option value="4020" label="tablets"/>
-                <option value="123042" label="milligrams"/>
-				<option value="123048" label="units"/>
+                <option value="05d778f0-6282-4eed-9c58-6b5d0703c5a7" label="milligrams"/>
+				<option value="07b05a2a-87ff-44ce-bb5c-5d6855bf8b11" label="units"/>
             </orderProperty>
             <orderProperty name="frequency" label="Frequency*">
                 <option value="707ad8b7-d902-11ea-80fb-0242ac110002
@@ -714,7 +714,7 @@
                 <option value="$@Aminophylline_100@" />
                 <option value="$@Aminophylline_25mg/mL_@" />
                 <option value="$@Aminophylline_(100_mg)@" />
-                <option value="$@Aminophylline_(25mg/mL_from_10mL_ampule)@" " />
+                <option value="$@Aminophylline_(25mg/mL_from_10mL_ampule)@" />
 
             </orderProperty>
             <orderProperty name="action">
@@ -727,8 +727,8 @@
             <orderProperty name="dose" label="Dose*"/>
             <orderProperty name="doseUnits" label="Units*">
                 <option value="4020" label="tablets"/>
-                <option value="123042" label="milligrams"/>
-				<option value="123048" label="units"/>
+                <option value="05d778f0-6282-4eed-9c58-6b5d0703c5a7" label="milligrams"/>
+				<option value="07b05a2a-87ff-44ce-bb5c-5d6855bf8b11" label="units"/>
             </orderProperty>
             <orderProperty name="frequency" label="Frequency*">
                 <option value="707ad8b7-d902-11ea-80fb-0242ac110002
@@ -859,7 +859,7 @@
                 <option value="$@Aldactone@" />
                 <option value="$@Carvedilol@" />
                 <option value="$@Carvedilol_25@" />
-                <option value="$@Amlodipine_@" />
+                <option value="$@Amlodipine@" />
                 <option value="$@Amlodipine_10@" />
                 <option value="$@Nifedipine_retard@" />
                 <option value="$@Hydrochlorthiazide_(25mg)@" />
@@ -1081,8 +1081,8 @@
             <orderProperty name="dose" label="Dose*"/>
             <orderProperty name="doseUnits" label="Units*">
                 <option value="4020" label="tablets"/>
-                <option value="123042" label="milligrams"/>
-				<option value="123048" label="units"/>
+                <option value="05d778f0-6282-4eed-9c58-6b5d0703c5a7" label="milligrams"/>
+				<option value="07b05a2a-87ff-44ce-bb5c-5d6855bf8b11" label="units"/>
             </orderProperty>
             <orderProperty name="frequency" label="Frequency*">
                 <option value="707ad8b7-d902-11ea-80fb-0242ac110002

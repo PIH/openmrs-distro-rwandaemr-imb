@@ -1,6 +1,13 @@
 {
   "@pih/esm-pathology-app": {
-    "pathologyEncTypeUUID": "4d911f5c-26fe-102b-80cb-0017a47871b2",
-    "healthCenterAttrTypeUUID": "8d87236c-c2cc-11de-8d13-0010c6dffd0f"
+    "pathologyEncTypeUUID": "70f18a24-92ec-4de5-acdc-7cae77414e32",
+    "healthCenterAttrTypeUUID": "8d87236c-c2cc-11de-8d13-0010c6dffd0f",
+    "pathologyFullAllowedLocationUUID": "a62fd59a-6577-43e0-b39c-ba42ac8cfbc9",
+    "sampleStatusConceptUUID": "3adca58e-9334-4be5-9bd3-74f7bbf82776",
+    "referralStatusConceptUUID": "5a7a931f-97b8-4d59-b0de-3a83603aaad9",
+    "sampleDropOffconceptUUID": "dc288e6c-84a4-4fd3-9136-ef9e13961b1e",
+    "yesConceptUUID": "3cd6f600-26fe-102b-80cb-0017a47871b2",
+    "yesConceptName": "YES",
+    "pathologyResultsFromID": 5613
   }
 }

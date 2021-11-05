@@ -101,7 +101,15 @@
 
 
     </macros>
-
+		<style type="text/css">
+	  .orderwidget-drug-section { padding: 10px; border: 1px dotted black; }
+	  .order-field { display: inline-block; padding: 0px; }
+	  .order-field.action { display: block; }
+	  .order-field.dateActivated { padding-right: 20px; }
+	  .order-field-label { display: inline-block; padding-right: 5px; vertical-align: middle; }
+	  .order-field-label:after { content: ""; white-space: pre; }
+	  .order-field-widget { display: inline-block; }
+	</style>
     <style>
         .section {
         border: 1px solid $headerColor;
@@ -296,7 +304,7 @@
                
             <orderProperty name="asNeeded"/>
 			<div style="padding:0px;">
-				<orderProperty name="scheduledDate"/>
+				<orderProperty name="dateActivated"/>
 				<orderProperty name="duration" label="Duration in days (blank=no end)"/>
 
 			</div>
@@ -315,6 +323,9 @@
 					<option value="SNOMED CT:258703001" label="Days"/>
 				</orderProperty>
             </div>
+			<orderProperty name="discontinueReason" >
+			<optionGroup concept="$@REASON_ORDER_STOPPED@"/>
+			</orderProperty>
 
         </orderTemplate>
     </drugOrder>   

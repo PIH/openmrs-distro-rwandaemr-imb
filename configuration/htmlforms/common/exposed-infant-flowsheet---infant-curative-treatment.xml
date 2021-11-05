@@ -14,6 +14,15 @@
 		Electronic version by Ellen Ball (December 2010) 
 		from Fiche_resume-HIV-HFCSP-RW-V1.0-ng-5Feb11-fr
 	-->
+			<style type="text/css">
+	  .orderwidget-drug-section { padding: 10px; border: 1px dotted black; }
+	  .order-field { display: inline-block; padding: 0px; }
+	  .order-field.action { display: block; }
+	  .order-field.dateActivated { padding-right: 20px; }
+	  .order-field-label { display: inline-block; padding-right: 5px; vertical-align: middle; }
+	  .order-field-label:after { content: ""; white-space: pre; }
+	  .order-field-widget { display: inline-block; }
+	</style>
 	<style>
 		.formName { background-color:#e0e0ff; }
 		.section { border: 1px
@@ -62,8 +71,72 @@
 		<table border="1">
 			<tr>
 				<td>
-				    <!-- nevarapine (NVP) suspension -->
-					<drugOrder drugNames="499ba39e-5dfc-431d-879f-3e4e3c450581,0bae8ef2-15f5-102d-96e4-000c29c2a5d7,0bae6904-15f5-102d-96e4-000c29c2a5d7,0bae2390-15f5-102d-96e4-000c29c2a5d7,0bae3736-15f5-102d-96e4-000c29c2a5d7,127bc520-b9e4-4346-8f0d-fd0d19016398,8e7a4747-7fa0-4142-8b65-cbe2c69fc15b,7c647d29-912b-43f6-970b-275e9b0d672c,0bae87cc-15f5-102d-96e4-000c29c2a5d7,0bae8d58-15f5-102d-96e4-000c29c2a5d7"  drugLabels="Amoxicilline,Miconazole pommade,Coartem,sirop multi-vitamine,co-trimoxazole,vitamine A,griseofulvine,ibuprofene,mebendazole,paracetamol" showOrderDuration="true"/>
+				    
+					
+					<drugOrder orderType="131168f4-15f5-102d-96e4-000c29c2a5d7	" selectLabel="Order Drug">
+        <orderTemplate>
+            <orderProperty name="drug" label="Drug*">
+                <option value="499ba39e-5dfc-431d-879f-3e4e3c450581" label="Amoxicilline"/>
+				<option value="0bae8ef2-15f5-102d-96e4-000c29c2a5d7" label="Miconazole pommade"/>
+				<option value="0bae6904-15f5-102d-96e4-000c29c2a5d7" label="Coartem"/>
+				<option value="0bae2390-15f5-102d-96e4-000c29c2a5d7" label="sirop multi-vitamine"/>
+				<option value="0bae3736-15f5-102d-96e4-000c29c2a5d7" label="co-trimoxazole"/>
+				<option value="127bc520-b9e4-4346-8f0d-fd0d19016398" label="vitamine A"/>
+				<option value="8e7a4747-7fa0-4142-8b65-cbe2c69fc15b" label="griseofulvine"/>
+				<option value="7c647d29-912b-43f6-970b-275e9b0d672c" label="ibuprofene"/>
+				<option value="0bae87cc-15f5-102d-96e4-000c29c2a5d7" label="mebendazole"/>
+				<option value="0bae8d58-15f5-102d-96e4-000c29c2a5d7" label="paracetamol"/>
+				
+            </orderProperty>
+            <orderProperty name="action">
+                <option value="NEW" label="Place a new Order"/>
+                <option value="REVISE" label="Revise this Order"/>
+                <option value="RENEW" label="Renew this Order"/>
+                <option value="DISCONTINUE" label="Discontinue this Order"/>
+            </orderProperty>
+            <div style="padding:0px;">
+            <orderProperty name="dose" label="Dose*"/>
+            <orderProperty name="doseUnits" label="Units*">
+                <option value="4020" label="tablets"/>
+                <option value="123042" label="milligrams"/>
+				<option value="123048" label="units"/>
+            </orderProperty>
+            <orderProperty name="frequency" label="Frequency*">
+                <option value="707ad8b7-d902-11ea-80fb-0242ac110002" label="1 / day"/> 
+                <option value="87ea7c89-d8f9-11ea-80fb-0242ac110002" label="2 / day"/>
+                <option value="d8290a00-d926-11ea-8b36-0242ac110002" label="3 / day"/>
+                <option value="405a5af1-d927-11ea-8b36-0242ac110002" label="4 / day"/>
+                <option value="405a5af1-d927-11ea-8b36-0242ac110002" label="5 / day"/>
+                <option value="f11513cb-eee1-11ea-b492-0242ac110002" label="6 / day"/>
+                <option value="9212ab7b-eee4-11ea-b492-0242ac110002" label="7 / day"/>
+            </orderProperty>
+			</div>
+               
+            <orderProperty name="asNeeded"/>
+			<div style="padding:0px;">
+				<orderProperty name="dateActivated"/>
+				<orderProperty name="duration" label="Duration in days (blank=no end)"/>
+
+			</div>
+            <div style="display:none;">
+			    <orderProperty name="dateActivated"/>
+			    <orderProperty name="route" value="3327" />
+				<orderProperty name="urgency" value="ROUTINE"/>
+				<orderProperty name="dosingType" value="org.openmrs.SimpleDosingInstructions"/>
+				<orderProperty name="instructions" textArea="true" textAreaRows="4" textAreaColumns="100"/>
+                <orderProperty name="previousOrder"/>
+                <orderProperty name="careSetting" value="OUTPATIENT"/>
+                <orderProperty name="quantity" value="0"/>
+                <orderProperty name="quantityUnits" value="6735094c-8416-43e3-8a3c-091332a08cb7"/> <!-- unspecified -->
+                <orderProperty name="numRefills" value="0"/>
+								<orderProperty name="durationUnits" value="SNOMED CT:258703001">
+					<option value="SNOMED CT:258703001" label="Days"/>
+				</orderProperty>
+            </div>
+
+
+        </orderTemplate>
+    </drugOrder>
 				</td>
 			</tr>
 			

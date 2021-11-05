@@ -294,30 +294,23 @@
             <orderProperty name="dose" label="Dose*"/>
             <orderProperty name="doseUnits" label="Units*">
                 <option value="4020" label="tablets"/>
-                <option value="123042" label="milligrams"/>
-				<option value="123048" label="units"/>
+                <option value="05d778f0-6282-4eed-9c58-6b5d0703c5a7" label="milligrams"/>
+				<option value="07b05a2a-87ff-44ce-bb5c-5d6855bf8b11" label="units"/>
             </orderProperty>
             <orderProperty name="frequency" label="Frequency*">
-                <option value="707ad8b7-d902-11ea-80fb-0242ac110002
-" label="1 / day"/> 
-                <option value="87ea7c89-d8f9-11ea-80fb-0242ac110002
-" label="2 / day"/>
-                <option value="d8290a00-d926-11ea-8b36-0242ac110002
-" label="3 / day"/>
-                <option value="405a5af1-d927-11ea-8b36-0242ac110002
-" label="4 / day"/>
-                <option value="405a5af1-d927-11ea-8b36-0242ac110002
-" label="5 / day"/>
-                <option value="f11513cb-eee1-11ea-b492-0242ac110002
-" label="6 / day"/>
-                <option value="9212ab7b-eee4-11ea-b492-0242ac110002
-" label="7 / day"/>
+                <option value="707ad8b7-d902-11ea-80fb-0242ac110002" label="1 / day"/> 
+                <option value="87ea7c89-d8f9-11ea-80fb-0242ac110002" label="2 / day"/>
+                <option value="d8290a00-d926-11ea-8b36-0242ac110002" label="3 / day"/>
+                <option value="405a5af1-d927-11ea-8b36-0242ac110002" label="4 / day"/>
+                <option value="405a5af1-d927-11ea-8b36-0242ac110002" label="5 / day"/>
+                <option value="f11513cb-eee1-11ea-b492-0242ac110002" label="6 / day"/>
+                <option value="9212ab7b-eee4-11ea-b492-0242ac110002" label="7 / day"/>
             </orderProperty>
 			</div>
                
             <orderProperty name="asNeeded"/>
 			<div style="padding:0px;">
-				<orderProperty name="scheduledDate"/>
+				<orderProperty name="dateActivated"/>
 				<orderProperty name="duration" label="Duration in days (blank=no end)"/>
 
 			</div>
@@ -336,6 +329,9 @@
 					<option value="SNOMED CT:258703001" label="Days"/>
 				</orderProperty>
             </div>
+			<orderProperty name="discontinueReason" >
+			<optionGroup concept="$@REASON_ORDER_STOPPED@"/>
+			</orderProperty>
 
         </orderTemplate>
     </drugOrder>                  

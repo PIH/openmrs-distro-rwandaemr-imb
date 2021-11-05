@@ -652,7 +652,6 @@ $j("#hivstatusentry").show();
 			<tr>
 
 				<td>
-				System <obs conceptId="$@ORGAN_SYSTEM@" style="checkbox"/>
 				
 				<br/>
 				<span class="activate" id="Organ_System_Alimentary" title="Alimentary">
@@ -834,4 +833,6 @@ $j("#hivstatusentry").show();
     <br/>
     <br/>
     <encounterVoided/>
+	<postSubmissionAction class="org.openmrs.module.imbpathologyrequest.notify.NotifyProviderOnHtmlFormSubmissionAction"/>
+
 </htmlform>

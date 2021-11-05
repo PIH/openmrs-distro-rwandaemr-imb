@@ -567,7 +567,7 @@
                
             <orderProperty name="asNeeded"/>
 			<div style="padding:0px;">
-				<orderProperty name="scheduledDate"/>
+				<orderProperty name="dateActivated"/>
 				<orderProperty name="duration" label="Duration in days (blank=no end)"/>
 
 			</div>
@@ -586,6 +586,9 @@
 					<option value="SNOMED CT:258703001" label="Days"/>
 				</orderProperty>
             </div>
+			<orderProperty name="discontinueReason" >
+			<optionGroup concept="$@REASON_ORDER_STOPPED@"/>
+			</orderProperty>
 
         </orderTemplate>
     </drugOrder>
@@ -696,7 +699,7 @@
                
             <orderProperty name="asNeeded"/>
 			<div style="padding:0px;">
-				<orderProperty name="scheduledDate"/>
+				<orderProperty name="dateActivated"/>
 				<orderProperty name="duration" label="Duration in days (blank=no end)"/>
 
 			</div>
@@ -715,6 +718,9 @@
 					<option value="SNOMED CT:258703001" label="Days"/>
 				</orderProperty>
             </div>
+			<orderProperty name="discontinueReason" >
+			<optionGroup concept="$@REASON_ORDER_STOPPED@"/>
+			</orderProperty>
 
         </orderTemplate>
     </drugOrder>
@@ -1052,7 +1058,7 @@
                
             <orderProperty name="asNeeded"/>
 			<div style="padding:0px;">
-				<orderProperty name="scheduledDate"/>
+				<orderProperty name="dateActivated"/>
 				<orderProperty name="duration" label="Duration in days (blank=no end)"/>
 
 			</div>
@@ -1071,6 +1077,9 @@
 					<option value="SNOMED CT:258703001" label="Days"/>
 				</orderProperty>
             </div>
+			<orderProperty name="discontinueReason" >
+			<optionGroup concept="$@REASON_ORDER_STOPPED@"/>
+			</orderProperty>
 
         </orderTemplate>
     </drugOrder>

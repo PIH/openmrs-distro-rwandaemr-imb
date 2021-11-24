@@ -427,8 +427,8 @@
                         class="disabled">Nom: </span> <lookup class="value"
                                                               expression="patient.personName.familyName" /></td>
                 <td>First name/<span
-                        class="disabled">Prenom: </span> <lookup class="value"
                                                                  expression="patient.personName.givenName" /></td>
+                        class="disabled">Prenom: </span> <lookup class="value"
                 <td>Gender: <lookup
                         class="value" expression="patient.Gender" /></td>
             </tr>

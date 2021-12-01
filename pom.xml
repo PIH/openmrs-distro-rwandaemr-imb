@@ -71,6 +71,7 @@
             <name>OpenMRS Nexus Repository</name>
             <url>https://openmrs.jfrog.io/artifactory/public</url>
         </repository>
+        <!--
         <repository>
             <id>rwandaemr-repo-snapshots</id>
             <name>RwandaEMR Artifactory Snapshots Repository</name>
@@ -81,6 +82,7 @@
             <name>RwandaEMR Artifactory Release Repository</name>
             <url>https://rwandaemr.jfrog.io/artifactory/libs-release</url>
         </repository>
+        -->
         <repository>
             <id>openmrs-repo-modules-pih</id>
             <name>OpenMRS PIH Modules</name>

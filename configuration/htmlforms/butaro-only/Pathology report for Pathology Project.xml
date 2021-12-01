@@ -172,21 +172,16 @@
 		@OTHER_URINARY@=15a40ebf-f9f1-416c-b5a2-3761e9185779
 
 		@PATHOLOGIST_SIGNATURE@=416e958e-0287-4190-be1f-90d82974bec8
+		@pathology_request_encounter_UUID@ = 4a1c767f-6bab-4938-b3f0-d3a5a3f9cd2c
 
 		
 		
-
-	
-
-		
-
-
-
-
-
-
 
     </macros>
+<style>
+.hidden
+{ color: #D8D8D8; width: 19%; }
+</style>
     <style>
         th.tableHeader {
         background-color: #009d8e;
@@ -290,6 +285,22 @@
         }
         }
     </style>
+	<script type="text/javascript">
+   $j(document).ready(function(){
+      var getURLParam = function(name) {
+      var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(document.URL);
+      if(results == null)
+         return;
+         return results[1] || 0;
+      };
+      var requestUUID= getURLParam('uuid');
+      if(requestUUID){
+         $j("#requestUuid").children().val(requestUUID);
+      }
+
+
+   })
+</script>
 	<script>
 	            // helps in hide and show. Just add a span around the obs checkbox and give it a class(activate to the one that triggers
             //showing and deactivate to the one that triggers hiding), an id and title.
@@ -826,6 +837,12 @@ $j("#hivstatusentry").show();
 		<br />
 		Pathologist reviewed <obs conceptId="$@PATHOLOGIST_SIGNATURE@" cols="100" />
 </td>
+</tr>
+<tr class="hidden">
+   <th> Request UUID</th>
+   <td>
+      <obs id="requestUuid" conceptId="$@pathology_request_encounter_UUID@" size="80"/>
+   </td>
 </tr>
         </table>
 

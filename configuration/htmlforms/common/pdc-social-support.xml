@@ -427,13 +427,13 @@
                         class="disabled">Nom: </span> <lookup class="value"
                                                               expression="patient.personName.familyName" /></td>
                 <td>First name/<span
-                        class="disabled">Prenom: </span> <lookup class="value"
                                                                  expression="patient.personName.givenName" /></td>
+                        class="disabled">Prenom: </span> <lookup class="value"
                 <td>Gender: <lookup
                         class="value" expression="patient.Gender" /></td>
             </tr>
             <tr>
-                <td><img
+                <td><imgpa
                         src="/openmrs/moduleResources/rwandareports/images/pihHands.png"
                         align="left" height="65"></img>
                     <h2>

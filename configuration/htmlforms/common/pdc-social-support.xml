@@ -433,7 +433,7 @@
                         class="value" expression="patient.Gender" /></td>
             </tr>
             <tr>
-                <td><img
+                <td><imgpa
                         src="/openmrs/moduleResources/rwandareports/images/pihHands.png"
                         align="left" height="65"></img>
                     <h2>

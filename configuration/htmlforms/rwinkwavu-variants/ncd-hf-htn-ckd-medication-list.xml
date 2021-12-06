@@ -598,8 +598,8 @@
             <orderProperty name="dose" label="Dose*"/>
             <orderProperty name="doseUnits" label="Units*">
                 <option value="4020" label="tablets"/>
-                <option value="123042" label="milligrams"/>
-				<option value="123048" label="units"/>
+                <option value="05d778f0-6282-4eed-9c58-6b5d0703c5a7" label="milligrams"/>
+				<option value="07b05a2a-87ff-44ce-bb5c-5d6855bf8b11" label="units"/>
             </orderProperty>
             <orderProperty name="frequency" label="Frequency*">
                 <option value="707ad8b7-d902-11ea-80fb-0242ac110002
@@ -728,8 +728,8 @@
             <orderProperty name="dose" label="Dose*"/>
             <orderProperty name="doseUnits" label="Units*">
                 <option value="4020" label="tablets"/>
-                <option value="123042" label="milligrams"/>
-				<option value="123048" label="units"/>
+                <option value="05d778f0-6282-4eed-9c58-6b5d0703c5a7" label="milligrams"/>
+				<option value="07b05a2a-87ff-44ce-bb5c-5d6855bf8b11" label="units"/>
             </orderProperty>
             <orderProperty name="frequency" label="Frequency*">
                 <option value="707ad8b7-d902-11ea-80fb-0242ac110002
@@ -1083,8 +1083,8 @@
             <orderProperty name="dose" label="Dose*"/>
             <orderProperty name="doseUnits" label="Units*">
                 <option value="4020" label="tablets"/>
-                <option value="123042" label="milligrams"/>
-				<option value="123048" label="units"/>
+                <option value="05d778f0-6282-4eed-9c58-6b5d0703c5a7" label="milligrams"/>
+				<option value="07b05a2a-87ff-44ce-bb5c-5d6855bf8b11" label="units"/>
             </orderProperty>
             <orderProperty name="frequency" label="Frequency*">
                 <option value="707ad8b7-d902-11ea-80fb-0242ac110002

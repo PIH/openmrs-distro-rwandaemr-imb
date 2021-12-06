@@ -8,6 +8,7 @@
     "sampleDropOffconceptUUID": "dc288e6c-84a4-4fd3-9136-ef9e13961b1e",
     "yesConceptUUID": "3cd6f600-26fe-102b-80cb-0017a47871b2",
     "yesConceptName": "YES",
-    "pathologyResultsFromID": 5613
+    "pathologyResultsFromID": 5613,
+    "pathologyResultsApprovedconceptUUID": "1f7742f0-4571-44d8-a88b-8bc60dc11e29"
   }
 }

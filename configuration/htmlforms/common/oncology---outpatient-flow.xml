@@ -5,7 +5,7 @@
 	formDescription="Oncology  Outpatient Flowsheet" 
 	formVersion="0.1" 
 	formEncounterType="ff319885-3f20-4ae5-8663-3ad5678cba41" 
-	formPublished="${trueIfRwinkwavu}" 
+	formPublished="true" 
 	formRetired="false"
 > <!-- Oncology - Outpatient Flow: Top Level
          Written by jberchmas

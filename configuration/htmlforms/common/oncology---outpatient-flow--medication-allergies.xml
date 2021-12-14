@@ -5,7 +5,7 @@
 	formDescription="Oncology  Outpatient Flow  section of Medication Allergies" 
 	formVersion="0.1" 
 	formEncounterType="ff319885-3f20-4ae5-8663-3ad5678cba41" 
-	formPublished="false" 
+	formPublished="true" 
 	formRetired="false"
 > <!-- Oncology - Outpatient Flow: Drug Allergies
          Written by jberchmas

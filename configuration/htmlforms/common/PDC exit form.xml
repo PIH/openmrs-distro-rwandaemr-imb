@@ -7,12 +7,7 @@
 	formEncounterType="609cd2f6-6acf-4a08-8557-16de80fb403c" 
 	formPublished="true" 
 	formRetired="false"
-> <!--
-	   Oncology Pathology specimen submission
-		Author:  
-		Builder: Jberchmas 
-		started on Feb 21, 2013		
-	-->
+> 
     <macros>
 
         @OTHER_NON_CODED@=5622
@@ -401,7 +396,30 @@ $j("#hivstatusentry").show();
 						});
 	}
 </script> 
+    <translations defaultLocale="en">
+		<code name="FORM_NAME">
+            <variant locale="en" value="Chronic Disease Clinic Visit Form – Pediatric Developmental Clinic"/>
+            <variant locale="fr" value="FORMULAIRE DE SORTIE EN CDP"/>
+        </code>
+		<code name="EXIT_DATE">
+            <variant locale="en" value="Date of program completion:"/>
+            <variant locale="fr" value="Date de sortie"/>
+        </code>
+		<code name="CAUSE_OF_DEATH">
+            <variant locale="en" value="Causes of death:"/>
+            <variant locale="fr" value="Causes de la mort"/>
+        </code>
+		<code name="OTHER_EXIT">
+            <variant locale="en" value="Other causes of program end"/>
+            <variant locale="fr" value="AUTRES CAUSES POUR LA SORTIE DE LA CLINIQUE CDP"/>
+        </code>
+		<code name="PERMANENT_EXIT">
+            <variant locale="en" value="If the patient is exiting all programs permenently, fill this final exit."/>
+            <variant locale="fr" value="Si le patient quitte définitivement tous les programmes, remplissez cette dernière sortie."/>
+        </code>
+    </translations>
 
+			
 
 <section>
 
@@ -435,8 +453,7 @@ $j("#hivstatusentry").show();
                     <h2>
                         &#160;&#160;Inshuti Mu Buzima <br /> &#160;&#160;PIH Rwanda
                     </h2></td>
-                <td><strong> Chronic Disease Clinic Visit Form –
-                    Pediatric Developmental Clinic</strong></td>
+                <td><strong> <lookup expression="fn.message('FORM_NAME')"/></strong></td>
                 <td></td>
             </tr>
             <tr>
@@ -447,14 +464,14 @@ $j("#hivstatusentry").show();
 			
         </table>
 		<table>
-			<tr><td colspan="2">If the patient is exiting all programs permenently, fill this final exit. <exitFromCare/></td></tr>
-			<tr><td>Date of program completion: <encounterDate
+			<tr><td colspan="2"><lookup expression="fn.message('PERMANENT_EXIT')"/> <exitFromCare/></td></tr>
+			<tr><td><lookup expression="fn.message('EXIT_DATE')"/> <encounterDate
                          id="encounterDate"/></td>
 						 
 			</tr>
 			<completeProgram programId="fbfbef74-4b99-4070-95b8-7023e3db51e1"/>
 			<tr>
-				<td> <strong> Causes of death </strong>
+				<td> <strong> <lookup expression="fn.message('CAUSE_OF_DEATH')"/> </strong>
 						<obs conceptId="$@PDC_OUTCOME@"
                          answerConceptId="$@DEATH_DEHYDRATION@" 
                          /> <br/>
@@ -477,7 +494,7 @@ $j("#hivstatusentry").show();
 			</tr>
 			<tr>
 				<td>
-						<strong> Other causes of program end
+						<strong> <lookup expression="fn.message('OTHER_EXIT')"/>
 						</strong>
 						<br/>
 						<obs conceptId="$@PDC_OUTCOME@"

@@ -126,6 +126,7 @@
         @Clinican_notes@ = 6602a73b-b8d3-40bc-bae8-f00ff3b9cceb
         @NAME_OF_REFERRING_PERSON@=277d9743-be03-403c-8e82-06a810dab3a9
         @TITLE_OF_REFERRING_PERSON@=04940ea6-0ca4-4a2a-9982-c697e44eb9fb
+		@BREAST_CANCER@=e1bd83f4-e9fa-4564-b8aa-74a9b199aca8
 
     </macros>
 
@@ -238,8 +239,7 @@
 
             <table border="1" cellspacing="0" cellpadding="6" width="100%">
                 <tr>
-                    <td><b> IMB ID: <lookup class="value"
-                                            expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /> </b>
+                    <td><b> IMB ID: <lookup class="value" expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /> </b>
 
                         <b> OpenClinic ID: <lookup class="value" expression="patientIdentifiers.get(&quot;OpenClinic ID&quot;)" /> </b>
                     </td>
@@ -299,6 +299,10 @@
                     <br/>
                     <obs conceptId="$@Confirmed_cancer_diagnosis@" answerConceptId="$@Cervical_cancer@"
                          answerLabel="Cervical cancer" style="checkbox"/>
+                    <br/><br/>
+					
+					<obs conceptId="$@Confirmed_cancer_diagnosis@" answerConceptId="$@BREAST_CANCER@"
+                         answerLabel="Breast cancer" style="checkbox"/>
                     <br/><br/>
 
                     <obs conceptId="$@Confirmed_cancer_diagnosis@" answerConceptId="$@Head_and_neck_cancer@"

@@ -171,7 +171,7 @@
 		@URETHRA@=3cd2a03c-26fe-102b-80cb-0017a47871b2
 		@OTHER_URINARY@=15a40ebf-f9f1-416c-b5a2-3761e9185779
 
-		@PATHOLOGIST_SIGNATURE@=416e958e-0287-4190-be1f-90d82974bec8
+		@PATHOLOGIST_VALIDATION@=1f7742f0-4571-44d8-a88b-8bc60dc11e29
 		@pathology_request_encounter_UUID@ = 4a1c767f-6bab-4938-b3f0-d3a5a3f9cd2c
 
 		
@@ -835,7 +835,7 @@ $j("#hivstatusentry").show();
         <br />
         Doctor submitting form <encounterProvider role="Oncology Provider" />
 		<br />
-		Pathologist reviewed <obs conceptId="$@PATHOLOGIST_SIGNATURE@" cols="100" />
+		Pathologist reviewed <obs conceptId="$@PATHOLOGIST_VALIDATION@" answerConceptId="$@YES@" style="checkbox" />
 </td>
 </tr>
 <tr class="hidden">

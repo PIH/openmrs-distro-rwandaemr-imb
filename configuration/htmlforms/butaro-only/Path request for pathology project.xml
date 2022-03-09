@@ -459,7 +459,7 @@ Consent signed
 
 <tr>
 
-	Pertinent Exam Findings
+	Clinical Information
 		<obs conceptId="$@EXAM_FINDINGS@" rows="2" cols="70"/>
 <br/>
 	Pertinent Labs    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160;      

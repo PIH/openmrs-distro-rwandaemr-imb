@@ -205,9 +205,7 @@
         }
 
         #container {
-        position: relative;
         margin: auto;
-        width: 1400px;
         height: auto;
         }
 
@@ -635,11 +633,10 @@ $j("#hivstatusentry").show();
                 <td>
                     <br/>
                     <br/>
-                    Specimen Date:
+                    Date of Surgery:
                     <obs conceptId="$@Date_Biopsy_Specimen_Taken@"/>
 					<br/>
-					Specimen Submission Date
-					<obs conceptId="$@SPECIMENT_SUBMISSION_DATE@"/>
+					
 
                 </td>
             </tr>
@@ -802,15 +799,13 @@ $j("#hivstatusentry").show();
 
 				<!--Organ  <obs conceptId="$@ORGAN@" /> -->
 				<br/>
-				
+				Procedure Type<obs conceptId="$@PROCEDURES@"/>
 				<br/>
-				Detail <obs conceptId="$@SPECIMEN_DETAIL@" cols="70"/>
+				<br/>
+				Clinical Information <obs conceptId="$@SPECIMEN_DETAIL@" cols="70"/>
 				</td>
 			</tr>
-			<tr>
-				<td>Procedure Type<obs conceptId="$@PROCEDURES@"/>
-				</td>
-			</tr>
+
 
             <tr>
                 <td>

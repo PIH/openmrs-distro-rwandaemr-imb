@@ -173,6 +173,7 @@
 
 		@PATHOLOGIST_VALIDATION@=1f7742f0-4571-44d8-a88b-8bc60dc11e29
 		@pathology_request_encounter_UUID@ = 4a1c767f-6bab-4938-b3f0-d3a5a3f9cd2c
+		@PATHOLGIC_DIAGNOSIS@=21f54f50-b804-476e-a0dd-a3238cd556fb
 
 		
 		
@@ -595,7 +596,7 @@ $j("#hivstatusentry").show();
                         class="value"
                         expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
                 </td>
-                <td>Date: <encounterDate id="encounterDate" default="today" />
+                <td>Signout Date: <encounterDate id="encounterDate" default="today" />
                 </td>
             </tr>
             <tr>
@@ -817,7 +818,8 @@ $j("#hivstatusentry").show();
 					<br/>
                     Conclusion:
                     <obs conceptId="$@COMMENTS_AT_CONCLUSION_OF_EXAMINATION@" cols="100"/>
-					
+					Pathologic diagnosis:
+					<obs conceptId="$@PATHOLOGIC_DIAGNOSIS@" />
                   
                     
 
@@ -826,7 +828,6 @@ $j("#hivstatusentry").show();
 			<tr>
 				<td>
 			        <br />
-		Canreg Code <obs conceptId="$@CANREG_CODE@" />
         <br />
         Doctor submitting form <encounterProvider role="Oncology Provider" />
 		<br />

@@ -474,3 +474,4 @@ getField('reactionNonCoded3.value')[0].disabled = true;
 <br/>
 <encounterVoided/>	
 </htmlform>
+

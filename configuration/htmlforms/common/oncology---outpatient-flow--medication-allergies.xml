@@ -222,3 +222,4 @@ getField('reactionNonCoded3.value')[0].disabled = true;
 
 </table>
 </section> <submit /> </htmlform>
+

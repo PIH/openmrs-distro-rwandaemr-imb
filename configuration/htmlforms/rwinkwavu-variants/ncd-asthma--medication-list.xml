@@ -378,9 +378,9 @@
         }
 
         #container {
-        position: relative;
+        
         margin: auto;
-        width: 1400px;
+        
         height: auto;
         }
 

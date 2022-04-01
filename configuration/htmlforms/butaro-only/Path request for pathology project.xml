@@ -423,7 +423,7 @@ $j("#hivstatusentry").show();
             </tr>
             <tr>
                 <td>Clinique / Clinic: <encounterLocation
-                        id="encounterLocation" default="Butaro Hospital" />
+                        id="encounterLocation" />
                 </td>
 				<td>Accession Number<obs conceptId="$@ACCESSION_NUMBER@" />
 				<br/>

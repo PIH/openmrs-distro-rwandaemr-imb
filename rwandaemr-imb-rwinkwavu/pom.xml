@@ -13,7 +13,7 @@
     <description>Rwinkwavu Distribution of the Rwanda EMR</description>
 
     <properties>
-        <openMRSVersion>2.5.4-SNAPSHOT</openMRSVersion>
+        <openMRSVersion>2.5.4</openMRSVersion>
         <syncVersion>3.0.0-SNAPSHOT</syncVersion>
         <trueIfRwinkwavu>true</trueIfRwinkwavu>
         <trueIfButaro>false</trueIfButaro>

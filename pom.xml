@@ -31,8 +31,8 @@
         <legacyuiVersion>1.12.0</legacyuiVersion>
         <metadatamappingVersion>1.4.0</metadatamappingVersion>
         <metadatasharingVersion>1.8.0</metadatasharingVersion>
-        <mohappointmentVersion>2.0.0-SNAPSHOT</mohappointmentVersion>
-        <mohbillingVersion>2.0.0-SNAPSHOT</mohbillingVersion>
+        <mohappointmentVersion>2.0.1-SNAPSHOT</mohappointmentVersion>
+        <mohbillingVersion>2.0.1-SNAPSHOT</mohbillingVersion>
         <mohtracVersion>2.0.0-SNAPSHOT</mohtracVersion>
         <namephoneticsVersion>1.18.0</namephoneticsVersion>
         <omodExportVersion>2.1.0</omodExportVersion>

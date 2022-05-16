@@ -53,7 +53,7 @@
         <usagestatisticsVersion>2.1.0</usagestatisticsVersion>
         <validationVersion>2.0.0</validationVersion>
         <webservicesRestVersion>2.36.0</webservicesRestVersion>
-        <pathologyappVersion>1.0.3</pathologyappVersion>
+        <pathologyappVersion>1.0.6</pathologyappVersion>
         <legacyuinavbarappVersion>1.0.0</legacyuinavbarappVersion>
         <imbpathologyrequestVersion>1.0.0-SNAPSHOT</imbpathologyrequestVersion>
         <spamodulesVersion>1.0.9-SNAPSHOT</spamodulesVersion>

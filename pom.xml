@@ -28,18 +28,18 @@
         <idgenVersion>4.7.0</idgenVersion>
         <initializerVersion>2.3.0-SNAPSHOT</initializerVersion>
         <laboratorymanagementVersion>2.0.0-SNAPSHOT</laboratorymanagementVersion>
-        <legacyuiVersion>1.11.0-SNAPSHOT</legacyuiVersion>
+        <legacyuiVersion>1.12.0</legacyuiVersion>
         <metadatamappingVersion>1.4.0</metadatamappingVersion>
         <metadatasharingVersion>1.8.0</metadatasharingVersion>
-        <mohappointmentVersion>2.0.0-SNAPSHOT</mohappointmentVersion>
-        <mohbillingVersion>2.0.0-SNAPSHOT</mohbillingVersion>
+        <mohappointmentVersion>2.0.1-SNAPSHOT</mohappointmentVersion>
+        <mohbillingVersion>2.0.1-SNAPSHOT</mohbillingVersion>
         <mohtracVersion>2.0.0-SNAPSHOT</mohtracVersion>
         <namephoneticsVersion>1.18.0</namephoneticsVersion>
         <omodExportVersion>2.1.0</omodExportVersion>
         <orderextensionVersion>3.1.0</orderextensionVersion>
         <patientsummaryVersion>1.4.0</patientsummaryVersion>
         <pharmacymanagementVersion>2.0.0-SNAPSHOT</pharmacymanagementVersion>
-        <reportingVersion>1.23.0</reportingVersion>
+        <reportingVersion>1.24.0</reportingVersion>
         <reportingcompatibilityVersion>2.0.8</reportingcompatibilityVersion>
         <reportingobjectgroupVersion>2.0.1</reportingobjectgroupVersion>
         <reportingrestVersion>1.13.0</reportingrestVersion>

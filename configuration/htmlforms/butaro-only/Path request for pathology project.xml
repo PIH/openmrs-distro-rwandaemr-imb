@@ -34,6 +34,7 @@
 		@LABS_NON_CODED@=3e3dd967-d8e9-4514-849f-2e0f2ede806c
 		@RADIOLOGY_FINDINGS@=c9485e77-c501-4392-b53a-b25d946ff041
 		@ACCESSION_NUMBER@=0e466f59-8070-45b5-97d1-575ec5cfd85d
+		@Non-Image_attachment@ = 27729e22-3dcf-4a38-9c4e-219a1928b95f
 
 
 		
@@ -423,7 +424,7 @@ $j("#hivstatusentry").show();
             </tr>
             <tr>
                 <td>Clinique / Clinic: <encounterLocation
-                        id="encounterLocation" default="Butaro Hospital" />
+                        id="encounterLocation" />
                 </td>
 				<td>Accession Number<obs conceptId="$@ACCESSION_NUMBER@" />
 				<br/>
@@ -551,6 +552,11 @@ Consent signed
                     <obs conceptId="$@TESTS_ORDERED_NON-CODED@" cols="70" rows="2"/>
                 </td>
             </tr>
+			<tr>
+				<td>
+				Attachment<obs conceptId="$@Non-Image_attachment@"/>
+				</td>
+			</tr>
             <tr>
                 <td colspan="2"><strong>CLINICAL TEAM INFORMATION</strong></td>
             </tr>

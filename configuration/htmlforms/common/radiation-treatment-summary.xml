@@ -1,9 +1,9 @@
 <htmlform
-        htmlformUuid="97da9b81-c5b9-4395-b91f-bc63f0a44a7b"
+        htmlformUuid="  97da9b81-c5b9-4395-b91f-bc63f0a44a7b"
         formUuid="31a5c75b-dc8d-4cb7-bebe-332c1a43da5a"
-        formName="Radiation treatment summary"
+        formName="Oncology - Radiation treatment summary"
         formDescription="Radiation treatment summary"
-        formVersion="1.0"
+        formVersion="1.1"
         formEncounterType="b1c2d207-7221-4c23-b580-6c5de5385847"
         formPublished="true"
         formRetired="false"
@@ -84,7 +84,7 @@
         @Other_simulation_method@ = a58c7dea-3237-4dbb-b8a6-8c9dbcb485b5
         @Treatment_technique@ = 00d8fe96-da91-4640-82fb-085a462f66e8
         @2D@ = b8faa9d8-4290-4922-91a0-8ab2b3b9cb03
-        @3D_conformal@ = 95a2f2f3-8fb3-417f-af46-621e5e416177
+        @3D_CRT@ = 95a2f2f3-8fb3-417f-af46-621e5e416177
         @IMRT@ = 681dd755-2397-4578-974f-1d120fbcf189
         @En_face_electrons@ = 171a1447-c9da-438f-a703-c1f9ee7d97aa
         @Other_treatment_technique@ = 1c9e5bbd-45e1-4519-8785-4c52d35e1688
@@ -126,7 +126,23 @@
         @Clinican_notes@ = 6602a73b-b8d3-40bc-bae8-f00ff3b9cceb
         @NAME_OF_REFERRING_PERSON@=277d9743-be03-403c-8e82-06a810dab3a9
         @TITLE_OF_REFERRING_PERSON@=04940ea6-0ca4-4a2a-9982-c697e44eb9fb
-		@BREAST_CANCER@=e1bd83f4-e9fa-4564-b8aa-74a9b199aca8
+        @BREAST_CANCER@=e1bd83f4-e9fa-4564-b8aa-74a9b199aca8
+        @File_Number@=2d083a6a-a885-4ab6-b293-4de95a9eb3b3
+        @Primary_Tumor_Diagnosis@=0d663d6b-ef0b-4db8-a734-4f423c50449b
+        @Radical_curative@=3d996ff0-4990-42d4-a7cf-45ead911d7af
+        @Neoadjuvant@=d1d9a3b0-57d7-43c9-99a7-dad45fe00cc0
+        @Adjuvant@=0270b13f-7641-4544-a41b-4e66649b679d
+        @Palliative@=b4c1df8a-9e39-4132-89a7-463394e765cd
+        @Treatment_Intent@=74bf3a55-6e92-4b91-86b0-a19345f22ad2
+        @Unplanned_breaks@=a277dac5-919b-40e3-90b6-ce8c38e23235
+        @Reason_for_Unplanned_Breaks@=ec5a2c45-4152-4d34-a51f-c9ad91c247f9
+        @Anemia_for_radiation@=7e0bedb8-b5c4-4e2e-a975-1bd83904c8ce
+        @No_Response@=f6a3bcaf-91c6-4db4-9506-dbe07f65f4c2
+        @Permanent_or_temporary@=ec398479-8cb7-4755-a9ac-2d8b3c891f00
+        @Rwanda_Military_Hospital@=2ce11abf-ddea-432d-bb6d-6ce69940724e
+        @Radiation_form_Completed_date@=f0b6e0b0-fdb1-427b-ab69-e0114aaad2dd
+
+
 
     </macros>
 
@@ -273,12 +289,15 @@
                         <encounterLocation id="encounterLocation" default="Butaro Hospital" />
                         <br/>
                         Institution Providing Radiotherapy:
-                        <obs conceptId="$@Institution_Providing_Radiotherapy@" answerConceptIds="$@Rwanda_Cancer_Center@,$@OTHER_NON-CODED@"
-                             answerLabels="Rwanda Cancer Center,Other" style="radio"/>
+                        <obs conceptId="$@Institution_Providing_Radiotherapy@" answerConceptIds="$@Rwanda_Military_Hospital@,$@OTHER_NON-CODED@"
+                             answerLabels="Rwanda Rwanda Military Hospital,Other" style="radio"/>
                         <obs conceptId="$@Other_Institution_Providing_Radiotherapy@"/>
                     </td>
                     <td>Author:
                         <encounterProvider id="encounterProvider" role="Oncology Provider" default="currentUser" />
+                    <br/><br/>
+                    Date:
+                         <encounterDate id="encounterDate" default="today" />
                     </td>
                 </tr>
 
@@ -295,51 +314,35 @@
             <tr>
                 <td>
 
-                    <strong>Diagnosis;</strong>
-                    <br/>
-                    <obs conceptId="$@Confirmed_cancer_diagnosis@" answerConceptId="$@Cervical_cancer@"
-                         answerLabel="Cervical cancer" style="checkbox"/>
-                    <br/><br/>
-					
-					<obs conceptId="$@Confirmed_cancer_diagnosis@" answerConceptId="$@BREAST_CANCER@"
-                         answerLabel="Breast cancer" style="checkbox"/>
-                    <br/><br/>
+                    <strong>File Number : </strong>
+                    <obs conceptId="$@File_Number@" style="textbox"/>     
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Primary Tumor Diagnosis : </strong>
+                    <obs conceptId="$@Primary_Tumor_Diagnosis@" style="textbox" cols="50" rows="1"/>
+                               
+                </td>
+            </tr>
+             <tr>
+                <td>
 
-                    <obs conceptId="$@Confirmed_cancer_diagnosis@" answerConceptId="$@Head_and_neck_cancer@"
-                         answerLabel="Head and neck cancer" style="checkbox"/>
-                    :
+                    <strong>Stage (TNM or FIGO and overall) : </strong>
+                    <obs conceptId="$@Cancer_Stage_Diagnosed_Externally@" style="textbox" cols="50" rows="1" />
+                               
+                </td>
+            </tr>
+            <tr>
+                <td>
 
-                    <obs conceptId="$@Edit_Head_and_Neck_cancer_diagnosis_state@" answerConceptId="$@Oral_Cavity@"
-                         answerLabel="Oral cavity" style="checkbox"/>
-                    <obs conceptId="$@Edit_Head_and_Neck_cancer_diagnosis_state@" answerConceptId="$@Oral_Cavity@"
-                         answerLabel="Oral cavity" style="checkbox"/>
-                    <obs conceptId="$@Confirmed_cancer_diagnosis@" answerConceptId="$@Oropharynx@"
-                         answerLabel="Oropharynx" style="checkbox"/>
-                    <obs conceptId="$@Confirmed_cancer_diagnosis@" answerConceptId="$@Salivary_Gland@"
-                         answerLabel="Parotid/Salivary glands" style="checkbox"/>
-                    <obs conceptId="$@Confirmed_cancer_diagnosis@" answerConceptId="$@Nasopharynx@"
-                         answerLabel="Nasopharynx" style="checkbox"/>
-                    <obs conceptId="$@Confirmed_cancer_diagnosis@" answerConceptId="$@Hypopharynx@"
-                         answerLabel="Hypopharynx" style="checkbox"/>
-                    <obs conceptId="$@Confirmed_cancer_diagnosis@" answerConceptId="$@Larynx@"
-                         answerLabel="Larynx" style="checkbox"/>
-                    <obs conceptId="$@Confirmed_cancer_diagnosis@" answerConceptId="$@OTHER_NON-CODED@"
-                         answerLabel="Other" style="checkbox"/>
-                    <obs conceptId="$@Head_and_Neck_Cancer_Other@"/>
-                    <br/><br/>
-                    <obs conceptId="$@Confirmed_cancer_diagnosis@" answerConceptId="$@Rectal_Adenocarcinoma@"
-                         answerLabel="Rectal Cancer" style="checkbox"/>
-                    <br/><br/>
-
-                    <obs conceptId="$@Confirmed_cancer_diagnosis@" answerConceptId="$@Anal_Squamous_Cell_Carcinoma@"
-                         answerLabel="Anal cancer" style="checkbox"/>
-                    <br/><br/>
-                    <obs conceptId="$@Confirmed_cancer_diagnosis@" answerConceptId="$@Cancer_other@"
-                         answerLabel="Other cancer" style="checkbox"/>
-                    <obs conceptId="$@Cancer_other@"/>
-                    <br/>
-                    <br/>
-                    Stage <obs conceptId="$@Cancer_Stage_Diagnosed_Externally@"/>
+                    <strong>Treatment Intent : </strong>
+                
+                    <obs conceptId="$@Treatment_Intent@" answerConceptId="$@Radical_curative@" answerLabel="Radical/Curative" style="checkbox"/>
+                    <obs conceptId="$@Treatment_Intent@" answerConceptId="$@Neoadjuvant@" answerLabel="Neoadjuvant" style="checkbox"/>
+                    <obs conceptId="$@Treatment_Intent@" answerConceptId="$@Adjuvant@" answerLabel="Adjuvant" style="checkbox"/>
+                    <obs conceptId="$@Treatment_Intent@" answerConceptId="$@Palliative@" answerLabel="Palliative" style="checkbox"/>
+                               
                 </td>
             </tr>
         </table>
@@ -358,6 +361,10 @@
                     <br/><br/>
                     <obs conceptId="$@Oncology_treatment_status@" answerConceptId="$@Completed_treatment@"
                          answerLabel="Completed as planned" style="checkbox"/>
+                    <br/><br/>
+                    <obs conceptId="$@Oncology_treatment_status@" answerConceptId="$@Unplanned_breaks@"
+                         answerLabel="Unplanned breaks" style="checkbox"/>:
+                   <obs conceptId="$@Reason_for_Unplanned_Breaks@" cols="50" rows="1"/>
                     <br/><br/>
                     <obs conceptId="$@Oncology_treatment_status@" answerConceptId="$@Change_to_Treatment_plan@"
                          answerLabel="Changed" style="checkbox"/>:
@@ -406,6 +413,10 @@
                          answerLabel="Neutropenia" style="checkbox"/>:
                     <obs conceptId="$@Neutropenia@" cols="50" rows="1"/>
                     <br/><br/>
+                    <obs conceptId="$@acute_side_effects_and_management@" answerConceptId="$@Anemia_for_radiation@"
+                         answerLabel="Anemia" style="checkbox"/>:
+                    <obs conceptId="$@Anemia_for_radiation@" cols="50" rows="1"/>
+                    <br/><br/>
                     <obs conceptId="$@acute_side_effects_and_management@" answerConceptId="$@OTHER_NON-CODED@"
                          answerLabel="Other" style="checkbox"/>:
                     <obs conceptId="$@Other@" cols="50" rows="1"/>
@@ -420,6 +431,9 @@
                     <br/><br/>
                     <obs conceptId="$@Treatment_response@" answerConceptId="$@Partial_response@"
                          answerLabel="Partial response" style="checkbox"/>
+                    <br/><br/>
+                     <obs conceptId="$@Treatment_response@" answerConceptId="$@No_Response@"
+                         answerLabel="No Response" style="checkbox"/>
                     <br/><br/>
                     <obs conceptId="$@Treatment_response@" answerConceptId="$@NOT_APPLICABLE@"
                          answerLabel="Not applicable" style="checkbox"/>
@@ -447,17 +461,18 @@
                     <obs conceptId="$@Other_simulation_method@"/>
                     <br/><br/>
                     Treatment technique:
-                    <obs conceptId="$@Treatment_technique@" answerConceptIds="$@2D@,$@3D_conformal@,$@IMRT@,$@En_face_electrons@,$@Other_treatment_technique@"
-                         answerLabels=" 2D, 3D conformal, IMRT, En face electrons, Other: " style="radio"/>
+                    <obs conceptId="$@Treatment_technique@" answerConceptIds="$@2D@,$@3D_CRT@,$@IMRT@,$@En_face_electrons@,$@Other_treatment_technique@"
+                         answerLabels=" 2D, 3D CRT, IMRT, En face electrons, Other: " style="radio"/>
                     <obs conceptId="$@Other_treatment_technique@"/>
                     <br/><br/>
                     Target tumor/volume :
-                    <obs conceptId="$@Target_tumor@" answerConceptIds="$@Standard_Pelvis@,$@Standard_Rectal_Field@,$@Spine@"
+                    <obs conceptId="$@Target_tumor@" style="textbox" cols="50" rows="1"/>
+                    <!-- <obs conceptId="$@Target_tumor@" answerConceptIds="$@Standard_Pelvis@,$@Standard_Rectal_Field@,$@Spine@"
                          answerLabels=" Standard Pelvis, Standard Rectal Field, Spine(levels): " style="radio"/>
                     <obs conceptId="$@Spine@"/>
                     <br/><br/>
                     Other:
-                    <obs conceptId="$@Other_External_Beam@"/>
+                    <obs conceptId="$@Other_External_Beam@"/> -->
                 </td>
             </tr>
             <tr>
@@ -469,6 +484,9 @@
                 <td>
                     <obs conceptId="$@Brachytherapy@" answerConceptId="$@No_brachytherapy_provided@"
                          answerLabel="No brachytherapy provided" style="checkbox"/>
+                    <br/>
+                    <obs conceptId="$@Brachytherapy@" answerConceptId="$@NOT_APPLICABLE@"
+                         answerLabel="N/A" style="checkbox"/>
                     <br/><br/>
                     Treatment dose (Gy):
                     <obs conceptId="$@Treatment_dose@"/>
@@ -487,11 +505,14 @@
                     <obs conceptId="$@Dose_rate@" answerConceptIds="$@High_dose_rate@,$@Pulsed_dose_rate@,$@Low_dose_rate@"
                          answerLabels="High-dose rate, Pulsed-dose rate, Low-dose rate" style="radio"/>
                     <br/><br/>
+                    Permanent or temporary:
+                    <obs conceptId="$@Permanent_or_temporary@"/>
+                    <br/><br/>
                     Type of applicator or procedure:
                     <obs conceptId="$@type_of_applicator@" answerConceptIds="$@Intracavitary@,$@Interstitial@"
                          answerLabels="Intracavitary,Interstitial" style="radio"/>
                     <br/><br/>
-                    Administration dates:
+                    Administration dates (or date of insertion for permanent implants):
                     <obs conceptId="$@Administration_start_dates@"/> --
                     <obs conceptId="$@Administration_end_dates@"/>
                 </td>
@@ -548,11 +569,11 @@
             <tr>
                 <td>
                     <hr/>
-                    Comleted by: <obs conceptId="$@NAME_OF_REFERRING_PERSON@" />
+                    Completed by: <obs conceptId="$@NAME_OF_REFERRING_PERSON@" />
                     <br/>
                     Title: <obs conceptId="$@TITLE_OF_REFERRING_PERSON@" />
                     <br/>
-                    Date: <encounterDate id="encounterDate" default="today" />
+                    Date: <obs conceptId= "$@Radiation_form_Completed_date@" /> 
                 </td>
 
             </tr>

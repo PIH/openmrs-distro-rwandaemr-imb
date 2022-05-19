@@ -171,9 +171,10 @@
 		@URETHRA@=3cd2a03c-26fe-102b-80cb-0017a47871b2
 		@OTHER_URINARY@=15a40ebf-f9f1-416c-b5a2-3761e9185779
 
+		@PATHOLOGIST_SIGNATURE@=416e958e-0287-4190-be1f-90d82974bec8
 		@PATHOLOGIST_VALIDATION@=1f7742f0-4571-44d8-a88b-8bc60dc11e29
 		@pathology_request_encounter_UUID@ = 4a1c767f-6bab-4938-b3f0-d3a5a3f9cd2c
-		@PATHOLGIC_DIAGNOSIS@=21f54f50-b804-476e-a0dd-a3238cd556fb
+		@PATHOLOGIC_DIAGNOSIS@=21f54f50-b804-476e-a0dd-a3238cd556fb
 		@PATHOLOGY_COMMENT@=e85305cf-ad93-4d1a-881e-53faf715fa8f
 
 		
@@ -635,9 +636,12 @@ $j("#hivstatusentry").show();
                 <td>
                     <br/>
                     <br/>
-                    Date of Surgery:
+                    Specimen Date:
                     <obs conceptId="$@Date_Biopsy_Specimen_Taken@"/>
 					<br/>
+					Specimen Submission Date
+					<obs conceptId="$@SPECIMENT_SUBMISSION_DATE@"/>
+
 					
 
                 </td>
@@ -826,7 +830,9 @@ $j("#hivstatusentry").show();
 					Pathologic diagnosis:
 					<obs conceptId="$@PATHOLOGIC_DIAGNOSIS@" />
                   
-                    
+                     <br />
+                                <br />
+                Canreg Code <obs conceptId="$@CANREG_CODE@" />
 
                 </td>
             </tr>

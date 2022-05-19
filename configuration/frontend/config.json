@@ -9,6 +9,19 @@
     "yesConceptUUID": "3cd6f600-26fe-102b-80cb-0017a47871b2",
     "yesConceptName": "YES",
     "pathologyResultsFromID": 5613,
-    "pathologyResultsApprovedconceptUUID": "1f7742f0-4571-44d8-a88b-8bc60dc11e29"
+    "pathologyResultsApprovedconceptUUID": "1f7742f0-4571-44d8-a88b-8bc60dc11e29",
+    "AccessionNumberconceptUUID" : "0e466f59-8070-45b5-97d1-575ec5cfd85d",
+    "DateBiopsySpecimenTakenconceptUUID" : "e0436a5b-dc19-4cb9-ac1b-acc005272c08",
+    "SpecimenSubmissionDateconceptUUID" : "3928b7fc-b3ae-40a5-846f-d480120b04f6",
+    "SendingPhysicianconceptUUID" : "0a4a22db-0e82-4669-9aba-086d841505b5",
+    "OtherBiopsyLocationconceptUUID" : "7c4650ee-45d5-435a-b968-511ef127a016",
+    "OrganSystemconceptUUID": "b88f9524-6b39-41b3-9b3a-f9a7a4b08fed",
+    "OrganconceptUUID" : "488fe4a2-7903-41da-b21e-fb236a1ee356",
+    "SpecimenDetailconceptUUID" : "e99170a5-f46b-490b-8fbb-bb9eacba3500",
+    "OtherTestsOrProceduresconceptUUID" : "66ad3230-59b2-4232-821e-a9ae86819e03",
+    "GrossDescriptionconceptUUID" : "1e97a4d3-1691-4fb7-be78-18e526e82b0b",
+    "MacroscopicExaminationconceptUUID" : "5d149510-0767-4da7-82cd-be406b34877d",
+    "COMMENTSATCONCLUSIONOFEXAMINATIONconceptUUID" : "3cdc5938-26fe-102b-80cb-0017a47871b2",
+    "CanregCodeconceptUUID" : "16931672-e068-4ea8-a89c-2ee7dbc07ad1"
   }
 }

@@ -1,0 +1,1042 @@
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/muzima.css" rel="stylesheet">
+  <link href="css/ui-darkness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/additional-methods.min.js"></script>
+  <script src="js/jquery-autocomplete-min.js"></script>
+  <script src="js/muzima.js"></script>
+
+  <title>PDC HOME VISIT </title>
+</head>
+<body class="col-md-10 col-md-offset-1">
+<div id="pre_populate_data"></div>
+<form id="DiabetesCardiovascularCheckup_form" name="DiabetesCardiovascularCheckup_form">
+  <div class="section">
+    <fieldset>
+      <h3>Encounter Details</h3>
+      <div class="form-group">
+        <label for="encounter.location_id">Location Name:<span class="required">*</span></label>
+        <input class="form-control valid-location-only" id="encounter.location_id" type="text" placeholder="Start typing something..."
+               required="required">
+        <input class="form-control" name="encounter.location_id" type="hidden">
+      </div>
+      <div class="form-group">
+        <label for="encounter.provider_id_select">Provider:</label>
+        <input class="form-control valid-provider-only" id="encounter.provider_id_select" type="text" placeholder="Start typing something...">
+        <input class="form-control" name="encounter.provider_id_select" type="hidden">
+      </div>
+      <div class="form-group hidden">
+        <select id="select_providers"></select>
+      </div>
+      <div class="form-group show_provider_id_text">
+        <label for="encounter.provider_id">Provider's system-id:<span class="required">*</span></label>
+        <input class="form-control checkDigit" id="encounter.provider_id" name="encounter.provider_id"
+               type="text" required="required" disabled="disabled">
+      </div>
+      <div class="form-group">
+        <label for="encounter.encounter_datetime">Encounter Date:<span class="required">*</span></label>
+        <input class="form-control datepicker nonFutureDate past-date" id="encounter.encounter_datetime"
+               name="encounter.encounter_datetime" type="text" readonly="readonly"
+               required="required">
+      </div>
+      <div class="form-group">
+        <input class="form-control" id="encounter.form_uuid" name="encounter.form_uuid"
+               type="hidden" required="required">
+      </div>
+    </fieldset>
+  </div>
+  <div class="section">
+    <fieldset>
+      <h3>DEMOGRAPHICS & CLINICAL MEASUREMENTS</h3>
+
+      <div class="form-group">
+        <input class="form-control" id="patient.uuid"
+               name="patient.uuid" type="hidden" readonly="readonly">
+      </div>
+      <div class="form-group">
+        <label for="patient.medical_record_number">Patient identifier:</label>
+        <input class="form-control" id="patient.medical_record_number"
+               name="patient.medical_record_number" type="text" readonly="readonly">
+      </div>
+      <div class="form-group">
+        <label for="patient.given_name">Given Name:</label>
+        <input class="form-control" id="patient.given_name" name="patient.given_name" type="text"
+               readonly="readonly">
+      </div>
+      <div class="form-group">
+        <label for="patient.middle_name">Middle Name:</label>
+        <input class="form-control" id="patient.middle_name" name="patient.middle_name" type="text"
+               readonly="readonly">
+      </div>
+      <div class="form-group">
+        <label for="patient.family_name">Family Name:</label>
+        <input class="form-control" id="patient.family_name" name="patient.family_name" type="text"
+               readonly="readonly">
+      </div>
+      <div class="form-group">
+        <label for="patient.sex">Gender:</label>
+        <select class="form-control" id="patient.sex" name="patient.sex" disabled="disabled">
+          <option value="">...</option>
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="patient.birth_date">Date Of Birth:</label>
+        <input class="form-control" id="patient.birth_date" name="patient.birth_date" type="text"
+               readonly="readonly" disabled="disabled">
+      </div>
+      <!-- <div class="form-group">
+
+          <label class="font-normal">
+          Patient Diagnosis
+          <br/>
+          <input type="form-control" name="obs.">
+      </label>
+      </div> -->
+      <div class="form-group group-set" data-group="patient.personattribute^3">
+        <label for="patient.contact_person_name">Parent Name </label>
+        <input class="form-control" id="patient.contact_person_name" name="attribute_value" type="text">
+        <input type="hidden" id="attribute_type_name" name="attribute_type_name" value="Contact Person's Name">
+        <input type="hidden" id="attribute_type_uuid" name="attribute_type_uuid" value="99cc76cc-3914-11e7-a919-92ebcb67fe33">
+      </div>
+
+      <div class="form-group group-set" data-group="patient.personattribute^2">
+        <label for="patient.phone_number">Phone Number: </label>
+        <input class="form-control phoneNumber" id="patient.phone_number" name="attribute_value" type="tel" >
+        <input type="hidden" id="attribute_type_phone" name="attribute_type_name" value="Phone number">
+        <!--                <input type="hidden" id="attribute_type_uuid" name="attribute_type_uuid" value="8b908adf-c964-4959-ad43-e2c7aeaa9c67">-->
+      </div>
+      <div >
+        <label class="font-normal"> <strong> Relationship: </strong> </label>
+        <br/>
+        <label class="font-normal">
+          <input id="Mother" name="RelationshipOfRelativeToPatient" type="checkbox"
+                 data-concept="3ce18156-26fe-102b-80cb-0017a47871b2^Relationship Of Relative Patient^99DCT"
+                 value="3ce185ca-26fe-102b-80cb-0017a47871b2^Mother^99DCT">
+          Mother
+        </label>
+        <br/>
+        <label class="font-normal">
+          <input id="Father" name="RelationshipOfRelativeToPatient" type="checkbox"
+                 data-concept="3ce18156-26fe-102b-80cb-0017a47871b2^Relationship Of Relative Patient^99DCT"
+                 value="3ce18444-26fe-102b-80cb-0017a47871b2^Father^99DCT">
+          Father
+        </label>
+        <br/>
+        <label class="font-normal">
+          <input id="OtherRelative" name="RelationshipOfRelativeToPatient" type="checkbox"
+                 data-concept="3ce18156-26fe-102b-80cb-0017a47871b2^Relationship Of Relative Patient^99DCT"
+                 value="3ce18bec-26fe-102b-80cb-0017a47871b2^Other Relative^99DCT">
+          Other
+        </label>
+        <br/>
+        <input id="obs.RelationshipOfRelativeToPatientNonCoded" class="form-control" name="obs.RelationshipOfRelativeToPatientNonCoded" type="text" data-concept="ff4a8e94-e1f7-4697-a172-25cc57766995^Relationship Of Relative To Patient Non Coded^99DCT"/>
+      </div>
+    </fieldset>
+  </div>
+  <br/>
+  <div class="section">
+    <div class="form-group">
+      <fieldset>
+        <div>
+          <label></label>
+        </div>
+        <label class="font-normal">Name of CHW/village rep:
+          <input id="obs.AccompagnateurLastName" class="form-control" name="obs.AccompagnateurLastName" type="text" data-concept="3ce29faa-26fe-102b-80cb-0017a47871b2^Accompagnateur LastName^99DCT"/>
+
+        </label>
+        <label class="font-normal">CHW/Village rep Phone number:
+          <input id="obs.AccompagnateurPhoneNumber" class="form-control" name="obs.AccompagnateurPhoneNumber" type="text" data-concept="5c9cb4a0-7b67-4c00-a926-ff7eaa8f0089^Accompagnateur Phone Number^99DCT"/>
+
+        </label>
+      </fieldset>
+    </div>
+  </div>
+  <br/>
+  <div class="section">
+    <div class="form-group">
+      <fieldset>
+        <label ><b>Reason for visit (check one)</b></label>
+        <br/>
+        <label class="font-normal">
+          <input id="ConcernAboutGrowthAndNutrition" name="ReasonForHomeVisit" type="checkbox"
+                 data-concept="80201322-e406-44c0-b085-c65592c783af^REASON FOR HOME VISIT^99DCT"
+                 value="23738399-b4de-48bf-9082-01a37d206aed^Concern about growth and nutrition^99DCT">
+          Concern about growth and nutrition
+        </label>
+        <br/>
+        <label class="font-normal">
+          <input id="ConcernAboutIllness" name="ReasonForHomeVisit" type="checkbox"
+                 data-concept="80201322-e406-44c0-b085-c65592c783af^REASON FOR HOME VISIT^99DCT"
+                 value="b71a0290-bd8f-4249-93cd-9d2689c2646c^Concern about illness^99DCT">
+          Concern about illness
+        </label>
+        <br/>
+        <label class="font-normal">
+          <input id="ConcernAboutDevelopmentalSocialAnd/OrFamilyIssues" name="ReasonForHomeVisit" type="checkbox"
+                 data-concept="80201322-e406-44c0-b085-c65592c783af^REASON FOR HOME VISIT^99DCT"
+                 value="40d6226a-dcfb-4ec1-8932-5c893277bfe5^Concern about developmental social and/or family issues^99DCT">
+          Concern about developmental social and/or family issues
+        </label>
+        <br/>
+        <label class="font-normal">
+          <input id="ConcernAboutHomeEnvironmentSafety" name="ReasonForHomeVisit" type="checkbox"
+                 data-concept="80201322-e406-44c0-b085-c65592c783af^REASON FOR HOME VISIT^99DCT"
+                 value="2c1533c3-1fc2-4dec-b373-70699155ba09^Concern about home environment safety^99DCT">
+          Concern about home environment safety
+        </label>
+        <br/>
+        <label class="font-normal">
+          <input id="LossToFollowUpOrMissedVisits" name="ReasonForHomeVisit" type="checkbox"
+                 data-concept="80201322-e406-44c0-b085-c65592c783af^REASON FOR HOME VISIT^99DCT"
+                 value="8921954d-08bf-45e9-a0ad-20b71280591f^Loss to follow up or missed visits^99DCT">
+          Loss to follow up or missed visits
+        </label>
+        <br/>
+        <label class="font-normal">
+          <input id="RequestedByParent" name="ReasonForHomeVisit" type="checkbox"
+                 data-concept="80201322-e406-44c0-b085-c65592c783af^REASON FOR HOME VISIT^99DCT"
+                 value="ea37e745-2311-4742-9b97-e912f4098b0b^Requested by parent^99DCT">
+          Requested by parent
+        </label>
+
+      </fieldset>
+    </div>
+  </div>
+  <br/>
+  <div class="section concept-set">
+    <fieldset>
+      <label >Age:  <input id="obs.ChronologicalAge" class="form-control" name="obs.ChronologicalAge" type="text" data-concept="63dbac65-dbc7-4333-a6d2-9f679373c9e7^Chronological Age^99DCT"/></label>
+      <br/>
+      <label class="font-normal">
+        <input class="activate" id="Days" name="TimeUnits" type="checkbox"
+               data-concept="f1904502-319d-4681-9030-e642111e7ce2^Time Units^99DCT"
+               value="3cd706b8-26fe-102b-80cb-0017a47871b2^Days^99DCT">
+        Days
+      </label>
+
+      <label class="font-normal">
+        <input class="deactivate" id="Weeks" name="TimeUnits" type="checkbox"
+               data-concept="f1904502-319d-4681-9030-e642111e7ce2^Time Units^99DCT"
+               value="3cd7091a-26fe-102b-80cb-0017a47871b2^Weeks^99DCT">
+        Weeks
+      </label>
+
+      <label class="font-normal">
+        <input class="deactivate" id="Months" name="TimeUnits" type="checkbox"
+               data-concept="f1904502-319d-4681-9030-e642111e7ce2^Time Units^99DCT"
+               value="3cd70b68-26fe-102b-80cb-0017a47871b2^Months^99DCT">
+        Months
+      </label>
+
+      <label class="font-normal">
+        <input class="deactivate" id="Years" name="TimeUnits" type="checkbox"
+               data-concept="f1904502-319d-4681-9030-e642111e7ce2^Time Units^99DCT"
+               value="3ce28f4c-26fe-102b-80cb-0017a47871b2^Years^99DCT">
+        Years
+      </label>
+    </fieldset>
+  </div>
+  <br/>
+  <div class="section">
+    <fieldset>
+      <h3> A. Illness, thermoregulation </h3>
+      <hr/>
+      <div class="section concept-set">
+        <label class="font-normal"> Concern for illness </label>
+
+        <label class="font-normal">
+          <input class="activate" id="ConcernForIllnessAcute" name="ConcernForIllness" type="checkbox"
+                 data-concept="b71a0290-bd8f-4249-93cd-9d2689c2646c^Concern about illness^99DCT"
+                 value="6fa92131-4efa-478f-988f-0a08325ad19b^Acute^99DCT">
+          Acute
+        </label>
+        <label class="font-normal">
+          <input class="deactivate" id="ConcernForIllnessChronic" name="ConcernForIllness" type="checkbox"
+                 data-concept="b71a0290-bd8f-4249-93cd-9d2689c2646c^Concern about illness^99DCT"
+                 value="e7a1567a-d144-4fde-9319-93872f62c3fd^Chronic^99DCT">
+          Chronic
+        </label>
+        <label class="font-normal">
+          <input class="deactivate" id="ConcernForIllnessNA" name="ConcernForIllness" type="checkbox"
+                 data-concept="b71a0290-bd8f-4249-93cd-9d2689c2646c^Concern about illness^99DCT"
+                 value="3cd7b72a-26fe-102b-80cb-0017a47871b2^N/A^99DCT">
+          N/A
+        </label>
+      </div>
+      <br/>
+      <div class="section concept-set">
+        <label class="font-normal"> Diarrhea </label>
+
+        <label class="font-normal">
+          <input id="DiarrheaCurrentYes" name="DiarrheaCurrent" type="checkbox"
+                 data-concept="3cde6da4-26fe-102b-80cb-0017a47871b2^Diarrhea Current^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="DiarrheaCurrentNo" name="DiarrheaCurrent" type="checkbox"
+                 data-concept="3cde6da4-26fe-102b-80cb-0017a47871b2^Diarrhea Current^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+      </div>
+      <div class="section concept-set">
+        <label class="font-normal"> Is the patient receiving correct treatment? </label>
+
+        <label class="font-normal">
+          <input id="PatientReceivingCorrectTreatmentYes" name="PatientReceivingCorrectTreatment" type="checkbox"
+                 data-concept="c2fc585a-910c-485e-874e-c4a76ba555ae^Patient receiving correct treatment^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="PatientReceivingCorrectTreatmentNo" name="PatientReceivingCorrectTreatment" type="checkbox"
+                 data-concept="c2fc585a-910c-485e-874e-c4a76ba555ae^Patient receiving correct treatment^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+      </div>
+      <div class="section concept-set">
+        <label class="font-normal"> Concern about use of traditional medicine </label>
+
+        <label class="font-normal">
+          <input id="ConcernAboutUseOfTraditionalMedicineYes" name="ConcernAboutUseOfTraditionalMedicine" type="checkbox"
+                 data-concept="11bfd15a-cadd-4cb6-8ad7-647c78b6a6d2^Concern about use of traditional medicine^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="ConcernAboutUseOfTraditionalMedicineNo" name="ConcernAboutUseOfTraditionalMedicine" type="checkbox"
+                 data-concept="11bfd15a-cadd-4cb6-8ad7-647c78b6a6d2^Concern about use of traditional medicine^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+      </div>
+      <div class="section concept-set">
+        <label class="font-normal"> Abnormal signs/symptoms are </label>
+
+        <label class="font-normal">
+          <input id="AbnormalSignsSymptomsYes" name="AbnormalSignsSymptoms" type="checkbox"
+                 data-concept="b897b60a-ea1c-4d9e-a341-cb1e965b0efd^Abnormal signs/symptoms^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="AbnormalSignsSymptomsNo" name="AbnormalSignsSymptoms" type="checkbox"
+                 data-concept="b897b60a-ea1c-4d9e-a341-cb1e965b0efd^Abnormal signs/symptoms^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+      </div>
+      <div class="section concept-set">
+        <label class="font-normal"> Verify medication adherence and appropriate administration </label>
+
+        <label class="font-normal">
+          <input id="ADHERENCETOTAKINGMEDICATIONYES" name="ADHERENCETOTAKINGMEDICATION" type="checkbox"
+                 data-concept="23331bd5-e6d0-4e66-9d24-3e51453114ad^ADHERENCE TO TAKING MEDICATION^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="ADHERENCETOTAKINGMEDICATIONNO" name="ADHERENCETOTAKINGMEDICATION" type="checkbox"
+                 data-concept="23331bd5-e6d0-4e66-9d24-3e51453114ad^ADHERENCE TO TAKING MEDICATION^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+      </div>
+      <div class="section concept-set">
+        <label class="font-normal"> Patient is kept warm adequately </label>
+
+        <label class="font-normal">
+          <input id="PatientKeptWarmAdequatelyYes" name="PatientKeptWarmAdequately" type="checkbox"
+                 data-concept="c975c556-9ab2-4ff5-8eda-eea9084cfd14^Patient kept warm adequately^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="PatientKeptWarmAdequatelyNO" name="PatientKeptWarmAdequately" type="checkbox"
+                 data-concept="c975c556-9ab2-4ff5-8eda-eea9084cfd14^Patient kept warm adequately^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+      </div>
+      <div class="section concept-set">
+        When appropriate, is KMC practiced at home (in infants &#60;2.500 kgs)?
+        <label class="font-normal">
+          <input id="KangarooMotherCareDoneAtHomeYes" name="KangarooMotherCareDoneAtHome" type="checkbox"
+                 data-concept="4579757f-d395-4440-aca7-ed352f8c4bbb^Kangaroo Mother Care done at home^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="KangarooMotherCareDoneAtHomeNo" name="KangarooMotherCareDoneAtHome" type="checkbox"
+                 data-concept="4579757f-d395-4440-aca7-ed352f8c4bbb^Kangaroo Mother Care done at home^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+        <br/>
+        <label >Counseling topics discussed/demonstrated:  <input id="obs.CounselingTopicsDiscussedOrDemonstratedConcerningIllnessThermoregulation" class="form-control" name="obs.CounselingTopicsDiscussedOrDemonstratedConcerningIllnessThermoregulation" type="text" data-concept="1d9b0e29-9e8c-49ad-9c44-624133fa387b^Counseling topics discussed or demonstrated concerning illness, thermoregulation^99DCT"/></label>
+      </div>
+    </fieldset>
+  </div>
+  <br/>
+  <div class="section">
+    <fieldset>
+      <h3> B. Growth and nutrition (select all that apply) </h3>
+      <hr/>
+
+      <div class="section concept-set">
+        <label class="font-normal"> Symptoms of or concern for poor interval growth, low Z-scores </label>
+
+        <label class="font-normal">
+          <input id="SymptomsOfOrConcernForPoorIntervalGrowthLowZScoresYes" name="SymptomsOfOrConcernForPoorIntervalGrowthLowZScores" type="checkbox"
+                 data-concept="9ac0f466-e829-4cdb-b5a7-637425caf96d^Diarrhea Current^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="SymptomsOfOrConcernForPoorIntervalGrowthLowZScoresNo" name="SymptomsOfOrConcernForPoorIntervalGrowthLowZScores" type="checkbox"
+                 data-concept="9ac0f466-e829-4cdb-b5a7-637425caf96d^Diarrhea Current^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+      </div>
+      <div class="section concept-set">
+        <label class="font-normal"> Poor breastfeeding, insufficient breast milk, non-exclusive breastfeeding in 6 month old </label>
+
+        <label class="font-normal">
+          <input id="ConcernForPoorBreastfeedingYes" name="ConcernForPoorBreastfeeding" type="checkbox"
+                 data-concept="3cde6da4-26fe-102b-80cb-0017a47871b2^Diarrhea Current^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="ConcernForPoorBreastfeedingNo" name="ConcernForPoorBreastfeeding" type="checkbox"
+                 data-concept="3cde6da4-26fe-102b-80cb-0017a47871b2^Diarrhea Current^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+        <label class="font-normal">
+          <input id="ConcernForPoorBreastfeedingNA" name="ConcernForPoorBreastfeeding" type="checkbox"
+                 data-concept="3cde6da4-26fe-102b-80cb-0017a47871b2^Diarrhea Current^99DCT"
+                 value="3cd7b72a-26fe-102b-80cb-0017a47871b2^NOT APPLICABLE^99DCT">
+          N/A
+        </label>
+      </div>
+      <div class="section concept-set">
+        <label class="font-normal"> The family's food supply at home is </label>
+
+        <label class="font-normal">
+          <input id="FoodSupplyAdequate" name="FoodSupply" type="checkbox"
+                 data-concept="987c3d43-a96a-48e7-8559-6e120c3ccc04^Food Supply^99DCT"
+                 value="082cbbb7-d503-4883-b5c7-cb83695a49ff^ADEQUATE^99DCT">
+          ADEQUATE
+        </label>
+        <label class="font-normal">
+          <input id="FoodSupplyLimited" name="FoodSupply" type="checkbox"
+                 data-concept="987c3d43-a96a-48e7-8559-6e120c3ccc04^Food Supply^99DCT"
+                 value="3284b610-d3e9-46c3-b5a3-906f06c7bd01^Limited^99DCT">
+          Limited
+        </label>
+      </div>
+      <div class="section concept-set">
+        <label class="font-normal"> Does the child appear malnourished? </label>
+
+        <label class="font-normal">
+          <input id="MalnourishedYes" name="Malnourished" type="checkbox"
+                 data-concept="ab52d66b-2218-49f4-872a-00e689c5aa03^Malnourished^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="MalnourishedNo" name="Malnourished" type="checkbox"
+                 data-concept="ab52d66b-2218-49f4-872a-00e689c5aa03^Malnourished^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+      </div>
+      <div class="section concept-set">
+        <label class="font-normal"> Meets admission criteria? </label>
+
+        <label class="font-normal">
+          <input id="MeetsAdmissionCriteriaYes" name="MeetsAdmissionCriteria" type="checkbox"
+                 data-concept="bfffa630-8c3b-4b42-8843-308b75cf2902^Meets Admission Criteria^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="MeetsAdmissionCriteriaNo" name="MeetsAdmissionCriteria" type="checkbox"
+                 data-concept="bfffa630-8c3b-4b42-8843-308b75cf2902^Meets Admission Criteria^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+      </div>
+      <div class="section concept-set">
+        <label class="font-normal">  Is the child followed in a nutrition program at the HC? </label>
+
+        <label class="font-normal">
+          <input id="InNutritionProgramAtHealthCenterYes" name="InNutritionProgramAtHealthCenter" type="checkbox"
+                 data-concept="af7e354c-a0e2-46c8-808b-f54dce732322^In Nutrition Program At Health Center"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="InNutritionProgramAtHealthCenterNo" name="InNutritionProgramAtHealthCenter" type="checkbox"
+                 data-concept="af7e354c-a0e2-46c8-808b-f54dce732322^In Nutrition Program At Health Center^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+      </div>
+      <div class="section concept-set">
+        <label class="font-normal"> Is the child enrolled at any of social support program (food package/formula)? </label>
+
+        <label class="font-normal">
+          <input id="InSocialSupportProgramYes" name="InSocialSupportProgram" type="checkbox"
+                 data-concept="68896fcd-5c34-4dcf-87ac-fd16985e8974^In Social Support Program^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="InSocialSupportProgramNo" name="InSocialSupportProgram" type="checkbox"
+                 data-concept="68896fcd-5c34-4dcf-87ac-fd16985e8974^In Social Support Program^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+      </div>
+      <div class="section concept-set">
+
+        <label >Other:  <input id="obs.Other" class="form-control" name="obs.Other" type="text" data-concept="b6ccf73c-ad1c-4da4-95a4-038e92a069f2^Other Growth and nutrition question^99DCT"/></label>
+
+        <br/>
+        <label >Counseling topics discussed/demonstrated:  <input id="obs.CounselingTopicsDiscussedOrDemonstratedConcerningGrowthAndNutrition" class="form-control" name="obs.CounselingTopicsDiscussedOrDemonstratedConcerningGrowthAndNutrition" type="text"  size="50" data-concept="16ca5650-4bd1-45df-bcef-871a83f56c8f^Counseling topics discussed or demonstrated concerning Growth and nutrition^99DCT"/></label>
+      </div>
+
+    </fieldset>
+  </div>
+  <br/>
+  <div class="section">
+    <fieldset>
+      <h3> C. Developmental, social, and/or family issues </h3>
+      <hr/>
+
+      <div class="section concept-set">
+        <label class="font-normal"> Does the parent regularly engage the child in stimulating, age-appropriate verbal interactions and play
+          that supports physical/cognitive/social and language development (telling stories, talking)?
+        </label>
+
+        <label class="font-normal">
+          <input id="EngageTheChildInStimulatingAgeAppropriateVerbalInteractionsYes" name="EngageTheChildInStimulatingAgeAppropriateVerbalInteractions" type="checkbox"
+                 data-concept="7341a118-e644-4f7e-b253-2cd1882f9ce4^Engage The Child In Stimulating Age Appropriate Verbal Interactions^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="EngageTheChildInStimulatingAgeAppropriateVerbalInteractionsNo" name="EngageTheChildInStimulatingAgeAppropriateVerbalInteractions" type="checkbox"
+                 data-concept="7341a118-e644-4f7e-b253-2cd1882f9ce4^Engage The Child In Stimulating Age Appropriate Verbal Interactions^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+      </div>
+      <div class="section concept-set">
+        <label class="font-normal">Does the parent use safe household items as toys and/or homemade toys (dolls, cars on string, etc)?
+        </label>
+
+        <label class="font-normal">
+          <input id="UseSafeHouseholdItemsAsToysOrHomemadeToysYes" name="UseSafeHouseholdItemsAsToysOrHomemadeToys" type="checkbox"
+                 data-concept="6c8a0bfe-396d-46c6-b8f6-0a25c8beafa4^Use Safe Household Items As Toys Or Homemade Toys^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="UseSafeHouseholdItemsAsToysOrHomemadeToysNo" name="UseSafeHouseholdItemsAsToysOrHomemadeToys" type="checkbox"
+                 data-concept="6c8a0bfe-396d-46c6-b8f6-0a25c8beafa4^Use Safe Household Items As Toys Or Homemade Toys^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+
+      </div>
+      <div class="section concept-set">
+        <label class="font-normal"> Does the parent use non-physical/abusive discipline methods? </label>
+
+        <label class="font-normal">
+          <input id="UseOfNonPhysicalOrAbusiveDisciplineMethodsYes" name="UseOfNonPhysicalOrAbusiveDisciplineMethods" type="checkbox"
+                 data-concept="2caca93d-7d02-4d70-91ab-fc4cd65a3ae5^Use Of Non Physical Or Abusive Discipline Methods^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="UseOfNonPhysicalOrAbusiveDisciplineMethodsNo" name="UseOfNonPhysicalOrAbusiveDisciplineMethods" type="checkbox"
+                 data-concept="2caca93d-7d02-4d70-91ab-fc4cd65a3ae5^Use Of Non Physical Or Abusive Discipline Methods^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+      </div>
+      <div class="section concept-set">
+        <label class="font-normal"> Does the child appear clean and cared for? </label>
+
+        <label class="font-normal">
+          <input id="DoesTheChildAppearCleanAndCaredForYes" name="DoesTheChildAppearCleanAndCaredFor" type="checkbox"
+                 data-concept="68559010-4557-4203-a9a6-814b004e0a85^Does The Child Appear Clean And Cared For^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="DoesTheChildAppearCleanAndCaredForNo" name="DoesTheChildAppearCleanAndCaredFor" type="checkbox"
+                 data-concept="68559010-4557-4203-a9a6-814b004e0a85^Does The Child Appear Clean And Cared For^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+      </div>
+      <div class="section concept-set">
+        <label class="font-normal"> Parent reports being stigmatized by the family or neighbors </label>
+
+        <label class="font-normal">
+          <input id="ParentBeingStigmatizedByTheFamilyOrNeighborsYes" name="ParentBeingStigmatizedByTheFamilyOrNeighbors" type="checkbox"
+                 data-concept="97c59a66-acb1-43dc-b9b7-1314e5f44c27^Parent Being Stigmatized By The Family Or Neighbors^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="ParentBeingStigmatizedByTheFamilyOrNeighborsNo" name="ParentBeingStigmatizedByTheFamilyOrNeighbors" type="checkbox"
+                 data-concept="97c59a66-acb1-43dc-b9b7-1314e5f44c27^Parent Being Stigmatized By The Family Or Neighbors^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+      </div>
+      <div class="section concept-set">
+        <label class="font-normal">  Is the parent well supported by the spouse/family in caring for the child? </label>
+
+        <label class="font-normal">
+          <input id="ParentWellSupportedByTheSpouseFamilyInCaringForTheChildYes" name="ParentWellSupportedByTheSpouseFamilyInCaringForTheChild" type="checkbox"
+                 data-concept="b4fa38ee-074a-41f9-85db-17fc5b11f82c^Parent Well Supported By The Spouse Family In Caring For The Child^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="ParentWellSupportedByTheSpouseFamilyInCaringForTheChildNo" name="ParentWellSupportedByTheSpouseFamilyInCaringForTheChild" type="checkbox"
+                 data-concept="b4fa38ee-074a-41f9-85db-17fc5b11f82c^Parent Well Supported By The Spouse Family In Caring For The Child^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+      </div>
+      <div class="section concept-set">
+        <label >Other/Parental concerns:  <input id="obs.OtherParentalConcerns" class="form-control" name="obs.OtherParentalConcerns" type="text" size="30" data-concept="ac2b7c8b-7c9e-4458-a90a-9dca5ca2dc23^Other Parental Concerns^99DCT"/></label>
+
+        <br/>
+        <label >Counseling topics discussed/demonstrated (see Play and communication guide questionnaire for additional assessment):  <input id="obs.CounselingTopicsDiscussedDemonstratedDuringDevelopmentalSocialAndOrFamillyIssues" class="form-control" name="obs.CounselingTopicsDiscussedDemonstratedDuringDevelopmentalSocialAndOrFamillyIssues" type="text" size="30" data-concept="981049dc-1870-402e-a730-f7423c0f8337^Counseling topics discussed/demonstrated during developmental , social and/or familly issues^99DCT"/></label>
+      </div>
+    </fieldset>
+  </div>
+  <br/>
+  <div class="section">
+    <fieldset>
+      <h3> D. Concern about home environment safety </h3>
+      <hr/>
+
+      <div class="section concept-set">
+        <label class="font-normal"> Is the home environment safe from potential hazards to the child, e.g.,open toilet, open fire, sharp items, choking hazards, medications?
+        </label>
+
+        <label class="font-normal">
+          <input id="HomeEnvironmentSafeFromPotentialHazardsToTheChildYes" name="HomeEnvironmentSafeFromPotentialHazardsToTheChild" type="checkbox"
+                 data-concept="882a2c46-5712-4063-a15c-cf2e51607c6d^Home Environment Safe From Potential Hazards To The Child^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="HomeEnvironmentSafeFromPotentialHazardsToTheChildNo" name="HomeEnvironmentSafeFromPotentialHazardsToTheChild" type="checkbox"
+                 data-concept="882a2c46-5712-4063-a15c-cf2e51607c6d^Home Environment Safe From Potential Hazards To The Child^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+      </div>
+      <div class="section concept-set">
+        <label class="font-normal">Is the child supervised at all times to avoid injuries?
+        </label>
+
+        <label class="font-normal">
+          <input id="ChildSupervisedAtAllTimesToAvoidInjuriesYes" name="ChildSupervisedAtAllTimesToAvoidInjuries" type="checkbox"
+                 data-concept="73177bad-a189-4ee2-854a-1ad9126c6c0e^Child Supervised At All Times To Avoid Injuries^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="ChildSupervisedAtAllTimesToAvoidInjuriesNo" name="ChildSupervisedAtAllTimesToAvoidInjuries" type="checkbox"
+                 data-concept="73177bad-a189-4ee2-854a-1ad9126c6c0e^Child Supervised At All Times To Avoid Injuries^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+
+      </div>
+
+      <div class="section concept-set">
+        <label class="font-normal"> Soap and water are available to wash hands with after using the toilet </label>
+
+        <label class="font-normal">
+          <input id="SoapAndWaterAvailableAfterUseOfToiletYes" name="SoapAndWaterAvailableAfterUseOfToilet" type="checkbox"
+                 data-concept="c5832f63-a1ad-4e3d-b7c4-5c37acc1d36e^Soap And Water Available After Use Of Toilet^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="SoapAndWaterAvailableAfterUseOfToiletNo" name="SoapAndWaterAvailableAfterUseOfToilet" type="checkbox"
+                 data-concept="c5832f63-a1ad-4e3d-b7c4-5c37acc1d36e^Soap And Water Available After Use Of Toilet^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+      </div>
+      <div class="section concept-set">
+        <label class="font-normal">Safe food preparation and storage</label>
+
+        <label class="font-normal">
+          <input id="SafeFoodPreparationAndStorageYes" name="SafeFoodPreparationAndStorage" type="checkbox"
+                 data-concept="eff2b57e-a805-4840-b29e-d1863cc69863^Safe Food Preparation And Storage^99DCT"
+                 value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+          Yes
+        </label>
+        <label class="font-normal">
+          <input id="SafeFoodPreparationAndStorageNo" name="SafeFoodPreparationAndStorage" type="checkbox"
+                 data-concept="eff2b57e-a805-4840-b29e-d1863cc69863^Safe Food Preparation And Storage^99DCT"
+                 value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+          No
+        </label>
+      </div>
+
+      <div class="section concept-set">
+        <label >Other:  <input id="obs.OtherConcernsAboutHomeEnvironmentSafery" class="form-control" name="obs.OtherConcernsAboutHomeEnvironmentSafery" type="text" size="30" data-concept="483618db-4404-4c83-a548-df128b7142ef^Other concerns about home environment safery^99DCT"/></label>
+
+        <br/>
+        <label >Counseling topics discussed/demonstrated: <input id="obs.CounselingTopicsDiscussedDemonstratedConcerningHomeEnvironmentSafety" class="form-control" name="obs.CounselingTopicsDiscussedDemonstratedConcerningHomeEnvironmentSafety" type="text" size="30" data-concept="a4cdb606-4812-4c5c-af4b-93874dd0b887^counseling topics discussed/demonstrated concerning home environment safety^99DCT"/></label>
+      </div>
+    </fieldset>
+  </div>
+  <br/>
+  <div class="section">
+    <fieldset>
+      <div class="form-group">
+
+        <label ><b>E. Loss to follow up or missed visits</b></label>
+        <br/>
+        <hr/>
+        <label class="font-normal">
+          <input id="PatientDied" name="ReasonForMissedVisit" type="checkbox"
+                 data-concept="fc38d672-be55-4b92-b1dd-4e9be7ce39c4^Reason For Missed Visit^99DCT"
+                 value="3cdd446a-26fe-102b-80cb-0017a47871b2^Patient Died^99DCT">
+          Patient died
+        </label>
+        <br/>
+        <label class="font-normal">
+          <input id="DeclinedCare" name="ReasonForMissedVisit" type="checkbox"
+                 data-concept="fc38d672-be55-4b92-b1dd-4e9be7ce39c4^Reason For Missed Visit^99DCT"
+                 value="1b83f37a-df3a-42a5-b83b-ebc5237f2dbf^Declined Care^99DCT">
+          Parent declines care
+        </label>
+        <br/>
+        <label class="font-normal">
+          <input id="DidNotUnderstandThatHeSheHadToComeIn" name="ReasonForMissedVisit" type="checkbox"
+                 data-concept="fc38d672-be55-4b92-b1dd-4e9be7ce39c4^Reason For Missed Visit^99DCT"
+                 value="9851cf02-5ec3-48b5-9270-328c34f3a043^Did not understand that he/she had to come in^99DCT">
+          Parent was not aware/informed to return to clinic
+        </label>
+        <br/>
+        <label class="font-normal">
+          <input id="ChangedResidenceOrHealthFacility" name="ReasonForMissedVisit" type="checkbox"
+                 data-concept="fc38d672-be55-4b92-b1dd-4e9be7ce39c4^Reason For Missed Visit^99DCT"
+                 value="33a54f66-d08c-438c-9f80-9bce31c1a13f^Changed residence or health facility^99DCT">
+          Parent changed residence or health facility
+        </label>
+        <br/>
+        <label class="font-normal">
+          <input id="FinancialReasons" name="ReasonForMissedVisit" type="checkbox"
+                 data-concept="fc38d672-be55-4b92-b1dd-4e9be7ce39c4^Reason For Missed Visit^99DCT"
+                 value="3cee7fb4-26fe-102b-80cb-0017a47871b2^financial Reasons^99DCT">
+          Unable to return due to financial constraints
+        </label>
+        <br/>
+        <label class="font-normal">
+          <input id="OtherNonCoded" name="ReasonForMissedVisit" type="checkbox"
+                 data-concept="fc38d672-be55-4b92-b1dd-4e9be7ce39c4^Reason For Missed Visit^99DCT"
+                 value="3cee7fb4-26fe-102b-80cb-0017a47871b2^OTHER NON CODED^99DCT">
+          Other:  <input id="obs.Other(text)" class="form-control" name="obs.Other(text)" type="text" size="30" data-concept="c548a633-9931-496d-9ade-4b7c971e6600^Other (text)^99DCT"/></label>
+
+        <br/>
+        <label >Counseling topics discussed/demonstrated: <input id="obs.CounselingTopicsDiscussedDemostratedConcerningLossToFollowUpOrMissedVisit" class="form-control" name="obs.CounselingTopicsDiscussedDemostratedConcerningLossToFollowUpOrMissedVisit" type="text" size="30" data-concept="ce26425f-7362-4d18-a6ac-91a626ed2649^Counseling topics discussed/demostrated concerning loss to follow up or missed visit^99DCT"/></label>
+
+      </div>
+    </fieldset>
+  </div>
+  <br/>
+  <div class="section">
+    <fieldset>
+      <div class="form-group">
+
+        <label ><b>F. Requested by parent or CHW</b></label>
+        <br/>
+        <hr/>
+        <label class="font-normal">
+          <input id="NeedForParentalGuidanceEducationRegardingCareOfTheChild" name="RequestedByParent" type="checkbox"
+                 data-concept="ea37e745-2311-4742-9b97-e912f4098b0b^Requested by parent^99DCT"
+                 value="3c1cf200-5eed-474d-938d-a26bc46da49c^Need for parental guidance education regarding care of the child^99DCT">
+          Need for parental guidance, education regarding care of the child
+
+        </label>
+        <br/>
+        <label class="font-normal">
+          <input id="ParentsConcern" name="RequestedByParent" type="checkbox"
+                 data-concept="ea37e745-2311-4742-9b97-e912f4098b0b^Requested by parent^99DCT"
+                 value="6a3dcefa-fcd7-486f-ba4a-df1a56368807^Parents concern^99DCT">
+          Parent's concern
+          <input id="obs.ParentsConcern" class="form-control" name="obs.ParentsConcern" type="text" data-concept="6a3dcefa-fcd7-486f-ba4a-df1a56368807^Parents concern^99DCT"/>
+
+        </label>
+        <br/>
+        <label class="font-normal">
+          <input id="CHWsConcern" name="RequestedByParent" type="checkbox"
+                 data-concept="ea37e745-2311-4742-9b97-e912f4098b0b^Requested by parent^99DCT"
+                 value="a85030ff-06c9-4e8f-85bd-b7634d404888^CHWs concern^99DCT">
+          CHW's concern
+          <input id="obs.CHWsConcern" class="form-control" name="obs.CHWsConcern" type="text" data-concept="a85030ff-06c9-4e8f-85bd-b7634d404888^CHWs concern^99DCT"/>
+
+        </label>
+        <br/>
+        <label class="font-normal">
+          <input id="OtherParentalConcerns" name="RequestedByParent" type="checkbox"
+                 data-concept="ea37e745-2311-4742-9b97-e912f4098b0b^Requested by parent^99DCT"
+                 value="ac2b7c8b-7c9e-4458-a90a-9dca5ca2dc23^Other parental concerns^99DCT">
+          Other:
+          <input id="obs.OtherParentalConcerns2" class="form-control" name="obs.OtherParentalConcerns" type="text" size="30" data-concept="ac2b7c8b-7c9e-4458-a90a-9dca5ca2dc23^Other parental concerns^99DCT"/>
+        </label>
+        <br/>
+        <label >Counseling topics discussed/demonstrated: <input id="obs.CounselingTopicsDiscussedDemonstratedConcerningParentalOrChwRequest" class="form-control" name="obs.CounselingTopicsDiscussedDemonstratedConcerningParentalOrChwRequest" type="text" size="30" data-concept="778246f0-af0d-4ab6-8492-18dcf540cbe1^Counseling topics discussed/demonstrated concerning parental or chw request^99DCT"/></label>
+
+      </div>
+    </fieldset>
+  </div>
+  <br/>
+  <div class="section">
+    <fieldset>
+      <div class="form-group">
+
+        <label ><b>G. Recommendations</b></label>
+        <br/>
+        <hr/>
+        <label class="font-normal">
+          <input id="CHWVisitToAssessAndAssist" name="Recommendations" type="checkbox"
+                 data-concept="73f8e1f8-9c3b-4ff3-a581-382a59afa167^Recommendations^99DCT"
+                 value="d88a35ac-4251-4af5-9c39-e04b8c2452da^CHW visit to assess and assist^99DCT">
+          CHW visit to assess and assist
+          <br/>
+          (frequency:  <input id="obs.AssessAndAssistFrequency" class="form-control" name="obs.AssessAndAssistFrequency" type="text" data-concept="e2acabf8-32fa-4bad-9d5c-3f72bc360993^Assess and assist frequency^99DCT"/>)
+
+        </label>
+        <br/>
+        <label class="font-normal">
+          <input id="NurseWillReturnOn" name="Recommendations" type="checkbox"
+                 data-concept="73f8e1f8-9c3b-4ff3-a581-382a59afa167^Recommendations^99DCT"
+                 value="ee491246-7c3d-4cb8-bf28-09e322465201^Nurse will return on^99DCT">
+          Nurse will return on:
+          <input id="obs.NurseWillReturnOn" class="form-control" name="obs.NurseWillReturnOn" type="date" data-concept="ee491246-7c3d-4cb8-bf28-09e322465201^Nurse will return on^99DCT"/> to continue support and re-evaluate
+        </label>
+        <br/>
+        <label class="font-normal">
+          <input id="SocialWorkerWillReturnOn" name="Recommendations" type="checkbox"
+                 data-concept="73f8e1f8-9c3b-4ff3-a581-382a59afa167^Recommendations^99DCT"
+                 value="fef9e07b-6c69-424f-98a3-b2ae02211211^Social worker will return on^99DCT">
+          Social worker will return on:
+          <input id="obs.SocialWorkerWillReturnOn" class="form-control" name="obs.SocialWorkerWillReturnOn" type="date" data-concept="fef9e07b-6c69-424f-98a3-b2ae02211211^Social worker will return on^99DCT"/> to re-evaluate
+        </label>
+        <br/>
+        <label class="font-normal">
+          <input id="BringPatientToTheHospitalOrHealthHenter" name="Recommendations" type="checkbox"
+                 data-concept="73f8e1f8-9c3b-4ff3-a581-382a59afa167^Recommendations^99DCT"
+                 value="209e4c32-208c-407d-b6cc-07cc7e92a876^Bring patient to the hospital or health center^99DCT">
+          Advised to bring patient to the hospital / health center on:
+          <input id="obs.RETURNVISITDATE" class="form-control" name="obs.RETURNVISITDATE" type="date" data-concept="3ce94df0-26fe-102b-80cb-0017a47871b2^RETURN VISIT DATE^99DCT"/>
+        </label>
+        <br/>
+        <label class="font-normal">
+          <input id="PATIENTREFERREDTOANOTHERSITE" name="Recommendations" type="checkbox"
+                 data-concept="73f8e1f8-9c3b-4ff3-a581-382a59afa167^Recommendations^99DCT"
+                 value="3cde31b8-26fe-102b-80cb-0017a47871b2^PATIENT REFERRED TO ANOTHER SITE^99DCT">
+          Referral to health facility:
+          <input id="obs.HealthFacilityText" class="form-control" name="obs.RETURNVISITDATE" type="text" data-concept="c4118ec7-e441-4947-b04a-dbe75b61a5a6^Health Facility Text^99DCT"/>
+        Date:
+        <input id="obs.RETURNVISITDATEReferal" class="form-control" name="obs.RETURNVISITDATE" type="date" data-concept="3ce94df0-26fe-102b-80cb-0017a47871b2^RETURN VISIT DATE^99DCT"/>
+
+        </label>
+        <br/>
+        <label >Type of assistance needed: <input id="obs.TypeOfAssistanceNeeded" class="form-control" name="obs.TypeOfAssistanceNeeded" type="text" size ="50" data-concept="6e1452a3-398c-4ca7-ac06-5957c9df9a74^Type of assistance needed^99DCT"/></label>
+        <br/>
+        <label >Other Recommendations: <input id="obs.OtherRecommendations" class="form-control" name="obs.OtherRecommendations" type="text" size="50" data-concept="511c7f61-c644-4626-9132-e3c6dd48981b^Other recommendations^99DCT"/></label>
+
+      </div>
+    </fieldset>
+  </div>
+  <div class="section">
+    <fieldset>
+      <div class="form-group">
+
+        <label ><b>Summative comments and recommendations by health provider/social worker:</b></label>
+        <br/>
+        <hr/>
+        <label> <input id="obs.SummativeCommentsAndRecommendations" class="form-control" name="obs.SummativeCommentsAndRecommendations" type="text" size="50" data-concept="f16b7c22-4c75-4aae-a0e1-f68667b18363^summative comments and recommendations^99DCT"/></label>
+
+      </div>
+    </fieldset>
+  </div>
+</form>
+
+
+</body>
+<script type="text/javascript">
+        $(document).ready(function () {
+           var dateFormat = "dd-mm-yy";
+            var currentDate = $.datepicker.formatDate(dateFormat, new Date());
+            var encounterDatetime = $('#encounter\\.encounter_datetime');
+            if ($(encounterDatetime).val() == "") {
+                $(encounterDatetime).val(currentDate);
+            }
+
+            $('#save_draft').click(function () {
+            $(this).prop('disabled', true);
+            document.saveDraft(this);
+            $(this).prop('disabled', false);
+            });
+            $('#submit_form').click(function () {
+                $(this).prop('disabled', true);
+                document.submit();
+                $(this).prop('disabled', false);
+            });
+
+            document.setupAutoCompleteData('encounter\\.location_id');
+            document.setupValidationForLocation("$('#encounter\\.location_id').val()","encounter\\.location_id");
+            document.setupAutoCompleteDataForProvider('encounter\\.provider_id_select');
+            document.setupValidationForProvider("$('#encounter\\.provider_id_select').val()","encounter\\.provider_id");
+            $('#encounter\\.provider_id_select').change(function () {
+                if ($('#encounter\\.provider_id_select').val() === '') {
+                    $('#encounter\\.provider_id').val('');
+                       $('.show_provider_id_text').show();
+                }
+            });
+            $('.future-or-today-date').change(function () {
+                if ($(this).is(':visible') && $(this).val() != '') {
+                    var errors = {};
+                    var pattern = /(\d{2})-(\d{2})-(\d{4})/g;
+                    var matches = pattern.exec($(this).val());
+                    var enteredDate = new Date(matches[3], matches[2] - 1, matches[1]);
+                    var today = new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDate());
+                    if (enteredDate < today) {
+                        errors[$(this).attr('name')] = "Please enter present or future date.";
+                    }
+                    toggleValidationMessages(errors);
+                }
+            });
+
+                        var WhereToRefer = [
+                {"val": "64d4a6d9-8e71-4d80-83bc-fc5b5e44703f^Caraes Ndera Hospital^99DCT", "label": "Caraes Ndera Hospital "},
+                {"val": "682754d6-cff2-4f2e-90a3-ea3b1e7fa230^Butaro Hospital^99DCT", "label": "Butaro Hospital "},
+                {"val": "927be708-d8b3-4809-bd7e-c1bea7c821eb^Byumba Hospital^99DCT", "label": "Byumba Hospital "},
+                {"val": "c7e37519-bcea-4a6e-a29d-14cd972fc551^GAHINI HOSPITAL^99DCT", "label": "GAHINI HOSPITAL "},
+                {"val": "20b838ed-d624-4abf-9ae1-7fe2b90133e5^Gakoma Hospital^99DCT", "label": "Gakoma Hospital "},
+                {"val": "a810cdff-0221-425a-bde5-d33f1366a126^GIHUNDWE HOSPITAL^99DCT", "label": "GIHUNDWE HOSPITAL "},
+                {"val": "325e942f-c41d-4032-b86d-2cdff25b7b81^Gisenyi District Hospital^99DCT", "label": "Gisenyi District Hospital "},
+                {"val": "cc121d58-d969-4ae7-a4ba-0d04580fee56^Gitwe Hospital^99DCT", "label": "Gitwe Hospital "},
+                {"val": "74c27b34-2305-4384-ac94-4b3f24e1d98d^Kabaya Hospital^99DCT", "label": "Kabaya Hospital "},
+                {"val": "fbe11e25-c7dd-423c-823a-d62a8f2f7182^KABGAYI HOSPITAL^99DCT", "label": "KABGAYI HOSPITAL "},
+                {"val": "5eb665f3-06b6-4fa7-b111-a9470d15d2ba^KABUTARE^99DCT", "label": "KABUTARE HOSPITAL "},
+                {"val": "9b2d4d19-1e77-4ac7-9dc5-a3c02be14b1a^Kaduha Hospital^99DCT", "label": "Kaduha Hospital "},
+                {"val": "1ae17163-c8c9-44bd-b2eb-8c3f7771180b^KIBAGABAGA^99DCT", "label": "KIBAGABAGA Hospital "},
+                {"val": "eeac5a5c-1c33-4149-a0a5-3d7aef4fc673^Kibilizi Hospital^99DCT", "label": "Kibilizi Hospital "},
+                {"val": "697069e2-233d-44d4-a0fc-66557b01ef36^Kibogora Hospital^99DCT", "label": "Kibogora Hospital "},
+                {"val": "3aa054a5-8eca-4c4b-9d99-752c2ff86cc1^Kigeme Hospital^99DCT", "label": "Kigeme Hospital "},
+                {"val": "2dc4146e-cabd-4597-801b-5da3c2014a4a^Kirehe hospital^99DCT", "label": "Kirehe hospital "},
+                {"val": "6ecc713e-ced3-40ef-8638-5521cc867cff^Kirinda Hospital^99DCT", "label": "Kirinda Hospital "},
+                {"val": "b2f81d84-6c3e-4189-ba0e-f3897378bb93^Kiziguro District Hospital^99DCT", "label": "Kiziguro District Hospital "},
+                {"val": "5db13b6c-0706-4380-b645-db171a0ebd50^Mibilizi Hospital^99DCT", "label": "Mibilizi Hospital "},
+                {"val": "d14a8f85-2a68-4b27-9e4b-bc5364ff1508^Mugonero Hospital^99DCT", "label": "Mugonero Hospital "},
+                {"val": "94e1993c-e6cf-4e86-bb03-5e0912fccd24^Muhima Hospital^99DCT", "label": "Muhima Hospital "},
+                {"val": "a3cbcfd4-e362-4b59-a2de-6c43117b1a25^Muhororo Hospital^99DCT", "label": "Muhororo Hospital "},
+                {"val": "7364e504-c446-4144-9c13-57fca35d519e^Murunda Hospital^99DCT", "label": "Murunda Hospital "},
+                {"val": "62539c87-257a-45d3-ad98-1dfc469517d6^Nemba Hospital^99DCT", "label": "Nemba Hospital "},
+                {"val": "c2a42405-2be8-4a73-8250-c70ea8e643c3^Ngarama Hospital^99DCT", "label": "Ngarama Hospital "},
+                {"val": "8a75974a-67b6-4a57-8902-4217819dba4c^Nyagatare Hospital^99DCT", "label": "Nyagatare Hospital "},
+                {"val": "929e23c1-07c7-445e-8611-65a37e0f1aa5^Nyamata Hospital^99DCT", "label": "Nyamata Hospital "},
+                {"val": "e36e7e90-7d0e-44f9-80c9-529ee5356fb7^Nyanza Hospital^99DCT", "label": "Nyanza Hospital "},
+                {"val": "1a033e97-0411-4911-9183-a31d0ce3c750^Remera-Rukumo Hospital^99DCT", "label": "Remera-Rukumo Hospital "},
+                {"val": "d9c92270-44a1-4498-8a49-84d04f59cd48^Ruli Hospital^99DCT", "label": "Ruli Hospital "},
+                {"val": "12ad8530-0686-4559-be53-748de74caab2^Rutongo Hospital^99DCT", "label": "Rutongo Hospital "},
+                {"val": "83ee379e-1576-4401-9d37-687fb5bba296^SHYIRA HOSPITAL^99DCT", "label": "SHYIRA HOSPITAL "},
+                {"val": "9b04a9ee-60dd-46c6-8ce1-e3657ec55d67^Masaka Hospital^99DCT", "label": "Masaka Hospital "},
+                {"val": "2514bef8-5bc6-4657-bdf5-c5d82abc8e11^Munini Hospital^99DCT", "label": "Munini Hospital "},
+                {"val": "3cda8388-26fe-102b-80cb-0017a47871b2^RWINKWAVU^99DCT", "label": "RWINKWAVU Hospital "},
+                {"val": "bc64178d-d6a5-4289-88ec-debdd7a6f885^Bushenge Hospital^99DCT", "label": "Bushenge Hospital "},
+                {"val": "544547d4-dac5-49e3-9e0d-718a8fe324dc^Kinihira Hospital^99DCT", "label": "Kinihira Hospital "},
+                {"val": "f2e75b8c-b770-4019-a70e-7acec43c53ee^RWAMAGANA HOSPITAL^99DCT", "label": "Rwamagana HOSPITAL "},
+                {"val": "9020f09f-237f-4ccf-a3f9-8755044fbe29^Ruhango Hospital^99DCT", "label": "Ruhango Hospital "},
+                {"val": "3cb82e34-7ea2-44f6-af0b-f0ea4d995bf4^RUHENGERI HOSPITAL^99DCT", "label": "Ruhengeri Hospital "},
+                {"val": "3b49bab4-9e1f-425e-b597-47fa60606fc9^KIBUNGO HOSPITAL^99DCT", "label": "Kibungo Hospital "},
+                {"val": "b757c3c7-d259-419f-9fa8-56292c0d2d0d^Kibuye Hospital^99DCT", "label": "Kibuye Hospital "},
+                {"val": "68222ccb-71ee-418e-a4a4-b924b4e80108^Centre Hôspitalier Universitaire de Kigali (CHUK)^99DCT", "label": "CHUK Hospital "},
+                {"val": "2b472c6b-a0d4-44b1-bb2f-3d44289a19e5^Centre Hôspitalier Universitaire de Butare (CHUB)^99DCT", "label": "CHUB Hospital "},
+                {"val": "c8f88b6d-0781-4171-bf61-88f1681778d8^Rwanda Military Hospital^99DCT", "label": "Rwanda Military Hospital "},
+                {"val": "3cee7fb4-26fe-102b-80cb-0017a47871b2^OTHER NON-CODED^99DCT", "label": "Other "}
+            ];
+            document.setupAutoComplete('obs\\.healthFacility', WhereToRefer);
+            // helps in hide and show. Just set name of checkbox/radio to equate
+            // the class on div to hide, set activate/deactive class on the checkbox/radio
+            // to be clicked
+            $(document).on("click", function(event){
+                var classOfClicked = event.target.className;
+                var nameOfClicked = event.target.name;
+                var idOfClicked = event.target.id;
+                var parentElement = $("input[id='"+idOfClicked+"']").parent().parent();
+                if(parentElement.hasClass("checkboxGroup")) {
+                    parentElement.children().each(function () {
+                        var nameOfElement = $(this).find("input").attr("name");
+                        var idOfElement = $(this).find("input").attr("id");
+                        if(idOfElement!=idOfClicked){
+                           $("input[id='"+idOfElement+"']").prop('checked', false)
+                        }
+                        $("."+nameOfElement).hide();
+                    })
+                }
+                if($("input[id='"+idOfClicked+"']").prop('checked')){
+                    if(classOfClicked=="activate" ){
+                        $("div."+nameOfClicked).show();
+                    }
+                    else if (classOfClicked=="deactivate"){
+                        $("."+nameOfClicked).find("input").attr("checked",false);
+                        $("."+nameOfClicked).find("input").val("");
+                        $("div."+nameOfClicked).hide();
+                    }
+                    $("input[name='"+nameOfClicked+"']").each(function() {
+                        if(this.checked){
+                            this.checked=false;
+                        }
+                    });
+                    $("#"+idOfClicked).prop('checked',true);
+                }
+                else if(!$("input[id='"+idOfClicked+"']").prop('checked')){
+                    if(classOfClicked=="activate" ){
+                        $("."+nameOfClicked).find("input").attr("checked",false);
+                        $("."+nameOfClicked).find("input").val("");
+                        $("div."+nameOfClicked).hide();
+                    }
+                    else if (classOfClicked=="deactivate"){
+                        $("div."+nameOfClicked).show();
+                    }
+                }
+            });
+            $(".initialHide").hide();
+        });
+</script>
+
+</html>

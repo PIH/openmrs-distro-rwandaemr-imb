@@ -22,7 +22,7 @@
         <formconceptsVersion>2.0.1</formconceptsVersion>
         <groovyVersion>2.3.1-SNAPSHOT</groovyVersion>
         <heightweighttrackerVersion>2.1.0</heightweighttrackerVersion>
-        <htmlformentryVersion>4.4.0</htmlformentryVersion>
+        <htmlformentryVersion>5.1.0-SNAPSHOT</htmlformentryVersion>
         <htmlformflowsheetVersion>2.0.0</htmlformflowsheetVersion>
         <htmlwidgetsVersion>1.10.0</htmlwidgetsVersion>
         <idgenVersion>4.7.0</idgenVersion>

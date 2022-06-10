@@ -426,8 +426,7 @@ $j("#hivstatusentry").show();
                 <td>Clinique / Clinic: <encounterLocation
                         id="encounterLocation" />
                 </td>
-				<td>Accession Number<obs conceptId="$@ACCESSION_NUMBER@" />
-				<br/>
+				<td>
 				Phone <obs conceptId="3cda3d7e-26fe-102b-80cb-0017a47871b2" />
 				</td>
 
@@ -582,7 +581,7 @@ Consent signed
         </table>
         <br />
         <br />
-        Doctor submitting form (for external providers use "External Provider") <encounterProvider role="Oncology Provider" />
+        Person submitting form <encounterProvider default="currentUser"/>
 
     </section> <submit />
     <br/>

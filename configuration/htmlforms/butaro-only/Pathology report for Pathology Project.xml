@@ -625,7 +625,7 @@ $j("#hivstatusentry").show();
                 <td>Clinique / Clinic: <encounterLocation
                         id="encounterLocation" default="Butaro Hospital" />
                 </td>
-				<td>Assession Number<obs conceptId="$@ASSESSION_NUMBER@" />
+				<td>Accession Number<obs conceptId="$@ASSESSION_NUMBER@" />
 				</td>
 
             </tr>
@@ -636,10 +636,10 @@ $j("#hivstatusentry").show();
                 <td>
                     <br/>
                     <br/>
-                    Specimen Date:
+                    Date of Surgery:
                     <obs conceptId="$@Date_Biopsy_Specimen_Taken@"/>
 					<br/>
-					Specimen Submission Date
+					Specimen Reception Date
 					<obs conceptId="$@SPECIMENT_SUBMISSION_DATE@"/>
 
 					
@@ -656,13 +656,6 @@ $j("#hivstatusentry").show();
                 </td>
             </tr>
  
-            <tr>
-                <td>
-                    Date specimen received:
-                    <obs conceptId="$@DATE_OF_SPECIMEN_RECEIVED@"/>
-                    <hr/>
-                </td>
-            </tr>
 			<tr>
 
 				<td>
@@ -818,7 +811,7 @@ $j("#hivstatusentry").show();
 					Gross Description:
                     <obs conceptId="$@Gross_Description@" cols="100"/>
 					<br/>
-					Macroscopic Examination:
+					Microscopic Examination:
                     <obs conceptId="$@MACROSCOPIC_EXAMINATION@" cols="100"/>
 					<br/>
                     Conclusion:
@@ -827,6 +820,7 @@ $j("#hivstatusentry").show();
 					<br/>
 					Comment
 					<obs conceptId="$@PATHOLOGY_COMMENT@" cols="100"/>
+					<br/>
 					Pathologic diagnosis:
 					<obs conceptId="$@PATHOLOGIC_DIAGNOSIS@" />
                   

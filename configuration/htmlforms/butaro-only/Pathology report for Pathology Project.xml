@@ -171,9 +171,10 @@
 		@URETHRA@=3cd2a03c-26fe-102b-80cb-0017a47871b2
 		@OTHER_URINARY@=15a40ebf-f9f1-416c-b5a2-3761e9185779
 
+		@PATHOLOGIST_SIGNATURE@=416e958e-0287-4190-be1f-90d82974bec8
 		@PATHOLOGIST_VALIDATION@=1f7742f0-4571-44d8-a88b-8bc60dc11e29
 		@pathology_request_encounter_UUID@ = 4a1c767f-6bab-4938-b3f0-d3a5a3f9cd2c
-		@PATHOLGIC_DIAGNOSIS@=21f54f50-b804-476e-a0dd-a3238cd556fb
+		@PATHOLOGIC_DIAGNOSIS@=21f54f50-b804-476e-a0dd-a3238cd556fb
 		@PATHOLOGY_COMMENT@=e85305cf-ad93-4d1a-881e-53faf715fa8f
 
 		
@@ -624,7 +625,7 @@ $j("#hivstatusentry").show();
                 <td>Clinique / Clinic: <encounterLocation
                         id="encounterLocation" default="Butaro Hospital" />
                 </td>
-				<td>Assession Number<obs conceptId="$@ASSESSION_NUMBER@" />
+				<td>Accession Number<obs conceptId="$@ASSESSION_NUMBER@" />
 				</td>
 
             </tr>
@@ -638,6 +639,9 @@ $j("#hivstatusentry").show();
                     Date of Surgery:
                     <obs conceptId="$@Date_Biopsy_Specimen_Taken@"/>
 					<br/>
+					Specimen Reception Date
+					<obs conceptId="$@SPECIMENT_SUBMISSION_DATE@"/>
+
 					
 
                 </td>
@@ -652,13 +656,6 @@ $j("#hivstatusentry").show();
                 </td>
             </tr>
  
-            <tr>
-                <td>
-                    Date specimen received:
-                    <obs conceptId="$@DATE_OF_SPECIMEN_RECEIVED@"/>
-                    <hr/>
-                </td>
-            </tr>
 			<tr>
 
 				<td>
@@ -814,7 +811,7 @@ $j("#hivstatusentry").show();
 					Gross Description:
                     <obs conceptId="$@Gross_Description@" cols="100"/>
 					<br/>
-					Macroscopic Examination:
+					Microscopic Examination:
                     <obs conceptId="$@MACROSCOPIC_EXAMINATION@" cols="100"/>
 					<br/>
                     Conclusion:
@@ -823,10 +820,13 @@ $j("#hivstatusentry").show();
 					<br/>
 					Comment
 					<obs conceptId="$@PATHOLOGY_COMMENT@" cols="100"/>
+					<br/>
 					Pathologic diagnosis:
 					<obs conceptId="$@PATHOLOGIC_DIAGNOSIS@" />
                   
-                    
+                     <br />
+                                <br />
+                Canreg Code <obs conceptId="$@CANREG_CODE@" />
 
                 </td>
             </tr>

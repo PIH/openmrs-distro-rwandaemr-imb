@@ -1,0 +1,36 @@
+import org.openmrs.Encounter
+ questionConc=concept.getConcept("Mental Health Diagnosis")
+
+
+wrongConc = concept.getConcept("ABDOMINAL EXAM FINDINGS")
+rightConc = concept.getConcept("NO ABDOMINAL TENDERNESS")
+
+ //encounterTypes
+ pdcEnc=encounter.getEncounterType("Mental Health visit")
+ enTypes=[pdcEnc]
+
+enc=encounter.getEncounters(null,null,null,null,null,enTypes,null,null,null,false)
+
+ i=1;
+
+ for(obser in obs.getObservations(null,enc,null,null,null,null,null,null,null,null,null,false)){
+      if(obser.concept == questionConc){
+           if(obser.valueCoded == wrongConc){
+                if(i>800){
+                    break;
+                    }
+                print "${i}. ";
+                println "Question: ${obser.concept} "
+                println "answer: ${obser.valueCoded}<br />"
+                obser.setValueCoded(rightConc)
+                obs.saveObs(obser,"Changed obs Value coded due to change form concept mapping to mental health ICD-10 concept");
+
+
+         i++;
+          }
+
+      }
+
+ }
+
+ println "end"

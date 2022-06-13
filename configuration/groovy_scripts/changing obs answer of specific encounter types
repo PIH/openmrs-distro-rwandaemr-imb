@@ -1,0 +1,31 @@
+import org.openmrs.Encounter
+
+questionConc=concept.getConcept("ABDOMINAL EXAM FINDINGS")
+wrongConc = concept.getConcept("ABDOMINAL EXAM FINDINGS")
+rightConc = concept.getConcept("NO ABDOMINAL TENDERNESS")
+fixenca = encounter.getEncounterType("ASTHMA VISIT")
+fixencb = encounter.getEncounterType("CHRONIC KIDNEY DISEASE VISIT")
+fixencc = encounter.getEncounterType("HEART FAILURE VISIT")
+fixencd = encounter.getEncounterType("DIABETES VISIT")
+fixence = encounter.getEncounterType("HYPERTENSION VISIT")
+fixenclist=[fixenca,fixencb,fixencc,fixencd,fixence]
+
+enc=encounter.getEncounters(null,null,null,null,null,fixenclist,null,null,null,false)
+
+i=1;
+for(obser in obs.getObservations(null,enc,null,null,null,null,null,null,null,null,null,false)){
+    if(obser.concept == questionConc){
+        if(obser.valueCoded == wrongConc){
+            if(i>800){
+                break;
+            }
+         print "${i}. ";
+         println "Question: ${obser.concept} "
+         println "answer: ${obser.valueCoded}<br />"
+         obser.setValueCoded(rightConc)
+         obs.saveObs(obser,"Changed obs Valuecoded due to wrong form concept mapping on heart failure enrollment form");
+         i++;
+      }
+   }
+}
+println "end"

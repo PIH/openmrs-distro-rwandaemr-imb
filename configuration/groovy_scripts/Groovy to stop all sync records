@@ -1,0 +1,15 @@
+
+
+import java.util.*;import org.openmrs.*;
+import org.openmrs.api.*;
+import org.openmrs.api.context.Context;
+
+def sql(s) { admin.executeSQL(s,false) }
+
+stopCurrentSyncRecords = sql("""
+update sync_record set state = 'NOT_SUPPOSED_TO_SYNC' where state !='COMMITTED'
+""");
+
+stopCurrentSyncServerRecords = sql("""
+update sync_server_record set state = 'NOT_SUPPOSED_TO_SYNC' where state !='COMMITTED'
+""");

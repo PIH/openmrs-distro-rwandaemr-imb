@@ -1,0 +1,7 @@
+
+/** NOTE: This is for concept whose datatype is not coded.**/
+
+
+conceptID=8757
+
+concept.deleteConcept(concept.getConcept(conceptID))

@@ -1,0 +1,43 @@
+import org.openmrs.Encounter
+import org.openmrs.Form
+import java.util.*
+import java.text.*
+
+//  N.B: check for Id of the servers that you are going to use this for.
+/*
+    - to unvoid obs by changing the false of the 'encounter.getEncounters' to true and the false of 'obs.getObservations' to true
+            and uncomment 'obs.unvoidObs(obser)'
+    - to change concept question change the true of 'encounter.getEncounters' to false
+        and the true of 'obs.getObservations' to false and uncomment 'obser.setConcept(newConceptQuestion)' and
+            'obs.saveObs(obser,"correcting antibiotic therapy data from Method of delivery concept of the pdc referral form")'
+*/
+METHODOFDELIVERY=concept.getConcept(5630)
+newConceptQuestion=concept.getConcept(9310)
+PDCReferralForm = form.getForm(217);
+List<Form> forms=new ArrayList<Form>()
+forms.add(PDCReferralForm);
+enc=encounter.getEncounters(null,null,null,null,forms,null,null,null,null,false)
+i=1;
+for(obser in obs.getObservations(null,enc,null,null,null,null,null,null,null,null,null,false)){
+
+    SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
+    obsDateGiven = ft.parse('2018-5-18T00:00:00')
+
+    if(obser.concept == METHODOFDELIVERY && obser.isVoided()== false
+            && obser.getObsDatetime()>obsDateGiven){
+
+        println "${obser.concept}<br />"
+        println "${obser.getObsDatetime()}<br />"
+        println "${obser.obsId}";
+        println "upper"
+        //obser.setConcept(newConceptQuestion)
+        //obs.saveObs(obser,"correcting antibiotic therapy data from Method of delivery concept of the pdc referral form")
+
+        //obs.unvoidObs(obser);
+        i++;
+    }
+
+    println "outer"
+}
+println "${i}";
+println "end"

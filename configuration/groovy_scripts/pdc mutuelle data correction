@@ -1,0 +1,41 @@
+import org.openmrs.Encounter
+import org.openmrs.Concept
+int i=0,j=0,h=0;
+def sql(s) { admin.executeSQL(s,false) };
+/** NOTE:
+ -remove the person_id and limit on the first query and uncomment the "obs.voidObs" row.
+ -due to the missing data on 6464 i added person_id and limit for easy of changes observation.
+ **/
+// select obs that have specified question concept that are voided and with the voided reason.
+rs = sql("""  SELECT  person_id,concept_id,encounter_id,value_coded  from obs where  concept_id=2065 and voided=1 and  void_reason='Changed obs Value coded due to wrong date entery in forms'
+   """);
+//loop through the results and provided values of an obs that will be based on to loop for related one to void.
+rs.each {
+    row ->(pr,conc,enc,vC) = row
+        currentEncounterId=encounter.getEncounter(enc)
+        currentValueCodedId=concept.getConcept(vC)
+        currentConceptId=concept.getConcept(conc)
+        currentPersonId=person.getPerson(pr)
+        println "1  person:"+pr+"concept question:"+conc+"encounter:"+enc+" "+" value coded:"+vC;
+
+
+        // loop through obs whose person and concept a equivalant to the given voided obs given above
+        for (o in obs.getObservationsByPersonAndConcept(currentPersonId,currentConceptId)){
+
+            // checking if the obs have the same value coded, encouter same as the base obs and which are not voided
+            if (o.getValueCoded()==currentValueCodedId && o.isVoided()==false && o.getEncounter()== currentEncounterId){
+                obs.voidObs(o, 'groovy error correction with this message(Changed obs Value coded due to wrong date entery in forms)')
+                j++;
+            }
+
+            h++;
+        }
+
+
+        i++;
+}
+
+println "Total obs :"+ i;
+print "Total obs voided :"+ j;
+
+print "Total total obs :"+ h;

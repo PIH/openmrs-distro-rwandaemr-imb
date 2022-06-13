@@ -1,0 +1,75 @@
+/*NOTE:
+There are two commented parts in this groovy,one that is supposed to be run on production and another to child serve.
+so you will have to uncomment the one you need and comment another.
+
+*/
+
+// plz set the patient uuid
+PatientUuid= null;
+
+
+if(PatientUuid){
+def sql(s) { admin.executeSQL(s,false) }
+
+
+/*this is for production server*/
+
+/*
+int PP=0;
+pprs = sql("""SELECT uuid from patient_program WHERE patient_id in (SELECT person_id FROM person WHERE uuid="${PatientUuid}");""")
+pprs.each { row -> (uuid) = row
+
+PP++;   
+}
+println "Number of programs patient enrolled in : ${PP}";
+
+
+countRecordsToChange = sql("""SELECT COUNT(record_id) FROM sync_server_record where record_id in  (select record_id from sync_record where payload like  "%${PatientUuid}%" AND state !='COMMITTED')""");
+println "Number of non committed record: ${countRecordsToChange}";
+
+countCurrentlyNotsupposedtosync = sql("""SELECT  COUNT(record_id) FROM sync_server_record where state =  'NOT_SUPPOSED_TO_SYNC' and record_id in  (select record_id from  sync_record where payload like  "%${PatientUuid}%" AND state !='COMMITTED')""");
+println "Current not supposed to sync : ${countCurrentlyNotsupposedtosync}";
+
+updateSSRrs = sql("""update sync_server_record set state = 'NOT_SUPPOSED_TO_SYNC' where record_id in (select record_id from sync_record where payload like "%${PatientUuid}%" AND state !="COMMITTED")""");
+
+countTTNotsupposedtosync = sql("""SELECT COUNT(record_id) FROM sync_server_record where state = 'NOT_SUPPOSED_TO_SYNC' and record_id in  (select record_id from sync_record where payload like  "%${PatientUuid}%" AND state !='COMMITTED')""");
+println "total Not supposed to sync records after update: ${countTTNotsupposedtosync}";
+
+changedRecords = countTTNotsupposedtosync - countCurrentlyNotsupposedtosync;
+println "Number of changed records : ${changedRecords}";
+
+
+println "End";
+
+*/
+
+
+/*this is for child server*/
+
+/*
+int PP = 0;
+pprs = sql("""SELECT uuid from patient_program WHERE patient_id in (SELECT person_id FROM person WHERE uuid="${PatientUuid}");""")
+pprs.each { row -> (uuid) = row
+
+  PP++;
+}
+println "Number of programs patient enrolled in : ${PP}";
+
+countSRrs = sql("""SELECT COUNT(record_id) FROM sync_record where payload like "%${PatientUuid}%" AND state !='COMMITTED'""");
+println "Number of non committed records : ${countSRrs}";
+
+countCurrentlyNotsupposedtosync =  sql("""SELECT COUNT(record_id) FROM sync_record where state = 'NOT_SUPPOSED_TO_SYNC' and payload like "%${PatientUuid}%" AND state !='COMMITTED'""");
+println "Current not supposed to sync : ${countCurrentlyNotsupposedtosync}";
+
+updateSRrs  = sql("""update sync_record set state = 'NOT_SUPPOSED_TO_SYNC' where  payload like "%${PatientUuid}%" AND state !='COMMITTED'""");
+
+countTTNotsupposedtosync = sql("""SELECT COUNT(record_id) FROM sync_record where state = 'NOT_SUPPOSED_TO_SYNC' and payload like "%${PatientUuid}%" AND state !='COMMITTED'""");
+println "total Not supposed to sync records after update: ${countTTNotsupposedtosync}";
+countTTNotsupposedtosync
+changedRecords = (countTTNotsupposedtosync - countCurrentlyNotsupposedtosync);
+println "Number of changed records : ${changedRecords[][]}";
+
+println "End";
+*/
+
+}

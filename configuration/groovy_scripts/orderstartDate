@@ -1,0 +1,22 @@
+import java.util.*;
+import org.openmrs.*;
+import org.openmrs.api.*;
+import org.openmrs.api.context.Context;
+
+def sql(s) { admin.executeSQL(s,false) };
+
+rs = sql("""  select uuid from orders where start_date>'2019-03-29' and voided=0 and date_created>='2019-03-20'  """);
+
+rs.each {
+    row ->(orderUuid) = row
+
+        Theorder = order.getOrderByUuid(orderUuid);
+        println "Order:" + order
+        if (Theorder != null) {
+            println "order.setStartDate:" + Theorder.getStartDate();
+            //Theorder.setStartDate(Theorder.getDateCreated());
+            println "order.setStartDate:" + Theorder.getStartDate();
+
+        }
+
+}

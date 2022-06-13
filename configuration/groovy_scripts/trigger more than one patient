@@ -1,0 +1,107 @@
+import java.util.*;
+import org.openmrs.*;
+import org.openmrs.api.*;
+import org.openmrs.api.context.Context;
+
+Date now = new Date();
+List<String> patientUuids = new ArrayList<String>();
+patientUuids = ["0000ac48-efd6-423c-bff5-6be6c4fa7ee7",
+"00011aaf-bf2d-4f99-a4c3-4aa10a0b6f50",
+"0001b7e0-5bdf-445f-9fb8-759ad967d964",
+"0002bf53-5e4a-4112-88a8-c6328444c2a2"];
+for(patientUuid in patientUuids){
+
+
+    if (patientUuid != null) {
+         p = patient.getPatientByUuid(patientUuid);
+         p.setDateChanged(now);
+
+         for (pn in p.names) {
+             pn.setDateChanged(now);
+         }
+
+         for (pa in p.addresses) {
+             pa.setDateChanged(now);
+         }
+
+         for (pa in p.attributes) {
+             pa.setDateChanged(now);
+         }
+
+         for (pi in p.identifiers) {
+             pi.setDateChanged(now);
+         }
+
+         patient.savePatient(p);
+         println "Saved Patient " + p;
+
+         for (r in person.getRelationshipsByPerson(p)) {
+             r.setDateChanged(now);
+             person.saveRelationship(r);
+             println "Saved relationship " + r;
+         }
+
+         for (e in encounter.getEncountersByPatient(p)) {
+             e.setDateChanged(now);
+             if (e.visit != null) {
+                  e.visit.setDateChanged(now);
+             }
+             for (o in e.orders) {
+                o.setDateChanged(now);
+             }
+             for (o in e.obs) {
+                o.setDateChanged(now);
+             }
+
+             for (ep in e.encounterProviders) {
+                  ep.setDateChanged(now);
+                  if (ep.encounterRole != null) {
+                      ep.encounterRole.setDateChanged(now);
+                  }
+             }
+             encounter.saveEncounter(e);
+             println "Saved encounter " + e;
+         }
+
+        visitService = Context.getService(VisitService.class);
+        for (v in visitService.getVisitsByPatient(p)) {
+            v.setDateChanged(now);
+            visitService.saveVisit(v);
+            println "Saved visit " + v;
+        }
+
+        for (o in order.getDrugOrdersByPatient(p, OrderService.ORDER_STATUS.ANY, true)) {
+            Date dateCreated = o.getDateCreated();
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(dateCreated);
+            cal.add(Calendar.SECOND, 1);
+            o.setDateCreated(cal.getTime());
+            order.saveOrder(o);
+            println "Saved drug order " + o;
+        }
+
+        for (o in obs.getObservationsByPerson(p)) {
+            if (o.encounter == null) {
+                Date dateCreated = o.getDateCreated();
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(dateCreated);
+                cal.add(Calendar.SECOND, 1);
+                o.setDateCreated(cal.getTime());
+                obs.saveObs(o, 'Resaving patient and all data for sync');
+                println "Saved obs " + o;
+            }
+        }
+
+         for (pp in program.getPatientPrograms(p, null, null, null, null, null, true)) {
+             pp.setDateChanged(now);
+             for (ps in pp.states) {
+                  ps.setDateChanged(now);
+             }
+             program.savePatientProgram(pp);
+             println "Saved patient program " + pp.id;
+         }
+    }
+    else {
+        println "You need to enter a patientUuid at the top of the script to use it"
+    }
+}

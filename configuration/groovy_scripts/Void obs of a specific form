@@ -1,0 +1,26 @@
+import org.openmrs.Encounter
+import org.openmrs.Form
+//  N.B: check for Id of the servers that you are going to use this for.
+METHODOFDELIVERY=concept.getConcept(2066)
+PDCReferralForm = form.getForm(217);
+List<Form> forms=new ArrayList<Form>()
+forms.add(PDCReferralForm);
+enc=encounter.getEncounters(null,null,null,null,forms,null,null,null,null,false)
+i=1;
+for(obser in obs.getObservations(null,enc,null,null,null,null,null,null,null,null,null,false)){
+    if(obser.concept == METHODOFDELIVERY){
+        //if(i>100){
+        //break;
+        // }
+        println "${obser.concept}<br />"
+        println "${obser.valueCoded}<br />"
+        println "upper"
+        obs.voidObs(obser,"Voided the obs due to PDC referral form wrong coding Ticket:RWA-487");
+        i++;
+
+
+    }
+    println "outer"
+}
+println "${i}";
+println "end"

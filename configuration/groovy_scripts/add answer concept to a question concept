@@ -1,0 +1,49 @@
+import org.openmrs.api.context.Context;
+
+//concept id for question
+conceptID=98685
+
+//concept ids for answers
+
+
+    List<String> ConcIds = new ArrayList<String>();
+    pp=0;
+
+    double a,b,x,k,start,end;
+
+
+    a=10148; b=96429; k=100;
+def sql(s) { admin.executeSQL(s,false) }
+
+    for(x=53;x<=100;x++){
+
+    start = a+(x*(b-a)/k);
+
+    end = a + ((x+1)*(b-a)/k);
+
+
+        pprs = sql("""select concept_id from concept_name  where name like "% - %" and concept_id>="${start}" and concept_id<="${end}" ;""")
+        pprs.each { row -> (concept_id) = row
+
+            ConcIds.add(concept_id);
+            pp++
+
+        }
+
+    //icdConceptIDs=[10148,10149];
+    icdConceptIDs=ConcIds;
+
+    c = concept.getConcept(conceptID);
+
+    for (caid in icdConceptIDs)
+    {
+    ca = new org.openmrs.ConceptAnswer(concept.getConcept(caid));
+    c.addAnswer(ca)
+    }
+    concept.saveConcept(c)
+
+    Context.flushSession();
+    Context.clearSession();
+    }
+
+    println x;

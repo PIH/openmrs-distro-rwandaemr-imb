@@ -1,0 +1,108 @@
+import java.util.*;
+import org.openmrs.*;
+import org.openmrs.api.*;
+import org.openmrs.api.context.Context;
+
+IsPDConcQuestion = concept.getConceptByName("is this a primary diagnosis");
+YesConc = concept.getConceptByName("YES");
+MHDConcQuestion = concept.getConceptByName("Mental Health Diagnosis");
+StopRConc = concept.getConceptByName("Mental Health Diagnosis Stopping Reason");
+MHEncounterType = encounter.getEncounterType("Mental Health visit");
+MHDiagnosisform = form.getForm("MH Diagnosis");
+i=1;
+ def sql(s) { admin.executeSQL(s,false) }
+
+        pprs = sql("""select * from patient_state where state in (
+                        SELECT program_workflow_state_id FROM program_workflow_state where program_workflow_id in
+                        (SELECT program_workflow_id FROM program_workflow where concept_id in (
+                        select concept_id from concept_name where name="Primary Diagnosis"))
+                        ) and voided=0 limit 10;
+                    """)
+        pprs.each { row -> (PsId,patient_program_id,state,start_date,end_date,creator_id,date_created,changed_by,date_changed) = row
+
+                patient = Context.getProgramWorkflowService().getPatientProgram(patient_program_id).getPatient();
+                if(Context.getProviderService().getProvidersByPerson(person.getPerson( user.getUser(creator_id)))){
+                    creator = user.getUser(creator_id);
+                }else{
+                   creator = user.getUserByUsername("jbyiringiro");
+                }
+
+                location = Context.getProgramWorkflowService().getPatientProgram(patient_program_id).getLocation();
+                programEnrollmentdate = Context.getProgramWorkflowService().getPatientProgram(patient_program_id).getDateEnrolled();
+                stateconc = Context.getProgramWorkflowService().getState(state).getConcept();
+
+
+        // println("${i}.  Patient Program: ${patient_program_id}. patient State: ${state}. Start  Date: ${start_date}. End date: ${end_date}. creator Id: ${creator_id}.  date created: ${date_created}. Patient: ${patient}. Creator: ${creator}.  Location: ${location}. State Concept: ${stateconc}. Date changed:  ${date_changed}");
+            //creating ecounter
+            Encounter enc = new Encounter();
+            enc.setEncounterType(MHEncounterType);
+            enc.setPatient(patient);
+            enc.setLocation(location);
+            if(start_date){
+                enc.setEncounterDatetime(start_date);
+            }else{
+                enc.setEncounterDatetime(programEnrollmentdate);
+            }
+            enc.setProvider(creator);
+            enc.setDateCreated(date_created);
+            enc.setForm(MHDiagnosisform);
+            diagnosisEnc = encounter.saveEncounter(enc).getEncounterId();
+            //creating obs.
+
+            Obs ob = new Obs();
+            ob.setPerson(person.getPerson(patient));
+            ob.setConcept(MHDConcQuestion);
+            ob.setEncounter(encounter.getEncounter(diagnosisEnc));
+            if(start_date){
+                ob.setObsDatetime(start_date);
+            }else{
+                ob.setObsDatetime(programEnrollmentdate);
+            }
+            ob.setDateCreated(date_created);
+            ob.setLocation(location);
+            ob.setValueCoded(stateconc);
+            ob.setCreator(creator);
+            ob.setComment("diagnosis obs for Mental Health diagnosis changed from states to obs");
+            obs.createObs(ob);
+
+            if(end_date){
+                changedBy = user.getUser(changed_by);
+                Obs stoppingReasonObs  = new Obs();
+                stoppingReasonObs.setPerson(person.getPerson(patient));
+                stoppingReasonObs.setConcept(StopRConc);
+                stoppingReasonObs.setEncounter(encounter.getEncounter(diagnosisEnc));
+                stoppingReasonObs.setObsDatetime(end_date);
+                stoppingReasonObs.setDateCreated(date_changed);
+                stoppingReasonObs.setLocation(location);
+                stoppingReasonObs.setValueAsString("Stopped based on state data during data changing");
+                stoppingReasonObs.setCreator(changedBy);
+                stoppingReasonObs.setComment("Stopping Reason obs for Mental Health diagnosis changed from states to obs");
+                obs.createObs(stoppingReasonObs);
+            }
+            patientState = Context.getProgramWorkflowService().getPatientState(PsId);
+            patientState.setVoided(true);
+            patientState.setVoidReason("Mental Health diagnosis changing from states to obs");
+            patientState.setVoidedBy(Context.getUserService().getUser(1));
+            println("diagnosisEnc");
+
+            println("the encounter: " + diagnosisEnc);
+         i++;
+
+        }
+
+println("end");
+
+
+
+
+
+
+
+
+
+println("Is this a primary diagnosis Concept: ${IsPDConcQuestion}");
+println("Yes Concept: ${YesConc}");
+println("Mental Health Diagnosis Concept: ${MHDConcQuestion}");
+println("Mental Health Diagnosis Stopping Reason Concept: ${StopRConc}");
+println("Mental Health visit Encounter Type : ${MHEncounterType}");
+println("MH Diagnosis form: ${MHDiagnosisform}");

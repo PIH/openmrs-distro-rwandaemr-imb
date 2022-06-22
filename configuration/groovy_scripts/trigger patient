@@ -1,0 +1,31 @@
+import java.util.*;
+import org.openmrs.*;
+import org.openmrs.api.*;
+import org.openmrs.api.context.Context;
+
+String patientUuid = null;
+
+Date now = new Date();
+
+if (patientUuid != null) {
+     p = patient.getPatientByUuid(patientUuid);
+     p.setDateChanged(now);
+
+     for (e in encounter.getEncountersByPatient(p)) {
+         e.setDateChanged(now);
+
+         for (ep in e.encounterProviders) {
+              ep.setDateChanged(now);
+              if (ep.encounterRole != null) {
+                  ep.encounterRole.setDateChanged(now);
+              }
+         }
+         encounter.saveEncounter(e);
+         println "Saved encounter " + e;
+     }
+
+
+}
+else {
+    println "You need to enter a patientUuid at the top of the script to use it"
+}

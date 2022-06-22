@@ -1,0 +1,23 @@
+
+Card_consult = form.getForm("Cardiology Consultation");
+
+
+newEnType=encounter.getEncounterType(23);
+
+//list of forms
+//theForms=[NCD_Call_Log,NCD_Asthma_Exit,NCD_ckd_Exit,NCD_diabets_Exit,NCD_Exit,NCD_HF_Exit,NCD_HPT_Exit,Asthma_Exit,Diabetes_Exit,Heart_Failure_Exit,Hypertension_Exit_Form];
+theForms=[Card_consult];
+
+i=0
+for (enc in encounter.getEncounters(null,null,null,null,theForms,null,null,null,null,true)){
+enc.setEncounterType(newEnType);
+encounter.saveEncounter(enc);
+
+i=i+1
+if(i==100){
+break
+}
+print "${i} ${enc.encounterType}";
+print "\n"
+}
+

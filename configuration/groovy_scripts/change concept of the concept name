@@ -1,0 +1,17 @@
+theConceptNameId=
+
+        theOldConcept=
+                theNewConcept=
+
+                        cn=concept.getConceptName(theConceptNameId)
+oldC=concept.getConcept(theOldConcept);
+newC=concept.getConcept(theNewConcept);
+
+println "<h2> ${cn.name} ${cn.uuid}</h2>";
+if(oldC==cn.getConcept()){
+    println "okkk";
+    //cn.setConcept(newC);
+//if the concept name was previously voided uncomment this to.    
+//cn.setVoided(false);
+
+}

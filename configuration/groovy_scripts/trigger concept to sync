@@ -1,0 +1,47 @@
+
+    Date now = new Date();
+    List<String> ConcIds = new ArrayList<String>();
+    pp=0;i=0;j=0;
+
+
+    startWith = 19201; //populate this with 'Last Concepts checked' concept diplayed.
+    endWith = 122032;  // fillied once.
+def sql(s) { admin.executeSQL(s,false) }
+
+pprs = sql("""select * from concept where class_id!=19 and concept_id in (select concept_id from concept_name  where name like "% - %" and concept_id>="${startWith}" and concept_id<="${endWith}");""")
+
+        pprs.each { row -> (concept_id) = row
+
+            ConcIds.add(concept_id);
+            pp++
+
+        }
+
+    icdConceptIDs=ConcIds;
+
+    for(int conc: icdConceptIDs){
+
+        c=concept.getConcept(conc);
+        if(c.getConceptClass() !=ICDClass ){
+
+            conceptId=conc;
+            c=concept.getConcept(conceptId);
+            c.setDateChanged(now);
+            concept.saveConcept(c);
+            i++;
+
+        }
+        if(i>=100){
+            break;
+        }
+        j=conc;
+    }
+
+
+    println("Concepts selected to be changed= "+pp);
+    println("Concepts changed= "+i);
+    println("Last Concepts checked= " + j);
+
+
+
+

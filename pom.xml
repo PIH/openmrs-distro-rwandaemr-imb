@@ -53,10 +53,33 @@
         <usagestatisticsVersion>2.1.0</usagestatisticsVersion>
         <validationVersion>2.0.0</validationVersion>
         <webservicesRestVersion>2.36.0</webservicesRestVersion>
+        <spamodulesVersion>1.0.9-SNAPSHOT</spamodulesVersion>
+        <fhir2Version>1.3.0</fhir2Version>
         <pathologyappVersion>1.0.7</pathologyappVersion>
         <legacyuinavbarappVersion>1.0.0</legacyuinavbarappVersion>
         <imbpathologyrequestVersion>1.0.0-SNAPSHOT</imbpathologyrequestVersion>
-        <spamodulesVersion>1.0.9-SNAPSHOT</spamodulesVersion>
+        <patientchartappVersion>3.2.1-pre.85</patientchartappVersion>
+        <fromentryappVersion>3.2.1-pre.85</fromentryappVersion>
+        <genericpatientwidgetsappVersion>3.2.1-pre.85</genericpatientwidgetsappVersion>
+        <patientallergiesappVersion>3.2.1-pre.85</patientallergiesappVersion>
+        <patientappointmentsappVersion>3.2.1-pre.85</patientappointmentsappVersion>
+        <patientattachmentsappVersion>3.2.1-pre.85</patientattachmentsappVersion>
+        <patientbannerappVersion>3.2.1-pre.85</patientbannerappVersion>
+        <patientbiomentricsappVersion>3.2.1-pre.85</patientbiomentricsappVersion>
+        <patientcommonlibVersion>3.2.1-pre.85</patientcommonlibVersion>
+        <patientconditionsappVersion>3.2.1-pre.85</patientconditionsappVersion>
+        <patientformsappVersion>3.2.1-pre.85</patientformsappVersion>
+        <patientimmunizationsappVersion>3.2.1-pre.85</patientimmunizationsappVersion>
+        <patientmedicationsappVersion>3.2.1-pre.85</patientmedicationsappVersion>
+        <patientnotesappVersion>3.2.1-pre.85</patientnotesappVersion>
+        <patientprogramsappVersion>3.2.1-pre.85</patientprogramsappVersion>
+        <patienttestresultsappVersion>3.2.1-pre.85</patienttestresultsappVersion>
+        <patientvitalsappVersion>3.2.1-pre.85</patientvitalsappVersion>
+        <primarynavigationappVersion>3.4.1-pre.82</primarynavigationappVersion>
+        <implementertoolsappVersion>3.4.1-pre.85</implementertoolsappVersion>
+        <devtoolsappVersion>3.3.1</devtoolsappVersion>
+
+
     </properties>
 
     <scm>

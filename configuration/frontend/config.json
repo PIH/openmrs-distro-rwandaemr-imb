@@ -1,8 +1,7 @@
 {
-    "@openmrs/esm-patient-chart-app": {
+  "@openmrs/esm-patient-chart-app": {
     "extensionSlots": {
       "patient-chart-dashboard-slot": {
-        
         "remove": [
           "allergies-summary-dashboard",
           "conditions-summary-dashboard",
@@ -13,22 +12,21 @@
       "patient-chart-summary-dashboard-slot": {
         "add": [
           "attachments-overview-widget",
-		  "obs-by-encounter-widget#NEUTROPHIL",
-		  "obs-by-encounter-widget#VISITDATES",
-		  "obs-by-encounter-widget#BIOMETRICS"
+          "obs-by-encounter-widget#NEUTROPHIL",
+          "obs-by-encounter-widget#VISITDATES",
+          "obs-by-encounter-widget#BIOMETRICS"
         ],
-		"remove": [
+        "remove": [
           "conditions-overview-widget",
           "allergies-overview-widget",
           "immunization-overview-widget",
-		  "appointments-overview-widget",
-          "active-medications-widget",
+          "appointments-overview-widget",
           "test-results-summary-widget",
           "past-visits-overview",
-		  "notes-overview-widget",
-		  "test-results-timeline"
+          "notes-overview-widget",
+          "test-results-timeline"
         ],
-		"configure": {
+        "configure": {
           "obs-by-encounter-widget#NEUTROPHIL": {
             "title": "Neutrophil",
             "data": [
@@ -37,60 +35,59 @@
                 "concept": "48348ce0-af6a-47a9-8671-1bbeb37dd500",
                 "color": "red"
               },
-			  {
+              {
                 "label": "%Neutrophil",
                 "concept": "3cd6a592-26fe-102b-80cb-0017a47871b2",
-                "color": "blue"				  
-			  }
+                "color": "blue"
+              }
             ]
-          }, 
-		  "obs-by-encounter-widget#VISITDATES": {
+          },
+          "obs-by-encounter-widget#VISITDATES": {
             "title": "Visit Dates",
             "data": [
-        
-			  {
+              {
                 "label": "Routine Outpatient",
                 "concept": "a7aa7d20-3520-4d8a-9324-f7b8f6a3b109",
-                "color": "blue"				  
-			  },
-			  {
+                "color": "blue"
+              },
+              {
                 "label": "Special Consultation",
                 "concept": "7ec61380-3cde-4b7a-a322-4678a0b460c4",
                 "color": "red"
               },
-			  {
+              {
                 "label": "Communicate pathology results",
                 "concept": "56001c5f-1a8a-4d80-b255-d1de983a852e",
                 "color": "red"
               },
-			  {
+              {
                 "label": "Perform Biopsy",
                 "concept": "ea843dde-d33b-4687-88cb-5cd76111b48b",
                 "color": "red"
               },
-			  {
+              {
                 "label": "Outpatient-RMH",
                 "concept": "8eba01f9-2ea0-49d0-b61b-8d6001e2ff7b",
                 "color": "red"
               },
-			  {
+              {
                 "label": "Chemotherapy - Adult Inpatient",
                 "concept": "6de4e3ee-fe8d-427e-b38f-1703e80f8513",
                 "color": "red"
               },
-			  {
+              {
                 "label": "Pediatric routine",
                 "concept": "8c3b045a-aa94-4361-b2e9-8a80c26ccede",
                 "color": "red"
               },
-			  {
+              {
                 "label": "Pediatric Chemotherapy",
                 "concept": "5efb51db-4e71-497d-822c-91501ac167f6",
                 "color": "red"
               }
             ]
           },
-		  "obs-by-encounter-widget#BIOMETRICS": {
+          "obs-by-encounter-widget#BIOMETRICS": {
             "title": "Biometrics - without muac",
             "data": [
               {
@@ -98,48 +95,77 @@
                 "concept": "3ce93cf2-26fe-102b-80cb-0017a47871b2",
                 "color": "red"
               },
-			  {
+              {
                 "label": "WEIGHT",
                 "concept": "3ce93b62-26fe-102b-80cb-0017a47871b2",
-                "color": "red"				  
-			  }
+                "color": "red"
+              }
             ]
           }
-		}
-
+        }
       }
     }
   },
-     "@openmrs/esm-patient-vitals-app":{
-      "concepts":{
-         "systolicBloodPressureUuid": "3ce934fa-26fe-102b-80cb-0017a47871b2",
-         "diastolicBloodPressureUuid": "3ce93694-26fe-102b-80cb-0017a47871b2",
-		 "pulseUuid": "3ce93824-26fe-102b-80cb-0017a47871b2",
-         "temperatureUuid": "3ce939d2-26fe-102b-80cb-0017a47871b2",
-        "oxygenSaturationUuid": "3ce9401c-26fe-102b-80cb-0017a47871b2",
-        "respiratoryRateUuid": "3ceb11f8-26fe-102b-80cb-0017a47871b2",
-		"heightUuid": "3ce93cf2-26fe-102b-80cb-0017a47871b2",
-        "weightUuid": "3ce93b62-26fe-102b-80cb-0017a47871b2"
-      },
-	  "vitals": {
+  "@openmrs/esm-patient-vitals-app": {
+    "concepts": {
+      "systolicBloodPressureUuid": "3ce934fa-26fe-102b-80cb-0017a47871b2",
+      "diastolicBloodPressureUuid": "3ce93694-26fe-102b-80cb-0017a47871b2",
+      "pulseUuid": "3ce93824-26fe-102b-80cb-0017a47871b2",
+      "temperatureUuid": "3ce939d2-26fe-102b-80cb-0017a47871b2",
+      "oxygenSaturationUuid": "3ce9401c-26fe-102b-80cb-0017a47871b2",
+      "respiratoryRateUuid": "3ceb11f8-26fe-102b-80cb-0017a47871b2",
+      "heightUuid": "3ce93cf2-26fe-102b-80cb-0017a47871b2",
+      "weightUuid": "3ce93b62-26fe-102b-80cb-0017a47871b2"
+    },
+    "vitals": {
       "encounterTypeUuid": "daf32375-d293-4e27-a68d-2a58494c96e1",
       "formUuid": "5a70541e-71ea-4163-bd9e-2412e7b085f3"
     }
-   },
-     "@openmrs/esm-patient-biometrics-app": {
+  },
+  "@openmrs/esm-patient-biometrics-app": {
     "concepts": {
       "heightUuid": "3ce93cf2-26fe-102b-80cb-0017a47871b2",
       "weightUuid": "3ce93b62-26fe-102b-80cb-0017a47871b2",
-	  "muacUuid": "4326b04b-3158-417a-bb8d-ad022295b0f4"
+      "muacUuid": "4326b04b-3158-417a-bb8d-ad022295b0f4"
     }
   },
-    "@openmrs/esm-patient-forms-app": {
+  "@openmrs/esm-patient-forms-app": {
     "htmlFormEntryForms": [
-		{"formUuid": "20316666-2ce5-462c-b4eb-1e728e2d8663",
-		"formName": "Adult HIV Flowsheet - New Lab",
+      {
+        "formUuid": "20316666-2ce5-462c-b4eb-1e728e2d8663",
+        "formName": "Adult HIV Flowsheet - New Lab",
         "formUiResource": "file:htmlforms/common/adult-hiv-flowsheet---new-lab.xml",
-		"formUiPage": "enterHtmlFormWithStandardUi"       }
+        "formUiPage": "enterHtmlFormWithStandardUi"
+      }
     ]
+  },
+  "@openmrs/esm-patient-medications-app": {
+    "durationUnitsConcept": "07b2a2ec-602d-479a-9f44-a8b5828825eb",
+    "careSettingUuid": "6f0c9a92-6f24-11e3-af88-005056821db0"
+  },
+  "@pih/esm-pathology-app": {
+    "pathologyEncTypeUUID": "70f18a24-92ec-4de5-acdc-7cae77414e32",
+    "healthCenterAttrTypeUUID": "8d87236c-c2cc-11de-8d13-0010c6dffd0f",
+    "pathologyFullAllowedLocationUUID": "a62fd59a-6577-43e0-b39c-ba42ac8cfbc9",
+    "sampleStatusConceptUUID": "3adca58e-9334-4be5-9bd3-74f7bbf82776",
+    "referralStatusConceptUUID": "5a7a931f-97b8-4d59-b0de-3a83603aaad9",
+    "sampleDropOffconceptUUID": "dc288e6c-84a4-4fd3-9136-ef9e13961b1e",
+    "yesConceptUUID": "3cd6f600-26fe-102b-80cb-0017a47871b2",
+    "yesConceptName": "YES",
+    "pathologyResultsFromID": 5613,
+    "pathologyResultsApprovedconceptUUID": "1f7742f0-4571-44d8-a88b-8bc60dc11e29",
+    "AccessionNumberconceptUUID" : "0e466f59-8070-45b5-97d1-575ec5cfd85d",
+    "DateBiopsySpecimenTakenconceptUUID" : "e0436a5b-dc19-4cb9-ac1b-acc005272c08",
+    "SpecimenSubmissionDateconceptUUID" : "3928b7fc-b3ae-40a5-846f-d480120b04f6",
+    "SendingPhysicianconceptUUID" : "0a4a22db-0e82-4669-9aba-086d841505b5",
+    "OtherBiopsyLocationconceptUUID" : "7c4650ee-45d5-435a-b968-511ef127a016",
+    "OrganSystemconceptUUID": "b88f9524-6b39-41b3-9b3a-f9a7a4b08fed",
+    "OrganconceptUUID" : "488fe4a2-7903-41da-b21e-fb236a1ee356",
+    "SpecimenDetailconceptUUID" : "e99170a5-f46b-490b-8fbb-bb9eacba3500",
+    "OtherTestsOrProceduresconceptUUID" : "66ad3230-59b2-4232-821e-a9ae86819e03",
+    "GrossDescriptionconceptUUID" : "1e97a4d3-1691-4fb7-be78-18e526e82b0b",
+    "MacroscopicExaminationconceptUUID" : "5d149510-0767-4da7-82cd-be406b34877d",
+    "COMMENTSATCONCLUSIONOFEXAMINATIONconceptUUID" : "3cdc5938-26fe-102b-80cb-0017a47871b2",
+    "CanregCodeconceptUUID" : "16931672-e068-4ea8-a89c-2ee7dbc07ad1"
   }
-  
 }

@@ -78,7 +78,11 @@
         <primarynavigationappVersion>3.4.1-pre.82</primarynavigationappVersion>
         <implementertoolsappVersion>3.4.1-pre.85</implementertoolsappVersion>
         <devtoolsappVersion>3.3.1</devtoolsappVersion>
-
+		<loginappVersion>3.4.1-pre.102</loginappVersion>
+		<homeappVersion>3.1.1-pre.81</homeappVersion>
+		<patientsearchappVersion>3.1.1-pre.184</patientsearchappVersion>
+		
+		
 
     </properties>
 

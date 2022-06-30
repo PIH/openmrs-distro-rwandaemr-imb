@@ -119,28 +119,28 @@
                 <label>Next Step:</label>
             </div>
             <label class="font-normal">
-                <input id="obs.CallAsNextStep" name="obs.NextStep" type="radio"
+                <input class="activate" id="obs.CallAsNextStep" name="NextStep" type="radio"
                        data-concept="e79ccc1c-903a-453f-871b-2e40a47ad23e^call log next step^99DCT"
                        value="ce01fc27-05c3-425e-877a-5dbb52a9ae6a^Phone call^99DCT">
                 Call again
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.CHWVisitAsNextStep" name="obs.NextStep" type="radio"
+                <input class="deactivate" id="obs.CHWVisitAsNextStep" name="NextStep" type="radio"
                        data-concept="e79ccc1c-903a-453f-871b-2e40a47ad23e^call log next step^99DCT"
                        value="355b7292-69af-414e-8985-086ec802e017^CHW Visit^99DCT">
                 CHW Visit
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.NewAppointmentAsNextStep" name="obs.NextStep" type="radio"
+                <input id="NewAppointmentAsNextStep" name="NextStep" type="radio"
                        data-concept="e79ccc1c-903a-453f-871b-2e40a47ad23e^call log next step^99DCT"
                        value="5a2cd0f1-aeb1-4f9d-ae56-1023a336acfb^RDV Changed^99DCT">
                 New Appointment
             </label>
             <br/>
             <label class="font-normal">
-                <input id="obs.PatientWillNotReturnAsNextStep" name="obs.NextStep" type="radio"
+                <input class="deactivate" id="obs.PatientWillNotReturnAsNextStep" name="NextStep" type="radio"
                        data-concept="e79ccc1c-903a-453f-871b-2e40a47ad23e^call log next step^99DCT"
                        value="95fc1647-ddc8-4a78-80cb-2049c6cb706a^patient will not return^99DCT">
                 patient will not return
@@ -148,7 +148,7 @@
 
         </fieldset>
     </div>
-    <div class="section">
+    <div class="section nextVisit NextStep initialHide">
         <fieldset>
         <label class="font-normal">
             Date of next visit:
@@ -165,7 +165,7 @@
         </fieldset>
     </div>
 
-    <div class="form-group">
+    <div class="form-group callResults NextStep initialHide">
         <fieldset>
             <div>
                 <label>Result of call:</label>
@@ -259,6 +259,55 @@
                     toggleValidationMessages(errors);
                 }
             });
+            // helps in hide and show. Just set name of checkbox/radio to equate
+            // the class on div to hide, set activate/deactive class on the checkbox/radio
+            // to be clicked
+            $(document).on("click", function(event){
+                var classOfClicked = event.target.className;
+                var nameOfClicked = event.target.name;
+                var idOfClicked = event.target.id;
+                var parentElement = $("input[id='"+idOfClicked+"']").parent().parent();
+                if(parentElement.hasClass("checkboxGroup")) {
+                    parentElement.children().each(function () {
+                        var nameOfElement = $(this).find("input").attr("name");
+                        var idOfElement = $(this).find("input").attr("id");
+                        if(idOfElement!=idOfClicked){
+                           $("input[id='"+idOfElement+"']").prop('checked', false)
+                        }
+                        $("."+nameOfElement).hide();
+                    })
+                }
+                if($("input[id='"+idOfClicked+"']").prop('checked')){
+                    if(classOfClicked=="activate" ){
+                        $("div."+nameOfClicked).show();
+                    }
+                    else if (classOfClicked=="deactivate"){
+                        $("."+nameOfClicked).find("input").attr("checked",false);
+                        $("."+nameOfClicked).find("input").val("");
+                        $("div."+nameOfClicked).hide();
+                    }
+                }
+                else if(!$("input[id='"+idOfClicked+"']").prop('checked')){
+                    if(classOfClicked=="activate" ){
+                        $("."+nameOfClicked).find("input").attr("checked",false);
+                        $("."+nameOfClicked).find("input").val("");
+                        $("div."+nameOfClicked).hide();
+                    }
+                    else if (classOfClicked=="deactivate"){
+                        $("div."+nameOfClicked).show();
+                    }
+                }
+            });
+            $('#NewAppointmentAsNextStep').change(function(){
+                if($("input[id='NewAppointmentAsNextStep']").prop('checked')){
+                    $(".nextVisit").show()
+                    $(".callResults").hide()
+                }else{
+                    $(".callResults").show()
+                    $(".nextVisit").hide()
+                }
+            })
+            $(".initialHide").hide();
         });
 </script>
 

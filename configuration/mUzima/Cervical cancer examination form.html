@@ -113,7 +113,7 @@
             </label>
         </fieldset>
     </div>
-    <div class="form-group">
+    <div class="form-group LevelOfCare">
         <fieldset>
             <div>
                 <label>Entry mode:</label>
@@ -137,7 +137,7 @@
             </div>
         </fieldset>
     </div>
-    <div >
+    <div class="LevelOfCare referralReason">
         <label class="font-normal"> <strong> Reason for referral in: </strong> </label>
         <br/>
         <label class="font-normal">
@@ -234,53 +234,53 @@
     <hr/>
     <h3>Client Information</h3>
     <hr/>
-    <div class="section">
-        <fieldset>
-            <!--        <div class="form-group">-->
-            <!--            <label for="obs.phoneOne">Phone(1)</label>-->
-            <!--            <input id="obs.phoneOne" class="form-control" name="obs.phoneOne" type="tel" data-concept="3cda3d7e-26fe-102b-80cb-0017a47871b2^TELEPHONE NUMBER^99DCT"/>-->
-            <!--        </div>-->
-            <!--        <div class="form-group">-->
-            <!--            <label for="obs.phoneTWO">Phone(2)</label>-->
-            <!--            <input id="obs.phoneTWO" class="form-control" name="obs.phoneTWO" type="tel" data-concept="bcddbe7e-04dc-4494-a330-d5b54c4a4dd0^Emergency contact phone number^99DCT"/>-->
-            <!--        </div>-->
-            <!--            <div class="form-group">-->
-            <!--                <label for="obs.CHWNames">CHW Names</label>-->
-            <!--                <input id="obs.CHWNames" class="form-control" name="obs.CHWNames" type="text" data-concept="899c6350-b3b0-409f-9e13-34d23fc5f1bb^Community health worker Names^99DCT"/>-->
-            <!--            </div>-->
-            <!--            <div class="form-group">-->
-            <!--                <label for="obs.CHWPhone">CHW Phone No.</label>-->
-            <!--                <input id="obs.CHWPhone" class="form-control" name="obs.CHWPhone" type="tel" data-concept="5c9cb4a0-7b67-4c00-a926-ff7eaa8f0089^ACCOMPAGNATEUR PHONE NUMBER^99DCT"/>-->
-            <!--            </div>-->
-            <div class="form-group">
-                <label >Reason for visit (check one)</label>
-                <label class="font-normal">
-                    <input id="BreastScreening" name="visitReason" type="checkbox"
-                           data-concept="86a2cf11-1ea5-4b8a-9e4b-08f4cdbe1346^REASON FOR VISIT^99DCT"
-                           value="ebd55bf3-6c07-4c2d-a3f4-c0f107c49b7e^Breast screening^99DCT">
-                    Breast screening
-                </label>
-                <label class="font-normal">
-                    <input id="cervicScreening" name="visitReason" type="checkbox"
-                           data-concept="86a2cf11-1ea5-4b8a-9e4b-08f4cdbe1346^REASON FOR VISIT^99DCT"
-                           value="8651ef08-c01d-4341-bbcd-a0ff7ed08b3b^Cervix screening^99DCT">
-                    Cervix screening
-                </label>
-                <label class="font-normal">
-                    <input id="ScreeningforBoth" name="visitReason" type="checkbox"
-                           data-concept="86a2cf11-1ea5-4b8a-9e4b-08f4cdbe1346^REASON FOR VISIT^99DCT"
-                           value="ae407511-2568-4e40-8a7c-7e495967ccd3^Screening for both^99DCT">
-                    Screening for Both
-                </label>
-                <label class="font-normal">
-                    <input id="Breastconcerns" name="visitReason" type="checkbox"
-                           data-concept="86a2cf11-1ea5-4b8a-9e4b-08f4cdbe1346^REASON FOR VISIT^99DCT"
-                           value="ae85aa47-6ece-470c-8f9c-adf0b5afa708^Breast concerns^99DCT">
-                    Breast concerns
-                </label>
-            </div>
-        </fieldset>
-    </div>
+<!--    <div class="section">-->
+<!--        <fieldset>-->
+<!--            &lt;!&ndash;        <div class="form-group">&ndash;&gt;-->
+<!--            &lt;!&ndash;            <label for="obs.phoneOne">Phone(1)</label>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <input id="obs.phoneOne" class="form-control" name="obs.phoneOne" type="tel" data-concept="3cda3d7e-26fe-102b-80cb-0017a47871b2^TELEPHONE NUMBER^99DCT"/>&ndash;&gt;-->
+<!--            &lt;!&ndash;        </div>&ndash;&gt;-->
+<!--            &lt;!&ndash;        <div class="form-group">&ndash;&gt;-->
+<!--            &lt;!&ndash;            <label for="obs.phoneTWO">Phone(2)</label>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <input id="obs.phoneTWO" class="form-control" name="obs.phoneTWO" type="tel" data-concept="bcddbe7e-04dc-4494-a330-d5b54c4a4dd0^Emergency contact phone number^99DCT"/>&ndash;&gt;-->
+<!--            &lt;!&ndash;        </div>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <div class="form-group">&ndash;&gt;-->
+<!--            &lt;!&ndash;                <label for="obs.CHWNames">CHW Names</label>&ndash;&gt;-->
+<!--            &lt;!&ndash;                <input id="obs.CHWNames" class="form-control" name="obs.CHWNames" type="text" data-concept="899c6350-b3b0-409f-9e13-34d23fc5f1bb^Community health worker Names^99DCT"/>&ndash;&gt;-->
+<!--            &lt;!&ndash;            </div>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <div class="form-group">&ndash;&gt;-->
+<!--            &lt;!&ndash;                <label for="obs.CHWPhone">CHW Phone No.</label>&ndash;&gt;-->
+<!--            &lt;!&ndash;                <input id="obs.CHWPhone" class="form-control" name="obs.CHWPhone" type="tel" data-concept="5c9cb4a0-7b67-4c00-a926-ff7eaa8f0089^ACCOMPAGNATEUR PHONE NUMBER^99DCT"/>&ndash;&gt;-->
+<!--            &lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;                <label >Reason for visit (check one)</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                <label class="font-normal">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <input id="BreastScreening" name="visitReason" type="checkbox"&ndash;&gt;-->
+<!--&lt;!&ndash;                           data-concept="86a2cf11-1ea5-4b8a-9e4b-08f4cdbe1346^REASON FOR VISIT^99DCT"&ndash;&gt;-->
+<!--&lt;!&ndash;                           value="ebd55bf3-6c07-4c2d-a3f4-c0f107c49b7e^Breast screening^99DCT">&ndash;&gt;-->
+<!--&lt;!&ndash;                    Breast screening&ndash;&gt;-->
+<!--&lt;!&ndash;                </label>&ndash;&gt;-->
+<!--&lt;!&ndash;                <label class="font-normal">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <input id="cervicScreening" name="visitReason" type="checkbox"&ndash;&gt;-->
+<!--&lt;!&ndash;                           data-concept="86a2cf11-1ea5-4b8a-9e4b-08f4cdbe1346^REASON FOR VISIT^99DCT"&ndash;&gt;-->
+<!--&lt;!&ndash;                           value="8651ef08-c01d-4341-bbcd-a0ff7ed08b3b^Cervix screening^99DCT">&ndash;&gt;-->
+<!--&lt;!&ndash;                    Cervix screening&ndash;&gt;-->
+<!--&lt;!&ndash;                </label>&ndash;&gt;-->
+<!--&lt;!&ndash;                <label class="font-normal">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <input id="ScreeningforBoth" name="visitReason" type="checkbox"&ndash;&gt;-->
+<!--&lt;!&ndash;                           data-concept="86a2cf11-1ea5-4b8a-9e4b-08f4cdbe1346^REASON FOR VISIT^99DCT"&ndash;&gt;-->
+<!--&lt;!&ndash;                           value="ae407511-2568-4e40-8a7c-7e495967ccd3^Screening for both^99DCT">&ndash;&gt;-->
+<!--&lt;!&ndash;                    Screening for Both&ndash;&gt;-->
+<!--&lt;!&ndash;                </label>&ndash;&gt;-->
+<!--&lt;!&ndash;                <label class="font-normal">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <input id="Breastconcerns" name="visitReason" type="checkbox"&ndash;&gt;-->
+<!--&lt;!&ndash;                           data-concept="86a2cf11-1ea5-4b8a-9e4b-08f4cdbe1346^REASON FOR VISIT^99DCT"&ndash;&gt;-->
+<!--&lt;!&ndash;                           value="ae85aa47-6ece-470c-8f9c-adf0b5afa708^Breast concerns^99DCT">&ndash;&gt;-->
+<!--&lt;!&ndash;                    Breast concerns&ndash;&gt;-->
+<!--&lt;!&ndash;                </label>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--        </fieldset>-->
+<!--    </div>-->
     <hr/>
     <!--    <div class="section">-->
     <!--        <fieldset>-->
@@ -1171,165 +1171,167 @@
     </fieldset>
     <fieldset>
         <div class="section concept-set">
-            <h3 class="font-normal">Management</h3>
-            <label class="font-normal"> <strong> Treatment performed: </strong> </label>
-            <br/>
-            <label class="font-normal">
-                <input class="activate" id="ManagementTreatmentPerformedYes" name="ManagementTreatmentPerformed" type="checkbox"
-                       data-concept="ae47a54a-9111-475c-9cc2-76951d78b0c8^Treatment performed^99DCT"
-                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-                Yes
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input class="deactivate" id="ManagementTreatmentPerformedNo" name="ManagementTreatmentPerformed" type="checkbox"
-                       data-concept="ae47a54a-9111-475c-9cc2-76951d78b0c8^Treatment performed^99DCT"
-                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-                No
-            </label>
-            <br/>
-            <div class="ManagementTreatmentPerformed">
-                <label class="font-normal">Treatment type: </label>
+            <div id="managementDiv">
+                <h3 class="font-normal">Management</h3>
+                <label class="font-normal"> <strong> Treatment performed: </strong> </label>
                 <br/>
                 <label class="font-normal">
-                    <input id="ManagementTypeOfTreatmentPerformedThermoAblation" name="ManagementTypeOfTreatmentPerformed" type="checkbox"
-                           data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"
-                           value="ef4d5bd3-2c4e-4ac2-9b91-9d4ba12b44f8^thermal-ablation^99DCT">
-                    Thermal-ablation
+                    <input class="activate" id="ManagementTreatmentPerformedYes" name="ManagementTreatmentPerformed" type="checkbox"
+                           data-concept="ae47a54a-9111-475c-9cc2-76951d78b0c8^Treatment performed^99DCT"
+                           value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                    Yes
                 </label>
                 <br/>
                 <label class="font-normal">
-                    <input id="ManagementTypeOfTreatmentPerformedCryotherapy" name="ManagementTypeOfTreatmentPerformed" type="checkbox"
-                           data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"
-                           value="e48bc8db-8f6e-4556-9083-0a000a136e95^Cryotherapy^99DCT">
-                    Cryotherapy(DH)
+                    <input class="deactivate" id="ManagementTreatmentPerformedNo" name="ManagementTreatmentPerformed" type="checkbox"
+                           data-concept="ae47a54a-9111-475c-9cc2-76951d78b0c8^Treatment performed^99DCT"
+                           value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                    No
+                </label>
+                <br/>
+                <div class="ManagementTreatmentPerformed">
+                    <label class="font-normal">Treatment type: </label>
+                    <br/>
+                    <label class="font-normal">
+                        <input id="ManagementTypeOfTreatmentPerformedThermoAblation" name="ManagementTypeOfTreatmentPerformed" type="checkbox"
+                               data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"
+                               value="ef4d5bd3-2c4e-4ac2-9b91-9d4ba12b44f8^thermal-ablation^99DCT">
+                        Thermal-ablation
+                    </label>
+                    <br/>
+                    <label class="font-normal">
+                        <input id="ManagementTypeOfTreatmentPerformedCryotherapy" name="ManagementTypeOfTreatmentPerformed" type="checkbox"
+                               data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"
+                               value="e48bc8db-8f6e-4556-9083-0a000a136e95^Cryotherapy^99DCT">
+                        Cryotherapy(DH)
+                    </label>
+                    <br/>
+                    <label class="font-normal">
+                        <input id="ManagementTypeOfTreatmentPerformedLEEP" name="ManagementTypeOfTreatmentPerformed" type="checkbox"
+                               data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"
+                               value="55040927-bae5-410c-80da-c79f7574167f^Loop Electrosurgical Excision Procedure^99DCT">
+                        LEEP(DH)
+                    </label>
+                </div>
+                <br/>
+                <div class="ManagementTreatmentPerformed">
+                    <label class="font-normal"> <strong> Other treatment (if other diagnosis)  </strong> </label>
+                    <br/>
+                    <label class="font-normal">
+                        <input id="obs.othertreatment" class="form-control" name="obs.othertreatment"
+                               type="text" data-concept="96f682a8-fcca-445a-ad61-9209740daf8d^Other Treatment^99DCT"/>
+                    </label>
+                </div>
+                <br/>
+                <label class="font-normal"> <strong> Disposition:  </strong> </label>
+                <br/>
+                <label class="font-normal">
+                    <input class="deactivate" id="DispositionDischarged" name="Disposition" type="checkbox"
+                           data-concept="0af3dbde-15f5-102d-96e4-000c29c2a5d7^DISPOSITION^99DCT"
+                           value="6340fd67-facb-4a6c-a9d9-f629c9e53053^DISCHARGED^99DCT">
+                    Discharged,no follow up needed
                 </label>
                 <br/>
                 <label class="font-normal">
-                    <input id="ManagementTypeOfTreatmentPerformedLEEP" name="ManagementTypeOfTreatmentPerformed" type="checkbox"
-                           data-concept="f7719cd4-e591-4a39-8bfe-9dd93d3cab89^Type of Treatment performed^99DCT"
-                           value="55040927-bae5-410c-80da-c79f7574167f^Loop Electrosurgical Excision Procedure^99DCT">
-                    LEEP(DH)
+                    <input class="deactivate" id="DispositionFollowup" name="Disposition" type="checkbox"
+                           data-concept="0af3dbde-15f5-102d-96e4-000c29c2a5d7^DISPOSITION^99DCT"
+                           value="d0e94536-0b91-40a1-b994-04bb4f5cd15d^Follow-up at this health facility^99DCT">
+                    Follow-up at this health facility
                 </label>
+                <br/>
+                <label class="font-normal">
+                    <input class="activate" id="DispositionReferred" name="Disposition" type="checkbox"
+                           data-concept="0af3dbde-15f5-102d-96e4-000c29c2a5d7^DISPOSITION^99DCT"
+                           value="3cdd5c02-26fe-102b-80cb-0017a47871b2^PATIENT TRANSFERRED OUT^99DCT">
+                    referred to (facility name):
+                </label>
+                <br/>
+                <label class="font-normal">
+                    <input class="form-control " id="obs.healthFacility" type="text" placeholder="Start typing something...">
+                    <input class="form-control" name="obs.healthFacility" type="hidden" data-concept="3a84ab37-f75c-48ad-8bcf-322c927f36bb^referred to (coded)^99DCT">
+                </label>
+                <!--            <br/>-->
+                <!--            <label class="font-normal"> <strong> Referred:  </strong> </label>-->
+                <!--            <br/>-->
+                <!--            <label class="font-normal">-->
+                <!--                <input class="activate" id="obs.PatientReferredOutYes" name="PatientReferredOut" type="radio"-->
+                <!--                       data-concept="805f40f2-4720-4474-b761-5880c9d3870e^has patient been referred^99DCT"-->
+                <!--                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">-->
+                <!--                Yes-->
+                <!--            </label>-->
+                <!--            <br/>-->
+                <!--            <label class="font-normal">-->
+                <!--                <input class="activate" id="obs.PatientReferredOutNo" name="PatientReferredOut" type="radio"-->
+                <!--                       data-concept="805f40f2-4720-4474-b761-5880c9d3870e^has patient been referred^99DCT"-->
+                <!--                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">-->
+                <!--                No-->
+                <!--            </label>-->
+                <br/>
+                <div class="Disposition">
+                    <label class="font-normal"> <strong> Referral reason: </strong> </label>
+                    <br/>
+                    <label class="font-normal">
+                        <input id="ManagementReferralReasonSuspectedCancer" name="ManagementReferralReason" type="checkbox"
+                               data-concept="1aa373f4-4db5-4b01-bce0-c10a636bb931^Reasons for Referral^99DCT"
+                               value="476123d7-54f1-4278-92f1-2de4f19ae951^Suspected cancer diagnosis^99DCT">
+                        Suspected cancer
+                    </label>
+                    <br/>
+                    <label class="font-normal">
+                        <input id="ManagementReferralReasonThermoAblation" name="ManagementReferralReason" type="checkbox"
+                               data-concept="1aa373f4-4db5-4b01-bce0-c10a636bb931^Reasons for Referral^99DCT"
+                               value="ef4d5bd3-2c4e-4ac2-9b91-9d4ba12b44f8^thermo-ablation^99DCT">
+                        Thermal ablation
+                    </label>
+                    <br/>
+                    <label class="font-normal">
+                        <input id="ManagementReferralReasonCryotherapy" name="ManagementReferralReason" type="checkbox"
+                               data-concept="1aa373f4-4db5-4b01-bce0-c10a636bb931^Reasons for Referral^99DCT"
+                               value="e48bc8db-8f6e-4556-9083-0a000a136e95^Cryotherapy^99DCT">
+                        Cryotherapy
+                    </label>
+                    <br/>
+                    <label class="font-normal">
+                        <input id="ManagementReferralReasonLEEP" name="ManagementReferralReason" type="checkbox"
+                               data-concept="1aa373f4-4db5-4b01-bce0-c10a636bb931^Reasons for Referral^99DCT"
+                               value="55040927-bae5-410c-80da-c79f7574167f^Loop Electrosurgical Excision Procedure^99DCT">
+                        LEEP
+                    </label>
+                    <br/>
+                    <label class="font-normal">
+                        <input id="ManagementReferralReasonOther" name="ManagementReferralReason" type="checkbox"
+                               data-concept="1aa373f4-4db5-4b01-bce0-c10a636bb931^Reasons for Referral^99DCT"
+                               value="3cee7fb4-26fe-102b-80cb-0017a47871b2^OTHER NON-CODED^99DCT">
+                        Other reasons
+                    </label>
+                </div>
+                <br/>
+                <div>
+                    <label class="font-normal">
+                        <input id="obs.ManagementReferralOtherReasonText" class="form-control" name="obs.ManagementReferralOtherReasonText"
+                               type="text" data-concept="eea065ac-117b-4be9-976b-2948b29046b7^Other reason for referral^99DCT"/>
+                    </label>
+                </div>
+                <!--            <label class="font-normal"> <strong> Date of referral: </strong> </label>-->
+                <!--            <label class="font-normal">-->
+                <!--                <input id="obs.ManagementDateOfReferral" class="form-control" name="obs.ManagementDateOfReferral"-->
+                <!--                       type="Date" data-concept="5f96394b-2620-4ce3-b5d1-a4aa6108c70f^Date of Referring^99DCT"/>-->
+                <!--            </label>-->
+                <br/>
+                <!--            <label class="font-normal"> <strong> Referred to (facility name):  </strong> </label>-->
+                <!--            <br/>-->
+                <!--            <label class="font-normal">-->
+                <!--                <input class="form-control " id="obs.healthFacility" type="text" placeholder="Start typing something...">-->
+                <!--                <input class="form-control" name="obs.healthFacility" type="hidden" data-concept="3a84ab37-f75c-48ad-8bcf-322c927f36bb^referred to (coded)^99DCT">-->
+                <!--            </label>-->
+                <!--            <br/>-->
+                <!--            <label class="font-normal"> <strong> referral completion date: </strong> </label>-->
+                <!--            <br/>-->
+                <!--            <label class="font-normal">-->
+                <!--                <input id="obs.ManagementReferralCompletionDate" class="form-control" name="obs.ManagementReferralCompletionDate"-->
+                <!--                       type="Date" data-concept="2ec83708-c126-48f2-b5f8-0ce37500e11b^Referral completion Date^99DCT"/>-->
+                <!--            </label>-->
             </div>
-            <br/>
-            <div class="ManagementTreatmentPerformed">
-                <label class="font-normal"> <strong> Other treatment (if other diagnosis)  </strong> </label>
-                <br/>
-                <label class="font-normal">
-                    <input id="obs.othertreatment" class="form-control" name="obs.othertreatment"
-                           type="text" data-concept="96f682a8-fcca-445a-ad61-9209740daf8d^Other Treatment^99DCT"/>
-                </label>
-            </div>
-            <br/>
-            <label class="font-normal"> <strong> Disposition:  </strong> </label>
-            <br/>
-            <label class="font-normal">
-                <input class="deactivate" id="DispositionDischarged" name="Disposition" type="checkbox"
-                       data-concept="0af3dbde-15f5-102d-96e4-000c29c2a5d7^DISPOSITION^99DCT"
-                       value="6340fd67-facb-4a6c-a9d9-f629c9e53053^DISCHARGED^99DCT">
-                Discharged,no follow up needed
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input class="deactivate" id="DispositionFollowup" name="Disposition" type="checkbox"
-                       data-concept="0af3dbde-15f5-102d-96e4-000c29c2a5d7^DISPOSITION^99DCT"
-                       value="d0e94536-0b91-40a1-b994-04bb4f5cd15d^Follow-up at this health facility^99DCT">
-                Follow-up at this health facility
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input class="activate" id="DispositionReferred" name="Disposition" type="checkbox"
-                       data-concept="0af3dbde-15f5-102d-96e4-000c29c2a5d7^DISPOSITION^99DCT"
-                       value="3cdd5c02-26fe-102b-80cb-0017a47871b2^PATIENT TRANSFERRED OUT^99DCT">
-                referred to (facility name):
-            </label>
-            <br/>
-            <label class="font-normal">
-                <input class="form-control " id="obs.healthFacility" type="text" placeholder="Start typing something...">
-                <input class="form-control" name="obs.healthFacility" type="hidden" data-concept="3a84ab37-f75c-48ad-8bcf-322c927f36bb^referred to (coded)^99DCT">
-            </label>
-            <!--            <br/>-->
-            <!--            <label class="font-normal"> <strong> Referred:  </strong> </label>-->
-            <!--            <br/>-->
-            <!--            <label class="font-normal">-->
-            <!--                <input class="activate" id="obs.PatientReferredOutYes" name="PatientReferredOut" type="radio"-->
-            <!--                       data-concept="805f40f2-4720-4474-b761-5880c9d3870e^has patient been referred^99DCT"-->
-            <!--                       value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">-->
-            <!--                Yes-->
-            <!--            </label>-->
-            <!--            <br/>-->
-            <!--            <label class="font-normal">-->
-            <!--                <input class="activate" id="obs.PatientReferredOutNo" name="PatientReferredOut" type="radio"-->
-            <!--                       data-concept="805f40f2-4720-4474-b761-5880c9d3870e^has patient been referred^99DCT"-->
-            <!--                       value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">-->
-            <!--                No-->
-            <!--            </label>-->
-            <br/>
-            <div class="Disposition">
-                <label class="font-normal"> <strong> Referral reason: </strong> </label>
-                <br/>
-                <label class="font-normal">
-                    <input id="ManagementReferralReasonSuspectedCancer" name="ManagementReferralReason" type="checkbox"
-                           data-concept="1aa373f4-4db5-4b01-bce0-c10a636bb931^Reasons for Referral^99DCT"
-                           value="476123d7-54f1-4278-92f1-2de4f19ae951^Suspected cancer diagnosis^99DCT">
-                    Suspected cancer
-                </label>
-                <br/>
-                <label class="font-normal">
-                    <input id="ManagementReferralReasonThermoAblation" name="ManagementReferralReason" type="checkbox"
-                           data-concept="1aa373f4-4db5-4b01-bce0-c10a636bb931^Reasons for Referral^99DCT"
-                           value="ef4d5bd3-2c4e-4ac2-9b91-9d4ba12b44f8^thermo-ablation^99DCT">
-                    Thermal ablation
-                </label>
-                <br/>
-                <label class="font-normal">
-                    <input id="ManagementReferralReasonCryotherapy" name="ManagementReferralReason" type="checkbox"
-                           data-concept="1aa373f4-4db5-4b01-bce0-c10a636bb931^Reasons for Referral^99DCT"
-                           value="e48bc8db-8f6e-4556-9083-0a000a136e95^Cryotherapy^99DCT">
-                    Cryotherapy
-                </label>
-                <br/>
-                <label class="font-normal">
-                    <input id="ManagementReferralReasonLEEP" name="ManagementReferralReason" type="checkbox"
-                           data-concept="1aa373f4-4db5-4b01-bce0-c10a636bb931^Reasons for Referral^99DCT"
-                           value="55040927-bae5-410c-80da-c79f7574167f^Loop Electrosurgical Excision Procedure^99DCT">
-                    LEEP
-                </label>
-                <br/>
-                <label class="font-normal">
-                    <input id="ManagementReferralReasonOther" name="ManagementReferralReason" type="checkbox"
-                           data-concept="1aa373f4-4db5-4b01-bce0-c10a636bb931^Reasons for Referral^99DCT"
-                           value="3cee7fb4-26fe-102b-80cb-0017a47871b2^OTHER NON-CODED^99DCT">
-                    Other reasons
-                </label>
-            </div>
-            <br/>
-            <div>
-                <label class="font-normal">
-                    <input id="obs.ManagementReferralOtherReasonText" class="form-control" name="obs.ManagementReferralOtherReasonText"
-                           type="text" data-concept="eea065ac-117b-4be9-976b-2948b29046b7^Other reason for referral^99DCT"/>
-                </label>
-            </div>
-            <!--            <label class="font-normal"> <strong> Date of referral: </strong> </label>-->
-            <!--            <label class="font-normal">-->
-            <!--                <input id="obs.ManagementDateOfReferral" class="form-control" name="obs.ManagementDateOfReferral"-->
-            <!--                       type="Date" data-concept="5f96394b-2620-4ce3-b5d1-a4aa6108c70f^Date of Referring^99DCT"/>-->
-            <!--            </label>-->
-            <br/>
-            <!--            <label class="font-normal"> <strong> Referred to (facility name):  </strong> </label>-->
-            <!--            <br/>-->
-            <!--            <label class="font-normal">-->
-            <!--                <input class="form-control " id="obs.healthFacility" type="text" placeholder="Start typing something...">-->
-            <!--                <input class="form-control" name="obs.healthFacility" type="hidden" data-concept="3a84ab37-f75c-48ad-8bcf-322c927f36bb^referred to (coded)^99DCT">-->
-            <!--            </label>-->
-            <!--            <br/>-->
-            <!--            <label class="font-normal"> <strong> referral completion date: </strong> </label>-->
-            <!--            <br/>-->
-            <!--            <label class="font-normal">-->
-            <!--                <input id="obs.ManagementReferralCompletionDate" class="form-control" name="obs.ManagementReferralCompletionDate"-->
-            <!--                       type="Date" data-concept="2ec83708-c126-48f2-b5f8-0ce37500e11b^Referral completion Date^99DCT"/>-->
-            <!--            </label>-->
             <label class="font-normal"> <strong>Date of next visit:  </strong> </label>
             <br/>
             <label class="font-normal">
@@ -1576,6 +1578,41 @@
                     }
                 }
             });
+            $('#ScreeningTypeHPV').change(function(){
+                if($("input[id='ScreeningTypeHPV']").prop('checked')){
+                    $("#managementDiv").hide()
+                }else{
+                    $("#managementDiv").show()
+                }
+            })
+            $('#ScreeningTypePapSmear').change(function(){
+                if($("input[id='ScreeningTypePapSmear']").prop('checked')){
+                    $("#managementDiv").show()
+                }
+            })
+            $('#ScreeningTypeVIA').change(function(){
+                if($("input[id='ScreeningTypeVIA']").prop('checked')){
+                    $("#managementDiv").show()
+                }
+            })
+
+            $('#LevelOfCareHospital').change(function(){
+                if($("input[id='LevelOfCareHospital']").prop('checked') && $("input[id='EntryModeVoluntary']").prop('checked')){
+                    $(".referralReason").hide()
+                }else{
+                    $(".referralReason").show()
+                }
+            })
+            $('#EntryModeVoluntary').change(function(){
+                if($("input[id='LevelOfCareHospital']").prop('checked') && $("input[id='EntryModeVoluntary']").prop('checked')){
+                    $(".referralReason").hide()
+                }else{
+                    $(".referralReason").show()
+                }
+            })
+            if($("#patient\\.sex").val()=="M"){
+                alert("This form is not recommended for a male client");
+            }
             $(".initialHide").hide();
         });
 </script>

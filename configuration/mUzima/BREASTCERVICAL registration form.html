@@ -84,21 +84,32 @@
     <div class="section">
         <fieldset>
             <h3>Attributes</h3>
+            <div class="form-group group-set" >
+                <label for="yesOwnPhoneNumber">patient owns a Phone?: <span
+                        class="required">*</span></label>
+                <br/>
+
+                <input class="font-normal" id="yesOwnPhoneNumber" name="ownPhone" type="radio" value ="Yes" required="required">
+                <label >Yes</label> <br/>
+                <input class="font-normal" id="noOwnPhoneNumber" name="ownPhone" type="radio" value="No">
+                <label >No</label>
+
+            </div>
             <div class="form-group group-set" data-group="patient.personattribute^2">
-                <label for="patient.phone_number">Phone: </label>
-                <input class="form-control phoneNumber" id="patient.phone_number" name="attribute_value" type="tel" >
+                <label for="patient.phone_number">Phone: <span class="required initialHide patientPhone">*</span></label>
+                <input class="form-control" id="patient.phone_number" name="attribute_value" type="tel" >
                 <input type="hidden" id="attribute_type_name" name="attribute_type_name" value="Phone number">
 <!--                <input type="hidden" id="attribute_type_uuid" name="attribute_type_uuid" value="8b908adf-c964-4959-ad43-e2c7aeaa9c67">-->
             </div>
             <div class="form-group group-set" data-group="patient.personattribute^3">
-                <label for="patient.contact_person_name">Name of contact person: </label>
+                <label for="patient.contact_person_name">Name of contact person: <span class="required initialHide contactPersonPhone">*</span> </label>
                 <input class="form-control" id="patient.contact_person_name" name="attribute_value" type="text">
                 <input type="hidden" id="attribute_type_name" name="attribute_type_name" value="Contact Person's Name">
                 <input type="hidden" id="attribute_type_uuid" name="attribute_type_uuid" value="99cc76cc-3914-11e7-a919-92ebcb67fe33">
             </div>
             <div class="form-group group-set" data-group="patient.personattribute^4">
                 <label for="patient.contact_Person_phone_number">Contact person phone: </label>
-                <input class="form-control phoneNumber" id="patient.contact_Person_phone_number" name="attribute_value" type="tel">
+                <input class="form-control" id="patient.contact_Person_phone_number" name="attribute_value" type="tel">
                 <input type="hidden" id="attribute_type_name" name="attribute_type_name" value="Contact Person's Phone Number">
                 <input type="hidden" id="attribute_type_uuid" name="attribute_type_uuid" value="99cc76cc-3914-11e7-a919-92ebcb67fe44">
             </div>
@@ -172,8 +183,11 @@
                     <div class="group-set" data-group="patient.National_ID">
                         <input class="form-control" id="patient.NatioanlId"
                                name="patient.NatioanlId" type="text" >
-                        <input type="hidden" id="identifier_type_name" name="identifier_type_name" value="NID number">
-                        <input type="hidden" id="identifier_type_uuid" name="identifier_type_uuid" value="85c63542-587f-476c-9e69-c733bd285a57">
+                        <input type="hidden" id="attribute_type_name" name="attribute_type_name" value="NID number">
+<!--                        <input type="hidden" id="identifier_type_uuid" name="identifier_type_uuid" value="85c63542-587f-476c-9e69-c733bd285a57">-->
+                        <input type="hidden" id="attribute_type_uuid" name="attribute_type_uuid" value="678b3499-81cd-4a26-9577-4dc1efcf0510">
+
+
                     </div>
                 </div>
             </div>
@@ -294,6 +308,28 @@
              }
           });
         // End- version 2 of patient  identifier generation whenever provider ID is changed
+
+        //Patient owns a phone?
+        $(".initialHide").hide();
+        $('#yesOwnPhoneNumber').change(function(){
+            if($("input[id='yesOwnPhoneNumber']").prop('checked')){
+                $('#patient\\.phone_number').find("input").attr('required',true);
+                $(".patientPhone").show()
+                $('#patient\\.contact_Person_phone_number').find("input").attr('required',false);
+                $(".contactPersonPhone").hide();
+            }
+        })
+
+        $('#noOwnPhoneNumber').change(function(){
+            if($("input[id='noOwnPhoneNumber']").prop('checked')){
+                $('#patient\\.contact_Person_phone_number').find("input").attr('required',true);
+                $(".contactPersonPhone").show();
+                $('#patient\\.phone_number').find("input").attr('required',false);
+                $(".patientPhone").hide()
+            }
+        })
+
+
         var requireMedicalRecordNumber = true;
         if(requireMedicalRecordNumber){
           $(".require_medical_record_number_hint").show();

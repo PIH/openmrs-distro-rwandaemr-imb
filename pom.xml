@@ -81,7 +81,7 @@
 		<loginappVersion>3.4.1-pre.102</loginappVersion>
 		<homeappVersion>3.1.1-pre.81</homeappVersion>
 		<patientsearchappVersion>3.1.1-pre.184</patientsearchappVersion>
-		<oncologypatientstatusVersion>1.0.1</oncologypatientstatusVersion>
+		<oncologypatientstatusVersion>1.1.0</oncologypatientstatusVersion>
 		
 
     </properties>

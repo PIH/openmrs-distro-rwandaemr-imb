@@ -1,6 +1,18 @@
 {
   "@openmrs/esm-patient-chart-app": {
     "extensionSlots": {
+		"patient-chart-summary-dashboard-slot": {
+			"remove": [
+			  "conditions-overview-widget",
+			  "allergies-overview-widget",
+			  "immunization-overview-widget",
+			  "appointments-overview-widget",
+			  "test-results-summary-widget",
+			  "past-visits-overview",
+			  "notes-overview-widget",
+			  "test-results-timeline"
+			]
+		  },
       "patient-chart-dashboard-slot": {
         "remove": [
           "allergies-summary-dashboard",
@@ -24,18 +36,28 @@
           "obs-by-encounter-widget#NEUTROPHIL",
           "obs-by-encounter-widget#VISITDATES",
           "obs-by-encounter-widget#BIOMETRICS",
-		  "Oncology patient status"
+		  "Oncology patient status",
+		  "Patient status",
+		  "vitals-overview-widget",
+		  "biometrics-overview-widget",
+		  "active-medications-widget",
+		  "programs-overview-widget",
+		  "forms-summary-widget"
+
         ],
-        "remove": [
-          "conditions-overview-widget",
-          "allergies-overview-widget",
-          "immunization-overview-widget",
-          "appointments-overview-widget",
-          "test-results-summary-widget",
-          "past-visits-overview",
-          "notes-overview-widget",
-          "test-results-timeline"
-        ],
+		"order":[
+			"Patient status",
+			"vitals-overview-widget",
+			"biometrics-overview-widget",
+			"active-medications-widget",
+			"programs-overview-widget",
+			"forms-summary-widget",
+			"obs-by-encounter-widget#NEUTROPHIL",
+			"obs-by-encounter-widget#VISITDATES",
+			"obs-by-encounter-widget#BIOMETRICS",
+			"attachments-overview-widget"
+		],
+        
         "configure": {
           "obs-by-encounter-widget#NEUTROPHIL": {
             "title": "Neutrophil",
@@ -140,6 +162,10 @@
       "muacUuid": "4326b04b-3158-417a-bb8d-ad022295b0f4"
     }
   },
+    "@openmrs/esm-patient-medications-app": {
+    "durationUnitsConcept": "07b2a2ec-602d-479a-9f44-a8b5828825eb",
+    "careSettingUuid": "6f0c9a92-6f24-11e3-af88-005056821db0"
+  },
   "@openmrs/esm-patient-forms-app": {
     "htmlFormEntryForms": [
       {
@@ -150,10 +176,7 @@
       }
     ]
   },
-  "@openmrs/esm-patient-medications-app": {
-    "durationUnitsConcept": "07b2a2ec-602d-479a-9f44-a8b5828825eb",
-    "careSettingUuid": "6f0c9a92-6f24-11e3-af88-005056821db0"
-  },
+
   
   "@pih/esm-pathology-app": {
     "pathologyEncTypeUUID": "70f18a24-92ec-4de5-acdc-7cae77414e32",
@@ -179,5 +202,11 @@
     "MacroscopicExaminationconceptUUID": "5d149510-0767-4da7-82cd-be406b34877d",
     "COMMENTSATCONCLUSIONOFEXAMINATIONconceptUUID": "3cdc5938-26fe-102b-80cb-0017a47871b2",
     "CanregCodeconceptUUID": "16931672-e068-4ea8-a89c-2ee7dbc07ad1"
+  },
+    "@openmrs/esm-login-app": {
+    "logo": {
+      "src": "https://pbs.twimg.com/media/C1w_czvWgAAWONL.jpg",
+	  "alt": "IMB Logo"
+    }
   }
 }

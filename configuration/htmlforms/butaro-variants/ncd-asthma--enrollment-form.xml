@@ -673,23 +673,60 @@
                 </tr>
                 <tr>
                     <td>
+                        <strong>EMR</strong>
+                    </td>
+                    <td class="tableHeader">
                         <strong> Diagnostique ou Probleme/</strong> Diagnosis or Problem
                     </td>
                     <td>
                         <strong>Provider/</strong> Provider
                     </td>
                 </tr>
+                <obsgroup groupingConceptId="$@Diagnosis_or_problem_construct@">
                     <tr>
+                        <td></td>
                         <td>
-                            Diagnostique ou Probleme/ Diagnosis or Problem <strong>(HMIS)</strong> : <obs conceptId="$@NCDs_Diagnosis_HMIS@"/>
+                            <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="100" rows="2" placeholder="Type here your Text" showDate="true"/>
                         </td>
                         <td>
                             <obs conceptId="$@NAME_OF_HEALTH_CARE_PROVIDER@"/>
                         </td>
                     </tr>
-                
-               
-            </table> 
+                </obsgroup>
+                <obsgroup groupingConceptId="$@Diagnosis_or_problem_construct@">
+                    <tr>
+                        <td></td>
+                        <td>
+                            <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="100" rows="2" placeholder="Type here your Text" showDate="true"/>
+                        </td>
+                        <td>
+                            <obs conceptId="$@NAME_OF_HEALTH_CARE_PROVIDER@"/>
+                        </td>
+                    </tr>
+                </obsgroup>
+                <obsgroup groupingConceptId="$@Diagnosis_or_problem_construct@">
+                    <tr>
+                        <td></td>
+                        <td>
+                            <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="100" rows="2" placeholder="Type here your Text" showDate="true"/>
+                        </td>
+                        <td>
+                            <obs conceptId="$@NAME_OF_HEALTH_CARE_PROVIDER@"/>
+                        </td>
+                    </tr>
+                </obsgroup>
+                <obsgroup groupingConceptId="$@Diagnosis_or_problem_construct@">
+                    <tr>
+                        <td></td>
+                        <td>
+                            <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="100" rows="2" placeholder="Type here your Text" showDate="true"/>
+                        </td>
+                        <td>
+                            <obs conceptId="$@NAME_OF_HEALTH_CARE_PROVIDER@"/>
+                        </td>
+                    </tr>
+                </obsgroup>
+            </table>
             <table border="1">
                 <tr >
                     <th class="tableHeader">
@@ -1609,6 +1646,12 @@
                         <obs conceptId="$@CHRONIC_CARE_DIAGNOSIS@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="" style=""/>
                         <strong>Autre/</strong> Other
                         <obs conceptId="$@Other_clinical_diagnosis_non-coded@"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        Diagnostique ou Probleme/ Diagnosis or Problem <strong>(HMIS)</strong> : <obs conceptId="$@NCDs_Diagnosis_HMIS@"/>
                     </td>
                 </tr>
             </table>

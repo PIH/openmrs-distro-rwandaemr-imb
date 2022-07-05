@@ -8,7 +8,7 @@ Date:31/07/2017"
 	formEncounterType="710c8487-9831-4063-a79d-bf07f27653b2" 
 	formPublished="true" 
 	formRetired="false"
->  <!--
+> <!--
     NCD - Enrollment -PAST HISTORY
      Pilot_4July_v1.3NT
          Author:
@@ -678,23 +678,60 @@ Date:31/07/2017"
         </tr>
         <tr>
             <td>
+                <strong>EMR</strong>
+            </td>
+            <td class="tableHeader">
                 <strong> Diagnostique ou Probleme/</strong> Diagnosis or Problem
             </td>
             <td>
                 <strong>Provider/</strong> Provider
             </td>
         </tr>
+        <obsgroup groupingConceptId="$@Diagnosis_or_problem_construct@">
             <tr>
+                <td></td>
                 <td>
-                    Diagnostique ou Probleme/ Diagnosis or Problem <strong>(HMIS)</strong> : <obs conceptId="$@NCDs_Diagnosis_HMIS@"/>
+                    <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="100" rows="2" placeholder="Type here your Text" showDate="true"/>
                 </td>
                 <td>
                     <obs conceptId="$@NAME_OF_HEALTH_CARE_PROVIDER@"/>
                 </td>
             </tr>
-        
-       
-    </table> 
+        </obsgroup>
+        <obsgroup groupingConceptId="$@Diagnosis_or_problem_construct@">
+            <tr>
+                <td></td>
+                <td>
+                    <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="100" rows="2" placeholder="Type here your Text" showDate="true"/>
+                </td>
+                <td>
+                    <obs conceptId="$@NAME_OF_HEALTH_CARE_PROVIDER@"/>
+                </td>
+            </tr>
+        </obsgroup>
+        <obsgroup groupingConceptId="$@Diagnosis_or_problem_construct@">
+            <tr>
+                <td></td>
+                <td>
+                    <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="100" rows="2" placeholder="Type here your Text" showDate="true"/>
+                </td>
+                <td>
+                    <obs conceptId="$@NAME_OF_HEALTH_CARE_PROVIDER@"/>
+                </td>
+            </tr>
+        </obsgroup>
+        <obsgroup groupingConceptId="$@Diagnosis_or_problem_construct@">
+            <tr>
+                <td></td>
+                <td>
+                    <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="100" rows="2" placeholder="Type here your Text" showDate="true"/>
+                </td>
+                <td>
+                    <obs conceptId="$@NAME_OF_HEALTH_CARE_PROVIDER@"/>
+                </td>
+            </tr>
+        </obsgroup>
+    </table>
 
      <table border="1">
          <tr >
@@ -1615,6 +1652,12 @@ Date:31/07/2017"
                  <obs conceptId="$@Other_clinical_diagnosis_non-coded@"/>
              </td>
          </tr>
+         <tr>
+            <td></td>
+            <td>
+                Diagnostique ou Probleme/ Diagnosis or Problem <strong>(HMIS)</strong> : <obs conceptId="$@NCDs_Diagnosis_HMIS@"/>
+            </td>
+        </tr>
      </table>
  </section>
  <section >

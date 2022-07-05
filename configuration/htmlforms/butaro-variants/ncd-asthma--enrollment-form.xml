@@ -434,6 +434,7 @@
 
         <!-- form -->
         @NCD_RBC_Asthma_medication_List@ = 6c32a9b2-0552-428f-a1e5-4211a319e2fb
+        @NCDs_Diagnosis_HMIS@ = c30d9cfc-ef2c-46f1-88c9-eabb86f9fe58
 
 
 
@@ -464,9 +465,9 @@
         }
 
         #container {
-        
+        position: relative;
         margin: auto;
-        
+        width: 1400px;
         height: auto;
         }
 
@@ -672,60 +673,23 @@
                 </tr>
                 <tr>
                     <td>
-                        <strong>EMR</strong>
-                    </td>
-                    <td class="tableHeader">
                         <strong> Diagnostique ou Probleme/</strong> Diagnosis or Problem
                     </td>
                     <td>
                         <strong>Provider/</strong> Provider
                     </td>
                 </tr>
-                <obsgroup groupingConceptId="$@Diagnosis_or_problem_construct@">
                     <tr>
-                        <td></td>
                         <td>
-                            <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="100" rows="2" placeholder="Type here your Text" showDate="true"/>
+                            Diagnostique ou Probleme/ Diagnosis or Problem <strong>(HMIS)</strong> : <obs conceptId="$@NCDs_Diagnosis_HMIS@"/>
                         </td>
                         <td>
                             <obs conceptId="$@NAME_OF_HEALTH_CARE_PROVIDER@"/>
                         </td>
                     </tr>
-                </obsgroup>
-                <obsgroup groupingConceptId="$@Diagnosis_or_problem_construct@">
-                    <tr>
-                        <td></td>
-                        <td>
-                            <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="100" rows="2" placeholder="Type here your Text" showDate="true"/>
-                        </td>
-                        <td>
-                            <obs conceptId="$@NAME_OF_HEALTH_CARE_PROVIDER@"/>
-                        </td>
-                    </tr>
-                </obsgroup>
-                <obsgroup groupingConceptId="$@Diagnosis_or_problem_construct@">
-                    <tr>
-                        <td></td>
-                        <td>
-                            <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="100" rows="2" placeholder="Type here your Text" showDate="true"/>
-                        </td>
-                        <td>
-                            <obs conceptId="$@NAME_OF_HEALTH_CARE_PROVIDER@"/>
-                        </td>
-                    </tr>
-                </obsgroup>
-                <obsgroup groupingConceptId="$@Diagnosis_or_problem_construct@">
-                    <tr>
-                        <td></td>
-                        <td>
-                            <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="100" rows="2" placeholder="Type here your Text" showDate="true"/>
-                        </td>
-                        <td>
-                            <obs conceptId="$@NAME_OF_HEALTH_CARE_PROVIDER@"/>
-                        </td>
-                    </tr>
-                </obsgroup>
-            </table>
+                
+               
+            </table> 
             <table border="1">
                 <tr >
                     <th class="tableHeader">

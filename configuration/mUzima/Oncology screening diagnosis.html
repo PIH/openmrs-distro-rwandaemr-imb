@@ -268,7 +268,28 @@
                                type="text" data-concept="bd551dfc-e4c8-4bf1-bea1-96e831d934b2^BIOPSY RESULT Text^99DCT"/>
                     </label>
                 </div>
-                <div class="form-group initialHide BiopsyResults">
+                <div class="form-group">
+                    <fieldset>
+                        <label>
+                            Confirmed cancer?
+                        </label>
+                        <br/>
+                        <label class="font-normal">
+                            <input class="activate" id="obs.yesCancerConfimed" name="CancerConfimed" type="radio"
+                                   data-concept="3d762b82-f951-4d13-b147-6aaba63b25d1^CONFIRMED DIAGNOSIS^99DCT"
+                                   value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                            Cancer Confirmed
+                        </label>
+                        <br/>
+                        <label class="font-normal">
+                            <input class="deactivate" id="obs.noCancerConfimed" name="CancerConfimed" type="radio"
+                                   data-concept="3d762b82-f951-4d13-b147-6aaba63b25d1^CONFIRMED DIAGNOSIS^99DCT"
+                                   value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                            Not Cancer
+                        </label>
+                    </fieldset>
+                </div>
+                <div class="form-group">
                     <fieldset>
                         <div class="CancerConfimed">
                             <label>

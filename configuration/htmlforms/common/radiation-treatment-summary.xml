@@ -1,5 +1,5 @@
 <htmlform
-        htmlformUuid="  97da9b81-c5b9-4395-b91f-bc63f0a44a7b"
+        htmlformUuid="97da9b81-c5b9-4395-b91f-bc63f0a44a7b"
         formUuid="31a5c75b-dc8d-4cb7-bebe-332c1a43da5a"
         formName="Oncology - Radiation treatment summary"
         formDescription="Radiation treatment summary"
@@ -141,6 +141,7 @@
         @Permanent_or_temporary@=ec398479-8cb7-4755-a9ac-2d8b3c891f00
         @Rwanda_Military_Hospital@=2ce11abf-ddea-432d-bb6d-6ce69940724e
         @Radiation_form_Completed_date@=f0b6e0b0-fdb1-427b-ab69-e0114aaad2dd
+        @VMAT@=29ed7f15-aea5-4178-bc55-c21a40308b94
 
 
 
@@ -461,8 +462,8 @@
                     <obs conceptId="$@Other_simulation_method@"/>
                     <br/><br/>
                     Treatment technique:
-                    <obs conceptId="$@Treatment_technique@" answerConceptIds="$@2D@,$@3D_CRT@,$@IMRT@,$@En_face_electrons@,$@Other_treatment_technique@"
-                         answerLabels=" 2D, 3D CRT, IMRT, En face electrons, Other: " style="radio"/>
+                    <obs conceptId="$@Treatment_technique@" answerConceptIds="$@2D@,$@3D_CRT@,$@IMRT@,$@VMAT@,$@En_face_electrons@,$@Other_treatment_technique@"
+                         answerLabels=" 2D, 3D CRT, IMRT, VMAT, En face electrons, Other: " style="radio"/>
                     <obs conceptId="$@Other_treatment_technique@"/>
                     <br/><br/>
                     Target tumor/volume :

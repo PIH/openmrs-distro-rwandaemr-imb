@@ -434,6 +434,7 @@
 
         <!-- form -->
         @NCD_RBC_Asthma_medication_List@ = 6c32a9b2-0552-428f-a1e5-4211a319e2fb
+        @NCDs_Diagnosis_HMIS@ = c30d9cfc-ef2c-46f1-88c9-eabb86f9fe58
 
 
 
@@ -464,9 +465,9 @@
         }
 
         #container {
-        
+        position: relative;
         margin: auto;
-        
+        width: 1400px;
         height: auto;
         }
 
@@ -1645,6 +1646,12 @@
                         <obs conceptId="$@CHRONIC_CARE_DIAGNOSIS@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="" style=""/>
                         <strong>Autre/</strong> Other
                         <obs conceptId="$@Other_clinical_diagnosis_non-coded@"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        Diagnostique ou Probleme/ Diagnosis or Problem <strong>(HMIS)</strong> : <obs conceptId="$@NCDs_Diagnosis_HMIS@"/>
                     </td>
                 </tr>
             </table>

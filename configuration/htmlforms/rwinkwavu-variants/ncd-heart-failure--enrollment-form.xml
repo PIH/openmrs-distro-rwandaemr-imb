@@ -376,7 +376,7 @@
 
         <!-- form -->
         @NCD_HF_HTN_CKD_Medication_List@ = f59ee986-a08f-4ddb-8f83-764481e29943
-
+        @NCDs_Diagnosis_HMIS@ = c30d9cfc-ef2c-46f1-88c9-eabb86f9fe58
 
     </macros>
 
@@ -1498,6 +1498,12 @@
                         <obs conceptId="$@Other_clinical_diagnosis_non-coded@"/>
                     </td>
                 </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                    Diagnostique ou Probleme/ Diagnosis or Problem <strong>(HMIS)</strong> : <obs conceptId="$@NCDs_Diagnosis_HMIS@"/>
+                    </td>
+                    </tr>
             </table>
         </section>
         <section >

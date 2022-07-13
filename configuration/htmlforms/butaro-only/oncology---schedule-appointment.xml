@@ -11,7 +11,12 @@
 
 <macros> paperFormId =
 Flow-DM-RW.V2.0.akb.15May09 headerColor =#009d8e fontOnHeaderColor =
-white </macros>
+white 
+ 	@Outpatient_visit_Rwanda_Cancer_Center_Rwanda_Military_Hospital@ = 8eba01f9-2ea0-49d0-b61b-8d6001e2ff7b
+    @Peciatric_Non_chemotherapy@ = 8c3b045a-aa94-4361-b2e9-8a80c26ccede
+    @Pediatric_Chemotherapy@ = 5efb51db-4e71-497d-822c-91501ac167f6
+
+</macros>
 <style>
 .formName {
 	background-color: #e0e0ff;
@@ -107,14 +112,22 @@ if(jQuery){
 </section>
 
 <div class="itembox">
-    
-        Communicate pathology results: <obs conceptId="56001c5f-1a8a-4d80-b255-d1de983a852e" allowFutureDates="true"/><br/><br/>
-        Routine follow up: <obs conceptId="a7aa7d20-3520-4d8a-9324-f7b8f6a3b109" allowFutureDates="true" /><br/><br/>
-        Special consultation: <obs conceptId="7ec61380-3cde-4b7a-a322-4678a0b460c4" allowFutureDates="true" /><br/><br/>
-        Perform Biopsy: <obs conceptId="ea843dde-d33b-4687-88cb-5cd76111b48b" allowFutureDates="true" /><br/><br/>
-        Chemotherapy – inpatient ward: <obs conceptId="6de4e3ee-fe8d-427e-b38f-1703e80f8513" allowFutureDates="true" /><br/><br/>
-        Chemotherapy – infusion center: <obs conceptId="9e597e90-b8c9-4784-82ff-2cc2420c62b7" allowFutureDates="true" /><br/><br/>
-        
+            <b>Outpatient Visit-Butaro Hospital</b> <br/><br/>
+            Routine follow up: <obs conceptId="a7aa7d20-3520-4d8a-9324-f7b8f6a3b109" allowFutureDates="true" /><br/><br/>
+            Special consultation: <obs conceptId="7ec61380-3cde-4b7a-a322-4678a0b460c4" allowFutureDates="true" /><br/><br/>
+            Communicate pathology results: <obs conceptId="56001c5f-1a8a-4d80-b255-d1de983a852e" allowFutureDates="true"/><br/><br/>
+            Perform Biopsy: <obs conceptId="ea843dde-d33b-4687-88cb-5cd76111b48b" allowFutureDates="true" /><br/><br/>
+            <hr/>
+            <br/>
+            Outpatient visit -Rwanda Cancer Center/Rwanda Military Hospital: <obs conceptId="$@Outpatient_visit_Rwanda_Cancer_Center_Rwanda_Military_Hospital@" allowFutureDates="true" /><br/><br/>
+            <hr/>
+            <br/>
+            Chemotherapy – Adult Inpatient Ward: <obs conceptId="6de4e3ee-fe8d-427e-b38f-1703e80f8513" allowFutureDates="true" /><br/><br/>
+            <hr/>
+            <br/>
+            <b>Pediatric Oncology Visit </b><br/><br/>
+            Routine follow up: <obs conceptId="$@Peciatric_Non_chemotherapy@" allowFutureDates="true" /><br/><br/>
+            Chemotherapy: <obs conceptId="$@Pediatric_Chemotherapy@ " allowFutureDates="true" /><br/><br/>
 </div>
 <br/>
 <left>

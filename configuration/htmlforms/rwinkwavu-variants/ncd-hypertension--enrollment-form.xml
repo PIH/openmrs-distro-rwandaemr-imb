@@ -374,7 +374,7 @@
         @Hypertesion@ = a39cb21d-5f5e-4013-9b6b-139453ab93ec
         <!-- forms -->
         @NCD_HF_HTN_CKD_Medication_List@ = f59ee986-a08f-4ddb-8f83-764481e29943
-
+        @NCDs_Diagnosis_HMIS@ = c30d9cfc-ef2c-46f1-88c9-eabb86f9fe58
     </macros>
 
 
@@ -1491,6 +1491,12 @@
                         <obs conceptId="$@CHRONIC_CARE_DIAGNOSIS@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="" style=""/>
                         <strong>Autre/</strong> Other
                         <obs conceptId="$@Other_clinical_diagnosis_non-coded@"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                     <td>
+                        Diagnostique ou Probleme/ Diagnosis or Problem <strong>(HMIS)</strong> : <obs conceptId="$@NCDs_Diagnosis_HMIS@"/>
                     </td>
                 </tr>
             </table>

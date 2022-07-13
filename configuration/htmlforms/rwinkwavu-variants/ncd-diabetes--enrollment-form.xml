@@ -379,7 +379,7 @@
 
         @NCD_RBC_Diabetes_Medication_List@ = ce1aa1c1-f284-45f9-b62c-b18c26bc2ef0
         @NCD_RBC_Diabetes_Insulin_List@ = bb15ac86-a604-4277-a476-2cca5a0c5dc8
-
+        @NCDs_Diagnosis_HMIS@ = c30d9cfc-ef2c-46f1-88c9-eabb86f9fe58
 
     </macros>
 
@@ -1501,6 +1501,12 @@
                         <obs conceptId="$@Other_clinical_diagnosis_non-coded@"/>
                     </td>
                 </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                    Diagnostique ou Probleme/ Diagnosis or Problem <strong>(HMIS)</strong> : <obs conceptId="$@NCDs_Diagnosis_HMIS@"/>
+                    </td>
+                    </tr>
             </table>
         </section>
         <section >

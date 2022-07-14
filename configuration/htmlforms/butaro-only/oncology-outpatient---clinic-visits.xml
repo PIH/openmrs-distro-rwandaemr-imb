@@ -828,6 +828,84 @@
             </table>
 
         </section>
+        <section headerLabel="Drug Order">
+            <div class = "itembox">
+                <drugOrder orderType="131168f4-15f5-102d-96e4-000c29c2a5d7" selectLabel="Order Drug" >
+                    <orderTemplate>
+                        <div>
+                        <orderProperty name="drug" label="Drug*">
+                            
+                            <option value="$@Imatinib_400mg@" />
+                            <option value="$@Tamoxifen_20mg@" />
+                            <option value="$@Letrozole_2.5mg@" />
+                            <option value="$@Methotrexate_0.4mg_kg@" />
+                            <option value="$@Methotrexate_20mg_m2@" />
+                            <option value="$@Chlorambucil_0.4_mg_kg@" />
+                            <option value="$@Melphalan_9mg_m2@" />
+                            <option value="$@Prednisolone_60mg_m2@" />
+                            <option value="$@Capecitabine_1000_mg_m2@" />
+                            <option value="$@6-Mercaptopurine_75mg_m2@" />
+                            <option value="$@Dexamethasone_6mg_m2@" />
+                            <option value="$@Hydrea_500_1000mg@" />
+                            <option value="$@Allopurinol_100mg@" />
+                            <option value="$@Allopurinol_300mg@" />
+                                            
+                            
+                        </orderProperty>
+                    </div>
+                        <orderProperty name="action">
+                            <option value="NEW" label="Place a new Order"/>
+                            <option value="REVISE" label="Revise this Order"/>
+                            <option value="RENEW" label="Renew this Order"/>
+                            <option value="DISCONTINUE" label="Discontinue this Order"/>
+                        </orderProperty>
+                        <div style="padding:0px;">
+                        <orderProperty name="dose" label="Dose*"/>
+                        <orderProperty name="doseUnits" label="Units*">
+                            <option value="4020" label="tablets"/>
+                            <option value="05d778f0-6282-4eed-9c58-6b5d0703c5a7" label="milligrams"/>
+                            <option value="07b05a2a-87ff-44ce-bb5c-5d6855bf8b11" label="units"/>
+                        </orderProperty>
+               
+                            <orderProperty name="frequency" label="Frequency*">
+								<option value="707ad8b7-d902-11ea-80fb-0242ac110002" label="1 / day"/> 
+								<!-- <option value="60c10f8a-e888-449a-9a1a-1681c171b0d0" label="Once daily for 4 days repeated after every 6 weeks"/> -->
+							
+								<option value="bfc113ff-f21d-11ea-ba0d-0242ac110002" label="1 / day for days every 2 weeks"/>
+								<option value="41d3b6ea-eee1-11ea-b492-0242ac110002" label="1 / Week"/>
+							</orderProperty>
+                        
+                        </div>
+                           
+                        <orderProperty name="asNeeded"/>
+                        <div style="padding:0px;">
+                            <orderProperty name="dateActivated"/>
+                            <orderProperty name="duration" label="Duration in days (blank=no end)"/>
+            
+                        </div>
+                        <div style="display:none;">
+                            <orderProperty name="dateActivated"/>
+                            <orderProperty name="route" value="3327" />
+                            <orderProperty name="urgency" value="ROUTINE"/>
+                            <orderProperty name="dosingType" value="org.openmrs.SimpleDosingInstructions"/>
+                            <orderProperty name="instructions" textArea="true" textAreaRows="4" textAreaColumns="100"/>
+                            <orderProperty name="previousOrder"/>
+                            <orderProperty name="careSetting" value="OUTPATIENT"/>
+                            <orderProperty name="quantity" value="0"/>
+                            <orderProperty name="quantityUnits" value="6735094c-8416-43e3-8a3c-091332a08cb7"/> <!-- unspecified -->
+                            <orderProperty name="numRefills" value="0"/>
+                                            <orderProperty name="durationUnits" value="SNOMED CT:258703001">
+                                <option value="SNOMED CT:258703001" label="Days"/>
+                            </orderProperty>
+                        </div>
+                        <orderProperty name="discontinueReason" >
+                        <optionGroup concept="$@REASON_ORDER_STOPPED@"/>
+                        </orderProperty>
+            
+                    </orderTemplate>
+                </drugOrder>  
+            </div>
+        </section>
     </div>
     <submit /> 
 

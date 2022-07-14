@@ -167,7 +167,8 @@
 		@Melphalan_9mg_m2@ = 0ec660c3-acf9-449a-8f5e-b899cecfa979
 		@Prednisolone_60mg_m2@ = d33780db-3ef6-4d35-a1cb-5b072c9d20ed
 		@Capecitabine_1000_mg_m2@ = 4b79e0f1-e698-457c-83f9-a3d4ec3cd459
-		@Hydrea_500_1000mg@ = 96acb9f5-2021-4d8b-8a08-434276ef4c4b
+		@Hydrea_500mg@ = 96acb9f5-2021-4d8b-8a08-434276ef4c4b
+        @Hydrea 1000mg@ = ae4ccd72-f6a3-47b3-bfd4-d92f6f18fb25
 		@Allopurinol_100mg@ = 09ae5248-a321-4438-9409-f471c0bc6f3a
 		@Allopurinol_300mg@ = cb1f48c9-0801-48f4-81b4-b96be6076a9f
 		@Methotrexate_20mg_m2@=c63a4426-a504-4f7c-917d-8b980cba6429

@@ -62,5 +62,12 @@
                 <include>**/*.xml</include>
             </includes>
         </fileSet>
+		<fileSet>
+            <directory>${project.build.directory}/configuration/orderfrequencies</directory>
+            <outputDirectory>openmrs_config/orderfrequencies</outputDirectory>
+            <includes>
+                <include>**/*.csv</include>
+            </includes>
+        </fileSet>
     </fileSets>
 </assembly>

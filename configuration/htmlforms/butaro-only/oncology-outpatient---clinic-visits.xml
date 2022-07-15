@@ -863,7 +863,8 @@
                             <option value="$@Capecitabine_1000_mg_m2@" />
                             <option value="$@6-Mercaptopurine_75mg_m2@" />
                             <option value="$@Dexamethasone_6mg_m2@" />
-                            <option value="$@Hydrea_500_1000mg@" />
+                            <option value="$@Hydrea_500mg@" />
+                            <option value="$@Hydrea 1000mg@" />
                             <option value="$@Allopurinol_100mg@" />
                             <option value="$@Allopurinol_300mg@" />
                                             

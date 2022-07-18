@@ -1,0 +1,219 @@
+<htmlform
+htmlformUuid="22c46ae8-c483-4788-8d14-63ebefb8e20e" 
+formUuid="56c880eb-381c-45dc-8f2a-2593808b3db2" 
+formName="Auto IPD Flowsheet" 
+formDescription="Auto IPD Flowsheet" 
+formVersion="1.0" 
+formEncounterType="c34caa2c-5795-4d3c-9a1e-1a9f0ede5141" 
+formPublished="true" 
+formRetired="false"
+>
+    <!-- Pedi HIV top level form.
+         HIV-RW.V1.akb.July13.doc
+         Created by Neil Gupta 2014
+     -->
+    <macros>
+        paperFormId = (Fill this in)
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+    </macros>
+
+    <style>
+		.section {
+			border: 1px solid $headerColor;
+			padding: 2px;
+			text-align: left;
+			margin-bottom: 1em;
+		}
+		.sectionHeader {
+			background-color: $headerColor;
+			color: $fontOnHeaderColor;
+			display: block;
+			padding: 2px;
+			font-weight: bold;
+		}
+		table.baseline-aligned td {
+			vertical-align: baseline;
+		}
+		th.subheader {
+		background-color: $headerColor;
+		color:white
+		}
+	</style>
+
+
+    <translations defaultLocale="fr">
+        <code name="gender_m">
+            <variant locale="fr" value="Homme" />
+            <variant locale="en" value="Male" />
+        </code>
+        <code name="gender_f">
+            <variant locale="fr" value="Femme" />
+            <variant locale="en" value="Female" />
+        </code>
+    </translations>
+    <!-- Form header -->
+    Centre de santé :
+
+    <table border="2" cellspacing="0" cellpadding="6" width="100%">
+        <tr>
+            <td>
+                <img src="/openmrs/moduleResources/rwandareports/images/rwanda-logo.jpg" align="left" height="100"
+                     width="100">
+                </img>
+            </td>
+            <td>
+                <h2>
+                    RWANDA MINISTRY OF HEALTH
+                    <br />
+                    <span class="english">MoH Rwanda</span>
+                </h2>
+            </td>
+            <td>
+                <strong>
+                    General Consultation and Followup
+                    <br />
+                    Fiche Résumé du Patient : IPD
+                    <br />
+                    <span class="english"> IPD flowsheet</span>
+                </strong>
+
+            </td>
+            <td>
+                <!-- Ministry of Health logo should go in here -->
+            </td>
+        </tr>
+    </table>
+
+    <table border="1" width="100%">
+        <tr>
+            <td>
+                Nom/
+                <span class="english">Name</span>
+                :
+                <lookup class="value" expression="patient.personName.familyName" />
+                <lookup class="value" expression="patient.personName.givenName" />
+                ID:
+                <lookup class="value" expression="patientIdentifiers.get(&quot;Primary Care ID Type&quot;)" /> <lookup class="value" expression="patientIdentifiers.get(&quot;TRACnet ID&quot;)" />
+            </td>
+          <!--  <td>
+                Location / Clinic:<encounterLocation id="location" />
+            </td>
+            <td>
+                Date:<encounterDate/>
+            </td> -->
+        </tr>
+    </table>
+    <br/>
+
+    <div>
+        <section headerLabel="Admission&#38;Open Bills">
+            <htmlformflowsheet formId="10181c49-7050-4789-8ee3-a85f1c17e20b" sharedEncounter="true"  />
+        </section>
+    </div>
+
+    <div>
+        <section headerLabel="Scanned Documment">
+            <htmlformflowsheet formId="adf3dbdd-5f2c-4c2d-94d1-b863f20780c1" sharedEncounter="true"/>
+        </section>
+    </div>
+    <!--conceptsToShow="106938,106939,106937"-->
+    <div>
+        <section headerLabel="Vital Sign">
+            <htmlformflowsheet formId="79e1d4a0-a747-4431-be7f-dbad463a5c82" sharedEncounter="true" />
+        </section>
+    </div>
+    <div>
+        <section headerLabel="Child Triage">
+            <htmlformflowsheet formId="3fb1da07-39d4-4929-b0b3-34f612b13f70" sharedEncounter="true" />
+        </section>
+    </div>
+    <div>
+        <section headerLabel="Adult Triage">
+            <htmlformflowsheet formId="6cdaef92-6afd-4758-aef6-ddf079b2967e" sharedEncounter="true" />
+        </section>
+    </div>
+    <div>
+        <section headerLabel="Consultation">
+            <htmlformflowsheet formId="51563eef-17a4-4bba-9141-57f4dca3bd00" sharedEncounter="true"  />
+        </section>
+    </div>
+    <div>
+        <section headerLabel="Investigations">
+            <htmlformflowsheet formId="96da5765-e813-495d-9bb5-d0a97d26ebc9" sharedEncounter="true"  />
+        </section>
+    </div>
+    <div>
+        <section headerLabel="Radiology">
+            <htmlformflowsheet formId="906677bc-1930-4791-9e75-a0cc7b44ad95" sharedEncounter="true"  />
+        </section>
+    </div>
+    <div>
+        <section headerLabel="Final Diagnosis&#38;Medical Acts">
+            <htmlformflowsheet formId="a533ac05-4878-43ce-8de9-9618053f1e67" conceptsToShow="2dce81f9-3874-4247-b441-6369ca0725c2,afb8006f-e7c4-45bd-82bd-16f6e4b4b51d,14183f94-59b2-4b62-bad7-2c788a21a422" />
+        </section>
+    </div>
+    <div>
+        <section headerLabel="Drug administration">
+            <htmlformflowsheet formId="a2c7d231-e9b1-415c-808f-94c27b917ec9"  sharedEncounter="true" />
+        </section>
+    </div>
+    <div>
+        <section headerLabel="Ophtalmology form ">
+            <htmlformflowsheet formId="5c3c9e94-d6a8-42aa-91c9-4e02607e4f90" sharedEncounter="true"  />
+        </section>
+    </div>
+
+    <div>
+        <section headerLabel=" Kinestherapy form ">
+            <htmlformflowsheet formId="c8abfdc7-70b9-4e61-b19d-9666b883410d" sharedEncounter="true"  />
+        </section>
+    </div>
+
+       <div>
+        <section headerLabel="Stomatology form">
+            <htmlformflowsheet formId="e19eecb3-32d1-4506-8e9a-1ba5093c140e" sharedEncounter="true"  />
+        </section>
+    </div>
+ <div>
+        <section headerLabel=" General IPD Observation and Followup">
+            <htmlformflowsheet formId="326aad65-e28a-41ca-b61e-76c6cc673f46" sharedEncounter="true" />
+        </section>
+    </div>
+    <div>
+        <section headerLabel="Progress Note">
+            <htmlformflowsheet formId="5993157e-5356-48a1-9acf-581e64317162" sharedEncounter="true" />
+        </section>
+    </div>
+    <div>
+        <section headerLabel="consent form">
+            <htmlformflowsheet formId="fd26a777-70f8-4913-94e2-fa85f24b27b0" sharedEncounter="true"  />
+        </section>
+    </div>
+    <div>
+        <section headerLabel="Anestesie form">
+            <htmlformflowsheet formId="ab550011-721d-4635-8435-4bdc995a3daa" sharedEncounter="true"  />
+        </section>
+    </div>
+    <div>
+        <section headerLabel="Sugery IPD Observation and Followup">
+            <htmlformflowsheet formId="18d0006f-5557-43cb-b6e0-4644e15b0b53"  sharedEncounter="true" />
+        </section>
+    </div>
+        <div>
+        <section headerLabel=" Discharge&#38;Close Bills">
+            <!-- <htmlformflowsheet formId="1259e348-0238-4e18-b951-b4db677fe7ea" sharedEncounter="true"/> -->
+<htmlformflowsheet formId="01167552-7e28-44fc-848b-317b00fb8087" windowHeight="500" sharedEncounter="true"/>
+        </section>
+    </div>
+    <div>
+        <section headerLabel="Patient Education">
+            <htmlformflowsheet formId="7103db59-1792-421b-88d6-2bbcb96d0981"  sharedEncounter="true" />
+        </section>
+    </div>    
+    <div>
+        <section headerLabel="Transfer all in one">
+            <htmlformflowsheet formId="235e15a9-4e73-4c2f-8288-0617ac6be404"  sharedEncounter="true" />
+        </section>
+    </div>
+</htmlform>

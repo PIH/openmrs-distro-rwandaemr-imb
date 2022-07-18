@@ -1,0 +1,182 @@
+<htmlform
+htmlformUuid="a792c3de-3682-4b0e-985a-99d20b9a93f2" 
+formUuid="fd26a777-70f8-4913-94e2-fa85f24b27b0" 
+formName="Auto operation consent form" 
+formDescription="Auto operation consent form" 
+formVersion="1.0" 
+formEncounterType="f060e157-6ce7-48b6-81c4-afa2be5664b5" 
+formPublished="true" 
+formRetired="false"
+> <!--
+    Oncology - NCD asthma
+     Pilot_4July_v1.3NT
+         Author:
+         Builder: Byiringiro Joshua
+         started on July 27, 2017
+ -->
+
+<macros>
+ paperFormId = (Fill this in)
+ headerColor =#009d8e
+ fontOnHeaderColor = white
+</macros>
+<style>
+.section {
+  border: 1px solid $headerColor;
+  padding: 2px;
+  text-align: left;
+  margin-bottom: 1em;
+}
+.sectionHeader {
+  background-color: $headerColor;
+  color: $fontOnHeaderColor;
+  display: block;
+  padding: 2px;
+  font-weight: bold;
+}
+table.baseline-aligned td {
+  vertical-align: baseline;
+}
+</style>
+<script type="text/javascript">
+if(jQuery){
+$j(document).ready(function(){
+$j(".checkboxGroup").each(function(){
+var group = $j(this);
+var uncheckAll = function(){
+  group.find("input[type$='checkbox']").attr("checked",false);
+  group.find("input[type$='checkbox']").change();
+}
+var uncheckRadioAndAll = function(){
+group.find("#checkboxAll,#checkboxRadio").find("input[type$='checkbox']").attr("checked",false);
+group.find("#checkboxAll,#checkboxRadio").find("input[type$='checkbox']").change();
+}
+group.find("#checkboxRadio").find("input[type$='checkbox']").click(function(){
+uncheckAll();
+$j(this).siblings("input[type$='checkbox']").attr("checked",false);
+$j(this).attr("checked",true);
+$j(this).change();
+});
+});
+});
+}
+</script>
+
+<div id="container" style="width:100%">
+ <section headerLabel="CONSENT FOR SURGICAL / MEDICAL PROCEDURES">
+
+     <table cellspacing="0" cellpadding="6" width="100%">
+         <tr>
+             <td><img src="/openmrs/moduleResources/rwandareports/images/rwanda-logo.jpg" align="left"
+                      height="65" ></img>
+                 <b>REPUBLIC OF RWANDA
+                     <br />MINISTRY OF HEALTH</b>
+             </td>
+             <td>
+                 <b>Id Number:</b><lookup expression="patient.patientIdentifier.identifier"/><br/>
+                 <br/>
+                 Nom / Last name: <lookup class="value" expression="patient.personName.familyName" />
+                 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                 Prénom/ First name: <lookup class="value" expression="patient.personName.givenName" />
+                 <b>Sex:</b><font color="blue"><lookup expression="patient.gender"/></font>&#160;&#160;&#160;&#160;&#160;&#160;
+                 <b>Age:</b><font color="blue"><lookup expression="patient.age"/></font>&#160;&#160;&#160;&#160;&#160;&#160;
+                 <b>Education Level:</b><font color="blue"><lookup expression="personAttributes.get('Education Level')"/></font>&#160;&#160;&#160;&#160;&#160;&#160;
+                 <b>Religion:</b><font color="blue"><lookup expression="personAttributes.get('Religion')"/></font>&#160;&#160;&#160;&#160;&#160;&#160;
+                 <b>Profession:</b><font color="blue"><lookup expression="personAttributes.get('Profession')"/></font>&#160;&#160;&#160;&#160;&#160;&#160;
+                 <b>Phone number:</b><font color="blue"><lookup expression="personAttributes.get('Phone number')"/></font>
+
+             </td>
+         </tr>
+     </table>
+     <table border="2" cellspacing="0" cellpadding="6" width="100%">
+         <tr>
+             <td>
+                 Date:
+                 <encounterDate />
+             </td>
+             <td>
+                 Health Facility:
+                 <encounterLocation id="location"  />
+             </td>
+             <td>
+                 Provider:
+                 <encounterProvider role="Provider" />
+             </td>
+         </tr>
+     </table>
+     <section headerLabel="RESIDENCE:" >
+         <table  border="1" cellspacing="0" cellpadding="6" width="100%">
+             <tr>
+                 <td rowspan="3"><addressHierarchyRwanda/><br/>
+                 </td>
+             </tr>
+         </table>
+     </section>
+     <section headerCode="UBUHAMYA BWO KWEMERA KUVURWA CYANGWA KUTAVURWA">
+         <table class="baseline-aligned">
+             <tr>
+
+
+                 <td>
+                     <p>You have been given necessary information (risk and benefit) about your condition and the recommendation surgical, medical or diagnositic and therapeutic procedure(s) to be performed. This consent for is designed to provide <br/> a written  confirmation of such discussion by recording some of the more significant medical information given to you.It is intendend to make your better informed so that you may give or with hold your consent the proposed procedure(s).
+
+                         <br/><strong>/Wahawe amakuru nyayo ku bijyanye nuburwayi bwawe, uburyo ushobora kuvurwamo, umumaro n’ingaruka bishobora kubaho uramutse utavuwe cyangwa utabazwe nyuma yo gufata imiti cyangwa kubagwa. <br/>
+                             Ubu buhamya bwashiriweho kwemeza ko usobanukiwe neza ibyo ugiye gukorerwa. Ukaba ugomba gufata icyemerzo ku amakuru uhawe.</strong></p>
+
+
+                     <p>I <strong>(jyewe)</strong><lookup class="value" expression="patient.personName.familyName"/> <lookup class="value" expression="patient.personName.givenName"/>  name of person consenting/<strong>izina ry’uvurwa/ry’ubagwa</strong> <font color="blue"><lookup expression="patient.age"/></font>   Age/<strong>Imyaka</strong>. After the provider’s discussion, here by consent/<strong>nyuma y’kiganiro nagiranye na Muganga nemeje ko,</strong></p> <p>Following surgical/medical procedure:/<strong>ubu buryo bukurikira bwo kubagwa Kuvurwa:
+                     <obs conceptId="66ad3230-59b2-4232-821e-a9ae86819e03"/> <obs conceptId="ae47a54a-9111-475c-9cc2-76951d78b0c8" answerConceptIds="3cd6f600-26fe-102b-80cb-0017a47871b2,3cd6f86c-26fe-102b-80cb-0017a47871b2" answerCodes="bunkorerwa,butankorerwa" style="radio"/> </strong>.
+
+                     To be performed on <lookup class="value" expression="patient.personName.familyName"/> <lookup class="value" expression="patient.personName.givenName"/> myself or name of patient/<strong>jyewe ubwanjye cg izina ry’umurwayi</strong></p>
+
+                     <p>Other alternative interventions /<strong>ubundi buryo bwakoreshwa mukuvura:</strong><obs conceptId="3ae38a9f-c791-410a-8ad5-8403a2f05682"/>
+
+                         I understand and agree that the providers and other members of the medical staff of the hospital, may perform, or assist with the surgery/medical procedure. <br/>
+                         I understand also the risk not receiving or undergoing this treatment or procedure(s)</p>
+
+                     <p>Some possible complications related to the intervention / <strong>Zimwe mungaruka zishobora guterwa n’ubuvuzi uhawe</strong>:<obs conceptId="24f570dc-94d2-4973-86a8-2ce96df048cd" style="textarea" rows="3" cols="30"/></p>
+
+                     <p>Some complications related to the refused to these procedures/ <strong>Zimwe mu ngaruka ziterwa no kwanga gukorerwa ubuvuzi</strong>:<obs conceptId="46e30367-b967-447d-b11c-37c94eb5f86c" style="textarea" rows="3" cols="30"/></p>
+
+                     <p>Some advantages related to the acceptance of this procedure / <strong>Bimwe mu byiza byo guhabwa ubu  buvuzi</strong>: <obs conceptId="b6aab915-428d-49ca-aa19-fdf26d3d7683" style="textarea" rows="3" cols="30"/>
+                     </p>
+
+                     <p>Gufata amafoto/<strong>Photography</strong>:----------------------------------------</p>
+
+                     <p><strong>Maze kumva kanfi nkenera ko muganga ankorera ubuvuzi bwo kubagwa, nasobanukiwe neza ingaruka zo kwanga kuvurwa cyangwa ingaruka zaza mu gihe ndimo kuvurwa.
+
+                         <br/> Ndemeza ko nahawe ibisonuro na Muganga <encounterProvider id="encounterProvider" role="Provider" /></strong></p>
+
+                     <p> There reasons for surgery/ medical procedure, as well as the anticipates effects, nature and risks associated with it, been explained to me by Dr<encounterProvider id="encounterProvider" role="Provider" /><br/>
+                         I also consent to such additional or altenative diaginostic, operative or treatment procedurea as are immediately necessary in the opinion of the physician performing the procedure.</p>
+
+                     <p>Dr <encounterProvider id="encounterProvider" role="Provider" />I certify that I’am fully aware and understand the constents of this consent /<strong> Ndemeza kandi ko nasobanuriwe bihagije ubundi buryo bw’imivurirwe jyanjye. Ndemera ko Muganga Dr</strong> <encounterProvider id="encounterProvider" role="Provider" />amvura.</p>
+
+                     <p>Amazina y’umurwayi:<lookup class="value" expression="patient.personName.familyName"/> <lookup class="value" expression="patient.personName.givenName"/></p>
+                     <p>Signature(patient and authorized Person)-------------------------------Date and time/<strong>itariki:</strong> <obs conceptId="88068100-b21c-468e-bdba-6ec31baa317e" allowTime="true" allowFutureDates="true"/>
+                         <strong>Umukono w’umurwayi cyangwa umwishingizi we.</strong></p>
+
+                     <p> If Authorized Person then record relationship with the patient:<obs conceptId="3cd99a68-26fe-102b-80cb-0017a47871b2"/>
+                         <strong>garagaza isano umurwayi afitanye n’umwishingizi bafitanye.</strong></p>
+
+                     <p>Names of Provider/<strong>Amazina ya Muganga:</strong><encounterProvider id="encounterProvider" role="Provider" /></p>
+
+                     <p>Signature of the Provider/<strong>Umukono wa muganga</strong> ------------------------------------ Date/<strong>Itariki</strong> <obs conceptId="2825f82f-890b-499f-97d8-d772461baa41" allowTime="true" allowFutureDates="true"/></p>
+
+
+                     <p> Name of Witness/ <strong>izina ry’umuhamya</strong>:<obs conceptId="cb2e7cfa-a44f-4186-bff3-c90e70729137"/></p>
+
+
+                     <p>signature of Witness:----------------------------Date:<obs conceptId="c776dbbd-372f-43b8-98ae-b6cdc693eb2d" allowTime="true" allowFutureDates="true"/></p>
+
+                 </td>
+             </tr>
+         </table>
+     </section>
+     <br />
+
+     <submit />
+     <br/>
+ </section>
+</div>
+</htmlform>

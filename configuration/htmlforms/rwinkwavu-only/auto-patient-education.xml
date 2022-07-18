@@ -1,0 +1,199 @@
+<htmlform
+htmlformUuid="d3b4ef22-d37b-49a1-a530-5011d05ee394" 
+formUuid="7103db59-1792-421b-88d6-2bbcb96d0981" 
+formName="Auto Patient Education" 
+formDescription="Auto Patient Education" 
+formVersion="1.0" 
+formEncounterType="fa8b9e67-3cad-4c52-afd3-95d808835bc8" 
+formPublished="true" 
+formRetired="false"
+>
+
+    <macros>
+        paperFormId = Flow-DM-RW.V2.0.akb.15May09
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+
+    </macros>
+    <style>
+        th.tableHeader {
+        background-color: #009d8e;
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: left;
+        }
+        .sectionHeader { background-color: #009d8e;
+        color: white; display: block; padding: 2px; font-weight:bold; }
+        ul {
+        list-style-type: square;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        }
+
+        tr.spaceUnder>td {
+        padding-bottom: 1em;
+        }
+
+        td {
+        font-size: 15px;
+        }
+
+        #container {
+        position: relative;
+        margin: auto;
+        width: 1400px;
+        height: auto;
+        }
+
+        @media print {
+        #container {
+        display: none;
+        }
+
+        #printArea {
+        display: block;
+        }
+
+        #userBar {
+        display: none;
+        }
+
+        #banner {
+        display: none;
+        }
+
+        #footer {
+        display: none;
+        }
+
+        #htmlFormEntryBanner {
+        display: none;
+        }
+
+        .error {
+        display: none;
+        }
+
+        .lables {
+        width: 200px;
+        }
+
+        table {
+        width: 100%;
+        }
+
+        table,td,th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+
+        th {
+        text-align: left;
+        background-color: #D9D9D9;
+        font-size: 10px;
+        }
+
+        td {
+        font-size: 10px;
+        }
+
+        .selectedCancerStagingKeys {
+        page-break-before: always;
+        border: 0px;
+        }
+
+        table.selectedCancerStagingKeys td {
+        border: 0px;
+        }
+
+        #signature {
+        border: none;
+        }
+        #signature td {
+        border: none;
+        }
+        }
+
+        @media screen {
+        table {
+        border: 1px solid #DFDFDF;
+        width: 100%;
+        border-color: #009d8e;
+        }
+
+        #container {
+        display: block;
+        }
+
+        #printArea {
+        display: none;
+        }
+        }
+
+    </style>
+    <section headerCode="DRUG ADMINISTRATION FORM">
+        <table border="2" cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td>
+                    Patient ID #: <lookup class="value" expression="patientIdentifiers.get(&quot;Primary Care ID Type&quot;)" />
+                </td>
+                <td> Names: <lookup class="value" expression="patient.personName.familyName" />  <lookup class="value" expression="patient.personName.givenName" />
+                </td>
+                <td>
+                    Age: <lookup expression="patient.age" class="value"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Date:
+                    <encounterDate />
+                </td>
+                <td>
+                    Health Facility:
+                   <encounterLocation id="location"  />
+                </td>
+                <td>
+                    Provider:
+                    <encounterProvider role="Provider"  />
+                </td>
+            </tr>
+        </table>
+    </section>
+
+   <section headerCode="Education Information">
+       <table class="baseline-aligned">
+               <!-- <obsgroup groupingConceptId="e3ebef35-03c5-47b4-9c43-e1ee1fb3adff">-->
+                    <table class="baseline-aligned">
+                        <tr>
+                            <td class="lblcolor">Identified Health Education needs</td>
+                            <td>
+                                <obs conceptId="e8c8e2d7-2f28-4650-8759-ff0745f7db3d" id="past_medical" style="textarea" rows="3" cols="30"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lblcolor">Education subject</td>
+                            <td>
+                                <obs conceptId="a0c245fb-a639-4288-8919-cfcf051398ec" id="past_medical" style="textarea" rows="3" cols="30"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lblcolor">Information received by the patient</td>
+                            <td>
+                                <obs conceptId="7ed7e70e-b98b-4c15-b12b-204bc792452c" id="past_medical" style="textarea" rows="3" cols="30"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lblcolor">Information received by the next kin</td>
+                            <td>
+                                <obs conceptId="712a3fd6-c315-49bf-b4a3-b0eb8957ddfd" id="past_medical" style="textarea" rows="3" cols="30"/>
+                            </td>
+                        </tr>
+       </table>
+               <!-- </obsgroup>-->
+       </table>
+   </section>
+
+    <center>
+        <submit/>
+    </center>
+</htmlform>

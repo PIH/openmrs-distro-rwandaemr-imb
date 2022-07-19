@@ -1967,7 +1967,7 @@ if(jQuery){
                                             <table>
                                                 <obsgroup groupingConceptId="$@Test_de_vision_de_loin@">
                                                     <tr>
-                                                        <td><obs conceptId="$@Test_de_vision_de_loin@" labelText="OD  sph" />
+                                                        <td><obs conceptId="$@Test_spherique_de_l_oeil_droit@" labelText="OD  sph" />
                                                             <obs conceptId="$@Test_cylindrique_de_l_oeil_droit@" labelText="OD  Cyl" />
                                                             <obs conceptId="$@Axe_visuel_de_l_oeil_droit@" labelText="OD  Axe" />
                                                             <obs conceptId="$@Test_spherique_de_l_oeil_gauche@" labelText="OG  sph" />

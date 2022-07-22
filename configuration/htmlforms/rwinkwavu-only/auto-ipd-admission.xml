@@ -75,8 +75,8 @@ if(jQuery){
     <span style="float:right">Paper Form ID: $paperFormId</span>
     <h2>Admission (Billing automation) (v1.0)</h2>
 
-<!--<postSubmissionAction class="org.openmrs.module.mohbilling.automation.CreateIPDAdmissionOnHtmlFormSubmissionAction"/>
-<postSubmissionAction class="org.openmrs.module.mohbilling.automation.CreateBillOnHtmlFormSubmissionAction"/>-->
+<postSubmissionAction class="org.openmrs.module.mohbilling.automation.CreateIPDAdmissionOnHtmlFormSubmissionAction"/>
+<postSubmissionAction class="org.openmrs.module.mohbilling.automation.CreateBillOnHtmlFormSubmissionAction"/>
 
 
     <section headerCode="GENERAL INFORMATION">

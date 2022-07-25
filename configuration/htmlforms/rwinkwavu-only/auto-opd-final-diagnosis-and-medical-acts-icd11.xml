@@ -1721,7 +1721,7 @@ $jQuery('#secondaryButton').click(function() {
         <tr>
           <td>- Main Diagnostic</td>
           <td>
-<obs answerClasses="ICD-10" conceptId="$@Primary_ICD_diagnosis@" id="primary_digno" size="80" style="autocomplete" required="true"/>
+<obs answerClasses="ICD-11" conceptId="$@Primary_ICD_diagnosis@" id="primary_digno" size="80" style="autocomplete" required="true"/>
             <span style="color: blue">
 <input id="primaryButton" onclick="showPrimaryDiagnosisDialog()" type="button"> </input>
 <b>
@@ -1746,7 +1746,7 @@ $jQuery('#secondaryButton').click(function() {
         <tr>
           <td>- Secondary Diagnostic</td>
           <td>
-<obs answerClasses="ICD-10" conceptId="$@Secondary_ICD_diagnosis@" id="second_digno" size="80" style="autocomplete"/>
+<obs answerClasses="ICD-11" conceptId="$@Secondary_ICD_diagnosis@" id="second_digno" size="80" style="autocomplete"/>
             <span style="color: blue">
 <input id="secondaryButton" onclick="showSecondaryDiagnosisDialog()" type="button"/> <b>
 <i>Type 3 first

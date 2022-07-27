@@ -158,6 +158,23 @@
 		@PLATELETES@=3cd3d038-26fe-102b-80cb-0017a47871b2
 		@CREATININE@=3cd4374e-26fe-102b-80cb-0017a47871b2
 
+         <!--Drugs-->
+        @Imatinib_400mg@ = 230e3825-1cc3-42f2-83a6-435f66ab9bd2
+		@Tamoxifen_20mg@ = 3d1dad79-1669-4557-9a5c-a64ea9b36bcb
+		@Letrozole_2.5mg@ = aa620ddd-985c-440b-a162-edfb66971d89
+		@Methotrexate_0.4mg_kg@ = d61352d6-f7e6-4753-ab94-9df01303360d
+		@Chlorambucil_0.4_mg_kg@ = 6718feec-18b4-4b79-a63b-2427284114a6
+		@Melphalan_9mg_m2@ = 0ec660c3-acf9-449a-8f5e-b899cecfa979
+		@Prednisolone_60mg_m2@ = d33780db-3ef6-4d35-a1cb-5b072c9d20ed
+		@Capecitabine_1000_mg_m2@ = 4b79e0f1-e698-457c-83f9-a3d4ec3cd459
+		@Hydrea_500mg@ = 96acb9f5-2021-4d8b-8a08-434276ef4c4b
+        @Hydrea_1000mg@ = ae4ccd72-f6a3-47b3-bfd4-d92f6f18fb25
+		@Allopurinol_100mg@ = 09ae5248-a321-4438-9409-f471c0bc6f3a
+		@Allopurinol_300mg@ = cb1f48c9-0801-48f4-81b4-b96be6076a9f
+		@Methotrexate_20mg_m2@=c63a4426-a504-4f7c-917d-8b980cba6429
+		@6-Mercaptopurine_75mg_m2@=f9e4d4f1-8266-42ee-bd39-0d74e3bb4ada
+		@Dexamethasone_6mg_m2@=62108686-2f18-4e81-8b11-135784241d83
+
     </macros>
     <style>
         .formName {
@@ -827,6 +844,85 @@
 
             </table>
 
+        </section>
+        <section headerLabel="Drug Order">
+            <div class = "itembox">
+                <drugOrder orderType="131168f4-15f5-102d-96e4-000c29c2a5d7" selectLabel="Order Drug" >
+                    <orderTemplate>
+                        <div>
+                        <orderProperty name="drug" label="Drug*">
+                            
+                            <option value="$@Imatinib_400mg@" />
+                            <option value="$@Tamoxifen_20mg@" />
+                            <option value="$@Letrozole_2.5mg@" />
+                            <option value="$@Methotrexate_0.4mg_kg@" />
+                            <option value="$@Methotrexate_20mg_m2@" />
+                            <option value="$@Chlorambucil_0.4_mg_kg@" />
+                            <option value="$@Melphalan_9mg_m2@" />
+                            <option value="$@Prednisolone_60mg_m2@" />
+                            <option value="$@Capecitabine_1000_mg_m2@" />
+                            <option value="$@6-Mercaptopurine_75mg_m2@" />
+                            <option value="$@Dexamethasone_6mg_m2@" />
+                            <option value="$@Hydrea_500mg@" />
+                            <option value="$@Hydrea_1000mg@" />
+                            <option value="$@Allopurinol_100mg@" />
+                            <option value="$@Allopurinol_300mg@" />
+                                            
+                            
+                        </orderProperty>
+                    </div>
+                        <orderProperty name="action">
+                            <option value="NEW" label="Place a new Order"/>
+                            <option value="REVISE" label="Revise this Order"/>
+                            <option value="RENEW" label="Renew this Order"/>
+                            <option value="DISCONTINUE" label="Discontinue this Order"/>
+                        </orderProperty>
+                        <div style="padding:0px;">
+                        <orderProperty name="dose" label="Dose*"/>
+                        <orderProperty name="doseUnits" label="Units*">
+                            <option value="4020" label="tablets"/>
+                            <option value="05d778f0-6282-4eed-9c58-6b5d0703c5a7" label="milligrams"/>
+                            <option value="07b05a2a-87ff-44ce-bb5c-5d6855bf8b11" label="units"/>
+                        </orderProperty>
+               
+                            <orderProperty name="frequency" label="Frequency*">
+								<option value="707ad8b7-d902-11ea-80fb-0242ac110002" label="1 / day"/> 
+								<!-- <option value="60c10f8a-e888-449a-9a1a-1681c171b0d0" label="Once daily for 4 days repeated after every 6 weeks"/> -->
+							
+								<option value="bfc113ff-f21d-11ea-ba0d-0242ac110002" label="1 / day for days every 2 weeks"/>
+								<option value="41d3b6ea-eee1-11ea-b492-0242ac110002" label="1 / Week"/>
+							</orderProperty>
+                        
+                        </div>
+                           
+                        <orderProperty name="asNeeded"/>
+                        <div style="padding:0px;">
+                            <orderProperty name="dateActivated"/>
+                            <orderProperty name="duration" label="Duration in days (blank=no end)"/>
+            
+                        </div>
+                        <div style="display:none;">
+                            <orderProperty name="dateActivated"/>
+                            <orderProperty name="route" value="3327" />
+                            <orderProperty name="urgency" value="ROUTINE"/>
+                            <orderProperty name="dosingType" value="org.openmrs.SimpleDosingInstructions"/>
+                            <orderProperty name="instructions" textArea="true" textAreaRows="4" textAreaColumns="100"/>
+                            <orderProperty name="previousOrder"/>
+                            <orderProperty name="careSetting" value="OUTPATIENT"/>
+                            <orderProperty name="quantity" value="0"/>
+                            <orderProperty name="quantityUnits" value="6735094c-8416-43e3-8a3c-091332a08cb7"/> <!-- unspecified -->
+                            <orderProperty name="numRefills" value="0"/>
+                                            <orderProperty name="durationUnits" value="SNOMED CT:258703001">
+                                <option value="SNOMED CT:258703001" label="Days"/>
+                            </orderProperty>
+                        </div>
+                        <orderProperty name="discontinueReason" >
+                        <optionGroup concept="$@REASON_ORDER_STOPPED@"/>
+                        </orderProperty>
+            
+                    </orderTemplate>
+                </drugOrder>  
+            </div>
         </section>
     </div>
     <submit /> 

@@ -1028,7 +1028,7 @@ input[type="submit"] {
                                 <tr>
                                     <td>Transfer Date and Time</td>
                                     <td>
-                                        <obs conceptId="2755fc59-2618-4ef9-89e3-a997bea3deb9"/>
+                                        <obs conceptId="2755fc59-2618-4ef9-89e3-a997bea3deb9" allowFutureDates="true"/>
                                     </td>
                                 </tr>
                                 <!-- <tr>

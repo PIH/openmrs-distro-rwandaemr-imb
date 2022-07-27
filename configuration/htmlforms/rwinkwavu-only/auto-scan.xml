@@ -1,0 +1,349 @@
+<htmlform
+htmlformUuid="d11f26a0-1a29-432a-9727-a8ba10c72400" 
+formUuid="adf3dbdd-5f2c-4c2d-94d1-b863f20780c1" 
+formName="Auto scan" 
+formDescription="Auto scan" 
+formVersion="1.0" 
+formEncounterType="b763e022-21b6-4b2e-aea6-252ba47dec22" 
+formPublished="true" 
+formRetired="false"
+>
+    <macros>
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+        @Transfer_Scan@ = 2601bc72-71ff-40a9-bc64-fe6ecdb8b0fd
+        @Transfer_Scan_1@ = ac453478-62ef-4aa2-8d83-97248ee50a41
+        @Transfer_Scan_2@ = 4bab6d66-8d2b-4a10-8043-82d833e94de4
+        @Counter_Reference@ = fac934f4-1731-42e8-90d6-a7e972e687c9
+    </macros>
+    <style>
+   .section {
+      border: 1px solid $headerColor;
+      padding: 2px;
+      text-align: left;
+      margin-bottom: 1em;
+   }
+   .sectionHeader {
+      background-color: $headerColor;
+      color: $fontOnHeaderColor;
+      display: block;
+      padding: 2px;
+      font-weight: bold;
+   }
+   table.baseline-aligned td {
+      vertical-align: baseline;
+   }
+   th.subheader {
+   background-color: $headerColor;
+   color:white
+   }
+    .lblcolor{background: #e2e3f2;width: 300px;}
+</style>
+
+    <style>
+table.risks td {
+	font-size: 0.9em;
+}
+
+.section {
+	border: 1px solid$headerColor;
+	padding: 2px;
+	text-align: left;
+	margin-bottom: 1em;
+}
+
+.sectionHeader {
+	background-color: $headerColor;
+	color: $fontOnHeaderColor;
+	display: block;
+	padding: 2px;
+	font-weight: bold;
+}
+
+table.baseline-aligned td {
+	vertical-align: center;
+}
+</style>
+    <style>
+body {
+	background-color: #ffffff;
+}
+
+.bodycontainer {
+	padding: 2px;
+	background-color: transparent;
+}
+
+.header {
+	font-style: italic;
+	font-family: Gill, Georgia, serif;
+	font-size: x-large;
+	font-weight: bold;
+	color: #02416e;
+	height: 40px;
+	width: 100%;
+	border: 2px solid #009d8e;
+	text-align: center;
+	background-color: #009d8e;
+	margin-bottom: 5px;
+}
+
+.container {
+	clear: both;
+	height: auto;
+	width: 100%;
+	padding: 2px;
+	background-color: transparent;
+}
+
+.leftsection {
+	clear: both;
+	float: left;
+	width: 50%;
+	margin-bottom: 5px;
+}
+
+.sectioninleft {
+	border-right: 2px solid #02416e;
+	background-color: #ebf2f7;
+	border-bottom: 2px solid #02416e;
+	border-left: 2px solid #02416e;
+	border-top: 2px solid #02416e;
+}
+
+.rightsection {
+	float: right;
+	width: 50%;
+	margin-bottom: 5px;
+}
+
+.sectioninright {
+	background-color: #ebf2f7;
+	border-left: none;
+	border-bottom: 2px solid #02416e;
+	border-right: 2px solid #02416e;
+	border-top: 2px solid #02416e;
+}
+
+.section {
+	margin-bottom: 5px;
+	clear: both;
+	background-color: #ebf2f7;
+	border: 2px solid #02416e;
+}
+
+.sectionheader {
+	font-style: italic;
+	font-family: Gill, Georgia, serif;
+	font-size: medium;
+	font-weight: bold;
+	height: auto;
+	width: inherit;
+	border: 2px solid #009d8e;
+	text-align: left;
+	padding: 2px;
+	background-color: #009d8e;
+}
+
+.sectionbody {
+	clear: both;
+	height: auto;
+	width: inherit;
+	background-color: transparent;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.separator {
+	clear: both;
+	font-style: normal;
+	font-family: Gill, Georgia, serif;
+	font-size: larger;
+	font-weight: bold;
+	color: #02416e;
+	height: 30px;
+	border: 2px solid #ccccff;
+	border-left: 2px solid #02416e;
+	border-bottom: none;
+	border-right: 2px solid #02416e;
+	border-top: 2px solid #02416e;
+	text-align: center;
+	background-color: #ebf2f7;
+}
+
+.footer {
+	clear: both;
+	height: 20px;
+	width: 100%;
+	border: 2px solid #ccccff;
+	text-align: center;
+	background-color: #fbfce3;
+}
+
+input[type="text"] {
+	font-style: italic;
+	font-family: Georgia;
+}
+
+input[type="submit"] {
+	font-style: italic;
+	font-family: Georgia;
+}
+</style>
+    <script type="text/javascript">
+	//if (jQuery) {
+	var $hfe = jQuery.noConflict();
+
+	$hfe(document)
+			.ready(
+					function() {
+
+						/* TEnd of part that handles Accordion Functionality */
+
+						$hfe('#1-removeEntry').remove();
+						$hfe('#10-addEntry').remove();
+						$hfe('#1-toggleContainer').show();
+
+						$hfe('#11-removeEntry').remove();
+						$hfe('#20-addEntry').remove();
+						$hfe('#11-toggleContainer').show();
+
+						$hfe('#21-removeEntry').remove();
+						$hfe('#30-addEntry').remove();
+						$hfe('#21-toggleContainer').show();
+						//});
+
+						//$hfe(document)
+						//.ready(
+						//	function() {
+						$hfe('button.addEntry')
+								.live(
+										"click",
+										function() {
+											var correctedAddButtonId = parseFloat(this.id) + 1;
+											var contentAddId = "#"
+													+ correctedAddButtonId
+													+ "-toggleContainer";
+											$hfe(contentAddId).toggle(true);
+											$hfe('#' + this.id).toggle(false);
+											$hfe(
+													'#' + parseFloat(this.id)
+															+ '-removeEntry')
+													.toggle(false);
+											return false;
+										});
+						//});
+
+						//$hfe(document)
+						//.ready(
+						//function() {
+						$hfe('button.removeEntry')
+								.live(
+										"click",
+										function() {
+											var correctedRemoveButtonId = parseFloat(this.id) - 1;
+											var contentAddId = "#"
+													+ parseFloat(this.id)
+													+ "-toggleContainer";
+											$hfe(contentAddId).toggle(false);
+											$hfe(':input:not(:button)',
+													contentAddId).val([]);
+											$hfe(
+													'#'
+															+ correctedRemoveButtonId
+															+ '-addEntry')
+													.toggle(true);
+											$hfe(
+													'#'
+															+ correctedRemoveButtonId
+															+ '-removeEntry')
+													.toggle(true);
+
+											return false;
+										});
+
+
+</script>
+    <script type="text/javascript">
+if(jQuery){
+ $j(document).ready(function(){
+ $j(".checkboxGroup").each(function(){
+     var group = $j(this);
+     var uncheckAll = function(){
+         group.find("input[type$='checkbox']").attr("checked",false);
+         group.find("input[type$='checkbox']").change();
+     }
+     var uncheckRadioAndAll = function(){
+     group.find("#checkboxAll,#checkboxRadio").find("input[type$='checkbox']").attr("checked",false);
+     group.find("#checkboxAll,#checkboxRadio").find("input[type$='checkbox']").change();
+ }
+ group.find("#checkboxRadio").find("input[type$='checkbox']").click(function(){
+     uncheckAll();
+     $j(this).siblings("input[type$='checkbox']").attr("checked",false);
+     $j(this).attr("checked",true);
+     $j(this).change();
+ });
+ });
+ });
+
+</script>
+
+    <section headerCode="ENCOUNTER INFORMATION">
+        <table border="2" cellspacing="0" cellpadding="6" width="100%">
+            <tr>
+                <td>
+                    Patient ID #: <lookup class="value" expression="patientIdentifiers.get(&quot;Primary Care ID Type&quot;)" />
+                </td>
+                <td> Names: <lookup class="value" expression="patient.personName.familyName" />  <lookup class="value" expression="patient.personName.givenName" />
+                </td>
+                <td>
+                    Age: <lookup expression="patient.age" class="value"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Date:
+                    <encounterDate />
+                </td>
+                <td>
+                    Health Facility:
+                   <encounterLocation id="location" />
+                </td>
+                <td>
+                    Provider:
+                    <encounterProvider role="Provider"  />
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section headerCode="SCAN">
+        <table class="baseline-aligned">
+            <tr>
+                <td class="lblcolor">Scan Docu No 1</td>
+                <td><obs conceptId="$@Transfer_Scan@" style="" rows="" cols="" /></td>
+            </tr>
+            <tr>
+                <td class="lblcolor">Scan Docu No 2</td>
+                <td><obs conceptId="$@Transfer_Scan_1@" style="" rows="" cols="" /></td>
+            </tr>
+
+            <tr>
+                <td class="lblcolor">Scan Docu No 3</td>
+                <td><obs conceptId="$@Transfer_Scan_2@" style="" rows="" cols="" /></td>
+            </tr>
+        </table>
+    </section>
+
+    <section headerCode="SCAN">
+        <table class="baseline-aligned">
+            <tr>
+                <td class="lblcolor">Counter Reference</td>
+                <td><obs conceptId="$@Counter_Reference@" style="text" rows="10" cols="100" /></td>
+            </tr>
+        </table>
+    </section>
+    <center>
+        <submit/>
+    </center>
+</htmlform>

@@ -34,7 +34,7 @@
         <mohappointmentVersion>2.0.1-SNAPSHOT</mohappointmentVersion>
         <mohbillingVersion>2.0.1-SNAPSHOT</mohbillingVersion>
         <mohtracVersion>2.0.0-SNAPSHOT</mohtracVersion>
-        <namephoneticsVersion>1.18.0</namephoneticsVersion>
+        <namephoneticsVersion>2.0.0-SNAPSHOT</namephoneticsVersion>
         <omodExportVersion>2.1.0</omodExportVersion>
         <orderextensionVersion>3.2.0-SNAPSHOT</orderextensionVersion>
         <patientsummaryVersion>1.4.0</patientsummaryVersion>
@@ -82,6 +82,7 @@
 		<homeappVersion>3.1.1-pre.81</homeappVersion>
 		<patientsearchappVersion>3.1.1-pre.184</patientsearchappVersion>
 		<oncologypatientstatusVersion>1.1.0</oncologypatientstatusVersion>
+		<fastdataentryappVersion>1.0.0-pre.21</fastdataentryappVersion>
 		
 
     </properties>

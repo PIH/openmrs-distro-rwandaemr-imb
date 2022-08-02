@@ -174,6 +174,8 @@
 		@Methotrexate_20mg_m2@=c63a4426-a504-4f7c-917d-8b980cba6429
 		@6-Mercaptopurine_75mg_m2@=f9e4d4f1-8266-42ee-bd39-0d74e3bb4ada
 		@Dexamethasone_6mg_m2@=62108686-2f18-4e81-8b11-135784241d83
+		@REASON_ORDER_STOPPED@=3cde6070-26fe-102b-80cb-0017a47871b2
+
 
     </macros>
     <style>
@@ -455,7 +457,7 @@
                 </tr>
                 <tr>
                     <td>Clinique / Clinic: <encounterLocation
-                            id="encounterLocation" default="Butaro Hospital" />
+                            id="encounterLocation"  />
                     </td>
 
                 </tr>

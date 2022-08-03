@@ -175,6 +175,10 @@
 		@6-Mercaptopurine_75mg_m2@=f9e4d4f1-8266-42ee-bd39-0d74e3bb4ada
 		@Dexamethasone_6mg_m2@=62108686-2f18-4e81-8b11-135784241d83
 		@REASON_ORDER_STOPPED@=3cde6070-26fe-102b-80cb-0017a47871b2
+@Outpatient_visit_Rwanda_Cancer_Center_Rwanda_Military_Hospital@ = 8eba01f9-2ea0-49d0-b61b-8d6001e2ff7b
+		@Peciatric_Non_chemotherapy@ = 8c3b045a-aa94-4361-b2e9-8a80c26ccede
+		@Pediatric_Chemotherapy@ = 5efb51db-4e71-497d-822c-91501ac167f6
+		@Intake_Visit@= 3ce49ada-26fe-102b-80cb-0017a47871b2
 
 
     </macros>
@@ -524,7 +528,7 @@
                     <td><b>Plt</b></td>
                     <td><b>Cr</b></td>
 					<td><b>LFT</b></td>                   
-					<td><b>Next visit date</b></td>
+					
 				</tr>
 				<tr>
                     <td ><obs conceptId="$@Pain_score@" />/5</td>
@@ -551,10 +555,7 @@
                     
 					
                     
-                    <td>Outpatient<obs conceptId="a7aa7d20-3520-4d8a-9324-f7b8f6a3b109" allowFutureDates="true"/><br />
-                        Inpatient <obs conceptId="$@Chemotherapy_inpatient_ward_visit@" allowFutureDates="true"/>
-
-                    </td>
+                 
 
 
                 </tr>
@@ -835,6 +836,35 @@
                                     <obs conceptId="$@PATIENT_PLAN_COMMENTS@" cols="150"/>
 
                                     <br/>
+    </td>
+</tr>
+<tr>
+			
+				<td><b>Next Visit:</b> </td>
+			</tr>
+			<tr border="2">
+				<td><div class="itembox">
+                    <b>Outpatient Visit-Butaro Hospital</b><br/><br/>
+                    Routine follow up: <obs conceptId="a7aa7d20-3520-4d8a-9324-f7b8f6a3b109" allowFutureDates="true" /><br/><br/>
+                    Special consultation: <obs conceptId="7ec61380-3cde-4b7a-a322-4678a0b460c4" allowFutureDates="true" /><br/><br/>
+                    Communicate pathology results: <obs conceptId="56001c5f-1a8a-4d80-b255-d1de983a852e" allowFutureDates="true"/><br/><br/>
+                    Perform Biopsy: <obs conceptId="ea843dde-d33b-4687-88cb-5cd76111b48b" allowFutureDates="true" /><br/><br/>
+                    <hr/>
+                    <br/>
+                    Outpatient visit -Rwanda Cancer Center/Rwanda Military Hospital: <obs conceptId="$@Outpatient_visit_Rwanda_Cancer_Center_Rwanda_Military_Hospital@" allowFutureDates="true" /><br/><br/>
+                    <hr/>
+                    <br/>
+                    Chemotherapy – Adult Inpatient Ward: <obs conceptId="6de4e3ee-fe8d-427e-b38f-1703e80f8513" allowFutureDates="true" /><br/><br/>
+                    <hr/>
+                    <br/>
+                    <b>Pediatric Oncology Visit</b><br/><br/>
+                    Routine follow up: <obs conceptId="$@Peciatric_Non_chemotherapy@" allowFutureDates="true" /><br/><br/>
+                    Chemotherapy: <obs conceptId="$@Pediatric_Chemotherapy@ " allowFutureDates="true" /><br/><br/>
+            </div>
+            </td>
+			</tr>
+<tr>
+<td>
                                     <span >Complete ‘Exit Program’ form if patient is exiting from oncology program</span>
                                     <br /><br /><span> **Complete another ‘DST’ form if there’s change in disease stage or tx intent</span>
                                     <br /><br /><b>Clinician:</b><encounterProvider role="Oncology Provider" />

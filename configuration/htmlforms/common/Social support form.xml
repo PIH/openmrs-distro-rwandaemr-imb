@@ -41,7 +41,7 @@
         @Government@ = 37eff681-9bb7-409f-9665-6a7543515f80
         @Family_members@ = ff3eb5fd-b6cb-4480-85ff-42b52ea1b016
         @Name_of_clinical_program@ = b0270767-3f27-4ab8-91e9-6ce28fb65868
-        @Does_the_patient_has_insurance@=cbf9f938-69cc-4029-a7d4-100d36cc3e54
+        @Does_the_patient_have_insurance@=4017f5d1-6d24-498d-a77f-a84b7510787a
         @RWANDA_INSURANCE_TYPE@=8da67e73-776c-43f6-9758-79d1f6786db3
         @Marital_status@=2e00481d-9e6e-4740-9dc0-ab6232dff21c
         @EDUCATION_LEVEL@=3cdcc5e4-26fe-102b-80cb-0017a47871b2
@@ -381,8 +381,8 @@
             </tr>
             <tr>
                 <td>
-                    <strong>Does the patient has insurance?</strong>
-                    <obs conceptId="$@Does_the_patient_has_insurance@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
+                    <strong>Does the patient have insurance?</strong>
+                    <obs conceptId="$@Does_the_patient_have_insurance@" answerConceptIds="$@YES@,$@NO@" answerCodes="Yes,No" style="radio"/>
                     Which one? : <obs conceptId="$@RWANDA_INSURANCE_TYPE@" />
                 </td>
             </tr>

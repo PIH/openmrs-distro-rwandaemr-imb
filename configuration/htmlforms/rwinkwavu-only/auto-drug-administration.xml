@@ -151,7 +151,7 @@ formRetired="false"
             <tr>
                 <td>
                     <b>
-                        <encounterLocation id="location"  />
+                        <encounterLocation id="location"  default="today"/>
                     </b><br/>
                 </td>
                 <td>

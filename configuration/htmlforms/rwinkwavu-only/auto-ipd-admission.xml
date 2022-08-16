@@ -100,16 +100,15 @@ if(jQuery){
             <tr>
                 <td>
                     Date:
-                    <encounterDate />
+                    <encounterDate default="today"/>
                 </td>
                 <td>
                     Health Facility:
-                   <encounterLocation id="location" />
-
+                    <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode" />
                 </td>
                 <td>
                     Provider:
-                    <encounterProvider role="Provider"  />
+                    <encounterProvider default="currentUser" />
                 </td>
             </tr>
         </table>

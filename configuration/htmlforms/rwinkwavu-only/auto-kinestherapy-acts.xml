@@ -1507,7 +1507,7 @@ if(jQuery){
 }
 </script>
     <span style="float:right">Paper Form ID: $paperFormId</span>
-    <h2>Admission (Billing automation) (v1.0)</h2>
+    <h2>Kinestherapy Acts (Billing automation) (v1.0)</h2>
 
     <!--  <postSubmissionAction class="org.openmrs.module.mohbilling.automation.CreateBillOnHtmlFormSubmissionAction"/>-->
 

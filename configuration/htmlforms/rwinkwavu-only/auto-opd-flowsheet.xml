@@ -107,12 +107,12 @@
     <br/>
 
     <div>
-        <section headerLabel="Admission&#38;Open Bills">
+        <section headerLabel="Page0.Admission&#38;Open Bills">
             <htmlformflowsheet formId="21a24ab4-13dd-4e37-9b0c-34475b4f3f33" windowHeight="500" conceptsToShow="c920931b-fa93-4e99-9e36-28e1e4c16cf7,d6dafc4b-9ad8-4467-94a9-0eca78648254" />
         </section>
     </div>
     <div>
-        <section headerLabel="Scanned Documment">
+        <section headerLabel="Page1.Scanned Documment">
             <htmlformflowsheet formId="adf3dbdd-5f2c-4c2d-94d1-b863f20780c1" windowHeight="500" sharedEncounter="true" showHtmlForm="true"/>
         </section>
     </div>
@@ -134,7 +134,7 @@
         </section>
     </div>
 <div>
-        <section headerLabel="Consultation">
+        <section headerLabel="Page2.Consultation">
             <htmlformflowsheet formId="51563eef-17a4-4bba-9141-57f4dca3bd00" sharedEncounter="true"/>
         </section>
     </div>
@@ -156,7 +156,7 @@
     </section>
 </div>
  <div>
-        <section headerLabel="Final Diagnosis&#38;Medical Acts">
+        <section headerLabel="Page3.Final Diagnosis&#38;Medical Acts">
 <!-- <htmlformflowsheet formId="30402446-d30d-4df8-9c48-9b9af80cf095" sharedEncounter="true" /> -->
             <!-- <htmlformflowsheet formId="a533ac05-4878-43ce-8de9-9618053f1e67" conceptsToShow="122062" /> -->
 
@@ -166,39 +166,37 @@
 
 
  <div>
-        <section headerLabel="Ophtalmology form ">
+        <section headerLabel="Page4.Ophtalmology form ">
             <htmlformflowsheet formId="5c3c9e94-d6a8-42aa-91c9-4e02607e4f90" sharedEncounter="true"  />
         </section>
-    </div>
-<div>
-        <section headerLabel="Stomatology form">
+		<section headerLabel="Stomatology form">
             <htmlformflowsheet formId="e19eecb3-32d1-4506-8e9a-1ba5093c140e" sharedEncounter="true"  />
-        </section>
+		</section>
     </div>
-<div>
+	<div>
         <section headerLabel="Kinesitherapy Acts">
             <htmlformflowsheet formId="c8abfdc7-70b9-4e61-b19d-9666b883410d" sharedEncounter="true"  />
         </section>
     </div> 
-  <div>
+	<div>
         <section headerLabel="Consumables form">
             <htmlformflowsheet formId="ac6af74e-4ce8-4cc6-8b9b-7b505533f47f" sharedEncounter="true"  />
         </section>
     </div>
 
     <div>
-        <section headerLabel="General Followup">
+        <section headerLabel="Page5.General Followup">
             <htmlformflowsheet formId="41db7721-1ce0-4e6f-8875-630343652e18" sharedEncounter="true"  />
         </section>
     </div>  
 
     <div>
-        <section headerLabel="Transfer all in one">
+        <section headerLabel="Page6.Transfer all in one">
             <htmlformflowsheet formId="235e15a9-4e73-4c2f-8288-0617ac6be404" windowHeight="500" sharedEncounter="true"/>
         </section>
     </div>
   <div>
-        <section headerLabel="Discharge&#38;Close Bills">
+        <section headerLabel="Page7.Discharge&#38;Close Bills">
             <htmlformflowsheet formId="01167552-7e28-44fc-848b-317b00fb8087" windowHeight="500" sharedEncounter="true"/>
         </section>
     </div>

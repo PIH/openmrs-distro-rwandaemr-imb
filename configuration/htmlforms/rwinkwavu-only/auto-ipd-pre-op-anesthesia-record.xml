@@ -63,10 +63,11 @@ formRetired="false"
                 </td>
                 <td>
                     Health Facility:
-                  <encounterLocation id="location" />
+                    <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode" />
                 </td>
                 <td>
-                    <encounterProvider id="encounterProvider" role="Provider" />
+                    Provider:
+                    <encounterProvider default="currentUser" />
                 </td>
             </tr>
             <tr>

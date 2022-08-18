@@ -38,18 +38,20 @@ formRetired="false"
 
 	<section headerLabel="1. Encounter Details">
 		<table class="baseline-aligned">
-			<tr>
-				<td>Date:</td>
-				<td><encounterDate default="today"/></td>
-			</tr>
-			<tr>
-				<td>Location:</td>
-				<td><encounterLocation/></td>
-			</tr>
-			<tr>
-				<td>Provider:</td>
-				<td><encounterProvider id="encounterProvider" role="Provider" default="currentUser"/></td>
-			</tr>
+			<<tr>
+                <td>
+                    Date:
+                    <encounterDate default="today"/>
+                </td>
+                <td>
+                    Health Facility:
+                    <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode" />
+                </td>
+                <td>
+                    Provider:
+                    <encounterProvider default="currentUser" />
+                </td>
+            </tr>
 		</table>
 	</section>
 

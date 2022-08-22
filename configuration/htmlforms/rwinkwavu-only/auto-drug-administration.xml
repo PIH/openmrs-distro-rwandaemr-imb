@@ -151,7 +151,8 @@ formRetired="false"
             <tr>
                 <td>
                     <b>
-                        <encounterLocation id="location"  default="today"/>
+                        Health Facility:
+                        <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode" />
                     </b><br/>
                 </td>
                 <td>

@@ -1,0 +1,145 @@
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/muzima.css" rel="stylesheet">
+    <link href="css/ui-darkness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+  
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/additional-methods.min.js"></script>
+    <script src="js/jquery-autocomplete-min.js"></script>
+    <script src="js/muzima.js"></script>
+  
+    <title>PDC ECD Intervention VISIT </title>
+</head>
+<body class="col-md-10 col-md-offset-1">
+    
+    <div id="pre_populate_data"></div>
+<form id="DiabetesCardiovascularCheckup_form" name="DiabetesCardiovascularCheckup_form">
+  <div class="section">
+    <fieldset>
+      <h3>Encounter Details</h3>
+      <div class="form-group">
+        <label for="encounter.location_id">Location Name:<span class="required">*</span></label>
+        <input class="form-control valid-location-only" id="encounter.location_id" type="text" placeholder="Start typing something..."
+               required="required">
+        <input class="form-control" name="encounter.location_id" type="hidden">
+      </div>
+      <div class="form-group">
+        <label for="encounter.provider_id_select">Provider:</label>
+        <input class="form-control valid-provider-only" id="encounter.provider_id_select" type="text" placeholder="Start typing something...">
+        <input class="form-control" name="encounter.provider_id_select" type="hidden">
+      </div>
+      <div class="form-group hidden">
+        <select id="select_providers"></select>
+      </div>
+      <div class="form-group show_provider_id_text">
+        <label for="encounter.provider_id">Provider's system-id:<span class="required">*</span></label>
+        <input class="form-control checkDigit" id="encounter.provider_id" name="encounter.provider_id"
+               type="text" required="required" disabled="disabled">
+      </div>
+      <div class="form-group">
+        <label for="encounter.encounter_datetime">Encounter Date:<span class="required">*</span></label>
+        <input class="form-control datepicker nonFutureDate past-date" id="encounter.encounter_datetime"
+               name="encounter.encounter_datetime" type="text" readonly="readonly"
+               required="required">
+      </div>
+      <div class="form-group">
+        <input class="form-control" id="encounter.form_uuid" name="encounter.form_uuid"
+               type="hidden" required="required">
+      </div>
+    </fieldset>
+  </div>
+  <div class="section">
+    <fieldset>
+      <h3>DEMOGRAPHICS & CLINICAL MEASUREMENTS</h3>
+
+      <div class="form-group">
+        <input class="form-control" id="patient.uuid"
+               name="patient.uuid" type="hidden" readonly="readonly">
+      </div>
+      <div class="form-group">
+        <label for="patient.medical_record_number">Patient identifier:</label>
+        <input class="form-control" id="patient.medical_record_number"
+               name="patient.medical_record_number" type="text" readonly="readonly">
+      </div>
+      <div class="form-group">
+        <label for="patient.given_name">Given Name:</label>
+        <input class="form-control" id="patient.given_name" name="patient.given_name" type="text"
+               readonly="readonly">
+      </div>
+      <div class="form-group">
+        <label for="patient.middle_name">Middle Name:</label>
+        <input class="form-control" id="patient.middle_name" name="patient.middle_name" type="text"
+               readonly="readonly">
+      </div>
+      <div class="form-group">
+        <label for="patient.family_name">Family Name:</label>
+        <input class="form-control" id="patient.family_name" name="patient.family_name" type="text"
+               readonly="readonly">
+      </div>
+      <div class="form-group">
+        <label for="patient.sex">Gender:</label>
+        <select class="form-control" id="patient.sex" name="patient.sex" disabled="disabled">
+          <option value="">...</option>
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="patient.birth_date">Date Of Birth:</label>
+        <input class="form-control" id="patient.birth_date" name="patient.birth_date" type="text"
+               readonly="readonly" disabled="disabled">
+      </div>
+    </fieldset>
+  </div>
+  <br/>
+  <div class="section">
+    <div class="form-group">
+      <fieldset>
+        <div>
+          <label>Pathology completed</label>
+        </div>
+        <label class="font-normal">
+            <input id="PathologyCompleted" name="ECDSESSIONTYPE" type="checkbox"
+                   data-concept="803464b8-cfa0-4ff8-a9d0-7ee082bfeb1a^ECD SESSION TYPE^99DCT"
+                   value="2599cbe1-af9b-442c-899f-23759c46e1ec^ECD Individual Session^99DCT">
+                   Individual Session
+            </label>
+            <br/>
+        <label class="font-normal">
+            <input id="PathologyCompleted" name="ECDSESSIONTYPE" type="checkbox"
+                   data-concept="803464b8-cfa0-4ff8-a9d0-7ee082bfeb1a^ECD SESSION TYPE^99DCT"
+                 value="f57cf6d1-a812-4bff-9af6-4c1cdf282129^ECD Group Session^99DCT">
+                 Group Session
+        </label>
+
+      </fieldset>
+    </div>
+  </div>
+  <br/>
+  <div class="section">
+    <fieldset>
+      <div class="form-group">
+        <br/>
+        <label >Play Activities Recommended: <input id="obs.PlayActivitiesRecommended" class="form-control" name="obs.PlayActivitiesRecommended" type="text" size="30" data-concept="bb764127-bf3f-4117-a1ef-895792dd685b^Play activities recommended^99DCT"/></label>
+        <br/>
+        <label >Communication activities Recommended: <input id="obs.CommunicationActivitiesRecommended" class="form-control" name="obs.CommunicationActivitiesRecommended" type="text" size="30" data-concept="8a71da9c-1b67-4be4-8d46-b797d854f1b2^Communication Activities recommended^99DCT"/></label>
+        <br/>
+        <label >Any concerns shared?: <input id="obs.ConcernsShared" class="form-control" name="obs.ConcernsShared" type="text" size="50" data-concept="c25c3a7d-bac4-4f51-81de-6b0dd754ba1d^Concerns shared^99DCT"/></label>
+        <br/>
+        <label >Solutions Provided: <input id="obs.SolutionsProvided" class="form-control" name="obs.SolutionsProvided" type="text" size="50" data-concept="6836dd6e-79ae-43dd-9d1e-65bed0e6ef17^Solution Provided^99DCT"/></label>
+        <br/>
+        <label >Follow-up Date: <input id="obs.DATEOFSTARTINGFOLLOWUP" class="form-control" name="obs.DATEOFSTARTINGFOLLOWUP" type="date" size="30" data-concept="4f6089bd-6d3a-4346-9aeb-1a6f852fc5c1^DATE OF STARTING FOLLOW UP^99DCT"/></label>
+        <br/>
+      </div>
+    </fieldset>
+  </div>
+  <br/>
+
+</form>
+
+</body>
+</html>

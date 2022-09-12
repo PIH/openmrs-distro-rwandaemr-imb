@@ -26,6 +26,7 @@
 		@referral_hospital_construct@ = 0864bccf-ae0c-414e-9b08-7c05693b168b
 		@district_hospital_construct@ =59ec2c2c-f226-496e-8144-693326d1448d
 		@Health_center_construct@ =8f1f7d59-3b8d-4c6a-be2e-1e0069a1f8aa
+		@CHW_Phone_Number@=ae7c64db-bcbb-4438-8f55-0566d95b6366
 	</macros>
 	<style>
 		.formName {
@@ -445,30 +446,11 @@
 				</td>
 			</tr>
 			<tr>
-				<td><b>Insurance</b></td>
-				<td>
-
-					<table width="100%">
-						<tr>
-							<td class="checkboxGroup"><span id="checkboxRadio"><obs
-									conceptId="8da67e73-776c-43f6-9758-79d1f6786db3"
-									answerConceptId="465d1588-a6f6-41ac-9b9c-cc4fdf140e78"
-									answerLabel="Mutuelle:" />
-				</span>
-				<span class="checkboxGroupInner"><span id="checkboxRadioInner">	
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<obs
-						conceptId="a9191adf-c999-422d-94e0-14de5f076127"
-						answerConceptId="60faae3f-6f2c-4724-8a3e-96dfa386346e"
-						answerLabel="I" />
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs conceptId="a9191adf-c999-422d-94e0-14de5f076127" answerConceptId="a184e124-75cf-4ecd-a724-ea068ea94438" answerLabel="II" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<obs conceptId="a9191adf-c999-422d-94e0-14de5f076127" answerConceptId="ddb21a09-f2df-490e-a6c4-22447a119492" answerLabel="III" /></span></span><span id="checkboxRadio">
-				&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;  &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<obs conceptId="3ce0cd1a-26fe-102b-80cb-0017a47871b2" answerConceptId="3cee7fb4-26fe-102b-80cb-0017a47871b2" answerLabel="Other:" /><obs conceptId="bab86ae4-080a-4e83-8808-faa9863d9a61" /><br />
-				<obs conceptId="8da67e73-776c-43f6-9758-79d1f6786db3" answerConceptId="3cd743f8-26fe-102b-80cb-0017a47871b2" answerLabel="None" /></span>
-							</td>
-						</tr>
-
-					</table>
-				</td>
-			</tr>
+             <td><b>CHW Phone Number</b></td>
+             <td>
+                    Phone number : <obs conceptId = "$@CHW_Phone_Number@"/>
+             </td>
+         </tr>
 			<tr>
 				<td><b>Socioeconomic assistance</b></td>
 				<td><table>

@@ -181,6 +181,11 @@ formRetired="false"
         </section>
     </div>
     <div>
+        <section headerLabel="Consumables form">
+            <htmlformflowsheet formId="ac6af74e-4ce8-4cc6-8b9b-7b505533f47f" sharedEncounter="true"  />
+        </section>
+    </div>
+    <div>
         <section headerLabel="Progress Note">
             <htmlformflowsheet formId="5993157e-5356-48a1-9acf-581e64317162" sharedEncounter="true" />
         </section>

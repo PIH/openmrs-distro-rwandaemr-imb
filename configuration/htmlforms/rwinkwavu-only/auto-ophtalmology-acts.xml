@@ -1507,7 +1507,7 @@ if(jQuery){
 }
 </script>
     <span style="float:right">Paper Form ID: $paperFormId</span>
-    <h2>Admission (Billing automation) (v1.0)</h2>
+    <h2>Ophthalmology (Billing automation) (v1.0)</h2>
 
     <!--  <postSubmissionAction class="org.openmrs.module.mohbilling.automation.CreateBillOnHtmlFormSubmissionAction"/>-->
 
@@ -1532,15 +1532,15 @@ if(jQuery){
             <tr>
                 <td>
                     Date:
-                    <encounterDate />
+                    <encounterDate default="today"/>
                 </td>
                 <td>
                     Health Facility:
-                    <encounterLocation id="location"  />
+                    <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode" />
                 </td>
                 <td>
                     Provider:
-                    <encounterProvider role="Provider"  />
+                    <encounterProvider default="currentUser" />
                 </td>
             </tr>
         </table>

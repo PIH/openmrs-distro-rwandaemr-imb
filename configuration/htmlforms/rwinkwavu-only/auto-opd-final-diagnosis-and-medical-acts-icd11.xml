@@ -383,6 +383,7 @@ formRetired="false"
     @Secondary_ICD_diagnosis@ = afb8006f-e7c4-45bd-82bd-16f6e4b4b51d
     @Primary_ICD_diagnosis@ = 2dce81f9-3874-4247-b441-6369ca0725c2
     @Varicectomie@ = 95f78c19-d9d5-464f-ba21-0d28c28579e6
+    @ECG@= 360c055f-e3e1-4553-b9c3-e79cda1632c5
 
 
 
@@ -1562,19 +1563,19 @@ input[type="submit"] {
         </tr>
       </table>
       <table border="2" cellpadding="6" cellspacing="0" width="100%">
-        <tr>
-          <td>
-            Date:
-            <encounterDate default="today" size="25"/>
-          </td>
-          <td>
-            Health Facility:
-            <encounterLocation id="location"/>
-          </td>
-          <td>
-            Provider:
-            <encounterProvider role="Provider"/>
-          </td>
+       <tr>
+                <td>
+                    Date:
+                    <encounterDate default="today"/>
+                </td>
+                <td>
+                    Health Facility:
+                    <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode" />
+                </td>
+                <td>
+                    Provider:
+                    <encounterProvider default="currentUser" />
+                </td>
         </tr>
       </table>
     </div>
@@ -1825,6 +1826,9 @@ $jQuery('#secondaryButton').click(function() {
             <tr>
               <td>
 <obs conceptId="$@ECHOGRAPHIE_Abdominale@" labelText="ECHOGRAPHIE Abdominale" style=""/>
+</td>
+<td>
+<obs conceptId="$@ECG@" labelText="ECG" style=""/>
 </td>
 <td>
               <obs conceptId="$@ECHOGRAPHIE_Abdomino-pelvienne_Gyneco-obstetricale@" labelText="ECHOGRAPHIE Abdomino pelvienne Gyneco obstetricale" style=""/>

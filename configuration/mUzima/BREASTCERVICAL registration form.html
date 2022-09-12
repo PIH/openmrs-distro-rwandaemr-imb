@@ -315,6 +315,7 @@
             if($("input[id='yesOwnPhoneNumber']").prop('checked')){
                 $('#patient\\.phone_number').prop('required',true);
                 $(".patientPhone").show()
+                $(".patientHasNumber").show();
                 $('#patient\\.contact_Person_phone_number').prop('required',false);
                 $(".contactPersonPhone").hide();
             }

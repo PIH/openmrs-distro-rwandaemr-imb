@@ -465,7 +465,56 @@
             }
     </script>
 
+<script>
 
+    var $i = jQuery.noConflict();
+    
+    $i(document).ready(function(){
+    
+        var txt = $i('#nameOfReferring');
+        txt.find('input').attr("placeholder", "Enter name of the referral HF");
+    
+        $i('#refMode').change(function(){
+    
+            var takeRef = $i('#refMode input[value="1427"]').attr('checked') ? true : false;
+                if(takeRef == true){
+                    txt.show();
+                    $i('#volMode').find("input[type$='checkbox']").prop("checked", false);
+                }else
+                {
+                    txt.hide();
+                }
+        });
+        $i('#volMode').change(function(){
+    
+            var takeVol = $i('#volMode input[value="123233"]').attr('checked') ? true : false;
+                if(takeVol == true){
+                    txt.hide();
+                    $i('#refMode').find("input[type$='checkbox']").prop("checked", false);
+                    
+                }
+        });
+    
+        beforeSubmit.push(function() {
+        
+        var takeRef = $i('#refMode input[value="1427"]').attr('checked') ? true : false;
+    
+        var takeTxt = getValue('nameOfReferring.value')
+    
+        if(takeRef == true){ //Check if the patient is transfered
+    
+            if(takeTxt == null || takeTxt == ""){ // Check if the name of transfered HF is provided
+    
+                getField('nameOfReferring.error').html('Name of Health Facility is required').show();
+                alert('Name of Health Facility is required');
+                return false;
+            }
+            
+        }
+        return true;
+        });
+    });
+    </script>
 
     <section>
         <table border="1" cellspacing="0" cellpadding="6" width="100%">
@@ -552,31 +601,13 @@
                 <td>
                     <label>Entry mode:</label>
                 </td>
-                <td class="checkboxGroup">
-                    <!--                <label class="font-normal">-->
-                    <!--                    <input id="obs.EntryModeVoluntary" name="obs.EntryMode" type="radio"-->
-                    <!--                           data-concept="5c1c525c-07f0-4a76-bcff-f64cf1f7108d^Entry mode^99DCT"-->
-                    <!--                           value="6c31b035-4a63-48e0-bfed-e8dd32c00475^Voluntary^99DCT">-->
-                    <span class="deactivate" id="EntryModeVoluntary" title="EntryMode">
-                        <obs conceptId="$@Entry_mode@" answerConceptId="$@Voluntary@" answerLabel="Voluntary check-up/screening" style="checkbox" />
-                    </span>
-                    <span class="activate" id="EntryModeTRANSFER" title="EntryMode">
-                        <obs conceptId="$@Entry_mode@" answerConceptId="$@TRANSFER_IN_FROM@" answerLabel="Referred from Health Facility" style="checkbox" />
-                    </span>
-                    <!--                    Voluntary check-up/screening-->
-                    <!--                </label>-->
-                    <!--                <label class="font-normal">-->
-                    <!--                    <input id="obs.EntryModeTRANSFER" name="obs.EntryMode" type="radio"-->
-                    <!--                           data-concept="5c1c525c-07f0-4a76-bcff-f64cf1f7108d^Entry mode^99DCT"-->
-                    <!--                           value="3cda3efa-26fe-102b-80cb-0017a47871b2^TRANSFER IN FROM^99DCT">-->
-                    <!--                    Referred from Health Facility-->
-                    <!--                </label>-->
-                    <!--                <label class="font-normal">-->
-                    <!--                    <input id="obs.NameOfReferring" class="form-control" name="obs.NameOfReferring" type="text" data-concept="3cda3efa-26fe-102b-80cb-0017a47871b2^TRANSFER IN FROM^99DCT"/>-->
-                    <span class="EntryMode">
-                        <obs id="NameOfReferring" conceptId="$@TRANSFER_IN_FROM@" />
-                    </span>
-                </td>
+                <td>
+                    <obs id="volMode" conceptId="$@Entry_mode@" answerConceptId="$@Voluntary@" answerLabel="Voluntary check-up/screening" style="checkbox" />
+                 </td>
+                 <td>
+                    <obs id="refMode" conceptId="$@Entry_mode@" answerConceptId="$@TRANSFER_IN_FROM@" answerLabel="Referred from Health Facility" style="checkbox" />
+                    <obs id="nameOfReferring" conceptId="$@TRANSFER_IN_FROM@"/>
+                 </td>
             </tr>
             <tr>
                 <td>

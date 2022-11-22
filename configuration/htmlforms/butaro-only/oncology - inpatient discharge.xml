@@ -226,10 +226,16 @@
 							</orderProperty>
 							<orderProperty name="frequency" label="Frequency*">
 								<option value="707ad8b7-d902-11ea-80fb-0242ac110002" label="1 / day"/> 
+								<option value="87ea7c89-d8f9-11ea-80fb-0242ac110002" label="2 / day"/>
+								<option value="d8290a00-d926-11ea-8b36-0242ac110002" label="3 / day"/>
+								<option value="405a5af1-d927-11ea-8b36-0242ac110002" label="4 / day"/>
+								<option value="a2f03aa2-eedf-11ea-b492-0242ac110002" label="5 / day"/>
+								<option value="f11513cb-eee1-11ea-b492-0242ac110002" label="6 / day"/>
 								<!-- <option value="60c10f8a-e888-449a-9a1a-1681c171b0d0" label="Once daily for 4 days repeated after every 6 weeks"/> -->
-							
 								<option value="bfc113ff-f21d-11ea-ba0d-0242ac110002" label="1 / day for days every 2 weeks"/>
 								<option value="41d3b6ea-eee1-11ea-b492-0242ac110002" label="1 / Week"/>
+								
+
 							</orderProperty>
 							</div>
 							   

@@ -12,7 +12,7 @@
   <script src="js/jquery-autocomplete-min.js"></script>
   <script src="js/muzima.js"></script>
 
-  <title>CLINICAL BREAST EXAMINATION</title>
+  <title>NCD HTN Diagnosis Confirmation</title>
 </head>
 <body class="col-md-10 col-md-offset-1">
 <div id="pre_populate_data"></div>
@@ -126,14 +126,14 @@
         <label class="font-normal"> <strong> Systole (mmHg):  </strong> </label>
         <br/>
         <label class="font-normal">
-          <input class="form-control"  id="obs.SystolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>
+          <input class="form-control"  max="250" min="20" id="obs.SystolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>
         </label>
       </div>
       <div >
         <label class="font-normal"> <strong> Diastole (mmHg):  </strong> </label>
         <br/>
         <label class="font-normal">
-          <input class="form-control" id="obs.diastolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>
+          <input class="form-control" max="150" min="30" id="obs.diastolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>
         </label>
       </div>
       <div >

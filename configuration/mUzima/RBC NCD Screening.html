@@ -116,24 +116,24 @@
                 <label class="font-normal"> <strong> Weight (Kg):  </strong> </label>
                 <br/>
                 <label class="font-normal">
-                    <input class="form-control" id="Weight" name="obs.Weight" type="number" data-concept="3ce93b62-26fe-102b-80cb-0017a47871b2^WEIGHT (KG)^99DCT"/>
+                    <input class="form-control" max="300" id="Weight" name="obs.Weight" type="number" data-concept="3ce93b62-26fe-102b-80cb-0017a47871b2^WEIGHT (KG)^99DCT"/>
                 </label>
             </div>
             <div >
                 <label class="font-normal"> <strong> Height (cm):  </strong> </label>
                 <br/>
                 <label class="font-normal">
-                    <input class="form-control" id="Height" name="obs.Height" type="number" data-concept="3ce93cf2-26fe-102b-80cb-0017a47871b2^HEIGHT (CM)^99DCT"/>
+                    <input class="form-control" max="228" min="10" id="Height" name="obs.Height" type="number" data-concept="3ce93cf2-26fe-102b-80cb-0017a47871b2^HEIGHT (CM)^99DCT"/>
                 </label>
             </div>
-            <div >
+            <div id="BMIDiv" class="initialHide">
                 <label class="font-normal"> <strong> BMI:  </strong> </label>
                 <br/>
                 <label class="font-normal">
                     <input class="form-control" id="BMI" name="obs.BMI" type="number" data-concept="3ce14da8-26fe-102b-80cb-0017a47871b2^BODY MASS INDEX, MEASURED^99DCT" disabled="disabled"/>
                 </label>
             </div>
-            <div >
+            <div id="BMIStatusDiv" class="initialHide">
                 <label class="font-normal"> <strong> BMI status:  </strong> </label>
                 <br/>
 <!--                <label class="font-normal">-->
@@ -144,38 +144,42 @@
 <!--                        </select>-->
 <!--                    </label>-->
 <!--                </label>-->
-                <label class="font-normal">
-                    <input id="obs.BMIStatusUnderWeight" name="obs.BMIStatus" type="radio"
-                           data-concept="474c2ddf-cd0e-43d3-99e4-3afea48d7b83^BMI Status^99DCT"
-                           value="77119182-ef93-4d11-80c9-d7ca514d2da5^Underweight^99DCT">
-                    Underweight
-                </label>
-                <label class="font-normal">
-                    <input id="obs.BMIStatusNormal" name="obs.BMIStatus" type="radio"
-                           data-concept="474c2ddf-cd0e-43d3-99e4-3afea48d7b83^BMI Status^99DCT"
-                           value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">
-                    Normal
-                </label>
-                <label class="font-normal">
-                    <input id="obs.BMIStatusOverweight" name="obs.BMIStatus" type="radio"
-                           data-concept="474c2ddf-cd0e-43d3-99e4-3afea48d7b83^BMI Status^99DCT"
-                           value="45d82302-b238-40d7-88b8-33e84009c27a^Overweight^99DCT">
-                    Overweight
-                </label>
-                <label class="font-normal">
-                    <input id="obs.BMIStatusObesity" name="obs.BMIStatus" type="radio"
-                           data-concept="474c2ddf-cd0e-43d3-99e4-3afea48d7b83^BMI Status^99DCT"
-                           value="115115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA^Obesity^99DCT">
-                    Obesity
-                </label>
-                <label class="font-normal">
-                    <input id="obs.BMIStatusSeverObesity" name="obs.BMIStatus" type="radio"
-                           data-concept="474c2ddf-cd0e-43d3-99e4-3afea48d7b83^BMI Status^99DCT"
-                           value="e91f4887-a713-4263-86dc-155099d9b28c^Severe Obesity^99DCT">
-                    Severe Obesity
+<!--                <label class="font-normal">-->
+<!--                    <input id="obs.BMIStatusUnderWeight" name="obs.BMIStatus" type="radio"-->
+<!--                           data-concept="474c2ddf-cd0e-43d3-99e4-3afea48d7b83^BMI Status^99DCT"-->
+<!--                           value="77119182-ef93-4d11-80c9-d7ca514d2da5^Underweight^99DCT">-->
+<!--                    Underweight-->
+<!--                </label>-->
+<!--                <label class="font-normal">-->
+<!--                    <input id="obs.BMIStatusNormal" name="obs.BMIStatus" type="radio"-->
+<!--                           data-concept="474c2ddf-cd0e-43d3-99e4-3afea48d7b83^BMI Status^99DCT"-->
+<!--                           value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">-->
+<!--                    Normal-->
+<!--                </label>-->
+<!--                <label class="font-normal">-->
+<!--                    <input id="obs.BMIStatusOverweight" name="obs.BMIStatus" type="radio"-->
+<!--                           data-concept="474c2ddf-cd0e-43d3-99e4-3afea48d7b83^BMI Status^99DCT"-->
+<!--                           value="45d82302-b238-40d7-88b8-33e84009c27a^Overweight^99DCT">-->
+<!--                    Overweight-->
+<!--                </label>-->
+<!--                <label class="font-normal">-->
+<!--                    <input id="obs.BMIStatusObesity" name="obs.BMIStatus" type="radio"-->
+<!--                           data-concept="474c2ddf-cd0e-43d3-99e4-3afea48d7b83^BMI Status^99DCT"-->
+<!--                           value="115115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA^Obesity^99DCT">-->
+<!--                    Obesity-->
+<!--                </label>-->
+<!--                <label class="font-normal">-->
+<!--                    <input id="obs.BMIStatusSeverObesity" name="obs.BMIStatus" type="radio"-->
+<!--                           data-concept="474c2ddf-cd0e-43d3-99e4-3afea48d7b83^BMI Status^99DCT"-->
+<!--                           value="e91f4887-a713-4263-86dc-155099d9b28c^Severe Obesity^99DCT">-->
+<!--                    Severe Obesity-->
+<!--                </label>-->
+                <label class="font-normal" >
+                    <input class="form-control " id="BMIStatus" type="text" readonly="readonly" disabled="disabled">
+                    <input class="form-control" name="BMIStatus" type="hidden" data-concept="474c2ddf-cd0e-43d3-99e4-3afea48d7b83^BMI Status^99DCT">
                 </label>
             </div>
-            <div >
+            <div id="obesityKnowOrNewDiv" class="initialHide">
                 <label class="font-normal"> <strong> Obesity know or new:  </strong> </label>
                 <br/>
                 <label class="font-normal">
@@ -192,12 +196,14 @@
                            value="e47d5901-d9c6-400d-bca0-2e8ae916ea99^Known Case^99DCT">
                     Known Case
                 </label>
+                <br/>
                 <label class="font-normal">
                     <input id="obs.ObesityKnoworNewNotAppicable" name="obs.ObesityKnoworNew" type="radio"
                            data-concept="4f52fa8e-0b78-4c5c-b4c7-88961ee0f926^Obesity know or new^99DCT"
                            value="3cd7b72a-26fe-102b-80cb-0017a47871b2^NOT APPLICABLE^99DCT">
                     N/A
                 </label>
+                <br/>
                 <label class="font-normal">
                     <input id="obs.ObesityKnoworNewNew" name="obs.ObesityKnoworNew" type="radio"
                            data-concept="4f52fa8e-0b78-4c5c-b4c7-88961ee0f926^Obesity know or new^99DCT"
@@ -209,10 +215,10 @@
                 <label class="font-normal"> <strong>  Waist circumference in cm:  </strong> </label>
                 <br/>
                 <label class="font-normal">
-                    <input class="form-control" id="obs.WaistCircumference" name="obs.WaistCircumference" type="number" data-concept="d735afe6-8fd3-4802-8465-197d324b3085^Waist circumference^99DCT"/>
+                    <input class="form-control" id="WaistCircumference" name="obs.WaistCircumference" type="number" data-concept="d735afe6-8fd3-4802-8465-197d324b3085^Waist circumference^99DCT"/>
                 </label>
             </div>
-            <div >
+            <div id="WaistCircumferenceStatusDiv" class="initialHide">
                 <label class="font-normal"> <strong> Waist Circumference status:  </strong> </label>
                 <br/>
                 <!--                        <label class="font-normal">-->
@@ -221,20 +227,25 @@
                 <!--                                <option value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">Normal</option>-->
                 <!--                            </select>-->
                 <!--                        </label>-->
-                <label class="font-normal">
-                    <input id="obs.WaistCircumferenceStatusNormal" name="obs.WaistCircumferenceStatus" type="radio"
-                           data-concept="a7e949f2-6d58-4e30-8152-deedcba6d148^Waist Circumference status^99DCT"
-                           value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">
-                    Normal
-                </label>
-                <label class="font-normal">
-                    <input id="obs.WaistCircumferenceStatusAbnormal" name="obs.WaistCircumferenceStatus" type="radio"
-                           data-concept="a7e949f2-6d58-4e30-8152-deedcba6d148^Waist Circumference status^99DCT"
-                           value="364651ee-5fe7-46b7-9c7a-4cc4e52f243c^Abnormal^99DCT">
-                    Abnormal
+<!--                <label class="font-normal">-->
+<!--                    <input id="obs.WaistCircumferenceStatusNormal" name="obs.WaistCircumferenceStatus" type="radio"-->
+<!--                           data-concept="a7e949f2-6d58-4e30-8152-deedcba6d148^Waist Circumference status^99DCT"-->
+<!--                           value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">-->
+<!--                    Normal-->
+<!--                </label>-->
+<!--                <br/>-->
+<!--                <label class="font-normal">-->
+<!--                    <input id="obs.WaistCircumferenceStatusAbnormal" name="obs.WaistCircumferenceStatus" type="radio"-->
+<!--                           data-concept="a7e949f2-6d58-4e30-8152-deedcba6d148^Waist Circumference status^99DCT"-->
+<!--                           value="364651ee-5fe7-46b7-9c7a-4cc4e52f243c^Abnormal^99DCT">-->
+<!--                    Abnormal-->
+<!--                </label>-->
+                <label class="font-normal" >
+                    <input class="form-control " id="WaistCircumferenceStatus" type="text" readonly="readonly" disabled="disabled">
+                    <input class="form-control" name="WaistCircumferenceStatus" type="hidden" data-concept="a7e949f2-6d58-4e30-8152-deedcba6d148^Waist Circumference status^99DCT">
                 </label>
             </div>
-            <div >
+            <div id="AnthropocentricMeasureTakenDiv" class="initialHide">
                 <label class="font-normal"> <strong> Anthropocentric measure taken :  </strong> </label>
                 <br/>
                 <label class="font-normal">
@@ -259,17 +270,17 @@
                         <label class="font-normal"> <strong> Systole (mmHg):  </strong> </label>
                         <br/>
                         <label class="font-normal">
-                            <input class="form-control"  id="obs.SystolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>
+                            <input class="form-control"  max="250" min="20" id="SystolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>
                         </label>
                     </div>
                     <div >
                         <label class="font-normal"> <strong> Diastole (mmHg):  </strong> </label>
                         <br/>
                         <label class="font-normal">
-                            <input class="form-control" id="obs.diastolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>
+                            <input class="form-control" max="150" min="30" id="diastolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>
                         </label>
                     </div>
-                    <div >
+                    <div id="BPStatusDiv" class="initialHide">
                         <label class="font-normal"> <strong> BP status :  </strong> </label>
                         <br/>
 <!--                        <label class="font-normal">-->
@@ -278,38 +289,43 @@
 <!--                                <option value="3cd50188-26fe-102b-80cb-0017a47871b2^HYPERTENSION^99DCT">Hypertension</option>-->
 <!--                            </select>-->
 <!--                        </label>-->
+<!--                        <label class="font-normal">-->
+<!--                            <input id="obs.BPStatusHFNormal" name="obs.BPStatusHF" type="radio"-->
+<!--                                   data-concept="ba61f053-b306-418f-8891-8af43b322ca7^Blood pressure status^99DCT"-->
+<!--                                   value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">-->
+<!--                            Normal-->
+<!--                        </label>-->
+<!--                        <label class="font-normal">-->
+<!--                            <input id="obs.BPStatusHFPreHypertension" name="obs.BPStatusHF" type="radio"-->
+<!--                                   data-concept="ba61f053-b306-418f-8891-8af43b322ca7^Blood pressure status^99DCT"-->
+<!--                                   value="d31fcdb1-ed29-4376-9bde-af798d1c0570^pre Hypertension^99DCT">-->
+<!--                            Pre Hypertension-->
+<!--                        </label>-->
+<!--                        <label class="font-normal">-->
+<!--                            <input id="obs.BPStatusHFHypertension" name="obs.BPStatusHF" type="radio"-->
+<!--                                   data-concept="ba61f053-b306-418f-8891-8af43b322ca7^Blood pressure status^99DCT"-->
+<!--                                   value="3cd50188-26fe-102b-80cb-0017a47871b2^HYPERTENSION^99DCT">-->
+<!--                            Hypertension-->
+<!--                        </label>-->
+<!--                        <label class="font-normal">-->
+<!--                            <input id="obs.BPStatusHFHypotension" name="obs.BPStatusHF" type="radio"-->
+<!--                                   data-concept="ba61f053-b306-418f-8891-8af43b322ca7^Blood pressure status^99DCT"-->
+<!--                                   value="ec8a1b55-6d9c-40d2-ad1e-5b680ea05fbc^Hypotension^99DCT">-->
+<!--                            Hypotension-->
+<!--                        </label>-->
+<!--                        <label class="font-normal">-->
+<!--                            <input id="obs.BPStatusHFEmergency" name="obs.BPStatusHF" type="radio"-->
+<!--                                   data-concept="ba61f053-b306-418f-8891-8af43b322ca7^Blood pressure status^99DCT"-->
+<!--                                   value="7ee72fb3-f348-4ff9-a042-444d991ff861^Emergency Hypertension^99DCT">-->
+<!--                            Emergency Hypertension-->
+<!--                        </label>-->
+
                         <label class="font-normal">
-                            <input id="obs.BPStatusHFNormal" name="obs.BPStatusHF" type="radio"
-                                   data-concept="ba61f053-b306-418f-8891-8af43b322ca7^Blood pressure status^99DCT"
-                                   value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">
-                            Normal
-                        </label>
-                        <label class="font-normal">
-                            <input id="obs.BPStatusHFPreHypertension" name="obs.BPStatusHF" type="radio"
-                                   data-concept="ba61f053-b306-418f-8891-8af43b322ca7^Blood pressure status^99DCT"
-                                   value="d31fcdb1-ed29-4376-9bde-af798d1c0570^pre Hypertension^99DCT">
-                            Pre Hypertension
-                        </label>
-                        <label class="font-normal">
-                            <input id="obs.BPStatusHFHypertension" name="obs.BPStatusHF" type="radio"
-                                   data-concept="ba61f053-b306-418f-8891-8af43b322ca7^Blood pressure status^99DCT"
-                                   value="3cd50188-26fe-102b-80cb-0017a47871b2^HYPERTENSION^99DCT">
-                            Hypertension
-                        </label>
-                        <label class="font-normal">
-                            <input id="obs.BPStatusHFHypotension" name="obs.BPStatusHF" type="radio"
-                                   data-concept="ba61f053-b306-418f-8891-8af43b322ca7^Blood pressure status^99DCT"
-                                   value="ec8a1b55-6d9c-40d2-ad1e-5b680ea05fbc^Hypotension^99DCT">
-                            Hypotension
-                        </label>
-                        <label class="font-normal">
-                            <input id="obs.BPStatusHFEmergency" name="obs.BPStatusHF" type="radio"
-                                   data-concept="ba61f053-b306-418f-8891-8af43b322ca7^Blood pressure status^99DCT"
-                                   value="7ee72fb3-f348-4ff9-a042-444d991ff861^Emergency Hypertension^99DCT">
-                            Emergency Hypertension
+                            <input class="form-control " id="BPStatusHF" type="text" readonly="readonly">
+                            <input class="form-control" name="BPStatusHF" type="hidden" data-concept="ba61f053-b306-418f-8891-8af43b322ca7^Blood pressure status^99DCT">
                         </label>
                     </div>
-                    <div >
+                    <div id="BPMeasureTakenDiv" class="initialHide">
                         <label class="font-normal"> <strong> Blood Pressure measure taken :  </strong> </label>
                         <br/>
 <!--                        <label class="font-normal">-->
@@ -318,29 +334,33 @@
 <!--                                <option value="89297887-f43f-444b-a8c8-6ae76932ceca^Enroll in NCD Clinic or Transfer to HC^99DCT">Enroll in NCD Clinic or Transfer to HC</option>-->
 <!--                            </select>-->
 <!--                        </label>-->
+<!--                        <label class="font-normal">-->
+<!--                            <input id="obs.BPMeasureTakenHFCounsellingEveryyear" name="obs.BPMeasureTakenHF" type="radio"-->
+<!--                                   data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT"-->
+<!--                                   value="876b07ad-6249-4ee3-9c20-1cbcd6216097^Counselling and screening every year^99DCT">-->
+<!--                            Counselling and screening every year-->
+<!--                        </label>-->
+<!--                        <label class="font-normal">-->
+<!--                            <input id="obs.BPMeasureTakenHFCounsellingEverysixMonths" name="obs.BPMeasureTakenHF" type="radio"-->
+<!--                                   data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT"-->
+<!--                                   value="87976d1e-83bf-4285-b6ca-530bc0882f23^Counselling and screening every 6 months^99DCT">-->
+<!--                            Counselling and screening every 6 months-->
+<!--                        </label>-->
+<!--                        <label class="font-normal">-->
+<!--                            <input id="obs.BPMeasureTakenHFEnrollortransfer" name="obs.BPMeasureTakenHF" type="radio"-->
+<!--                                   data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT"-->
+<!--                                   value="89297887-f43f-444b-a8c8-6ae76932ceca^Enroll in NCD Clinic or Transfer to HC^99DCT">-->
+<!--                            Enroll in NCD Clinic or Transfer to HC-->
+<!--                        </label>-->
+<!--                        <label class="font-normal">-->
+<!--                            <input id="obs.BPMeasureTakenHFReferencetoHealthFacility" name="obs.BPMeasureTakenHF" type="radio"-->
+<!--                                   data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT"-->
+<!--                                   value="2f13f21c-1469-4915-9bda-91049a285d13^immediate reference to the health facility^99DCT">-->
+<!--                            immediate reference to the health facility-->
+<!--                        </label>-->
                         <label class="font-normal">
-                            <input id="obs.BPMeasureTakenHFCounsellingEveryyear" name="obs.BPMeasureTakenHF" type="radio"
-                                   data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT"
-                                   value="876b07ad-6249-4ee3-9c20-1cbcd6216097^Counselling and screening every year^99DCT">
-                            Counselling and screening every year
-                        </label>
-                        <label class="font-normal">
-                            <input id="obs.BPMeasureTakenHFCounsellingEverysixMonths" name="obs.BPMeasureTakenHF" type="radio"
-                                   data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT"
-                                   value="87976d1e-83bf-4285-b6ca-530bc0882f23^Counselling and screening every 6 months^99DCT">
-                            Counselling and screening every 6 months
-                        </label>
-                        <label class="font-normal">
-                            <input id="obs.BPMeasureTakenHFEnrollortransfer" name="obs.BPMeasureTakenHF" type="radio"
-                                   data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT"
-                                   value="89297887-f43f-444b-a8c8-6ae76932ceca^Enroll in NCD Clinic or Transfer to HC^99DCT">
-                            Enroll in NCD Clinic or Transfer to HC
-                        </label>
-                        <label class="font-normal">
-                            <input id="obs.BPMeasureTakenHFReferencetoHealthFacility" name="obs.BPMeasureTakenHF" type="radio"
-                                   data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT"
-                                   value="2f13f21c-1469-4915-9bda-91049a285d13^immediate reference to the health facility^99DCT">
-                            immediate reference to the health facility
+                            <input class="form-control " id="BPMeasureTakenHF" type="text" readonly="readonly" >
+                            <input class="form-control" name="BPMeasureTakenHF" type="hidden" data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT">
                         </label>
                     </div>
                     <div >
@@ -360,12 +380,14 @@
                                    value="e47d5901-d9c6-400d-bca0-2e8ae916ea99^Known Case^99DCT">
                             Known Case
                         </label>
+                        <br/>
                         <label class="font-normal">
                             <input id="obs.HypertensionKnoworNewNotAppicable" name="obs.HypertensionKnoworNew" type="radio"
                                    data-concept="25fdad68-bf6e-4ed8-9cba-e076e214ebb0^Hypertension Know or new^99DCT"
                                    value="3cd7b72a-26fe-102b-80cb-0017a47871b2^NOT APPLICABLE^99DCT">
                             N/A
                         </label>
+                        <br/>
                         <label class="font-normal">
                             <input id="obs.HypertensionKnoworNewNew" name="obs.HypertensionKnoworNew" type="radio"
                                    data-concept="25fdad68-bf6e-4ed8-9cba-e076e214ebb0^Hypertension Know or new^99DCT"
@@ -410,6 +432,7 @@
                                    value="d2d34adf-9f22-4897-97a1-dbbda02b19dd^Random for blood glucose test^99DCT">
                             Random
                         </label>
+                        <br/>
                         <label class="font-normal">
                             <input id="obs.GlucoseTestMethodFasting" name="obs.GlucoseTestMethod" type="radio"
                                    data-concept="f618591a-f334-4a5a-be26-0518871cd00f^Glucose test method^99DCT"
@@ -417,7 +440,7 @@
                             fasting
                         </label>
                     </div>
-                    <div >
+                    <div>
                         <label class="font-normal"> <strong> Blood sugar (mg/dl):  </strong> </label>
                         <br/>
                         <label class="font-normal">
@@ -439,24 +462,28 @@
                                    value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">
                             Normal
                         </label>
+                        <br/>
                         <label class="font-normal">
                             <input id="obs.BloodSugarStatusPreDiabetes" name="obs.BloodSugarStatus" type="radio"
                                    data-concept="fd66cc68-084b-4f41-9d84-5d748bcd7d95^Blood sugar status^99DCT"
                                    value="968cf3be-8254-48f1-83af-b09504449183^Pre diabetes^99DCT">
                             Pre diabetes
                         </label>
+                        <br/>
                         <label class="font-normal">
                             <input id="obs.BloodSugarStatusDiabetes" name="obs.BloodSugarStatus" type="radio"
                                    data-concept="fd66cc68-084b-4f41-9d84-5d748bcd7d95^Blood sugar status^99DCT"
                                    value="edf4ecc4-44f6-457a-b561-179f4426b16a^DIABETES^99DCT">
                             DIABETES
                         </label>
+                        <br/>
                         <label class="font-normal">
                             <input id="obs.BloodSugarStatusHYPOGLYCEMIA" name="obs.BloodSugarStatus" type="radio"
                                    data-concept="fd66cc68-084b-4f41-9d84-5d748bcd7d95^Blood sugar status^99DCT"
                                    value="641f4fe3-cac2-46c4-aa94-c8b6d05e9407^HYPOGLYCEMIA^99DCT">
                             HYPOGLYCEMIA
                         </label>
+                        <br/>
                         <label class="font-normal">
                             <input id="obs.BloodSugarStatus" name="obs.BloodSugarStatus" type="radio"
                                    data-concept="fd66cc68-084b-4f41-9d84-5d748bcd7d95^Blood sugar status^99DCT"
@@ -479,24 +506,28 @@
                                    value="29bdf2a1-909a-46ce-be28-55a633fd74e9^Screening every year^99DCT">
                             Screening every year
                         </label>
+                        <br/>
                         <label class="font-normal">
                             <input id="obs.BSMeasureTaken" name="obs.BSMeasureTaken" type="radio"
                                    data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"
                                    value="d670c8ad-cfa6-4e47-bd1f-7eb8f3fa342a^Screening every 3 months^99DCT">
                             Screening every 3 months
                         </label>
+                        <br/>
                         <label class="font-normal">
                             <input id="obs.BSMeasureTakenTransfer" name="obs.BSMeasureTaken" type="radio"
                                    data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"
                                    value="89297887-f43f-444b-a8c8-6ae76932ceca^Enroll in NCD Clinic or Transfer to HC^99DCT">
                             enroll in ncd clinic or transfer to DH
                         </label>
+                        <br/>
                         <label class="font-normal">
                             <input id="obs.BSMeasureTakenAddressHypoglycemia" name="obs.BSMeasureTaken" type="radio"
                                    data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"
                                    value="6f8d2d4a-4ea3-465e-b28a-3017d9707d89^Address hypoglycemia^99DCT">
                             Address hypoglycemia
                         </label>
+                        <br/>
                         <label class="font-normal">
                             <input id="obs.BSMeasureTakenImmediateReference" name="obs.BSMeasureTaken" type="radio"
                                    data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"
@@ -522,12 +553,14 @@
                                    value="e47d5901-d9c6-400d-bca0-2e8ae916ea99^Known Case^99DCT">
                             Known Case
                         </label>
+                        <br/>
                         <label class="font-normal">
                             <input id="obs.DiabetesKnoworNewNotAppicable" name="obs.DiabetesKnoworNew" type="radio"
                                    data-concept="f929cfc6-b773-4ffa-b3b5-23459fdfb98d^Diabetes know or new^99DCT"
                                    value="3cd7b72a-26fe-102b-80cb-0017a47871b2^NOT APPLICABLE^99DCT">
                             N/A
                         </label>
+                        <br/>
                         <label class="font-normal">
                             <input id="obs.DiabetesKnoworNewNew" name="obs.DiabetesKnoworNew" type="radio"
                                    data-concept="f929cfc6-b773-4ffa-b3b5-23459fdfb98d^Diabetes know or new^99DCT"
@@ -557,10 +590,10 @@
                         <label class="font-normal"> <strong> HbA1C (glycated hemoglobin):  </strong> </label>
                         <br/>
                         <label class="font-normal">
-                            <input class="form-control" id="obs.HbA1C" name="obs.HbA1C" type="number" data-concept="159644AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA^HbA1c^99DCT"/>
+                            <input class="form-control" id="HbAOneC" name="obs.HbA1C" type="number" data-concept="159644AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA^HbA1c^99DCT"/>
                         </label>
                     </div>
-                    <div >
+                    <div id="HbAOnecStatusDiv" class="initialHide">
                         <label class="font-normal"> <strong> HbA1c status HF:  </strong> </label>
                         <br/>
 <!--                        <label class="font-normal">-->
@@ -569,47 +602,56 @@
 <!--                                <option value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">Normal</option>-->
 <!--                            </select>-->
 <!--                        </label>-->
+<!--                        <label class="font-normal">-->
+<!--                            <input id="obs.HbA1cStatusNormal" name="obs.HbA1cStatus" type="radio"-->
+<!--                                   data-concept="6c30c84e-bbf2-4776-8085-93a1002f6e68^HbA1c status^99DCT"-->
+<!--                                   value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">-->
+<!--                            Normal-->
+<!--                        </label>-->
+<!--                        <label class="font-normal">-->
+<!--                            <input id="obs.HbA1cStatus" name="obs.HbA1cStatus" type="radio"-->
+<!--                                   data-concept="6c30c84e-bbf2-4776-8085-93a1002f6e68^HbA1c status^99DCT"-->
+<!--                                   value="edf4ecc4-44f6-457a-b561-179f4426b16a^DIABETES^99DCT">-->
+<!--                            Diabetic-->
+<!--                        </label>-->
+
                         <label class="font-normal">
-                            <input id="obs.HbA1cStatusNormal" name="obs.HbA1cStatus" type="radio"
-                                   data-concept="6c30c84e-bbf2-4776-8085-93a1002f6e68^HbA1c status^99DCT"
-                                   value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">
-                            Normal
-                        </label>
-                        <label class="font-normal">
-                            <input id="obs.HbA1cStatus" name="obs.HbA1cStatus" type="radio"
-                                   data-concept="6c30c84e-bbf2-4776-8085-93a1002f6e68^HbA1c status^99DCT"
-                                   value="edf4ecc4-44f6-457a-b561-179f4426b16a^DIABETES^99DCT">
-                            Diabetic
+                            <input class="form-control " id="HbAOnecStatus" type="text" readonly="readonly">
+                            <input class="form-control" name="HbAOnecStatus" type="hidden" data-concept="6c30c84e-bbf2-4776-8085-93a1002f6e68^HbA1c status^99DCT">
                         </label>
                     </div>
 
 
                 </fieldset>
             </div>
-            <div>
+            <div >
                 <fieldset>
                     <h3> <strong>Oxygen Saturation</strong> </h3>
                     <div >
                         <label class="font-normal"> <strong> Oxygen Saturation (SpO2)  </strong> </label>
                         <br/>
                         <label class="font-normal">
-                            <input class="form-control" id="obs.OxygenSaturation" name="obs.OxygenSaturation" type="number" data-concept="3ce9401c-26fe-102b-80cb-0017a47871b2^BLOOD OXYGEN SATURATION^99DCT"/>
+                            <input class="form-control" id="OxygenSaturation" name="obs.OxygenSaturation" type="number" data-concept="3ce9401c-26fe-102b-80cb-0017a47871b2^BLOOD OXYGEN SATURATION^99DCT"/>
                         </label>
                     </div>
-                    <div >
+                    <div id="OxygenSaturationStatusDiv" class="initialHide">
                         <label class="font-normal"> <strong> Oxygen Saturation Status  </strong> </label>
                         <br/>
+<!--                        <label class="font-normal">-->
+<!--                            <input id="obs.OxygenSaturationStatusNormal" name="obs.OxygenSaturationStatus" type="radio"-->
+<!--                                   data-concept="a1984c15-b7ba-4636-9e49-eee3cb4f01f4^Oxygen Saturation status^99DCT"-->
+<!--                                   value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">-->
+<!--                            Normal-->
+<!--                        </label>-->
+<!--                        <label class="font-normal">-->
+<!--                            <input id="obs.OxygenSaturationStatusHighRisk" name="obs.OxygenSaturationStatus" type="radio"-->
+<!--                                   data-concept="a1984c15-b7ba-4636-9e49-eee3cb4f01f4^Oxygen Saturation status^99DCT"-->
+<!--                                   value="c5382fcc-e3b5-4676-95a3-1b09489f8429^High risk^99DCT">-->
+<!--                            High risk-->
+<!--                        </label>-->
                         <label class="font-normal">
-                            <input id="obs.OxygenSaturationStatusNormal" name="obs.OxygenSaturationStatus" type="radio"
-                                   data-concept="a1984c15-b7ba-4636-9e49-eee3cb4f01f4^Oxygen Saturation status^99DCT"
-                                   value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">
-                            Normal
-                        </label>
-                        <label class="font-normal">
-                            <input id="obs.OxygenSaturationStatusHighRisk" name="obs.OxygenSaturationStatus" type="radio"
-                                   data-concept="a1984c15-b7ba-4636-9e49-eee3cb4f01f4^Oxygen Saturation status^99DCT"
-                                   value="c5382fcc-e3b5-4676-95a3-1b09489f8429^High risk^99DCT">
-                            High risk
+                            <input class="form-control " id="OxygenSaturationStatus" type="text" readonly="readonly" >
+                            <input class="form-control" name="OxygenSaturationStatus" type="hidden" data-concept="a1984c15-b7ba-4636-9e49-eee3cb4f01f4^Oxygen Saturation status^99DCT">
                         </label>
                     </div>
 
@@ -705,20 +747,20 @@
                         <label class="font-normal"> <strong> Tobacco smoking?:  </strong> </label>
                         <br/>
                         <label class="font-normal">
-                            <input id="obs.TobaccoSmokingYes" name="obs.TobaccoSmoking" type="radio"
+                            <input id="TobaccoSmokingYes" name="obs.TobaccoSmoking" type="radio"
                                    data-concept="3cdbdca6-26fe-102b-80cb-0017a47871b2^SMOKING HISTORY^99DCT"
                                    value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
                             Yes
                         </label>
                         <br/>
                         <label class="font-normal">
-                            <input id="obs.TobaccoSmokingNo" name="obs.TobaccoSmoking" type="radio"
+                            <input id="TobaccoSmokingNo" name="obs.TobaccoSmoking" type="radio"
                                    data-concept="3cdbdca6-26fe-102b-80cb-0017a47871b2^SMOKING HISTORY^99DCT"
                                    value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
                             No
                         </label>
                     </div>
-                    <div >
+                    <div id="smokingRiskFactorsDiv" class="initialHide">
                         <label class="font-normal"> <strong> Modified Risk factors smoking  </strong> </label>
                         <br/>
                         <label class="font-normal">
@@ -742,7 +784,7 @@
                             passive smoker
                         </label>
                     </div>
-                    <div >
+                    <div id="smokingDurationDiv" class="initialHide">
                         <label class="font-normal"> <strong> Current/past smoking duration  </strong> </label>
                         <br/>
                         <label class="font-normal">
@@ -778,20 +820,20 @@
                         <label class="font-normal"> <strong> Alcohol drinking  </strong> </label>
                         <br/>
                         <label class="font-normal">
-                            <input id="obs.AlcoholDrinkingYes" name="obs.AlcoholDrinking" type="radio"
+                            <input id="AlcoholDrinkingYes" name="obs.AlcoholDrinking" type="radio"
                                    data-concept="ebc70722-1885-49b9-8dca-023a96d25b51^Alcohol drinking^99DCT"
                                    value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
                             Yes
                         </label>
                         <br/>
                         <label class="font-normal">
-                            <input id="obs.AlcoholDrinkingNo" name="obs.AlcoholDrinking" type="radio"
+                            <input id="AlcoholDrinkingNo" name="obs.AlcoholDrinking" type="radio"
                                    data-concept="ebc70722-1885-49b9-8dca-023a96d25b51^Alcohol drinking^99DCT"
                                    value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
                             No
                         </label>
                     </div>
-                    <div>
+                    <div id="alcoholDrinkingLevelDiv" class="initialHide">
                         <label class="font-normal"> <strong> Level of daily Alcohol drinking  </strong> </label>
                         <br/>
                         <label class="font-normal">
@@ -808,7 +850,7 @@
                             Ex Drinker
                         </label>
                     </div>
-                    <div >
+                    <div id="alcoholDrinkingDurationDiv" class="initialHide">
                         <label class="font-normal"> <strong> Current/past daily alcohol use duration  </strong> </label>
                         <br/>
                         <label class="font-normal">
@@ -850,21 +892,21 @@
                         <label class="font-normal"> <strong> History of Other chronic diseases:  </strong> </label>
                         <br/>
                         <label class="font-normal">
-                            <input id="obs.HistoryofOtherChronicDiseasesYes" name="obs.HistoryofOtherChronicDiseases" type="radio"
+                            <input id="HistoryofOtherChronicDiseasesYes" name="obs.HistoryofOtherChronicDiseases" type="radio"
                                    data-concept="dc627e59-3ceb-48a2-bde3-b202ff52d658^History of Other chronic diseases^99DCT"
                                    value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
                             Yes
                         </label>
                         <br/>
                         <label class="font-normal">
-                            <input id="obs.HistoryofOtherChronicDiseasesNo" name="obs.HistoryofOtherChronicDiseases" type="radio"
+                            <input id="HistoryofOtherChronicDiseasesNo" name="obs.HistoryofOtherChronicDiseases" type="radio"
                                    data-concept="dc627e59-3ceb-48a2-bde3-b202ff52d658^History of Other chronic diseases^99DCT"
                                    value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
                             No
                         </label>
                     </div>
 
-                    <div>
+                    <div id="asthmaDiv" class="initialHide">
                         <label class="font-normal"> <strong> On Asthma medication  </strong> </label>
                         <br/>
                         <label class="font-normal">
@@ -882,7 +924,7 @@
                         </label>
                     </div>
 
-                    <div>
+                    <div id="cancerDiv" class="initialHide">
                         <label class="font-normal"> <strong> Cancer  </strong> </label>
                         <br/>
                         <label class="font-normal">
@@ -899,7 +941,7 @@
                             No
                         </label>
                     </div>
-                    <div>
+                    <div id="HIVDiv" class="initialHide">
                         <label class="font-normal"> <strong> HIV  </strong> </label>
                         <br/>
                         <label class="font-normal">
@@ -916,7 +958,8 @@
                             No
                         </label>
                     </div>
-                    <div>
+
+                    <div id="CKDDiv" class="initialHide">
                         <label class="font-normal"> <strong> Chronic Kidney disease  </strong> </label>
                         <br/>
                         <label class="font-normal">
@@ -933,7 +976,8 @@
                             No
                         </label>
                     </div>
-                    <div>
+
+                    <div id="liverDiv" class="initialHide">
                         <label class="font-normal"> <strong> Chronic Liver disease  </strong> </label>
                         <br/>
                         <label class="font-normal">
@@ -950,7 +994,8 @@
                             No
                         </label>
                     </div>
-                    <div>
+
+                    <div id="respiratoryDiseaseDiv" class="initialHide">
                         <label class="font-normal"> <strong> Chronic Respiratory disease  </strong> </label>
                         <br/>
                         <label class="font-normal">
@@ -967,7 +1012,8 @@
                             No
                         </label>
                     </div>
-                    <div>
+
+                    <div id="otherDiv" class="initialHide">
                         <label class="font-normal"> <strong> Other cardiovascular diseases  </strong> </label>
                         <br/>
                         <label class="font-normal">
@@ -1011,10 +1057,6 @@
 
                 </fieldset>
             </div>
-
-
-
-
 
     </div>
 
@@ -1065,57 +1107,10 @@
                     }
                     toggleValidationMessages(errors);
                 }
-            });
-            var WhereToRefer = [
-                {"val": "64d4a6d9-8e71-4d80-83bc-fc5b5e44703f^Caraes Ndera Hospital^99DCT", "label": "Caraes Ndera Hospital "},
-                {"val": "682754d6-cff2-4f2e-90a3-ea3b1e7fa230^Butaro Hospital^99DCT", "label": "Butaro Hospital "},
-                {"val": "927be708-d8b3-4809-bd7e-c1bea7c821eb^Byumba Hospital^99DCT", "label": "Byumba Hospital "},
-                {"val": "c7e37519-bcea-4a6e-a29d-14cd972fc551^GAHINI HOSPITAL^99DCT", "label": "GAHINI HOSPITAL "},
-                {"val": "20b838ed-d624-4abf-9ae1-7fe2b90133e5^Gakoma Hospital^99DCT", "label": "Gakoma Hospital "},
-                {"val": "a810cdff-0221-425a-bde5-d33f1366a126^GIHUNDWE HOSPITAL^99DCT", "label": "GIHUNDWE HOSPITAL "},
-                {"val": "325e942f-c41d-4032-b86d-2cdff25b7b81^Gisenyi District Hospital^99DCT", "label": "Gisenyi District Hospital "},
-                {"val": "cc121d58-d969-4ae7-a4ba-0d04580fee56^Gitwe Hospital^99DCT", "label": "Gitwe Hospital "},
-                {"val": "74c27b34-2305-4384-ac94-4b3f24e1d98d^Kabaya Hospital^99DCT", "label": "Kabaya Hospital "},
-                {"val": "fbe11e25-c7dd-423c-823a-d62a8f2f7182^KABGAYI HOSPITAL^99DCT", "label": "KABGAYI HOSPITAL "},
-                {"val": "5eb665f3-06b6-4fa7-b111-a9470d15d2ba^KABUTARE^99DCT", "label": "KABUTARE HOSPITAL "},
-                {"val": "9b2d4d19-1e77-4ac7-9dc5-a3c02be14b1a^Kaduha Hospital^99DCT", "label": "Kaduha Hospital "},
-                {"val": "1ae17163-c8c9-44bd-b2eb-8c3f7771180b^KIBAGABAGA^99DCT", "label": "KIBAGABAGA Hospital "},
-                {"val": "eeac5a5c-1c33-4149-a0a5-3d7aef4fc673^Kibilizi Hospital^99DCT", "label": "Kibilizi Hospital "},
-                {"val": "697069e2-233d-44d4-a0fc-66557b01ef36^Kibogora Hospital^99DCT", "label": "Kibogora Hospital "},
-                {"val": "3aa054a5-8eca-4c4b-9d99-752c2ff86cc1^Kigeme Hospital^99DCT", "label": "Kigeme Hospital "},
-                {"val": "2dc4146e-cabd-4597-801b-5da3c2014a4a^Kirehe hospital^99DCT", "label": "Kirehe hospital "},
-                {"val": "6ecc713e-ced3-40ef-8638-5521cc867cff^Kirinda Hospital^99DCT", "label": "Kirinda Hospital "},
-                {"val": "b2f81d84-6c3e-4189-ba0e-f3897378bb93^Kiziguro District Hospital^99DCT", "label": "Kiziguro District Hospital "},
-                {"val": "5db13b6c-0706-4380-b645-db171a0ebd50^Mibilizi Hospital^99DCT", "label": "Mibilizi Hospital "},
-                {"val": "d14a8f85-2a68-4b27-9e4b-bc5364ff1508^Mugonero Hospital^99DCT", "label": "Mugonero Hospital "},
-                {"val": "94e1993c-e6cf-4e86-bb03-5e0912fccd24^Muhima Hospital^99DCT", "label": "Muhima Hospital "},
-                {"val": "a3cbcfd4-e362-4b59-a2de-6c43117b1a25^Muhororo Hospital^99DCT", "label": "Muhororo Hospital "},
-                {"val": "7364e504-c446-4144-9c13-57fca35d519e^Murunda Hospital^99DCT", "label": "Murunda Hospital "},
-                {"val": "62539c87-257a-45d3-ad98-1dfc469517d6^Nemba Hospital^99DCT", "label": "Nemba Hospital "},
-                {"val": "c2a42405-2be8-4a73-8250-c70ea8e643c3^Ngarama Hospital^99DCT", "label": "Ngarama Hospital "},
-                {"val": "8a75974a-67b6-4a57-8902-4217819dba4c^Nyagatare Hospital^99DCT", "label": "Nyagatare Hospital "},
-                {"val": "929e23c1-07c7-445e-8611-65a37e0f1aa5^Nyamata Hospital^99DCT", "label": "Nyamata Hospital "},
-                {"val": "e36e7e90-7d0e-44f9-80c9-529ee5356fb7^Nyanza Hospital^99DCT", "label": "Nyanza Hospital "},
-                {"val": "1a033e97-0411-4911-9183-a31d0ce3c750^Remera-Rukumo Hospital^99DCT", "label": "Remera-Rukumo Hospital "},
-                {"val": "d9c92270-44a1-4498-8a49-84d04f59cd48^Ruli Hospital^99DCT", "label": "Ruli Hospital "},
-                {"val": "12ad8530-0686-4559-be53-748de74caab2^Rutongo Hospital^99DCT", "label": "Rutongo Hospital "},
-                {"val": "83ee379e-1576-4401-9d37-687fb5bba296^SHYIRA HOSPITAL^99DCT", "label": "SHYIRA HOSPITAL "},
-                {"val": "9b04a9ee-60dd-46c6-8ce1-e3657ec55d67^Masaka Hospital^99DCT", "label": "Masaka Hospital "},
-                {"val": "2514bef8-5bc6-4657-bdf5-c5d82abc8e11^Munini Hospital^99DCT", "label": "Munini Hospital "},
-                {"val": "3cda8388-26fe-102b-80cb-0017a47871b2^RWINKWAVU^99DCT", "label": "RWINKWAVU Hospital "},
-                {"val": "bc64178d-d6a5-4289-88ec-debdd7a6f885^Bushenge Hospital^99DCT", "label": "Bushenge Hospital "},
-                {"val": "544547d4-dac5-49e3-9e0d-718a8fe324dc^Kinihira Hospital^99DCT", "label": "Kinihira Hospital "},
-                {"val": "f2e75b8c-b770-4019-a70e-7acec43c53ee^RWAMAGANA HOSPITAL^99DCT", "label": "Rwamagana HOSPITAL "},
-                {"val": "9020f09f-237f-4ccf-a3f9-8755044fbe29^Ruhango Hospital^99DCT", "label": "Ruhango Hospital "},
-                {"val": "3cb82e34-7ea2-44f6-af0b-f0ea4d995bf4^RUHENGERI HOSPITAL^99DCT", "label": "Ruhengeri Hospital "},
-                {"val": "3b49bab4-9e1f-425e-b597-47fa60606fc9^KIBUNGO HOSPITAL^99DCT", "label": "Kibungo Hospital "},
-                {"val": "b757c3c7-d259-419f-9fa8-56292c0d2d0d^Kibuye Hospital^99DCT", "label": "Kibuye Hospital "},
-                {"val": "68222ccb-71ee-418e-a4a4-b924b4e80108^Centre Hôspitalier Universitaire de Kigali (CHUK)^99DCT", "label": "CHUK Hospital "},
-                {"val": "2b472c6b-a0d4-44b1-bb2f-3d44289a19e5^Centre Hôspitalier Universitaire de Butare (CHUB)^99DCT", "label": "CHUB Hospital "},
-                {"val": "c8f88b6d-0781-4171-bf61-88f1681778d8^Rwanda Military Hospital^99DCT", "label": "Rwanda Military Hospital "},
-                {"val": "3cee7fb4-26fe-102b-80cb-0017a47871b2^OTHER NON-CODED^99DCT", "label": "Other "}
-            ];
-            document.setupAutoComplete('obs\\.healthFacility', WhereToRefer);
+            })
+
+
+
             // helps in hide and show. Just set name of checkbox/radio to equate
             // the class on div to hide, set activate/deactive class on the checkbox/radio
             // to be clicked
@@ -1161,12 +1156,38 @@
             })
             $('#LevelOfCarePrivateClinic').change(function(){
                 if($("input[id='LevelOfCarePrivateClinic']").prop('checked') && $("input[id='EntryModeVoluntary']").prop('checked')){
-                    $(".referralReason").hide()
+                    $(".referralReason").hide();
                 }else{
-                    $(".referralReason").show()
+                    $(".referralReason").show();
                 }
             })
-
+            function BMIStatus(bmi){
+                if(bmi<18.5){
+                    $('BMIStatus').val("77119182-ef93-4d11-80c9-d7ca514d2da5^Underweight^99DCT");
+                    $('#BMIStatus').val("Underweight");
+                    $('#obesityKnowOrNewDiv').val("hide");
+                }
+                else if(bmi>=18.5 && bmi<=24.9){
+                    $('BMIStatus').val("3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT");
+                    $('#BMIStatus').val("Normal");
+                    $('#obesityKnowOrNewDiv').val("hide");
+                }
+                else if(bmi>=25.0 && bmi<= 29.9){
+                    $('BMIStatus').val("45d82302-b238-40d7-88b8-33e84009c27a^Overweight^99DCT");
+                    $('#BMIStatus').val("Overweight");
+                    $('#obesityKnowOrNewDiv').val("show");
+                }
+                else if(bmi>=30 && bmi<=35){
+                    $('BMIStatus').val("115115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA^Obesity^99DCT");
+                    $('#BMIStatus').val("Obesity");
+                    $('#obesityKnowOrNewDiv').val("show");
+                }
+                else{
+                    $("input[name='BMIStatus']").val("e91f4887-a713-4263-86dc-155099d9b28c^Severe Obesity^99DCT");
+                    $('#BMIStatus').val("Severe Obesity");
+                    $('#obesityKnowOrNewDiv').val("show");
+                }
+            }
 
             $('#Weight').change(function(){
                 var weight = $("#Weight").val();
@@ -1174,7 +1195,13 @@
                     height = height/100;
                 if(weight != null && weight>0 && height !=0 && height>0 ){
                     var bmi = weight/(height*height);
+                    $("#BMIDiv").show();
                     $("#BMI").val(bmi);
+                    BMIStatus(bmi);
+                    $('#BMIStatusDiv').show();
+                } else {
+                    $("#BMIDiv").hide();
+                    $('#BMIStatusDiv').hide();
                 }
             })
 
@@ -1184,13 +1211,223 @@
                     height = height/100;
                 if(weight != null && weight>0 && height !=0 && height>0 ){
                     var bmi = weight/(height*height);
+                    $("#BMIDiv").show();
                     $("#BMI").val(bmi);
+                    BMIStatus(bmi);
+                    $('#BMIStatusDiv').show();
+                } else {
+                   $("#BMIDiv").hide();
+                   $('#BMIStatusDiv').hide();
                 }
             })
 
+            $('#SystolicBloodpressure').change(function(){
+                var systolic = $("#SystolicBloodpressure").val();
+                var distolic = $("#diastolicBloodpressure").val();
 
 
+                if(systolic != null && systolic>0 && distolic !=0 && distolic>0 ){
 
+                    bloodPressureStatus(systolic,distolic);
+                    $('#BPStatusDiv').show();
+                    $('#BPMeasureTakenDiv').show();
+                }else{
+                    $('#BPStatusDiv').hide();
+                    $('#BPMeasureTakenDiv').hide();
+                }
+            })
+            $('#diastolicBloodpressure').change(function(){
+                var systolic = $("#SystolicBloodpressure").val();
+                var distolic = $("#diastolicBloodpressure").val();
+
+
+                if(systolic != null && systolic>0 && distolic !=0 && distolic>0 ){
+
+                    bloodPressureStatus(systolic,distolic);
+                    $('#BPStatusDiv').show();
+                    $('#BPMeasureTakenDiv').show();
+                }else{
+                    $('#BPStatusDiv').hide();
+                    $('#BPMeasureTakenDiv').hide();
+                }
+            })
+            function bloodPressureStatus(systolic,distolic){
+
+                if(systolic<90){
+                    $('BPStatusHF').val("ec8a1b55-6d9c-40d2-ad1e-5b680ea05fbc^Hypotension^99DCT");
+                    $('#BPStatusHF').val("Hypotension");
+                    $('BPMeasureTakenHF').val("2f13f21c-1469-4915-9bda-91049a285d13^immediate reference to the health facility^99DCT");
+                    $('#BPMeasureTakenHF').val("immediate reference to the health facility");
+                }
+                else if((systolic>=90 && systolic<140) || (distolic>=60 && distolic<90)){
+                    if(systolic < distolic && systolic>=90 && systolic<120){
+                        $('BPStatusHF').val("3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT");
+                        $('#BPStatusHF').val("Normal");
+                        $('BPMeasureTakenHF').val("876b07ad-6249-4ee3-9c20-1cbcd6216097^Counselling and screening every year^99DCT");
+                        $('#BPMeasureTakenHF').val("Counselling and screening every year");
+                    }
+                    else if(distolic < systolic && distolic>=60 && distolic<80){
+                        $('BPStatusHF').val("3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT");
+                        $('#BPStatusHF').val("Normal");
+                        $('BPMeasureTakenHF').val("876b07ad-6249-4ee3-9c20-1cbcd6216097^Counselling and screening every year^99DCT");
+                        $('#BPMeasureTakenHF').val("Counselling and screening every year");
+                    }
+                    else if(systolic < distolic && systolic>=120 && systolic<140){
+                        $('BPStatusHF').val("d31fcdb1-ed29-4376-9bde-af798d1c0570^pre Hypertension^99DCT");
+                        $('#BPStatusHF').val("pre Hypertension");
+                        $('BPMeasureTakenHF').val("87976d1e-83bf-4285-b6ca-530bc0882f23^Counselling and screening every 6 months^99DCT");
+                        $('#BPMeasureTakenHF').val("Counselling and screening every 6 months");
+                    }
+                    else if(distolic < systolic && distolic>=80 && distolic<90){
+                        $('BPStatusHF').val("d31fcdb1-ed29-4376-9bde-af798d1c0570^pre Hypertension^99DCT");
+                        $('#BPStatusHF').val("pre Hypertension");
+                        $('BPMeasureTakenHF').val("87976d1e-83bf-4285-b6ca-530bc0882f23^Counselling and screening every 6 months^99DCT");
+                        $('#BPMeasureTakenHF').val("Counselling and screening every 6 months");
+                    }
+                }
+                else if(systolic>=140 || distolic>=90){
+
+                    if(systolic > 160 || distolic > 100){
+                        $('BPStatusHF').val("7ee72fb3-f348-4ff9-a042-444d991ff861^Emergency Hypertension^99DCT");
+                        $('#BPStatusHF').val("Emergency Hypertension");
+                        $('BPMeasureTakenHF').val("2f13f21c-1469-4915-9bda-91049a285d13^immediate reference to the health facility^99DCT");
+                        $('#BPMeasureTakenHF').val("immediate reference to the health facility");
+                    }
+                    else {
+                        $('BPStatusHF').val("3cd50188-26fe-102b-80cb-0017a47871b2^HYPERTENSION^99DCT");
+                        $('#BPStatusHF').val("Hypertension");
+                        $('BPMeasureTakenHF').val("89297887-f43f-444b-a8c8-6ae76932ceca^Enroll in NCD Clinic or Transfer to HC^99DCT");
+                        $('#BPMeasureTakenHF').val("Enroll in NCD Clinic or Transfer to HC");
+                    }
+                }
+
+            }
+            $('#HbAOneC').change(function(){
+                var HbOneC = $("#HbAOneC").val();
+                if(HbOneC != null && HbOneC >0){
+                    if(HbOneC>0 && HbOneC > 6.5){
+                        $('HbAOnecStatus').val("edf4ecc4-44f6-457a-b561-179f4426b16a^DIABETES^99DCT");
+                        $('#HbAOnecStatus').val("Diabete");
+                    }
+                    else{
+                        $('HbAOnecStatus').val("3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT");
+                        $('#HbAOnecStatus').val("Normal");
+                    }
+                    $('#HbAOnecStatusDiv').show();
+                }else {
+                    $('#HbAOnecStatusDiv').hide();
+                }
+
+            })
+
+
+            $('#OxygenSaturation').change(function(){
+                var OxygenSaturation = $("#OxygenSaturation").val();
+                if(OxygenSaturation != null && OxygenSaturation > 0){
+
+                    if(OxygenSaturation>0 && OxygenSaturation < 95){
+                        $('OxygenSaturationStatus').val("c5382fcc-e3b5-4676-95a3-1b09489f8429^High risk^99DCT");
+                        $('#OxygenSaturationStatus').val("High risk");
+                    }
+                    else{
+                        $('OxygenSaturationStatus').val("3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT");
+                        $('#OxygenSaturationStatus').val("Normal");
+                    }
+                    $('#OxygenSaturationStatusDiv').show();
+                }else{
+                    $('#OxygenSaturationStatusDiv').hide()
+                }
+
+            })
+
+            $('#WaistCircumference').change(function(){
+                var WaistCircumference = $("#WaistCircumference").val();
+                if(WaistCircumference != null && WaistCircumference > 0){
+
+                    if(WaistCircumference>0 && WaistCircumference > 90){
+                        $('WaistCircumferenceStatus').val("364651ee-5fe7-46b7-9c7a-4cc4e52f243c^Abnormal^99DCT");
+                        $('#WaistCircumferenceStatus').val("Abnormal");
+                    }
+                    else{
+                        $('WaistCircumferenceStatus').val("3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT");
+                        $('#WaistCircumferenceStatus').val("Normal");
+                    }
+                    $('#WaistCircumferenceStatusDiv').show();
+                    $('#AnthropocentricMeasureTakenDiv').show();
+
+                }else{
+                    $('#WaistCircumferenceStatusDiv').hide()
+                    $('#AnthropocentricMeasureTakenDiv').hide()
+
+                }
+
+            })
+            $('#HistoryofOtherChronicDiseasesYes').on("click", function(event){
+
+                var idOfClicked = event.target.id
+                if($("input[id='"+idOfClicked+"']").prop('checked')){
+                   $('#asthmaDiv').show();
+                   $('#cancerDiv').show();
+                   $('#HIVDiv').show();
+                   $('#CKDDiv').show();
+                   $('#liverDiv').show()
+                   $('#respiratoryDiseaseDiv').show();
+                   $('#otherDiv').show();
+
+                }
+            });
+            $('#HistoryofOtherChronicDiseasesNo').on("click", function(event){
+
+                var idOfClicked = event.target.id
+                if($("input[id='"+idOfClicked+"']").prop('checked')){
+                   $('#asthmaDiv').hide();
+                   $('#cancerDiv').hide();
+                   $('#HIVDiv').hide();
+                   $('#CKDDiv').hide();
+                   $('#liverDiv').hide()
+                   $('#respiratoryDiseaseDiv').hide();
+                   $('#otherDiv').hide();
+
+                }
+            });
+            $('#AlcoholDrinkingYes').on("click", function(event){
+
+
+                var idOfClicked = event.target.id
+                if($("input[id='"+idOfClicked+"']").prop('checked')){
+                   $('#alcoholDrinkingLevelDiv').show();
+                   $('#alcoholDrinkingDurationDiv').show();
+
+                }
+            });
+            $('#AlcoholDrinkingNo').on("click", function(event){
+
+                var idOfClicked = event.target.id
+                if($("input[id='"+idOfClicked+"']").prop('checked')){
+                   $('#alcoholDrinkingLevelDiv').hide();
+                   $('#alcoholDrinkingDurationDiv').hide();
+
+                }
+            });
+
+            $('#TobaccoSmokingYes').on("click", function(event){
+
+                var idOfClicked = event.target.id
+                if($("input[id='"+idOfClicked+"']").prop('checked')){
+                   $('#smokingRiskFactorsDiv').show();
+                   $('#smokingDurationDiv').show();
+
+                }
+            });
+            $('#TobaccoSmokingNo').on("click", function(event){
+
+                var idOfClicked = event.target.id
+                if($("input[id='"+idOfClicked+"']").prop('checked')){
+                   $('#smokingRiskFactorsDiv').hide();
+                   $('#smokingDurationDiv').hide();
+
+                }
+            });
 
 
             $(".initialHide").hide();

@@ -153,19 +153,20 @@ formRetired="false"
                     <div class="sectionbody">
                         <table class="baseline-aligned">
                             <tr>
-                <td>
-                    Date:
-                    <encounterDate default="today"/>
-                </td>
-                <td>
-                    Health Facility:
-                    <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode" />
-                </td>
-                <td>
-                    Provider:
-                    <encounterProvider default="currentUser" />
-                </td>
-            </tr>
+                                <td>Date:
+                                    <encounterDate default="today" allowTime="true" showTime="true" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Health Facility: <b>
+                                        <encounterLocation default="GlobalProperty:billing.defaultLocation" />
+                                    </b><br /> </td>
+                            </tr>
+                            <tr>
+                                <td>Provider:
+                                    <encounterProvider default="currentUser" />
+                                </td>
+                            </tr>
                         </table>
                     </div>
                 </div>

@@ -1,11 +1,11 @@
 <htmlform
-	htmlformUuid="4566981f-ff21-4984-9771-e774de163e10" 
-	formUuid="17c48a32-d7d3-4b4e-bb2e-9b730e030070" 
-	formName="Pathology Report for Pathology System" 
-	formDescription="Pathology Report designed for the pathology software project" 
-	formVersion="1.0" 
-	formEncounterType="b1c2d207-7221-4c23-b580-6c5de5385847" 
-	formPublished="true" 
+	htmlformUuid="4566981f-ff21-4984-9771-e774de163e10"
+	formUuid="17c48a32-d7d3-4b4e-bb2e-9b730e030070"
+	formName="Pathology Report for Pathology System"
+	formDescription="Pathology Report designed for the pathology software project"
+	formVersion="1.0"
+	formEncounterType="b1c2d207-7221-4c23-b580-6c5de5385847"
+	formPublished="true"
 	formRetired="false"
 > <!--
 	   Oncology Pathology specimen submission
@@ -54,7 +54,7 @@
 
 		@ORGAN_SYSTEM@=b88f9524-6b39-41b3-9b3a-f9a7a4b08fed
 		@ORGAN@=488fe4a2-7903-41da-b21e-fb236a1ee356
-		
+
 		@ALIMENTARY_SYSTEM@=bd315f5e-076b-445c-9a43-92a565140851
 		@BREAST@=50b9f804-8540-49c9-9b92-0468b667dfb0
 		@CARDIOVASCULAR_SYSTEM@=3ce1567c-26fe-102b-80cb-0017a47871b2
@@ -84,27 +84,27 @@
 
 		@BREAST@=50b9f804-8540-49c9-9b92-0468b667dfb0
 		@OTHER_BREAST@=8da66be0-2cfe-4322-a53b-274bc1598691
-		
+
 		@HEART@=3ceb7454-26fe-102b-80cb-0017a47871b2
 		@ARTERIES@=1503b0ae-7eef-440b-ae12-110e24118921
 		@VEINS@=da777a63-b92a-44b5-8453-8d80eebab37e
 		@LYMPH_VESSELS@=c543e575-3b3c-4c80-b031-ad5b7956af2b
 		@OTHER_CARDIOVASCULAR@=af361f19-0992-4146-8199-dcf1485ed99c
-		
+
 		@CEREBRUM@=ec2dface-709b-4810-8a98-92b0e9819450
 		@CEREBELLUM@=308cbfd4-882e-4928-9815-10e020fdcf8f
 		@BRAIN_STEM@=6ae43c7d-e6e4-440a-91b5-4eac03d74597
 		@SPINAL_CHORD@=df9ecd98-3f65-405f-b8b6-63ae202dba93
 		@MENINGES@=62482c13-ac7f-4e59-b263-1b21eb4c400f
 		@OTHER_NERVOUS@=19adbf3e-fd83-4853-9116-7bd407471e01
-		
+
 		@THYROID@=ffa7d332-730e-4d4a-84b1-f7068326252a
 		@PARATHYROID@=a718c429-8f48-4d00-8b64-01e00a324e0f
 		@ADRENAL_GLAND_AND_PARAGANGLIA@=bba224d7-3915-47ac-9ff4-1f65c350dfaf
 		@PITUITARY@=1bf0bfd0-cf7a-4910-a6df-2b56ebf16d20
 		@HYPOTHALAMUS@=1aa4de9a-cc29-4cbf-8d92-74486bd6ca86
 		@OTHER_ENDOCRINE@=37dc963c-ee60-4f83-ae42-450a10b8fafc
-		
+
 		@VULVA@=d1642f47-e2c9-4014-850a-2559548f9016
 		@VAGINA@=1a1f18a3-08de-49f9-badf-d5263ed53aa0
 		@CERVIX@=dbcdeccc-6fe1-43b8-9264-ed01a7252b36
@@ -137,10 +137,10 @@
 		@SPLEEN@=9feb93a7-f48f-432a-889b-b9232c4eb036
 		@TONSIL@=d3554b89-db5f-485b-8906-b5cd56cdfdd7
 		@OTHER_HEMATOPOIETIC@=576987f5-5c70-43c2-a846-702cc77c7cf7
-	
+
 		@SKIN@=137011cc-b0a3-4446-9f8e-bfa479b31a8d
 		@OTHER_INTEGUMENTARY@=1eb71164-73e5-40fb-a94b-2bd62070927d
-	
+
 		@PROSTATE@=9f7cae35-024c-4978-87ac-9d06b17526a0
 		@SEMINAL_VESICLES@=636bf989-5479-480e-819b-f06f1b4d7bf4
 		@TESTICLES@=a2aaf894-5f0f-44b3-b639-a36a030c6b3d
@@ -151,20 +151,20 @@
 
 		@THYMUS@=f36f854d-69cf-4ea0-b986-ad7069d7a00c
 		@OTHER_MEDIASTINUM@=fd6f8170-fbf9-40a0-ba5c-82caea932e3e
-	
+
 		@BONE@=fcbc33ff-b716-41e2-932a-d84a02a93e36
 		@JOINT@=cc11875b-74c2-44c9-9527-5f817bc98f7c
 		@SOFT_TISSUE@=e10eaff4-4535-4f51-a7ed-abdca60fe599
-		
+
 		@PERITONEUM@=6dff2bd7-6601-400b-9496-b071c486a099
 		@RETROPERITONEUM@=2daa06a3-7cfa-4330-b44e-9511eb4729c7
-		
+
 		@RELATED_STRUCTURES_TO_PERITONEUM@=57e9c9ea-cdda-47af-b7d1-41c744fcb40b
-		
+
 		@TRACHEA@=8ed6cf82-8dd5-4dd6-84a8-cca1e496d126
 		@LUNG@=3ce15384-26fe-102b-80cb-0017a47871b2
 		@PLEURA@=d9d61364-ddd3-4f61-a041-8cdaf1db5297
-		
+
 		@KIDNEY@=c2c6213c-e6c7-4ff9-ba30-ac764c8e0a0b
 		@URETER@=35b4d840-e806-4d64-ad7a-870175832523
 		@BLADDER@=2926eb6d-4adc-4aed-815d-9932540b8964
@@ -176,11 +176,13 @@
 		@pathology_request_encounter_UUID@ = 4a1c767f-6bab-4938-b3f0-d3a5a3f9cd2c
 		@PATHOLOGIC_DIAGNOSIS@=21f54f50-b804-476e-a0dd-a3238cd556fb
 		@PATHOLOGY_COMMENT@=e85305cf-ad93-4d1a-881e-53faf715fa8f
+		@Other@ = c548a633-9931-496d-9ade-4b7c971e6600
+		@EXAM_FINDINGS@=d69ab22b-e262-4275-919d-74df2ea75b7d
 
-		
-		
 
-    </macros>
+
+
+	</macros>
 <style>
 .hidden
 { color: #D8D8D8; width: 19%; }
@@ -298,6 +300,10 @@
       if(requestUUID){
          $j("#requestUuid").children().val(requestUUID);
       }
+	  var ClinicalInfo = "<lookup expression="fn.latestObs(&quot;$@EXAM_FINDINGS@&quot;).valueText"/>";
+		if(ClinicalInfo !=null){
+			setValue('clinicalInfo.value', ClinicalInfo);
+		}
 
 
    })
@@ -363,8 +369,10 @@
                         }
 
                     });
-                    $j(".initialHide").hide();
-					
+
+					$j(".initialHide").hide();
+
+
                 });
             }
 	</script>
@@ -395,7 +403,7 @@ $j("#hivstatusentry").show();
 							getField('specimenCNonCoded.value')[0].disabled = true;
 							getField('specimenDNonCoded.value')[0].disabled = true;
                                                         getField('hospitalNonCoded.value')[0].disabled = true;
-							
+
 							getField('specimenA.value').change(function() {
 								if(getValue('specimenA.value') == $@OTHER_NON_CODED@) {
 									getField('specimenANonCoded.value')[0].disabled = false;
@@ -617,7 +625,7 @@ $j("#hivstatusentry").show();
                     <h2>
                         Inshuti Mu Buzima <br /> PIH Rwanda
                     </h2></td>
-                <td ><strong> Oncology Program 
+                <td ><strong> Oncology Program
                     <br /> Pathology Report
                 </strong> <br /></td>
             </tr>
@@ -642,7 +650,7 @@ $j("#hivstatusentry").show();
 					Specimen Reception Date
 					<obs conceptId="$@SPECIMENT_SUBMISSION_DATE@"/>
 
-					
+
 
                 </td>
             </tr>
@@ -652,17 +660,17 @@ $j("#hivstatusentry").show();
 				<obs conceptId="$@SENDING_PHYSICIAN@"/>
                     Facility of procedure
                     <obs conceptId="$@Other_Biopsy_Location@"/>
-                    
+
                 </td>
             </tr>
- 
+
 			<tr>
 
 				<td>
-				
+
 				<br/>
 				<span class="activate" id="Organ_System_Alimentary" title="Alimentary">
-				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@ALIMENTARY_SYSTEM@" style="checkbox"/> 
+				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@ALIMENTARY_SYSTEM@" style="checkbox"/>
 				<br/>
 				</span>
 				<span class="Alimentary initialHide" >
@@ -680,118 +688,118 @@ $j("#hivstatusentry").show();
 				</span>
 				<br/>
 				<span class="activate" id="Organ_System_CARDIOVASCULAR" title="CARDIOVASCULAR">
-				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@CARDIOVASCULAR_SYSTEM@" style="checkbox"/> 
+				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@CARDIOVASCULAR_SYSTEM@" style="checkbox"/>
 				</span>
-				<br/>		
+				<br/>
 				<span class="CARDIOVASCULAR initialHide" >
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@HEART@,$@ARTERIES@,$@VEINS@, $@LYMPH_VESSELS@, $@OTHER_CARDIOVASCULAR@     " />
 				</span>
 				<br/>
 				<span class="activate" id="Organ_System_NERVOUS" title="NERVOUS">
-				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@CENTRAL_NERVOUS_SYSTEM@" style="checkbox"/> 
+				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@CENTRAL_NERVOUS_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
-	
+
 				<span class="NERVOUS initialHide" >
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@CEREBRUM@,$@CEREBELLUM@, $@BRAIN_STEM@, $@SPINAL_CHORD@, $@MENINGES@, $@OTHER_NERVOUS@    " />
 				</span>
 				<br/>
 				<span class="activate" id="Organ_System_ENDOCRINE" title="ENDOCRINE">
-				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@ENDOCRINE_SYSTEM@" style="checkbox"/> 
+				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@ENDOCRINE_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
-		
+
 				<span class="ENDOCRINE initialHide" >
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@THYROID@,$@PARATHYROID@,$@ADRENAL_GLAND_AND_PARAGANGLIA@,$@PITUITARY@, $@HYPOTHALAMUS@, $@OTHER_ENDOCRINE@      " />
 				</span>
 				<br/>
 				<span class="activate" id="Organ_System_FEMALE_REPRODUCTIVE" title="FEMALE_REPRODUCTIVE">
-				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@FEMALE_REPRODUCTIVE_SYSTEM@" style="checkbox"/> 
+				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@FEMALE_REPRODUCTIVE_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
-				
+
 
 				<span class="FEMALE_REPRODUCTIVE initialHide" >
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@VULVA@,$@VAGINA@,$@CERVIX@,$@CORPUS_UTERI@,$@FALLOPIAN_TUBE@, $@OVARY@, $@PREGNANCY_PLACENTA@, $@OTHER_F_REPRODUCTIVE@   " />
 				</span>
 				<br/>
 				<span class="activate" id="Organ_System_HEAD_AND_NECK" title="HEAD_AND_NECK">
-				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@HEAD_AND_NECK_SYSTEM@" style="checkbox"/> 
+				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@HEAD_AND_NECK_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
-	
+
 				<span class="HEAD_AND_NECK initialHide" >
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@ORAL_CAVITY@, $@TONGUE@,$@PALATE@, $@OROPHARYNX@,$@NASOPHARYNX@,$@HYPOTHARYNX@, $@LARYNX@, $@PAROTID_GLAND@,$@SUBMANDIBULAR_GLAND@, $@SINUSES@, $@SINONASAL@, $@PARANASAL_SINUS@, $@MAXILLA@, $@MANDIBULA@, $@EAR@, $@EYE@, $@OTHER_HEAD@       " />
 				</span>
 				<br/>
 				<span class="activate" id="Organ_System_HEMATOPOIETIC" title="HEMATOPOIETIC">
-				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@HEMATOPOIETIC_AND_LYMPHATIC_SYSTEM@" style="checkbox"/> 
+				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@HEMATOPOIETIC_AND_LYMPHATIC_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
-				
+
 				<span class="HEMATOPOIETIC initialHide" >
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@BONE_MARROW@, $@LYMPH_NODE@, $@SPLEEN@,$@TONSIL@, $@OTHER_HEMATOPOIETIC@    " />
 				</span>
 				<br/>
 				<span class="activate" id="Organ_System_INTEGUMENTARY" title="INTEGUMENTARY">
-				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@INTEGUMENTARY_SYSTEM@" style="checkbox"/> 
+				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@INTEGUMENTARY_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
-				
+
 				<span class="INTEGUMENTARY initialHide" >
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@SKIN@, $@OTHER_INTEGUMENTARY@   " />
 				</span>
 				<br/>
 				<span class="activate" id="Organ_System_MALE_REPRODUCTIVE" title="MALE_REPRODUCTIVE">
-				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@MALE_REPRODUCTIVE_SYSTEM@" style="checkbox"/> 
+				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@MALE_REPRODUCTIVE_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
-		
+
 				<span class="MALE_REPRODUCTIVE initialHide" >
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@PROSTATE@, $@SEMINAL_VESICLES@, $@TESTICLES@, $@TESTICULAR_ADNEXA@, $@PENIS@, $@SCROTUM@, $@OTHER_MALE_REPRODUCTIVE@   " />
 				</span>
 				<br/>
 				<span class="activate" id="Organ_System_MEDIASTINUM" title="MEDIASTINUM">
-				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@MEDIASTINUM@" style="checkbox"/> 
+				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@MEDIASTINUM@" style="checkbox"/>
 				</span>
 				<br/>
-				
+
 				<span class="MEDIASTINUM initialHide" >
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds=" $@THYMUS@, $@OTHER_MEDIASTINUM@  " />
 				</span>
 				<br/><span class="activate" id="Organ_System_MUSCULOSKELETAL" title="MUSCULOSKELETAL">
-				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@MUSCULOSKELETAL_SYSTEM@" style="checkbox"/> 
+				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@MUSCULOSKELETAL_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
-		
+
 				<span class="MUSCULOSKELETAL initialHide" >
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@BONE@, $@JOINT@, $@SOFT_TISSUE@   " />
 				</span>
 				<br/>
 				<span class="activate" id="Organ_System_PERITONEUM" title="PERITONEUM">
-				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@PERITONEUM_AND_RETROPERITONEUM@" style="checkbox"/> 
+				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@PERITONEUM_AND_RETROPERITONEUM@" style="checkbox"/>
 				</span>
 				<br/>
-				
+
 				<span class="PERITONEUM initialHide" >
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@PERITONEUM@, $@RETROPERITONEUM@, $@RELATED_STRUCTURES_TO_PERITONEUM@   " />
 				</span>
 				<br/>
 				<span class="activate" id="Organ_System_RESPIRATORY" title="RESPIRATORY">
-				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@RESPIRATORY_SYSTEM@" style="checkbox"/> 
+				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@RESPIRATORY_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
-				
-		
+
+
 				<span class="RESPIRATORY initialHide" >
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds=" $@TRACHEA@, $@LUNG@, $@PLEURA@  " />
 				</span>
 				<br/>
 				<span class="activate" id="Organ_System_URINARY" title="URINARY">
-				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@URINARY_SYSTEM@" style="checkbox"/> 
+				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@URINARY_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
-	
+
 				<span class="URINARY initialHide" >
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@KIDNEY@,$@URETER@,$@BLADDER@, $@URETHRA@, $@OTHER_URINARY@     " />
 				</span>
@@ -801,7 +809,7 @@ $j("#hivstatusentry").show();
 				Procedure Type<obs conceptId="$@PROCEDURES@"/>
 				<br/>
 				<br/>
-				Clinical Information <obs conceptId="$@SPECIMEN_DETAIL@" cols="70"/>
+				Clinical Information <obs id="clinicalInfo" conceptId="$@SPECIMEN_DETAIL@" cols="70"/>
 				</td>
 			</tr>
 
@@ -816,14 +824,15 @@ $j("#hivstatusentry").show();
 					<br/>
                     Conclusion:
                     <obs conceptId="$@COMMENTS_AT_CONCLUSION_OF_EXAMINATION@" cols="100"/>
-					
+
 					<br/>
 					Comment
 					<obs conceptId="$@PATHOLOGY_COMMENT@" cols="100"/>
 					<br/>
 					Pathologic diagnosis:
 					<obs conceptId="$@PATHOLOGIC_DIAGNOSIS@" />
-                  
+					<obs conceptId="$@Other@"/>
+
                      <br />
                                 <br />
                 Canreg Code <obs conceptId="$@CANREG_CODE@" />

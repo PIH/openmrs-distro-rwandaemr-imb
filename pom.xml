@@ -16,7 +16,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <openMRSVersion>2.3.4</openMRSVersion>
+        <openMRSVersion>2.5.6-SNAPSHOT</openMRSVersion>
         <addresshierarchyVersion>2.14.2</addresshierarchyVersion>
         <calculationVersion>1.3.0</calculationVersion>
         <formconceptsVersion>2.0.1</formconceptsVersion>
@@ -55,8 +55,8 @@
         <webservicesRestVersion>2.36.0</webservicesRestVersion>
         <spamodulesVersion>1.0.9-SNAPSHOT</spamodulesVersion>
         <fhir2Version>1.3.0</fhir2Version>
-        <pathologyappVersion>1.0.7</pathologyappVersion>
-        <legacyuinavbarappVersion>1.0.0</legacyuinavbarappVersion>
+        <pathologyappVersion>1.1.1-pre.29</pathologyappVersion>
+        <legacyuinavbarappVersion>1.0.1-pre.1</legacyuinavbarappVersion>
         <imbpathologyrequestVersion>1.0.0-SNAPSHOT</imbpathologyrequestVersion>
         <patientchartappVersion>3.2.1-pre.85</patientchartappVersion>
         <fromentryappVersion>3.2.1-pre.85</fromentryappVersion>
@@ -78,11 +78,11 @@
         <primarynavigationappVersion>3.4.1-pre.82</primarynavigationappVersion>
         <implementertoolsappVersion>3.4.1-pre.85</implementertoolsappVersion>
         <devtoolsappVersion>3.3.1</devtoolsappVersion>
-		<loginappVersion>3.4.1-pre.102</loginappVersion>
-		<homeappVersion>3.1.1-pre.81</homeappVersion>
-		<patientsearchappVersion>3.1.1-pre.184</patientsearchappVersion>
-		<oncologypatientstatusVersion>1.1.0</oncologypatientstatusVersion>
-		<fastdataentryappVersion>1.0.0-pre.21</fastdataentryappVersion>
+        <loginappVersion>3.4.1-pre.102</loginappVersion>
+        <homeappVersion>3.1.1-pre.81</homeappVersion>
+        <patientsearchappVersion>3.1.1-pre.184</patientsearchappVersion>
+        <oncologypatientstatusVersion>1.1.0</oncologypatientstatusVersion>
+        <fastdataentryappVersion>1.0.0-pre.21</fastdataentryappVersion>
 		
 
     </properties>

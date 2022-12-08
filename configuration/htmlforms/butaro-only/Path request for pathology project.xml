@@ -410,6 +410,10 @@ $j("#hivstatusentry").show();
                                                 expression="patient.personName.givenName" />
                 </td>
             </tr>
+			<tr>
+				<td>Birthdate: <lookup class="value" expression="patient.birthdate"/></td>
+				<td>Gender: <lookup class="value" expression="patient.Gender"/> </td>
+			</tr>
 
             <tr>
                 <td><img
@@ -460,7 +464,7 @@ Consent signed
 <tr>
 
 	Clinical Information
-		<obs conceptId="$@EXAM_FINDINGS@" rows="2" cols="70"/>
+		<obs conceptId="$@EXAM_FINDINGS@" rows="2" cols="70" required="true"/>
 <br/>
 	Pertinent Labs    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160;      
 		<obs conceptId="$@LABS_NON_CODED@" rows="2" cols="70"/>
@@ -494,9 +498,9 @@ Consent signed
                         </tr>
                         <tr>
                             <td width="40%">Date of Surgery: <obs
-                                    conceptId="e0436a5b-dc19-4cb9-ac1b-acc005272c08" /></td>
+                                    conceptId="e0436a5b-dc19-4cb9-ac1b-acc005272c08" required="true"/></td>
                             <td>Surgery/Procedure Facility: <obs
-                                    conceptId="e94e52a3-2d21-4809-9310-797b36877f38" id="hospital"/> <obs
+                                    conceptId="e94e52a3-2d21-4809-9310-797b36877f38" id="hospital" required="true"/> <obs
                                     conceptId="9fe00f19-5a3d-4b92-b457-dcf11519c431" size="40" id="hospitalNonCoded"/> </td>
                         </tr>
                         <!--<tr colspan="2">-->
@@ -527,7 +531,7 @@ Consent signed
                             <td>Specimens Obtained:</td>
                         </tr>
                         <tr colspan="2">
-                            <td>A:<obsgroup groupingConceptId="a967b0ce-1f05-473e-9d6e-c38308b23e25"><obs conceptId="c475a604-250d-44f1-bd31-475b98cd5411" id="specimenA"/> <obs conceptId="14289de0-b5a9-44ca-9bb6-b90cb153ee55" id="specimenANonCoded" size="40"/></obsgroup>
+                            <td>A:<obsgroup groupingConceptId="a967b0ce-1f05-473e-9d6e-c38308b23e25"><obs conceptId="c475a604-250d-44f1-bd31-475b98cd5411" id="specimenA" required="true"/> <obs conceptId="14289de0-b5a9-44ca-9bb6-b90cb153ee55" id="specimenANonCoded" size="40"/></obsgroup>
 						    </td>
 						<tr>
                             <td>B:<obsgroup groupingConceptId="ec714e68-d257-4319-aae7-76ae2ceb1f2c"><obs conceptId="c475a604-250d-44f1-bd31-475b98cd5411" id="specimenB"/> <obs conceptId="14289de0-b5a9-44ca-9bb6-b90cb153ee55" id="specimenBNonCoded" size="40"/></obsgroup></td>

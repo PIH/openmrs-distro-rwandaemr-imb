@@ -201,12 +201,41 @@
     "GrossDescriptionconceptUUID": "1e97a4d3-1691-4fb7-be78-18e526e82b0b",
     "MacroscopicExaminationconceptUUID": "5d149510-0767-4da7-82cd-be406b34877d",
     "COMMENTSATCONCLUSIONOFEXAMINATIONconceptUUID": "3cdc5938-26fe-102b-80cb-0017a47871b2",
-    "CanregCodeconceptUUID": "16931672-e068-4ea8-a89c-2ee7dbc07ad1"
+    "CanregCodeconceptUUID": "16931672-e068-4ea8-a89c-2ee7dbc07ad1",
+    "LabPhoneNumber" : "0739285842"
   },
     "@openmrs/esm-login-app": {
     "logo": {
       "src": "https://pbs.twimg.com/media/C1w_czvWgAAWONL.jpg",
 	  "alt": "IMB Logo"
     }
+  },
+  "@openmrs/esm-primary-navigation-app": {
+    "externalRefLinks": [
+      {
+        "title": "Home",
+        "redirect": "/openmrs"
+      },
+      {
+        "title": "Find Patient",
+        "redirect": "/openmrs/findPatient.htm"
+      },
+      {
+        "title": "Create Patient",
+        "redirect": "/openmrs//module/rwandaprimarycare/login/login.form"
+      },
+      {
+        "title": "Dictionary",
+        "redirect": "/openmrs/dictionary/index.htm"
+      },
+      {
+        "title": "Cohort Builder",
+        "redirect": "/openmrs//cohortBuilder.list"
+      },
+      {
+        "title": "Reporting",
+        "redirect": "/openmrs/module/reporting/dashboard/index.form"
+      }
+    ]
   }
 }

@@ -24,11 +24,57 @@
 
     <build>
         <plugins>
+            <!--
+                Use the resources plugin to copy the configuration and process variable replacements
+                This allows us to maintain a common form xml with minor differences between Rwinkwavu and Butaro
+            -->
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>copy-distro-properties-into-jar</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <propertiesEncoding>UTF-8</propertiesEncoding>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}</directory>
+                                    <filtering>true</filtering>
+                                    <includes>
+                                        <include>openmrs-distro.properties</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${project.build.directory}/classes</outputDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-base-configuration-into-distro</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/../configuration</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${project.build.directory}/configuration</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <!-- Use the SDK to retrieve the war, modules, and owas -->
             <plugin>
                 <groupId>org.openmrs.maven.plugins</groupId>
                 <artifactId>openmrs-sdk-maven-plugin</artifactId>
-                <version>4.1.1</version>
+                <version>4.5.0</version>
                 <executions>
                     <execution>
                         <id>build-distro</id>
@@ -43,23 +89,6 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-            <!--
-                Use the resources plugin to copy the configuration and process variable replacements
-                This allows us to maintain a common form xml with minor differences between Rwinkwavu and Butaro
-            -->
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.2.0</version>
-                <configuration>
-                    <resources>
-                        <resource>
-                            <directory>${basedir}/../configuration</directory>
-                            <filtering>true</filtering>
-                        </resource>
-                    </resources>
-                    <outputDirectory>${project.build.directory}/configuration</outputDirectory>
-                </configuration>
             </plugin>
             <!--
                 Assemble this into a zip archive

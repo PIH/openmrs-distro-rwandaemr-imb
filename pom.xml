@@ -26,7 +26,7 @@
         <htmlformflowsheetVersion>2.0.0</htmlformflowsheetVersion>
         <htmlwidgetsVersion>1.10.0</htmlwidgetsVersion>
         <idgenVersion>4.7.0</idgenVersion>
-        <initializerVersion>2.3.0-SNAPSHOT</initializerVersion>
+        <initializerVersion>2.3.0</initializerVersion>
         <laboratorymanagementVersion>2.0.0-SNAPSHOT</laboratorymanagementVersion>
         <legacyuiVersion>1.12.0</legacyuiVersion>
         <metadatamappingVersion>1.4.0</metadatamappingVersion>
@@ -99,6 +99,13 @@
             <name>OpenMRS Nexus Repository</name>
             <url>https://openmrs.jfrog.io/artifactory/public</url>
         </repository>
+        <repository>
+            <id>mekomsolutions-repo</id>
+            <name>mekomsolutions Repository</name>
+            <url>https://nexus.mekomsolutions.net/repository/maven-releases-and-snapshots-for-openmrs/</url>
+        </repository>
+
+
         <!--
         <repository>
             <id>rwandaemr-repo-snapshots</id>

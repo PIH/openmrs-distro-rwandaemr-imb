@@ -13,9 +13,6 @@
     <description>Rwinkwavu Distribution of the Rwanda EMR</description>
 
     <properties>
-        <openMRSVersion>2.5.6-SNAPSHOT</openMRSVersion>
-        <namephoneticsVersion>2.0.0-SNAPSHOT</namephoneticsVersion>
-        <syncVersion>3.0.0-SNAPSHOT</syncVersion>
         <trueIfRwinkwavu>true</trueIfRwinkwavu>
         <trueIfButaro>false</trueIfButaro>
         <oncologyLocation>Rwinkwavu Hospital</oncologyLocation>

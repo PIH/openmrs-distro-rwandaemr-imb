@@ -49,7 +49,7 @@
         <rwandareportsVersion>3.0.0-SNAPSHOT</rwandareportsVersion>
         <serializationVersion>0.2.15</serializationVersion>
         <simplelabentryVersion>2.0.0</simplelabentryVersion>
-        <syncVersion>2.0.0</syncVersion>
+        <syncVersion>3.0.0-SNAPSHOT</syncVersion>
         <usagestatisticsVersion>2.1.0</usagestatisticsVersion>
         <validationVersion>2.0.0</validationVersion>
         <webservicesRestVersion>2.36.0</webservicesRestVersion>

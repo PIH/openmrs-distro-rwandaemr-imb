@@ -1559,10 +1559,10 @@ if(jQuery){
 
                     <tr>
                         <td class="lblcolor">
-<obsgroup id="motive" groupingConceptId="9e90848c-6379-4737-a458-49cd2eaac599">
-Presumptive diagnosis / Hypoth&#232;se diagnostique:
-<obs id="presumptive" conceptId="$@Presumptive_diagnosis_or_Hypothesis@" answerClasses="ICD-10,Diagnosis" style="autocomplete" size="80" required="true" />
- </obsgroup>
+                            <obsgroup id="motive" groupingConceptId="9e90848c-6379-4737-a458-49cd2eaac599">
+                                Presumptive diagnosis / Hypoth&#232;se diagnostique:
+                                <obs id="presumptive" conceptId="$@Presumptive_diagnosis_or_Hypothesis@" answerClasses="ICD-10,Diagnosis" style="autocomplete" size="80" required="true" />
+                                 </obsgroup>
 <br />
 Other Presumptive diagnosis / Hypoth&#232;se diagnostique:
 </td>
@@ -1592,6 +1592,15 @@ Other Presumptive diagnosis / Hypoth&#232;se diagnostique:
                                      labelText="Other Presumptive diagnosis:" style="textarea" />
                             </div>
                         </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Other presumptive diagnosis not listed:
+                        </td>
+                        <td>
+                            <obs conceptId="a72c0d52-f25c-40f9-a2c1-1cbef67e2731" style="text" rows="2" cols="30" />
+                        </td>
+
                     </tr>
                     <section headerLabel="">
                         <table>

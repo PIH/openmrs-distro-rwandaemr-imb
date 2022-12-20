@@ -90,19 +90,19 @@ $j(this).change();
      </table>
      <table border="2" cellspacing="0" cellpadding="6" width="100%">
          <tr>
-                <td>
-                    Date:
-                    <encounterDate default="today"/>
-                </td>
-                <td>
-                    Health Facility:
-                    <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode" />
-                </td>
-                <td>
-                    Provider:
-                    <encounterProvider default="currentUser" />
-                </td>
-            </tr>
+             <td>
+                 Date:
+                 <encounterDate default="today"/>
+             </td>
+             <td>
+                 Health Facility:
+                 <encounterLocation default="GlobalProperty:billing.defaultLocation"  />
+             </td>
+             <td>
+                 Provider:
+                 <encounterProvider default="currentUser" />
+             </td>
+         </tr>
      </table>
      <section headerLabel="RESIDENCE:" >
          <table  border="1" cellspacing="0" cellpadding="6" width="100%">

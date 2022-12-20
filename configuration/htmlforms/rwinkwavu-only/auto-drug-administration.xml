@@ -151,8 +151,7 @@ formRetired="false"
             <tr>
                 <td>
                     <b>
-                        Health Facility:
-                        <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode" />
+                      Health Facility:  <encounterLocation default="GlobalProperty:billing.defaultLocation"/>
                     </b><br/>
                 </td>
                 <td>
@@ -314,7 +313,7 @@ formRetired="false"
             <tr>
                 <td>
                     <strong>Provider:</strong>
-                    <encounterProvider id="encounterProvider" role="Provider" />
+                    <encounterProvider default="currentUser"/>
                 </td>
 
             </tr>

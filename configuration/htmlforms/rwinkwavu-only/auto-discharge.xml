@@ -150,18 +150,18 @@ formRetired="false"
         <table border="2" cellspacing="0" cellpadding="6" width="100%">
             <tr>
                 <td>
-                    Date:
-                    <encounterDate default="today"/>
+                  Date:
+                  <encounterDate default="today" />
                 </td>
                 <td>
-                    Health Facility:
-                    <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode" />
+                  Health Facility:
+                  <encounterLocation default="GlobalProperty:billing.defaultLocation"/>
                 </td>
                 <td>
-                    Provider:
-                    <encounterProvider default="currentUser" />
+                  Provider:
+                  <encounterProvider default="currentUser"/>
                 </td>
-            </tr>
+              </tr>
         </table>
         <table>
             <tr>

@@ -1536,11 +1536,11 @@ if(jQuery){
                 </td>
                 <td>
                     Health Facility:
-                    <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode" />
+                    <encounterLocation default="GlobalProperty:billing.defaultLocation" />
                 </td>
                 <td>
                     Provider:
-                    <encounterProvider default="currentUser" />
+                    <encounterProvider default="currentUser"/>
                 </td>
             </tr>
         </table>

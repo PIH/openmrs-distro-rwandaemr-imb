@@ -15,6 +15,20 @@ formRetired="false"
       fontOnHeaderColor = white
   
     </macros>
+<script type="text/javascript">
+beforeSubmit.push(function() {
+    var c = confirm('Do you want to submit? If yes, Confirm with OK. If No, click on Cancel');
+    if(c)
+      {
+       return true;
+      }
+    else
+     {
+   return false;
+     }
+    
+});
+</script>
     <style>
         .section {
            border: 1px solid $headerColor;
@@ -108,19 +122,20 @@ formRetired="false"
       </table>
       <table border="2" cellpadding="6" cellspacing="0" width="100%">
         <tr>
-                <td>
-                    Date:
-                    <encounterDate default="today"/>
-                </td>
-                <td>
-                    Health Facility:
-                    <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode" />
-                </td>
-                <td>
-                    Provider:
-                    <encounterProvider default="currentUser" />
-                </td>
-          </tr>
+          <td>
+            Date:
+            <encounterDate default="today"/>
+          </td>
+          <td>
+            Health Facility:
+            <encounterLocation default="GlobalProperty:billing.defaultLocation" />
+  
+          </td>
+          <td>
+            Provider:
+            <encounterProvider default="currentUser"/>
+          </td>
+        </tr>
       </table>
       <table>
         <tr>

@@ -9,9 +9,9 @@
 	formRetired="false"
 > <!--
 	   Oncology Pathology specimen submission
-		Author:  
-		Builder: Jberchmas 
-		started on Feb 21, 2013		
+		Author:
+		Builder: Jberchmas
+		started on Feb 21, 2013
 	-->
     <macros>
 
@@ -289,25 +289,45 @@
         }
     </style>
 	<script type="text/javascript">
-   $j(document).ready(function(){
-      var getURLParam = function(name) {
-      var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(document.URL);
-      if(results == null)
-         return;
-         return results[1] || 0;
-      };
-      var requestUUID= getURLParam('uuid');
-      if(requestUUID){
-         $j("#requestUuid").children().val(requestUUID);
-      }
-	  var ClinicalInfo = "<lookup expression="fn.latestObs(&quot;$@EXAM_FINDINGS@&quot;).valueText"/>";
-		if(ClinicalInfo !=null){
-			setValue('clinicalInfo.value', ClinicalInfo);
+		$j(document).ready(function(){
+		var getURLParam = function(name) {
+		var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(document.URL);
+		if(results == null)
+		return;
+		return results[1] || 0;
+		};
+		var requestUUID= getURLParam('uuid');
+		if(requestUUID){
+		$j("#requestUuid").children().val(requestUUID);
 		}
 
 
-   })
-</script>
+		})
+	</script>
+	<script type="text/javascript">
+		if(jQuery){
+			$j(document).ready(function(){
+				var getURLParam = function(name) {
+				var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(document.URL);
+				if(results == null)
+					return;
+					return results[1] || 0;
+				};
+				var requestUUID= getURLParam('uuid');
+				if(requestUUID){
+					$j("#requestUuid").children().val(requestUUID);
+				}
+				var ClinicalInfo = '<lookup expression="fn.latestObs(&quot;$@EXAM_FINDINGS@&quot;).valueText"/>';
+				if(ClinicalInfo !=null){
+					const currentClinicalInfo = document.getElementById("clinicalInfo");
+					currentClinicalInfo.children[0].value=ClinicalInfo;
+				}
+
+
+		   })
+		}
+	</script>
+
 	<script>
 	            // helps in hide and show. Just add a span around the obs checkbox and give it a class(activate to the one that triggers
             //showing and deactivate to the one that triggers hiding), an id and title.
@@ -335,7 +355,7 @@
 
                             $j("."+titleOfTheClicked).show();
                         }
-                        else if(!$j("#"+idOfTheClicked ).children().prop("checked")){
+                        else if(!$j("#"+idOfTheClicked ).children("textarea")[0].prop("checked")){
 
                             $j("."+titleOfTheClicked).find("input").attr("checked",false);
                             $j("."+titleOfTheClicked).find("input").val("");
@@ -376,228 +396,9 @@
                 });
             }
 	</script>
-    <script>
-$j(function() {
-  $j("#hivstatusentry").hide();
-$j('.disdiv').find('input').attr('disabled', 'true');
-var hivstatus = (document.getElementById('hivstatus').innerHTML).trim();
-
-if(hivstatus != "POSITIVE"){
-$j("#hivstatusentry").show();
-}
-	});
-</script>
-    <script type="text/javascript">
-	if (jQuery) {
-		$j(document)
-				.ready(
-						function() {
-							if ($j.browser.msie) {
-								$j(":checkbox").click(function() {
-									$j(this).change();
-								});
-							}
-
-							getField('specimenANonCoded.value')[0].disabled = true;
-							getField('specimenBNonCoded.value')[0].disabled = true;
-							getField('specimenCNonCoded.value')[0].disabled = true;
-							getField('specimenDNonCoded.value')[0].disabled = true;
-                                                        getField('hospitalNonCoded.value')[0].disabled = true;
-
-							getField('specimenA.value').change(function() {
-								if(getValue('specimenA.value') == $@OTHER_NON_CODED@) {
-									getField('specimenANonCoded.value')[0].disabled = false;
-									} else {
-									getField('specimenANonCoded.value')[0].disabled = true;
-								}
-    						});
-
-    						getField('specimenB.value').change(function() {
-								if(getValue('specimenB.value') == $@OTHER_NON_CODED@) {
-									getField('specimenBNonCoded.value')[0].disabled = false;
-									} else {
-									getField('specimenBNonCoded.value')[0].disabled = true;
-								}
-    						});
-
-    						getField('specimenC.value').change(function() {
-								if(getValue('specimenC.value') == $@OTHER_NON_CODED@) {
-									getField('specimenCNonCoded.value')[0].disabled = false;
-									} else {
-									getField('specimenCNonCoded.value')[0].disabled = true;
-								}
-    						});
-
-    						getField('specimenD.value').change(function() {
-								if(getValue('specimenD.value') == $@OTHER_NON_CODED@) {
-									getField('specimenDNonCoded.value')[0].disabled = false;
-									} else {
-									getField('specimenDNonCoded.value')[0].disabled = true;
-								}
-    						});
-
-                                                getField('hospital.value').change(function() {
-								if(getValue('hospital.value') == $@OTHER_NON_CODED@) {
-									getField('hospitalNonCoded.value')[0].disabled = false;
-									} else {
-									getField('hospitalNonCoded.value')[0].disabled = true;
-								}
-    						});
 
 
-
-							$j(".enableDisable").each(
-									function() {
-										var group = $j(this);
-										function disableFn() {
-											group.children("#disabled").fadeTo(
-													250, 0.33);
-											group.children("#disabled").find(
-													":checkbox").attr(
-													"checked", false); //uncheck
-											group.children("#disabled").find(
-													"input[type$='text']").val(
-													"");
-											group.children("#disabled").find(
-													"input").attr("disabled",
-													true); //disable
-										}
-										function enableFn() {
-											group.children("#disabled").fadeTo(
-													250, 1);
-											group.children("#disabled").find(
-													"input").attr("disabled",
-													false);
-										}
-										disableFn();
-										$j(this).children("#trigger").find(
-												":checkbox:first").change(
-												function() {
-													var checked = $j(this)
-															.attr("checked");
-													if (checked == true) {
-														enableFn();
-													} else {
-														disableFn();
-													}
-												});
-									});
-
-							$j(".checkboxGroup")
-									.each(
-											function() {
-												var group = $j(this);
-												var uncheckAll = function() {
-													group
-															.find(
-																	"input[type$='checkbox']")
-															.attr("checked",
-																	false);
-													group
-															.find(
-																	"input[type$='checkbox']")
-															.change();
-												}
-												var uncheckRadioAndAll = function() {
-													group
-															.find(
-																	"#checkboxAll,#checkboxRadio")
-															.find(
-																	"input[type$='checkbox']")
-															.attr("checked",
-																	false);
-													group
-															.find(
-																	"#checkboxAll,#checkboxRadio")
-															.find(
-																	"input[type$='checkbox']")
-															.change();
-												}
-
-												group
-														.find("#checkboxAll")
-														.find("input")
-														.click(
-																function() {
-																	var flip;
-																	var checked = $j(
-																			this)
-																			.siblings(
-																					":checkbox:first")
-																			.attr(
-																					"checked");
-																	if ($j(this)
-																			.attr(
-																					"name") == $j(
-																			this)
-																			.parents(
-																					"#checkboxAll:first")
-																			.find(
-																					":checkbox:first")
-																			.attr(
-																					"name")) {
-																		checked = $j(
-																				this)
-																				.attr(
-																						"checked");
-																		flip = checked;
-																	} else {
-																		flip = !checked;
-																	}
-																	if ($j(this)
-																			.attr(
-																					"type") == "text")
-																		if (flip == false)
-																			flip = !filp; // this is so the user doesn't go to check the checkbox, then uncheck it when they hit the input.
-																	uncheckAll();
-																	$j(this)
-																			.parents(
-																					"#checkboxAll:first")
-																			.find(
-																					":checkbox")
-																			.attr(
-																					"checked",
-																					flip);
-																	$j(this)
-																			.parents(
-																					"#checkboxAll:first")
-																			.find(
-																					":checkbox")
-																			.change();
-																});
-
-												group
-														.find("#checkboxRadio")
-														.find(
-																"input[type$='checkbox']")
-														.click(
-																function() {
-																	uncheckAll();
-																	$j(this)
-																			.siblings(
-																					"input[type$='checkbox']")
-																			.attr(
-																					"checked",
-																					false);
-																	$j(this)
-																			.attr(
-																					"checked",
-																					true);
-																	$j(this)
-																			.change();
-																});
-
-												group
-														.find(
-																"#checkboxCheckbox")
-														.click(
-																function() {
-																	uncheckRadioAndAll();
-																});
-											});
-						});
-	}
-</script> <section>
+     <section>
 
         <table border="1" cellspacing="0" cellpadding="6" width="100%">
             <tr>
@@ -663,19 +464,203 @@ $j("#hivstatusentry").show();
 
                 </td>
             </tr>
+			<ifMode mode="ENTER">
+				<tr>
 
+					<td>
+
+						<br/>
+						<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
+							<span class="activate" id="Organ_System_Alimentary" title="Alimentary">
+								<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@ALIMENTARY_SYSTEM@" style="checkbox"/>
+								<br/>
+							</span>
+							<div class="Alimentary initialHide" style = "padding-left:5%;">
+								<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@ESOPHAGUS@, $@STOMACH@, $@SMALL_BOWEL@, $@LARGE_BOWEL@, $@APPENDIX@, $@ANUS@, $@LIVER@, $@GALLBLADDER@, $@PANCREAS@, $@OTHER_ALIMENTARY@    " />
+							</div>
+						</obsgroup>
+						<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
+							<br/>
+							<br/>
+							<span class="activate" id="Organ_System_BREAST" title="BREAST">
+								<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@BREAST@" style="checkbox"/>
+							</span>
+							<br/>
+
+							<div class="BREAST initialHide" style = "padding-left:5%;">
+								<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@BREAST@, $@OTHER_BREAST@   " />
+							</div>
+							<br/>
+						</obsgroup>
+						<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
+							<span class="activate" id="Organ_System_CARDIOVASCULAR" title="CARDIOVASCULAR">
+								<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@CARDIOVASCULAR_SYSTEM@" style="checkbox"/>
+							</span>
+							<br/>
+							<div class="CARDIOVASCULAR initialHide" style = "padding-left:5%;">
+								<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@HEART@,$@ARTERIES@,$@VEINS@, $@LYMPH_VESSELS@, $@OTHER_CARDIOVASCULAR@     " />
+							</div>
+							<br/>
+						</obsgroup>
+						<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
+							<span class="activate" id="Organ_System_NERVOUS" title="NERVOUS">
+								<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@CENTRAL_NERVOUS_SYSTEM@" style="checkbox"/>
+							</span>
+							<br/>
+
+							<div class="NERVOUS initialHide" style = "padding-left:5%;">
+								<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@CEREBRUM@,$@CEREBELLUM@, $@BRAIN_STEM@, $@SPINAL_CHORD@, $@MENINGES@, $@OTHER_NERVOUS@    " />
+							</div>
+							<br/>
+						</obsgroup>
+						<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
+							<span class="activate" id="Organ_System_ENDOCRINE" title="ENDOCRINE">
+								<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@ENDOCRINE_SYSTEM@" style="checkbox"/>
+							</span>
+							<br/>
+
+							<div class="ENDOCRINE initialHide" style = "padding-left:5%;">
+								<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@THYROID@,$@PARATHYROID@,$@ADRENAL_GLAND_AND_PARAGANGLIA@,$@PITUITARY@, $@HYPOTHALAMUS@, $@OTHER_ENDOCRINE@      " />
+							</div>
+							<br/>
+						</obsgroup>
+						<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
+							<span class="activate" id="Organ_System_FEMALE_REPRODUCTIVE" title="FEMALE_REPRODUCTIVE">
+								<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@FEMALE_REPRODUCTIVE_SYSTEM@" style="checkbox"/>
+							</span>
+							<br/>
+
+
+							<div class="FEMALE_REPRODUCTIVE initialHide" style = "padding-left:5%;">
+								<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@VULVA@,$@VAGINA@,$@CERVIX@,$@CORPUS_UTERI@,$@FALLOPIAN_TUBE@, $@OVARY@, $@PREGNANCY_PLACENTA@, $@OTHER_F_REPRODUCTIVE@   " />
+							</div>
+							<br/>
+						</obsgroup>
+						<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
+							<span class="activate" id="Organ_System_HEAD_AND_NECK" title="HEAD_AND_NECK">
+								<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@HEAD_AND_NECK_SYSTEM@" style="checkbox"/>
+							</span>
+							<br/>
+
+							<div class="HEAD_AND_NECK initialHide" style = "padding-left:5%;">
+								<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@ORAL_CAVITY@, $@TONGUE@,$@PALATE@, $@OROPHARYNX@,$@NASOPHARYNX@,$@HYPOTHARYNX@, $@LARYNX@, $@PAROTID_GLAND@,$@SUBMANDIBULAR_GLAND@, $@SINUSES@, $@SINONASAL@, $@PARANASAL_SINUS@, $@MAXILLA@, $@MANDIBULA@, $@EAR@, $@EYE@, $@OTHER_HEAD@       " />
+							</div>
+							<br/>
+						</obsgroup>
+						<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
+							<span class="activate" id="Organ_System_HEMATOPOIETIC" title="HEMATOPOIETIC">
+								<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@HEMATOPOIETIC_AND_LYMPHATIC_SYSTEM@" style="checkbox"/>
+							</span>
+							<br/>
+
+							<div class="HEMATOPOIETIC initialHide" style = "padding-left:5%;">
+								<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@BONE_MARROW@, $@LYMPH_NODE@, $@SPLEEN@,$@TONSIL@, $@OTHER_HEMATOPOIETIC@    " />
+							</div>
+							<br/>
+						</obsgroup>
+						<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
+							<span class="activate" id="Organ_System_INTEGUMENTARY" title="INTEGUMENTARY">
+								<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@INTEGUMENTARY_SYSTEM@" style="checkbox"/>
+							</span>
+							<br/>
+
+							<div class="INTEGUMENTARY initialHide" style = "padding-left:5%;">
+								<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@SKIN@, $@OTHER_INTEGUMENTARY@   " />
+							</div>
+							<br/>
+						</obsgroup>
+						<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
+							<span class="activate" id="Organ_System_MALE_REPRODUCTIVE" title="MALE_REPRODUCTIVE">
+								<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@MALE_REPRODUCTIVE_SYSTEM@" style="checkbox"/>
+							</span>
+							<br/>
+
+							<div class="MALE_REPRODUCTIVE initialHide" style = "padding-left:5%;">
+								<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@PROSTATE@, $@SEMINAL_VESICLES@, $@TESTICLES@, $@TESTICULAR_ADNEXA@, $@PENIS@, $@SCROTUM@, $@OTHER_MALE_REPRODUCTIVE@   " />
+							</div>
+							<br/>
+						</obsgroup>
+						<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
+							<span class="activate" id="Organ_System_MEDIASTINUM" title="MEDIASTINUM">
+								<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@MEDIASTINUM@" style="checkbox"/>
+							</span>
+							<br/>
+
+							<div class="MEDIASTINUM initialHide" style = "padding-left:5%;">
+								<obs conceptId="$@ORGAN@" style="radio" answerConceptIds=" $@THYMUS@, $@OTHER_MEDIASTINUM@  " />
+							</div>
+						</obsgroup>
+						<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
+							<br/><span class="activate" id="Organ_System_MUSCULOSKELETAL" title="MUSCULOSKELETAL">
+							<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@MUSCULOSKELETAL_SYSTEM@" style="checkbox"/>
+						</span>
+							<br/>
+
+							<div class="MUSCULOSKELETAL initialHide" style = "padding-left:5%;">
+								<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@BONE@, $@JOINT@, $@SOFT_TISSUE@   " />
+							</div>
+							<br/>
+						</obsgroup>
+						<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
+							<span class="activate" id="Organ_System_PERITONEUM" title="PERITONEUM">
+								<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@PERITONEUM_AND_RETROPERITONEUM@" style="checkbox"/>
+							</span>
+							<br/>
+
+							<div class="PERITONEUM initialHide" style = "padding-left:5%;">
+								<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@PERITONEUM@, $@RETROPERITONEUM@, $@RELATED_STRUCTURES_TO_PERITONEUM@   " />
+							</div>
+							<br/>
+						</obsgroup>
+						<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
+							<span class="activate" id="Organ_System_RESPIRATORY" title="RESPIRATORY">
+								<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@RESPIRATORY_SYSTEM@" style="checkbox"/>
+							</span>
+							<br/>
+
+
+							<div class="RESPIRATORY initialHide" style = "padding-left:5%;">
+								<obs conceptId="$@ORGAN@" style="radio" answerConceptIds=" $@TRACHEA@, $@LUNG@, $@PLEURA@  " />
+							</div>
+							<br/>
+						</obsgroup>
+						<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
+							<span class="activate" id="Organ_System_URINARY" title="URINARY">
+								<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@URINARY_SYSTEM@" style="checkbox"/>
+							</span>
+							<br/>
+
+							<div class="URINARY initialHide" style = "padding-left:5%;">
+								<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@KIDNEY@,$@URETER@,$@BLADDER@, $@URETHRA@, $@OTHER_URINARY@     " />
+							</div>
+						</obsgroup>
+
+
+						<!--Organ  <obs conceptId="$@ORGAN@" /> -->
+						<br/>
+						Procedure Type<obs conceptId="$@PROCEDURES@"/>
+						<br/>
+						<br/>
+						Clinical Information <span id="clinicalInfo"> <obs conceptId="$@SPECIMEN_DETAIL@" cols="70"/></span>
+					</td>
+				</tr>
+			</ifMode>
+			<ifMode mode="ENTER" include="false">
 			<tr>
 
 				<td>
 
 				<br/>
-				<span class="activate" id="Organ_System_Alimentary" title="Alimentary">
-				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@ALIMENTARY_SYSTEM@" style="checkbox"/>
-				<br/>
-				</span>
-				<span class="Alimentary initialHide" >
-				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@ESOPHAGUS@, $@STOMACH@, $@SMALL_BOWEL@, $@LARGE_BOWEL@, $@APPENDIX@, $@ANUS@, $@LIVER@, $@GALLBLADDER@, $@PANCREAS@, $@OTHER_ALIMENTARY@    " />
-				</span>
+					<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
+						<span class="activate" id="Organ_System_Alimentary" title="Alimentary">
+							<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@ALIMENTARY_SYSTEM@" style="checkbox"/>
+							<br/>
+						</span>
+						<div class="Alimentary " style = "padding-left:5%;">
+							<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@ESOPHAGUS@, $@STOMACH@, $@SMALL_BOWEL@, $@LARGE_BOWEL@, $@APPENDIX@, $@ANUS@, $@LIVER@, $@GALLBLADDER@, $@PANCREAS@, $@OTHER_ALIMENTARY@    " />
+						</div>
+					</obsgroup>
+					<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
 				<br/>
 				<br/>
 				<span class="activate" id="Organ_System_BREAST" title="BREAST">
@@ -683,136 +668,164 @@ $j("#hivstatusentry").show();
 				</span>
 				<br/>
 
-				<span class="BREAST initialHide" >
+				<div class="BREAST " style = "padding-left:5%;">
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@BREAST@, $@OTHER_BREAST@   " />
-				</span>
+				</div>
 				<br/>
+					</obsgroup>
+					<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
 				<span class="activate" id="Organ_System_CARDIOVASCULAR" title="CARDIOVASCULAR">
 				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@CARDIOVASCULAR_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
-				<span class="CARDIOVASCULAR initialHide" >
+				<div class="CARDIOVASCULAR " style = "padding-left:5%;">
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@HEART@,$@ARTERIES@,$@VEINS@, $@LYMPH_VESSELS@, $@OTHER_CARDIOVASCULAR@     " />
-				</span>
+				</div>
 				<br/>
+					</obsgroup>
+					<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
 				<span class="activate" id="Organ_System_NERVOUS" title="NERVOUS">
 				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@CENTRAL_NERVOUS_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
 
-				<span class="NERVOUS initialHide" >
+				<div class="NERVOUS " style = "padding-left:5%;">
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@CEREBRUM@,$@CEREBELLUM@, $@BRAIN_STEM@, $@SPINAL_CHORD@, $@MENINGES@, $@OTHER_NERVOUS@    " />
-				</span>
+				</div>
 				<br/>
+					</obsgroup>
+					<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
 				<span class="activate" id="Organ_System_ENDOCRINE" title="ENDOCRINE">
 				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@ENDOCRINE_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
 
-				<span class="ENDOCRINE initialHide" >
+				<div class="ENDOCRINE " style = "padding-left:5%;">
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@THYROID@,$@PARATHYROID@,$@ADRENAL_GLAND_AND_PARAGANGLIA@,$@PITUITARY@, $@HYPOTHALAMUS@, $@OTHER_ENDOCRINE@      " />
-				</span>
+				</div>
 				<br/>
+					</obsgroup>
+					<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
 				<span class="activate" id="Organ_System_FEMALE_REPRODUCTIVE" title="FEMALE_REPRODUCTIVE">
 				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@FEMALE_REPRODUCTIVE_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
 
 
-				<span class="FEMALE_REPRODUCTIVE initialHide" >
+				<div class="FEMALE_REPRODUCTIVE " style = "padding-left:5%;">
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@VULVA@,$@VAGINA@,$@CERVIX@,$@CORPUS_UTERI@,$@FALLOPIAN_TUBE@, $@OVARY@, $@PREGNANCY_PLACENTA@, $@OTHER_F_REPRODUCTIVE@   " />
-				</span>
+				</div>
 				<br/>
+					</obsgroup>
+					<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
 				<span class="activate" id="Organ_System_HEAD_AND_NECK" title="HEAD_AND_NECK">
 				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@HEAD_AND_NECK_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
 
-				<span class="HEAD_AND_NECK initialHide" >
+				<div class="HEAD_AND_NECK " style = "padding-left:5%;">
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@ORAL_CAVITY@, $@TONGUE@,$@PALATE@, $@OROPHARYNX@,$@NASOPHARYNX@,$@HYPOTHARYNX@, $@LARYNX@, $@PAROTID_GLAND@,$@SUBMANDIBULAR_GLAND@, $@SINUSES@, $@SINONASAL@, $@PARANASAL_SINUS@, $@MAXILLA@, $@MANDIBULA@, $@EAR@, $@EYE@, $@OTHER_HEAD@       " />
-				</span>
+				</div>
 				<br/>
+					</obsgroup>
+					<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
 				<span class="activate" id="Organ_System_HEMATOPOIETIC" title="HEMATOPOIETIC">
 				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@HEMATOPOIETIC_AND_LYMPHATIC_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
 
-				<span class="HEMATOPOIETIC initialHide" >
+				<div class="HEMATOPOIETIC " style = "padding-left:5%;">
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@BONE_MARROW@, $@LYMPH_NODE@, $@SPLEEN@,$@TONSIL@, $@OTHER_HEMATOPOIETIC@    " />
-				</span>
+				</div>
 				<br/>
+					</obsgroup>
+					<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
 				<span class="activate" id="Organ_System_INTEGUMENTARY" title="INTEGUMENTARY">
 				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@INTEGUMENTARY_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
 
-				<span class="INTEGUMENTARY initialHide" >
+				<div class="INTEGUMENTARY " style = "padding-left:5%;">
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@SKIN@, $@OTHER_INTEGUMENTARY@   " />
-				</span>
+				</div>
 				<br/>
+					</obsgroup>
+					<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
 				<span class="activate" id="Organ_System_MALE_REPRODUCTIVE" title="MALE_REPRODUCTIVE">
 				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@MALE_REPRODUCTIVE_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
 
-				<span class="MALE_REPRODUCTIVE initialHide" >
+				<div class="MALE_REPRODUCTIVE " style = "padding-left:5%;">
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@PROSTATE@, $@SEMINAL_VESICLES@, $@TESTICLES@, $@TESTICULAR_ADNEXA@, $@PENIS@, $@SCROTUM@, $@OTHER_MALE_REPRODUCTIVE@   " />
-				</span>
+				</div>
 				<br/>
+					</obsgroup>
+					<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
 				<span class="activate" id="Organ_System_MEDIASTINUM" title="MEDIASTINUM">
 				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@MEDIASTINUM@" style="checkbox"/>
 				</span>
 				<br/>
 
-				<span class="MEDIASTINUM initialHide" >
+				<div class="MEDIASTINUM " style = "padding-left:5%;">
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds=" $@THYMUS@, $@OTHER_MEDIASTINUM@  " />
-				</span>
+				</div>
+					</obsgroup>
+					<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
 				<br/><span class="activate" id="Organ_System_MUSCULOSKELETAL" title="MUSCULOSKELETAL">
 				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@MUSCULOSKELETAL_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
 
-				<span class="MUSCULOSKELETAL initialHide" >
+				<div class="MUSCULOSKELETAL " style = "padding-left:5%;">
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@BONE@, $@JOINT@, $@SOFT_TISSUE@   " />
-				</span>
+				</div>
 				<br/>
+					</obsgroup>
+					<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
 				<span class="activate" id="Organ_System_PERITONEUM" title="PERITONEUM">
 				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@PERITONEUM_AND_RETROPERITONEUM@" style="checkbox"/>
 				</span>
 				<br/>
 
-				<span class="PERITONEUM initialHide" >
+				<div class="PERITONEUM " style = "padding-left:5%;">
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@PERITONEUM@, $@RETROPERITONEUM@, $@RELATED_STRUCTURES_TO_PERITONEUM@   " />
-				</span>
+				</div>
 				<br/>
+					</obsgroup>
+					<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
 				<span class="activate" id="Organ_System_RESPIRATORY" title="RESPIRATORY">
 				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@RESPIRATORY_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
 
 
-				<span class="RESPIRATORY initialHide" >
+				<div class="RESPIRATORY " style = "padding-left:5%;">
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds=" $@TRACHEA@, $@LUNG@, $@PLEURA@  " />
-				</span>
+				</div>
 				<br/>
+					</obsgroup>
+					<obsgroup groupingConceptId="9c42d688-1a39-492c-adf3-effe2768a765">
 				<span class="activate" id="Organ_System_URINARY" title="URINARY">
 				<obs conceptId="$@ORGAN_SYSTEM@"  answerConceptId="$@URINARY_SYSTEM@" style="checkbox"/>
 				</span>
 				<br/>
 
-				<span class="URINARY initialHide" >
+				<div class="URINARY " style = "padding-left:5%;">
 				<obs conceptId="$@ORGAN@" style="radio" answerConceptIds="$@KIDNEY@,$@URETER@,$@BLADDER@, $@URETHRA@, $@OTHER_URINARY@     " />
-				</span>
+				</div>
+					</obsgroup>
+
 
 				<!--Organ  <obs conceptId="$@ORGAN@" /> -->
 				<br/>
 				Procedure Type<obs conceptId="$@PROCEDURES@"/>
 				<br/>
 				<br/>
-				Clinical Information <obs id="clinicalInfo" conceptId="$@SPECIMEN_DETAIL@" cols="70"/>
+				Clinical Information <span id="clinicalInfo"> <obs conceptId="$@SPECIMEN_DETAIL@" cols="70"/></span>
 				</td>
 			</tr>
-
+			</ifMode>
 
             <tr>
                 <td>

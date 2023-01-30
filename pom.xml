@@ -102,7 +102,7 @@
         <repository>
             <id>mekomsolutions-repo</id>
             <name>mekomsolutions Repository</name>
-            <url>https://nexus.mekomsolutions.net/repository/maven-releases-and-snapshots-for-openmrs/</url>
+            <url>https://nexus.mekomsolutions.net/repository/maven-public</url>
         </repository>
 
 

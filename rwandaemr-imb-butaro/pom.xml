@@ -91,7 +91,7 @@
             <plugin>
                 <groupId>org.openmrs.maven.plugins</groupId>
                 <artifactId>openmrs-sdk-maven-plugin</artifactId>
-                <version>4.5.0</version>
+                <version>4.6.0-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <id>build-distro</id>
@@ -140,7 +140,7 @@
                         </goals>
                         <phase>compile</phase>
                         <configuration>
-                            <nodeVersion>v18.13.0</nodeVersion>
+                            <nodeVersion>v16.15.1</nodeVersion>
                         </configuration>
                     </execution>
                     <execution>

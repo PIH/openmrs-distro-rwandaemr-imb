@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -159,98 +160,138 @@
     <fieldset>
       <h3 class="language en"> <strong>Measurement HF</strong> </h3>
       <h3 class="language kiny"> <strong>Ibipimo byo kwa muganga</strong> </h3>
-      <div >
-        <label class="font-normal language en"> <strong> Glucose test method HF:  </strong> </label>
-        <label class="font-normal language kiny"> <strong> Glucose test method HF:  </strong> </label>
+      <div>
+        <label class="font-normal" class="language en"> <strong> Glucose test method :  </strong> </label>
+        <label class="font-normal" class="language kiny"> <strong> Uburyo ibipimo by'isukari byafashwe :  </strong> </label>
         <br/>
+        <!--                        <label class="font-normal">-->
+        <!--                            <select class="form-control" id="obs.GlucoseTestTethod" name="obs.GlucoseTestTethod" data-concept="f618591a-f334-4a5a-be26-0518871cd00f^Glucose test method^99DCT" disabled="disabled">-->
+        <!--                                <option value="">...</option>-->
+        <!--                                <option value="d2d34adf-9f22-4897-97a1-dbbda02b19dd^Random for blood glucose test^99DCT">Random for blood glucose test</option>-->
+        <!--                            </select>-->
+        <!--                        </label>-->
         <label class="font-normal">
-          <input id="obs.GlucoseTestTethodRandom" name="obs.GlucoseTestTethod" type="radio"
+          <input id="GlucoseTestMethodRandom" name="GlucoseTestMethod" type="radio"
                  data-concept="f618591a-f334-4a5a-be26-0518871cd00f^Glucose test method^99DCT"
                  value="d2d34adf-9f22-4897-97a1-dbbda02b19dd^Random for blood glucose test^99DCT">
 
-          <span class="language en"> Random for blood glucose test </span>
-          <span class="language kiny"> bitategujwe </span>
+          <span class="language en"> Random </span>
+          <span class="language kiny"> Bitategujwe </span>
         </label>
-      </div>
-      <div >
-        <label class="font-normal language en"> <strong> Blood sugar (mg/dl):  </strong> </label>
-        <label class="font-normal language kiny"> <strong> Isukari mumarasor (mg/dl):  </strong> </label>
-
         <br/>
         <label class="font-normal">
-          <input class="form-control" id="obs.BloodSugar" name="obs.BloodSugar" type="number" data-concept="3cd4e194-26fe-102b-80cb-0017a47871b2^SERUM GLUCOSE^99DCT"/>
+          <input id="GlucoseTestMethodFasting" name="GlucoseTestMethod" type="radio"
+                 data-concept="f618591a-f334-4a5a-be26-0518871cd00f^Glucose test method^99DCT"
+                 value="2effb850-0384-4a09-8ae0-a7b5f7e7289f^Fasting for blood glucose test^99DCT">
+
+          <span class="language en"> fasting </span>
+          <span class="language kiny"> mbere yo kurya </span>
         </label>
       </div>
-      <div >
-        <label class="font-normal language en"> <strong> Blood sugar status HF:  </strong> </label>
-        <label class="font-normal language kiny"> <strong> Uko isukari mumaraso ihagaze kubipimo byo kwamuganga::  </strong> </label>
+      <div>
+        <label class="font-normal" class="language en"> <strong> Blood sugar (mg/dl):  </strong> </label>
+        <label class="font-normal" class="language kiny"> <strong> Ingano yisukari mumaraso (mg/dl):  </strong> </label>
         <br/>
         <label class="font-normal">
-          <input id="obs.BloodSugarStatusHF" name="obs.BloodSugarStatusHF" type="radio"
-                 data-concept="fd66cc68-084b-4f41-9d84-5d748bcd7d95^Blood sugar status^99DCT"
-                 value="edf4ecc4-44f6-457a-b561-179f4426b16a^DIABETES^99DCT">
-
-          <span class="language en"> DIABETES </span>
-          <span class="language kiny"> DIYABETE </span>
+          <input class="form-control" id="BloodSugar" name="obs.BloodSugar" type="number" data-concept="3cd4e194-26fe-102b-80cb-0017a47871b2^SERUM GLUCOSE^99DCT"/>
         </label>
       </div>
-      <div >
-        <label class="font-normal language en"> <strong> Blood sugar measure taken HF:  </strong> </label>
-        <label class="font-normal language kiny"> <strong> Ibipimo byafashwe no kwamuganga:  </strong> </label>
+      <div id="BloodSugarStatusStatusDiv" class="initialHide">
+        <label class="font-normal" class="language en"> <strong> Blood sugar status:  </strong> </label>
+        <label class="font-normal" class="language kiny"> <strong> Uko isukari ihagaze:  </strong> </label>
         <br/>
-<!--        <label class="font-normal">-->
-<!--          <select class="form-control" id="obs.BSMeasureTaken" name="obs.BSMeasureTaken" data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT" disabled="disabled">-->
-<!--            <option value="">...</option>-->
-<!--            <option value="89297887-f43f-444b-a8c8-6ae76932ceca^Enroll in NCD Clinic or Transfer to HC^99DCT">Enroll in NCD Clinic or Transfer to HC</option>-->
-<!--          </select>-->
-<!--        </label>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <select class="form-control" id="obs.BloodSugarStatusHF" name="obs.BloodSugarStatusHF" data-concept="fd66cc68-084b-4f41-9d84-5d748bcd7d95^Blood sugar status^99DCT" disabled="disabled">-->
+        <!--                                <option value="">...</option>-->
+        <!--                                <option value="edf4ecc4-44f6-457a-b561-179f4426b16a^DIABETES^99DCT">DIABETES</option>-->
+        <!--                            </select>-->
+        <!--                        </label>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <input id="obs.BloodSugarStatusNormal" name="obs.BloodSugarStatus" type="radio"-->
+        <!--                                   data-concept="fd66cc68-084b-4f41-9d84-5d748bcd7d95^Blood sugar status^99DCT"-->
+        <!--                                   value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">-->
+        <!--                            Normal-->
+        <!--                        </label>-->
+        <!--                        <br/>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <input id="obs.BloodSugarStatusPreDiabetes" name="obs.BloodSugarStatus" type="radio"-->
+        <!--                                   data-concept="fd66cc68-084b-4f41-9d84-5d748bcd7d95^Blood sugar status^99DCT"-->
+        <!--                                   value="968cf3be-8254-48f1-83af-b09504449183^Pre diabetes^99DCT">-->
+        <!--                            Pre diabetes-->
+        <!--                        </label>-->
+        <!--                        <br/>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <input id="obs.BloodSugarStatusDiabetes" name="obs.BloodSugarStatus" type="radio"-->
+        <!--                                   data-concept="fd66cc68-084b-4f41-9d84-5d748bcd7d95^Blood sugar status^99DCT"-->
+        <!--                                   value="edf4ecc4-44f6-457a-b561-179f4426b16a^DIABETES^99DCT">-->
+        <!--                            DIABETES-->
+        <!--                        </label>-->
+        <!--                        <br/>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <input id="obs.BloodSugarStatusHYPOGLYCEMIA" name="obs.BloodSugarStatus" type="radio"-->
+        <!--                                   data-concept="fd66cc68-084b-4f41-9d84-5d748bcd7d95^Blood sugar status^99DCT"-->
+        <!--                                   value="641f4fe3-cac2-46c4-aa94-c8b6d05e9407^HYPOGLYCEMIA^99DCT">-->
+        <!--                            HYPOGLYCEMIA-->
+        <!--                        </label>-->
+        <!--                        <br/>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <input id="obs.BloodSugarStatus" name="obs.BloodSugarStatus" type="radio"-->
+        <!--                                   data-concept="fd66cc68-084b-4f41-9d84-5d748bcd7d95^Blood sugar status^99DCT"-->
+        <!--                                   value="418c6db3-0111-4c92-95b4-c82f563f356a^Emergency Hyperglycemia^99DCT">-->
+        <!--                            Emergency Hyperglycemia-->
+        <!--                        </label>-->
         <label class="font-normal">
-          <input id="obs.BSMeasureTakentransfer" name="obs.BSMeasureTaken" type="radio"
-                 data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"
-                 value="89297887-f43f-444b-a8c8-6ae76932ceca^Enroll in NCD Clinic or Transfer to HC^99DCT">
-
-          <span class="language en"> Enroll in NCD Clinic or Transfer to HC </span>
-          <span class="language kiny"> Yanditswe mu ba rwayi ba NCD cyangwa yahawe taransiferi </span>
+          <input class="form-control " id="BloodSugarStatus" type="text" readonly="readonly" >
+          <input class="form-control" name="BloodSugarStatus" type="hidden" data-concept="fd66cc68-084b-4f41-9d84-5d748bcd7d95^Blood sugar status^99DCT">
         </label>
+      </div>
+      <div id="BloodSugarmeasureTakensStatusDiv" class="initialHide">
+        <label class="font-normal" class="language en"> <strong> Blood sugar measure taken :  </strong> </label>
+        <label class="font-normal" class="language kiny"> <strong> Icyemezo kungano y'isukari :  </strong> </label>
+        <br/>
+        <!--                        <label class="font-normal">-->
+        <!--                            <select class="form-control" id="obs.BSMeasureTaken" name="obs.BSMeasureTaken" data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT" disabled="disabled">-->
+        <!--                                <option value="">...</option>-->
+        <!--                                <option value="89297887-f43f-444b-a8c8-6ae76932ceca^Enroll in NCD Clinic or Transfer to HC^99DCT">Enroll in NCD Clinic or Transfer to HC</option>-->
+        <!--                            </select>-->
+        <!--                        </label>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <input id="obs.BSMeasureTakenEveryYear" name="obs.BSMeasureTaken" type="radio"-->
+        <!--                                   data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"-->
+        <!--                                   value="29bdf2a1-909a-46ce-be28-55a633fd74e9^Screening every year^99DCT">-->
+        <!--                            Screening every year-->
+        <!--                        </label>-->
+        <!--                        <br/>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <input id="obs.BSMeasureTaken" name="obs.BSMeasureTaken" type="radio"-->
+        <!--                                   data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"-->
+        <!--                                   value="d670c8ad-cfa6-4e47-bd1f-7eb8f3fa342a^Screening every 3 months^99DCT">-->
+        <!--                            Screening every 3 months-->
+        <!--                        </label>-->
+        <!--                        <br/>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <input id="obs.BSMeasureTakenTransfer" name="obs.BSMeasureTaken" type="radio"-->
+        <!--                                   data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"-->
+        <!--                                   value="89297887-f43f-444b-a8c8-6ae76932ceca^Enroll in NCD Clinic or Transfer to HC^99DCT">-->
+        <!--                            enroll in ncd clinic or transfer to DH-->
+        <!--                        </label>-->
+        <!--                        <br/>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <input id="obs.BSMeasureTakenAddressHypoglycemia" name="obs.BSMeasureTaken" type="radio"-->
+        <!--                                   data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"-->
+        <!--                                   value="6f8d2d4a-4ea3-465e-b28a-3017d9707d89^Address hypoglycemia^99DCT">-->
+        <!--                            Address hypoglycemia-->
+        <!--                        </label>-->
+        <!--                        <br/>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <input id="obs.BSMeasureTakenImmediateReference" name="obs.BSMeasureTaken" type="radio"-->
+        <!--                                   data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"-->
+        <!--                                   value="2f13f21c-1469-4915-9bda-91049a285d13^immediate reference to the health facility^99DCT">-->
+        <!--                            immediate reference to the health facility-->
+        <!--                        </label>-->
         <label class="font-normal">
-          <input id="obs.BSMeasureTakenHypoglycemia" name="obs.BSMeasureTaken" type="radio"
-                 data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"
-                 value="29bdf2a1-909a-46ce-be28-55a633fd74e9^Screening every year^99DCT">
-
-          <span class="language en"> Screening every year</span>
-          <span class="language kiny"> Buri mwaka </span>
-        </label>
-        <label class="font-normal">
-          <input id="obs.BSMeasureTakenthreeMonths" name="obs.BSMeasureTaken" type="radio"
-                 data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"
-                 value="d670c8ad-cfa6-4e47-bd1f-7eb8f3fa342a^Screening every 3 months^99DCT">
-
-          <span class="language en"> Screening every 3 months</span>
-          <span class="language kiny"> Buri mezi atatu </span>
-        </label>
-        <label class="font-normal">
-          <input id="obs.BSMeasureTakenHypoglycemia" name="obs.BSMeasureTaken" type="radio"
-                 data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"
-                 value="6f8d2d4a-4ea3-465e-b28a-3017d9707d89^Address hypoglycemia^99DCT">
-
-          <span class="language en"> Address hypoglycemia</span>
-          <span class="language kiny"> Yavuwe </span>
-        </label>
-        <label class="font-normal">
-          <input id="obs.BSMeasureReferToHF" name="obs.BSMeasureTaken" type="radio"
-                 data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"
-                 value="2f13f21c-1469-4915-9bda-91049a285d13^immediate reference to the health facility^99DCT">
-
-          <span class="language en"> immediate reference to the health facility</span>
-          <span class="language kiny"> Yoherejwe kubitaro </span>
-        </label>
-        <label class="font-normal">
-          <input id="obs.BSMeasureSugarInTake" name="obs.BSMeasureTaken" type="radio"
-                 data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"
-                 value="467475cb-ee97-4685-aeff-0afc367c3f33^Recommend immediate sugar intake^99DCT">
-
-          <span class="language en"> Recommend immediate sugar intake</span>
-          <span class="language kiny"> Gusabwa guhita anywa/arya isukali </span>
+          <input class="form-control " id="BSMeasureTaken" type="text" readonly="readonly" >
+          <input class="form-control" name="BSMeasureTaken" type="hidden" data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT">
         </label>
       </div>
       <div >
@@ -265,12 +306,12 @@
         <label class="font-normal language en"> <strong> HbA1c status HF:  </strong> </label>
         <label class="font-normal language kiny"> <strong> Uko HbA1C ihagaze kubipimo byo kwa muganga:  </strong> </label>
         <br/>
-<!--        <label class="font-normal">-->
-<!--          <select class="form-control" id="obs.HbA1cStatus" name="obs.HbA1cStatus" data-concept="6c30c84e-bbf2-4776-8085-93a1002f6e68^HbA1c status^99DCT" disabled="disabled">-->
-<!--            <option value="">...</option>-->
-<!--            <option value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">Normal</option>-->
-<!--          </select>-->
-<!--        </label>-->
+        <!--        <label class="font-normal">-->
+        <!--          <select class="form-control" id="obs.HbA1cStatus" name="obs.HbA1cStatus" data-concept="6c30c84e-bbf2-4776-8085-93a1002f6e68^HbA1c status^99DCT" disabled="disabled">-->
+        <!--            <option value="">...</option>-->
+        <!--            <option value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">Normal</option>-->
+        <!--          </select>-->
+        <!--        </label>-->
         <label class="font-normal">
           <input id="obs.HbA1cStatus" name="obs.HbA1cStatus" type="radio"
                  data-concept="6c30c84e-bbf2-4776-8085-93a1002f6e68^HbA1c status^99DCT"
@@ -502,7 +543,105 @@
             $("#"+defaultLang).prop("checked", true);
             $(".language").hide();
             $("."+defaultLang).show();
+            $("#BloodSugar").change(function(){
 
+                var BloodSugar = $("#BloodSugar").val();
+
+                if($("#GlucoseTestMethodRandom").prop('checked'))
+                {
+                    if(BloodSugar<=70){
+                        $('BloodSugarStatus').val("641f4fe3-cac2-46c4-aa94-c8b6d05e9407^HYPOGLYCEMIA^99DCT");
+                        $('#BloodSugarStatus').val("HYPOGLYCEMIA");
+                        $('BSMeasureTaken').val("467475cb-ee97-4685-aeff-0afc367c3f33^Recommend immediate sugar intake^99DCT");
+                        $('#BSMeasureTaken').val("Recommend immediate sugar intake");
+                        $('#BloodSugarStatusStatusDiv').show();
+                        $('#BloodSugarmeasureTakensStatusDiv').show();
+                    }
+                    else if(BloodSugar<= 140){
+                        $('BloodSugarStatus').val("3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT");
+                        $('#BloodSugarStatus').val("NORMAL");
+                        $('BSMeasureTaken').val("29bdf2a1-909a-46ce-be28-55a633fd74e9^Screening every year^99DCT");
+                        $('#BSMeasureTaken').val("Screening every year");
+                        $('#BloodSugarStatusStatusDiv').show();
+                        $('#BloodSugarmeasureTakensStatusDiv').show();
+                    }
+                    else if(BloodSugar<= 199){
+                        $('BloodSugarStatus').val("968cf3be-8254-48f1-83af-b09504449183^Pre diabetes^99DCT");
+                        $('#BloodSugarStatus').val("Pre-diabetes");
+                        $('BSMeasureTaken').val("d670c8ad-cfa6-4e47-bd1f-7eb8f3fa342a^Screening every 3 months^99DCT");
+                        $('#BSMeasureTaken').val("Screening every 3 months");
+                        $('#BloodSugarStatusStatusDiv').show();
+                        $('#BloodSugarmeasureTakensStatusDiv').show();
+                    }
+                    else if(BloodSugar> 199){
+                        $('BloodSugarStatus').val("edf4ecc4-44f6-457a-b561-179f4426b16a^DIABETES^99DCT");
+                        $('#BloodSugarStatus').val("Diabetes");
+                        $('BSMeasureTaken').val("89297887-f43f-444b-a8c8-6ae76932ceca^Enroll in NCD Clinic or Transfer to HC^99DCT");
+                        $('#BSMeasureTaken').val("Enroll in NCD Clinic or Transfer to HC");
+                        $('#BloodSugarStatusStatusDiv').show();
+                        $('#BloodSugarmeasureTakensStatusDiv').show();
+                    }
+                    else{
+                         $('BloodSugarStatus').val("");
+                        $('#BloodSugarStatus').val("");
+                        $('BSMeasureTaken').val("");
+                        $('#BSMeasureTaken').val("");
+                        $('#BloodSugarStatusStatusDiv').hide();
+                        $('#BloodSugarmeasureTakensStatusDiv').hide();
+                    }
+                }
+                else if($("#GlucoseTestMethodFasting").prop('checked'))
+                {
+                    if(BloodSugar<=69){
+                        $('BloodSugarStatus').val("641f4fe3-cac2-46c4-aa94-c8b6d05e9407^HYPOGLYCEMIA^99DCT");
+                        $('#BloodSugarStatus').val("HYPOGLYCEMIA");
+                        $('BSMeasureTaken').val("467475cb-ee97-4685-aeff-0afc367c3f33^Recommend immediate sugar intake^99DCT");
+                        $('#BSMeasureTaken').val("Recommend immediate sugar intake");
+                        $('#BloodSugarStatusStatusDiv').show();
+                        $('#BloodSugarmeasureTakensStatusDiv').show();
+                    }
+                    else if(BloodSugar<= 99){
+                        $('BloodSugarStatus').val("3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT");
+                        $('#BloodSugarStatus').val("NORMAL");
+                        $('BSMeasureTaken').val("29bdf2a1-909a-46ce-be28-55a633fd74e9^Screening every year^99DCT");
+                        $('#BSMeasureTaken').val("Screening every year");
+                        $('#BloodSugarStatusStatusDiv').show();
+                        $('#BloodSugarmeasureTakensStatusDiv').show();
+                    }
+                    else if(BloodSugar<= 125){
+                        $('BloodSugarStatus').val("968cf3be-8254-48f1-83af-b09504449183^Pre diabetes^99DCT");
+                        $('#BloodSugarStatus').val("Pre-diabetes");
+                        $('BSMeasureTaken').val("d670c8ad-cfa6-4e47-bd1f-7eb8f3fa342a^Screening every 3 months^99DCT");
+                        $('#BSMeasureTaken').val("Screening every 3 months");
+                        $('#BloodSugarStatusStatusDiv').show();
+                        $('#BloodSugarmeasureTakensStatusDiv').show();
+                    }
+                    else if(BloodSugar> 125){
+                        $('BloodSugarStatus').val("edf4ecc4-44f6-457a-b561-179f4426b16a^DIABETES^99DCT");
+                        $('#BloodSugarStatus').val("Diabetes");
+                        $('BSMeasureTaken').val("89297887-f43f-444b-a8c8-6ae76932ceca^Enroll in NCD Clinic or Transfer to HC^99DCT");
+                        $('#BSMeasureTaken').val("Enroll in NCD Clinic or Transfer to HC");
+                        $('#BloodSugarStatusStatusDiv').show();
+                        $('#BloodSugarmeasureTakensStatusDiv').show();
+                    }
+                    else{
+                         $('BloodSugarStatus').val("");
+                        $('#BloodSugarStatus').val("");
+                        $('BSMeasureTaken').val("");
+                        $('#BSMeasureTaken').val("");
+                        $('#BloodSugarStatusStatusDiv').hide();
+                        $('#BloodSugarmeasureTakensStatusDiv').hide();
+                    }
+                }
+                else{
+                     $('BloodSugarStatus').val("");
+                    $('#BloodSugarStatus').val("");
+                    $('BSMeasureTaken').val("");
+                    $('#BSMeasureTaken').val("");
+                    $('#BloodSugarStatusStatusDiv').hide();
+                    $('#BloodSugarmeasureTakensStatusDiv').hide();
+                }
+            })
 
             $(".initialHide").hide();
         });

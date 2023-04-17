@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -138,8 +139,8 @@
         <br/>
         <label class="font-normal">
           <input class="form-control datepicker" id="obs.reportDate" name="obs.reportDate" type="text"
-          data-concept="2a1d545e-1167-4d07-b35b-12803e6197cc^Report Date^99DCT" readonly="readonly"/>
-<!--          data-concept="e2c70f0a-8bb3-4d84-8436-f1f54646030b^Report Date^99DCT" readonly="readonly"/>-->
+                 data-concept="2a1d545e-1167-4d07-b35b-12803e6197cc^Report Date^99DCT" readonly="readonly"/>
+          <!--          data-concept="e2c70f0a-8bb3-4d84-8436-f1f54646030b^Report Date^99DCT" readonly="readonly"/>-->
 
         </label>
       </div>
@@ -160,85 +161,105 @@
       <h3 class="language en"> <strong>Measurement HF</strong> </h3>
       <h3 class="language kiny"> <strong>Ibipimo byo kwa muganga</strong> </h3>
       <div >
-        <label class="font-normal language en"> <strong> Systole (mmHg):  </strong> </label>
-        <label class="font-normal language kiny"> <strong> Sisitole (mmHg)::  </strong> </label>
+        <label class="font-normal" class="language en"> <strong> Systole (mmHg):  </strong> </label>
+        <label class="font-normal" class="language kiny"> <strong> Umubare wo hejuru (mmHg)::  </strong> </label>
         <br/>
         <label class="font-normal">
-          <input class="form-control"  max="250" min="20" id="obs.SystolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>
+          <input class="form-control"  max="250" min="20" id="SystolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>
         </label>
       </div>
       <div >
-        <label class="font-normal language en"> <strong> Diastole (mmHg):  </strong> </label>
-        <label class="font-normal language kiny"> <strong> Diyasitole (mmHg)::  </strong> </label>
+        <label class="font-normal" class="language en"> <strong> Diastole (mmHg):  </strong> </label>
+        <label class="font-normal" class="language kiny"> <strong> Umubare wo hasi (mmHg)::  </strong> </label>
         <br/>
         <label class="font-normal">
-          <input class="form-control" max="150" min="30" id="obs.diastolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>
+          <input class="form-control" max="150" min="30" id="diastolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>
         </label>
       </div>
-      <div >
-        <label class="font-normal language en"> <strong> BP status HF:  </strong> </label>
-        <label class="font-normal language kiny"> <strong> Ibipimo bya iperitansiyo byagaragajwe no kwamuganga:  </strong> </label>
+      <div id="BPStatusDiv" class="initialHide">
+        <label class="font-normal" class="language en"> <strong> BP status :  </strong> </label>
+        <label class="font-normal" class="language kiny"> <strong> Uko umuvuduko wifashe :  </strong> </label>
         <br/>
-<!--        <label class="font-normal">-->
-<!--          <select class="form-control" id="obs.BPStatusHF" name="obs.BPStatusHF" data-concept="ba61f053-b306-418f-8891-8af43b322ca7^Blood pressure status^99DCT" disabled="disabled">-->
-<!--            <option value="">...</option>-->
-<!--            <option value="3cd50188-26fe-102b-80cb-0017a47871b2^HYPERTENSION^99DCT">Hypertension</option>-->
-<!--          </select>-->
-<!--        </label>-->
-        <label class="font-normal">
-          <input id="obs.BPStatusHF" name="obs.BPStatusHF" type="radio"
-                 data-concept="ba61f053-b306-418f-8891-8af43b322ca7^Blood pressure status^99DCT"
-                 value="3cd50188-26fe-102b-80cb-0017a47871b2^HYPERTENSION^99DCT">
+        <!--                        <label class="font-normal">-->
+        <!--                            <select class="form-control" id="obs.BPStatusHF" name="obs.BPStatusHF" data-concept="ba61f053-b306-418f-8891-8af43b322ca7^Blood pressure status^99DCT" disabled="disabled">-->
+        <!--                                <option value="">...</option>-->
+        <!--                                <option value="3cd50188-26fe-102b-80cb-0017a47871b2^HYPERTENSION^99DCT">Hypertension</option>-->
+        <!--                            </select>-->
+        <!--                        </label>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <input id="obs.BPStatusHFNormal" name="obs.BPStatusHF" type="radio"-->
+        <!--                                   data-concept="ba61f053-b306-418f-8891-8af43b322ca7^Blood pressure status^99DCT"-->
+        <!--                                   value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">-->
+        <!--                            Normal-->
+        <!--                        </label>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <input id="obs.BPStatusHFPreHypertension" name="obs.BPStatusHF" type="radio"-->
+        <!--                                   data-concept="ba61f053-b306-418f-8891-8af43b322ca7^Blood pressure status^99DCT"-->
+        <!--                                   value="d31fcdb1-ed29-4376-9bde-af798d1c0570^pre Hypertension^99DCT">-->
+        <!--                            Pre Hypertension-->
+        <!--                        </label>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <input id="obs.BPStatusHFHypertension" name="obs.BPStatusHF" type="radio"-->
+        <!--                                   data-concept="ba61f053-b306-418f-8891-8af43b322ca7^Blood pressure status^99DCT"-->
+        <!--                                   value="3cd50188-26fe-102b-80cb-0017a47871b2^HYPERTENSION^99DCT">-->
+        <!--                            Hypertension-->
+        <!--                        </label>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <input id="obs.BPStatusHFHypotension" name="obs.BPStatusHF" type="radio"-->
+        <!--                                   data-concept="ba61f053-b306-418f-8891-8af43b322ca7^Blood pressure status^99DCT"-->
+        <!--                                   value="ec8a1b55-6d9c-40d2-ad1e-5b680ea05fbc^Hypotension^99DCT">-->
+        <!--                            Hypotension-->
+        <!--                        </label>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <input id="obs.BPStatusHFEmergency" name="obs.BPStatusHF" type="radio"-->
+        <!--                                   data-concept="ba61f053-b306-418f-8891-8af43b322ca7^Blood pressure status^99DCT"-->
+        <!--                                   value="7ee72fb3-f348-4ff9-a042-444d991ff861^Emergency Hypertension^99DCT">-->
+        <!--                            Emergency Hypertension-->
+        <!--                        </label>-->
 
-          <span class="language en"> Hypertension </span>
-          <span class="language kiny"> Umuvuduko ukabije wamaraso </span>
+        <label class="font-normal">
+          <input class="form-control " id="BPStatusHF" type="text" readonly="readonly">
+          <input class="form-control" name="BPStatusHF" type="hidden" data-concept="ba61f053-b306-418f-8891-8af43b322ca7^Blood pressure status^99DCT">
         </label>
       </div>
-      <div >
-        <label class="font-normal language en"> <strong> Blood Pressure measure taken HF:  </strong> </label>
-        <label class="font-normal language kiny"> <strong> Ibipimo byafashwe kwa muganga:  </strong> </label>
+      <div id="BPMeasureTakenDiv" class="initialHide">
+        <label class="font-normal" class="language en"> <strong> Blood Pressure measure taken :  </strong> </label>
+        <label class="font-normal" class="language kiny"> <strong> Umuvuduko wafashwe :  </strong> </label>
         <br/>
-<!--        <label class="font-normal">-->
-<!--          <select class="form-control" id="obs.BPMeasureTakenHF" name="obs.BPMeasureTakenHF" data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT" disabled="disabled">-->
-<!--            <option value="">...</option>-->
-<!--            <option value="89297887-f43f-444b-a8c8-6ae76932ceca^Enroll in NCD Clinic or Transfer to HC^99DCT">Enroll in NCD Clinic or Transfer to HC</option>-->
-<!--          </select>-->
-<!--        </label>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <select class="form-control" id="obs.BPMeasureTakenHF" name="obs.BPMeasureTakenHF" data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT" disabled="disabled">-->
+        <!--                                <option value="">...</option>-->
+        <!--                                <option value="89297887-f43f-444b-a8c8-6ae76932ceca^Enroll in NCD Clinic or Transfer to HC^99DCT">Enroll in NCD Clinic or Transfer to HC</option>-->
+        <!--                            </select>-->
+        <!--                        </label>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <input id="obs.BPMeasureTakenHFCounsellingEveryyear" name="obs.BPMeasureTakenHF" type="radio"-->
+        <!--                                   data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT"-->
+        <!--                                   value="876b07ad-6249-4ee3-9c20-1cbcd6216097^Counselling and screening every year^99DCT">-->
+        <!--                            Counselling and screening every year-->
+        <!--                        </label>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <input id="obs.BPMeasureTakenHFCounsellingEverysixMonths" name="obs.BPMeasureTakenHF" type="radio"-->
+        <!--                                   data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT"-->
+        <!--                                   value="87976d1e-83bf-4285-b6ca-530bc0882f23^Counselling and screening every 6 months^99DCT">-->
+        <!--                            Counselling and screening every 6 months-->
+        <!--                        </label>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <input id="obs.BPMeasureTakenHFEnrollortransfer" name="obs.BPMeasureTakenHF" type="radio"-->
+        <!--                                   data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT"-->
+        <!--                                   value="89297887-f43f-444b-a8c8-6ae76932ceca^Enroll in NCD Clinic or Transfer to HC^99DCT">-->
+        <!--                            Enroll in NCD Clinic or Transfer to HC-->
+        <!--                        </label>-->
+        <!--                        <label class="font-normal">-->
+        <!--                            <input id="obs.BPMeasureTakenHFReferencetoHealthFacility" name="obs.BPMeasureTakenHF" type="radio"-->
+        <!--                                   data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT"-->
+        <!--                                   value="2f13f21c-1469-4915-9bda-91049a285d13^immediate reference to the health facility^99DCT">-->
+        <!--                            immediate reference to the health facility-->
+        <!--                        </label>-->
         <label class="font-normal">
-          <input id="obs.BPMeasureTakenHF" name="obs.BPMeasureTakenHF" type="radio"
-                 data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT"
-                 value="89297887-f43f-444b-a8c8-6ae76932ceca^Enroll in NCD Clinic or Transfer to HC^99DCT">
-          <span class="language en"> Enroll in NCD Clinic or Transfer to HC </span>
-          <span class="language kiny"> Kwandikwa mubarwayi cyangwa taransiferi  </span>
+          <input class="form-control " id="BPMeasureTakenHF" type="text" readonly="readonly" >
+          <input class="form-control" name="BPMeasureTakenHF" type="hidden" data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT">
         </label>
-                                <label class="font-normal">
-                                    <input id="obs.BPMeasureTakenHFCounsellingEveryyear" name="obs.BPMeasureTakenHF" type="radio"
-                                           data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT"
-                                           value="876b07ad-6249-4ee3-9c20-1cbcd6216097^Counselling and screening every year^99DCT">
-                                    <span class="language en"> Counselling and screening every year </span>
-                                    <span class="language kiny"> Ubujyanama no gupimwa buri mwaka  </span>
-                                </label>
-                                <label class="font-normal">
-                                    <input id="obs.BPMeasureTakenHFCounsellingEverysixMonths" name="obs.BPMeasureTakenHF" type="radio"
-                                           data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT"
-                                           value="87976d1e-83bf-4285-b6ca-530bc0882f23^Counselling and screening every 6 months^99DCT">
-                                    <span class="language en"> Counselling and screening every 6 months </span>
-                                    <span class="language kiny"> Ubujyanama no gupimwa buri mezi 6  </span>
-                                </label>
-                                <label class="font-normal">
-                                    <input id="obs.BPMeasureTakenHFEnrollortransfer" name="obs.BPMeasureTakenHF" type="radio"
-                                           data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT"
-                                           value="89297887-f43f-444b-a8c8-6ae76932ceca^Enroll in NCD Clinic or Transfer to HC^99DCT">
-                                    <span class="language en"> Enroll in NCD Clinic or Transfer to HC </span>
-                                    <span class="language kiny"> Kwandikwa mubarwayi cyangwa taransiferi  </span>
-                                </label>
-                                <label class="font-normal">
-                                    <input id="obs.BPMeasureTakenHFReferencetoHealthFacility" name="obs.BPMeasureTakenHF" type="radio"
-                                           data-concept="ad0157d2-2241-4d4d-a9c8-700bb35822e4^Blood pressure measure taken^99DCT"
-                                           value="2f13f21c-1469-4915-9bda-91049a285d13^immediate reference to the health facility^99DCT">
-                                    <span class="language en"> immediate reference to the health facility</span>
-                                    <span class="language kiny"> Yoherejwe kubitaro </span>
-                                </label>
       </div>
       <div>
         <label class="font-normal language en"> <strong> Initiated anti-HTN drugs:  </strong> </label>

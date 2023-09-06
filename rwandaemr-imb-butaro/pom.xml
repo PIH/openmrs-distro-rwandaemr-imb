@@ -138,19 +138,8 @@
                         <goals>
                             <goal>install-node-and-npm</goal>
                         </goals>
-                        <phase>compile</phase>
                         <configuration>
-                            <nodeVersion>v16.15.1</nodeVersion>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>Build frontend application</id>
-                        <goals>
-                            <goal>npx</goal>
-                        </goals>
-                        <phase>compile</phase>
-                        <configuration>
-                            <arguments>openmrs@next build --build-config target/spa-build-config.json --target target/distro/web/frontend</arguments>
+                            <nodeVersion>v18.13.0</nodeVersion>
                         </configuration>
                     </execution>
                     <execution>
@@ -158,9 +147,17 @@
                         <goals>
                             <goal>npx</goal>
                         </goals>
-                        <phase>compile</phase>
                         <configuration>
-                            <arguments>openmrs@next assemble --mode config --config target/spa-build-config.json --target target/distro/web/frontend</arguments>
+                            <arguments>--legacy-peer-deps openmrs@next assemble --mode config --config spa-build-config.json --target target/dist</arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>Build frontend application</id>
+                        <goals>
+                            <goal>npx</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>--legacy-peer-deps openmrs@next build --build-config spa-build-config.json --target target/dist</arguments>
                         </configuration>
                     </execution>
                 </executions>

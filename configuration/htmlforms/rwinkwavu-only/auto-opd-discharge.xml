@@ -9,7 +9,23 @@ formPublished="true"
 formRetired="false"
 >
     <macros> paperFormId = Flow-DM-RW.V2.0.akb.15May09 headerColor =#009d8e fontOnHeaderColor = white </macros>
-    <style>
+   
+<script type="text/javascript">
+beforeSubmit.push(function() {
+    var c = confirm('Do you want to submit? If yes, Confirm with OK. If No, click on Cancel');
+    if(c)
+      {
+       return true;
+      }
+    else
+     {
+   return false;
+     }
+    
+});
+</script>
+
+ <style>
         th.tableHeader {
             background-color: #009d8e;
             color: #FFFFFF;
@@ -170,17 +186,14 @@ formRetired="false"
         </table>
         <table border="2" cellpadding="6" cellspacing="0" width="100%">
             <tr>
-                <td>
-                    Date:
+                <td> Date:
                     <encounterDate default="today"/>
                 </td>
-                <td>
-                    Health Facility:
-                    <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode" />
+                <td> Health Facility:
+                    <encounterLocation default="GlobalProperty:encounter.defaultLocation"/>
                 </td>
-                <td>
-                    Provider:
-                    <encounterProvider default="currentUser" />
+                <td> Provider:
+                    <encounterProvider default="currentUser"/>
                 </td>
             </tr>
         </table>

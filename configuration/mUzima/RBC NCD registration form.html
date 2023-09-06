@@ -1,4 +1,4 @@
-<html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -11,18 +11,38 @@
     <script src="js/additional-methods.min.js"></script>
     <script src="js/muzima.js"></script>
 
+    <style>
+        .float-container {
+          border: solid 1px #ccc;
+          position: fixed;
+          background-color:black;
+          color: white;
+        }
+
+    </style>
+
     <title>Registration Form</title>
 </head>
 <body class="col-md-8 col-md-offset-2">
 <div id="result"></div>
 <form id="registration_form" name="registration_form">
+    <div id="floatContainer" class="float-container" >
+        <center>
+            <input id="en" name="language" type="radio" > EN
+            &nbsp &nbsp &nbsp
+            <input id="kiny" name="language" type="radio" > KINY
+
+        </center>
+    </div>
     <div id="pre_populate_data">
     </div>
-    <h2 class="text-center">Registration Form</h2>
+    <h2 class="text-center language en">Registration Form</h2>
+    <h2 class="text-center language kiny">Ifishi yo Kwiyandikisha</h2>
     <div class="section">
         <fieldset>
             <div class="form-group">
-                <label for="encounter.location_id">Encounter Location:<span class="required">*</span></label>
+                <label for="encounter.location_id" class="text-center language en">Encounter Location:<span class="required">*</span></label>
+                <label for="encounter.location_id" class="language kiny">Izina ry’Ikigo:<span class="required">*</span></label>
                 <input class="form-control valid-location-only" id="encounter.location_id" type="text" placeholder="Start typing something..." required="required">
                 <input class="form-control" name="encounter.location_id" type="hidden">
             </div>
@@ -34,7 +54,8 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="encounter.provider_id_select">Provider Name:</label>
+                <label for="encounter.provider_id_select" class="language en">Provider:</label>
+                <label for="encounter.provider_id_select" class="language kiny">Uwakoze isuzuma:</label>
                 <input class="form-control valid-provider-only" id="encounter.provider_id_select" type="text" placeholder="Start typing something...">
                 <input class="form-control" name="encounter.provider_id_select" type="hidden">
             </div>
@@ -43,12 +64,14 @@
                 </select>
             </div>
             <div class="form-group show_provider_id_text">
-                <label for="encounter.provider_id">Provider's system-id:<span class="required">*</span></label>
+                <label for="encounter.provider_id" class="language en">Provider's system-id:<span class="required">*</span></label>
+                <label for="encounter.provider_id" class="language kiny">nomero iranga uwakoze isuzuma:<span class="required">*</span></label>
                 <input class="form-control checkDigit" id="encounter.provider_id" name="encounter.provider_id"
                        type="text" required="required" disabled="disabled">
             </div>
             <div class="form-group">
-                <label for="encounter.encounter_datetime">Encounter Date <span class="required">*</span></label>
+                <label for="encounter.encounter_datetime" class="language en">Encounter Date:<span class="required">*</span></label>
+                <label for="encounter.encounter_datetime" class="language kiny">Itariki:<span class="required">*</span></label>
                 <input class="form-control nonFutureDate past-date datepicker" readonly="readonly" id="encounter.encounter_datetime"
                        name="encounter.encounter_datetime" type="text" required="required">
             </div>
@@ -60,22 +83,26 @@
     </div>
     <div class="section">
         <fieldset>
-            <h3>Names</h3>
+            <h3 class="language en">Names</h3>
+            <h3 class="language kiny">Amazina</h3>
             <div class="form-group">
                 <input class="form-control" id="patient.uuid"
                        name="patient.uuid" type="hidden" readonly="readonly">
             </div>
             <div class="form-group">
-                <label for="patient.family_name">Family Name: <span class="required">*</span> </label>
+                <label for="patient.family_name" class="language en">Family Name:<span class="required">*</span></label>
+                <label for="patient.family_name" class="language kiny">Izina Ry' ikinyarwanda: <span class="required">*</span></label>
                 <input class="form-control" id="patient.family_name" name="patient.family_name" type="text"
                        required="required">
             </div>
             <div class="form-group">
-                <label for="patient.middle_name">Middle Name:</label>
+                <label for="patient.middle_name" class="language en">Middle Name:</label>
+                <label for="patient.middle_name" class="language kiny">Irindi zina:</label>
                 <input class="form-control" id="patient.middle_name" name="patient.middle_name" type="text">
             </div>
             <div class="form-group">
-                <label for="patient.given_name">First Name: <span class="required">*</span></label>
+                <label for="patient.given_name" class="language en">First Name: <span class="required">*</span></label>
+                <label for="patient.given_name" class="language kiny">Izina ry' irikirisitu: <span class="required">*</span></label>
                 <input class="form-control" id="patient.given_name" name="patient.given_name" type="text"
                        required="required">
             </div>
@@ -85,23 +112,28 @@
         <fieldset>
             <h3>Attributes</h3>
             <div class="form-group group-set patientHasNumber" data-group="patient.personattribute^1">
-                <label for="patient.phone_number">Phone: </label>
+                <label for="patient.phone_number" class="language en">Phone: </label>
+                <label for="patient.phone_number" class="language kiny">Nomero ya telephone: </label>
                 <input class="form-control" id="patient.phone_number" name="attribute_value" type="tel" >
                 <input type="hidden" id="attribute_type_name" name="attribute_type_name" value="Phone number">
                 <!--                <input type="hidden" id="attribute_type_uuid" name="attribute_type_uuid" value="8b908adf-c964-4959-ad43-e2c7aeaa9c67">-->
             </div>
             <div class="form-group group-set" data-group="patient.personattribute^2">
-                <label for="patient.Citizenship">Citizenship: </label>
+                <label for="patient.Citizenship" class="language en">Citizenship: </label>
+                <label for="patient.Citizenship" class="language kiny">Ubwenegihugu: </label>
                 <input class="form-control" id="patient.Citizenship" name="attribute_value" type="text">
                 <input type="hidden" id="attribute_type_name" name="attribute_type_name" value="Citizenship">
             </div>
             <div class="form-group group-set" data-group="patient.personattribute^3">
-                <label for="patient.Ubudehe">Ubudehe: </label>
+                <label for="patient.Ubudehe" >Ubudehe: </label>
+
                 <input class="form-control" id="patient.Ubudehe" name="attribute_value" type="number">
                 <input type="hidden" id="attribute_type_name" name="attribute_type_name" value="Ubudehe">
             </div>
             <div class="form-group group-set" data-group="patient.personattribute^4">
-                <label for="patient.health_facility">Health Facility: <span
+                <label for="patient.health_facility" class="language en">Health Facility: <span
+                        class="required">*</span></label>
+                <label for="patient.health_facility" class="language kiny">Ikigo nderabuzima: <span
                         class="required">*</span></label>
                 <input class="form-control healthFacility" id="patient.health_facility" name="attribute_value" type="text" required="required" disabled="disabled">
                 <input type="hidden" id="attribute_type_name" name="attribute_type_name" value="Health Center">
@@ -114,27 +146,32 @@
         <fieldset>
             <h3>Address</h3>
             <div class="form-group">
-                <label for="country">Country: </label>
+                <label for="country" class="language en">Country: </label>
+                <label for="country" class="language kiny">Igihugu: </label>
                 <input class="form-control" id="country"  type="text" name="country">
                 <!--                <input class="form-control" name="country" type="hidden">-->
             </div>
             <div class="form-group">
-                <label for="stateProvince">Province: </label>
+                <label for="stateProvince" class="language en">Province: </label>
+                <label for="stateProvince" class="language kiny">Intara: </label>
                 <input class="form-control" id="stateProvince"  type="text" name="stateProvince">
                 <!--                <input class="form-control"  name="stateProvince" type="hidden">-->
             </div>
             <div class="form-group">
-                <label for="countyDistrict">District: </label>
+                <label for="countyDistrict" class="language en">District: </label>
+                <label for="countyDistrict" class="language kiny">Akarere: </label>
                 <input class="form-control" id="countyDistrict"  type="text" name="countyDistrict">
                 <!--                <input class="form-control" name="countyDistrict" type="hidden">-->
             </div>
             <div class="form-group">
-                <label for="cityVillage">Sector: </label>
+                <label for="cityVillage" class="language en">Sector: </label>
+                <label for="cityVillage" class="language kiny">Umurenge: </label>
                 <input class="form-control" id="cityVillage" type="text" name="cityVillage">
                 <!--                <input class="form-control"  name="cityVillage" type="hidden">-->
             </div>
             <div class="form-group">
-                <label for="address3">Cell: </label>
+                <label for="address3" class="language en">Cell: </label>
+                <label for="address3" class="language kiny">Akagari: </label>
                 <input class="form-control" id="address3"  type="text" name="address3">
                 <!--                <input class="form-control" name="address3" type="hidden">-->
             </div>
@@ -147,9 +184,12 @@
     </div>
     <div class="section">
         <fieldset>
-            <h3>Identifiers</h3>
+            <h3 class="language en">Identifiers</h3>
+            <h3 class="language kiny">ibimuranga</h3>
             <div class="form-group">
-                <label for="patient.medical_record_number">Identifier : <span
+                <label for="patient.medical_record_number" class="language en">Identifier : <span
+                        class="required">*</span></label>
+                <label for="patient.medical_record_number" class="language kiny">Nomero imuranga : <span
                         class="required">*</span></label>
 
                 <div class="form-horizontal">
@@ -165,15 +205,17 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="patient.NatioanlId">National ID : </label>
+                <label for="patient.NatioanlId" class="language en">National ID : </label>
+                <label for="patient.NatioanlId" class="language kiny">Nomero y' indangamuntu : </label>
 
                 <div class="form-horizontal">
                     <div class="group-set" data-group="patient.National_ID">
-                        <input class="form-control" id="patient.NatioanlId"
-                               name="patient.NatioanlId" type="text" >
+                        <input class="form-control" id="patientNatioanlId"
+                               name="patientNatioanlId" type="text" >
                         <input type="hidden" id="attribute_type_name" name="attribute_type_name" value="NID number">
-<!--                        <input type="hidden" id="identifier_type_uuid" name="identifier_type_uuid" value="85c63542-587f-476c-9e69-c733bd285a57">-->
+                        <!--                        <input type="hidden" id="identifier_type_uuid" name="identifier_type_uuid" value="85c63542-587f-476c-9e69-c733bd285a57">-->
                         <input type="hidden" id="attribute_type_uuid" name="attribute_type_uuid" value="678b3499-81cd-4a26-9577-4dc1efcf0510">
+                        <button type="button" id="searchNida">Search NIDA</button>
 
 
                     </div>
@@ -184,38 +226,49 @@
     <div class="section">
         <fieldset>
             <div class="form-group">
-                <label for="patient.sex">Sex: <span class="required">*</span></label>
-                <select class="form-control" id="patient.sex" name="patient.sex" required="required">
+                <label for="patient.sex" class="language en">Sex: <span class="required">*</span></label>
+                <label for="patient.sex" class="language kiny">igitsina:< <span class="required">*</span></label>
+                <select class="form-control" id="patientSex" name="patient.sex" required="required">
                     <option value="">...</option>
-                    <option value="M">Male</option>
-                    <option value="F">Female</option>
+                    <option value="M" class="language en">Male</option>
+                    <option value="M" class="language kiny">Gabo</option>
+                    <option value="F" class="language en">Female</option>
+                    <option value="F" class="language kiny">Gore</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="tmp.birthdate_type">Will Record Date of Birth... <span class="required">*</span></label>
                 <select class="form-control" name="tmp.birthdate_type" id="tmp.birthdate_type" required="required">
                     <option value="">...</option>
-                    <option value="birthdate">By Birth-date</option>
-                    <option value="age">By Age</option>
+                    <option value="birthdate" class="language en">By Birth-date</option>
+                    <option value="birthdate" class="language kiny">Nkoresheje italiki</option>
+                    <option value="age" class="language en">By Age</option>
+                    <option value="age" class="language kiny">Nkoresheje imyaka</option>
                 </select>
             </div>
             <div class="form-group show_birthdate">
-                <label for="patient.birth_date">Select Birthdate <span class="required">*</span></label>
+                <label for="patient.birth_date" class="language en">Select Birthdate <span class="required">*</span></label>
+                <label for="patient.birth_date" class="language kiny">Hitamo italiki y' amavuko <span class="required">*</span></label>
                 <input class="form-control birth_date_picker nonFutureDate past-date" id="patient.birth_date" name="patient.birth_date"
                        type="text" required="required" readonly="readonly">
             </div>
             <div class="form-group show_birthdate">
-                <label for="patient.birthdate_estimated">Is this birthdate an estimate? <span
+                <label for="patient.birthdate_estimated" class="language en">Is this birthdate an estimate? <span
+                        class="required">*</span></label>
+                <label for="patient.birthdate_estimated" class="language kiny">Ese wageranije italiki y'amavuko? <span
                         class="required">*</span></label>
                 <select class="form-control" id="patient.birthdate_estimated" name="patient.birthdate_estimated"
                         required="required">
                     <option>...</option>
-                    <option value="true">Yes</option>
-                    <option value="false">No</option>
+                    <option value="true" class="language en">Yes</option>
+                    <option value="true" class="language kiny">Yego</option>
+                    <option value="false" class="language en">No</option>
+                    <option value="false" class="language kiny">Oya</option>
                 </select>
             </div>
             <div class="form-group show_age">
-                <label for="tmp.age_in_years">How old are you in Years <span class="required">*</span></label>
+                <label for="tmp.age_in_years" class="language en">How old are you in Years <span class="required">*</span></label>
+                <label for="tmp.age_in_years" class="language kiny">Ungana iki mu myaka <span class="required">*</span></label>
                 <input class="form-control" id="tmp.age_in_years" name="tmp.age_in_years" type="number" required="required">
             </div>
         </fieldset>
@@ -226,6 +279,44 @@
 </body>
 <script type="text/javascript">
     $(document).ready(function () {
+    
+    function setRegistrationInfo(data){
+    $('#patientGivenName').val(data.foreName);
+    $('#patientFamilyName').val(data.surnames);
+    $('#patientCitizenship').val(data.nationality);
+    
+    $('#address1').val(data.village);
+    $('#address3').val(data.cell);
+    $('#cityVillage').val(data.sector);
+    $('#countyDistrict').val(data.district);
+    $('#stateProvince').val(data.province);
+    $('#country').val(data.countryOfDomicile);
+    $('#patientSex').val(data.sex);
+    }
+        
+    $('#searchNida').click(function() {
+       var nationalId = $('#patientNatioanlId').val();
+    
+    if (nationalId) {
+        fetch('https://nid.hmis.moh.gov.rw/Citizen', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    documentNumber: nationalId,
+    secretKey:
+      'WQ9Ns43QJHT77vgKZkgbaBDeR27N4pWKnefYm8t4LhUcVGB7ERP8jyQgUw89Qj3SQNRzrMZsbdN55ha9h6FgTJQ6Dae5wsAW8tS3jWY9ry7GRYPm6TfaNHbr5hZveXZu',
+  }),
+})
+  .then(res => {
+    return res.json();
+  })
+  .then(data => setRegistrationInfo(data))
+  .catch(error => alert('Can not find ID'));
+    }
+});
+    
         // Start- generate patient identifier whenever provider ID is changed
 
           //Listen to changes to input field that has id attribute set to encounter.provider_id_select
@@ -17899,6 +17990,31 @@ document.nextHierarchyArray = function(elementName, dataDictionary,nextDateDicti
         }
         return refinedArray;
     }
+        // Add checkboxes representing languages you want to involve in the form.
+    // Each checkbox needs to have an id represting the language it represent and name as "language".
+    // Each label needs to have different translation and a class ressembling the id of the checkbox representing the language.
+
+
+    $(document).on("click", function(event){
+        var classOfClicked = event.target.className;
+        var nameOfClicked = event.target.name;
+        var idOfClicked = event.target.id
+
+
+        if(nameOfClicked =="language" ){
+            if($("input[id='"+idOfClicked+"']").prop('checked')){
+                    $(".language").hide();
+                    $("."+idOfClicked).show();
+            }
+        }
+
+    });
+    //setting default language
+    var defaultLang= "en";
+    $("#"+defaultLang).prop("checked", true);
+    $(".language").hide();
+    $("."+defaultLang).show();
+
 </script>
 
 </html>

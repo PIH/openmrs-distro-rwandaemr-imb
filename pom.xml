@@ -69,7 +69,6 @@
         <usagestatisticsVersion>2.1.0</usagestatisticsVersion>
         <validationVersion>2.0.0</validationVersion>
         <webservicesRestVersion>2.37.0-SNAPSHOT</webservicesRestVersion>
-
         <pathologyappVersion>1.1.1-pre.29</pathologyappVersion>
         <legacyuinavbarappVersion>1.0.1-pre.1</legacyuinavbarappVersion>
         <imbpathologyrequestVersion>1.0.0-SNAPSHOT</imbpathologyrequestVersion>
@@ -113,6 +112,13 @@
             <name>OpenMRS Nexus Repository</name>
             <url>https://openmrs.jfrog.io/artifactory/public</url>
         </repository>
+        <repository>
+            <id>mekomsolutions-repo</id>
+            <name>mekomsolutions Repository</name>
+            <url>https://nexus.mekomsolutions.net/repository/maven-public</url>
+        </repository>
+
+
         <!--
         <repository>
             <id>rwandaemr-repo-snapshots</id>

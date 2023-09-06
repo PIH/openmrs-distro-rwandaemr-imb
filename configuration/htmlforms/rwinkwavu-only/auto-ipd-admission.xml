@@ -31,6 +31,23 @@ formRetired="false"
         @Other_disease_(text)@ = f9e8e946-d177-4ca9-8004-779ae6abe9df
 
     </macros>
+
+<script type="text/javascript">
+beforeSubmit.push(function() {
+    var c = confirm('Do you want to submit? If yes, Confirm with OK. If No, click on Cancel');
+    if(c)
+      {
+       return true;
+      }
+    else
+     {
+   return false;
+     }
+    
+});
+</script>
+
+
     <style>
       .section {
          border: 1px solid $headerColor;
@@ -100,15 +117,15 @@ if(jQuery){
             <tr>
                 <td>
                     Date:
-                    <encounterDate default="today"/>
+                    <encounterDate default="today" />
                 </td>
                 <td>
                     Health Facility:
-                    <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode" />
+                    <encounterLocation default="GlobalProperty:billing.defaultLocation"/>
                 </td>
                 <td>
                     Provider:
-                    <encounterProvider default="currentUser" />
+                    <encounterProvider default="currentUser"/>
                 </td>
             </tr>
         </table>

@@ -11,23 +11,44 @@
   <script src="js/additional-methods.min.js"></script>
   <script src="js/jquery-autocomplete-min.js"></script>
   <script src="js/muzima.js"></script>
+  <style>
+        .float-container {
+          border: solid 1px #ccc;
+          position: fixed;
+          background-color:black;
+          color: white;
+        }
+
+    </style>
 
   <title>NCD DM diagnosis confirmation</title>
 </head>
 <body class="col-md-10 col-md-offset-1">
 <div id="pre_populate_data"></div>
 <form id="DiabetesCardiovascularCheckup_form" name="DiabetesCardiovascularCheckup_form">
+  <div id="floatContainer" class="float-container" >
+    <center>
+      <input id="en" name="language" type="radio" > EN
+      &nbsp &nbsp &nbsp
+      <input id="kiny" name="language" type="radio" > KINY
+
+    </center>
+
+  </div>
   <div class="section">
     <fieldset>
-      <h3>Encounter Details</h3>
+      <h3 class="language en">Encounter Details</h3>
+      <h3 class="language kiny">Amakuru y'ukora sikiriningi</h3>
       <div class="form-group">
-        <label for="encounter.location_id">Location Name:<span class="required">*</span></label>
+        <label for="encounter.location_id" class="language en">Location Name:<span class="required">*</span></label>
+        <label for="encounter.location_id" class="language kiny">Aho uherereye:<span class="required">*</span></label>
         <input class="form-control valid-location-only" id="encounter.location_id" type="text" placeholder="Start typing something..."
                required="required">
         <input class="form-control" name="encounter.location_id" type="hidden">
       </div>
       <div class="form-group">
-        <label for="encounter.provider_id_select">Provider:</label>
+        <label for="encounter.provider_id_select" class="language en">Provider:</label>
+        <label for="encounter.provider_id_select" class="language kiny">Ukora sikirining:</label>
         <input class="form-control valid-provider-only" id="encounter.provider_id_select" type="text" placeholder="Start typing something...">
         <input class="form-control" name="encounter.provider_id_select" type="hidden">
       </div>
@@ -35,12 +56,16 @@
         <select id="select_providers"></select>
       </div>
       <div class="form-group show_provider_id_text">
-        <label for="encounter.provider_id">Provider's system-id:<span class="required">*</span></label>
+        <label for="encounter.provider_id" class="language en">Provider's system-id:<span class="required">*</span></label>
+        <label for="encounter.provider_id" class="language kiny">Numero ya sisitemu y'ukora siikiriningi:<span class="required">*</span></label>
+
         <input class="form-control checkDigit" id="encounter.provider_id" name="encounter.provider_id"
                type="text" required="required" disabled="disabled">
       </div>
       <div class="form-group">
-        <label for="encounter.encounter_datetime">Encounter Date:<span class="required">*</span></label>
+        <label for="encounter.encounter_datetime" class="language en">Encounter Date:<span class="required">*</span></label>
+        <label for="encounter.encounter_datetime" class="language kiny">Italiki:<span class="required">*</span></label>
+
         <input class="form-control datepicker nonFutureDate past-date" id="encounter.encounter_datetime"
                name="encounter.encounter_datetime" type="text" readonly="readonly"
                required="required">
@@ -59,35 +84,43 @@
                name="patient.uuid" type="hidden" readonly="readonly">
       </div>
       <div class="form-group">
-        <label for="patient.medical_record_number">Patient identifier:</label>
+        <label for="patient.medical_record_number" class="language en">Patient identifier:</label>
+        <label for="patient.medical_record_number" class="language kiny">Nomero Imuranga:</label>
         <input class="form-control" id="patient.medical_record_number"
                name="patient.medical_record_number" type="text" readonly="readonly">
       </div>
       <div class="form-group">
-        <label for="patient.given_name">Given Name:</label>
+        <label for="patient.given_name" class="language en">Given Name:</label>
+        <label for="patient.given_name" class="language kiny">Izina ry' irikirisitu:</label>
         <input class="form-control" id="patient.given_name" name="patient.given_name" type="text"
                readonly="readonly">
       </div>
       <div class="form-group">
-        <label for="patient.middle_name">Middle Name:</label>
+        <label for="patient.middle_name" class="language en">Middle Name:</label>
+        <label for="patient.middle_name" class="language kiny">Irindi zina:</label>
         <input class="form-control" id="patient.middle_name" name="patient.middle_name" type="text"
                readonly="readonly">
       </div>
       <div class="form-group">
-        <label for="patient.family_name">Family Name:</label>
+        <label for="patient.family_name" class="language en">Family Name:</label>
+        <label for="patient.family_name" class="language kiny">Izina Ry' ikinyarwanda:</label>
         <input class="form-control" id="patient.family_name" name="patient.family_name" type="text"
                readonly="readonly">
       </div>
       <div class="form-group">
-        <label for="patient.sex">Gender:</label>
+        <label for="patient.sex" class="language en">Gender:</label>
+        <label for="patient.sex" class="language kiny">igitsina:</label>
         <select class="form-control" id="patient.sex" name="patient.sex" disabled="disabled">
           <option value="">...</option>
-          <option value="M">Male</option>
-          <option value="F">Female</option>
+          <option value="M" class="language en">Male</option>
+          <option value="M" class="language kiny">Gabo</option>
+          <option value="F" class="language en">Female</option>
+          <option value="F" class="language kiny">Gore</option>
         </select>
       </div>
       <div class="form-group">
-        <label for="patient.birth_date">Date Of Birth:</label>
+        <label for="patient.birth_date" class="language en">Date Of Birth:</label>
+        <label for="patient.birth_date" class="language kiny">Itariki y'amavuko:</label>
         <input class="form-control" id="patient.birth_date" name="patient.birth_date" type="text"
                readonly="readonly" disabled="disabled">
       </div>
@@ -97,9 +130,11 @@
 
   <div>
     <fieldset>
-      <h3>Timeline Data Entry</h3>
+      <h3 class="language en">Timeline Data Entry</h3>
+      <h3 class="language kiny">Igihe amakuru yafatiwe</h3>
       <div >
-        <label class="font-normal"> <strong> Report date:  </strong> </label>
+        <label class="font-normal language en"> <strong> Report date:  </strong> </label>
+        <label class="font-normal language kiny"> <strong> Italiki umurwayi yaziyeho kwa muganda:  </strong> </label>
         <br/>
         <label class="font-normal">
           <input class="form-control datepicker" id="obs.reportDate" name="obs.reportDate" type="text"
@@ -109,7 +144,8 @@
         </label>
       </div>
       <div >
-        <label class="font-normal"> <strong> Due date:  </strong> </label>
+        <label class="font-normal language en"> <strong> Due date:  </strong> </label>
+        <label class="font-normal language kiny"> <strong> Italiki ntarengwa:  </strong> </label>
         <br/>
         <label class="font-normal">
           <input class="form-control datepicker future-or-today-date" id="obs.dueDate" name="obs.dueDate" type="text"
@@ -121,36 +157,46 @@
   </div>
   <div>
     <fieldset>
-      <h3> <strong>Measurement HF</strong> </h3>
+      <h3 class="language en"> <strong>Measurement HF</strong> </h3>
+      <h3 class="language kiny"> <strong>Ibipimo byo kwa muganga</strong> </h3>
       <div >
-        <label class="font-normal"> <strong> Glucose test method HF:  </strong> </label>
+        <label class="font-normal language en"> <strong> Glucose test method HF:  </strong> </label>
+        <label class="font-normal language kiny"> <strong> Glucose test method HF:  </strong> </label>
         <br/>
         <label class="font-normal">
           <input id="obs.GlucoseTestTethodRandom" name="obs.GlucoseTestTethod" type="radio"
                  data-concept="f618591a-f334-4a5a-be26-0518871cd00f^Glucose test method^99DCT"
                  value="d2d34adf-9f22-4897-97a1-dbbda02b19dd^Random for blood glucose test^99DCT">
-          Random for blood glucose test
+
+          <span class="language en"> Random for blood glucose test </span>
+          <span class="language kiny"> bitategujwe </span>
         </label>
       </div>
       <div >
-        <label class="font-normal"> <strong> Blood sugar (mg/dl):  </strong> </label>
+        <label class="font-normal language en"> <strong> Blood sugar (mg/dl):  </strong> </label>
+        <label class="font-normal language kiny"> <strong> Isukari mumarasor (mg/dl):  </strong> </label>
+
         <br/>
         <label class="font-normal">
           <input class="form-control" id="obs.BloodSugar" name="obs.BloodSugar" type="number" data-concept="3cd4e194-26fe-102b-80cb-0017a47871b2^SERUM GLUCOSE^99DCT"/>
         </label>
       </div>
       <div >
-        <label class="font-normal"> <strong> Blood sugar status HF:  </strong> </label>
+        <label class="font-normal language en"> <strong> Blood sugar status HF:  </strong> </label>
+        <label class="font-normal language kiny"> <strong> Uko isukari mumaraso ihagaze kubipimo byo kwamuganga::  </strong> </label>
         <br/>
         <label class="font-normal">
           <input id="obs.BloodSugarStatusHF" name="obs.BloodSugarStatusHF" type="radio"
                  data-concept="fd66cc68-084b-4f41-9d84-5d748bcd7d95^Blood sugar status^99DCT"
                  value="edf4ecc4-44f6-457a-b561-179f4426b16a^DIABETES^99DCT">
-          DIABETES
+
+          <span class="language en"> DIABETES </span>
+          <span class="language kiny"> DIYABETE </span>
         </label>
       </div>
       <div >
-        <label class="font-normal"> <strong> Blood sugar measure taken HF:  </strong> </label>
+        <label class="font-normal language en"> <strong> Blood sugar measure taken HF:  </strong> </label>
+        <label class="font-normal language kiny"> <strong> Ibipimo byafashwe no kwamuganga:  </strong> </label>
         <br/>
 <!--        <label class="font-normal">-->
 <!--          <select class="form-control" id="obs.BSMeasureTaken" name="obs.BSMeasureTaken" data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT" disabled="disabled">-->
@@ -159,21 +205,65 @@
 <!--          </select>-->
 <!--        </label>-->
         <label class="font-normal">
-          <input id="obs.BSMeasureTaken" name="obs.BSMeasureTaken" type="radio"
+          <input id="obs.BSMeasureTakentransfer" name="obs.BSMeasureTaken" type="radio"
                  data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"
                  value="89297887-f43f-444b-a8c8-6ae76932ceca^Enroll in NCD Clinic or Transfer to HC^99DCT">
-          Enroll in NCD Clinic or Transfer to HC
+
+          <span class="language en"> Enroll in NCD Clinic or Transfer to HC </span>
+          <span class="language kiny"> Yanditswe mu ba rwayi ba NCD cyangwa yahawe taransiferi </span>
+        </label>
+        <label class="font-normal">
+          <input id="obs.BSMeasureTakenHypoglycemia" name="obs.BSMeasureTaken" type="radio"
+                 data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"
+                 value="29bdf2a1-909a-46ce-be28-55a633fd74e9^Screening every year^99DCT">
+
+          <span class="language en"> Screening every year</span>
+          <span class="language kiny"> Buri mwaka </span>
+        </label>
+        <label class="font-normal">
+          <input id="obs.BSMeasureTakenthreeMonths" name="obs.BSMeasureTaken" type="radio"
+                 data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"
+                 value="d670c8ad-cfa6-4e47-bd1f-7eb8f3fa342a^Screening every 3 months^99DCT">
+
+          <span class="language en"> Screening every 3 months</span>
+          <span class="language kiny"> Buri mezi atatu </span>
+        </label>
+        <label class="font-normal">
+          <input id="obs.BSMeasureTakenHypoglycemia" name="obs.BSMeasureTaken" type="radio"
+                 data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"
+                 value="6f8d2d4a-4ea3-465e-b28a-3017d9707d89^Address hypoglycemia^99DCT">
+
+          <span class="language en"> Address hypoglycemia</span>
+          <span class="language kiny"> Yavuwe </span>
+        </label>
+        <label class="font-normal">
+          <input id="obs.BSMeasureReferToHF" name="obs.BSMeasureTaken" type="radio"
+                 data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"
+                 value="2f13f21c-1469-4915-9bda-91049a285d13^immediate reference to the health facility^99DCT">
+
+          <span class="language en"> immediate reference to the health facility</span>
+          <span class="language kiny"> Yoherejwe kubitaro </span>
+        </label>
+        <label class="font-normal">
+          <input id="obs.BSMeasureSugarInTake" name="obs.BSMeasureTaken" type="radio"
+                 data-concept="d5c48b7b-6e16-419f-be9c-08d2f37e55b1^Blood sugar measure taken^99DCT"
+                 value="467475cb-ee97-4685-aeff-0afc367c3f33^Recommend immediate sugar intake^99DCT">
+
+          <span class="language en"> Recommend immediate sugar intake</span>
+          <span class="language kiny"> Gusabwa guhita anywa/arya isukali </span>
         </label>
       </div>
       <div >
-        <label class="font-normal"> <strong> HbA1C (glycated hemoglobin):  </strong> </label>
+        <label class="font-normal language en"> <strong> HbA1C (glycated hemoglobin):  </strong> </label>
+        <label class="font-normal language kiny"> <strong> Ibipimo bya BbA1C bihagaze:  </strong> </label>
         <br/>
         <label class="font-normal">
           <input class="form-control" id="obs.HbA1C" name="obs.HbA1C" type="number" data-concept="159644AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA^HbA1c^99DCT"/>
         </label>
       </div>
       <div >
-        <label class="font-normal"> <strong> HbA1c status HF:  </strong> </label>
+        <label class="font-normal language en"> <strong> HbA1c status HF:  </strong> </label>
+        <label class="font-normal language kiny"> <strong> Uko HbA1C ihagaze kubipimo byo kwa muganga:  </strong> </label>
         <br/>
 <!--        <label class="font-normal">-->
 <!--          <select class="form-control" id="obs.HbA1cStatus" name="obs.HbA1cStatus" data-concept="6c30c84e-bbf2-4776-8085-93a1002f6e68^HbA1c status^99DCT" disabled="disabled">-->
@@ -185,41 +275,50 @@
           <input id="obs.HbA1cStatus" name="obs.HbA1cStatus" type="radio"
                  data-concept="6c30c84e-bbf2-4776-8085-93a1002f6e68^HbA1c status^99DCT"
                  value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">
-          Enroll in NCD Clinic or Transfer to HC
+
+          <span class="language en"> Enroll in NCD Clinic or Transfer to HC </span>
+          <span class="language kiny"> Yanditswe mu ba rwayi ba NCD cyangwa yahawe taransiferi </span>
         </label>
       </div>
       <div>
-        <label class="font-normal"> <strong> Initiated anti-HTN drugs:  </strong> </label>
+        <label class="font-normal language en"> <strong> Initiated oral anti-diabetes drugs:  </strong> </label>
+        <label class="font-normal language kiny"> <strong> Hari imiti ya hiperitansiyo yahawe:  </strong> </label>
         <br/>
         <label class="font-normal">
           <input id="obs.initiatedAntiHTNDrugsYes" name="obs.initiatedAntiHTNDrugs" type="radio"
-                 data-concept="4325928f-e955-4262-8aad-b7578378ea6a^Initiated anti-HTN drugs^99DCT"
+                 data-concept="b3cd7ff1-c2ad-4a2c-9128-905d5935dea8^initiated oral anti-diabetes drugs^99DCT"
                  value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-          Yes
+
+          <span class="language en"> Yes </span>
+          <span class="language kiny"> Yego </span>
         </label>
         <br/>
         <label class="font-normal">
           <input id="obs.initiatedAntiHTNDrugsNo" name="obs.initiatedAntiHTNDrugs" type="radio"
-                 data-concept="4325928f-e955-4262-8aad-b7578378ea6a^Initiated anti-HTN drugs^99DCT"
+                 data-concept="b3cd7ff1-c2ad-4a2c-9128-905d5935dea8^initiated oral anti-diabetes drugs^99DCT"
                  value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-          No
+          <span class="language en"> No </span>
+          <span class="language kiny"> Oya </span>
         </label>
       </div>
       <div>
-        <label class="font-normal"> <strong> Positive for HTN and transferred DH:  </strong> </label>
+        <label class="font-normal language en"> <strong> Positive for DM and transferred DH:  </strong> </label>
+        <label class="font-normal language kiny"> <strong> Arwaye iperitansiyo cyangwa yahawe taransiferi:  </strong> </label>
         <br/>
         <label class="font-normal">
           <input id="obs.positiveForHTNAndTransferredDHYes" name="obs.positiveForHTNAndTransferredDH" type="radio"
-                 data-concept="bb1f8fff-dc59-481a-b654-7a20141992e5^positive for HTN and transferred DH^99DCT"
+                 data-concept="73f14da8-0f5e-45e9-a07e-ef1094c8be63^positive for DM and transferred DH^99DCT"
                  value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
-          Yes
+          <span class="language en"> Yes </span>
+          <span class="language kiny"> Yego </span>
         </label>
         <br/>
         <label class="font-normal">
           <input id="obs.positiveForHTNAndTransferredDHNo" name="obs.positiveForHTNAndTransferredDH" type="radio"
-                 data-concept="bb1f8fff-dc59-481a-b654-7a20141992e5^positive for HTN and transferred DH^99DCT"
+                 data-concept="73f14da8-0f5e-45e9-a07e-ef1094c8be63^positive for DM and transferred DH^99DCT"
                  value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
-          No
+          <span class="language en"> No </span>
+          <span class="language kiny"> Oya </span>
         </label>
       </div>
 
@@ -378,6 +477,32 @@
                     $(".referralReason").show()
                 }
             })
+
+            // Add checkboxes representing languages you want to involve in the form.
+            // Each checkbox needs to have an id represting the language it represent and name as "language".
+            // Each label needs to have different translation and a class ressembling the id of the checkbox representing the language.
+
+
+            $(document).on("click", function(event){
+                var classOfClicked = event.target.className;
+                var nameOfClicked = event.target.name;
+                var idOfClicked = event.target.id
+
+
+                if(nameOfClicked =="language" ){
+                    if($("input[id='"+idOfClicked+"']").prop('checked')){
+                            $(".language").hide();
+                            $("."+idOfClicked).show();
+                    }
+                }
+
+            });
+            //setting default language
+            var defaultLang= "en";
+            $("#"+defaultLang).prop("checked", true);
+            $(".language").hide();
+            $("."+defaultLang).show();
+
 
             $(".initialHide").hide();
         });

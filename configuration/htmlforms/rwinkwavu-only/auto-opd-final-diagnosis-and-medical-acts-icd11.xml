@@ -387,10 +387,22 @@ formRetired="false"
     @Extraction_dune_dent_impactee@= 656d0bde-c909-45dc-9976-c6bbaeace9d9
 
 
-
   </macros>
 
-
+<script type="text/javascript">
+beforeSubmit.push(function() {
+    var c = confirm('Do you want to submit? If yes, Confirm with OK. If No, click on Cancel');
+    if(c)
+      {
+       return true;
+      }
+    else
+     {
+   return false;
+     }
+    
+});
+</script>
 
 
   <style>
@@ -1564,19 +1576,19 @@ input[type="submit"] {
         </tr>
       </table>
       <table border="2" cellpadding="6" cellspacing="0" width="100%">
-       <tr>
-                <td>
-                    Date:
-                    <encounterDate default="today"/>
-                </td>
-                <td>
-                    Health Facility:
-                    <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode" />
-                </td>
-                <td>
-                    Provider:
-                    <encounterProvider default="currentUser" />
-                </td>
+        <tr>
+          <td>
+            Date:
+            <encounterDate default="today" size="25"/>
+          </td>
+          <td>
+            Health Facility:
+            <encounterLocation default="GlobalProperty:billing.defaultLocation"/>
+          </td>
+          <td>
+            Provider:
+            <encounterProvider default="currentUser"/>
+          </td>
         </tr>
       </table>
     </div>
@@ -1643,7 +1655,7 @@ input[type="submit"] {
         <div>
           ICD 11 Search box:
 
-          <input autocomplete="off" class="ctw-input" data-ctw-apiMinorVersion="2022-02" data-ctw-apiSecured="false" data-ctw-apiServerUrl="http://imb.pih-emr.org:6382" data-ctw-chaptersAvailable="true" data-ctw-flexisearchAvailable="true" data-ctw-height="700px" data-ctw-ino="1" data-ctw-language="en" data-ctw-linearization="mms" data-ctw-wordsAvailable="true" onkeypress="shwoResults()" type="text"> </input>
+          <input autocomplete="off" class="ctw-input" data-ctw-apiMinorVersion="2022-02" data-ctw-apiSecured="false" data-ctw-apiServerUrl="http://192.168.0.90:6382" data-ctw-chaptersAvailable="true" data-ctw-flexisearchAvailable="true" data-ctw-height="700px" data-ctw-ino="1" data-ctw-language="en" data-ctw-linearization="mms" data-ctw-wordsAvailable="true" onkeypress="shwoResults()" type="text"> </input>
 
 
 
@@ -1773,7 +1785,7 @@ $jQuery('#secondaryButton').click(function() {
         <tr>
           <td>Treatment/Action taken</td>
           <td>
-<obs cols="50" conceptId="$@PATIENT_PLAN_COMMENTS@" rows="3" style="textarea"/>
+<obs cols="50" conceptId="$@PATIENT_PLAN_COMMENTS@" rows="3" style="textarea" required="true"/>
 </td>
         </tr>
       </table>

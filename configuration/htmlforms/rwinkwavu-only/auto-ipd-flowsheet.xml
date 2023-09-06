@@ -182,7 +182,8 @@ formRetired="false"
     </div>
     <div>
         <section headerLabel="Consumables form">
-            <htmlformflowsheet formId="ac6af74e-4ce8-4cc6-8b9b-7b505533f47f" sharedEncounter="true"  />
+            <htmlformflowsheet formId="ac6af74e-4ce8-4cc6-8b9b-7b505533f47f" sharedEncounter="true" conceptsToShow = "c920931b-fa93-4e99-9e36-28e1e4c16cf7,a9e74556-a544-4ef9-9826-09fa42fee296
+"/>
         </section>
     </div>
     <div>

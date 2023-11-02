@@ -12,11 +12,11 @@
     },
     "extensions": [
       {
-        "id": "${project.parent.groupId}.${project.parent.artifactId}.mostRecentVitals.clinicianDashboardFirstColumn",
+        "id": "coreapps.mostRecentVitals.clinicianDashboardFirstColumn",
         "appId": "coreapps.mostRecentVitals",
         "extensionPointId": "patientDashboard.firstColumnFragments",
         "extensionParams": {
-          "provider": "${project.parent.artifactId}",
+          "provider": "coreapps",
           "fragment": "encounter/mostRecentEncounter"
         }
       }

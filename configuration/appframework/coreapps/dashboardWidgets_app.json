@@ -13,11 +13,11 @@
     },
     "extensions": [
       {
-        "id": "${project.parent.groupId}.${project.parent.artifactId}.mostRecentVitals.clinicianDashboardFirstColumn",
+        "id": "coreapps.mostRecentVitals.clinicianDashboardFirstColumn",
         "appId": "coreapps.latestObsForConceptList",
         "extensionPointId": "patientDashboard.firstColumnFragments",
         "extensionParams": {
-          "provider": "${project.parent.artifactId}",
+          "provider": "coreapps",
           "fragment": "dashboardwidgets/dashboardWidget"
         }
       }
@@ -43,7 +43,7 @@
         "appId": "coreapps.obsAcrossEncounters",
         "extensionPointId": "patientDashboard.firstColumnFragments",
         "extensionParams": {
-          "provider": "${project.parent.artifactId}",
+          "provider": "coreapps",
           "fragment": "dashboardwidgets/dashboardWidget"
         }
       }
@@ -63,11 +63,11 @@
     },
     "extensions": [
       {
-        "id": "${project.parent.groupId}.${project.parent.artifactId}.mostRecentVitals.clinicianDashboardSecondColumn",
+        "id": "coreapps.mostRecentVitals.clinicianDashboardSecondColumn",
         "appId": "coreapps.visitByEncounterType",
         "extensionPointId": "patientDashboard.secondColumnFragments",
         "extensionParams": {
-          "provider": "${project.parent.artifactId}",
+          "provider": "coreapps",
           "fragment": "dashboardwidgets/dashboardWidget"
         }
       }
@@ -88,11 +88,11 @@
     },
     "extensions": [
       {
-        "id": "${project.parent.groupId}.${project.parent.artifactId}.mostRecentVitals.clinicianDashboardFirstColumn",
+        "id": "coreapps.mostRecentVitals.clinicianDashboardFirstColumn",
         "appId": "coreapps.obsGraph",
         "extensionPointId": "patientDashboard.firstColumnFragments",
         "extensionParams": {
-          "provider": "${project.parent.artifactId}",
+          "provider": "coreapps",
           "fragment": "dashboardwidgets/dashboardWidget"
         }
       }
@@ -112,11 +112,11 @@
     },
     "extensions": [
       {
-        "id": "${project.parent.groupId}.${project.parent.artifactId}.mostRecentVitals.clinicianDashboardSecondColumn",
+        "id": "coreapps.mostRecentVitals.clinicianDashboardSecondColumn",
         "appId": "coreapps.relationships",
         "extensionPointId": "patientDashboard.secondColumnFragments",
         "extensionParams": {
-          "provider": "${project.parent.artifactId}",
+          "provider": "coreapps",
           "fragment": "dashboardwidgets/dashboardWidget"
         }
       }

@@ -1,6 +1,6 @@
 [
     {
-        "id": "${project.parent.artifactId}.clinicianFacingPatientDashboardApp",
+        "id": "coreapps.clinicianFacingPatientDashboardApp",
         "description": "Contains extension points for the clinician facing patient dashboard",
         "extensionPoints": [
             {

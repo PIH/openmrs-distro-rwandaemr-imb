@@ -1,6 +1,6 @@
 [
     {
-        "id": "${project.parent.artifactId}.systemAdministrationApp",
+        "id": "coreapps.systemAdministrationApp",
         "description": "System Administration App",
         "extensionPoints": [
             {

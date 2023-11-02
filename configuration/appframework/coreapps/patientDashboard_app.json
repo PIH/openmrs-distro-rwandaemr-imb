@@ -1,15 +1,15 @@
 [
     {
-        "id": "${project.parent.artifactId}.patientDashboardApp",
-        "description": "${project.parent.artifactId}.patientDashboard.description",
+        "id": "coreapps.patientDashboardApp",
+        "description": "coreapps.patientDashboard.description",
         "extensionPoints": [
             {
                 "id": "patientDashboard.visitActions",
-                "description": "${project.parent.artifactId}.patientDashboard.extension.visits.description"
+                "description": "coreapps.patientDashboard.extension.visits.description"
             },
             {
                 "id": "patientDashboard.overallActions",
-                "description" : "${project.parent.artifactId}.patientDashboard.extension.actions.description"
+                "description" : "coreapps.patientDashboard.extension.actions.description"
             },
             {
                 "id": "patientDashboard.tabs",

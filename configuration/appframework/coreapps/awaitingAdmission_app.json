@@ -6,7 +6,7 @@
         "order": 10,
         "extensions": [
             {
-                "id": "${project.parent.groupId}.${project.parent.artifactId}.awaitingAdmissionHomepageLink",
+                "id": "coreapps.awaitingAdmissionHomepageLink",
                 "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
                 "type": "link",
                 "label": "coreapps.app.awaitingAdmission.label",

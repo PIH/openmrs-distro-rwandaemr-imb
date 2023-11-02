@@ -1,9 +1,9 @@
 [
     {
-        "id": "${project.parent.groupId}.${project.parent.artifactId}.patientDashboard.includeFragments",
+        "id": "coreapps.patientDashboard.includeFragments",
         "extensionPointId": "patientDashboard.includeFragments",
         "extensionParams": {
-            "provider": "${project.parent.artifactId}",
+            "provider": "coreapps",
             "fragment": "patientdashboard/visitIncludes"
         }
     }

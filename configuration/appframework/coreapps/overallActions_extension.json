@@ -1,6 +1,6 @@
 [
     {
-        "id": "${project.parent.groupId}.${project.parent.artifactId}.createVisit",
+        "id": "coreapps.createVisit",
         "extensionPointId": "patientDashboard.overallActions",
         "type": "script",
         "label": "coreapps.task.startVisit.label",
@@ -11,7 +11,7 @@
         "requiredPrivilege": "Task: coreapps.createVisit"
     },
     {
-        "id": "${project.parent.groupId}.${project.parent.artifactId}.createRetrospectiveVisit",
+        "id": "coreapps.createRetrospectiveVisit",
         "extensionPointId": "patientDashboard.overallActions",
         "type": "script",
         "label": "coreapps.task.createRetrospectiveVisit.label",
@@ -21,7 +21,7 @@
         "requiredPrivilege": "Task: coreapps.createRetrospectiveVisit"
     },
     {
-        "id": "${project.parent.groupId}.${project.parent.artifactId}.mergeVisits",
+        "id": "coreapps.mergeVisits",
         "extensionPointId": "patientDashboard.overallActions",
         "type": "link",
         "label": "coreapps.task.mergeVisits.label",
@@ -31,7 +31,7 @@
         "requiredPrivilege": "Task: coreapps.mergeVisits"
     },
     {
-        "id": "${project.parent.groupId}.${project.parent.artifactId}.markPatientDead",
+        "id": "coreapps.markPatientDead",
         "extensionPointId": "patientDashboard.overallActions",
         "type": "Link",
         "label": "coreapps.markPatientDead.label",
@@ -41,7 +41,7 @@
         "requiredPrivilege": "Task: coreapps.markPatientDead"
     },
     {
-        "id": "${project.parent.groupId}.${project.parent.artifactId}.deletePatient",
+        "id": "coreapps.deletePatient",
         "extensionPointId": "patientDashboard.overallActions",
         "type": "script",
         "label": "coreapps.task.deletePatient.label",

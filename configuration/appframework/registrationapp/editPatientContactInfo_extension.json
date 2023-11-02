@@ -1,6 +1,6 @@
 [
     {
-        "id": "${project.parent.groupId}.${project.parent.artifactId}.editPatientContactInfo",
+        "id": "registrationapp.editPatientContactInfo",
         "extensionPointId": "patientHeader.editPatientContactInfo",
         "type": "link",
         "label": "general.edit",

@@ -6,11 +6,11 @@
     "order": 1,
     "extensions": [
       {
-        "id": "${project.parent.groupId}.${project.parent.artifactId}.diagnoses.clinicianDashboardFirstColumn",
+        "id": "coreapps.diagnoses.clinicianDashboardFirstColumn",
         "appId": "coreapps.diagnoses",
         "extensionPointId": "patientDashboard.firstColumnFragments",
         "extensionParams": {
-          "provider": "${project.parent.artifactId}",
+          "provider": "coreapps",
           "fragment": "clinicianfacing/diagnosisWidget"
         }
       }

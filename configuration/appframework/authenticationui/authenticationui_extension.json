@@ -1,6 +1,6 @@
 [
   {
-    "id": "pih.authenticationui.admin",
+    "id": "rwandaemr.authenticationui.admin",
     "extensionPointId": "org.openmrs.module.authenticationui.admin.config",
     "type": "config",
     "extensionParams": {
@@ -13,7 +13,7 @@
     }
   },
   {
-    "id": "pih.authenticationui.login",
+    "id": "rwandaemr.authenticationui.login",
     "extensionPointId": "org.openmrs.module.authenticationui.loginPage.config",
     "type": "config",
     "extensionParams": {

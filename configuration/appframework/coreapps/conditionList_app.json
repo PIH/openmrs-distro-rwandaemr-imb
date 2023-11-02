@@ -6,11 +6,11 @@
     "order": 100,
     "extensions": [
       {
-        "id": "${project.parent.groupId}.${project.parent.artifactId}.conditionlist",
+        "id": "coreapps.conditionlist",
         "appId": "coreapps.conditionlist",
         "extensionPointId": "patientDashboard.secondColumnFragments",
         "extensionParams": {
-          "provider": "${project.parent.artifactId}",
+          "provider": "coreapps",
           "fragment": "conditionlist/conditions"
         }
       }

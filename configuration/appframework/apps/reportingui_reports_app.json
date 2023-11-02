@@ -1,0 +1,47 @@
+[
+    {
+        "id": "reportingui.reports",
+        "description": "Homepage showing a list of different kinds of reports",
+        "order": 10,
+        "extensionPoints": [
+            {
+                "id": "org.openmrs.module.reportingui.reports.overview",
+                "description": "Links to available Overview Reports",
+                "supportedExtensionTypes": [ "link" ]
+            },
+            {
+                "id": "org.openmrs.module.reportingui.reports.dataquality",
+                "description": "Links to available Data Quality Reports",
+                "supportedExtensionTypes": [ "link" ]
+            },
+            {
+                "id": "org.openmrs.module.reportingui.reports.dataexport",
+                "description": "Links to available Data Exports",
+                "supportedExtensionTypes": [ "link" ]
+            }
+        ],
+        "extensions": [
+            {
+                "id": "reportingui.reports.homepagelink",
+                "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+                "type": "link",
+                "label": "reportingui.reportsapp.home.title",
+                "url": "reportingui/reportsapp/home.page",
+                "icon": "icon-list-alt",
+                "order": 5,
+                "requiredPrivilege": "App: reportingui.reports"
+            },
+            {
+                "id": "reportingui.dataExports.adHoc",
+                "extensionPointId": "org.openmrs.module.reportingui.reports.dataexport",
+                "type": "link",
+                "label": "reportingui.adHocAnalysis.label",
+                "url": "reportingui/adHocManage.page",
+                "order": 9999,
+                "requiredPrivilege": "App: reportingui.adHocAnalysis",
+                "featureToggle": "reportingui_adHocAnalysis"
+            }
+        ],
+        "requiredPrivilege": "App: reportingui.reports"
+    }
+]

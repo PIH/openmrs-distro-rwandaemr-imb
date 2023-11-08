@@ -7,7 +7,7 @@
     "icon": "icon-vitals",
     "order": 10,
     "config": {
-        "encounterTypeUuid": "67a71486-1a54-468f-ac3e-7091a9a79584",
+        "encounterTypeUuid": "daf32375-d293-4e27-a68d-2a58494c96e1",
         "encounterDateLabel": "coreapps.clinicianfacing.lastVitalsDateLabel"
     },
     "extensions": [

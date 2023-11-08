@@ -1,19 +1,16 @@
 [
     {
-        "id": "coreapps.findPatient",
+        "id": "coreapps.findPatient_refApp",
         "instanceOf": "coreapps.template.findPatient",
         "description": "Basic patient search that goes to the patient dashboard",
         "order": 2,
-        "config": {
-            "afterSelectedUrl": "/patientDashboard.form?patientId={{patientDbId}}"
-        },
         "extensions": [
             {
-                "id": "coreapps.activeVisitsHomepageLink",
+                "id": "imbemr.findPatientRefApp",
                 "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
                 "type": "link",
-                "label": "coreapps.findPatient.app.label",
-                "url": "coreapps/findpatient/findPatient.page?app=coreapps.findPatient",
+                "label": "Find Patient Record",
+                "url": "coreapps/findpatient/findPatient.page?app=coreapps.findPatient_refApp",
                 "icon": "icon-search",
                 "requiredPrivilege": "App: coreapps.findPatient"
             }

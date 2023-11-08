@@ -58,7 +58,6 @@
         "requiredPrivilege": "Task: referenceapplication.vitals",
         "require": "visit.active"
     },
-
     {
         "id": "referenceapplication.realTime.endVisit",
         "extensionPointId": "patientDashboard.visitActions",

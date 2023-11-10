@@ -107,14 +107,14 @@
             <label class="font-normal"> <strong> Height (cm):  </strong> </label>
             <br/>
             <label class="font-normal">
-                <input class="form-control" id="Height" name="obs.Height" type="number" data-concept="3ce93cf2-26fe-102b-80cb-0017a47871b2^HEIGHT (CM)^99DCT" required="required"/>
+                <input class="form-control" max="270" min="100" id="Height" name="obs.Height" type="number" data-concept="3ce93cf2-26fe-102b-80cb-0017a47871b2^HEIGHT (CM)^99DCT" required="required"/>
             </label>
         </div>
         <div >
             <label class="font-normal"> <strong> Weight (Kg):  </strong> </label>
             <br/>
             <label class="font-normal">
-                <input class="form-control" id="Weight" name="obs.Weight" type="number" data-concept="3ce93b62-26fe-102b-80cb-0017a47871b2^WEIGHT (KG)^99DCT" required="required"/>
+                <input class="form-control" max="350" min="20" id="Weight" name="obs.Weight" type="number" data-concept="3ce93b62-26fe-102b-80cb-0017a47871b2^WEIGHT (KG)^99DCT" required="required"/>
             </label>
         </div>
         <br/>
@@ -136,10 +136,10 @@
                 </tr>
                 <tr>
                     <td>
-                        <input class="form-control"  id="SystolicBloodpressure1" name="obs.Bloodpressure1" type="number" max="250" min="20" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>
+                        <input class="form-control"  max="300" min="40" id="SystolicBloodpressure1" name="obs.Bloodpressure1" type="number" max="250" min="20" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>
                     </td>
                     <td>
-                        <input class="form-control" id="diastolicBloodpressure1" name="obs.Bloodpressure1" type="number" max="150" min="30" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>
+                        <input class="form-control" max="200" min="30" id="diastolicBloodpressure1" name="obs.Bloodpressure1" type="number" max="150" min="30" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>
                     </td>
                     <td>
                         <input class="form-control" id="pulse1" name="obs.pulse1" type="number" max="100" min="60" data-concept="3ce93824-26fe-102b-80cb-0017a47871b2^PULSE^99DCT"/>
@@ -147,10 +147,10 @@
                 </tr>
                 <tr>
                     <td>
-                        <input class="form-control"  id="SystolicBloodpressure2" name="obs.Bloodpressure2" type="number" max="250" min="20" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>
+                        <input class="form-control"  max="300" min="40" id="SystolicBloodpressure2" name="obs.Bloodpressure2" type="number" max="250" min="20" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>
                     </td>
                     <td>
-                        <input class="form-control" id="diastolicBloodpressure2" name="obs.Bloodpressure2" type="number" max="150" min="30" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>
+                        <input class="form-control" max="200" min="30" id="diastolicBloodpressure2" name="obs.Bloodpressure2" type="number" max="150" min="30" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>
                     </td>
                     <td>
                         <input class="form-control" id="puls2e" name="obs.pulse2" type="number" max="100" min="60" data-concept="3ce93824-26fe-102b-80cb-0017a47871b2^PULSE^99DCT"/>
@@ -158,10 +158,10 @@
                 </tr>
                 <tr>
                     <td>
-                        <input class="form-control"  id="SystolicBloodpressure3" name="obs.Bloodpressure3" type="number" max="250" min="20" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>
+                        <input class="form-control"  max="300" min="40" id="SystolicBloodpressure3" name="obs.Bloodpressure3" type="number" max="250" min="20" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>
                     </td>
                     <td>
-                        <input class="form-control" id="diastolicBloodpressure3" name="obs.Bloodpressure3" type="number" max="150" min="30" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>
+                        <input class="form-control" max="200" min="30" id="diastolicBloodpressure3" name="obs.Bloodpressure3" type="number" max="150" min="30" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>
                     </td>
                     <td>
                         <input class="form-control" id="pulse3" name="obs.pulse3" type="number" max="100" min="60" data-concept="3ce93824-26fe-102b-80cb-0017a47871b2^PULSE^99DCT"/>
@@ -453,6 +453,15 @@
                 >
             </label>
         </div>
+    </div>
+    <div class="initialHide NextDate">
+        <h3 class="language en"> <strong>Date of next visit:</strong> </h3>
+        <h3 class="language kiny"> <strong>Igihe azagarukira</strong> </h3>
+        <br/>
+        <label class="font-normal">
+            <input class="form-control datepicker future-or-today-date" id="obs.NextDate" name="obs.NextDate" type="text"
+                   data-concept="3ce94df0-26fe-102b-80cb-0017a47871b2^RETURN VISIT DATE^99DCT" readonly="readonly"/>
+        </label>
     </div>
 
 

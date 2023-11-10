@@ -165,7 +165,7 @@
         <label class="font-normal" class="language kiny"> <strong> Umubare wo hejuru (mmHg)::  </strong> </label>
         <br/>
         <label class="font-normal">
-          <input class="form-control"  max="250" min="20" id="SystolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>
+          <input class="form-control"  max="300" min="40" id="SystolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>
         </label>
       </div>
       <div >
@@ -173,7 +173,7 @@
         <label class="font-normal" class="language kiny"> <strong> Umubare wo hasi (mmHg)::  </strong> </label>
         <br/>
         <label class="font-normal">
-          <input class="form-control" max="150" min="30" id="diastolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>
+          <input class="form-control" max="200" min="30" id="diastolicBloodpressure" name="obs.Bloodpressure" type="number" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>
         </label>
       </div>
       <div id="BPStatusDiv" class="initialHide">
@@ -457,6 +457,76 @@
                     $(".referralReason").show()
                 }
             })
+
+            $('#SystolicBloodpressure').change(function(){
+                var systolic = $("#SystolicBloodpressure").val();
+                var distolic = $("#diastolicBloodpressure").val();
+
+
+                if(systolic != null && systolic>0 && distolic !=0 && distolic>0 ){
+
+                    bloodPressureStatus(systolic,distolic);
+                    $('#BPStatusDiv').show();
+                    $('#BPMeasureTakenDiv').show();
+                }else{
+                    $('#BPStatusDiv').hide();
+                    $('#BPMeasureTakenDiv').hide();
+                }
+            })
+            $('#diastolicBloodpressure').change(function(){
+                var systolic = $("#SystolicBloodpressure").val();
+                var distolic = $("#diastolicBloodpressure").val();
+
+                if(systolic != null && systolic>0 && distolic !=0 && distolic>0 ){
+
+                    bloodPressureStatus(systolic,distolic);
+                    $('#BPStatusDiv').show();
+                    $('#BPMeasureTakenDiv').show();
+                }else{
+                    $('#BPStatusDiv').hide();
+                    $('#BPMeasureTakenDiv').hide();
+                }
+            })
+            function bloodPressureStatus(systolic,distolic){
+
+                if(systolic<90 && distolic<60 ){
+                    $('BPStatusHF').val("ec8a1b55-6d9c-40d2-ad1e-5b680ea05fbc^Hypotension^99DCT");
+                    $('#BPStatusHF').val("Hypotension");
+                    $('BPMeasureTakenHF').val("2f13f21c-1469-4915-9bda-91049a285d13^immediate reference to the health facility^99DCT");
+                    $('#BPMeasureTakenHF').val("immediate reference to the health facility");
+                    $('.NextDate').hide();
+                }
+                else if(systolic<130 && distolic<85){
+                    $('BPStatusHF').val("3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT");
+                    $('#BPStatusHF').val("Normal");
+                    $('BPMeasureTakenHF').val("876b07ad-6249-4ee3-9c20-1cbcd6216097^Counselling and screening every year^99DCT");
+                    $('#BPMeasureTakenHF').val("Counselling and screening every year");
+                    $('.NextDate').hide();
+                }
+                else if(systolic<140 && distolic<90){
+                    $('BPStatusHF').val("d31fcdb1-ed29-4376-9bde-af798d1c0570^pre Hypertension^99DCT");
+                    $('#BPStatusHF').val("pre Hypertension");
+                    $('BPMeasureTakenHF').val("87976d1e-83bf-4285-b6ca-530bc0882f23^Counselling and screening every 6 months^99DCT");
+                    $('#BPMeasureTakenHF').val("Counselling and screening every 6 months");
+                    $('.NextDate').hide();
+                }
+                else if(systolic<180 && distolic<110){
+                    $('BPStatusHF').val("3cd50188-26fe-102b-80cb-0017a47871b2^HYPERTENSION^99DCT");
+                    $('#BPStatusHF').val("Hypertension");
+                    $('BPMeasureTakenHF').val("89297887-f43f-444b-a8c8-6ae76932ceca^Enroll in NCD Clinic or Transfer to HC^99DCT");
+                    $('#BPMeasureTakenHF').val("Enroll in NCD Clinic or Transfer to HC");
+                    $('.NextDate').show();
+                }
+                else if(systolic>=180 && distolic>=110){
+                    $('BPStatusHF').val("7ee72fb3-f348-4ff9-a042-444d991ff861^Emergency Hypertension^99DCT");
+                    $('#BPStatusHF').val("Emergency Hypertension");
+                    $('BPMeasureTakenHF').val("2f13f21c-1469-4915-9bda-91049a285d13^immediate reference to the health facility^99DCT");
+                    $('#BPMeasureTakenHF').val("immediate reference to the health facility");
+                    $('.NextDate').hide();
+                }
+
+            }
+
 
             // Add checkboxes representing languages you want to involve in the form.
             // Each checkbox needs to have an id represting the language it represent and name as "language".

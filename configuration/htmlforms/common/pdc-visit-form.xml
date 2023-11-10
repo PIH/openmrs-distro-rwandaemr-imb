@@ -1,11 +1,11 @@
-<htmlform 
-	htmlformUuid="8d628dd9-63fa-4391-8800-a11f61cd2ffc" 
-	formUuid="98906e08-00ac-41de-8a2b-a318694c33dc" 
-	formName="PDC Visit Form" 
-	formDescription="Pediatric Development Visit form" 
-	formVersion="0.1" 
-	formEncounterType="71826dd4-330d-4548-9fd8-6703682fbd3a" 
-	formPublished="${trueIfRwinkwavu}" 
+<htmlform
+	htmlformUuid="8d628dd9-63fa-4391-8800-a11f61cd2ffc"
+	formUuid="98906e08-00ac-41de-8a2b-a318694c33dc"
+	formName="PDC Visit Form"
+	formDescription="Pediatric Development Visit form"
+	formVersion="0.1"
+	formEncounterType="71826dd4-330d-4548-9fd8-6703682fbd3a"
+	formPublished="${trueIfRwinkwavu}"
 	formRetired="false"
 > <!--
 	   PDC Visit Form
@@ -134,8 +134,59 @@
                 }
 
              });
+        /* pop ups */
+            getField("inadequate.value").change(function() {
+                window.alert("Please fill out malnutrition form");
+            });
+            getField("AGE_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2.value").change(function() {
+                window.alert("Please fill out malnutrition form");
+            });
+            getField("AGE_Z_SCORE_LESS_THAN_THREE.value").change(function() {
+                window.alert("Please fill out malnutrition form");
+            });
+            getField("HT_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2.value").change(function() {
+                window.alert("Please fill out malnutrition form");
+            });
+            getField("HT_Z_SCORE_LESS_THAN_THREE.value").change(function() {
+                window.alert("Please fill out malnutrition form");
+            });
+        /* auto calculations */
+            autoFillChronologicalAndCorrectedAge();
+            getField("encounterDate.value").change(function() {
+                autoFillChronologicalAndCorrectedAge();
+            });
 
-         });
+
+
+
+
+        });
+        function autoFillChronologicalAndCorrectedAge(){
+            var birthDate = $j('#birthdate span').text();
+            var currentDate = getValue('encounterDate.value');
+            var birthDateObj = new Date(birthDate);
+            var currentDateObj = new Date(currentDate);
+            var ageInMilliseconds = currentDateObj - birthDateObj;
+            setValue('Chronological_Age.value', chronologicalAge(ageInMilliseconds));
+            //corrected age
+            var gestAgeInweeks = $j('#GestationalAge').text();
+            var correctedAgeInMilliseconds = ageInMilliseconds - ((40-gestAgeInweeks) * 7 * 24 * 60 * 60 * 1000);
+            setValue('CORRECTED_AGE.value', chronologicalAge(correctedAgeInMilliseconds));
+        }
+        function chronologicalAge(ageInMilliseconds){
+
+
+            var ageDate = new Date(ageInMilliseconds);
+            var years = ageDate.getUTCFullYear() - 1970;
+            var months = ageDate.getUTCMonth();
+            var days = ageDate.getUTCDate() - 1;
+            var weeks = Math.floor(days / 7);
+            days = days % 7;
+
+            var chronologicalAge = years + " years " + months + " months " + weeks + " weeks "+ days + " days";
+
+            return chronologicalAge;
+        }
 
     </script>
 
@@ -183,6 +234,7 @@
         @Z_SCORE_LESS_THAN_THREE@=43539cee-6f90-4ffa-ba25-0338105783a3
         @INTERVAL_GROWTH@=ceb6b7b2-f26d-4f7b-92ae-9b0c1df86aa4
         @CORRECTED_AGE@=5ed677a7-ecfe-4d27-9d19-8c45d89ed6db
+        @CORRECTED_AGE_in_Text@ = c3e12d55-162a-40c3-9d03-6a6cf94b874c
 
         @NORMAL@=3cd750a0-26fe-102b-80cb-0017a47871b2
         @ABNORMAL@=3cd75230-26fe-102b-80cb-0017a47871b2
@@ -310,6 +362,7 @@
         @PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@ = a01eda34-ba5d-48f1-8a40-7e05a850a31d
         @Clinican_notes@ = 6602a73b-b8d3-40bc-bae8-f00ff3b9cceb
         @Chronological_Age@ = 63dbac65-dbc7-4333-a6d2-9f679373c9e7
+        @chonological_age_text@ = 800eeca4-6ae2-4361-886a-249b4ebc33e6
 
 
 
@@ -420,7 +473,10 @@
                 </b></td>
                 <td>Date: <encounterDate
                         default="today" id="encounterDate"/></td>
-                <td></td>
+                <td>
+                    <span id="birthdate" class="hidden"> <lookup class="value" expression="patient.birthdate"/> </span>
+                    <span id="GestationalAge" > <lookup expression="fn.latestObs('1409AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA').valueNumeric"/> </span>
+                </td>
             </tr>
             <tr>
                 <td>Last name/<span
@@ -688,15 +744,16 @@
                     <tr class="checkboxGroup">
                         <td>Chronological Age</td>
                         <td>
-                            <obs conceptId="$@Chronological_Age@"/>
+<!--                            <obs id="Chronological_Age" conceptId="$@Chronological_Age@"/>-->
+                            <obs id="Chronological_Age" conceptId="$@chonological_age_text@" size="30"/>
                         </td>
-                        <td>
-                            <obs id="DAYS" conceptId="$@TIME_UNITS@" answerConceptId="$@DAYS@" answerLabel="days" style="checkbox"/> &#160;&#160;
-                            <obs id="WEEKS" conceptId="$@TIME_UNITS@" answerConceptId="$@WEEKS@" answerLabel="weeks" style="checkbox"/>
-                            <br/>
-                            <obs id="MONTHS" conceptId="$@TIME_UNITS@" answerConceptId="$@MONTHS@" answerLabel="months" style="checkbox"/>
-                            <obs id="YEARS" conceptId="$@TIME_UNITS@" answerConceptId="$@YEARS@" answerLabel="years" style="checkbox"/>
-                        </td>
+<!--                        <td>-->
+<!--                            <obs id="DAYS" conceptId="$@TIME_UNITS@" answerConceptId="$@DAYS@" answerLabel="days" style="checkbox"/> &#160;&#160;-->
+<!--                            <obs id="WEEKS" conceptId="$@TIME_UNITS@" answerConceptId="$@WEEKS@" answerLabel="weeks" style="checkbox"/>-->
+<!--                            <br/>-->
+<!--                            <obs id="MONTHS" conceptId="$@TIME_UNITS@" answerConceptId="$@MONTHS@" answerLabel="months" style="checkbox"/>-->
+<!--                            <obs id="YEARS" conceptId="$@TIME_UNITS@" answerConceptId="$@YEARS@" answerLabel="years" style="checkbox"/>-->
+<!--                        </td>-->
                     </tr>
                 </table>
             </td>
@@ -706,7 +763,9 @@
                         <td>Corrected Age (if GA <br /> &lt;37 weeks and &lt;2 <br />
                             years old)
                         </td>
-                        <td><obs conceptId="$@CORRECTED_AGE@" labelText="" />
+                        <td>
+<!--                            <obs conceptId="$@CORRECTED_AGE@" labelText="" />-->
+                            <obs id="CORRECTED_AGE" conceptId="$@CORRECTED_AGE_in_Text@" size="30"/>
 
                         </td>
                         <td>(weeks) <b>*Note: If possible, use this age
@@ -742,7 +801,7 @@
                                 <br />
                                 <obs id="" conceptId="$@INTERVAL_GROWTH_CODED@" answerConceptId="$@ADEQUATE@" answerLabel="adequate" style="checkbox" />
                                 <br />
-                                <obs id="" conceptId="$@INTERVAL_GROWTH_CODED@" answerConceptId="$@INADEQUATE@" answerLabel="inadequate" style="checkbox" />
+                                <obs id="inadequate" conceptId="$@INTERVAL_GROWTH_CODED@" answerConceptId="$@INADEQUATE@" answerLabel="inadequate" style="checkbox" />
                                 <br />
                                 <obs id="" conceptId="$@INTERVAL_GROWTH_CODED@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A (z-score 	&#60; -2 AND &#62;6mo)" style="checkbox" />
                                 <br />
@@ -754,8 +813,10 @@
 					             <obs id="" conceptId="$@HEAD_CIRCUMFERENCE_CODED@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A (	&#60; 40 weeks corrected age or &#62; 3years)" style="checkbox" />
 					        </span>
                         </td>
-                        <td align="left" class="checkboxGroupWAZ"><obs conceptId="$@WEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@Z_SCORE_GREATER_THAN_TWO@" answerLabel="&#62;&#61; -2" style="checkbox" /><br /> <obs conceptId="$@WEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2@" answerLabel="&#62;&#61; -3 AND &#60; -2 " style="checkbox" /><br />
-                            <obs conceptId="$@WEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@Z_SCORE_LESS_THAN_THREE@" answerLabel="&#60; -3" style="checkbox" /><br/>
+                        <td align="left" class="checkboxGroupWAZ">
+                            <obs conceptId="$@WEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@Z_SCORE_GREATER_THAN_TWO@" answerLabel="&#62;&#61; -2" style="checkbox" /><br />
+                            <obs id="AGE_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2" conceptId="$@WEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2@" answerLabel="&#62;&#61; -3 AND &#60; -2 " style="checkbox" /><br />
+                            <obs id="AGE_Z_SCORE_LESS_THAN_THREE" conceptId="$@WEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@Z_SCORE_LESS_THAN_THREE@" answerLabel="&#60; -3" style="checkbox" /><br/>
                             <obs conceptId="$@WEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A &#60; 40 weeks corrected age" style="checkbox" />
                         </td>
                         <!--                        <span class="before20190520changes">-->
@@ -764,8 +825,10 @@
                             <obs conceptId="$@HEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A &#60; 40 weeks corrected age" style="checkbox" />
                         </td>
                         <!--                        </span>-->
-                        <td align="left" class="checkboxGroupWHZ"><obs conceptId="$@WEIGHT_FOR_HEIGHT_Z_SCORE@" answerConceptId="$@Z_SCORE_GREATER_THAN_TWO@" answerLabel="&#62;&#61; -2" style="checkbox" /><br /> <obs conceptId="$@WEIGHT_FOR_HEIGHT_Z_SCORE@" answerConceptId="$@Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2@" answerLabel="&#62;&#61; -3 AND &#60; -2 " style="checkbox" /><br />
-                            <obs conceptId="$@WEIGHT_FOR_HEIGHT_Z_SCORE@" answerConceptId="$@Z_SCORE_LESS_THAN_THREE@" answerLabel="&#60; -3" style="checkbox" /><br/>
+                        <td align="left" class="checkboxGroupWHZ">
+                            <obs conceptId="$@WEIGHT_FOR_HEIGHT_Z_SCORE@" answerConceptId="$@Z_SCORE_GREATER_THAN_TWO@" answerLabel="&#62;&#61; -2" style="checkbox" /><br />
+                            <obs id="HT_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2" conceptId="$@WEIGHT_FOR_HEIGHT_Z_SCORE@" answerConceptId="$@Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2@" answerLabel="&#62;&#61; -3 AND &#60; -2 " style="checkbox" /><br />
+                            <obs id="HT_Z_SCORE_LESS_THAN_THREE" conceptId="$@WEIGHT_FOR_HEIGHT_Z_SCORE@" answerConceptId="$@Z_SCORE_LESS_THAN_THREE@" answerLabel="&#60; -3" style="checkbox" /><br/>
                             <obs conceptId="$@WEIGHT_FOR_HEIGHT_Z_SCORE@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A &#60;40 weeks corrected age" style="checkbox" />
                         </td>
                         <!--                        <span class="before20190520changes">-->

@@ -97,16 +97,16 @@
     <div class="form-group">
         <fieldset>
             <div>
-                <label>Level of Care:</label>
+                <label>Level of Care: <span class="required">*</span></label>
             </div>
             <label class="font-normal">
-                <input  class="deactivate" id="obs.LevelOfCareHealthCenter" name="LevelOfCare" type="radio"
+                <input  class="deactivate" id="LevelOfCareHealthCenter" name="LevelOfCare" type="radio" required="required"
                         data-concept="4893bd7a-8943-4a75-82da-67ef0ed86db2^Level of Care^99DCT"
-                        value="7e327a1a-c1df-4712-ab5d-e05dc0dac35d^HEALTH CENTER^99DCT">
-                Health center
+                        value="7e327a1a-c1df-4712-ab5d-e05dc0dac35d^HEALTH CENTER^99DCT" >
+                Health center/ Health Post
             </label>
             <label class="font-normal">
-                <input class="activate" id="obs.LevelOfCareHospital" name="LevelOfCare" type="radio"
+                <input class="activate" id="LevelOfCareHospital" name="LevelOfCare" type="radio"
                        data-concept="4893bd7a-8943-4a75-82da-67ef0ed86db2^Level of Care^99DCT"
                        value="3ce0d472-26fe-102b-80cb-0017a47871b2^HOSPITAL^99DCT">
                 Hospital
@@ -330,30 +330,37 @@
     <!--                No-->
     <!--            </label>-->
     <!--            <br/>-->
-    <!--            <div class="PreviousCervicalScreening">-->
-    <!--                <label class="font-normal"> If yes, screening was through: </label>-->
-    <!--                <br/>-->
-    <!--                <label>-->
-    <!--                    <input id="obs.ScreeningThoughVIA" name="obs.ScreeningThough" type="radio"-->
-    <!--                           data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"-->
-    <!--                           value="6178405e-c115-4e78-b9e0-fb0811a2bb2d^visual inspection with Acetic Acid^99DCT">-->
-    <!--                    VIA-->
-    <!--                </label>-->
-    <!--                <br/>-->
-    <!--                <label>-->
-    <!--                    <input id="obs.ScreeningThoughPapSmear" name="obs.ScreeningThough" type="radio"-->
-    <!--                           data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"-->
-    <!--                           value="3cd4de2e-26fe-102b-80cb-0017a47871b2^PAPANICOLAOU SMEAR^99DCT">-->
-    <!--                    Pap smear-->
-    <!--                </label>-->
-    <!--                <br/>-->
-    <!--                <label>-->
-    <!--                    <input id="obs.ScreeningThoughHPVDNATest" name="obs.ScreeningThough" type="radio"-->
-    <!--                           data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"-->
-    <!--                           value="f7c2d59d-2043-42ce-b04d-08564d54b0c7^HPV DNA test^99DCT">-->
-    <!--                    HPV DNA test-->
-    <!--                </label>-->
-    <!--            </div>-->
+<!--                <div class="PreviousCervicalScreening">-->
+<!--                    <label class="font-normal"> If yes, screening was through: </label>-->
+<!--                    <br/>-->
+<!--                    <label>-->
+<!--                        <input id="ScreeningThroughVIA" name="ScreeningThough" type="checkbox"-->
+<!--                               data-concept="0f527dab-b769-42c9-bbd9-12bd714090ee^previous screening type^99DCT"-->
+<!--                               value="6178405e-c115-4e78-b9e0-fb0811a2bb2d^visual inspection with Acetic Acid^99DCT">-->
+<!--                        VIA-->
+<!--                    </label>-->
+<!--                    <br/>-->
+<!--                    <label>-->
+<!--                        <input id="ScreeningThroughPapSmear" name="ScreeningThough" type="checkbox"-->
+<!--                               data-concept="0f527dab-b769-42c9-bbd9-12bd714090ee^previous screening type^99DCT"-->
+<!--                               value="3cd4de2e-26fe-102b-80cb-0017a47871b2^PAPANICOLAOU SMEAR^99DCT">-->
+<!--                        Pap smear-->
+<!--                    </label>-->
+<!--                    <br/>-->
+<!--                    <label>-->
+<!--                        <input id="ScreeningThroughHPVDNATest" name="ScreeningThough" type="checkbox"-->
+<!--                               data-concept="0f527dab-b769-42c9-bbd9-12bd714090ee^previous screening type^99DCT"-->
+<!--                               value="f7c2d59d-2043-42ce-b04d-08564d54b0c7^HPV DNA test^99DCT">-->
+<!--                        HPV DNA test-->
+<!--                    </label>-->
+<!--                    <br/>-->
+<!--                    <label>-->
+<!--                        <input id="ScreeningThroughHybridHPVandVIA" name="ScreeningThough" type="checkbox"-->
+<!--                               data-concept="0f527dab-b769-42c9-bbd9-12bd714090ee^previous screening type^99DCT"-->
+<!--                               value="f4fd4966-1713-4de3-bffe-be22830f0a4a^Hybrid (VIA and HPV)^99DCT">-->
+<!--                        Hybrid (VIA and HPV)-->
+<!--                    </label>-->
+<!--                </div>-->
     <!--            <br/>-->
     <!--            <div class="PreviousCervicalScreening">-->
 
@@ -617,6 +624,13 @@
                 Pap smear
             </label>
             <br/>
+            <label class="font-normal">
+                <input class="activate" id="ScreeningTypeHybridVIAandHPV" name="ScreeningTypeHybridVIAandHPV" type="radio"
+                       data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
+                       value="f4fd4966-1713-4de3-bffe-be22830f0a4a^Hybrid (VIA and HPV)^99DCT">
+                Hybrid (VIA and HPV)
+            </label>
+            <br/>
             <!--            <label class="font-normal">-->
             <!--                <input  class="activate" id="obs.ScreeningTypeOtherfindings" name="ScreeningTypeOtherfindings" type="checkbox"-->
             <!--                       data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"-->
@@ -652,7 +666,7 @@
     </fieldset>
     <fieldset>
 
-<!--        <div class="form-group initialHide ScreeningTypeHPV">-->
+<!--        <div class="form-group initialHide ScreeningTypeHPV ScreeningTypeHybridVIAandHPV">-->
 <!--            <label>-->
 <!--                Specimen code-->
 <!--            </label>-->
@@ -663,7 +677,7 @@
 
 <!--            </label>-->
 <!--        </div>-->
-<!--        <div class="form-group initialHide ScreeningTypeHPV">-->
+<!--        <div class="form-group initialHide ScreeningTypeHPV ScreeningTypeHybridVIAandHPV">-->
 <!--            <label class="font-normal">-->
 <!--                Sample collection method:-->
 <!--            </label>-->
@@ -683,7 +697,7 @@
 <!--            </label>-->
 <!--        </div>-->
 
-<!--        <div class="form-group initialHide ScreeningTypeHPV">-->
+<!--        <div class="form-group initialHide ScreeningTypeHPV ScreeningTypeHybridVIAandHPV">-->
 <!--            <label>-->
 <!--                Other clinical information-->
 <!--            </label>-->
@@ -696,7 +710,7 @@
 <!--        </div>-->
 
 
-        <!--        <div class="form-group ScreeningTypeHPV">-->
+        <!--        <div class="form-group ScreeningTypeHPV ScreeningTypeHybridVIAandHPV">-->
         <!--            <label>-->
         <!--                Test result:-->
         <!--            </label>-->
@@ -716,7 +730,7 @@
         <!--            </label>-->
 
         <!--        </div>-->
-        <!--        <div class="form-group ScreeningTypeHPV">-->
+        <!--        <div class="form-group ScreeningTypeHPV ScreeningTypeHybridVIAandHPV">-->
         <!--            <label>If Positive specify</label>-->
         <!--            <br/>-->
         <!--            <label class="font-normal">-->
@@ -740,7 +754,7 @@
         <!--                Other HR HPV-->
         <!--            </label>-->
         <!--        </div>-->
-            <div id="HPVLabResult">
+            <div id="HPVLabResult ScreeningTypeHybridVIAandHPV">
                 <label class="font-normal">
                     <strong> HPV Lab result: </strong>
                 </label>
@@ -814,7 +828,7 @@
 
     </fieldset>
     <fieldset>
-        <div class="section concept-set initialHide ScreeningTypeVIA TestResultsHPV">
+        <div class="section concept-set initialHide ScreeningTypeVIA ScreeningTypeHybridVIAandHPV TestResultsHPV">
             <h3> <u>VIA </u> </h3>
             <!--            <label class="font-normal"> <strong> VIA  performed? </strong> </label>-->
             <!--            <br/>-->
@@ -951,7 +965,7 @@
         </div>
     </fieldset>
     <fieldset>
-        <div class="section LevelOfCare TestResultsHPV LevelOfCare" id="colposcopy">
+        <div class="section TestResultsHPV " id="colposcopy">
             <h3 class="font-normal"> <u>Colposcopy</u> </h3>
 
             <label class="font-normal"> <strong> Colposcopy performed? </strong> </label>
@@ -1242,33 +1256,63 @@
                     </label>
                 </div>
                 <br/>
-                <label class="font-normal"> <strong> Disposition:  </strong> </label>
+                <label class="font-normal"> <strong> Disposition:  </strong> <span class="required">*</span> </label>
                 <br/>
                 <label class="font-normal">
-                    <input class="deactivate" id="obs.DispositionDischarged" name="Disposition" type="radio"
+                    <input class="deactivate" id="DispositionDischarged" name="Disposition" type="radio" required="required"
                            data-concept="0af3dbde-15f5-102d-96e4-000c29c2a5d7^DISPOSITION^99DCT"
                            value="6340fd67-facb-4a6c-a9d9-f629c9e53053^DISCHARGED^99DCT">
                     Discharged,no follow up needed
                 </label>
                 <br/>
                 <label class="font-normal">
-                    <input class="deactivate" id="obs.Disposition" name="Disposition" type="radio"
+                    <input class="deactivate" id="DispositionFollowupAtThisHealthFacility" name="Disposition" type="radio"
                            data-concept="0af3dbde-15f5-102d-96e4-000c29c2a5d7^DISPOSITION^99DCT"
                            value="d0e94536-0b91-40a1-b994-04bb4f5cd15d^Follow-up at this health facility^99DCT">
                     Follow-up at this health facility
                 </label>
+                <label class="font-normal">
+                    <input class="deactivate" id="DispositionFollowupAtAnotherHealthFacility" name="Disposition" type="radio"
+                           data-concept="0af3dbde-15f5-102d-96e4-000c29c2a5d7^DISPOSITION^99DCT"
+                           value="147b2af6-d789-416d-bfc0-42e2b717d582^Follow-up at another health facility^99DCT">
+                    Follow-up at another health facility
+                </label>
                 <br/>
                 <label class="font-normal">
-                    <input class="activate" id="Disposition" name="Disposition" type="radio"
+                    <input class="deactivate" id="DispositionRescreening" name="Disposition" type="radio"
+                           data-concept="0af3dbde-15f5-102d-96e4-000c29c2a5d7^DISPOSITION^99DCT"
+                           value="9f77a776-4306-4a34-a42d-0a57808a90e9^Rescreening^99DCT">
+                    Rescreening
+                </label>
+                <label class="font-normal">
+                    <input class="deactivate" id="DispositionReferredIn" name="Disposition" type="radio"
+                           data-concept="0af3dbde-15f5-102d-96e4-000c29c2a5d7^DISPOSITION^99DCT"
+                           value="031ea34b-f95b-4cf7-a3c6-026f6fd60f1f^TRANSFER IN^99DCT">
+                    transfer in:
+                    <br/>
+                    <input class="initialHide" id="serviceTransferredTo" name="serviceTransferredTo" type="radio"
+                           data-concept="0af3dbde-15f5-102d-96e4-000c29c2a5d7^Transfer to internal department text^99DCT"/>
+                </label>
+                <label class="font-normal">
+                    <input class="activate" id="DispositionReferredOut" name="Disposition" type="radio"
                            data-concept="0af3dbde-15f5-102d-96e4-000c29c2a5d7^DISPOSITION^99DCT"
                            value="3cdd5c02-26fe-102b-80cb-0017a47871b2^PATIENT TRANSFERRED OUT^99DCT">
                     referred to (facility name):
                 </label>
                 <br/>
-                <label class="font-normal">
-                    <input class="form-control " id="obs.healthFacility" type="text" placeholder="Start typing something...">
-                    <input class="form-control" name="obs.healthFacility" type="hidden" data-concept="3a84ab37-f75c-48ad-8bcf-322c927f36bb^referred to (coded)^99DCT">
-                </label>
+                <div class="initialHide Disposition">
+                    <label class="font-normal">
+                        <!--                <input id="obs.healthFacility" name="obs.healthFacility"-->
+                        <!--                       type="text" size="50" data-concept="3a84ab37-f75c-48ad-8bcf-322c927f36bb^referred to (coded)^99DCT"/>-->
+
+
+                        <input class="form-control " id="obs.healthFacility" type="text" placeholder="Start typing something...">
+                    </label>
+
+                    <label class="font-normal">
+                        <input class="form-control" name="obs.healthFacility" type="text" data-concept="3a84ab37-f75c-48ad-8bcf-322c927f36bb^referred to (coded)^99DCT" disabled="disabled">
+                    </label>
+                </div>
                 <!--            <br/>-->
                 <!--            <label class="font-normal"> <strong> Referred:  </strong> </label>-->
                 <!--            <br/>-->
@@ -1618,6 +1662,14 @@
                     $("#HPVLabResult").hide()
                 }
             })
+            $('#ScreeningTypeHybridVIAandHPV').change(function(){
+                if($("input[id='ScreeningTypeHybridVIAandHPV']").prop('checked')){
+                    $("#managementDiv").show()
+                    $("#colposcopy").show()
+                    $("#HPVLabResult").hide()
+                }
+            })
+
             $('#LevelOfCareHospital').change(function(){
                 if($("input[id='LevelOfCareHospital']").prop('checked') && $("input[id='EntryModeVoluntary']").prop('checked')){
                     $(".referralReason").hide()
@@ -1653,10 +1705,10 @@
 
             $('#followUpReasonPostTreatmentFollowup').change(function(){
                 if($("input[id='followUpReasonPostTreatmentFollowup']").prop('checked') && $("input[id='TestResultsHPVPositive']").prop('checked')){
-                    $("#triageVIAPerformedTypeLabel").hide()
-                    $("#ScreenVIAPerformedTypeLabel").show()
+                    $("#triageVIAPerformedTypeLabel").show()
+                    $("#ScreenVIAPerformedTypeLabel").hide()
                 }else{
-                    $("triageVIAPerformedTypeLabel").show()
+                    $("triageVIAPerformedTypeLabel").hide()
                 }
             })
             $('#TestResultsHPVPositive').change(function(){
@@ -1665,6 +1717,27 @@
                     $("#ScreenVIAPerformedTypeLabel").show()
                 }else{
                     $("#triageVIAPerformedTypeLabel").show()
+                }
+            })
+            $('Disposition').change(function(){
+                if($("input[id='DispositionReferredOut']").prop('checked')){
+
+                    $("#obs\\.healthFacility").prop("required",true);
+                    $("#obs\\.nextVisitDate").prop("required",true);
+                    $("#ManagementReferralReasonSuspectedCancer").prop("required",true);
+                }
+                else{
+                    $("#obs\\.healthFacility").prop("required",false);
+                    $("#obs\\.nextVisitDate").prop("required",false);
+                    $("#ManagementReferralReasonSuspectedCancer").prop("required",false);
+                }
+                if($("input[id='DispositionReferredIn']").prop('checked')){
+                   $("#serviceTransferredTo").show();
+                    $("#serviceTransferredTo").prop("required",true);
+                }
+                else{
+                    $("#serviceTransferredTo").hide();
+                    $("#serviceTransferredTo").prop("required",false);
                 }
             })
 

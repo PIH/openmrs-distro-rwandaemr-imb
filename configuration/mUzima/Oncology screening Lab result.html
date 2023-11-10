@@ -97,11 +97,14 @@
         <div class="form-group">
             <label>
                 Specimen code
+                <br/>
+                (Fosaid/year(e.g 23 0r 24)/patient number in register)
+
             </label>
             <br/>
             <label class="font-normal">
                 <input id="obs.specimenCode" name="obs.specimenCode" type="text"
-                       data-concept="16cd65e3-45af-4291-88fd-fe4d91847e4f^Specimen Code^99DCT">
+                       data-concept="16cd65e3-45af-4291-88fd-fe4d91847e4f^Specimen Code^99DCT" required="required">
 
             </label>
         </div>
@@ -255,6 +258,33 @@
                 }
             }
         });
+        /* auto-complete specimen code */
+            var patientuuid = $('#patient\\.uuid').val();
+            var specCodeConceptID = 107258;
+
+            var allSpecCodeForPatient = htmlDataStore.getObsByConceptId(patientuuid,specCodeConceptID);
+            allSpecCodeForPatient = JSON.parse(allSpecCodeForPatient);
+            // sort the array desc based on obs date
+            allSpecCodeForPatient.sort(function(a, b){
+                var Adatearray = a.obsDate.split("-");
+                var AconvertedDate = Adatearray[1] + '-' + Adatearray[0] + '-' + Adatearray[2];
+                var Bdatearray = b.obsDate.split("-");
+                var BconvertedDate = Bdatearray[1] + '-' + Bdatearray[0] + '-' + Bdatearray[2];
+                return new Date(BconvertedDate) - new Date(AconvertedDate)
+            });
+
+            var datearray = allSpecCodeForPatient[0].obsDate.split("-");
+            var convertedDate = datearray[1] + '-' + datearray[0] + '-' + datearray[2];
+            const diffTime = (new Date()) - new Date(convertedDate);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24) );
+            if(diffDays < 32){
+                $('#obs\\.specimenCode').val(allSpecCodeForPatient[0].valueText);
+            }
+        /* End */
+
+
+
+
         $(".initialHide").hide();
         });
 

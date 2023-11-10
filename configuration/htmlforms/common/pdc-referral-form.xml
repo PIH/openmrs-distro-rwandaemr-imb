@@ -330,8 +330,22 @@
 		    }
 
 
-			});
-		});
+        });
+    });
+    $j(document).ready(function(){
+        getField("Trisomy_21_suspected_or_confirmed.value").change(function() {
+            window.alert("PDC Condition specific (Trisomy 21)");
+        });
+        getField("Cleft_Lip_or_Palate.value").change(function() {
+            window.alert("PDC Conditional Specific (Cleft Lip)");
+        });
+        getField("Other_Developmental_Delay.value").change(function() {
+            window.alert("PDC Conditional Specific (Global Developmental Delay)");
+        });
+
+
+    });
+
 
 		function calculateBirthWeight(birthWeight) {
 		    var bsa;
@@ -588,9 +602,9 @@
                             <obs conceptId="$@Reasons_for_Referral@" answerConceptId="$@Hypoxic_ischemic_encephalopathy@" answerLabel="Hypoxic ischemic encephalopathy(history of perinatal convulsion, no cry at 5 minutes or Apgar score &#60; 5 at 5 minutes)" /><br/>
                             <obs conceptId="$@Reasons_for_Referral@" answerConceptId="$@CENTRAL_NERVOUS_SYSTEM_INFECTION@" answerLabel="Central Nervous System Infection" /><br/>
                             <obs conceptId="$@Reasons_for_Referral@" answerConceptId="$@Hydrocephalus_HC_Z-score@" answerLabel="Hydrocephalus(HC Z-score > +3, ICP, sunsetting eyes, new seizures with increasing HC, HC crossing &#62; 2 z-score lines) " /><br/>
-                            <obs conceptId="$@Reasons_for_Referral@" answerConceptId="$@Trisomy_21_suspected_or_confirmed@" answerLabel="Trisomy 21 (suspected or confirmed)" /> <br/>
-                            <obs conceptId="$@Reasons_for_Referral@" answerConceptId="$@Cleft_Lip_or_Palate@" answerLabel="Cleft Lip or Palate " /><br/>
-                            <obs conceptId="$@Reasons_for_Referral@" answerConceptId="$@Other_Developmental_Delay_Suspected_Neuromuscular_Disease_and_Suspected_Genetic_Syndromes@" answerLabel="Other Developmental Delay, Suspected Neuromuscular Disease, and Suspected Genetic Syndromes" /><br/>
+                            <obs id="Trisomy_21_suspected_or_confirmed" conceptId="$@Reasons_for_Referral@" answerConceptId="$@Trisomy_21_suspected_or_confirmed@" answerLabel="Trisomy 21 (suspected or confirmed)" /> <br/>
+                            <obs id="Cleft_Lip_or_Palate" conceptId="$@Reasons_for_Referral@" answerConceptId="$@Cleft_Lip_or_Palate@" answerLabel="Cleft Lip or Palate " /><br/>
+                            <obs id="Other_Developmental_Delay" conceptId="$@Reasons_for_Referral@" answerConceptId="$@Other_Developmental_Delay_Suspected_Neuromuscular_Disease_and_Suspected_Genetic_Syndromes@" answerLabel="Other Developmental Delay, Suspected Neuromuscular Disease, and Suspected Genetic Syndromes" /><br/>
                             <obs conceptId="$@Reasons_for_Referral@" answerConceptId="$@SEVERE_MALNUTRITION@" answerLabel="Severe malnutrition requiring hospitalization (infants &#60; 12 months of age)" /><br/>
                             <obs conceptId="$@Reasons_for_Referral@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Others:" />
                             <obs conceptId="$@Reasons_for_Referral_non_coded@" /><br/>

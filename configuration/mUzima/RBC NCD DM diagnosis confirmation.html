@@ -193,7 +193,7 @@
         <label class="font-normal" class="language kiny"> <strong> Ingano yisukari mumaraso (mg/dl):  </strong> </label>
         <br/>
         <label class="font-normal">
-          <input class="form-control" id="BloodSugar" name="obs.BloodSugar" type="number" data-concept="3cd4e194-26fe-102b-80cb-0017a47871b2^SERUM GLUCOSE^99DCT"/>
+          <input class="form-control" max="500" min="30" id="BloodSugar" name="obs.BloodSugar" type="number" data-concept="3cd4e194-26fe-102b-80cb-0017a47871b2^SERUM GLUCOSE^99DCT"/>
         </label>
       </div>
       <div id="BloodSugarStatusStatusDiv" class="initialHide">
@@ -363,7 +363,15 @@
         </label>
       </div>
 
-
+      <div class="initialHide NextDate">
+        <h3 class="language en"> <strong>Date of next visit:</strong> </h3>
+        <h3 class="language kiny"> <strong>Igihe azagarukira</strong> </h3>
+        <br/>
+        <label class="font-normal">
+          <input class="form-control datepicker future-or-today-date" id="obs.NextDate" name="obs.NextDate" type="text"
+                 data-concept="3ce94df0-26fe-102b-80cb-0017a47871b2^RETURN VISIT DATE^99DCT" readonly="readonly"/>
+        </label>
+      </div>
 
     </fieldset>
   </div>
@@ -549,6 +557,10 @@
 
                 if($("#GlucoseTestMethodRandom").prop('checked'))
                 {
+                    $("#BloodSugar").attr({
+                       "max" : 500,
+                       "min" : 50
+                    });
                     if(BloodSugar<=70){
                         $('BloodSugarStatus').val("641f4fe3-cac2-46c4-aa94-c8b6d05e9407^HYPOGLYCEMIA^99DCT");
                         $('#BloodSugarStatus').val("HYPOGLYCEMIA");
@@ -556,6 +568,7 @@
                         $('#BSMeasureTaken').val("Recommend immediate sugar intake");
                         $('#BloodSugarStatusStatusDiv').show();
                         $('#BloodSugarmeasureTakensStatusDiv').show();
+                        $('.NextDate').hide();
                     }
                     else if(BloodSugar<= 140){
                         $('BloodSugarStatus').val("3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT");
@@ -564,6 +577,7 @@
                         $('#BSMeasureTaken').val("Screening every year");
                         $('#BloodSugarStatusStatusDiv').show();
                         $('#BloodSugarmeasureTakensStatusDiv').show();
+                        $('.NextDate').hide();
                     }
                     else if(BloodSugar<= 199){
                         $('BloodSugarStatus').val("968cf3be-8254-48f1-83af-b09504449183^Pre diabetes^99DCT");
@@ -572,6 +586,7 @@
                         $('#BSMeasureTaken').val("Screening every 3 months");
                         $('#BloodSugarStatusStatusDiv').show();
                         $('#BloodSugarmeasureTakensStatusDiv').show();
+                        $('.NextDate').hide();
                     }
                     else if(BloodSugar> 199){
                         $('BloodSugarStatus').val("edf4ecc4-44f6-457a-b561-179f4426b16a^DIABETES^99DCT");
@@ -580,6 +595,7 @@
                         $('#BSMeasureTaken').val("Enroll in NCD Clinic or Transfer to HC");
                         $('#BloodSugarStatusStatusDiv').show();
                         $('#BloodSugarmeasureTakensStatusDiv').show();
+                        $('.NextDate').show();
                     }
                     else{
                          $('BloodSugarStatus').val("");
@@ -588,10 +604,15 @@
                         $('#BSMeasureTaken').val("");
                         $('#BloodSugarStatusStatusDiv').hide();
                         $('#BloodSugarmeasureTakensStatusDiv').hide();
+                        $('.NextDate').hide();
                     }
                 }
                 else if($("#GlucoseTestMethodFasting").prop('checked'))
                 {
+                    $("#BloodSugar").attr({
+                       "max" : 300,
+                       "min" : 30
+                    });
                     if(BloodSugar<=69){
                         $('BloodSugarStatus').val("641f4fe3-cac2-46c4-aa94-c8b6d05e9407^HYPOGLYCEMIA^99DCT");
                         $('#BloodSugarStatus').val("HYPOGLYCEMIA");
@@ -599,6 +620,7 @@
                         $('#BSMeasureTaken').val("Recommend immediate sugar intake");
                         $('#BloodSugarStatusStatusDiv').show();
                         $('#BloodSugarmeasureTakensStatusDiv').show();
+                        $('.NextDate').hide();
                     }
                     else if(BloodSugar<= 99){
                         $('BloodSugarStatus').val("3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT");
@@ -607,6 +629,7 @@
                         $('#BSMeasureTaken').val("Screening every year");
                         $('#BloodSugarStatusStatusDiv').show();
                         $('#BloodSugarmeasureTakensStatusDiv').show();
+                        $('.NextDate').hide();
                     }
                     else if(BloodSugar<= 125){
                         $('BloodSugarStatus').val("968cf3be-8254-48f1-83af-b09504449183^Pre diabetes^99DCT");
@@ -615,6 +638,7 @@
                         $('#BSMeasureTaken').val("Screening every 3 months");
                         $('#BloodSugarStatusStatusDiv').show();
                         $('#BloodSugarmeasureTakensStatusDiv').show();
+                        $('.NextDate').hide();
                     }
                     else if(BloodSugar> 125){
                         $('BloodSugarStatus').val("edf4ecc4-44f6-457a-b561-179f4426b16a^DIABETES^99DCT");
@@ -623,6 +647,7 @@
                         $('#BSMeasureTaken').val("Enroll in NCD Clinic or Transfer to HC");
                         $('#BloodSugarStatusStatusDiv').show();
                         $('#BloodSugarmeasureTakensStatusDiv').show();
+                        $('.NextDate').show();
                     }
                     else{
                          $('BloodSugarStatus').val("");
@@ -631,6 +656,7 @@
                         $('#BSMeasureTaken').val("");
                         $('#BloodSugarStatusStatusDiv').hide();
                         $('#BloodSugarmeasureTakensStatusDiv').hide();
+                        $('.NextDate').hide();
                     }
                 }
                 else{
@@ -640,6 +666,7 @@
                     $('#BSMeasureTaken').val("");
                     $('#BloodSugarStatusStatusDiv').hide();
                     $('#BloodSugarmeasureTakensStatusDiv').hide();
+                    $('.NextDate').hide();
                 }
             })
 

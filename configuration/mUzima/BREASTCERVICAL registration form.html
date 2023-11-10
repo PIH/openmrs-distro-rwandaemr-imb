@@ -67,17 +67,17 @@
             </div>
             <div class="form-group">
                 <label for="patient.family_name">Family Name: <span class="required">*</span> </label>
-                <input class="form-control" id="patient.family_name" name="patient.family_name" type="text"
+                <input class="form-control" id="patient.family_name" name="patient.family_name" type="text" pattern="[A-Za-z]+"
                        required="required">
             </div>
             <div class="form-group">
                 <label for="patient.middle_name">Middle Name:</label>
-                <input class="form-control" id="patient.middle_name" name="patient.middle_name" type="text">
+                <input class="form-control" id="patient.middle_name" name="patient.middle_name" type="text" pattern="[A-Za-z]+"/>
             </div>
             <div class="form-group">
                 <label for="patient.given_name">First Name: <span class="required">*</span></label>
-                <input class="form-control" id="patient.given_name" name="patient.given_name" type="text"
-                       required="required">
+                <input class="form-control" id="patient.given_name" name="patient.given_name" type="text" pattern="[A-Za-z]+"
+                       required="required"/>
             </div>
         </fieldset>
     </div>
@@ -97,8 +97,8 @@
             </div>
             <div class="form-group group-set patientHasNumber" data-group="patient.personattribute^2">
                 <label for="patient.phone_number">Phone: <span class="required initialHide patientPhone">*</span></label>
-                <input class="form-control" id="patient.phone_number" name="attribute_value" type="tel" >
-                <input type="hidden" id="attribute_type_name" name="attribute_type_name" value="Phone number">
+                <input class="form-control" id="patient.phone_number" name="attribute_value" pattern='07\d{8}' maxlength="10"  type="tel" >
+                <input type="hidden" id="attribute_type_name" name="attribute_type_name"  value="Phone number">
 <!--                <input type="hidden" id="attribute_type_uuid" name="attribute_type_uuid" value="8b908adf-c964-4959-ad43-e2c7aeaa9c67">-->
             </div>
             <div class="form-group group-set" data-group="patient.personattribute^3">
@@ -109,7 +109,7 @@
             </div>
             <div class="form-group group-set" data-group="patient.personattribute^4">
                 <label for="patient.contact_Person_phone_number">Contact person phone: <span class="required initialHide contactPersonPhone">*</span> </label>
-                <input class="form-control" id="patient.contact_Person_phone_number" name="attribute_value" type="tel">
+                <input class="form-control" id="patient.contact_Person_phone_number" name="attribute_value" pattern='07\d{8}' maxlength="10"  type="tel">
                 <input type="hidden" id="attribute_type_name" name="attribute_type_name" value="Contact Person's Phone Number">
                 <input type="hidden" id="attribute_type_uuid" name="attribute_type_uuid" value="99cc76cc-3914-11e7-a919-92ebcb67fe44">
             </div>
@@ -183,9 +183,9 @@
                     <div class="group-set" data-group="patient.National_ID">
                         <input class="form-control" id="patient.NatioanlId"
                                name="patient.NatioanlId" type="text" >
-                        <input type="hidden" id="attribute_type_name" name="attribute_type_name" value="NID number">
+<!--                        <input type="hidden" id="attribute_type_name" name="attribute_type_name" value="NID number">-->
 <!--                        <input type="hidden" id="identifier_type_uuid" name="identifier_type_uuid" value="85c63542-587f-476c-9e69-c733bd285a57">-->
-                        <input type="hidden" id="attribute_type_uuid" name="attribute_type_uuid" value="678b3499-81cd-4a26-9577-4dc1efcf0510">
+<!--                        <input type="hidden" id="attribute_type_uuid" name="attribute_type_uuid" value="678b3499-81cd-4a26-9577-4dc1efcf0510">-->
 
 
                     </div>
@@ -329,7 +329,7 @@
                 $(".patientPhone").hide()
                 $(".patientHasNumber").hide();
             }
-        })
+        });
 
 
         var requireMedicalRecordNumber = true;
@@ -17929,6 +17929,23 @@ document.nextHierarchyArray = function(elementName, dataDictionary,nextDateDicti
         }
         return refinedArray;
     }
+    function allLetter(inputtxt)
+      {
+
+          var letters = new RegExp("^[a-zA-Z]+$");
+          if(inputtxt.value.match(letters))
+          {
+              return true;
+          }
+          else
+          {
+              alert('Please input alphabet characters only');
+              $(this).val("");
+              return false;
+          }
+      }
+
+
 </script>
 
 </html>

@@ -865,7 +865,7 @@ td {
 		<tr><td colspan="2">
 			Fill out the treatment status here
 			
-			<workflowState workflowId="6db3cc1b-0d86-458b-ac88-43124fcbf2f7" style="dropdown"/>Hypertension 
+			<workflowState workflowId="72bad7f4-feda-435d-b2b6-cace0848428a" style="dropdown"/> Hypertension
 		</td></tr>
 
 		<th class="tableHeader" colspan="3">Si Deces / If Death </th>

@@ -170,8 +170,10 @@
             setValue('Chronological_Age.value', chronologicalAge(ageInMilliseconds));
             //corrected age
             var gestAgeInweeks = $j('#GestationalAge').text();
-            var correctedAgeInMilliseconds = ageInMilliseconds - ((40-gestAgeInweeks) * 7 * 24 * 60 * 60 * 1000);
-            setValue('CORRECTED_AGE.value', chronologicalAge(correctedAgeInMilliseconds));
+            if (gestAgeInweeks &#60; 37 &#38;&#38; (1/gestAgeInweeks) &#33;&#61; "Infinity"){
+                var correctedAgeInMilliseconds = ageInMilliseconds - ((40-gestAgeInweeks) * 7 * 24 * 60 * 60 * 1000);
+                setValue('CORRECTED_AGE.value', chronologicalAge(correctedAgeInMilliseconds));
+            }
         }
         function chronologicalAge(ageInMilliseconds){
 
@@ -475,7 +477,7 @@
                         default="today" id="encounterDate"/></td>
                 <td>
                     <span id="birthdate" class="hidden"> <lookup class="value" expression="patient.birthdate"/> </span>
-                    <span id="GestationalAge" > <lookup expression="fn.latestObs('1409AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA').valueNumeric"/> </span>
+                    <span id="GestationalAge" class="hidden"> <lookup expression="fn.latestObs('1409AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA').valueNumeric"/> </span>
                 </td>
             </tr>
             <tr>

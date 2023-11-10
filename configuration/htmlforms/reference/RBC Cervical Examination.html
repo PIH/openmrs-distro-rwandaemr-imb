@@ -216,7 +216,8 @@
         @OTHER_NON-CODED@ = 3cee7fb4-26fe-102b-80cb-0017a47871b2
         @Other_Histology@ = b99ff54e-4e1b-4277-89ab-136eab980621
         @RETURN_VISIT_DATE@ = 3ce94df0-26fe-102b-80cb-0017a47871b2
-
+        @Hybrid_(VIA_and_HPV)@ = f4fd4966-1713-4de3-bffe-be22830f0a4a
+        @previous_screening_type@ = 0f527dab-b769-42c9-bbd9-12bd714090ee
 
 
 
@@ -333,6 +334,39 @@
         }
         }
     </style>
+
+    <script type="text/javascript">
+        /* spacemen code auto-complete function */
+        if(jQuery){
+            $j(document).ready(function(){
+                $j( "#ScreeningTypeHPV" ).click(function() {
+                    if($j("#ScreeningTypeHPV" ).children().prop("checked")){
+
+                        specimenCodeAutofill();
+                    }
+                });
+            $j( "#ScreeningTypeHybridVIAandHPV" ).click(function() {
+                    if($j("#ScreeningTypeHybridVIAandHPV" ).children().prop("checked")){
+
+                        specimenCodeAutofill();
+                    }
+                });
+            });
+            function specimenCodeAutofill(){
+                var spacemenDate = "<lookup expression="fn.latestObs(107258).obsDatetime"/>";
+                var spacemenCode = "<lookup expression="fn.latestObs(107258).valueText"/>";
+
+                const diffTime = (new Date()) - new Date(spacemenDate);
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24) );
+
+                if(diffDays &#60; 2) {
+                setValue('specimenCode.value', spacemenCode);
+                }
+            }
+        }
+        /* End */
+
+    </script>
     <script type="text/javascript">
             if(jQuery){
              $j(document).ready(function(){
@@ -472,6 +506,12 @@
             if (val == null || val == '') {
                 getField('HIVStatus.error').html('HIV status is required').show();
                 alert("HIV status is required")
+                return false;
+            }
+            var specimenCodeValue = getValue('specimenCode.value');
+            if(($j("#ScreeningTypeHybridVIAandHPV" ).children().prop("checked") || $j("#ScreeningTypeHPV" ).children().prop("checked")) &#38;&#38; (specimenCodeValue ==null || specimenCodeValue == '')){
+                getField('specimenCode.error').html('Specimen Code is required').show();
+                alert("Specimen Code is required")
                 return false;
             }
             return true;
@@ -812,19 +852,21 @@
 <!--                    <input id="obs.ScreeningThoughVIA" name="obs.ScreeningThough" type="checkbox"-->
 <!--                           data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"-->
 <!--                           value="6178405e-c115-4e78-b9e0-fb0811a2bb2d^visual inspection with Acetic Acid^99DCT">-->
-                    <obs conceptId="$@Screening_through@" answerConceptId="$@visual_inspection_with_Acetic_Acid@" answerLabel="VIA" />
+                    <obs conceptId="$@previous_screening_type@" answerConceptId="$@visual_inspection_with_Acetic_Acid@" answerLabel="VIA" />
 
 
 <!--                    <input id="obs.ScreeningThoughPapSmear" name="obs.ScreeningThough" type="checkbox"-->
 <!--                           data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"-->
 <!--                           value="3cd4de2e-26fe-102b-80cb-0017a47871b2^PAPANICOLAOU SMEAR^99DCT">-->
-                    <obs conceptId="$@Screening_through@" answerConceptId="$@Screening_through@" answerLabel="Pap smear" />
+                    <obs conceptId="$@previous_screening_type@" answerConceptId="$@PAPANICOLAOU_SMEAR@" answerLabel="Pap smear" />
 
 
 <!--                    <input id="obs.ScreeningThoughHPVDNATest" name="obs.ScreeningThough" type="checkbox"-->
 <!--                           data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"-->
 <!--                           value="f7c2d59d-2043-42ce-b04d-08564d54b0c7^HPV DNA test^99DCT">-->
-                    <obs conceptId="$@Screening_through@" answerConceptId="$@HPV_DNA_test@" answerLabel="HPV DNA test" />
+                    <obs conceptId="$@previous_screening_type@" answerConceptId="$@HPV_DNA_test@" answerLabel="HPV DNA test" />
+
+                    <obs conceptId="$@previous_screening_type@" answerConceptId="$@Hybrid_(VIA_and_HPV)@" answerLabel="Hybrid (VIA and HPV)" />
 
                 </td>
             </tr>
@@ -1086,7 +1128,9 @@
                     <span class="activate" id="ScreeningTypePapSmear" title="ScreeningTypePAPSmear">
                         <obs conceptId="$@Screening_through@" answerConceptId="$@PAPANICOLAOU_SMEAR@" answerLabel="Pap Smear" />
                     </span>
-
+                    <span class="activate" id="ScreeningTypeHybridVIAandHPV" title="ScreeningTypeHybridVIAandHPV">
+                        <obs conceptId="$@Screening_through@" answerConceptId="$@Hybrid_(VIA_and_HPV)@" answerLabel="Hybrid (VIA and HPV)" />
+                    </span>
 
 
 <!--                    <input id="obs.ScreeningTypeVIA" name="obs.ScreeningType" type="checkbox"-->
@@ -1123,20 +1167,22 @@
 <!--                </td>-->
 <!--            </tr>-->
 
-            <tr class="initialHide ScreeningTypeHPV">
+            <tr class="initialHide ScreeningTypeHPV ScreeningTypeHybridVIAandHPV">
                 <td>
 
-                    Specimen code
+                    (Fosaid/year(e.g 23 0r 24)/Annual patient registration number  from the register)
                 </td>
                 <td>
                     <!--                        <input id="obs.specimenCode" name="obs.specimenCode" type="text"-->
                     <!--                               data-concept="16cd65e3-45af-4291-88fd-fe4d91847e4f^Specimen Code^99DCT">-->
-                    <obs conceptId="$@Specimen_Code@"/>
+                    <obs id="specimenCode" conceptId="$@Specimen_Code@"/>
+
+                    (Fosaid/year(e.g 23 0r 24)/patient number in register)
 
                 </td>
             </tr>
 
-            <tr class="form-group initialHide ScreeningTypeHPV">
+            <tr class="form-group initialHide ScreeningTypeHPV ScreeningTypeHybridVIAandHPV">
                 <td>
                     Sample collection method:
                 </td>
@@ -1155,7 +1201,7 @@
                     <obs conceptId="$@sampling_method@" answerConceptIds="$@Provider_Collected_Sample@,$@Self_Collected_Sample@" answerLabels="Provider collected sample,Self collected sample" style="radio"/>
                 </td>
             </tr>
-            <tr class="initialHide ScreeningTypeHPV">
+            <tr class="initialHide ScreeningTypeHPV ScreeningTypeHybridVIAandHPV">
                 <td>
                     Other clinical information
                 </td>
@@ -1212,7 +1258,7 @@
         </table>
     </section>
     <section headerLabel="VIA">
-        <table border="1" class="initialHide ScreeningTypeVIA">
+        <table border="1" class="initialHide ScreeningTypeVIA ScreeningTypeHybridVIAandHPV">
 <!--            <tr >-->
 
 <!--                <td class="font-normal"> <strong> VIA performed </strong> </td>-->
@@ -1227,7 +1273,9 @@
             <tr>
                 <td>Type of VIA performed: </td>
                 <td>
-                    <obs conceptId="$@type_of_VIA_Performed@" answerConceptIds="$@VIA_Screen@,$@VIA_Triage@" answerLabels="VIA Screen,VIA Triage" style="radio" />
+                    <obs conceptId="$@type_of_VIA_Performed@" answerConceptId="$@VIA_Screen@" answerLabel="VIA Screen" style="radio" />
+
+                    <!--                    <obs conceptId="$@type_of_VIA_Performed@" answerConceptIds="$@VIA_Screen@,$@VIA_Triage@" answerLabels="VIA Screen,VIA Triage" style="radio" />-->
                 </td>
             </tr>
             <tr>

@@ -6,28 +6,29 @@
 		started on Sept 22, 2012
 	-->
 
-    <macros>
-        @Screening_through@ = 7e4e6554-d6c5-4ca3-b371-49806a754992
-        @HPV_DNA_test@ = f7c2d59d-2043-42ce-b04d-08564d54b0c7
-        @OTHER_NON-CODED@ = 3cee7fb4-26fe-102b-80cb-0017a47871b2
-        @Test_Result@ = bfb3eb1e-db98-4846-9915-0168511c6298
-        @HPV_positive@ = 1b4a5f67-6106-4a4d-a389-2f430be543e4
-        @HPV_negative@ = 64c23192-54e4-4750-9155-2ed0b736a0db
-        @HPV_positive_Type@ = 1b4a5f67-6106-4a4d-a389-2f430be543e4
-        @HPV_16@ = 059fddd3-711f-47ab-818f-087984aeecc3
-        @HPV_18@ = b672c3ff-96c9-41cd-9ae6-aa0811ce347f
-        @Other_HR_HPV@ = 6c3428c6-f406-4ef9-b2dd-4fe5a79f3432
-        @LABORATORY_TESTS_OTHER@ = 3cd9b714-26fe-102b-80cb-0017a47871b2
-        @OTHER_LAB_TEST_RESULT@ = 3ce1ca8a-26fe-102b-80cb-0017a47871b2
-        @Specimen_Code@ = 16cd65e3-45af-4291-88fd-fe4d91847e4f
-        @sampling_method@ = f6f60fcb-2e6f-4e72-940d-ff96e22452aa
-        @Provider_Collected_Sample@ = 37ad4306-50b9-4d4c-ab78-a1a77ddd7223
-        @Self_Collected_Sample@ = 8b710fc4-efa6-4ee1-b9a8-e2608149d7ff
-        @Other_Clinical_Information@ = f07791fa-de5d-4977-916c-35a433bfa280
+  <macros>
+    @Report_Date@ = 2a1d545e-1167-4d07-b35b-12803e6197cc
+    @Due_date@ = cf26022e-dc33-49a3-99f7-7cb929f48b04
+    @Glucose_test_method@ = f618591a-f334-4a5a-be26-0518871cd00f
+    @Random_for_blood_glucose_test@ = d2d34adf-9f22-4897-97a1-dbbda02b19dd
+    @Fasting_for_blood_glucose_test@ = 2effb850-0384-4a09-8ae0-a7b5f7e7289f
+    @SERUM_GLUCOSE@ = 3cd4e194-26fe-102b-80cb-0017a47871b2
+    @Blood_sugar_status@ = fd66cc68-084b-4f41-9d84-5d748bcd7d95
+    @Blood_sugar_measure_taken@ = d5c48b7b-6e16-419f-be9c-08d2f37e55b1
+    @HbA1c@ = 159644AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    @HbA1c_status@ = 6c30c84e-bbf2-4776-8085-93a1002f6e68
+    @initiated_oral_anti-diabetes_drugs@ = b3cd7ff1-c2ad-4a2c-9128-905d5935dea8
+    @positive_for_DM_and_transferred_DH@ = 73f14da8-0f5e-45e9-a07e-ef1094c8be63
+    @SYSTOLIC_BLOOD_PRESSURE@ = 3ce934fa-26fe-102b-80cb-0017a47871b2
+    @DIASTOLIC_BLOOD_PRESSURE@ = 3ce93694-26fe-102b-80cb-0017a47871b2
+    @Blood_pressure_status@ = ba61f053-b306-418f-8891-8af43b322ca7
+    @Blood_pressure_measure_taken@ = ad0157d2-2241-4d4d-a9c8-700bb35822e4
+    @Initiated_anti-HTN_drugs@ = 4325928f-e955-4262-8aad-b7578378ea6a
+    @positive_for_HTN_and_transferred_DH@ = bb1f8fff-dc59-481a-b654-7a20141992e5
 
-    </macros>
+  </macros>
 
-    <style>
+  <style>
         .sectionHeader {
         background-color: #009d8e;;
         color: white;
@@ -58,9 +59,9 @@
         }
 
         #container {
-        
+
         margin: auto;
-        
+
         height: auto;
         }
 
@@ -138,25 +139,8 @@
         }
         }
     </style>
-    <script type="text/javascript">
-        $j(document).ready(function() {
-
-            /* spacemen code auto create */
-            var spacemenDate = "<lookup expression="fn.latestObs(107258).obsDatetime"/>";
-            var spacemenCode = "<lookup expression="fn.latestObs(107258).valueText"/>";
-
-            const diffTime = (new Date()) - new Date(spacemenDate);
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24) );
-
-            if(diffDays &#60; 2) {
-            setValue('specimenCode.value', spacemenCode);
-            }
-            /* End */
-        });
-    </script>
-    <script>
+  <script>
 	$j(document).ready(function() {
-
 		$j("#hideHIV").click(function() {
 			$j(".hiv").hide();
 			$j('.hiv input[type="text"]').val('');
@@ -432,121 +416,169 @@ getField('reactionNonCoded3.value')[0].disabled = true;
 
 
 
-    <section>
-        <table border="1" cellspacing="0" cellpadding="6" width="100%">
-            <tr>
-                <td>
-                    <b>
-                        IMB ID: <lookup class="value"
-                                        expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
-                        <br/>
-                        <!--                        IMB Primary Care Registration ID:-->
-                        <!--                        <lookup-->
-                        <!--                                class="value"-->
-                        <!--                                expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" />-->
-                        <!--                        <br/>-->
-                        <!--                        OpenClinic ID:-->
-                        <!--                        <lookup class="value"-->
-                        <!--                                expression="patientIdentifiers.get(&quot;OpenClinic ID&quot;)" />-->
-                        <!--                        <br/>-->
-                        <!--                        ARCHIVING ID:-->
-                        <!--                        <lookup class="value"-->
-                        <!--                                expression="patientIdentifiers.get(&quot;ARCHIVING ID&quot;)" />-->
-                        <!--                        <br/>-->
-                        Rwanda National ID:
-                        <lookup class="value"
-                                expression="patientIdentifiers.get(&quot;Rwanda National ID&quot;)" />
-                    </b>
+  <section>
+    <table border="1" cellspacing="0" cellpadding="6" width="100%">
+      <tr>
+        <td>
+          <b>
+            IMB ID: <lookup class="value"
+                            expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+            <br/>
+            <!--                        IMB Primary Care Registration ID:-->
+            <!--                        <lookup-->
+            <!--                                class="value"-->
+            <!--                                expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" />-->
+            <!--                        <br/>-->
+            <!--                        OpenClinic ID:-->
+            <!--                        <lookup class="value"-->
+            <!--                                expression="patientIdentifiers.get(&quot;OpenClinic ID&quot;)" />-->
+            <!--                        <br/>-->
+            <!--                        ARCHIVING ID:-->
+            <!--                        <lookup class="value"-->
+            <!--                                expression="patientIdentifiers.get(&quot;ARCHIVING ID&quot;)" />-->
+            <!--                        <br/>-->
+            Rwanda National ID:
+            <lookup class="value"
+                    expression="patientIdentifiers.get(&quot;Rwanda National ID&quot;)" />
+          </b>
 
-                </td>
-                <td>Date: <encounterDate id="encounterDate" default="today" />
-                </td>
-            </tr>
-            <tr>
-                <td>Nom / Last name: <lookup class="value"
-                                             expression="patient.personName.familyName" />
-                </td>
-                <td>Prénom/ First name: <lookup class="value"
-                                                expression="patient.personName.givenName" />
-                </td>
-            </tr>
-            <tr>
-                <td> Gender: <lookup class="value" expression="patient.gender"/> </td>
-                <td> Date Of Birth: <lookup class="value" expression="patient.birthdate"/> </td>
-            </tr>
-            <tr>
-                <td><img src="/openmrs/moduleResources/rwandareports/images/rwanda-logo.jpg" align="left"
-                         height="65" ></img>
-                    <b>REPUBLIC OF RWANDA
-                        <br />MINISTRY OF HEALTH</b>
-                </td>
-                <td ><strong>
-                    Oncology Screening Lab Request
-                </strong> </td>
-            </tr>
-            <tr>
-                <td>Location Name: <encounterLocation
-                        id="encounterLocation" />
-                </td>
-                <td>Provider:<encounterProvider id="encounterProvider"
-                                                default="currentUser"/>
-                </td>
+        </td>
+        <td>Date: <encounterDate id="encounterDate" default="today" />
+        </td>
+      </tr>
+      <tr>
+        <td>Nom / Last name: <lookup class="value"
+                                     expression="patient.personName.familyName" />
+        </td>
+        <td>Prénom/ First name: <lookup class="value"
+                                        expression="patient.personName.givenName" />
+        </td>
+      </tr>
+      <tr>
+        <td> Gender: <lookup class="value" expression="patient.gender"/> </td>
+        <td> Date Of Birth: <lookup class="value" expression="patient.birthdate"/> </td>
+      </tr>
+      <tr>
+        <td><img src="/openmrs/moduleResources/rwandareports/images/rwanda-logo.jpg" align="left"
+                 height="65" ></img>
+          <b>REPUBLIC OF RWANDA
+            <br />MINISTRY OF HEALTH</b>
+        </td>
+        <td ><strong>
+          NCD HTN diagnosis Confirmation
+        </strong> </td>
+      </tr>
+      <tr>
+        <td>Location Name: <encounterLocation
+                id="encounterLocation" />
+        </td>
+        <td>Provider:<encounterProvider id="encounterProvider"
+                                        default="currentUser"/>
+        </td>
 
-            </tr>
-        </table>
-    </section>
-    <section >
-        <table class="form-group" border="1">
-            <tr>
-                <td>
+      </tr>
+    </table>
+  </section>
+  <section >
+    <h3 class="language en">Timeline Data Entry</h3>
+    <!--    <h3 class="language kiny">Igihe amakuru yafatiwe</h3>-->
+    <table class="form-group" border="1">
+      <tr>
+        <td>
+          <label class="font-normal language en"> <strong> Report date:  </strong> </label>
+          <!--          <label class="font-normal language kiny"> <strong> Italiki umurwayi yaziyeho kwa muganda:  </strong> </label>-->
+        </td>
 
-                    Specimen code
-                </td>
-                <td>
-                    <!--                        <input id="obs.specimenCode" name="obs.specimenCode" type="text"-->
-                    <!--                               data-concept="16cd65e3-45af-4291-88fd-fe4d91847e4f^Specimen Code^99DCT">-->
-                        <obs id="specimenCode" conceptId="$@Specimen_Code@" required="true" />
+        <td>
+          <!--          <label class="font-normal">-->
+          <!--            <input class="form-control datepicker" id="obs.reportDate" name="obs.reportDate" type="text"-->
+          <!--                   data-concept="2a1d545e-1167-4d07-b35b-12803e6197cc^Report Date^99DCT" readonly="readonly"/>-->
+          <!--                 data-concept="e2c70f0a-8bb3-4d84-8436-f1f54646030b^Report Date^99DCT" readonly="readonly"/>-->
+          <obs id="obs.reportDate" name="obs.reportDate" conceptId="$@Report_Date@" allowFutureDates="true"/>
+          <!--          </label>-->
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="font-normal language en"> <strong> Due date:  </strong> </label>
+          <!--          <label class="font-normal language kiny"> <strong> Italiki ntarengwa:  </strong> </label>-->
+        </td>
+        <td>
+          <!--          <label class="font-normal">-->
+          <!--            <input class="form-control datepicker future-or-today-date" id="obs.dueDate" name="obs.dueDate" type="text"-->
+          <!--                   data-concept="cf26022e-dc33-49a3-99f7-7cb929f48b04^Due date^99DCT" readonly="readonly"/>-->
+          <obs id="obs.dueDate" name="obs.dueDate" conceptId="$@Due_date@" allowFutureDates="true"/>
+          <!--          </label>-->
+        </td>
+      </tr>
+    </table>
+    <h3 class="language en"> <strong>Measurement HF</strong> </h3>
+    <!--    <h3 class="language kiny"> <strong>Ibipimo byo kwa muganga</strong> </h3>-->
+    <table border="1">
+      <tr>
+        <td>
+          <label class="font-normal"> <strong> Systole (mmHg):  </strong> </label>
+<!--          <label class="font-normal" class="language kiny"> <strong> Umubare wo hejuru (mmHg)::  </strong> </label>-->
+        </td>
+        <td>
+          <obs max="250" min="20" id="SystolicBloodpressure" name="obs.Bloodpressure" conceptId="$@SYSTOLIC_BLOOD_PRESSURE@" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="font-normal"> <strong> Diastole (mmHg):  </strong> </label>
+<!--          <label class="font-normal" class="language kiny"> <strong> Umubare wo hasi (mmHg)::  </strong> </label>-->
+        </td>
+        <td>
+          <obs max="250" min="20" id="SystolicBloodpressure" name="obs.Bloodpressure" conceptId="$@DIASTOLIC_BLOOD_PRESSURE@"/>
+        </td>
+      </tr>
 
-                    (Fosaid/year(e.g 23 0r 24)/patient number in register)
+      <tr>
+        <td>
+          <label class="font-normal" > <strong> BP status :  </strong> </label>
+<!--          <label class="font-normal" class="language kiny"> <strong> Uko umuvuduko wifashe :  </strong> </label>-->
+        </td>
+        <td>
+          <obs id="obs.BPStatusHF" name="obs.BPStatusHF" conceptId="$@Blood_pressure_status@"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="font-normal" > <strong> Blood Pressure measure taken :  </strong> </label>
+<!--          <label class="font-normal" class="language kiny"> <strong> Umuvuduko wafashwe :  </strong> </label>-->
+        </td>
+        <td>
+          <obs id="obs.BPMeasureTakenHF" name="obs.BPMeasureTakenHF" conceptId="$@Blood_pressure_measure_taken@"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="font-normal language en"> <strong> Initiated anti-HTN drugs:  </strong> </label>
+<!--          <label class="font-normal language kiny"> <strong> Ahawe imiti ya hiperitansiyo:  </strong> </label>-->
+        </td>
+        <td>
+          <obs id="obs.initiatedAntiHTNDrugsYes" name="obs.initiatedAntiHTNDrugs" conceptId="$@Initiated_anti-HTN_drugs@"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="font-normal language en"> <strong> Positive for HTN and transferred DH:  </strong> </label>
+<!--          <label class="font-normal language kiny"> <strong> Arwaye iperitansiyo cyangwa yahawe taransiferi:  </strong> </label>-->
+        </td>
+        <td>
+          <obs id="obs.positiveForHTNAndTransferredDHYes" name="obs.positiveForHTNAndTransferredDH" conceptId="$@positive_for_HTN_and_transferred_DH@"/>
+        </td>
+      </tr>
+    </table>
+  </section>
 
-                </td>
-            </tr>
-
-            <tr class="form-group">
-                <td>
-                    Sample collection method:
-                </td>
-                <td>
-<!--                    <input id="obs.providerCollectedSample" name="obs.samplingMethod" type="radio"-->
-<!--                           data-concept="f6f60fcb-2e6f-4e72-940d-ff96e22452aa^sampling method^99DCT"-->
-<!--                           value="37ad4306-50b9-4d4c-ab78-a1a77ddd7223^Provider Collected Sample^99DCT">-->
-<!--                    Provider collected sample-->
-
-<!--                    <input id="obs.selfCollectedSample" name="obs.samplingMethod" type="radio"-->
-<!--                           data-concept="f6f60fcb-2e6f-4e72-940d-ff96e22452aa^sampling method^99DCT"-->
-<!--                           value="8b710fc4-efa6-4ee1-b9a8-e2608149d7ff^Self Collected Sample^99DCT">-->
-<!--                    Self collected sample-->
-
-
-                    <obs conceptId="$@sampling_method@" answerConceptIds="$@Provider_Collected_Sample@,$@Self_Collected_Sample@" answerLabels="Provider collected sample,Self collected sample" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Other clinical information
-                </td>
-                <td>
-                    <obs conceptId="$@Other_Clinical_Information@"/>
-                </td>
-            </tr>
-        </table>
-    </section>
-    <br />
-    <br />
-    <submit />
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <encounterVoided/>
+  <br />
+  <br />
+  <submit />
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <encounterVoided/>
 </htmlform>

@@ -21,6 +21,7 @@
         @OTHER_LAB_TEST_RESULT@ = 3ce1ca8a-26fe-102b-80cb-0017a47871b2
         @Specimen_Code@ = 16cd65e3-45af-4291-88fd-fe4d91847e4f
         @Failed_results@ = 3b989534-ca6b-4bef-b99c-cd8397b1cdbe
+        @RETURN_VISIT_DATE@ = 3ce94df0-26fe-102b-80cb-0017a47871b2
 
     </macros>
 
@@ -135,6 +136,69 @@
         }
         }
     </style>
+    <script type="text/javascript">
+        if(jQuery){
+            $j(document).ready(function() {
+
+            /* spacemen code auto create */
+                var spacemenDate = "<lookup expression="fn.latestObs(107258).obsDatetime"/>";
+                var spacemenCode = "<lookup expression="fn.latestObs(107258).valueText"/>";
+
+                const diffTime = (new Date()) - new Date(spacemenDate);
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24) );
+
+                if(diffDays &#60; 32) {
+                setValue('specimenCode.value', spacemenCode);
+                }
+            /* End */
+            /* auto populate next visit date */
+
+            function autoPopulateNextVisitDate(){
+                if($j("#testResultsNegative" ).children().prop("checked")) {
+
+                    $j("#nextVisit").show();
+                    var HIVStatus = "<lookup expression="fn.latestObs(3753).getValueCoded().name"/>";
+
+                    var d = new Date();
+                    var year = d.getFullYear();
+                    var month = d.getMonth();
+                    var day = d.getDate();
+
+
+                    if(HIVStatus == "POSITVE"){
+                        var nextVis = new Date(year + 3, month, day);
+
+                        setValue('nextVisitObs.value', Date.parse(nextVis));
+                        //$j("#nextVisitObs").find("input").val(Date.parse(nextVis));
+                    }
+                    else if(HIVStatus == "NEGATIVE"){
+                        var nextVis = new Date(year + 5, month, day);
+                        setValue('nextVisitObs.value', Date.parse(nextVis));
+                        //$j("#nextVisitObs").find("input").val(Date.parse(nextVis));
+                    }
+                }
+                else if(!$j("#testResultsNegative" ).children().prop("checked")){
+                    $j("#nextVisitObs").find("input").val("");
+                    $j("#nextVisit").hide();
+                }
+
+            }
+
+            $j( "#testResultsPositive" ).click(function() {
+                autoPopulateNextVisitDate();
+            });
+            $j( "#testResultsNegative" ).click(function() {
+                autoPopulateNextVisitDate();
+            });
+            $j( "#testResultsFailured" ).click(function() {
+                autoPopulateNextVisitDate();
+            });
+
+            /* End */
+
+            });
+        }
+    </script>
     <script type="text/javascript">
             if(jQuery){
              $j(document).ready(function(){
@@ -331,7 +395,8 @@
                 <td>
 <!--                        <input id="obs.specimenCode" name="obs.specimenCode" type="text"-->
 <!--                               data-concept="16cd65e3-45af-4291-88fd-fe4d91847e4f^Specimen Code^99DCT">-->
-                    <obs conceptId="$@Specimen_Code@"/>
+                    <obs id="specimenCode" conceptId="$@Specimen_Code@" required="true"/>
+                    (Fosaid/year(e.g 23 0r 24)/patient number in register)
 
                 </td>
             </tr>
@@ -385,7 +450,17 @@
                     <obs conceptId="$@OTHER_LAB_TEST_RESULT@"/>
                 </td>
             </tr>
+            <tr id="nextVisit">
+                <td class="font-normal"> <strong> Date of next visit:  </strong> </td>
+                <td class="font-normal">
+                    <!--                    <input id="obs.BreastDispositionNextDate" name="obs.BreastDispositionNextDate" type="date"-->
+                    <!--                           data-concept="3ce94df0-26fe-102b-80cb-0017a47871b2^RETURN VISIT DATE^99DCT"/>-->
+                    <obs id="nextVisitObs" conceptId="$@RETURN_VISIT_DATE@" allowFutureDates="true" />
+                </td>
+
+            </tr>
         </table>
+
     </section>
     <br />
     <br />

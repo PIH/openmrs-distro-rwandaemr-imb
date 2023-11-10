@@ -1,0 +1,680 @@
+<htmlform> <!--
+	   Oncology Clinical Intake Form
+	   ClinicalIntake_ONCOLOGY_V1.3NT2012July4 copy
+		Author:
+		Builder: Jberchmas
+		started on Sept 22, 2012
+	-->
+
+  <macros>
+    @Report_Date@ = 2a1d545e-1167-4d07-b35b-12803e6197cc
+    @Due_date@ = cf26022e-dc33-49a3-99f7-7cb929f48b04
+    @Glucose_test_method@ = f618591a-f334-4a5a-be26-0518871cd00f
+    @Random_for_blood_glucose_test@ = d2d34adf-9f22-4897-97a1-dbbda02b19dd
+    @Fasting_for_blood_glucose_test@ = 2effb850-0384-4a09-8ae0-a7b5f7e7289f
+    @SERUM_GLUCOSE@ = 3cd4e194-26fe-102b-80cb-0017a47871b2
+    @Blood_sugar_status@ = fd66cc68-084b-4f41-9d84-5d748bcd7d95
+    @Blood_sugar_measure_taken@ = d5c48b7b-6e16-419f-be9c-08d2f37e55b1
+    @HbA1c@ = 159644AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    @HbA1c_status@ = 6c30c84e-bbf2-4776-8085-93a1002f6e68
+    @initiated_oral_anti-diabetes_drugs@ = b3cd7ff1-c2ad-4a2c-9128-905d5935dea8
+    @positive_for_DM_and_transferred_DH@ = 73f14da8-0f5e-45e9-a07e-ef1094c8be63
+    @SYSTOLIC_BLOOD_PRESSURE@ = 3ce934fa-26fe-102b-80cb-0017a47871b2
+    @DIASTOLIC_BLOOD_PRESSURE@ = 3ce93694-26fe-102b-80cb-0017a47871b2
+    @Blood_pressure_status@ = ba61f053-b306-418f-8891-8af43b322ca7
+    @Blood_pressure_measure_taken@ = ad0157d2-2241-4d4d-a9c8-700bb35822e4
+    @Initiated_anti-HTN_drugs@ = 4325928f-e955-4262-8aad-b7578378ea6a
+    @positive_for_HTN_and_transferred_DH@ = bb1f8fff-dc59-481a-b654-7a20141992e5
+    @HEIGHT_(CM)@ = 3ce93cf2-26fe-102b-80cb-0017a47871b2
+    @WEIGHT_(KG)@ = 3ce93b62-26fe-102b-80cb-0017a47871b2
+    @TEMPERATURE_(C)@ = 3ce939d2-26fe-102b-80cb-0017a47871b2
+    @SYSTOLIC_BLOOD_PRESSURE@ = 3ce934fa-26fe-102b-80cb-0017a47871b2
+    @DIASTOLIC_BLOOD_PRESSURE@ = 3ce93694-26fe-102b-80cb-0017a47871b2
+    @PULSE@ = 3ce93824-26fe-102b-80cb-0017a47871b2
+    @Time_of_last_meal@ = 67350c1a-1415-4315-9ba8-f15e68723654
+    @New_worsening_Hypertension_symptoms@ = 0ba9c755-547e-4cd1-8251-ab4a2fe01ed3
+    @Syncope@ = d76f9d41-bedc-4cee-93b6-347c0e670fa0
+    @SEIZURE@ = 3cce938e-26fe-102b-80cb-0017a47871b2
+    @Blurry_vision_or_Sudden_vision_loss@ = ee0387f3-dfc2-450f-8bfa-5eab8e994be5
+    @numbness_on_side_of_body_or_limb@ = 3bfb0691-7006-44c9-b2c1-67ffbd443998
+    @Swelling_of_limbs@ = aac4ddd3-69f1-42ef-8a22-d0dcaa7016c2
+    @Dizziness_upon_standing_up@ = fa8fe60f-13b3-4334-badf-754c04f2e9a4
+    @Chest_pain_or_discomfort@ = 2e73d360-a796-4c43-b670-1653cc1f9cd3
+    @Swelling_of_tongue_or_lips@ = b0f10955-c965-4377-ab6c-bf47b357b553
+    @Palpitations_or_irregular_heart_beats@ = 5a2ffcf9-b542-4078-85e8-528c29ad1d9a
+    @Shortness_of_breath_with_usual_activities@ = e7c4b19c-1528-4124-9f8a-0bd3a0a3aaf1
+    @No_symptoms@ = d434b73d-7519-4b53-b021-4b47283f8d0c
+    @OTHER_NON-CODED@ = 3cee7fb4-26fe-102b-80cb-0017a47871b2
+    @REVIEW_OF_SYMPTOMS_OTHER@ = 3cd65b1e-26fe-102b-80cb-0017a47871b2
+    @Doses_of_medication_taken_last_week@ = f7f3f1d4-5099-4dea-9e52-0d519980f3e8
+    @Did_not_take_any_medication@ = c2a47d55-c601-4d69-b7fc-aae5aa9e6d6f
+
+  </macros>
+
+  <style>
+        .sectionHeader {
+        background-color: #009d8e;;
+        color: white;
+        display: block;
+        padding: 2px;
+        font-weight: bold;
+        }
+
+        th.tableHeader {
+        background-color: #009d8e;
+        color: #FFFFFF;
+        font-size: 16px;
+        text-align: left;
+        }
+
+        ul {
+        list-style-type: square;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        }
+
+        tr.spaceUnder>td {
+        padding-bottom: 1em;
+        }
+
+        td {
+        font-size: 15px;
+        }
+
+        #container {
+
+        margin: auto;
+
+        height: auto;
+        }
+
+        @media print {
+        #container {
+        display: block;
+        }
+        #printArea {
+        display: none;
+        }
+        #userBar {
+        display: none;
+        }
+        #banner {
+        display: none;
+        }
+        #footer {
+        display: none;
+        }
+        #htmlFormEntryBanner {
+        display: none;
+        }
+        .error {
+        display: none;
+        }
+        .lables {
+        width: 200px;
+        }
+        table {
+        width: 100%;
+        }
+        table,td,th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+        th {
+        text-align: left;
+        background-color: #D9D9D9;
+        font-size: 10px;
+        }
+        td {
+        font-size: 10px;
+        }
+        .value {
+        font-size: 20px;
+        font-weight: bold;
+        font-style: italic;
+        }
+        .selectedCancerStagingKeys {
+        page-break-before: always;
+        border: 0px;
+        }
+        table.selectedCancerStagingKeys td {
+        border: 0px;
+        }
+        #signature {
+        border: none;
+        }
+        #signature td {
+        border: none;
+        }
+        }
+
+        @media screen {
+        table {
+        border: 1px solid #DFDFDF;
+        width: 100%;
+        border-color: #009d8e;
+        }
+        #container {
+        display: block;
+        }
+        #printArea {
+        display: none;
+        }
+        }
+    </style>
+  <script>
+	$j(document).ready(function() {
+		$j("#hideHIV").click(function() {
+			$j(".hiv").hide();
+			$j('.hiv input[type="text"]').val('');
+			$j('.hiv').find('input[type=checkbox]:checked').removeAttr('checked');
+                        $j(".hivstatus").hide();
+			$j('#checkthis3').find('input[type=checkbox]:checked').removeAttr('checked');
+                        $j('#checkthis2').find('input[type=checkbox]:checked').removeAttr('checked');
+                        $j("#checkthis1 input").attr('checked','checked');
+		});
+		$j("#showHIV").click(function() {
+			$j(".hiv").show();
+                        $j(".hivstatus").show();
+                        $j('#checkthis1').find('input[type=checkbox]:checked').removeAttr('checked');
+		});
+		$j("#showAllergies").click(function() {
+			$j(".allergies").show();
+		});
+		$j("#hideAllergies1").click(function() {
+			$j(".allergies").hide();
+		});
+		$j("#hideAllergies2").click(function() {
+			$j(".allergies").hide();
+		});
+
+
+                getField('pastCancerDiagnosis.value').change(function() {
+                 var checkNonCoded= $j("#pastCancerDiagnosis  option:selected").text();
+              if( checkNonCoded == "OTHER NON-CODED") {
+			getField('otherNonCoded.value')[0].disabled = false;
+		} else {
+			getField('otherNonCoded.value')[0].disabled = true;
+		}
+    });
+getField('causeNonCoded1.value')[0].disabled = true;
+     getField('cause1.value').change(function() {
+                 var checkcauseNonCoded1= $j("#cause1  option:selected").text();
+              if( checkcauseNonCoded1 == "OTHER NON-CODED") {
+			getField('causeNonCoded1.value')[0].disabled = false;
+		} else {
+			getField('causeNonCoded1.value')[0].disabled = true;
+		}
+    });
+     getField('causeNonCoded2.value')[0].disabled = true;
+     getField('cause2.value').change(function() {
+                 var checkcauseNonCoded2= $j("#cause2  option:selected").text();
+              if( checkcauseNonCoded2 == "OTHER NON-CODED") {
+			getField('causeNonCoded2.value')[0].disabled = false;
+		} else {
+			getField('causeNonCoded2.value')[0].disabled = true;
+		}
+    });
+
+      getField('causeNonCoded3.value')[0].disabled = true;
+     getField('cause3.value').change(function() {
+                 var checkcauseNonCoded3= $j("#cause3  option:selected").text();
+              if( checkcauseNonCoded3 == "OTHER NON-CODED") {
+			getField('causeNonCoded3.value')[0].disabled = false;
+		} else {
+			getField('causeNonCoded3.value')[0].disabled = true;
+		}
+    });
+
+
+ getField('reactionNonCoded1.value')[0].disabled = true;
+     getField('reaction1.value').change(function() {
+                 var checkreactionNonCoded1= $j("#reaction1  option:selected").text();
+              if( checkreactionNonCoded1 == "OTHER NON-CODED") {
+			getField('reactionNonCoded1.value')[0].disabled = false;
+		} else {
+			getField('reactionNonCoded1.value')[0].disabled = true;
+		}
+    });
+
+getField('reactionNonCoded2.value')[0].disabled = true;
+     getField('reaction2.value').change(function() {
+                 var checkreactionNonCoded2= $j("#reaction2  option:selected").text();
+              if( checkreactionNonCoded2 == "OTHER NON-CODED") {
+			getField('reactionNonCoded2.value')[0].disabled = false;
+		} else {
+			getField('reactionNonCoded2.value')[0].disabled = true;
+		}
+    });
+
+getField('reactionNonCoded3.value')[0].disabled = true;
+     getField('reaction3.value').change(function() {
+                 var checkreactionNonCoded3= $j("#reaction3  option:selected").text();
+              if( checkreactionNonCoded3 == "OTHER NON-CODED") {
+			getField('reactionNonCoded3.value')[0].disabled = false;
+		} else {
+			getField('reactionNonCoded3.value')[0].disabled = true;
+		}
+    });
+
+	});
+
+
+
+
+
+</script> <script>
+	$j(function() {
+		$j('.disdiv').find('input').attr('disabled', 'true');
+		$j(".hiv").hide();
+                 $j(".hivstatus").hide();
+		$j('#textareadisabled').find('input, textarea, button, select').attr('disabled','true');
+		$j('#disabledConcept').find('input, textarea, button, select').attr('disabled','true');
+		$j(".allergies").hide();
+                getField('otherNonCoded.value')[0].disabled = true;
+	});
+
+</script> <script type="text/javascript">
+	if (jQuery) {
+		$j(document)
+				.ready(
+						function() {
+							if ($j.browser.msie) {
+								$j(":checkbox").click(function() {
+									$j(this).change();
+								});
+							}
+							$j(".enableDisable").each(
+									function() {
+										var group = $j(this);
+										function disableFn() {
+											group.children("#disabled").fadeTo(
+													250, 0.33);
+											group.children("#disabled").find(
+													":checkbox").attr(
+													"checked", false); //uncheck
+											group.children("#disabled").find(
+													"input[type$='text']").val(
+													"");
+											group.children("#disabled").find(
+													"input").attr("disabled",
+													true); //disable
+										}
+										function enableFn() {
+											group.children("#disabled").fadeTo(
+													250, 1);
+											group.children("#disabled").find(
+													"input").attr("disabled",
+													false);
+										}
+										disableFn();
+										$j(this).children("#trigger").find(
+												":checkbox:first").change(
+												function() {
+													var checked = $j(this)
+															.attr("checked");
+													if (checked == true) {
+														enableFn();
+													} else {
+														disableFn();
+													}
+												});
+									});
+
+							$j(".checkboxGroup")
+									.each(
+											function() {
+												var group = $j(this);
+												var uncheckAll = function() {
+													group
+															.find(
+																	"input[type$='checkbox']")
+															.attr("checked",
+																	false);
+													group
+															.find(
+																	"input[type$='checkbox']")
+															.change();
+												}
+												var uncheckRadioAndAll = function() {
+													group
+															.find(
+																	"#checkboxAll,#checkboxRadio")
+															.find(
+																	"input[type$='checkbox']")
+															.attr("checked",
+																	false);
+													group
+															.find(
+																	"#checkboxAll,#checkboxRadio")
+															.find(
+																	"input[type$='checkbox']")
+															.change();
+												}
+
+												group
+														.find("#checkboxAll")
+														.find("input")
+														.click(
+																function() {
+																	var flip;
+																	var checked = $j(
+																			this)
+																			.siblings(
+																					":checkbox:first")
+																			.attr(
+																					"checked");
+																	if ($j(this)
+																			.attr(
+																					"name") == $j(
+																			this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox:first")
+																			.attr(
+																					"name")) {
+																		checked = $j(
+																				this)
+																				.attr(
+																						"checked");
+																		flip = checked;
+																	} else {
+																		flip = !checked;
+																	}
+																	if ($j(this)
+																			.attr(
+																					"type") == "text")
+																		if (flip == false)
+																			flip = !filp; // this is so the user doesn't go to check the checkbox, then uncheck it when they hit the input.
+																	uncheckAll();
+																	$j(this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox")
+																			.attr(
+																					"checked",
+																					flip);
+																	$j(this)
+																			.parents(
+																					"#checkboxAll:first")
+																			.find(
+																					":checkbox")
+																			.change();
+																});
+
+												group
+														.find("#checkboxRadio")
+														.find(
+																"input[type$='checkbox']")
+														.click(
+																function() {
+																	uncheckAll();
+																	$j(this)
+																			.siblings(
+																					"input[type$='checkbox']")
+																			.attr(
+																					"checked",
+																					false);
+																	$j(this)
+																			.attr(
+																					"checked",
+																					true);
+																	$j(this)
+																			.change();
+																});
+
+												group
+														.find(
+																"#checkboxCheckbox")
+														.click(
+																function() {
+																	uncheckRadioAndAll();
+																});
+											});
+						});
+	}
+</script>
+
+
+<form>
+  <section>
+    <table border="1" cellspacing="0" cellpadding="6" width="100%">
+      <tr>
+        <td>
+          <b>
+            IMB ID: <lookup class="value"
+                            expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
+            <br/>
+            <!--                        IMB Primary Care Registration ID:-->
+            <!--                        <lookup-->
+            <!--                                class="value"-->
+            <!--                                expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" />-->
+            <!--                        <br/>-->
+            <!--                        OpenClinic ID:-->
+            <!--                        <lookup class="value"-->
+            <!--                                expression="patientIdentifiers.get(&quot;OpenClinic ID&quot;)" />-->
+            <!--                        <br/>-->
+            <!--                        ARCHIVING ID:-->
+            <!--                        <lookup class="value"-->
+            <!--                                expression="patientIdentifiers.get(&quot;ARCHIVING ID&quot;)" />-->
+            <!--                        <br/>-->
+            Rwanda National ID:
+            <lookup class="value"
+                    expression="patientIdentifiers.get(&quot;Rwanda National ID&quot;)" />
+          </b>
+
+        </td>
+        <td>Date: <encounterDate id="encounterDate" default="today" />
+        </td>
+      </tr>
+      <tr>
+        <td>Nom / Last name: <lookup class="value"
+                                     expression="patient.personName.familyName" />
+        </td>
+        <td>Prénom/ First name: <lookup class="value"
+                                        expression="patient.personName.givenName" />
+        </td>
+      </tr>
+      <tr>
+        <td> Gender: <lookup class="value" expression="patient.gender"/> </td>
+        <td> Date Of Birth: <lookup class="value" expression="patient.birthdate"/> </td>
+      </tr>
+      <tr>
+        <td><img src="/openmrs/moduleResources/rwandareports/images/rwanda-logo.jpg" align="left"
+                 height="65" ></img>
+          <b>REPUBLIC OF RWANDA
+            <br />MINISTRY OF HEALTH</b>
+        </td>
+        <td ><strong>
+          NCD DM diagnosis form
+        </strong> </td>
+      </tr>
+      <tr>
+        <td>Location Name: <encounterLocation
+                id="encounterLocation" />
+        </td>
+        <td>Provider:<encounterProvider id="encounterProvider"
+                                        default="currentUser"/>
+        </td>
+
+      </tr>
+    </table>
+  </section>
+  <section >
+    <h3 class="language en">Blood Pressure and Vitals</h3>
+    <!--    <h3 class="language kiny">Igihe amakuru yafatiwe</h3>-->
+    <table class="form-group" border="1">
+      <tr>
+        <td>
+          <label class="font-normal"> <strong> Height (cm):  </strong> </label>
+        </td>
+
+        <td>
+          <!--          <label class="font-normal">-->
+          <!--            <input class="form-control datepicker" id="obs.reportDate" name="obs.reportDate" type="text"-->
+          <!--                   data-concept="2a1d545e-1167-4d07-b35b-12803e6197cc^Report Date^99DCT" readonly="readonly"/>-->
+          <!--                 data-concept="e2c70f0a-8bb3-4d84-8436-f1f54646030b^Report Date^99DCT" readonly="readonly"/>-->
+<!--          <input class="form-control" id="Height" name="obs.Height" type="number" data-concept="3ce93cf2-26fe-102b-80cb-0017a47871b2^HEIGHT (CM)^99DCT" required="required"/>-->
+          <obs id="Height" size="50" name="obs.Height" conceptId="$@HEIGHT_(CM)@" />
+          <!--          </label>-->
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="font-normal"> <strong> Weight (Kg):  </strong> </label>
+        </td>
+        <td>
+          <!--          <label class="font-normal">-->
+          <!--            <input class="form-control datepicker future-or-today-date" id="obs.dueDate" name="obs.dueDate" type="text"-->
+          <!--                   data-concept="cf26022e-dc33-49a3-99f7-7cb929f48b04^Due date^99DCT" readonly="readonly"/>-->
+<!--          <input class="form-control" id="Weight" name="obs.Weight" type="number" data-concept="3ce93b62-26fe-102b-80cb-0017a47871b2^WEIGHT (KG)^99DCT" required="required"/>-->
+          <obs id="Weight" size="50" name="obs.Weight" conceptId="$@WEIGHT_(KG)@" />
+          <!--          </label>-->
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="font-normal"> <strong> Temperature (in C):  </strong> </label>
+        </td>
+        <td>
+          <!--          <label class="font-normal">-->
+          <!--            <input class="form-control datepicker future-or-today-date" id="obs.dueDate" name="obs.dueDate" type="text"-->
+          <!--                   data-concept="cf26022e-dc33-49a3-99f7-7cb929f48b04^Due date^99DCT" readonly="readonly"/>-->
+          <!--          <input class="form-control" id="Weight" name="obs.Weight" type="number" data-concept="3ce93b62-26fe-102b-80cb-0017a47871b2^WEIGHT (KG)^99DCT" required="required"/>-->
+<!--          <input class="form-control" id="temperature" name="obs.temperature" type="number" data-concept="3ce939d2-26fe-102b-80cb-0017a47871b2^TEMPERATURE (C)^99DCT" required="required"/>-->
+          <obs id="temperature" size="50" name="obs.temperature" conceptId="$@TEMPERATURE_(C)@" />
+          <!--          </label>-->
+        </td>
+      </tr>
+    </table>
+
+    <table border="1">
+      <tr>
+        <th><label class="font-normal"> <strong> Systole (mmHg):  </strong> </label></th>
+        <th><label class="font-normal"> <strong> Diastole (mmHg):  </strong> </label></th>
+        <th><label class="font-normal"> <strong> Pulse (BPM):  </strong> </label></th>
+      </tr>
+      <tr>
+        <td>
+<!--          <input class="form-control"  id="SystolicBloodpressure1" name="obs.Bloodpressure1" type="number" max="250" min="20" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>-->
+          <obs id="SystolicBloodpressure1" name="obs.Bloodpressure1"  size="50" conceptId="$@SYSTOLIC_BLOOD_PRESSURE@" max="250" min="20"/>
+        </td>
+        <td>
+<!--          <input class="form-control" id="diastolicBloodpressure1" name="obs.Bloodpressure1" type="number" max="150" min="30" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>-->
+          <obs id="diastolicBloodpressure1" name="obs.Bloodpressure1"  size="50" conceptId="$@DIASTOLIC_BLOOD_PRESSURE@" max="150" min="30"/>
+
+        </td>
+        <td>
+<!--          <input class="form-control" id="pulse1" name="obs.pulse1" type="number" max="100" min="60" data-concept="3ce93824-26fe-102b-80cb-0017a47871b2^PULSE^99DCT"/>-->
+          <obs id="pulse1" name="obs.pulse1"  conceptId="$@PULSE@" max="100" min="60" size="50" />
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+<!--          <input class="form-control"  id="SystolicBloodpressure2" name="obs.Bloodpressure2" type="number" max="250" min="20" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>-->
+          <obs id="SystolicBloodpressure2" name="obs.Bloodpressure2"  size="50"  conceptId="$@SYSTOLIC_BLOOD_PRESSURE@" max="250" min="20"/>
+
+        </td>
+        <td>
+<!--          <input class="form-control" id="diastolicBloodpressure2" name="obs.Bloodpressure2" type="number" max="150" min="30" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>-->
+          <obs id="diastolicBloodpressure2" name="obs.Bloodpressure2"  size="50"  conceptId="$@DIASTOLIC_BLOOD_PRESSURE@" max="150" min="30"/>
+        </td>
+        <td>
+<!--          <input class="form-control" id="puls2e" name="obs.pulse2" type="number" max="100" min="60" data-concept="3ce93824-26fe-102b-80cb-0017a47871b2^PULSE^99DCT"/>-->
+          <obs id="pulse2" name="obs.pulse2"  conceptId="$@PULSE@" max="100" min="60" size="50" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+<!--          <input class="form-control"  id="SystolicBloodpressure3" name="obs.Bloodpressure3" type="number" max="250" min="20" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>-->
+          <obs id="SystolicBloodpressure3" name="obs.Bloodpressure3"  size="50"  conceptId="$@SYSTOLIC_BLOOD_PRESSURE@" max="250" min="20"/>
+        </td>
+        <td>
+<!--          <input class="form-control" id="diastolicBloodpressure3" name="obs.Bloodpressure3" type="number" max="150" min="30" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>-->
+          <obs id="diastolicBloodpressure3" name="obs.Bloodpressure3"  size="50"  conceptId="$@DIASTOLIC_BLOOD_PRESSURE@" max="150" min="30"/>
+        </td>
+        <td>
+<!--          <input class="form-control" id="pulse3" name="obs.pulse3" type="number" max="100" min="60" data-concept="3ce93824-26fe-102b-80cb-0017a47871b2^PULSE^99DCT"/>-->
+          <obs id="pulse3" name="obs.pulse3"  conceptId="$@PULSE@" max="100" min="60" size="50" />
+
+        </td>
+      </tr>
+    </table>
+    <h3> <strong>Blood Glucose</strong> </h3>
+    <table border="1">
+      <tr>
+        <td>
+          <label class="font-normal"> <strong> Blood Glucose (mg/dl):  </strong> </label>
+        </td>
+        <td>
+          <obs id="BloodSugar" name="obs.BloodSugar" conceptId="$@SERUM_GLUCOSE@" size="50" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="font-normal"> <strong> Time of Last Meal:  </strong> </label>
+        </td>
+        <td>
+          <obs max="250" min="20" id="lastMeal" name="obs.lastMeal" conceptId="$@Time_of_last_meal@"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="font-normal"> <strong> HbA1C (mg/dL):  </strong> </label>
+          <!--          <label class="font-normal" class="language kiny"> <strong> Uko umuvuduko wifashe :  </strong> </label>-->
+        </td>
+        <td>
+          <obs id="obs.HbA1C" name="obs.HbA1C" conceptId="$@HbA1c@"/>
+        </td>
+      </tr>
+    </table>
+    <h3> <strong><u> Symptoms</u></strong> </h3>
+    <label class="font-normal">Since the last assessment, has the patient had any new or worsening symptoms?</label>
+    <table border="1">
+      <tr>
+        <td>
+          <h4> <strong>Hypertension</strong> </h4>
+        </td>
+        <td>
+          <obs id="NewWorseningSymptomsNewWorseningSymptoms" name="obs.NewWorseningSymptoms" conceptId="$@New_worsening_Hypertension_symptoms@"
+               answerConceptIds="$@Syncope@,$@SEIZURE@,$@Blurry_vision_or_Sudden_vision_loss@,$@numbness_on_side_of_body_or_limb@,$@Swelling_of_limbs@,$@Dizziness_upon_standing_up@,$@Chest_pain_or_discomfort@,
+                $@Swelling_of_tongue_or_lips@,$@Palpitations_or_irregular_heart_beats@,$@Shortness_of_breath_with_usual_activities@,$@No_symptoms@,$@OTHER_NON-CODED@"
+               answerLabels="Syncope,SEIZURE,Blurry vision or Sudden vision loss,numbness on side of body or limb,Swelling of limbs,Dizziness upon standing up, Chest pain or discomfort,
+Swelling of tongue or lips,Palpitations or irregular heart beats,Shortness of breath with usual activities,No symptoms,Other " style="checkbox"/>
+          <br/><br/><br/>
+          <label class="font-normal">Other Symptoms</label>
+          <obs id="otherSystom" name="obs.otherSystom" cols="80" conceptId="$@REVIEW_OF_SYMPTOMS_OTHER@"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong><label class="font-normal">During the last week, how many doses of patient's medication were taken?</label></strong>
+        </td>
+        <td>
+          <obs id="DosesTakenLastWeekTookAllMedication" name="DosesTakenLastWeek" conceptId="$@Doses_of_medication_taken_last_week@"/>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="font-normal language en"> <strong> Cause of not taking medication:  </strong> </label>
+        </td>
+        <td>
+          <obs id="DidNotTakeAnyMedicationMedicationCausedSideEffects" name="obs.DidNotTakeAnyMedication" conceptId="$@Did_not_take_any_medication@"/>
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <br />
+  <br />
+  <submit />
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <encounterVoided/>
+</form>
+</htmlform>

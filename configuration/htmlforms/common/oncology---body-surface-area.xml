@@ -17,6 +17,7 @@
 		@PATIENT_IDENTIFIER@=IMB ID
     
 		@WEIGHT_KG@=3ce93b62-26fe-102b-80cb-0017a47871b2
+		@WEIGHT_KG_id@ = 5089
 		@HEIGHT_CM@=5090
 		@BSA@= 	b7eb9d2f-0642-4984-8778-ba603e703a38
     </macros>
@@ -106,6 +107,9 @@ border-collapse:collapse;
 				<td align="left">
 					<obs conceptId="$@WEIGHT_KG@" id="weight"/> 
 				</td>
+				<th>
+					<span class="lastHeight"> Last Weight: <lookup expression="fn.latestObs($@WEIGHT_KG_id@).valueNumeric"/> Date: <lookup expression="fn.latestObs($@WEIGHT_KG_id@).obsDatetime"/></span>
+				</th>
 			</tr>
 			<tr>
 				<th>Taille /<br/>Height (cm)</th>
@@ -144,203 +148,217 @@ border-collapse:collapse;
 	</span> 
 
 <script type="text/javascript">
-$j(document).ready(function() {
-	
-	$j('.heightForAge').hide();
-	$j('.weightForAge').hide();
-	$j('.heightWeight').hide();
-	$j('.lastHeight').hide();
-	
-	var lastHeight = "<lookup expression="fn.latestObs($@HEIGHT_CM@).valueNumeric"/>";
-	var lastHeightDate = "<lookup expression="fn.latestObs($@HEIGHT_CM@).obsDatetime"/>";
-	
-	var birthDate = $j('.birthdate').text();
-	var date = getValue('encounter.value');
-	
-	var months = monthDiff(birthDate, date);
-	
-	if(months &gt; 228)
-	{
-		$j('.lastHeight').show();
-	}
-	
-	getField('height.value').change(function() {
-		
-		var patientId = $j('[name=personId]').val();
-		var gender = $j('.gender').text();
-		
-		var length = getValue("height.value");
-		
-		if(date != null)
-		{ 
-			if(months &gt; 228)
-			{
-				var weight = getValue("weight.value");
-				if(length != null &amp;&amp; length &gt; 0 &amp;&amp; weight != null &amp;&amp; weight &gt; 0)
-				{
-					var bsa = calculateBSA(length, weight);
-					
-					setValue('bsaVal.value', bsa);
-				}
-				else if (lastHeight != null &amp;&amp; lastHeight &gt; 0 &amp;&amp; weight != null &amp;&amp; weight &gt; 0)
-				{
-					var monthsLastHeight = monthDiff(lastHeightDate, birthDate);
-					if(monthsLastHeight &gt; 228)
-					{
-						var bsa = calculateBSA(lastHeight, weight);
-						
-						setValue('bsaVal.value', bsa);	
-					}
-				}
-			}
-			else 
-			{
-				var weight = getValue("weight.value");
-				if(length != null &amp;&amp; length &gt; 0 &amp;&amp; weight != null &amp;&amp; weight &gt; 0)
-				{
-					var bsa = calculateBSA(length, weight);
-					
-					setValue('bsaVal.value', bsa);
-				}
-			}
-		}
-	});
-	
-	getField('weight.value').change(function() {
-		var patientId = $j('[name=personId]').val();
+	if(jQuery){
 
-		
-		var gender = $j('.gender').text();
-		var weight = getValue("weight.value");
-		
-		if(date != null)
-		{ 
+		$j(document).ready(function() {
+
+			$j('.heightForAge').hide();
+			$j('.weightForAge').hide();
+			$j('.heightWeight').hide();
+			$j('.lastHeight').hide();
+
+
+			var lastHeight = "<lookup expression="fn.latestObs($@HEIGHT_CM@).valueNumeric"/>";
+			var lastHeightDate = "<lookup expression="fn.latestObs($@HEIGHT_CM@).obsDatetime"/>";
+
+			var birthDate = $j('.birthdate').text();
+			var date = getValue('encounter.value');
+
+			var months = monthDiff(birthDate, date);
+
 			if(months &gt; 228)
 			{
+				$j('.lastHeight').show();
+			}
+
+			getField('height.value').change(function() {
+
+				var patientId = $j('[name=personId]').val();
+				var gender = $j('.gender').text();
+
 				var length = getValue("height.value");
-				
-				if(length != null &amp;&amp; weight != null &amp;&amp; length &gt; 0 &amp;&amp; weight &gt; 0)
+
+				if(date != null)
 				{
-					var bsa = calculateBSA(length, weight);
-					
-					setValue('bsaVal.value', bsa);
-				}
-				else if (weight != null &amp;&amp; lastHeight != null &amp;&amp; lastHeight &gt; 0 &amp;&amp; weight &gt; 0)
-				{
-					var monthsLastHeight = monthDiff(birthDate, lastHeightDate);
-					
-					if(monthsLastHeight &gt; 228)
+					if(months &gt; 228)
 					{
-					
-						var bsa = calculateBSA(lastHeight, weight);
-						
-						setValue('bsaVal.value', bsa);
-					}
-				}
-			}
-			else {
-				var length = getValue("height.value");
-				if(length != null &amp;&amp; weight != null &amp;&amp; length &gt; 0 &amp;&amp; weight &gt; 0)
-				{
-					var bsa = calculateBSA(length, weight);
-					
-					setValue('bsaVal.value', bsa);
-				}
-			}
-		}
-	});
-		
-		getField('encounter.value').change(function() {
-			
-			var patientId = $j('[name=personId]').val();
-			
-			var gender = $j('.gender').text();
-			
-			date = getValue("encounter.value");
-			var length = getValue("height.value");
-			var weight = getValue("weight.value");
-			
-			
-			months = monthDiff(birthDate, date);
-			if(months &lt; 229)
-			{
-				$j('.lastHeight').hide();
-			}
-			
-		
-			if(weight != null &amp;&amp; weight &gt; 0)
-			{ 			
-				if(months &gt; 228)
-				{
-					var length = getValue("height.value");
-					if(length != null)
-					{
-						var bsa = calculateBSA(length, weight);
-						
-						setValue('bsaVal.value', bsa);
-					}
-					else if (lastHeight != null)
-					{
-						var monthsLastHeight = monthDiff(lastHeightDate, birthDate);
-						if(monthsLastHeight &gt; 228)
+						var weight = getValue("weight.value");
+						if(length != null &amp;&amp; length &gt; 0 &amp;&amp; weight != null &amp;&amp; weight &gt; 0)
 						{
-							var bsa = calculateBSA(lastHeight, weight);
-							
+							var bsa = calculateBSA(length, weight);
+
+							setValue('bsaVal.value', bsa);
+						}
+						else if (lastHeight != null &amp;&amp; lastHeight &gt; 0 &amp;&amp; weight != null &amp;&amp; weight &gt; 0)
+						{
+							var monthsLastHeight = monthDiff(lastHeightDate, birthDate);
+							if(monthsLastHeight &gt; 228)
+							{
+								var bsa = calculateBSA(lastHeight, weight);
+
+								setValue('bsaVal.value', bsa);
+							}
+						}
+					}
+					else
+					{
+						var weight = getValue("weight.value");
+						if(length != null &amp;&amp; length &gt; 0 &amp;&amp; weight != null &amp;&amp; weight &gt; 0)
+						{
+							var bsa = calculateBSA(length, weight);
+
 							setValue('bsaVal.value', bsa);
 						}
 					}
 				}
-				else {
-					var length = getValue("height.value");
-					if(length != null)
+			});
+
+			getField('weight.value').change(function() {
+				var patientId = $j('[name=personId]').val();
+
+
+				var gender = $j('.gender').text();
+				var weight = getValue("weight.value");
+
+				if(date != null)
+				{
+					if(months &gt; 228)
 					{
-						var bsa = calculateBSA(length, weight);
-						
-						setValue('bsaVal.value', bsa);
+						var length = getValue("height.value");
+
+						if(length != null &amp;&amp; weight != null &amp;&amp; length &gt; 0 &amp;&amp; weight &gt; 0)
+						{
+							var bsa = calculateBSA(length, weight);
+
+							setValue('bsaVal.value', bsa);
+						}
+						else if (weight != null &amp;&amp; lastHeight != null &amp;&amp; lastHeight &gt; 0 &amp;&amp; weight &gt; 0)
+						{
+							var monthsLastHeight = monthDiff(birthDate, lastHeightDate);
+
+							if(monthsLastHeight &gt; 228)
+							{
+
+								var bsa = calculateBSA(lastHeight, weight);
+
+								setValue('bsaVal.value', bsa);
+							}
+						}
+					}
+					else {
+						var length = getValue("height.value");
+						if(length != null &amp;&amp; weight != null &amp;&amp; length &gt; 0 &amp;&amp; weight &gt; 0)
+						{
+							var bsa = calculateBSA(length, weight);
+
+							setValue('bsaVal.value', bsa);
+						}
 					}
 				}
+				var lastWeight = "<lookup expression="fn.latestObs($@WEIGHT_KG@).valueNumeric"/>";
+				if((weight - lastWeight)/weight > 0.05 || (lastWeight - weight)/weight > 0.05){
+					alert("Entered weight is more that 5% or 5 % less than the previous weight !"  );
+				}
+			});
+
+				getField('encounter.value').change(function() {
+
+					var patientId = $j('[name=personId]').val();
+
+					var gender = $j('.gender').text();
+
+					date = getValue("encounter.value");
+					var length = getValue("height.value");
+					var weight = getValue("weight.value");
+
+
+					months = monthDiff(birthDate, date);
+					if(months &lt; 229)
+					{
+						$j('.lastHeight').hide();
+					}
+
+
+					if(weight != null &amp;&amp; weight &gt; 0)
+					{
+						if(months &gt; 228)
+						{
+							var length = getValue("height.value");
+							if(length != null)
+							{
+								var bsa = calculateBSA(length, weight);
+
+								setValue('bsaVal.value', bsa);
+							}
+							else if (lastHeight != null)
+							{
+								var monthsLastHeight = monthDiff(lastHeightDate, birthDate);
+								if(monthsLastHeight &gt; 228)
+								{
+									var bsa = calculateBSA(lastHeight, weight);
+
+									setValue('bsaVal.value', bsa);
+								}
+							}
+						}
+						else {
+							var length = getValue("height.value");
+							if(length != null)
+							{
+								var bsa = calculateBSA(length, weight);
+
+								setValue('bsaVal.value', bsa);
+							}
+						}
+					}
+
+
+			});
+			});
+
+
+
+			function monthDiff(date1, date2) {
+				var months;
+
+				var d1 = new Date();
+				d1.setTime(Date.parse(date1));
+
+				var d2 = new Date();
+				d2.setTime(Date.parse(date2));
+
+				months = (d2.getFullYear() - d1.getFullYear()) * 12;
+				if(d2.getMonth() > d1.getMonth())
+				{
+					months = months + (d2.getMonth() - d1.getMonth());
+				}
+				else if(d1.getMonth() > d2.getMonth())
+				{
+					months = months - (d1.getMonth() - d2.getMonth());
+				}
+				if(d1.getDate() > d2.getDate())
+				{
+					months = months - 1;
+				}
+
+				return months;
 			}
-		});
-	});
-	
-	
-	
-	function monthDiff(date1, date2) {
-	    var months;
-	    
-	    var d1 = new Date();
-	    d1.setTime(Date.parse(date1));
-	    
-	    var d2 = new Date();
-	    d2.setTime(Date.parse(date2));
-	   
-	    months = (d2.getFullYear() - d1.getFullYear()) * 12;
-	    if(d2.getMonth() > d1.getMonth())
-	    {
-	    	months = months + (d2.getMonth() - d1.getMonth());
-	    }
-	    else if(d1.getMonth() > d2.getMonth())
-	    {
-	    	months = months - (d1.getMonth() - d2.getMonth());
-	    }
-	   	if(d1.getDate() > d2.getDate())
-	   	{
-	   		months = months - 1;	
-	   	}
-	    
-	    return months;
+
+			function calculateBSA(length, weight) {
+				var bsa;
+
+				bsa = (length*weight)/3600
+				bsa = Math.sqrt(bsa);
+
+				bsa = parseFloat(bsa).toFixed(2);
+
+				return bsa;
+			}
+
+
+			})
 	}
 
-	function calculateBSA(length, weight) {
-	    var bsa;
-	    
-	    bsa = (length*weight)/3600
-	    bsa = Math.sqrt(bsa);
-
-	    bsa = parseFloat(bsa).toFixed(2);
-	    
-	    return bsa;
-	}
 
 </script>
 <br/>

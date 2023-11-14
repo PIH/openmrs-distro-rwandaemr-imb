@@ -1,0 +1,18 @@
+[
+  {
+    "id": "coreapps.appointmentsApp",
+    "instanceOf": "coreapps.template.findPatient",
+    "description": "Opening moh appointment provider dashboard window in legacy UI",
+    "order": 2,
+    "extensions": [
+      {
+        "id": "imbemr.appointmentsApp",
+        "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+        "type": "link",
+        "label": "Appointments",
+        "url": "module/mohappointment/providerDashboard.form",
+        "icon": "icon-th-list"
+      }
+    ]
+  }
+]

@@ -1,0 +1,9 @@
+[
+    {
+        "id": "registrationapp.editPatientBillingInfo",
+        "extensionPointId": "patientHeader.editPatientBillingInfo",
+        "type": "link",
+        "label": "general.edit",
+        "url": "registrationapp/editSection.page?patientId={{patient.patientId}}&sectionId=billingInfo&appId=referenceapplication.registrationapp.registerPatient"
+    }
+]

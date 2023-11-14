@@ -52,10 +52,30 @@
         "extensionPointId": "patientDashboard.visitActions",
         "type": "link",
         "label": "referenceapplication.app.capturevitals.title",
-        "url": "htmlformentryui/htmlform/enterHtmlFormWithSimpleUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=referenceapplication:htmlforms/vitals.xml",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithSimpleUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file%3Aconfiguration%2Fhtmlforms%2Fvitals.xml",
         "icon": "icon-vitals",
         "order": 52,
         "requiredPrivilege": "Task: referenceapplication.vitals",
+        "require": "visit.active"
+    },
+    {
+        "id": "referenceapplication.realTime.admission",
+        "extensionPointId": "patientDashboard.visitActions",
+        "type": "link",
+        "label": "Admission Form",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithSimpleUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file%3Aconfiguration%2Fhtmlforms%2Fauto-ipd-admission.xml",
+        "icon": "icon-stethoscope",
+        "order": 52,
+        "require": "visit.active && visit.admitted"
+    },
+    {
+        "id": "referenceapplication.realTime.labOrder",
+        "extensionPointId": "patientDashboard.visitActions",
+        "type": "link",
+        "label": "Lab Request",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithSimpleUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file%3Aconfiguration%2Fhtmlforms%2Fauto-ipd-admission.xml",
+        "icon": "icon-beaker",
+        "order": 52,
         "require": "visit.active"
     },
     {

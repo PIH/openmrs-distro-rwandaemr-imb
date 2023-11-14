@@ -1,0 +1,18 @@
+[
+  {
+    "id": "coreapps.dictionaryApp",
+    "instanceOf": "coreapps.template.findPatient",
+    "description": "Opening dictionary window in legacy UI",
+    "order": 2,
+    "extensions": [
+      {
+        "id": "imbemr.dictionaryApp",
+        "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+        "type": "link",
+        "label": "Dictionary",
+        "url": "dictionary/index.htm",
+        "icon": "icon-book"
+      }
+    ]
+  }
+]

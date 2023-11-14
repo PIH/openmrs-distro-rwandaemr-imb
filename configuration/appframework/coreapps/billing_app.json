@@ -1,0 +1,18 @@
+[
+  {
+    "id": "coreapps.billingApp",
+    "instanceOf": "coreapps.template.findPatient",
+    "description": "Opening Billing window in legacy UI",
+    "order": 2,
+    "extensions": [
+      {
+        "id": "imbemr.billingApp",
+        "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+        "type": "link",
+        "label": "Billing",
+        "url": "module/mohbilling/insurancePolicySearch.form",
+        "icon": "icon-money"
+      }
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+[
+    {
+        "id": "coreapps.patientDashboard.includeFragments",
+        "extensionPointId": "patientDashboard.includeFragments",
+        "extensionParams": {
+            "provider": "coreapps",
+            "fragment": "patientdashboard/visitIncludes"
+        }
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "id": "coreapps.patientHeader.secondLineFragments.activeVisitStatus",
+        "extensionPointId": "patientHeader.secondLineFragments",
+        "extensionParams": {
+            "provider": "coreapps",
+            "fragment": "patientheader/activeVisitStatus"
+        }
+    },
+    {
+        "id": "coreapps.patientHeader.secondLineFragments.stickyNote",
+        "extensionPointId": "patientHeader.secondLineFragments",
+        "extensionParams": {
+            "provider": "coreapps",
+            "fragment": "stickyNote"
+        }
+    }
+]

@@ -1,0 +1,11 @@
+[
+    {
+        "id": "imbemr.myAccountHomePageLink",
+        "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+        "type": "link",
+        "label": "authenticationui.myAccount.title",
+        "url": "authenticationui/account/userAccount.page",
+        "icon": "icon-user",
+        "order": 100
+    }
+]

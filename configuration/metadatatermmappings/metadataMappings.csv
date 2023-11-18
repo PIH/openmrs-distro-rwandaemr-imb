@@ -1,0 +1,2 @@
+Uuid,Mapping source,Mapping code,Metadata class name,Metadata uuid
+6c63c917-6b57-458c-8f36-f460ca70f67d,org.openmrs.module.emrapi,emr.primaryIdentifierType,org.openmrs.PatientIdentifierType,c147b1de-2700-102b-80cb-0017a47871b2

@@ -9,7 +9,7 @@
       "admin-edit-user-page-url": "/admin/users/user.form",
       "required-privilege": "Edit User Passwords",
       "phone-number-person-attribute-type": "667f45ee-977f-11e1-8993-905e29aff6c1",
-      "default-location-user-property": ""
+      "default-location-user-property": "defaultLocation"
     }
   },
   {

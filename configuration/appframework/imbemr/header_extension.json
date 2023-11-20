@@ -1,0 +1,17 @@
+[
+    {
+        "id": "imbemr.headerConfig",
+        "extensionPointId": "org.openmrs.module.appui.header.config",
+        "type": "config",
+        "extensionParams": {
+
+        }
+    },
+    {
+        "id": "imbemr.myAccountHeaderLink",
+        "extensionPointId": "org.openmrs.module.appui.header.userAccount.menuItems",
+        "type": "link",
+        "label": "authenticationui.myAccount.title",
+        "url": "authenticationui/account/userAccount.page"
+    }
+]

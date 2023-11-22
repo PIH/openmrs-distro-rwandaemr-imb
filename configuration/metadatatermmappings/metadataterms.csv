@@ -1,7 +1,0 @@
-Uuid,Void/Retire,Mapping code,Mapping source,Metadata class name,Metadata Uuid,_order:2000
-90891af5-340f-4f48-a183-cd73fdeaae47,,emr.primaryIdentifierType,org.openmrs.module.emrapi,org.openmrs.PatientIdentifierType,4e458867-9a68-4e55-9fe0-fb49fac4e6b0,
-32339567-c4c4-4bf9-804f-de848f1e23c3,,emr.atFacilityVisitType,org.openmrs.module.emrapi,org.openmrs.VisitType,d0ce5266-c4ce-4a2a-88e5-88cccd71fe50,
-c870634a-7e9b-4e9f-a114-a7e9ac904fc4,,emr.checkInEncounterType,org.openmrs.module.emrapi,org.openmrs.EncounterType,5360c000-c7af-47d0-826a-b2085221aa10,
-d6f6549f-6345-40c1-8469-e4bd9b037c13,,emr.visitNoteEncounterType,org.openmrs.module.emrapi,org.openmrs.EncounterType,75caca4e-33ca-4b0a-aa63-5ed29f3000f0,
-f4a395f1-cda9-470e-9991-0171dd54815b,,emr.admissionEncounterType,org.openmrs.module.emrapi,org.openmrs.EncounterType,8e3c016e-cfca-407a-8214-2f071b3d8da2,
-6bd40619-719e-4b3c-9b32-e01ccb233bde,,emr.exitFromInpatientEncounterType,org.openmrs.module.emrapi,org.openmrs.EncounterType,13703c92-58d2-4d04-a320-8d4699380676,

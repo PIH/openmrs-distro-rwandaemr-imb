@@ -1,7 +1,6 @@
 [
   {
-    "id": "coreapps.appointmentsApp",
-    "instanceOf": "coreapps.template.findPatient",
+    "id": "imbemr.appointmentsApp",
     "description": "Opening moh appointment provider dashboard window in legacy UI",
     "order": 2,
     "extensions": [

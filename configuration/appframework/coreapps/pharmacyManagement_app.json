@@ -1,0 +1,17 @@
+[
+  {
+    "id": "imbemr.pharmacyStoreApp",
+    "description": "Opening moh pharmacy management window in legacy UI",
+    "order": 2,
+    "extensions": [
+      {
+        "id": "imbemr.pharmacyStoreApp",
+        "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+        "type": "link",
+        "label": "Pharmacy Management",
+        "url": "module/pharmacymanagement/storequest.form",
+        "icon": "icon-medkit"
+      }
+    ]
+  }
+]

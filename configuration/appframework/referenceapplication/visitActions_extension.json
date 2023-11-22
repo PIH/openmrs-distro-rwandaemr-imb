@@ -52,7 +52,7 @@
         "extensionPointId": "patientDashboard.visitActions",
         "type": "link",
         "label": "referenceapplication.app.capturevitals.title",
-        "url": "htmlformentryui/htmlform/enterHtmlFormWithSimpleUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file%3Aconfiguration%2Fhtmlforms%2Fvitals.xml",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithSimpleUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/vitals.xml",
         "icon": "icon-vitals",
         "order": 52,
         "requiredPrivilege": "Task: referenceapplication.vitals",
@@ -73,8 +73,18 @@
         "extensionPointId": "patientDashboard.visitActions",
         "type": "link",
         "label": "Lab Request",
-        "url": "htmlformentryui/htmlform/enterHtmlFormWithSimpleUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file%3Aconfiguration%2Fhtmlforms%2Fauto-ipd-admission.xml",
+        "url": "imbemr/patient/labOrders.page?patientId={{patient.uuid}}",
         "icon": "icon-beaker",
+        "order": 52,
+        "require": "visit.active"
+    },
+    {
+        "id": "referenceapplication.realTime.drugOrder",
+        "extensionPointId": "patientDashboard.visitActions",
+        "type": "link",
+        "label": "Drug Order",
+        "url": "imbemr/patient/drugOrders.page?patientId={{patient.uuid}}",
+        "icon": "icon-plus-sign",
         "order": 52,
         "require": "visit.active"
     },

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "imbemr.labManageApp",
+    "description": "Opening moh laboratory management window in legacy UI",
+    "order": 2,
+    "extensions": [
+      {
+        "id": "imbemr.labManageApp",
+        "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+        "type": "link",
+        "label": "Laboratory Management",
+        "url": "module/laboratorymanagement/viewLabOrder.form",
+        "icon": "icon-beaker"
+      }
+    ]
+  }
+]

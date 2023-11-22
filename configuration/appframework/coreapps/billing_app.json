@@ -1,7 +1,6 @@
 [
   {
-    "id": "coreapps.billingApp",
-    "instanceOf": "coreapps.template.findPatient",
+    "id": "imbemr.billingApp",
     "description": "Opening Billing window in legacy UI",
     "order": 2,
     "extensions": [

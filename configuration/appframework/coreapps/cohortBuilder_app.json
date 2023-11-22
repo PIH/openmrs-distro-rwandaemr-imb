@@ -1,7 +1,6 @@
 [
   {
-    "id": "coreapps.cohortBuilderApp",
-    "instanceOf": "coreapps.template.findPatient",
+    "id": "imbemr.cohortBuilderApp",
     "description": "Opening cohort builder window in legacy UI",
     "order": 2,
     "extensions": [

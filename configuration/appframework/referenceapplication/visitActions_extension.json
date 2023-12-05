@@ -79,6 +79,16 @@
         "require": "visit.active"
     },
     {
+        "id": "referenceapplication.realTime.manualBilling",
+        "extensionPointId": "patientDashboard.visitActions",
+        "type": "link",
+        "label": "Billing",
+        "url": "imbemr/patient/manualBilling.page?patientId={{patient.uuid}}",
+        "icon": "icon-money",
+        "order": 52,
+        "require": "visit.active"
+    },
+    {
         "id": "referenceapplication.realTime.drugOrder",
         "extensionPointId": "patientDashboard.visitActions",
         "type": "link",

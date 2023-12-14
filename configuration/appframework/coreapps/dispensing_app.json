@@ -1,0 +1,17 @@
+[
+  {
+    "id": "imbemr.dispensingApp",
+    "description": "Home Page Link to Dispensing App",
+    "order": 20,
+    "extensions": [
+      {
+        "id": "imbemr.dispensingApp",
+        "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+        "type": "link",
+        "label": "Dispensing",
+        "url": "spa/dispensing",
+        "icon": "icon-th-list"
+      }
+    ]
+  }
+]

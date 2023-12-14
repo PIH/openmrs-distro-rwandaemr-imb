@@ -1,0 +1,25 @@
+[
+  {
+    "id": "coreapps.app.programsList",
+    "order": 10,
+    "config": {
+      "widget": "programs",
+      "icon": "icon-stethoscope",
+      "label": "coreapps.programsDashboardWidget.label",
+      "dateFormat": "dd MM yyyy",
+      "enableProgramDashboards": true
+    },
+    "extensions": [
+      {
+        "id": "coreapps.app.programsList.secondColumn",
+        "appId": "coreapps.app.programsList",
+        "extensionPointId": "patientDashboard.secondColumnFragments",
+        "extensionParams": {
+          "provider": "coreapps",
+          "fragment": "dashboardwidgets/dashboardWidget"
+        }
+      }
+    ]
+  }
+]
+

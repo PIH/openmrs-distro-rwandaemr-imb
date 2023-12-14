@@ -3,7 +3,10 @@
     "id": "coreapps.diagnoses",
     "label": "coreapps.clinicianfacing.diagnoses",
     "icon": "icon-diagnosis",
-    "order": 1,
+    "order": 7,
+    "config": {
+      "conceptId": "2dce81f9-3874-4247-b441-6369ca0725c2"
+    },
     "extensions": [
       {
         "id": "coreapps.diagnoses.clinicianDashboardFirstColumn",

@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -202,7 +203,9 @@
                             <goal>npx</goal>
                         </goals>
                         <configuration>
-                            <arguments>--legacy-peer-deps openmrs@next assemble --mode config --config spa-build-config.json --target target/dist</arguments>
+                            <arguments>--legacy-peer-deps openmrs@next assemble --mode config --config
+                                spa-build-config.json --target target/dist
+                            </arguments>
                         </configuration>
                     </execution>
                     <execution>
@@ -211,7 +214,9 @@
                             <goal>npx</goal>
                         </goals>
                         <configuration>
-                            <arguments>--legacy-peer-deps openmrs@next build --build-config spa-build-config.json --target target/dist</arguments>
+                            <arguments>--legacy-peer-deps openmrs@next build --build-config spa-build-config.json
+                                --target target/dist
+                            </arguments>
                         </configuration>
                     </execution>
                 </executions>
@@ -241,4 +246,93 @@
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id>configuration-only</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <version>3.2.0</version>
+                        <executions>
+                            <execution>
+                                <id>copy-base-configuration-into-distro</id>
+                                <phase>process-resources</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <configuration>
+                                    <resources>
+                                        <resource>
+                                            <directory>${basedir}/../configuration/</directory>
+                                            <excludes>
+                                                <exclude>groovy_scripts/*</exclude>
+                                                <exclude>htmlforms/**/*</exclude>
+                                                <exclude>mUzima/*</exclude>
+                                                <exclude>Sync Configuration/*</exclude>
+                                            </excludes>
+                                            <filtering>true</filtering>
+                                        </resource>
+                                    </resources>
+                                    <outputDirectory>${project.build.directory}/configuration</outputDirectory>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>copy-htmlforms-common-into-distro</id>
+                                <phase>process-resources</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <configuration>
+                                    <resources>
+                                        <resource>
+                                            <directory>${basedir}/../configuration/htmlforms/common</directory>
+                                            <filtering>true</filtering>
+                                        </resource>
+                                    </resources>
+                                    <outputDirectory>${project.build.directory}/configuration/htmlforms
+                                    </outputDirectory>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>copy-htmlforms-rwinkwavu-only-into-distro</id>
+                                <phase>process-resources</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <configuration>
+                                    <resources>
+                                        <resource>
+                                            <directory>${basedir}/../configuration/htmlforms/rwinkwavu-only</directory>
+                                            <filtering>true</filtering>
+                                        </resource>
+                                    </resources>
+                                    <outputDirectory>${project.build.directory}/configuration/htmlforms
+                                    </outputDirectory>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>copy-htmlforms-rwinkwavu-variants-into-distro</id>
+                                <phase>process-resources</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <configuration>
+                                    <resources>
+                                        <resource>
+                                            <directory>${basedir}/../configuration/htmlforms/rwinkwavu-variants
+                                            </directory>
+                                            <filtering>true</filtering>
+                                        </resource>
+                                    </resources>
+                                    <outputDirectory>${project.build.directory}/configuration/htmlforms
+                                    </outputDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

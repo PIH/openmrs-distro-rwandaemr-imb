@@ -237,5 +237,34 @@
         "redirect": "/openmrs/module/reporting/dashboard/index.form"
       }
     ]
+  },
+  "@openmrs/esm-dispensing-app": {
+    "dispenseBehavior": {
+      "allowModifyingPrescription": false,
+      "restrictTotalQuantityDispensed": true
+    },
+    "locationBehavior": {
+      "locationColumn": {
+        "enabled": true
+      },
+      "locationFilter": {
+        "enabled": true,
+        "tag": "Login Location"
+      }
+    },
+    "valueSets": {
+      "reasonForPause": {
+        "uuid": "799604a6-7df6-48b7-a946-9d05765d58ac"
+      },
+      "reasonForClose": {
+        "uuid": "a0b009f9-30fa-447a-8ea8-c143c98a1146"
+      },
+      "substitutionReason": {
+        "uuid": "ad346753-0eb5-4ecb-aeda-ce6bee033a7e"
+      },
+      "substitutionType": {
+        "uuid": "2f280f46-3a17-40dd-9033-41874c6e0a99"
+      }
+    }
   }
 }

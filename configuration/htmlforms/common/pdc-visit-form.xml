@@ -134,28 +134,59 @@
                 }
 
              });
-        /* pop ups */
-            getField("inadequate.value").change(function() {
-                window.alert("Please fill out malnutrition form");
-            });
-            getField("AGE_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2.value").change(function() {
-                window.alert("Please fill out malnutrition form");
-            });
-            getField("AGE_Z_SCORE_LESS_THAN_THREE.value").change(function() {
-                window.alert("Please fill out malnutrition form");
-            });
-            getField("HT_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2.value").change(function() {
-                window.alert("Please fill out malnutrition form");
-            });
-            getField("HT_Z_SCORE_LESS_THAN_THREE.value").change(function() {
-                window.alert("Please fill out malnutrition form");
-            });
+        beforeSubmit.push(function() {
+            /* pop ups */
+                var inadequate = getValue('inadequate.value');
+                var AGE_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2 = getValue('AGE_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2.value');
+                var AGE_Z_SCORE_LESS_THAN_THREE = getValue('AGE_Z_SCORE_LESS_THAN_THREE.value');
+                var HT_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2 = getValue('HT_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2.value');
+                var HT_Z_SCORE_LESS_THAN_THREE = getValue('HT_Z_SCORE_LESS_THAN_THREE.value');
+
+                if(inadequate != null &#38;&#38; inadequate != ''){
+                    window.alert("Please fill out malnutrition form");
+                }
+                else if(AGE_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2 != null &#38;&#38; AGE_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2 != ''){
+                    window.alert("Please fill out malnutrition form");
+                }
+                else if(AGE_Z_SCORE_LESS_THAN_THREE != null &#38;&#38; AGE_Z_SCORE_LESS_THAN_THREE != ''){
+                    window.alert("Please fill out malnutrition form");
+                }
+                else if(HT_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2 != null &#38;&#38; HT_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2 != ''){
+                    window.alert("Please fill out malnutrition form");
+                }
+                else if(HT_Z_SCORE_LESS_THAN_THREE != null &#38;&#38; HT_Z_SCORE_LESS_THAN_THREE != ''){
+                    window.alert("Please fill out malnutrition form");
+                }
+            return true;
+
+        });
         /* auto calculations */
             autoFillChronologicalAndCorrectedAge();
             getField("encounterDate.value").change(function() {
                 autoFillChronologicalAndCorrectedAge();
             });
+        /* INTERVAL GROWTH */
 
+
+            getField("WEIGHT.value").change(function() {
+
+                var prevousWeight = $j('#prevousWeight').text();
+                var prevousWeightObsDatetime = $j('#prevousWeightObsDatetime').text();
+                var currentDate = getValue('encounterDate.value');
+                var prevousWeightDateObj = new Date(prevousWeightObsDatetime);
+                var currentDateObj = new Date(currentDate);
+                var differenceInTime = currentDateObj - prevousWeightDateObj;
+                var differenceIndays = differenceInTime / (24 * 60 * 60 * 1000);
+                var intervalGrowth = (getValue('WEIGHT.value') - prevousWeight)/ differenceIndays
+                intervalGrowth = parseFloat(intervalGrowth.toFixed(2));
+                alert("prevousWeight: " + prevousWeight);
+                alert("intervalGrowth: " + intervalGrowth);
+                alert("prevousWeightObsDatetime: " + prevousWeightObsDatetime);
+                if($j.isNumeric(prevousWeight)){
+                    setValue('INTERVAL_GROWTH.value', intervalGrowth);
+                }
+
+            });
 
 
 
@@ -793,10 +824,13 @@
                         <td class="before20190520changes">HC/Age Z-score</td>
                     </tr>
                     <tr >
-                        <td><obs conceptId="$@WEIGHT@" labelText="" /><br/>kg</td>
+                        <td><obs id="WEIGHT" conceptId="$@WEIGHT@" labelText="" /><br/>kg</td>
                         <td><obs conceptId="$@HEIGHT@" labelText="" /><br/>cm
                         </td>
-                        <td align="left" class="checkboxGroupIG"><obs conceptId="$@INTERVAL_GROWTH@" labelText="" /><br/>
+                        <td align="left" class="checkboxGroupIG">
+                            <span id="prevousWeight" class="hidden"> <lookup expression="fn.latestObs('3ce93b62-26fe-102b-80cb-0017a47871b2').valueNumeric"/> </span>
+                            <span id="prevousWeightObsDatetime" class="hidden"> <lookup expression="fn.latestObs('3ce93b62-26fe-102b-80cb-0017a47871b2').obsDatetime"/> </span>
+                            <obs id="INTERVAL_GROWTH" conceptId="$@INTERVAL_GROWTH@" labelText="" /><br/>
 
                             <span class="">
                                 <obs id="" conceptId="$@INTERVAL_GROWTH_CODED@" answerConceptId="$@NO_PREVIOUS_WEIGHT@" answerLabel="no previous weight" style="checkbox" />

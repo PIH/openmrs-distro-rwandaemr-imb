@@ -1474,7 +1474,7 @@
                 </label>
             </div>
             <br/>
-            <div >
+            <div class="BreastDisposition">
                 <label class="font-normal"> <strong> Date of next visit:  </strong> <span class="required requirementReferralSymbol initialHide" >*</span> </label>
                 <br/>
                 <label class="font-normal">
@@ -1599,22 +1599,22 @@
 
                 if($("input[id='"+idOfClicked+"']").prop('checked')){
                     if(classOfClicked=="activate" ){
-                        $("div."+nameOfClicked).show();
+                        $("."+nameOfClicked).show();
                     }
                     else if (classOfClicked=="deactivate"){
                         $("."+nameOfClicked).find("input").attr("checked",false);
                         $("."+nameOfClicked).find("input").val("");
-                        $("div."+nameOfClicked).hide();
+                        $("."+nameOfClicked).hide();
                     }
                 }
                 else if(!$("input[id='"+idOfClicked+"']").prop('checked')){
                     if(classOfClicked=="activate" ){
                         $("."+nameOfClicked).find("input").attr("checked",false);
                         $("."+nameOfClicked).find("input").val("");
-                        $("div."+nameOfClicked).hide();
+                        $("."+nameOfClicked).hide();
                     }
                     else if (classOfClicked=="deactivate"){
-                        $("div."+nameOfClicked).show();
+                        $("."+nameOfClicked).show();
                     }
                 }
             });

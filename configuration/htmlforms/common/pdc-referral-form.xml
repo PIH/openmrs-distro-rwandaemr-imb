@@ -333,18 +333,32 @@
         });
     });
     $j(document).ready(function(){
-        getField("Trisomy_21_suspected_or_confirmed.value").change(function() {
-            window.alert("PDC Condition specific (Trisomy 21)");
-        });
-        getField("Cleft_Lip_or_Palate.value").change(function() {
-            window.alert("PDC Conditional Specific (Cleft Lip)");
-        });
-        getField("Other_Developmental_Delay.value").change(function() {
-            window.alert("PDC Conditional Specific (Global Developmental Delay)");
+        beforeSubmit.push(function() {
+        /* pop ups */
+            var Trisomy_21_suspected_or_confirmed = getValue('Trisomy_21_suspected_or_confirmed.value');
+            var Cleft_Lip_or_Palate = getValue('Cleft_Lip_or_Palate.value');
+            var Other_Developmental_Delay = getValue('Other_Developmental_Delay.value');
+            var formsToFill = "";
+
+
+            if(Trisomy_21_suspected_or_confirmed != null &#38;&#38; Trisomy_21_suspected_or_confirmed != ''){
+                formsToFill = formsToFill+ " PDC Condition specific (Trisomy 21) ,";
+            }
+            if(Cleft_Lip_or_Palate != null &#38;&#38; Cleft_Lip_or_Palate != ''){
+                formsToFill = formsToFill+ " PDC Conditional Specific (Cleft Lip) ,"
+            }
+            if(Other_Developmental_Delay != null &#38;&#38; Other_Developmental_Delay != ''){
+                formsToFill = formsToFill+ " PDC Conditional Specific (Global Developmental Delay) ,"
+            }
+
+            window.alert("Please fill out These forms : " + formsToFill);
+            return true;
         });
 
 
     });
+
+
 
 
 		function calculateBirthWeight(birthWeight) {

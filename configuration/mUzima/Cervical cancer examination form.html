@@ -237,7 +237,7 @@
             <label class="font-nomal"> reason for screening yet below or above the age <span class="required">*</span></label>
 
             <input id="reasonForScreening" name="obs.reasonForScreening" type="text"
-                   data-concept="16cd65e3-45af-4291-88fd-fe4d91847e4f^Specimen Code^99DCT">
+                   data-concept="0e536937-4f4b-4934-9104-73e3b246c55a^reason for screening yet below or above the age^99DCT">
 
         </div>
     </fieldset>
@@ -573,7 +573,7 @@
     <h3>CERVICAL CANCER SCREENING RESULTS AND MANAGEMENT</h3>
     <hr/>
     <fieldset>
-        <div class="section checkboxGroup">
+        <div class="section checkboxGroup ">
             <!--            <label class="font-normal"> Screening <strong>completed</strong> today? </label>-->
             <!--            <label class="font-normal">-->
             <!--                <input id="obs.ScreeningCompletedTodayYes" name="obs.ScreeningCompletedToday" type="radio"-->
@@ -590,27 +590,27 @@
 
             <!--            </label>-->
 
-            <label class="font-normal">Screening type: </label>
+            <label class="font-normal ">Screening type: </label>
             <br/>
-            <label class="font-normal">
+            <label class="font-normal ">
                 <input class="activate" id="ScreeningTypeHPV" name="ScreeningTypeHPV" type="radio"
                        data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
-                       value="f7c2d59d-2043-42ce-b04d-08564d54b0c7^HPV DNA test^99DCT">
+                       value="f7c2d59d-2043-42ce-b04d-08564d54b0c7^HPV DNA test^99DCT"/>
                 HPV
 
             </label>
             <br/>
-            <label class="font-normal">
+            <label class="font-normal ">
                 <input class="activate" id="ScreeningTypeVIA" name="ScreeningTypeVIA" type="radio"
                        data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
-                       value="6178405e-c115-4e78-b9e0-fb0811a2bb2d^visual inspection with Acetic Acid^99DCT">
+                       value="6178405e-c115-4e78-b9e0-fb0811a2bb2d^visual inspection with Acetic Acid^99DCT"/>
                 VIA
             </label>
             <br/>
             <label class="font-normal LevelOfCare">
                 <input class="activate" id="ScreeningTypePapSmear" name="ScreeningTypePAPSmear" type="radio"
                        data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
-                       value="3cd4de2e-26fe-102b-80cb-0017a47871b2^PAPANICOLAOU SMEAR^99DCT">
+                       value="3cd4de2e-26fe-102b-80cb-0017a47871b2^PAPANICOLAOU SMEAR^99DCT"/>
                 Pap smear
             </label>
             <br/>
@@ -797,21 +797,21 @@
             <label >Result</label>
             <br/>
             <label class="font-normal">
-                <input id="abnormalPapSmearResult" name="PapSmearResult" type="checkbox"
+                <input id="obs.abnormalPapSmearResult" name="obs.PapSmearResult" type="radio"
                        data-concept="3cd4de2e-26fe-102b-80cb-0017a47871b2^PAPANICOLAOU SMEAR^99DCT"
                        value="3cd75230-26fe-102b-80cb-0017a47871b2^ABNORMAL^99DCT">
                 Abnormal
             </label>
             <br/>
             <label class="font-normal">
-                <input id="normalPapSmearResult" name="PapSmearResult" type="checkbox"
+                <input id="obs.normalPapSmearResult" name="obs.PapSmearResult" type="radio"
                        data-concept="3cd4de2e-26fe-102b-80cb-0017a47871b2^PAPANICOLAOU SMEAR^99DCT"
                        value="3cd750a0-26fe-102b-80cb-0017a47871b2^NORMAL^99DCT">
                 Normal
             </label>
             <br/>
             <label class="font-normal">
-                <input id="unclearPapSmearResult" name="PapSmearResult" type="checkbox"
+                <input id="obs.unclearPapSmearResult" name="obs.PapSmearResult" type="radio"
                        data-concept="3cd4de2e-26fe-102b-80cb-0017a47871b2^PAPANICOLAOU SMEAR^99DCT"
                        value="f02e446d-6548-4213-92a3-2bd525a2a1f4^unclear^99DCT">
                 Unclear
@@ -1370,7 +1370,7 @@
                 </div>
                 <br/>
                 <div>
-                    <label class="font-normal">
+                    <label class="font-normal Disposition">
                         <input id="obs.ManagementReferralOtherReasonText" class="form-control" name="obs.ManagementReferralOtherReasonText"
                                type="text" data-concept="eea065ac-117b-4be9-976b-2948b29046b7^Other reason for referral^99DCT"/>
                     </label>
@@ -1395,10 +1395,10 @@
                 <!--                       type="Date" data-concept="2ec83708-c126-48f2-b5f8-0ce37500e11b^Referral completion Date^99DCT"/>-->
                 <!--            </label>-->
             </div>
-            <label class="font-normal"> <strong>Date of next visit:  </strong> <span class="required requirementReferralSymbol initialHide" >*</span> </label>
+            <label class="font-normal Disposition"> <strong>Date of next visit:  </strong> <span class="required requirementReferralSymbol initialHide" >*</span> </label>
             <br/>
-            <label class="font-normal">
-                <input class="form-control datepicker" id="obs.nextVisitDate" name="obs.BreastDispositionNextDate" type="text"
+            <label class="font-normal Disposition">
+                <input class="form-control datepicker future-or-today-date" id="obs.nextVisitDate" name="obs.BreastDispositionNextDate" type="text"
                        data-concept="3ce94df0-26fe-102b-80cb-0017a47871b2^RETURN VISIT DATE^99DCT" readonly="readonly"/>
             </label>
 
@@ -1620,12 +1620,12 @@
                 }
                 if($("input[id='"+idOfClicked+"']").prop('checked')){
                     if(classOfClicked=="activate" ){
-                        $("div."+nameOfClicked).show();
+                        $("."+nameOfClicked).show();
                     }
                     else if (classOfClicked=="deactivate"){
                         $("."+nameOfClicked).find("input").attr("checked",false);
                         $("."+nameOfClicked).find("input").val("");
-                        $("div."+nameOfClicked).hide();
+                        $("."+nameOfClicked).hide();
                     }
                     $("input[name='"+nameOfClicked+"']").each(function() {
                         if(this.checked){
@@ -1638,10 +1638,10 @@
                     if(classOfClicked=="activate" ){
                         $("."+nameOfClicked).find("input").attr("checked",false);
                         $("."+nameOfClicked).find("input").val("");
-                        $("div."+nameOfClicked).hide();
+                        $("."+nameOfClicked).hide();
                     }
                     else if (classOfClicked=="deactivate"){
-                        $("div."+nameOfClicked).show();
+                        $("."+nameOfClicked).show();
                     }
                 }
             });
@@ -1690,6 +1690,42 @@
                     $(".referralReason").show()
                 }
             });
+
+            $('#followUpReasonTriage').change(function(){
+                if($("input[id='followUpReasonTriage']").prop('checked') && $("input[id='TestResultsHPVPositive']").prop('checked')){
+                    $("#ScreenVIAPerformedTypeLabel").hide()
+                    $("#triageVIAPerformedTypeLabel").show()
+                }else{
+                    $("ScreenVIAPerformedTypeLabel").show()
+                }
+            })
+            $('#TestResultsHPVPositive').change(function(){
+                if($("input[id='followUpReasonTriage']").prop('checked') && $("input[id='TestResultsHPVPositive']").prop('checked')){
+                    $("#ScreenVIAPerformedTypeLabel").hide()
+                    $("#triageVIAPerformedTypeLabel").show()
+
+                }else{
+                    $("#ScreenVIAPerformedTypeLabel").show()
+                }
+            })
+
+            $('#followUpReasonPostTreatmentFollowup').change(function(){
+                if($("input[id='followUpReasonPostTreatmentFollowup']").prop('checked') && $("input[id='TestResultsHPVPositive']").prop('checked')){
+                    $("#triageVIAPerformedTypeLabel").show()
+                    $("#ScreenVIAPerformedTypeLabel").hide()
+                }else{
+                    $("triageVIAPerformedTypeLabel").hide()
+                }
+            })
+            $('#TestResultsHPVPositive').change(function(){
+                if($("input[id='followUpReasonPostTreatmentFollowup']").prop('checked') && $("input[id='TestResultsHPVPositive']").prop('checked')){
+                    $("#triageVIAPerformedTypeLabel").hide()
+                    $("#ScreenVIAPerformedTypeLabel").show()
+                }else{
+                    $("#triageVIAPerformedTypeLabel").show()
+                }
+            })
+
             if($("#patient\\.sex").val()=="M"){
                 alert("This form is not recommended for a male client");
             }

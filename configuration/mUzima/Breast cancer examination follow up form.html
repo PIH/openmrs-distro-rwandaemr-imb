@@ -551,7 +551,7 @@
             </fieldset>
             <fieldset>
                 <div class="form-group">
-                    <label> Clinical breast examination: </label>
+                    <label> Clinical breast examination: </strong> <span class="required">*</span> </label>
                     <br/>
                     <label class="font-normal">
                         <input class="deactivate" id="obs.NormalBreastexamination" name="Breastexamination" type="radio" required="required"
@@ -1020,7 +1020,7 @@
         </label>
         <br/>
         <label class="font-normal">
-            <input class="deactivate" id="obs.ultrasoundPerformedNo" name="ultrasoundPerformed" type="radio"
+            <input class="deactivate" id="obs.ultrasoundPerformedNotEligible" name="ultrasoundPerformed" type="radio"
                    data-concept="58eacedf-cb05-4a8f-a98d-cc5717348d74^Breast ultrasound^99DCT"
                    value="d05d61ac-0c87-405c-ba92-f3164821c36d^not eligible^99DCT">
             Not eligible
@@ -1229,7 +1229,7 @@
                     </ul>
                 </div>
             </div>
-            <label>
+            <label class="ultrasoundPerformed">
                 <br/>
                 maximum cortical thickness
                 <input id="obs.maximumCorticalThickness" name="obs.maximumCorticalThickness" type="number" data-concept="a496f719-c09d-4219-99d3-be9f14d080c2^maximum cortical thickness^99DCT"/>
@@ -1465,7 +1465,7 @@
                 </label>
             </div>
             <br/>
-            <div >
+            <div class="BreastDisposition">
                 <label class="font-normal"> <strong> Date of next visit:  </strong> </label>
                 <br/>
                 <label class="font-normal">

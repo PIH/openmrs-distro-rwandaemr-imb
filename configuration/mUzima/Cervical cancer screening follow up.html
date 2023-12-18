@@ -100,13 +100,13 @@
                 <label>Level of Care: <span class="required">*</span></label>
             </div>
             <label class="font-normal">
-                <input  class="deactivate" id="LevelOfCareHealthCenter" name="LevelOfCare" type="radio" required="required"
+                <input  class="deactivate" id="LevelOfCareHealthCenter" name="LevelOfCare" type="checkbox" required="required"
                         data-concept="4893bd7a-8943-4a75-82da-67ef0ed86db2^Level of Care^99DCT"
                         value="7e327a1a-c1df-4712-ab5d-e05dc0dac35d^HEALTH CENTER^99DCT" >
                 Health center/ Health Post
             </label>
             <label class="font-normal">
-                <input class="activate" id="LevelOfCareHospital" name="LevelOfCare" type="radio"
+                <input class="activate" id="LevelOfCareHospital" name="LevelOfCare" type="checkbox"
                        data-concept="4893bd7a-8943-4a75-82da-67ef0ed86db2^Level of Care^99DCT"
                        value="3ce0d472-26fe-102b-80cb-0017a47871b2^HOSPITAL^99DCT">
                 Hospital
@@ -529,14 +529,14 @@
                 </label>
 
                 <label class="font-normal">
-                    <input class="deactivate" id="followUpReasonTriage" name="followUpReason" type="radio"
+                    <input class="activate" id="followUpReasonTriage" name="followUpReason" type="radio"
                            data-concept="2e788aae-d93e-4d7c-bd3b-e1141f1915c7^Follow up reason^99DCT"
                            value="4b6bed53-d2e8-4217-83c6-41b836df9a4e^Triage^99DCT">
                     Triage
 
                 </label>
                 <label class="font-normal">
-                    <input class="activate" class="activate" id="followUpReasonPostTreatmentFollowup" name="followUpReason" type="radio"
+                    <input class="activate" id="followUpReasonPostTreatmentFollowup" name="followUpReason" type="radio"
                            data-concept="2e788aae-d93e-4d7c-bd3b-e1141f1915c7^Follow up reason^99DCT"
                            value="c96d377e-133d-4c4e-b1d7-f03a8621d5f8^Post treatment follow up^99DCT">
                     Post treatment follow up
@@ -546,14 +546,14 @@
                 <label>Currently pregnant? </label>
                 <br/>
                 <label class="font-normal">
-                    <input id="obs.pregnantYes" name="obs.pregnant" type="radio"
+                    <input id="pregnantYes" name="pregnant" type="checkbox"
                            data-concept="3ceb4880-26fe-102b-80cb-0017a47871b2^PREGNANCY STATUS^99DCT"
                            value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
                     Yes
                 </label>
                 <br/>
                 <label class="font-normal">
-                    <input id="obs.pregnantNo" name="obs.pregnant" type="radio"
+                    <input id="pregnantNo" name="pregnant" type="checkbox"
                            data-concept="3ceb4880-26fe-102b-80cb-0017a47871b2^PREGNANCY STATUS^99DCT"
                            value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
                     No
@@ -600,27 +600,27 @@
 
             <!--            </label>-->
 
-            <label class="font-normal">Screening type: </label>
+            <label class="font-normal ">Screening type: </label>
             <br/>
-            <label class="font-normal">
+            <label class="font-normal ">
                 <input class="activate" id="ScreeningTypeHPV" name="ScreeningTypeHPV" type="radio"
                        data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
-                       value="f7c2d59d-2043-42ce-b04d-08564d54b0c7^HPV DNA test^99DCT">
+                       value="f7c2d59d-2043-42ce-b04d-08564d54b0c7^HPV DNA test^99DCT"/>
                 HPV
 
             </label>
             <br/>
-            <label class="font-normal">
+            <label class="font-normal ">
                 <input class="activate" id="ScreeningTypeVIA" name="ScreeningTypeVIA" type="radio"
                        data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
-                       value="6178405e-c115-4e78-b9e0-fb0811a2bb2d^visual inspection with Acetic Acid^99DCT">
+                       value="6178405e-c115-4e78-b9e0-fb0811a2bb2d^visual inspection with Acetic Acid^99DCT"/>
                 VIA
             </label>
             <br/>
-            <label class="font-normal">
+            <label class="font-normal LevelOfCare">
                 <input class="activate" id="ScreeningTypePapSmear" name="ScreeningTypePAPSmear" type="radio"
                        data-concept="7e4e6554-d6c5-4ca3-b371-49806a754992^Screening through^99DCT"
-                       value="3cd4de2e-26fe-102b-80cb-0017a47871b2^PAPANICOLAOU SMEAR^99DCT">
+                       value="3cd4de2e-26fe-102b-80cb-0017a47871b2^PAPANICOLAOU SMEAR^99DCT"/>
                 Pap smear
             </label>
             <br/>
@@ -664,7 +664,7 @@
 
         </div>
     </fieldset>
-    <fieldset>
+<!--    <fieldset>-->
 
 <!--        <div class="form-group initialHide ScreeningTypeHPV ScreeningTypeHybridVIAandHPV">-->
 <!--            <label>-->
@@ -754,26 +754,26 @@
         <!--                Other HR HPV-->
         <!--            </label>-->
         <!--        </div>-->
-            <div id="HPVLabResult ScreeningTypeHybridVIAandHPV">
-                <label class="font-normal">
-                    <strong> HPV Lab result: </strong>
-                </label>
+<!--            <div id="HPVLabResult ScreeningTypeHybridVIAandHPV">-->
+<!--                <label class="font-normal">-->
+<!--                    <strong> HPV Lab result: </strong>-->
+<!--                </label>-->
 
-                <label class="font-normal">
-                    <input class="activate" id="TestResultsHPVPositive" name="TestResultsHPV" type="radio"
-                           data-concept="bfb3eb1e-db98-4846-9915-0168511c6298^Test Result^99DCT"
-                           value="1b4a5f67-6106-4a4d-a389-2f430be543e4^HPV positive^99DCT">
-                    HPV Positive
+<!--                <label class="font-normal">-->
+<!--                    <input class="activate" id="TestResultsHPVPositive" name="TestResultsHPV" type="radio"-->
+<!--                           data-concept="bfb3eb1e-db98-4846-9915-0168511c6298^Test Result^99DCT"-->
+<!--                           value="1b4a5f67-6106-4a4d-a389-2f430be543e4^HPV positive^99DCT">-->
+<!--                    HPV Positive-->
 
-                </label>
-                <label class="font-normal">
-                    <input class="deactivate" id="TestResultsHPVNegative" name="TestResultsHPV" type="radio"
-                           data-concept="bfb3eb1e-db98-4846-9915-0168511c6298^Test Result^99DCT"
-                           value="64c23192-54e4-4750-9155-2ed0b736a0db^HPV negative^99DCT">
-                    HPV Negative
-                </label>
-            </div>
-    </fieldset>
+<!--                </label>-->
+<!--                <label class="font-normal">-->
+<!--                    <input class="deactivate" id="TestResultsHPVNegative" name="TestResultsHPV" type="radio"-->
+<!--                           data-concept="bfb3eb1e-db98-4846-9915-0168511c6298^Test Result^99DCT"-->
+<!--                           value="64c23192-54e4-4750-9155-2ed0b736a0db^HPV negative^99DCT">-->
+<!--                    HPV Negative-->
+<!--                </label>-->
+<!--            </div>-->
+<!--    </fieldset>-->
     <fieldset>
         <div class="form-group initialHide ScreeningTypePAPSmear">
             <h3> <u> Pap smear </u></h3>
@@ -853,13 +853,13 @@
             <!--            </label>-->
             <label class="font-normal"> <strong> Type of VIA performed: </strong> </label>
             <br/>
-            <label class="font-normal" id="ScreenVIAPerformedTypeLabel">
-                <input id="ScreenVIAPerformedType" name="obs.VIAPerformedType" type="radio"
-                       data-concept="820b0e37-5d3e-46c6-9462-a8e7adaff954^type of VIA Performed^99DCT"
-                       value="690d8a13-a1ac-4fd7-97a4-f3964b97f049^VIA Screen^99DCT">
-                VIA Screen
-            </label>
-            <br/>
+<!--            <label class="font-normal" id="ScreenVIAPerformedTypeLabel">-->
+<!--                <input id="ScreenVIAPerformedType" name="obs.VIAPerformedType" type="radio"-->
+<!--                       data-concept="820b0e37-5d3e-46c6-9462-a8e7adaff954^type of VIA Performed^99DCT"-->
+<!--                       value="690d8a13-a1ac-4fd7-97a4-f3964b97f049^VIA Screen^99DCT">-->
+<!--                VIA Screen-->
+<!--            </label>-->
+<!--            <br/>-->
             <label class="font-normal" id ="triageVIAPerformedTypeLabel">
                 <input id="obs.TriageVIAPerformedType" name="obs.VIAPerformedType" type="radio"
                        data-concept="820b0e37-5d3e-46c6-9462-a8e7adaff954^type of VIA Performed^99DCT"
@@ -1310,7 +1310,7 @@
                     </label>
 
                     <label class="font-normal">
-                        <input class="form-control" name="obs.healthFacility" type="text" data-concept="3a84ab37-f75c-48ad-8bcf-322c927f36bb^referred to (coded)^99DCT" disabled="disabled">
+                        <input class="form-control" id="healthFacilityUuid" name="obs.healthFacility" type="text" data-concept="3a84ab37-f75c-48ad-8bcf-322c927f36bb^referred to (coded)^99DCT" disabled="disabled">
                     </label>
                 </div>
                 <!--            <br/>-->
@@ -1331,7 +1331,7 @@
                 <!--            </label>-->
                 <br/>
                 <div class="Disposition">
-                    <label class="font-normal"> <strong> Referral reason: </strong> </label>
+                    <label class="font-normal"> <strong> Referral reason: </strong> <span class="required requirementReferralSymbol initialHide" >*</span></label>
                     <br/>
                     <label class="font-normal">
                         <input id="obs.ManagementReferralReasonSuspectedCancer" name="obs.ManagementReferralReason" type="radio"
@@ -1395,7 +1395,7 @@
                 <!--                       type="Date" data-concept="2ec83708-c126-48f2-b5f8-0ce37500e11b^Referral completion Date^99DCT"/>-->
                 <!--            </label>-->
             </div>
-            <label class="font-normal"> <strong>Next visit date:  </strong> </label>
+            <label class="font-normal Disposition"> <strong>Next visit date:  </strong> </label>
             <br/>
             <label class="font-normal">
                 <input class="form-control datepicker future-or-today-date" id="obs.nextVisitDate" name="obs.BreastDispositionNextDate" type="text"
@@ -1404,7 +1404,7 @@
         </div>
     </fieldset>
         <fieldset>
-            <div class="section">
+            <div class="section Disposition">
     <!--            <h3 class="font-normal">Biopsy</h3>-->
                 <label class="font-normal"> <strong> Biopsy performed? </strong> </label>
                 <label class="font-normal">
@@ -1719,17 +1719,20 @@
                     $("#triageVIAPerformedTypeLabel").show()
                 }
             })
-            $('Disposition').change(function(){
-                if($("input[id='DispositionReferredOut']").prop('checked')){
 
-                    $("#obs\\.healthFacility").prop("required",true);
+            $('input[name="Disposition"]').change(function(){
+                if($("input[id='DispositionReferredOut']").prop('checked')){
+                    $("#healthFacilityUuid").prop("required",true);
                     $("#obs\\.nextVisitDate").prop("required",true);
                     $("#ManagementReferralReasonSuspectedCancer").prop("required",true);
+                    $(".requirementReferralSymbol").show();
                 }
                 else{
-                    $("#obs\\.healthFacility").prop("required",false);
+
+                    $("#healthFacilityUuid").prop("required",false);
                     $("#obs\\.nextVisitDate").prop("required",false);
                     $("#ManagementReferralReasonSuspectedCancer").prop("required",false);
+                    $(".requirementReferralSymbol").hide();
                 }
                 if($("input[id='DispositionReferredIn']").prop('checked')){
                    $("#serviceTransferredTo").show();
@@ -1739,7 +1742,33 @@
                     $("#serviceTransferredTo").hide();
                     $("#serviceTransferredTo").prop("required",false);
                 }
-            })
+            });
+
+            /* spacemen code auto-complete function */
+            function specimenCodeAutofill(){
+                var patientuuid = $('#patient\\.uuid').val();
+                var specCodeConceptID = 107258;
+
+                var allSpecCodeForPatient = htmlDataStore.getObsByConceptId(patientuuid,specCodeConceptID);
+                allSpecCodeForPatient = JSON.parse(allSpecCodeForPatient);
+                // sort the array desc based on obs date
+                allSpecCodeForPatient.sort(function(a, b){
+                    var Adatearray = a.obsDate.split("-");
+                    var AconvertedDate = Adatearray[1] + '-' + Adatearray[0] + '-' + Adatearray[2];
+                    var Bdatearray = b.obsDate.split("-");
+                    var BconvertedDate = Bdatearray[1] + '-' + Bdatearray[0] + '-' + Bdatearray[2];
+                    return new Date(BconvertedDate) - new Date(AconvertedDate)
+                });
+
+                var datearray = allSpecCodeForPatient[0].obsDate.split("-");
+                var convertedDate = datearray[1] + '-' + datearray[0] + '-' + datearray[2];
+                const diffTime = (new Date()) - new Date(convertedDate);
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24) );
+                if(diffDays < 2){
+                    $('#obs\\.specimenCode').val(allSpecCodeForPatient[0].valueText);
+                }
+            }
+            /* End */
 
             if($("#patient\\.sex").val()=="M"){
                 alert("This form is not recommended for a male client");

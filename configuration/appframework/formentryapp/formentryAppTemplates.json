@@ -1,0 +1,12 @@
+[
+    {
+        "id": "formentryapp.template.forms",
+        "description": "Allows adding forms to UI 2.x",
+        "configOptions": [
+        	{
+        		"name": "builtInForms",
+                "description": "UUIDs list of built-in forms, which have been added to UI outside of Form Entry App"
+        	}
+        ]
+    }
+]

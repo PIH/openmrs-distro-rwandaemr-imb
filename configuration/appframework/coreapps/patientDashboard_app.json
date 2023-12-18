@@ -1,0 +1,26 @@
+[
+    {
+        "id": "coreapps.patientDashboardApp",
+        "description": "coreapps.patientDashboard.description",
+        "extensionPoints": [
+            {
+                "id": "patientDashboard.visitActions",
+                "description": "coreapps.patientDashboard.extension.visits.description"
+            },
+            {
+                "id": "patientDashboard.overallActions",
+                "description" : "coreapps.patientDashboard.extension.actions.description"
+            },
+            {
+                "id": "patientDashboard.tabs",
+                "description" : "Tabs to be added to the Data Entry Patient Dashboard"
+            },
+            {
+                "id": "patientDashboard.includeFragments",
+                "description" : "Fragment to be added to the Patient Dashboards, may include javascript, css and possibly probably html code"
+            }
+        ],
+        "contextModel": [ "patientId", "activeVisitId" ],
+        "requiredPrivilege": "App: coreapps.patientDashboard"
+    }
+]

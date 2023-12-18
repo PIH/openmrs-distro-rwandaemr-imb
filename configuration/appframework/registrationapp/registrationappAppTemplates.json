@@ -1,0 +1,43 @@
+[
+    {
+        "id": "registrationapp.registerPatient",
+        "description": "Create a new Patient Record",
+        "configOptions": [
+            {
+                "name": "sections",
+                "description": "Configuration for a section to display on the patient registration screen. Format: list of { id, label, questions: [ { legend, fields:[] } ] }",
+                "defaultValue": [ ]
+            },
+            {
+                "name": "afterCreatedActions",
+                "description": "A list of 'bean:beanId' or 'class:fully.qualified.ClassName' that implement org.openmrs.module.registrationapp.action.AfterPatientCreatedAction and will be executed after creating the patient",
+                "defaultValue": [ ]
+            },
+            {
+                "name": "afterCreatedUrl",
+                "description": "What url to go to after successfully registering the patient. Supports {{patientId}}",
+                "defaultValue": "/index.htm"
+            },
+            {
+                "name": "registrationEncounter",
+                "description": "Config object with uuid of encounter type and encounter role (optional--if not specified, no registration encounter created)",
+                "defaultValue": null
+            },
+            {
+                "name": "allowRetrospectiveEntry",
+                "description": "True/false whether or not to allow the registration encounter datetime to be backdated. Shows a datepicker for the registration encounter if encounter is configured, otherwise does nothing.",
+                "defaultValue": false
+            },
+            {
+                "name": "allowUnknownPatients",
+                "description": "True/false whether or not to allow the user to create an unknown patient, with no name or age (e.g. arriving unconscious to the ER)",
+                "defaultValue": true
+            },
+            {
+                "name": "allowManualIdentifier",
+                "description": "True/false whether or not to allow the user to manually specify the primary identifier (instead of auto-generating it)",
+                "defaultValue": false
+            }
+        ]
+    }
+]

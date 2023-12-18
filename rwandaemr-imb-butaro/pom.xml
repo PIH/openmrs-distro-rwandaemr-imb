@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.openmrs.distro</groupId>
         <artifactId>rwandaemr-imb</artifactId>
-        <version>2.0.0-SNAPSHOT</version>
+        <version>2.1.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>rwandaemr-imb-butaro</artifactId>
@@ -58,11 +58,65 @@
                         <configuration>
                             <resources>
                                 <resource>
-                                    <directory>${basedir}/../configuration</directory>
+                                    <directory>${basedir}/../configuration/</directory>
+                                    <excludes>
+                                        <exclude>groovy_scripts/*</exclude>
+                                        <exclude>htmlforms/**/*</exclude>
+                                        <exclude>mUzima/*</exclude>
+                                        <exclude>Sync Configuration/*</exclude>
+                                    </excludes>
                                     <filtering>true</filtering>
                                 </resource>
                             </resources>
                             <outputDirectory>${project.build.directory}/configuration</outputDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-htmlforms-common-into-distro</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/../configuration/htmlforms/common</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${project.build.directory}/configuration/htmlforms</outputDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-htmlforms-butaro-only-into-distro</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/../configuration/htmlforms/butaro-only</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${project.build.directory}/configuration/htmlforms</outputDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-htmlforms-butaro-variants-into-distro</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/../configuration/htmlforms/butaro-variants</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${project.build.directory}/configuration/htmlforms</outputDirectory>
                         </configuration>
                     </execution>
                     <execution>
@@ -91,7 +145,7 @@
             <plugin>
                 <groupId>org.openmrs.maven.plugins</groupId>
                 <artifactId>openmrs-sdk-maven-plugin</artifactId>
-                <version>4.6.0-SNAPSHOT</version>
+                <version>4.6.0</version>
                 <executions>
                     <execution>
                         <id>build-distro</id>
@@ -138,19 +192,8 @@
                         <goals>
                             <goal>install-node-and-npm</goal>
                         </goals>
-                        <phase>compile</phase>
                         <configuration>
-                            <nodeVersion>v16.15.1</nodeVersion>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>Build frontend application</id>
-                        <goals>
-                            <goal>npx</goal>
-                        </goals>
-                        <phase>compile</phase>
-                        <configuration>
-                            <arguments>openmrs@next build --build-config target/spa-build-config.json --target target/distro/web/frontend</arguments>
+                            <nodeVersion>v18.13.0</nodeVersion>
                         </configuration>
                     </execution>
                     <execution>
@@ -158,9 +201,17 @@
                         <goals>
                             <goal>npx</goal>
                         </goals>
-                        <phase>compile</phase>
                         <configuration>
-                            <arguments>openmrs@next assemble --mode config --config target/spa-build-config.json --target target/distro/web/frontend</arguments>
+                            <arguments>--legacy-peer-deps openmrs@next assemble --mode config --config spa-build-config.json --target target/dist</arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>Build frontend application</id>
+                        <goals>
+                            <goal>npx</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>--legacy-peer-deps openmrs@next build --build-config spa-build-config.json --target target/dist</arguments>
                         </configuration>
                     </execution>
                 </executions>

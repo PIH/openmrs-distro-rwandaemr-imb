@@ -21,38 +21,10 @@
             </includes>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/../configuration</directory>
+            <directory>${project.build.directory}/configuration</directory>
             <outputDirectory>openmrs_config</outputDirectory>
             <includes>
-                <include>addresshierarchy/*</include>
-            </includes>
-        </fileSet>
-        <fileSet>
-            <directory>${project.build.directory}/configuration/htmlforms/common</directory>
-            <outputDirectory>openmrs_config/htmlforms</outputDirectory>
-            <includes>
-                <include>**/*.xml</include>
-            </includes>
-        </fileSet>
-        <fileSet>
-            <directory>${project.build.directory}/configuration/htmlforms/rwinkwavu-only</directory>
-            <outputDirectory>openmrs_config/htmlforms</outputDirectory>
-            <includes>
-                <include>**/*.xml</include>
-            </includes>
-        </fileSet>
-        <fileSet>
-            <directory>${project.build.directory}/configuration/htmlforms/rwinkwavu-variants</directory>
-            <outputDirectory>openmrs_config/htmlforms</outputDirectory>
-            <includes>
-                <include>**/*.xml</include>
-            </includes>
-        </fileSet>
-		<fileSet>
-            <directory>${project.build.directory}/configuration/orderfrequencies</directory>
-            <outputDirectory>openmrs_config/orderfrequencies</outputDirectory>
-            <includes>
-                <include>**/*.csv</include>
+                <include>**/*</include>
             </includes>
         </fileSet>
     </fileSets>

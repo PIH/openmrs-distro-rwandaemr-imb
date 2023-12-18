@@ -1,0 +1,11 @@
+<config>
+    <globalProperties>
+
+        <!-- EMR API -->
+        <globalProperty>
+            <property>emr.telephoneAttributeType</property>
+            <value>Phone number</value>
+        </globalProperty>
+
+    </globalProperties>
+</config>

@@ -1,0 +1,73 @@
+[
+    { // real-time simple visit note
+        "id": "referenceapplication.realTime.simpleVisitNote",
+        "extensionPointId": "patientDashboard.visitActions",
+        "type": "link",
+        "label": "referenceapplication.visitNote.title",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=referenceapplication:htmlforms/simpleVisitNote.xml",
+        "icon": "icon-stethoscope",
+        "order": 30,
+        "requiredPrivilege": "Task: referenceapplication.simpleVisitNote",
+        "require": "visit.active"
+    },
+
+    { // real-time simple admission form (not a full admission note)
+        "id": "referenceapplication.realTime.simpleAdmission",
+        "extensionPointId": "patientDashboard.visitActions",
+        "type": "link",
+        "label": "referenceapplication.task.simpleAdmission.label",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=referenceapplication:htmlforms/simpleAdmission.xml",
+        "icon": "icon-signin",
+        "order": 50,
+        "requiredPrivilege": "Task: referenceapplication.simpleAdmission",
+        "require": "visit.active && !visit.admitted"
+    },
+
+    { // real-time simple discharge form (not a full discharge note)
+        "id": "referenceapplication.realTime.simpleDischarge",
+        "extensionPointId": "patientDashboard.visitActions",
+        "type": "link",
+        "label": "referenceapplication.task.simpleDischarge.label",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=referenceapplication:htmlforms/simpleDischarge.xml",
+        "icon": "icon-signout",
+        "order": 50,
+        "requiredPrivilege": "Task: referenceapplication.simpleDischarge",
+        "require": "visit.active && visit.admitted"
+    },
+
+    { // real-time simple internal transfer form (not a full transfer note)
+        "id": "referenceapplication.realTime.simpleTransfer",
+        "extensionPointId": "patientDashboard.visitActions",
+        "type": "link",
+        "label": "referenceapplication.task.simpleTransfer.label",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=referenceapplication:htmlforms/simpleTransfer.xml",
+        "icon": "icon-random",
+        "order": 51,
+        "requiredPrivilege": "Task: referenceapplication.simpleTransfer",
+        "require": "visit.active && visit.admitted"
+    },
+
+    {
+        "id": "referenceapplication.realTime.vitals",
+        "extensionPointId": "patientDashboard.visitActions",
+        "type": "link",
+        "label": "referenceapplication.app.capturevitals.title",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithSimpleUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=referenceapplication:htmlforms/vitals.xml",
+        "icon": "icon-vitals",
+        "order": 52,
+        "requiredPrivilege": "Task: referenceapplication.vitals",
+        "require": "visit.active"
+    },
+
+    {
+        "id": "referenceapplication.realTime.endVisit",
+        "extensionPointId": "patientDashboard.visitActions",
+        "type": "script",
+        "label": "coreapps.task.endVisit.label",
+        "script": "visit.showEndVisitDialog({{visit.id}})",
+        "icon": "icon-off",
+        "require": "visit.active",
+        "order": 20,
+        "requiredPrivilege": "Task: coreapps.endVisit"
+    }
+]

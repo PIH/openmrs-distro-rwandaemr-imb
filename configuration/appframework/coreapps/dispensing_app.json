@@ -10,7 +10,7 @@
         "type": "link",
         "label": "Dispensing",
         "url": "spa/dispensing",
-        "icon": "icon-th-list"
+        "icon": "fas fa-fw fa-prescription-bottle-alt"
       }
     ]
   }

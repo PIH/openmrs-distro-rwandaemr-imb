@@ -1,6 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<modelVersion>4.0.0</modelVersion>
 
     <parent>
         <groupId>org.openmrs.distro</groupId>
@@ -203,9 +202,7 @@
                             <goal>npx</goal>
                         </goals>
                         <configuration>
-                            <arguments>--legacy-peer-deps openmrs@next assemble --mode config --config
-                                spa-build-config.json --target target/dist
-                            </arguments>
+                            <arguments>--legacy-peer-deps openmrs@next assemble --mode config --config spa-build-config.json --target target/dist</arguments>
                         </configuration>
                     </execution>
                     <execution>
@@ -214,9 +211,7 @@
                             <goal>npx</goal>
                         </goals>
                         <configuration>
-                            <arguments>--legacy-peer-deps openmrs@next build --build-config spa-build-config.json
-                                --target target/dist
-                            </arguments>
+                            <arguments>--legacy-peer-deps openmrs@next build --build-config spa-build-config.json --target target/dist</arguments>
                         </configuration>
                     </execution>
                 </executions>

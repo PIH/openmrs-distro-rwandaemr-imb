@@ -2,7 +2,7 @@
   {
     "id": "imbemr.primaryCareApp",
     "description": "Registration of a patient through primary care",
-    "order": 2,
+    "order": 11,
     "extensions": [
       {
         "id": "imbemr.primaryCareApp",

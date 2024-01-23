@@ -2,7 +2,7 @@
   {
     "id": "imbemr.cohortBuilderApp",
     "description": "Opening cohort builder window in legacy UI",
-    "order": 2,
+    "order": 7,
     "extensions": [
       {
         "id": "imbemr.cohortBuilderApp",

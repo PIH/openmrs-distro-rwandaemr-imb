@@ -13,33 +13,8 @@
     },
     "extensions": [
       {
-        "id": "coreapps.mostRecentVitals.clinicianDashboardFirstColumn",
+        "id": "coreapps.latestObsForConceptList.clinicianDashboardFirstColumn",
         "appId": "coreapps.latestObsForConceptList",
-        "extensionPointId": "patientDashboard.firstColumnFragments",
-        "extensionParams": {
-          "provider": "coreapps",
-          "fragment": "dashboardwidgets/dashboardWidget"
-        }
-      }
-    ]
-  },
-  {
-    "id": "coreapps.obsAcrossEncounters",
-    "instanceOf": "coreapps.template.dashboardWidget",
-    "description": "coreapps.obsAcrossEncounters.app.description",
-    "order": 2,
-    "config": {
-      "widget": "obsacrossencounters",
-      "icon": "icon-user-md",
-      "label": "coreapps.clinicianfacing.healthTrendSummary",
-      "encounterType": "daf32375-d293-4e27-a68d-2a58494c96e1",
-      "maxRecords": "5",
-      "maxAge": "2y"
-    },
-    "extensions": [
-      {
-        "id": "org.openmrs.module.coreapps.mostRecentVitals.clinicianDashboardFirstColumn",
-        "appId": "coreapps.obsAcrossEncounters",
         "extensionPointId": "patientDashboard.firstColumnFragments",
         "extensionParams": {
           "provider": "coreapps",
@@ -62,7 +37,7 @@
     },
     "extensions": [
       {
-        "id": "coreapps.mostRecentVitals.clinicianDashboardSecondColumn",
+        "id": "coreapps.visitByEncounterType.clinicianDashboardSecondColumn",
         "appId": "coreapps.visitByEncounterType",
         "extensionPointId": "patientDashboard.secondColumnFragments",
         "extensionParams": {
@@ -87,7 +62,7 @@
     },
     "extensions": [
       {
-        "id": "coreapps.mostRecentVitals.clinicianDashboardFirstColumn",
+        "id": "coreapps.obsGraph.clinicianDashboardFirstColumn",
         "appId": "coreapps.obsGraph",
         "extensionPointId": "patientDashboard.firstColumnFragments",
         "extensionParams": {
@@ -111,7 +86,7 @@
     },
     "extensions": [
       {
-        "id": "coreapps.mostRecentVitals.clinicianDashboardSecondColumn",
+        "id": "coreapps.relationships.clinicianDashboardSecondColumn",
         "appId": "coreapps.relationships",
         "extensionPointId": "patientDashboard.secondColumnFragments",
         "extensionParams": {
@@ -122,21 +97,24 @@
     ]
   },
   {
-    "id": "coreapps.dispensedMedication",
-    "description": "Show dispensed medications as drug orders",
+    "id": "coreapps.mostRecentVitals",
+    "instanceOf": "coreapps.template.mostRecentEncounter",
+    "description": "coreapps.mostRecentVitals.app.description",
+    "label": "coreapps.clinicianfacing.vitals",
+    "icon": "icon-vitals",
     "order": 6,
     "config": {
-      "displayActivationDate": true,
-      "detailsUrl": "../../owa/orderentry/index.html?patient={{patientUuid}}"
+      "encounterTypeUuid": "daf32375-d293-4e27-a68d-2a58494c96e1",
+      "encounterDateLabel": "coreapps.clinicianfacing.lastVitalsDateLabel"
     },
     "extensions": [
       {
-        "id": "org.openmrs.module.coreapps.dispensedMedication.clinicianDashboardFirstColumn",
-        "appId": "coreapps.dispensedMedication",
-        "extensionPointId": "patientDashboard.secondColumnFragments",
+        "id": "coreapps.mostRecentVitals.clinicianDashboardFirstColumn",
+        "appId": "coreapps.mostRecentVitals",
+        "extensionPointId": "patientDashboard.firstColumnFragments",
         "extensionParams": {
           "provider": "coreapps",
-          "fragment": "patientdashboard/activeDrugOrders"
+          "fragment": "encounter/mostRecentEncounter"
         }
       }
     ]

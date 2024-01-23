@@ -2,7 +2,7 @@
   {
     "id": "imbemr.appointmentsApp",
     "description": "Opening moh appointment provider dashboard window in legacy UI",
-    "order": 2,
+    "order": 4,
     "extensions": [
       {
         "id": "imbemr.appointmentsApp",

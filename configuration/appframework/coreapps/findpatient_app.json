@@ -3,7 +3,7 @@
         "id": "coreapps.findPatient",
         "instanceOf": "coreapps.template.findPatient",
         "description": "Basic patient search that goes to the patient dashboard",
-        "order": 2,
+        "order": 1,
         "config": {
             "afterSelectedUrl": "/patientDashboard.form?patientId={{patientDbId}}"
         },

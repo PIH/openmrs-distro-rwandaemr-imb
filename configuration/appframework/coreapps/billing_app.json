@@ -2,7 +2,7 @@
   {
     "id": "imbemr.billingApp",
     "description": "Opening Billing window in legacy UI",
-    "order": 2,
+    "order": 6,
     "extensions": [
       {
         "id": "imbemr.billingApp",

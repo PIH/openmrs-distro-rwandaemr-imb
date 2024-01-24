@@ -19,7 +19,8 @@
     "extensionParams": {
       "show-locations": false,
       "require-location": false,
-      "allow-password-reset": false
+      "allow-password-reset": false,
+      "welcome-message": "Welcome to Rwanda EMR"
     }
   }
 ]

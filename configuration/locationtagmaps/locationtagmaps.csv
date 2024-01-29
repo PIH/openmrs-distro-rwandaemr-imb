@@ -1,0 +1,13 @@
+Location,Login Location,Visit Location
+Emergency,TRUE,TRUE
+MCH Clinic,TRUE,TRUE
+Mental Health Clinic,TRUE,TRUE
+NCD Clinic,TRUE,TRUE
+Outpatient Clinic,TRUE,TRUE
+Pharmacy,TRUE,TRUE
+Reception,TRUE,TRUE
+Internal Medecine Ward,TRUE,TRUE
+Laboratory ,TRUE,TRUE
+Pediatrics Ward,TRUE,TRUE
+ART Clinic,TRUE,TRUE
+Finance Services,TRUE,FALSE

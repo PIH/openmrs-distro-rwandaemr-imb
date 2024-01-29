@@ -1,0 +1,3 @@
+UUID,Void/Retire,Name,Description
+b8bbf83e-645f-451f-8efe-a0db56f09676,,Login Location,"When a user logs in and chooses a session location, they may only choose one with this tag"
+0967d73d-f3c9-492b-abed-356478610a94,,Visit Location,"Visits are only allowed to happen at locations tagged with this location tag or at locations that descend from a location tagged with this tag."

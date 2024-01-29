@@ -1,0 +1,14 @@
+UUID,Name,Description,Parent,Tag|Login Location,Tag|Visit Location
+5af1ffcd-5178-11ea-a500-645d86728797,Health Facility,"A place where health care is provided, including hospitals, clinics and health centers",,,
+9f5e452a-d323-11ea-98a0-3c6aa7c392cc,Emergency,A location for registering emergency patients,Health Facility,TRUE,TRUE
+2e8c9500-bd41-11ea-aee0-3c6aa7c392cc,MCH Clinic,MCH Clinic,Health Facility,TRUE,TRUE
+8b8dad4c-5179-11ea-a500-645d86728797,Mental Health Clinic,Mental Health Clinic,Health Facility,TRUE,TRUE
+b7cfea60-5179-11ea-a500-645d86728797,NCD Clinic,NCD Clinic,Health Facility,TRUE,TRUE
+267a0c52-5179-11ea-a500-645d86728797,Outpatient Clinic,The outpatient clinic,Health Facility,TRUE,TRUE
+0fff0fae-ff2c-11ea-85b1-3c6aa7c392cc,Pharmacy,The pharmacy where drugs will be dispensed,Health Facility,TRUE,TRUE
+8a4e37e3-5178-11ea-a500-645d86728797,Reception,The reception where patient get registered,Health Facility,TRUE,TRUE
+0eea0073-91bc-4a28-8b1e-a882326a98ba,Internal Medecine Ward,Inpatient ward,Health Facility,TRUE,TRUE
+320a7c98-78f3-4e6b-9f0c-1a520eef44c1,Laboratory ,Laboratory,Health Facility,TRUE,TRUE
+fc3de5be-93d5-42bb-9974-97e22b127f81,Pediatrics Ward,Peds Ward,Health Facility,TRUE,TRUE
+4359201d-8c8f-4877-8cea-3ebc76a9d55f,ART Clinic,ART Clinic,Health Facility,TRUE,TRUE
+16d028d7-f74e-42f7-8bf1-425ed3a2c4c1,Finance Services,Finance services,Health Facility,TRUE,TRUE

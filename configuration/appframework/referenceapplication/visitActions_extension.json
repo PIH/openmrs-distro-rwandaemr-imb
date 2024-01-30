@@ -52,7 +52,7 @@
         "extensionPointId": "patientDashboard.visitActions",
         "type": "link",
         "label": "referenceapplication.app.capturevitals.title",
-        "url": "htmlformentryui/htmlform/enterHtmlFormWithSimpleUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/vitals.xml",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/vitals.xml",
         "icon": "icon-vitals",
         "order": 52,
         "requiredPrivilege": "Task: referenceapplication.vitals",
@@ -63,7 +63,7 @@
         "extensionPointId": "patientDashboard.visitActions",
         "type": "link",
         "label": "Admission Form",
-        "url": "htmlformentryui/htmlform/enterHtmlFormWithSimpleUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file%3Aconfiguration%2Fhtmlforms%2Fauto-ipd-admission.xml",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file%3Aconfiguration%2Fhtmlforms%2Fauto-ipd-admission.xml",
         "icon": "icon-stethoscope",
         "order": 52,
         "require": "visit.active && visit.admitted"

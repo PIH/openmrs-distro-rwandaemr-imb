@@ -1,0 +1,10 @@
+body {
+    max-width: unset !important;
+    width: 95% !important;
+}
+#login-form {
+    text-align: center;
+}
+.patient-header.dead .death-header {
+    background: red;
+}

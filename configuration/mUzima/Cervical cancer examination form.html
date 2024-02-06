@@ -1395,12 +1395,14 @@
                 <!--                       type="Date" data-concept="2ec83708-c126-48f2-b5f8-0ce37500e11b^Referral completion Date^99DCT"/>-->
                 <!--            </label>-->
             </div>
-            <label class="font-normal Disposition"> <strong>Date of next visit:  </strong> <span class="required requirementReferralSymbol initialHide" >*</span> </label>
-            <br/>
-            <label class="font-normal Disposition">
-                <input class="form-control datepicker future-or-today-date" id="obs.nextVisitDate" name="obs.BreastDispositionNextDate" type="text"
-                       data-concept="3ce94df0-26fe-102b-80cb-0017a47871b2^RETURN VISIT DATE^99DCT" readonly="readonly"/>
-            </label>
+            <span id="nextVisitSpan">
+                <label class="font-normal"> <strong>Next visit date:  </strong> </label>
+                <br/>
+                <label class="font-normal">
+                    <input class="form-control datepicker future-or-today-date" id="obs.nextVisitDate" name="obs.BreastDispositionNextDate" type="text"
+                           data-concept="3ce94df0-26fe-102b-80cb-0017a47871b2^RETURN VISIT DATE^99DCT" readonly="readonly"/>
+                </label>
+            </span>
 
         </div>
     </fieldset>
@@ -1731,19 +1733,42 @@
             }
 
             $('input[name="Disposition"]').change(function(){
-                if($("input[id='DispositionReferredOut']").prop('checked')){
+
+                if($("input[id='DispositionDischarged']").prop('checked')){
+                    $("#healthFacilityUuid").prop("required",false);
+                    $("#nextVisitSpan").hide();
+                    $("#obs\\.nextVisitDate").prop("required",false);
+                }
+                else if($("input[id='DispositionReferredOut']").prop('checked')){
                     $("#healthFacilityUuid").prop("required",true);
+                    $("#nextVisitSpan").show();
                     $("#obs\\.nextVisitDate").prop("required",true);
                     $("#ManagementReferralReasonSuspectedCancer").prop("required",true);
                     $(".requirementReferralSymbol").show();
                 }
+                else if($("input[id='DispositionFollowupAtThisHealthFacility']").prop('checked')){
+                    $("#healthFacilityUuid").prop("required",false);
+                    $("#nextVisitSpan").show();
+                    $("#obs\\.nextVisitDate").prop("required",true);
+                }
+                else if($("input[id='DispositionFollowupAtAnotherHealthFacility']").prop('checked')){
+                    $("#healthFacilityUuid").prop("required",false);
+                    $("#nextVisitSpan").show();
+                    $("#obs\\.nextVisitDate").prop("required",true);
+                }
+                else if($("input[id='DispositionRescreening']").prop('checked')){
+                    $("#healthFacilityUuid").prop("required",false);
+                    $("#nextVisitSpan").show();
+                    $("#obs\\.nextVisitDate").prop("required",true);
+                }
                 else{
-
                     $("#healthFacilityUuid").prop("required",false);
                     $("#obs\\.nextVisitDate").prop("required",false);
+                    $("#nextVisitSpan").show();
                     $("#ManagementReferralReasonSuspectedCancer").prop("required",false);
                     $(".requirementReferralSymbol").hide();
                 }
+
                 if($("input[id='DispositionReferredIn']").prop('checked')){
                    $("#serviceTransferredTo").show();
                     $("#serviceTransferredTo").prop("required",true);
@@ -1752,7 +1777,7 @@
                     $("#serviceTransferredTo").hide();
                     $("#serviceTransferredTo").prop("required",false);
                 }
-            });
+            })
 
             /* spacemen code auto-complete function */
             function specimenCodeAutofill(){

@@ -1630,27 +1630,52 @@
                 $(".referralReason").show()
             }
         })
-        $('BreastDisposition').change(function(){
-            if($("input[id='BreastDispositionReferralTo']").prop('checked')){
+            $('input[name="Disposition"]').change(function(){
 
-                $("#healthFacility").prop("required",true);
-                $("#BreastDispositionNextDate").prop("required",true);
-                $("#ReasonForReferralFurtherManagement").prop("required",true);
-            }
-            else{
-                $("#healthFacility").prop("required",false);
-                $("#BreastDispositionNextDate").prop("required",false);
-                $("#ReasonForReferralFurtherManagement").prop("required",false);
-            }
-            if($("input[id='DispositionReferredIn']").prop('checked')){
-               $("#serviceTransferredTo").show();
-               $("#serviceTransferredTo").prop("required",true);
-            }
-            else{
-                $("#serviceTransferredTo").hide();
-                $("#serviceTransferredTo").prop("required",false);
-            }
-        })
+                if($("input[id='DispositionDischarged']").prop('checked')){
+                    $("#healthFacilityUuid").prop("required",false);
+                    $("#BreastDisposition").hide();
+                    $("#BreastDispositionNextDate").prop("required",false);
+                }
+                else if($("input[id='DispositionReferredOut']").prop('checked')){
+                    $("#healthFacilityUuid").prop("required",true);
+                    $("#BreastDisposition").show();
+                    $("#BreastDispositionNextDate").prop("required",true);
+                    $("#ManagementReferralReasonSuspectedCancer").prop("required",true);
+                    $(".requirementReferralSymbol").show();
+                }
+                else if($("input[id='DispositionFollowupAtThisHealthFacility']").prop('checked')){
+                    $("#healthFacilityUuid").prop("required",false);
+                    $("#BreastDisposition").show();
+                    $("#BreastDispositionNextDate").prop("required",true);
+                }
+                else if($("input[id='DispositionFollowupAtAnotherHealthFacility']").prop('checked')){
+                    $("#healthFacilityUuid").prop("required",false);
+                    $("#BreastDisposition").show();
+                    $("#BreastDispositionNextDate").prop("required",true);
+                }
+                else if($("input[id='DispositionRescreening']").prop('checked')){
+                    $("#healthFacilityUuid").prop("required",false);
+                    $("#BreastDisposition").show();
+                    $("#BreastDispositionNextDate").prop("required",true);
+                }
+                else{
+                    $("#healthFacilityUuid").prop("required",false);
+                    $("#BreastDispositionNextDate").prop("required",false);
+                    $("#BreastDisposition").show();
+                    $("#ManagementReferralReasonSuspectedCancer").prop("required",false);
+                    $(".requirementReferralSymbol").hide();
+                }
+
+                if($("input[id='DispositionReferredIn']").prop('checked')){
+                   $("#serviceTransferredTo").show();
+                    $("#serviceTransferredTo").prop("required",true);
+                }
+                else{
+                    $("#serviceTransferredTo").hide();
+                    $("#serviceTransferredTo").prop("required",false);
+                }
+            })
         //Hide for Male
         if($("#patient\\.sex").val()=="M"){
         $(".hideForMale").hide();

@@ -1639,23 +1639,46 @@
                     $(".referralReason").show()
                 }
             })
-            $('input[name="BreastDisposition"]').change(function(){
-                if($("input[id='BreastDispositionReferralTo']").prop('checked')){
+            $('input[name="Disposition"]').change(function(){
 
-                    $("#healthFacility").prop("required",true);
-                    $("#BreastDispositionNextDate").prop("required",true);
-                    $("#ReasonForReferralFurtherManagement").prop("required",true);
+                if($("input[id='DispositionDischarged']").prop('checked')){
+                    $("#healthFacilityUuid").prop("required",false);
+                    $("#nextVisitSpan").hide();
+                    $("#obs\\.nextVisitDate").prop("required",false);
+                }
+                else if($("input[id='DispositionReferredOut']").prop('checked')){
+                    $("#healthFacilityUuid").prop("required",true);
+                    $("#nextVisitSpan").show();
+                    $("#obs\\.nextVisitDate").prop("required",true);
+                    $("#ManagementReferralReasonSuspectedCancer").prop("required",true);
                     $(".requirementReferralSymbol").show();
                 }
+                else if($("input[id='DispositionFollowupAtThisHealthFacility']").prop('checked')){
+                    $("#healthFacilityUuid").prop("required",false);
+                    $("#nextVisitSpan").show();
+                    $("#obs\\.nextVisitDate").prop("required",true);
+                }
+                else if($("input[id='DispositionFollowupAtAnotherHealthFacility']").prop('checked')){
+                    $("#healthFacilityUuid").prop("required",false);
+                    $("#nextVisitSpan").show();
+                    $("#obs\\.nextVisitDate").prop("required",true);
+                }
+                else if($("input[id='DispositionRescreening']").prop('checked')){
+                    $("#healthFacilityUuid").prop("required",false);
+                    $("#nextVisitSpan").show();
+                    $("#obs\\.nextVisitDate").prop("required",true);
+                }
                 else{
-                    $("#healthFacility").prop("required",false);
-                    $("#BreastDispositionNextDate").prop("required",false);
-                    $("#ReasonForReferralFurtherManagement").prop("required",false);
+                    $("#healthFacilityUuid").prop("required",false);
+                    $("#obs\\.nextVisitDate").prop("required",false);
+                    $("#nextVisitSpan").show();
+                    $("#ManagementReferralReasonSuspectedCancer").prop("required",false);
                     $(".requirementReferralSymbol").hide();
                 }
+
                 if($("input[id='DispositionReferredIn']").prop('checked')){
                    $("#serviceTransferredTo").show();
-                   $("#serviceTransferredTo").prop("required",true);
+                    $("#serviceTransferredTo").prop("required",true);
                 }
                 else{
                     $("#serviceTransferredTo").hide();

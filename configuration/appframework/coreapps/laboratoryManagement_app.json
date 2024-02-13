@@ -10,7 +10,8 @@
         "type": "link",
         "label": "Laboratory Management",
         "url": "module/laboratorymanagement/viewLabOrder.form",
-        "icon": "icon-beaker"
+        "icon": "icon-beaker",
+        "requiredPrivilege": "App: coreapps.laboratory"
       }
     ]
   }

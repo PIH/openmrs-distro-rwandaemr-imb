@@ -353,7 +353,7 @@
         @BECLOMETHASONE@ = 3cd906e8-26fe-102b-80cb-0017a47871b2
         @PREDNISOLONE@ = 3cd40850-26fe-102b-80cb-0017a47871b2
         @AMINOPHYLLINE@ = 3cd52a78-26fe-102b-80cb-0017a47871b2
-        @Lifestyle_intervention_only@
+        @Lifestyle_intervention_only@ = 9c192860-4473-4828-bf06-71ff0196fce1
         @CIMETIDINE@ = 3ce29820-26fe-102b-80cb-0017a47871b2
         @CHLORPHENIRAMINE@ = 3cd512ae-26fe-102b-80cb-0017a47871b2
         @DOXYCYCLINE@ = 3cccddbe-26fe-102b-80cb-0017a47871b2
@@ -383,7 +383,7 @@
 
     </macros>
 
-
+<!-- 
     <style>
         th.tableHeader {
         background-color: #009d8e;
@@ -449,6 +449,7 @@
 
         table {
         width: 100%;
+        table-layout: fixed;
         }
 
         table,td,th {
@@ -464,6 +465,7 @@
 
         td {
         font-size: 10px;
+        word-wrap:break-word
         }
 
         .selectedCancerStagingKeys {
@@ -498,7 +500,7 @@
         display: none;
         }
         }
-    </style>
+    </style> -->
 
     <div id="container" style="width:100%">
         <section>
@@ -586,7 +588,7 @@
                     <td>
                         <strong>EMR</strong>
                     </td>
-                    <td class="tableHeader">
+                    <td>
                         <strong> Diagnostique ou Probleme/</strong> Diagnosis or Problem
                     </td>
                     <td>
@@ -597,7 +599,7 @@
                     <tr>
                         <td></td>
                         <td>
-                            <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="100" rows="2" placeholder="Type here your Text" showDate="true"/>
+                            <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="30" rows="2" placeholder="Type here your Text" showDate="true"/>
                         </td>
                         <td>
                             <obs conceptId="$@NAME_OF_HEALTH_CARE_PROVIDER@"/>
@@ -608,7 +610,7 @@
                     <tr>
                         <td></td>
                         <td>
-                            <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="100" rows="2" placeholder="Type here your Text" showDate="true"/>
+                            <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="30" rows="2" placeholder="Type here your Text" showDate="true"/>
                         </td>
                         <td>
                             <obs conceptId="$@NAME_OF_HEALTH_CARE_PROVIDER@"/>
@@ -619,7 +621,7 @@
                     <tr>
                         <td></td>
                         <td>
-                            <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="100" rows="2" placeholder="Type here your Text" showDate="true"/>
+                            <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="30" rows="2" placeholder="Type here your Text" showDate="true"/>
                         </td>
                         <td>
                             <obs conceptId="$@NAME_OF_HEALTH_CARE_PROVIDER@"/>
@@ -630,7 +632,7 @@
                     <tr>
                         <td></td>
                         <td>
-                            <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="100" rows="2" placeholder="Type here your Text" showDate="true"/>
+                            <obs conceptId="$@Diagnosis_or_problem_non-coded@" cols="30" rows="2" placeholder="Type here your Text" showDate="true"/>
                         </td>
                         <td>
                             <obs conceptId="$@NAME_OF_HEALTH_CARE_PROVIDER@"/>
@@ -639,67 +641,62 @@
                 </obsgroup>
             </table>
             <table border="1">
-                <tr >
+                    <col width="5px" />
+                    <col width="20px" />
+                    <col width="40px" />
+                    <col width="10px" />
+                <tr>
+                    <th class="tableHeader"></th>
                     <th class="tableHeader">
                         <strong>EMR</strong>
                     </th>
-                    <th class="tableHeader" colspan="3"><strong>HISTOIRE ACTUELLE DU PATIENT/</strong> CURRENT PATIENT HISTORY</th>
+                    <th class="tableHeader"><strong>HISTOIRE ACTUELLE DU PATIENT/</strong> CURRENT PATIENT HISTORY</th>
+                    <th class="tableHeader"></th>
                 </tr>
-                <tr>
+               <tr>
                     <td></td>
                     <td><strong>
-                        A. Patient référé de/:</strong><br/>
+                        A. Patient référé de/:</strong><br/> 
                         <span class="english">Patient referred from</span>
                     </td>
-                    <td colspan="2">
-                        <obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@" answerConceptId="$@PRIMARY_CARE_CLINIC@"
-                             answerLabel="" style="checkbox" /><strong>soins  primaires/</strong>primary care
-                        <obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@" answerConceptId="$@HOSPITAL@" answerLabel=""
-                             style="checkbox" /><strong>l'hôpital/</strong>hospital
-                        <obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@" answerConceptId="$@HEALTH_CLINIC@"
-                             answerLabel="" style="checkbox" /><strong>autre clinique/</strong>other clinic
-                        <obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@" answerConceptId="$@OTHER_NON-CODED@" answerLabel=""
-                             style="checkbox" /><strong>autre / </strong>other
+                    <td>
+                        <obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@" answerConceptId="$@PRIMARY_CARE_CLINIC@" style="checkbox" /><strong></strong>
+                        <obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@" answerConceptId="$@HOSPITAL@" style="checkbox" /><strong></strong>
+                        <obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@" answerConceptId="$@HEALTH_CLINIC@" style="checkbox" /><strong></strong>
+                        <obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@" answerConceptId="$@OTHER_NON-CODED@" style="checkbox" />
                         <obs conceptId="$@NAME_OF_REFERRING_SITE@" size="15" />
                     </td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td><strong>
-                        Motif de consultation + <br/> histoire de la maladie</strong><br/>
-                        <span class="english">Chief complaint and history <br/> of current illness</span>
+                        Motif de consultation + histoire de la maladie</strong><br/> 
+                        <span class="english"> / Chief complaint and history of current illness</span>
                     </td>
                     <td>
-                        <obs conceptId="$@CURRENT_COMPLAINTS_OR_SYMPTOMS@" cols="90" rows="6"/>
+                        <obs conceptId="$@CURRENT_COMPLAINTS_OR_SYMPTOMS@" style="textarea"/>
                     </td>
                     <td>
                         <obsgroup groupingConceptId="$@Duration_With_Units@">
                             <strong>Duration:<obs conceptId="$@Duration@"/> </strong>
-                            <br/>
-                            <obs conceptId="$@TIME_UNITS@" answerConceptIds="$@DAYS@,$@MONTHS@,$@YEARS@" answerLabels="jours(days),Mois(months),Annees(years)" style="radio"/>
+                            <obs conceptId="$@TIME_UNITS@" answerConceptIds="$@DAYS@,$@MONTHS@,$@YEARS@" style="checkbox"/>
                         </obsgroup>
                     </td>
                 </tr>
                 <tr>
                     <td></td>
                     <td><strong>
-                        Autres symptômes: </strong><br/>
+                        Autres symptômes: </strong><br/>  
                         <span class="english">Associated symptoms</span>
                     </td>
                     <td>
-                        <obs conceptId="$@PREVIOUS_MEDICAL_HISTORY@" cols="90" rows="6"/>
+                        <obs conceptId="$@PREVIOUS_MEDICAL_HISTORY@" style="textarea"/>
                     </td>
-                    <td>
-                        <obsgroup groupingConceptId="$@Duration_With_Units@">
-                            <strong>Duration:<obs conceptId="$@Duration@"/> </strong>
-                            <br/>
+                    <td> 
+                            <!-- <strong>Duration:<obs conceptId="$@Duration@"/> </strong> -->
                             <obs conceptId="$@TIME_UNITS@" answerConceptIds="$@DAYS@,$@MONTHS@,$@YEARS@" answerLabels="jours(days),Mois(months),Annees(years)" style="radio"/>
-                        </obsgroup>
                     </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
                 </tr>
 
             </table>
@@ -746,12 +743,12 @@
                 <tr>
                     <td>&#160;&#160;&#160;&#160;&#160;&#160;</td>
                     <td><strong><u>Surgical:</u></strong> <br/> (ex: cardiac, etc) </td>
-                    <td colspan="4"><obs conceptId="$@Surgical(history)@" cols="90" rows="6"/> </td>
+                    <td colspan="4"><obs conceptId="$@Surgical(history)@" cols="40" rows="2"/> </td>
                 </tr>
                 <tr>
                     <td> &#160;&#160;&#160;&#160;&#160;&#160;</td>
                     <td><strong><u>Obstetrical:</u></strong> <br/> (including FP) </td>
-                    <td colspan="4"><obs conceptId="$@Obstestrical@" cols="90" rows="6"/> </td>
+                    <td colspan="4"><obs conceptId="$@Obstestrical@" cols="40" rows="2"/> </td>
                 </tr>
                 <tr>
                     <td> &#160;&#160;&#160;&#160;&#160;&#160;</td>
@@ -797,7 +794,7 @@
                 <tr>
                     <td colspan="6">
                         Autre histoire utile/ Document any other relevant history:<br/>
-                        <obs conceptId="$@PREVIOUS_MEDICAL_HISTORY@" rows="7" cols="90" />
+                        <obs conceptId="$@PREVIOUS_MEDICAL_HISTORY@" rows="3" cols="40" />
 
                     </td>
                 </tr>
@@ -1279,7 +1276,7 @@
                         Xrays
                     </td>
                     <td>
-                        <obs conceptId="$@Xrays@" cols="80"/>
+                        <obs conceptId="$@Xrays@" cols="40"/>
                     </td>
                 </tr>
                 <tr>
@@ -1287,7 +1284,7 @@
                         Fundoscopy
                     </td>
                     <td>
-                        <obs conceptId="$@fundoscopy@" cols="80"/>
+                        <obs conceptId="$@fundoscopy@" cols="40"/>
                     </td>
                 </tr>
                 <tr>
@@ -1295,7 +1292,7 @@
                         ECG
                     </td>
                     <td>
-                        <obs conceptId="$@ECG_DIAGNOSIS_(text)@" cols="80"/>
+                        <obs conceptId="$@ECG_DIAGNOSIS_(text)@" cols="40"/>
                     </td>
                 </tr>
 
@@ -1341,14 +1338,14 @@
                     <td>
                         <obs conceptId="$@DDB_ECHOCARDIOGRAPH_RESULT@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="" style="checkbox" />
                         <strong>Autres anormalies</strong> Other abnormalities
-                        <obs conceptId="$@ECHOCARDIOGRAM_COMMENT@" cols="60"/>
+                        <obs conceptId="$@ECHOCARDIOGRAM_COMMENT@" cols="40"/>
                     </td>
                 </tr>
             </table>
             <table border="1">
                 <tr>
                     <td><strong>RESUME/</strong> <br/> SUMMARY</td>
-                    <td><obs conceptId="$@Summary@" cols="130"/></td>
+                    <td><obs conceptId="$@Summary@" cols="90"/></td>
                 </tr>
             </table>
             <table border="1">
@@ -1678,7 +1675,7 @@
 
                 </tr>
                 <tr>
-                    <td colspan="4"> <strong>Autres/</strong> Other: <obs conceptId="$@Other_Cardiovascular_and_chronic_kidney_medication@" cols="70"/> </td>
+                    <td colspan="4"> <strong>Autres/</strong> Other: <obs conceptId="$@Other_Cardiovascular_and_chronic_kidney_medication@" cols="40"/> </td>
                 </tr>
             </table>
             <table border="1">

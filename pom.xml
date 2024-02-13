@@ -42,13 +42,14 @@
         <laboratorymanagementVersion>2.0.0-SNAPSHOT</laboratorymanagementVersion>
         <legacyuiVersion>1.15.0</legacyuiVersion>
         <metadatamappingVersion>1.6.0</metadatamappingVersion>
-        <metadatasharingVersion>1.9.0</metadatasharingVersion>
+        <metadatasharingVersion>1.10.0-SNAPSHOT</metadatasharingVersion>
         <mohappointmentVersion>2.0.1-SNAPSHOT</mohappointmentVersion>
         <mohbillingVersion>2.0.2-SNAPSHOT</mohbillingVersion>
         <mohtracVersion>2.0.0-SNAPSHOT</mohtracVersion>
         <namephoneticsVersion>1.19.0</namephoneticsVersion>
         <omodExportVersion>2.1.0</omodExportVersion>
         <orderextensionVersion>3.2.0</orderextensionVersion>
+        <owaVersion>1.15.0-SNAPSHOT</owaVersion>
         <patientsummaryVersion>1.4.0</patientsummaryVersion>
         <pharmacymanagementVersion>2.0.0-SNAPSHOT</pharmacymanagementVersion>
         <providermanagementVersion>2.14.0</providermanagementVersion>

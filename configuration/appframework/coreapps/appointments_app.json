@@ -10,7 +10,8 @@
         "type": "link",
         "label": "Appointments",
         "url": "module/mohappointment/providerDashboard.form",
-        "icon": "icon-th-list"
+        "icon": "icon-th-list",
+        "requiredPrivilege": "App: coreapps.getPatientQueue"
       }
     ]
   }

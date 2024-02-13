@@ -1,0 +1,73 @@
+[
+  {
+    "id": "imbemr.silicosisProgramDashboard.currentEnrollment",
+    "order": 1,
+    "config": {
+      "widget": "programstatus",
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.currentEnrollmentDashboardWidget.label",
+      "program": "326475d7-07f6-4357-ba1b-9098f8137849",
+      "dashboard": "326475d7-07f6-4357-ba1b-9098f8137849"
+    },
+    "extensions": [
+      {
+        "id": "imbemr.silicosisProgramDashboard.currentEnrollment.extension",
+        "appId": "imbemr.silicosisProgramDashboard.currentEnrollment",
+        "extensionPointId": "326475d7-07f6-4357-ba1b-9098f8137849.firstColumnFragments",
+        "extensionParams": {
+          "provider": "coreapps",
+          "fragment": "dashboardwidgets/dashboardWidget"
+        }
+      }
+    ]
+  },
+  {
+    "id": "imbemr.silicosisProgramDashboard.previousEnrollment",
+    "order": 2,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "326475d7-07f6-4357-ba1b-9098f8137849",
+      "dashboard": "326475d7-07f6-4357-ba1b-9098f8137849",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.silicosisProgramDashboard.previousEnrollment.extension",
+        "appId": "imbemr.silicosisProgramDashboard.previousEnrollment",
+        "extensionPointId": "326475d7-07f6-4357-ba1b-9098f8137849.firstColumnFragments",
+        "extensionParams": {
+          "provider": "coreapps",
+          "fragment": "program/programHistory"
+        }
+      }
+    ]
+  },
+  {
+    "id": "imbemr.silicosisProgramDashboard.obsGraph.weight",
+    "order": 3,
+    "config": {
+      "widget": "obsgraph",
+      "icon": "icon-bar-chart",
+      "conceptId": "3ce93cf2-26fe-102b-80cb-0017a47871b2,3ce93b62-26fe-102b-80cb-0017a47871b2",
+      "maxResults": "6",
+      "showLegend": true,
+      "function": "(bmi,3ce93b62-26fe-102b-80cb-0017a47871b2,3ce93cf2-26fe-102b-80cb-0017a47871b2);",
+      "label": "WEIGHT,HEIGHT AND BMI GRAPH",
+      "program": "326475d7-07f6-4357-ba1b-9098f8137849",
+      "dashboard": "326475d7-07f6-4357-ba1b-9098f8137849",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.silicosisProgramDashboard.obsGraphWeight.extension",
+        "appId": "imbemr.silicosisProgramDashboard.obsGraph.weight",
+        "extensionPointId": "326475d7-07f6-4357-ba1b-9098f8137849.secondColumnFragments",
+        "extensionParams": {
+          "provider": "coreapps",
+          "fragment": "dashboardwidgets/dashboardWidget"
+        }
+      }
+    ]
+  }
+]

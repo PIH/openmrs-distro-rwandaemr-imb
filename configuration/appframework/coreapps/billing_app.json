@@ -10,7 +10,8 @@
         "type": "link",
         "label": "Billing",
         "url": "module/mohbilling/insurancePolicySearch.form",
-        "icon": "icon-money"
+        "icon": "icon-money",
+        "requiredPrivilege": "App: coreapps.billingAdmin"
       }
     ]
   }

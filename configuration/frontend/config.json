@@ -254,16 +254,16 @@
     },
     "valueSets": {
       "reasonForPause": {
-        "uuid": "799604a6-7df6-48b7-a946-9d05765d58ac"
+        "uuid": "2462a9d7-61fb-4bf5-9359-aedecb8d03cb"
       },
       "reasonForClose": {
-        "uuid": "a0b009f9-30fa-447a-8ea8-c143c98a1146"
+        "uuid": "167157AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
       },
       "substitutionReason": {
-        "uuid": "ad346753-0eb5-4ecb-aeda-ce6bee033a7e"
+        "uuid": "2de6e1be-f2dd-4ba0-9516-8a611aa2af9b"
       },
       "substitutionType": {
-        "uuid": "2f280f46-3a17-40dd-9033-41874c6e0a99"
+        "uuid": "b9c5bca0-d026-4245-a4d2-e4c0a8999082"
       }
     }
   }

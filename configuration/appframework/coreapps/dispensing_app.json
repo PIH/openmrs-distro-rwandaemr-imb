@@ -10,7 +10,8 @@
         "type": "link",
         "label": "Dispensing",
         "url": "spa/dispensing",
-        "icon": "fas fa-fw fa-prescription-bottle-alt"
+        "icon": "fas fa-fw fa-prescription-bottle-alt",
+        "requiredPrivilege": "App: coreapps.dispensing"
       }
     ]
   }

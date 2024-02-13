@@ -17,7 +17,8 @@
         "extensionParams": {
           "provider": "coreapps",
           "fragment": "dashboardwidgets/dashboardWidget"
-        }
+        },
+        "requiredPrivilege": "App: coreapps.programsList"
       }
     ]
   }

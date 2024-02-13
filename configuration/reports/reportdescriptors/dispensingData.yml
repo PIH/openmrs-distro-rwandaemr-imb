@@ -12,7 +12,7 @@ parameters:
 datasets:
   - key: "dispensing"
     type: "sql"
-    config: "sql/dispensingData.sql"
+    config: "sql/all_medication_dispensing.sql"
 designs:
   - type: "csv"
     properties:

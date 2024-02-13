@@ -1,0 +1,157 @@
+[
+  {
+    "id": "org.openmrs.module.adminui.manageLocations.link",
+    "extensionPointId": "org.openmrs.module.adminui.adminLinks",
+    "type": "link",
+    "label": "adminui.manageLocations.label",
+    "url": "adminui/metadata/locations/manageLocations.page",
+    "requiredPrivilege": "Manage Locations",
+    "extensionParams":{
+      "group": "org.openmrs.module.adminui.locations.group"
+    }
+  },
+
+  {
+    "id": "org.openmrs.module.adminui.manageLocationTags.link",
+    "extensionPointId": "org.openmrs.module.adminui.adminLinks",
+    "type": "link",
+    "label": "adminui.manageLocationTags.label",
+    "url": "adminui/metadata/locations/manageLocationTags.page",
+    "requiredPrivilege": "Manage Location Tags",
+    "extensionParams":{
+      "group": "org.openmrs.module.adminui.locations.group"
+    }
+  },
+
+  {
+    "id": "org.openmrs.module.adminui.manageLocationAttributeTypes.link",
+    "extensionPointId": "org.openmrs.module.adminui.adminLinks",
+    "type": "link",
+    "label": "adminui.manageLocationAttributeTypes.label",
+    "url": "adminui/metadata/locations/manageLocationAttributeTypes.page",
+    "requiredPrivilege": "Manage Location Attribute Types",
+    "extensionParams":{
+      "group": "org.openmrs.module.adminui.locations.group"
+    }
+  },
+
+  {
+    "id": "org.openmrs.module.adminui.manageVisitAttributeTypes.link",
+    "extensionPointId": "org.openmrs.module.adminui.adminLinks",
+    "type": "link",
+    "label": "adminui.manageVisitAttributeTypes.title",
+    "url": "adminui/metadata/visits/visitattributetypes/manageVisitAttributeTypes.page",
+    "requiredPrivilege": "Manage Visit Attribute Types",
+    "extensionParams":{
+      "group": "org.openmrs.module.adminui.visits.group"
+    }
+  },
+
+  {
+    "id": "org.openmrs.module.adminui.visits",
+    "extensionPointId": "org.openmrs.module.adminui.adminLinks",
+    "type": "link",
+    "label": "adminui.manageVisitTypes.title",
+    "url": "adminui/metadata/visits/visittypes/manageVisitTypes.page",
+    "requiredPrivilege": "Manage Visit Types",
+    "extensionParams":{
+      "group": "org.openmrs.module.adminui.visits.group"
+    }
+  },
+
+  {
+    "id": "org.openmrs.module.adminui.encounters",
+    "extensionPointId": "org.openmrs.module.adminui.adminLinks",
+    "type": "link",
+    "label": "adminui.manageEncounterTypes.title",
+    "url": "adminui/metadata/encounters/encountertypes/manageEncounterTypes.page",
+    "requiredPrivilege": "Manage Encounter Types",
+    "extensionParams":{
+      "group": "org.openmrs.module.adminui.encounters.group"
+    }
+  },
+
+  {
+    "id": "org.openmrs.module.adminui.manageEncounterRoles.link",
+    "extensionPointId": "org.openmrs.module.adminui.adminLinks",
+    "type": "link",
+    "label": "adminui.manageEncounterRoles.title",
+    "url": "adminui/metadata/encounters/encounterroles/manageEncounterRoles.page",
+    "requiredPrivilege": "Manage Encounter Roles",
+    "extensionParams":{
+      "group": "org.openmrs.module.adminui.encounters.group"
+    }
+  },
+
+  {
+    "id": "org.openmrs.module.adminui.roles",
+    "extensionPointId": "org.openmrs.module.adminui.adminLinks",
+    "type": "link",
+    "label": "adminui.manageRoles.title",
+    "url": "adminui/metadata/roles/manageRoles.page",
+    "requiredPrivilege": "Manage Roles",
+    "extensionParams":{
+      "group": "org.openmrs.module.adminui.rolesAndPrivileges.group"
+    }
+  },
+
+  {
+    "id": "org.openmrs.module.adminui.Privileges",
+    "extensionPointId": "org.openmrs.module.adminui.adminLinks",
+    "type": "link",
+    "label": "adminui.managePrivileges.title",
+    "url": "adminui/metadata/privileges/managePrivileges.page",
+    "requiredPrivilege": "Manage Privileges",
+    "extensionParams":{
+      "group": "org.openmrs.module.adminui.rolesAndPrivileges.group"
+    }
+  },
+
+  {
+    "id": "org.openmrs.module.adminui.managePatientIdentifierTypes.link",
+    "extensionPointId": "org.openmrs.module.adminui.adminLinks",
+    "type": "link",
+    "label": "adminui.managePatientIdentifierTypes.title",
+    "url": "adminui/metadata/patients/patientidentifiertypes/managePatientIdentifierTypes.page",
+    "requiredPrivilege": "Manage Patient Identifier Types",
+    "extensionParams":{
+      "group": "org.openmrs.module.adminui.patients.group"
+    }
+  },
+
+  {
+    "id": "org.openmrs.module.adminui.manageProviderAttributeTypes.link",
+    "extensionPointId": "org.openmrs.module.adminui.adminLinks",
+    "type": "link",
+    "label": "adminui.manageProviderAttributeTypes.title",
+    "url": "adminui/metadata/providers/providerattributetypes/manageProviderAttributeTypes.page",
+    "requiredPrivilege": "Manage Provider Attribute Types",
+    "extensionParams":{
+      "group": "org.openmrs.module.adminui.providers.group"
+    }
+  },
+
+  {
+    "id": "org.openmrs.module.adminui.conceptDictionary.link",
+    "extensionPointId": "org.openmrs.module.adminui.adminLinks",
+    "type": "link",
+    "label": "adminui.conceptDictionary.title",
+    "url": "owa/conceptdictionary/index.html",
+    "requiredPrivilege": "Manage Concept Dictionary",
+    "extensionParams":{
+      "group": "org.openmrs.module.adminui.concepts.group"
+    }
+  },
+
+  {
+    "id": "org.openmrs.module.adminui.forms.link",
+    "extensionPointId": "org.openmrs.module.adminui.adminLinks",
+    "type": "link",
+    "label": "referenceapplication.formentryapp.manageforms.label",
+    "url": "formentryapp/forms.page?app=formentryapp.forms",
+    "requiredPrivilege": "App: formentryapp.forms",
+    "extensionParams":{
+      "group": "org.openmrs.module.adminui.forms.group"
+    }
+  }
+]

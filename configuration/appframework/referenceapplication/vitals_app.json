@@ -2,6 +2,7 @@
     {
         "id": "referenceapplication.vitals",
         "instanceOf": "coreapps.template.findPatient",
+        "order": 5,
         "extensions": [
             {
                 "id": "referenceapplication.vitals",

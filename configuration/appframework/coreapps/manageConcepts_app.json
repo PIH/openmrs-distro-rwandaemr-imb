@@ -13,8 +13,9 @@
       },
       {
         "id": "owa.conceptdictionary.adminLink",
-        "extensionPointId": "org.openmrs.module.adminui.adminLinks",
+        "extensionPointId": "systemAdministration.apps",
         "type": "link",
+        "icon": "icon-book",
         "label": "Manage Concept Dictionary",
         "url": "owa/conceptdictionary/index.html",
         "extensionParams": {

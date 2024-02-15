@@ -3,7 +3,7 @@
         "id": "coreapps.activeVisits",
 		"instanceOf": "coreapps.template.activeVisits",
         "description": "coreapps.activeVisits.app.description",
-        "order": 10,
+        "order": 3,
         "extensions": [
             {
                 "id": "coreapps.activeVisitsHomepageLink",

@@ -1,0 +1,125 @@
+[
+  {
+    "id": "imbemr.hivProgramDashboard.currentEnrollment",
+    "order": 1,
+    "config": {
+      "widget": "programstatus",
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.currentEnrollmentDashboardWidget.label",
+      "program": "cf7c0e30-2700-102b-80cb-0017a47871b2",
+      "dashboard": "cf7c0e30-2700-102b-80cb-0017a47871b2"
+    },
+    "extensions": [
+      {
+        "id": "imbemr.hivProgramDashboard.currentEnrollment.extension",
+        "appId": "imbemr.hivProgramDashboard.currentEnrollment",
+        "extensionPointId": "cf7c0e30-2700-102b-80cb-0017a47871b2.firstColumnFragments",
+        "extensionParams": {
+          "provider": "coreapps",
+          "fragment": "dashboardwidgets/dashboardWidget"
+        }
+      }
+    ]
+  },
+  {
+    "id": "imbemr.hivProgramDashboard.previousEnrollment",
+    "order": 2,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "cf7c0e30-2700-102b-80cb-0017a47871b2",
+      "dashboard": "cf7c0e30-2700-102b-80cb-0017a47871b2",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.hivProgramDashboard.previousEnrollment.extension",
+        "appId": "imbemr.hivProgramDashboard.previousEnrollment",
+        "extensionPointId": "cf7c0e30-2700-102b-80cb-0017a47871b2.firstColumnFragments",
+        "extensionParams": {
+          "provider": "coreapps",
+          "fragment": "program/programHistory"
+        }
+      }
+    ]
+  },
+  {
+    "id": "imbemr.hivProgramDashboard.obsGraph.weight",
+    "order": 3,
+    "config": {
+      "widget": "obsgraph",
+      "icon": "icon-bar-chart",
+      "conceptId": "3ce93cf2-26fe-102b-80cb-0017a47871b2,3ce93b62-26fe-102b-80cb-0017a47871b2",
+      "maxResults": "6",
+      "showLegend": true,
+      "function": "(bmi,3ce93b62-26fe-102b-80cb-0017a47871b2,3ce93cf2-26fe-102b-80cb-0017a47871b2);",
+      "label": "WEIGHT,HEIGHT AND BMI GRAPH",
+      "program": "cf7c0e30-2700-102b-80cb-0017a47871b2",
+      "dashboard": "cf7c0e30-2700-102b-80cb-0017a47871b2",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.hivProgramDashboard.obsGraphWeight.extension",
+        "appId": "imbemr.hivProgramDashboard.obsGraph.weight",
+        "extensionPointId": "cf7c0e30-2700-102b-80cb-0017a47871b2.secondColumnFragments",
+        "extensionParams": {
+          "provider": "coreapps",
+          "fragment": "dashboardwidgets/dashboardWidget"
+        }
+      }
+    ]
+  },
+  {
+    "id": "imbemr.hivProgramDashboard.obsGraph.cd4",
+    "order": 4,
+    "config": {
+      "widget": "obsgraph",
+      "icon": "icon-bar-chart",
+      "conceptId": "3ceda710-26fe-102b-80cb-0017a47871b2",
+      "maxResults": "6",
+      "showLegend": true,
+      "label": "CD4 COUNT GRAPH",
+      "program": "cf7c0e30-2700-102b-80cb-0017a47871b2",
+      "dashboard": "cf7c0e30-2700-102b-80cb-0017a47871b2",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.hivProgramDashboard.obsGraphCD4.extension",
+        "appId": "imbemr.hivProgramDashboard.obsGraph.cd4",
+        "extensionPointId": "cf7c0e30-2700-102b-80cb-0017a47871b2.secondColumnFragments",
+        "extensionParams": {
+          "provider": "coreapps",
+          "fragment": "dashboardwidgets/dashboardWidget"
+        }
+      }
+    ]
+  },
+  {
+    "id": "imbemr.hivProgramDashboard.obsGraph.viralLoad",
+    "order": 4,
+    "config": {
+      "widget": "obsgraph",
+      "icon": "icon-bar-chart",
+      "conceptId": "5b1f9343-3298-4223-ae8e-5071cb07f5ad",
+      "maxResults": "6",
+      "showLegend": true,
+      "label": "VIRAL LOAD GRAPH",
+      "program": "cf7c0e30-2700-102b-80cb-0017a47871b2",
+      "dashboard": "cf7c0e30-2700-102b-80cb-0017a47871b2",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.hivProgramDashboard.obsGraphViralLoad.extension",
+        "appId": "imbemr.hivProgramDashboard.obsGraph.viralLoad",
+        "extensionPointId": "cf7c0e30-2700-102b-80cb-0017a47871b2.secondColumnFragments",
+        "extensionParams": {
+          "provider": "coreapps",
+          "fragment": "dashboardwidgets/dashboardWidget"
+        }
+      }
+    ]
+  }
+]

@@ -26,7 +26,7 @@
                 "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
                 "type": "link",
                 "label": "reportingui.reportsapp.home.title",
-                "url": "reportingui/reportsapp/home.page",
+                "url": "module/reporting/dashboard/index.form",
                 "icon": "icon-list-alt",
                 "order": 5,
                 "requiredPrivilege": "App: reportingui.reports"

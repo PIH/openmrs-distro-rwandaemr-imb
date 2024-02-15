@@ -1,0 +1,12 @@
+Uuid,Privilege name,Description
+eba24ae0-d3e3-4083-84bf-5c4d7eb97e3d,Task: dispensing.create.dispense,Allows user to Dispense Medication
+58f14517-6635-42d3-b1ca-99f464eaea2b,Task: dispensing.create.dispense.andModifyDetails,"Allows user to modify the Quantity, Drug, Formulation and Dose Instructions when Dispensing"
+cde0218e-c3e8-465a-85fd-ef478abbb696,Task: dispensing.edit.dispense,Allows user to edit an existing Medication Dispense
+d0e540c6-619b-4943-9431-fd1fbf494d74,Task: dispensing.delete.dispense,Allows user to delete an existing Medication Dispense
+3c788e2a-a1ec-442a-a1ed-f5d27d8392b5,Task: dispensing.delete.dispense.ifCreator,"Allows user to delete an existing Medication Dispense, *but only* if they created it originally"
+f1659225-c339-43d6-9489-3deba279a369,App: coreapps.billingAdmin,This privilege allow the user to access billing app on 2x home page
+8d14a6fb-2e59-4e62-a058-b03007ed584c,App: coreapps.dispensing,This privilege allow the user to access dispensing app on 2x home page
+72fef04b-7681-4e7a-acb0-47734d5a4cff,App: coreapps.getPatientQueue,This privilege allow the user to access appointment app on 2x home page
+c0079282-e5ab-4b8c-bd31-b40fe87a3439,App: coreapps.laboratory,This privilege allow the user to access laboratory app on 2x home page
+1c419713-1b96-483f-828f-3ad373d908f1,App: coreapps.primarycare,This privilege allow the user to access primary care app on 2x home page
+d07d0e2a-7542-4a65-9ae3-6ce72b26fabd,App: coreapps.programsList,This privilege allow the user to access program list extension on 2x patient dashboard

@@ -5,8 +5,9 @@
         "extensions": [
             {
                 "id": "formentryapp.forms.homepageLink",
- 				"extensionPointId": "org.openmrs.module.adminui.adminLinks",
+ 				"extensionPointId": "systemAdministration.apps",
                 "type": "link",
+                "icon": "icon-file-alt",
                 "label": "referenceapplication.formentryapp.manageforms.label",
                 "url": "formentryapp/forms.page?app=formentryapp.forms",
 		        "extensionParams":{

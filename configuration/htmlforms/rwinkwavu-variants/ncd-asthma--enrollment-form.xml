@@ -351,7 +351,7 @@
         @BECLOMETHASONE@ = 3cd906e8-26fe-102b-80cb-0017a47871b2
         @PREDNISOLONE@ = 3cd40850-26fe-102b-80cb-0017a47871b2
         @AMINOPHYLLINE@ = 3cd52a78-26fe-102b-80cb-0017a47871b2
-        @Lifestyle_intervention_only@
+        @Lifestyle_intervention_only@ = 9c192860-4473-4828-bf06-71ff0196fce1
         @CIMETIDINE@ = 3ce29820-26fe-102b-80cb-0017a47871b2
         @CHLORPHENIRAMINE@ = 3cd512ae-26fe-102b-80cb-0017a47871b2
         @DOXYCYCLINE@ = 3cccddbe-26fe-102b-80cb-0017a47871b2
@@ -645,29 +645,25 @@
                 <tr>
                     <td></td>
                     <td><strong>
-                        A. Patient référé de/:</strong><br/>
+                        A. Patient référé de/:</strong>
                         <span class="english">Patient referred from</span>
                     </td>
-                    <td colspan="2">
-                        <obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@" answerConceptId="$@PRIMARY_CARE_CLINIC@"
-                             answerLabel="" style="checkbox" /><strong>soins  primaires/</strong>primary care
-                        <obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@" answerConceptId="$@HOSPITAL@" answerLabel=""
-                             style="checkbox" /><strong>l'hôpital/</strong>hospital
-                        <obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@" answerConceptId="$@HEALTH_CLINIC@"
-                             answerLabel="" style="checkbox" /><strong>autre clinique/</strong>other clinic
-                        <obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@" answerConceptId="$@OTHER_NON-CODED@" answerLabel=""
-                             style="checkbox" /><strong>autre / </strong>other
+                    <td>
+                        <obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@" answerConceptId="$@PRIMARY_CARE_CLINIC@" answerLabel="" style="checkbox" /><strong>soins  primaires/</strong>primary care
+                        <obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@" answerConceptId="$@HOSPITAL@" answerLabel="" style="checkbox" /><strong>l'hôpital/</strong>hospital
+                        <obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@" answerConceptId="$@HEALTH_CLINIC@" answerLabel="" style="checkbox" /><strong>autre clinique/</strong>other clinic
+                        <!-- <obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="" style="checkbox" /><strong>autre / </strong>other -->
                         <obs conceptId="$@NAME_OF_REFERRING_SITE@" size="15" />
                     </td>
                 </tr>
                 <tr>
                     <td></td>
                     <td><strong>
-                        Motif de consultation + <br/> histoire de la maladie</strong><br/>
-                        <span class="english">Chief complaint and history <br/> of current illness</span>
+                        Motif de consultation + <br/> histoire de la maladie</strong>
+                        <span class="english"> / Chief complaint and history of current illness</span>
                     </td>
                     <td>
-                        <obs conceptId="$@CURRENT_COMPLAINTS_OR_SYMPTOMS@" cols="90" rows="6"/>
+                        <obs conceptId="$@CURRENT_COMPLAINTS_OR_SYMPTOMS@" cols="40" rows="6"/>
                     </td>
                     <td>
                         <obsgroup groupingConceptId="$@Duration_With_Units@">
@@ -684,7 +680,7 @@
                         <span class="english">Associated symptoms</span>
                     </td>
                     <td>
-                        <obs conceptId="$@PREVIOUS_MEDICAL_HISTORY@" cols="90" rows="6"/>
+                        <obs conceptId="$@PREVIOUS_MEDICAL_HISTORY@" cols="40" rows="6"/>
                     </td>
                     <td>
                         <obsgroup groupingConceptId="$@Duration_With_Units@">
@@ -720,7 +716,8 @@
                         <obs conceptId="$@patient_chronic_disease_history@" answerConceptId="$@stroke@" answerLabel="stroke" style="checkbox"/>
                         <obs conceptId="$@patient_chronic_disease_history@" answerConceptId="$@ASTHMA@" answerLabel="asthma" style="checkbox"/>
                         <obs conceptId="$@patient_chronic_disease_history@" answerConceptId="$@COPD@" answerLabel="COPD" style="checkbox"/>
-                        <obs conceptId="$@patient_chronic_disease_history@" answerConceptId="$@DIABETES_MELLITUS@" answerLabel="DM" style="checkbox"/>                    <obs conceptId="$@patient_chronic_disease_history@" answerConceptId="$@OTHER_RELATIVE@" answerLabel="Autres(specifier)" style="checkbox"/>
+                        <obs conceptId="$@patient_chronic_disease_history@" answerConceptId="$@DIABETES_MELLITUS@" answerLabel="DM" style="checkbox"/>                    
+                        <obs conceptId="$@patient_chronic_disease_history@" answerConceptId="$@OTHER_RELATIVE@" answerLabel="Autres(specifier)" style="checkbox"/>
                         <obs conceptId="$@patient_chronic_disease_history@" answerConceptId="$@chronical_kidney_disease@" answerLabel="CKD" style="checkbox"/>
                         <obs conceptId="$@patient_chronic_disease_history@" answerConceptId="$@TUBERCULOSIS@" answerLabel="TB" style="checkbox"/>
                         <obs conceptId="$@patient_chronic_disease_history@" answerConceptId="$@HIV@" answerLabel="HIV" style="checkbox"/>
@@ -743,12 +740,12 @@
                 <tr>
                     <td>&#160;&#160;&#160;&#160;&#160;&#160;</td>
                     <td><strong><u>Surgical:</u></strong> <br/> (ex: cardiac, etc) </td>
-                    <td colspan="4"><obs conceptId="$@Surgical(history)@" cols="90" rows="6"/> </td>
+                    <td colspan="4"><obs conceptId="$@Surgical(history)@" cols="40" rows="6"/> </td>
                 </tr>
                 <tr>
                     <td> &#160;&#160;&#160;&#160;&#160;&#160;</td>
                     <td><strong><u>Obstetrical:</u></strong> <br/> (including FP) </td>
-                    <td colspan="4"><obs conceptId="$@Obstestrical@" cols="90" rows="6"/> </td>
+                    <td colspan="4"><obs conceptId="$@Obstestrical@" cols="40" rows="6"/> </td>
                 </tr>
                 <tr>
                     <td> &#160;&#160;&#160;&#160;&#160;&#160;</td>
@@ -794,7 +791,7 @@
                 <tr>
                     <td colspan="6">
                         Autre histoire utile/ Document any other relevant history:<br/>
-                        <obs conceptId="$@PREVIOUS_MEDICAL_HISTORY@" rows="7" cols="90" />
+                        <obs conceptId="$@PREVIOUS_MEDICAL_HISTORY@" rows="7" cols="40" />
 
                     </td>
                 </tr>

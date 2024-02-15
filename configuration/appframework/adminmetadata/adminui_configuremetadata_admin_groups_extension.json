@@ -1,0 +1,74 @@
+[
+  {
+    "id": "org.openmrs.module.adminui.locations.group",
+    "extensionPointId": "org.openmrs.module.adminui.adminGroups",
+    "type": "group",
+    "label": "adminui.locations.label",
+    "icon": "icon-map-marker"
+  },
+
+  {
+    "id": "org.openmrs.module.adminui.encounters.group",
+    "extensionPointId": "org.openmrs.module.adminui.adminGroups",
+    "type": "group",
+    "label": "adminui.encounters.title",
+    "icon": "icon-list"
+  },
+
+  {
+    "id": "org.openmrs.module.adminui.visits.group",
+    "extensionPointId": "org.openmrs.module.adminui.adminGroups",
+    "type": "group",
+    "label": "adminui.visits.title",
+    "icon": "icon-list-alt"
+  },
+
+  {
+    "id": "org.openmrs.module.adminui.rolesAndPrivileges.group",
+    "extensionPointId": "org.openmrs.module.adminui.adminGroups",
+    "type": "group",
+    "label": "adminui.rolesAndPrivileges.title",
+    "icon": "icon-cog"
+  },
+
+  {
+    "id": "org.openmrs.module.adminui.patients.group",
+    "extensionPointId": "org.openmrs.module.adminui.adminGroups",
+    "type": "group",
+    "label": "adminui.patients.title",
+    "icon": "icon-user-md"
+  },
+
+  {
+    "id": "org.openmrs.module.adminui.providers.group",
+    "extensionPointId": "org.openmrs.module.adminui.adminGroups",
+    "type": "group",
+    "label": "adminui.providers.title",
+    "icon": "icon-group"
+  },
+
+  {
+    "id": "org.openmrs.module.adminui.manageforms.group",
+    "extensionPointId": "org.openmrs.module.adminui.adminGroups",
+    "type": "group",
+    "label": "adminui.formentryapp.manageforms.group.label",
+    "icon": "icon-file-alt"
+  },
+
+  {
+    "id": "org.openmrs.module.adminui.concepts.group",
+    "extensionPointId": "org.openmrs.module.adminui.adminGroups",
+    "type": "group",
+    "label": "adminui.concepts.label",
+    "icon": "icon-book"
+  },
+
+  {
+    "id": "org.openmrs.module.adminui.forms.group",
+    "extensionPointId": "org.openmrs.module.adminui.adminGroups",
+    "type": "group",
+    "label": "adminui.formentryapp.manageforms.group.label",
+    "icon": "icon-file"
+  }
+
+]

@@ -16,5 +16,8 @@
     <changeSet id="rwandaemr-distro-user_functions" author="mseaton" runAlways="true" runOnChange="true">
         <sqlFile endDelimiter="#" path="sql/user_functions.sql" relativeToChangelogFile="true" stripComments="true" />
     </changeSet>
+    <changeSet id="rwandaemr-distro-user_functions" author="benjamin" runAlways="true" runOnChange="true">
+        <sqlFile endDelimiter="#" path="sql/create_functions.sql" relativeToChangelogFile="true" stripComments="true" />
+    </changeSet>
 
 </databaseChangeLog>

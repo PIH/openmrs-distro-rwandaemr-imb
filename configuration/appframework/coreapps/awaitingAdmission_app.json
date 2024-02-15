@@ -3,7 +3,7 @@
         "id": "coreapps.awaitingAdmission",
         "instanceOf": "coreapps.template.awaitingAdmission",
         "description": "coreapps.awaitingAdmission.app.description",
-        "order": 10,
+        "order": 20,
         "extensions": [
             {
                 "id": "coreapps.awaitingAdmissionHomepageLink",

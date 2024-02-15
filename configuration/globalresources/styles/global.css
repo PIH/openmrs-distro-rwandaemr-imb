@@ -47,8 +47,8 @@ form fieldset, .form fieldset{
 #login-form a {
     color: #ffffff;
     text-decoration: none;
-}
-#login-form ul.select li:hover{
-    background-color: #F6BE00;
-    color: black;
 }*/
+#login-form ul.select li:hover{
+    background-color: #2a8cb6;
+    color: black;
+}

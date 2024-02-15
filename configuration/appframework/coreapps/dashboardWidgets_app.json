@@ -118,5 +118,39 @@
         }
       }
     ]
+  },
+  {
+    "id": "coreapps.attachments",
+    "label": "Attachments",
+    "icon": "fas fa-fw fa-paperclip",
+    "order": 7,
+    "extensions": [
+      {
+        "id": "coreapps.attachments.clinicianDashboardSecondColumn",
+        "appId": "coreapps.attachments",
+        "extensionPointId": "patientDashboard.secondColumnFragments",
+        "extensionParams": {
+          "provider": "attachments",
+          "fragment": "dashboardWidget"
+        }
+      }
+    ]
+  },
+  {
+    "id": "coreapps.allergies",
+    "label": "Allergies",
+    "icon": "fas fa-fw fa-allergies",
+    "order": 8,
+    "extensions": [
+      {
+        "id": "coreapps.allergies.clinicianDashboardSecondColumn",
+        "appId": "coreapps.allergies",
+        "extensionPointId": "patientDashboard.secondColumnFragments",
+        "extensionParams": {
+          "provider": "allergyui",
+          "fragment": "allergies"
+        }
+      }
+    ]
   }
 ]

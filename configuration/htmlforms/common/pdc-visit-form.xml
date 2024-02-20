@@ -177,11 +177,8 @@
                 var currentDateObj = new Date(currentDate);
                 var differenceInTime = currentDateObj - prevousWeightDateObj;
                 var differenceIndays = differenceInTime / (24 * 60 * 60 * 1000);
-                var intervalGrowth = (getValue('WEIGHT.value') - prevousWeight)/ differenceIndays
+                var intervalGrowth = (getValue('WEIGHT.value') - prevousWeight) * 1000/ differenceIndays
                 intervalGrowth = parseFloat(intervalGrowth.toFixed(2));
-                alert("prevousWeight: " + prevousWeight);
-                alert("intervalGrowth: " + intervalGrowth);
-                alert("prevousWeightObsDatetime: " + prevousWeightObsDatetime);
                 if($j.isNumeric(prevousWeight)){
                     setValue('INTERVAL_GROWTH.value', intervalGrowth);
                 }

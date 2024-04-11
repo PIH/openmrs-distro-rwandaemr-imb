@@ -1,6 +1,5 @@
 [
   {
-    // real-time simple internal transfer form (not a full transfer note)
     "id": "referenceapplication.realTime.simpleTransfer",
     "extensionPointId": "patientDashboard.visitActions",
     "type": "link",

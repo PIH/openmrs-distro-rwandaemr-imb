@@ -1,0 +1,345 @@
+<htmlform
+        htmlformUuid="016d0779-9b3b-456e-bcfc-830817a0245c"
+        formUuid="cb18e7f7-6e7b-42f9-8a26-0e297b2cbf4c"
+        formName="Discharge From PACU(PADS Score)"
+        formDescription="Discharge From PACU(PADS Score)"
+        formVersion="1.0"
+        formEncounterType="97de5563-b775-40ad-b72e-444eee8144d3"
+        formPublished="true"
+        formRetired="false"
+>
+
+    <macros>
+        paperFormId = Flow-DM-RW.V2.0.akb.15May09
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+
+    </macros>
+
+    <style>
+        form fieldset {
+        display: block;
+        }
+
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
+        }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
+        width: 100%;
+        }
+
+        .div {
+        display: table-cell
+        }
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        .date-one-line {
+        display: flex;
+        }
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
+        }
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        #result2 {
+        color: #1205d3;
+        font-size: 25px;
+        text-align: center;
+
+        }
+    </style>
+
+
+    <script type="text/javascript">
+        var $ = jQuery.noConflict();
+
+        $(document).ready(function () {
+
+        // $("#result2").find("input").attr("disabled",true);
+
+        $('#bpScore, #awScore, #nvScore, #pcmoScore, #sbScore').change(function () {
+
+
+        score1 = parseInt(getValue('bpScore.value'));
+        score2 = parseInt(getValue('awScore.value'));
+        score3 = parseInt(getValue('nvScore.value'));
+        score4 = parseInt(getValue('pcmoScore.value'));
+        score5 = parseInt(getValue('sbScore.value'));
+
+        const sum = score1 + score2 + score3 + score4 + score5;
+        console.log(sum);
+
+        // $('#totalScore').val(total.toFixed(1));
+
+        setValue('result2.value', sum);
+
+        })
+
+        });
+    </script>
+
+
+
+    <h1>DISCHARGE FROM PACU (PADS Score)</h1>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
+
+
+            <table border="" cellspacing="0" cellpadding="6">
+                <tr>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
+                    </td>
+                    <td>
+                        Health Facility:
+                        <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode" />
+                    </td>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="PADS score">
+        <div class="section-container">
+
+            <table border="1">
+                <tr>
+                    <th>Indicator</th>
+                    <th>Scoring</th>
+                    <th>Criteria</th>
+                </tr>
+                <tr>
+                    <td>
+                        BP and Pulse Rate
+                    </td>
+                    <td class="score">
+                        <obs conceptId="45a2f503-36be-4aff-b8ed-545909363cf3" id="bpScore" />
+                    </td>
+                    <td>
+                        Within 20% of pre-op levels:2 <br />
+                        Between 20% and 40% of pre-op levels:1<br />
+                        More than 40% different from pre-op levels:0
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Ability to Walk
+                    </td>
+                    <td class="score">
+                        <obs conceptId="30f15dd0-5d91-4f11-9afa-6b64f8b735fc" id="awScore" />
+                    </td>
+                    <td>
+                        Has steady gait and no dizziness (or pre-op level):2<br />
+                        Requires support to walk:1<br />
+                        Unable to walk:0
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Nausea and Vomiting
+                    </td>
+                    <td class="score">
+                        <obs conceptId="729b6487-6990-4b35-99ba-1d7be371ee50" id="nvScore" />
+                    </td>
+                    <td>
+                        Minimal, controllable with oral meds:2<br />
+                        Moderate, requires treatment with IM meds:1<br />
+                        Continual despite meds:0
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Pain Control with Oral Meds />
+                    </td>
+                    <td class="score">
+                        <obs conceptId="a1a1f068-b2e4-46a4-989e-e08d6436f9bf" id="pcmoScore" />
+                    </td>
+                    <td>
+                        Mild, controlled with oral meds:2<br />
+                        Patient requires treatment with injections:1<br />
+                        Severe pain:0
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Surgical Bleeding />
+                    </td>
+                    <td class="score">
+                        <obs conceptId="45f90faf-37ad-448d-b55e-04c312b8cfb5" id="sbScore" />
+                    </td>
+                    <td>
+                        Minimal, requiring no dressing changes in PACU:2<br />
+                        Moderate, requiring ≤2 dressing changes:1<br />
+                        Severe, requiring >2 dressing changes:0
+                    </td>
+                </tr>
+                <tr>
+
+                    <td colspan="3">
+                        <center>
+                            <p class="small-input">
+                                <obs conceptId="d5f66511-03bd-4ee6-a8fe-f1a9d835228e" id="result2" labelText="TOTAL SCORE:"/>
+                            </p>
+
+                        </center>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
+</htmlform>

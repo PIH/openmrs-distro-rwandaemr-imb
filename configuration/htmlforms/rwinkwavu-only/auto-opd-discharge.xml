@@ -1,320 +1,53 @@
-<htmlform
-htmlformUuid="e0d4ede7-8a49-49a0-a5ab-a14e55ffce9a" 
-formUuid="01167552-7e28-44fc-848b-317b00fb8087" 
-formName="Auto OPD Discharge" 
-formDescription="Auto OPD Discharge" 
-formVersion="1.0" 
-formEncounterType="76162246-15d8-43b0-9666-5884ad1e2be4" 
-formPublished="true" 
-formRetired="false"
->
-    <macros> paperFormId = Flow-DM-RW.V2.0.akb.15May09 headerColor =#009d8e fontOnHeaderColor = white </macros>
-   
-<script type="text/javascript">
-beforeSubmit.push(function() {
-    var c = confirm('Do you want to submit? If yes, Confirm with OK. If No, click on Cancel');
-    if(c)
-      {
-       return true;
-      }
-    else
-     {
-   return false;
-     }
-    
-});
-</script>
+<htmlform formUuid="01167552-7e28-44fc-848b-317b00fb8087" formName="Auto OPD Discharge"
+          formEncounterType="76162246-15d8-43b0-9666-5884ad1e2be4" formVersion="1.0">
 
- <style>
-        th.tableHeader {
-            background-color: #009d8e;
-            color: #FFFFFF;
-            font-size: 16px;
-            text-align: left;
-        }
-
-        .sectionHeader {
-            background-color: #009d8e;
-            color: white;
-            display: block;
-            padding: 2px;
-            font-weight: bold;
-        }
-
-        ul {
-            list-style-type: square;
-            font-family: Verdana, Arial, Helvetica, sans-serif;
-            font-size: 11px;
-        }
-
-        tr.spaceUnder&gt;
-
-        td {
-            padding-bottom: 1em;
-        }
-
-        td {
-            font-size: 15px;
-        }
-
-        #container {
-            position: relative;
-            margin: auto;
-            width: 1400px;
-            height: auto;
-        }
-
-        @media print {
-            #container {
-                display: none;
-            }
-
-            #printArea {
-                display: block;
-            }
-
-            #userBar {
-                display: none;
-            }
-
-            #banner {
-                display: none;
-            }
-
-            #footer {
-                display: none;
-            }
-
-            #htmlFormEntryBanner {
-                display: none;
-            }
-
-            .error {
-                display: none;
-            }
-
-            .lables {
-                width: 200px;
-            }
-
-            table {
-                width: 100%;
-            }
-
-            table,
-            td,
-            th {
-                border: 1px solid black;
-                border-collapse: collapse;
-            }
-
-            th {
-                text-align: left;
-                background-color: #D9D9D9;
-                font-size: 10px;
-            }
-
-            td {
-                font-size: 10px;
-            }
-
-            .selectedCancerStagingKeys {
-                page-break-before: always;
-                border: 0px;
-            }
-
-            table.selectedCancerStagingKeys td {
-                border: 0px;
-            }
-
-            #signature {
-                border: none;
-            }
-
-            #signature td {
-                border: none;
-            }
-        }
-
-        @media screen {
-            table {
-                border: 1px solid #DFDFDF;
-                width: 100%;
-                border-color: #009d8e;
-            }
-
-            #container {
-                display: block;
-            }
-
-            #printArea {
-                display: none;
-            }
-        }
-    </style>
+    <script type="text/javascript">
+        $(function() {
+        $('#location-container select').focus();
+        });
+    </script>
     <postSubmissionAction class="org.openmrs.module.mohbilling.automation.CloseGlobalBillOnHtmlFormSubmissionAction" />
-    <section headerCode="GENERAL INFORMATION">
-        <table border="2" cellpadding="6" cellspacing="0" width="100%">
-            <tr>
-                <td> <b><u>Patient:</u></b>
-                    <lookup expression="patient.personName" /><br /> <b>Id Number:</b>
-                    <lookup expression="patient.patientIdentifier.identifier" /><br /> { <b>Sex:</b>
-                    <font color="blue">
-                        <lookup expression="patient.gender" />
-                    </font> <b>Age:</b>
-                    <font color="blue">
-                        <lookup expression="patient.age" />
-                    </font> <b>Education Level:</b>
-                    <font color="blue">
-                        <lookup expression="personAttributes.get('Education Level')" />
-                    </font> <b>Religion:</b>
-                    <font color="blue">
-                        <lookup expression="personAttributes.get('Religion')" />
-                    </font> <b>Profession:</b>
-                    <font color="blue">
-                        <lookup expression="personAttributes.get('Profession')" />
-                    </font> <b>Phone number:</b>
-                    <font color="blue">
-                        <lookup expression="personAttributes.get('Phone number')" />
-                    </font> <b>Insurance:</b>
-                    <font color="green">
-                        <lookup expression="fn.latestObs(6741).getValueText()" />(Reg. Date:
-                        <lookup expression="fn.latestObs(6741).obsDatetime" />)
-                    </font> }
-                </td>
-            </tr>
-        </table>
-        <table border="2" cellpadding="6" cellspacing="0" width="100%">
-            <tr>
-                <td> Date:
-                    <encounterDate default="today"/>
-                </td>
-                <td> Health Facility:
-                    <encounterLocation default="GlobalProperty:encounter.defaultLocation"/>
-                </td>
-                <td> Provider:
-                    <encounterProvider default="currentUser"/>
-                </td>
-            </tr>
-        </table>
-        <table>
-            <tr>
-                <td class="lblcolor">Temperature</td>
-                <td>
-                    <font color="red">
-                        <lookup expression="fn.latestObs(5088).getValueNumeric()" />
-                    </font>
-                </td>
-            </tr>
-            <tr>
-                <td class="lblcolor">Weight:</td>
-                <td>
-                    <font color="red">
-                        <lookup expression="fn.latestObs(5089).getValueNumeric()" />
-                    </font>
-                </td>
-            </tr>
-            <tr>
-                <td class="lblcolor">Height:</td>
-                <td>
-                    <font color="red">
-                        <lookup expression="fn.latestObs(5090).getValueNumeric()" />
-                    </font>
-                </td>
-            </tr>
-            <tr>
-                <td class="lblcolor">SBP:</td>
-                <td>
-                    <font color="red">
-                        <lookup expression="fn.latestObs(5085).getValueNumeric()" />
-                    </font>
-                </td>
-            </tr>
-            <tr>
-                <td class="lblcolor">DBP:</td>
-                <td>
-                    <font color="red">
-                        <lookup expression="fn.latestObs(5086).getValueNumeric()" />
-                    </font>
-                </td>
-            </tr>
-            <tr>
-                <td class="lblcolor">Pulse:</td>
-                <td>
-                    <font color="red">
-                        <lookup expression="fn.latestObs(5087).getValueNumeric()" />
-                    </font>
-                </td>
-            </tr>
-            <tr>
-                <td class="lblcolor">O2 Saturator:</td>
-                <td>
-                    <font color="red">
-                        <lookup expression="fn.latestObs(5092).getValueNumeric()" />
-                    </font>
-                </td>
-            </tr>
-            <tr>
-                <td class="lblcolor">CLINICAL IMPRESSION COMMENTS:</td>
-                <td>
-                    <font color="red">
-                        <lookup expression="fn.latestObs(1364).getValueText()" />
-                    </font>
-                </td>
-            </tr>
-            <tr>
-                <td class="lblcolor">RECOMMENDATIONS:</td>
-                <td>
-                    <font color="red">
-                        <lookup expression="fn.latestObs(1391).getValueText()" />
-                    </font>
-                </td>
-            </tr>
-        </table>
+
+    <h2>
+        <label>
+            <uimessage code="OPD DISCHARGE"/>
+        </label>
+    </h2>
+
+    <section id="discharge">
+        <p>
+            <label>
+                <uimessage code="referenceapplication.simpleDischarge.dischargeDate"/>
+            </label>
+            <encounterDate id="encounterDate" showTime="false" default="now"/>
+        </p>
+
+        <p>
+            <label>
+                <uimessage code="referenceapplication.simpleDischarge.dischargingClinician"/>
+            </label>
+            <encounterProviderAndRole default="currentUser" encounterRole="1" required="true"/>
+        </p>
+
+        <p id="location-container">
+            <label>
+                <uimessage code="referenceapplication.simpleDischarge.dischargedFrom"/>
+            </label>
+            <encounterLocation required="true" tags="Login Location"/>
+        </p>
     </section>
-    <section headerLabel="RESIDENCE:">
-        <table border="1" cellpadding="6" cellspacing="0" width="100%">
-            <tr>
-                <td rowspan="3">
-                    <addressHierarchyRwanda /><br />
-                    <!-- <obs conceptId="3cda3d7e-26fe-102b-80cb-0017a47871b2" labelText="Telephone: " size="9"/>-->
-                </td>
-            </tr>
-        </table>
-    </section>
-    <section headerLabel="Discharge info:">
-        <table border="1" cellpadding="6" cellspacing="0" width="100%">
-            <tr>
-                <td>
-                    <obs conceptId="61f48c84-714d-42b3-805c-15645370deb8" labelText="Date de sortie /Discharge date"
-                        required="true" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <obs conceptId="2cda28df-2fe7-42e0-bb2f-376c9f803537" labelText="Discharging Service" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <obs conceptId="f965dd1d-c4e1-481c-af19-3581c80fb81f"
-                        labelText="Etat du patient a la sortie/ Patient Status" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <obs conceptId="3ce1367e-26fe-102b-80cb-0017a47871b2" labelText="Autopsie" noLabel="non"
-                        style="no_yes" yesLabel="oui" />
-                </td>
-            </tr>
-            <tr>
-                <td colspan="4">Resume clinique /Clinical summary
-                    <obs cols="30" conceptId="3cd9d956-26fe-102b-80cb-0017a47871b2" rows="3" style="textarea" />
-                </td>
-            </tr>
-        </table>
-    </section>
-    <div class="separator">
-        <submit />
-    </div>
+
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save"/>
+                <i class="icon-spinner icon-spin icon-2x"
+                   style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel"/>
+            </button>
+        </div>
+    </ifMode>
 </htmlform>

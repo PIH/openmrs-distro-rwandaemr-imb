@@ -12,7 +12,7 @@
   ~ Copyright (C) OpenMRS, LLC.  All Rights Reserved.
   -->
 
-<htmlform formUuid="a000cb34-9ec1-4344-a1c8-f692232f6edd" formName="Vitals" formEncounterType="67a71486-1a54-468f-ac3e-7091a9a79584" formVersion="1.0">
+<htmlform formUuid="a000cb34-9ec1-4344-a1c8-f692232f6edd" formName="Vitals" formEncounterType="daf32375-d293-4e27-a68d-2a58494c96e1" formVersion="1.0">
     <style>
         #calculated-bmi {
         font-weight: bold;
@@ -251,6 +251,23 @@
             </fieldset>
         </includeIf>
 
+        <fieldset>
+            <legend><lookup expression="fn.getConcept('CIEL:1364').name"/></legend>
+            <h3><lookup expression="fn.getConcept('CIEL:1364').name"/></h3>
+
+            <p>
+                <obs conceptId="CIEL:1364" rows="2" cols="30"/>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend><lookup expression="fn.getConcept('CIEL:1391').name"/></legend>
+            <h3><lookup expression="fn.getConcept('CIEL:1391').name"/></h3>
+
+            <p>
+                <obs conceptId="CIEL:1391" rows="2" cols="30"/>
+            </p>
+        </fieldset>
 
     </section>
 

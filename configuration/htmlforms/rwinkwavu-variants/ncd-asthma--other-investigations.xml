@@ -130,7 +130,14 @@
         #container {
         display: block;
         }
+        .side-by-side label {
+        display: inline-block;
+        }
 
+        form input[type="radio"], .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
         #printArea {
         display: none;
         }

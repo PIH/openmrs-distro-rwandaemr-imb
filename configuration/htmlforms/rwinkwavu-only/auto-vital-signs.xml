@@ -228,10 +228,12 @@ formRetired="false"
                                 </td>
                                 <td>Fluid input/Ponctions (en litres/24h):
                                     <obs conceptId="de587b48-e771-4b9e-90d2-d73906989c44" />
-                                </td><br />
+                                </td><br/>
+                                <br/>
+                                <br/>
                                 <td><u><b>OTHERS</b></u></td>
                                 <td><b>Pain:</b>
-                                    <obs conceptId="7c4fb4d3-5e09-49ed-bd44-190ca9a75a55" />
+                                    <obs conceptId="7c4fb4d3-5e09-49ed-bd44-190ca9a75a55" required="true"/>
                                 </td>
                                 <td><b>Gyicemia:</b>
                                     <obs conceptId="3cd4e194-26fe-102b-80cb-0017a47871b2" />

@@ -70,179 +70,118 @@
 	</macros>
 
 	<style>
-		.section {
-		border: 1px solid $headerColor;
-		padding: 2px;
-		text-align: left;
-		margin-bottom: 1em;
-		}
-		.sectionHeader {
-		background-color: $headerColor;
-		color: $fontOnHeaderColor;
+		.field-error {
+		color: #ff6666;
+		font-size: 1.1em;
 		display: block;
-		padding: 2px;
-		font-weight: bold;
 		}
-		table.baseline-aligned td {
-		vertical-align: baseline;
-		}
-		th.subheader {
-		background-color: $headerColor;
-		color:white
-		}
-		.lblcolor{background: #e2e3f2;width: 300px;}
-	</style>
-
-	<style>
-		table.risks td {
-		font-size: 0.9em;
-		}
-
-		.section {
-		border: 1px solid$headerColor;
-		padding: 2px;
-		text-align: left;
-		margin-bottom: 1em;
-		}
-
-		.sectionHeader {
-		background-color: $headerColor;
-		color: $fontOnHeaderColor;
+		form fieldset {
 		display: block;
-		padding: 2px;
-		font-weight: bold;
 		}
 
-		table.baseline-aligned td {
-		vertical-align: center;
+		.family-history-item .label {
+		display: inline-block;
+		width: 250px;
 		}
-	</style>
-	<style>
-		body {
-		background-color: #ffffff;
-		}
-
-		.bodycontainer {
-		padding: 2px;
-		background-color: transparent;
+		.family-history-item .relative {
+		display: inline-block;
+		width: 120px;
 		}
 
-		.header {
-		font-style: italic;
-		font-family: Gill, Georgia, serif;
-		font-size: x-large;
-		font-weight: bold;
-		color: #02416e;
-		height: 40px;
-		width: 100%;
-		border: 2px solid #009d8e;
-		text-align: center;
-		background-color: #009d8e;
-		margin-bottom: 5px;
+		.section-header {
+		margin-top: 1.5em;
 		}
 
-		.container {
-		clear: both;
-		height: auto;
-		width: 100%;
-		padding: 2px;
-		background-color: transparent;
+		.past-medical-history-item {
 		}
 
-		.leftsection {
-		clear: both;
-		float: left;
-		width: 50%;
-		margin-bottom: 5px;
+		.past-medical-history-item input[type=checkbox] {
+		float: none;
+		vertical-align: middle;
 		}
 
-		.sectioninleft {
-		border-right: 2px solid #02416e;
-		background-color: #ebf2f7;
-		border-bottom: 2px solid #02416e;
-		border-left: 2px solid #02416e;
-		border-top: 2px solid #02416e;
+		.past-medical-history-item input[type=text] {
+		min-width: 200px;
+		display: inline !important;
+		vertical-align: middle;
+		padding: 1px 10px;
 		}
 
-		.rightsection {
-		float: right;
-		width: 50%;
-		margin-bottom: 5px;
+		.past-medical-history-item > span, .past-medical-history-item > label {
+		display: inline !important;
+		vertical-align: middle;
 		}
 
-		.sectioninright {
-		background-color: #ebf2f7;
-		border-left: none;
-		border-bottom: 2px solid #02416e;
-		border-right: 2px solid #02416e;
-		border-top: 2px solid #02416e;
+		.two-columns {
+		column-count: 2;
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		}
+		.three-columns {
+		column-count: 3;
+		-webkit-column-count: 3;
+		-moz-column-count: 3;
+		}
+
+		p.radio > * {
+		display: inline;
+		float: none !important;
+		min-width: initial;
+		}
+
+		.section-container {
+		background: #F2F2F2;
+		box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+		padding: 10px 5px 10px 15px;
+		line-height: 1.5em; /*add this for vertical spacing between elements*/
+		}
+
+		.section-container-color {
+		background: #F2F2F2;
+		box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+		padding: 10px 5px 10px 15px;
+		line-height: 1.5em; /*add this for vertical spacing between elements*/
+		}
+
+		.section-container input[type="checkbox"] {
+		margin: 0px 5px; /*changed values to vertical, horizontal*/
+		top:5px; /*added to offset the checkbox position to line up*/
+		}
+
+		.section-container label { /*new definition to override labels inside section-containers*/
+		margin: 0px;
 		}
 
 		.section {
-		margin-bottom: 5px;
-		clear: both;
-		background-color: #ebf2f7;
-		border: 2px solid #02416e;
-		}
-
-		.sectionheader {
-		font-style: italic;
-		font-family: Gill, Georgia, serif;
-		font-size: medium;
-		font-weight: bold;
-		height: auto;
-		width: inherit;
-		border: 2px solid #009d8e;
-		text-align: left;
-		padding: 2px;
-		background-color: #009d8e;
-		}
-
-		.sectionbody {
-		clear: both;
-		height: auto;
-		width: inherit;
-		background-color: transparent;
-		padding-left: 5px;
-		padding-right: 5px;
-		}
-
-		.separator {
-		clear: both;
-		font-style: normal;
-		font-family: Gill, Georgia, serif;
-		font-size: larger;
-		font-weight: bold;
-		color: #02416e;
-		height: 30px;
-		border: 2px solid #ccccff;
-		border-left: 2px solid #02416e;
-		border-bottom: none;
-		border-right: 2px solid #02416e;
-		border-top: 2px solid #02416e;
-		text-align: center;
-		background-color: #ebf2f7;
-		}
-
-		.footer {
-		clear: both;
-		height: 20px;
 		width: 100%;
-		border: 2px solid #ccccff;
-		text-align: center;
-		background-color: #fbfce3;
+		}
+		form input[type="radio"], .form input[type="radio"] {
+		float: none;
+		display: inline-block;
+		}
+		.side-by-side label {
+		display: inline-block;
 		}
 
-		input[type="text"] {
-		font-style: italic;
-		font-family: Georgia;
+		#data-collection {
+		display: inline-block;
+		width: 58%;
+		vertical-align: top;
 		}
 
-		input[type="submit"] {
-		font-style: italic;
-		font-family: Georgia;
+		#encounter-diagnoses-target {
+		display: inline-block;
+		width: 40%;
+		vertical-align: top;
+		}
+
+		#encounter-diagnoses-app {
+		margin-bottom: 20px;
 		}
 	</style>
+
+
+
 	<script type="text/javascript">
 		//if (jQuery) {
 		var $hfe = jQuery.noConflict();
@@ -1203,407 +1142,270 @@
 		});
 		}
 	</script>
-	<span style="float:right">Paper Form ID: $paperFormId</span>
-	<h2>Consultation (Billing automation) (v1.0)</h2>
+	<h2>Consultation Form</h2>
 
 	<!--  <postSubmissionAction class="org.openmrs.module.mohbilling.automation.CreateBillOnHtmlFormSubmissionAction"/>-->
 
-	<section headerCode="GENERAL INFORMATION">
-		<table border="2" cellspacing="0" cellpadding="6" width="100%">
-			<tr>
-				<td>
-					<b><u>Patient:</u></b><lookup expression="patient.personName"/><br/>
-					<b>Id Number:</b><lookup expression="patient.patientIdentifier.identifier"/><br/>
-					{
-					<b>Sex:</b><font color="blue"><lookup expression="patient.gender"/></font>&#160;&#160;&#160;&#160;&#160;&#160;
-					<b>Age:</b><font color="blue"><lookup expression="patient.age"/></font>&#160;&#160;&#160;&#160;&#160;&#160;
-					<b>Education Level:</b><font color="blue"><lookup expression="personAttributes.get('Education Level')"/></font>&#160;&#160;&#160;&#160;&#160;&#160;
-					<b>Religion:</b><font color="blue"><lookup expression="personAttributes.get('Religion')"/></font>&#160;&#160;&#160;&#160;&#160;&#160;
-					<b>Profession:</b><font color="blue"><lookup expression="personAttributes.get('Profession')"/></font>&#160;&#160;&#160;&#160;&#160;&#160;
-					<b>Phone number:</b><font color="blue"><lookup expression="personAttributes.get('Phone number')"/></font>
-					}
-				</td>
-			</tr>
-		</table>
-		<table border="2" cellspacing="0" cellpadding="6" width="100%">
-			<tr>
-				<td>
-					Date:
-					<encounterDate default="today"/>
-				</td>
-				<td>
-					Health Facility:
-					<encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode" />
-				</td>
-				<td>
-					Provider:
-					<encounterProvider default="currentUser" />
-				</td>
-			</tr>
-		</table>
+	<section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+		<div class="section-container">
 
+
+			<table border="2" cellspacing="0" cellpadding="6" width="100%">
+				<tr>
+					<td>
+						Date:
+						<encounterDate default="today"/>
+					</td>
+					<td>
+						Health Facility:
+						<encounterLocation id="location" default="GlobalProperty:billing.defaultLocation" />
+					</td>
+					<td>
+						Provider:
+						<encounterProvider default="currentUser" />
+					</td>
+				</tr>
+			</table>
+		</div>
 	</section>
 
+	<section sectionTag="fieldset" headerTag="legend" headerStyle="title"
+			 headerCode="Anamneses and other findings and exams">
+		<div class="section-container">
+			<section headerCode="HEALTH HISTORY" sectionTag="fieldset" headerTag="legend">
+				<div class="section-container">
+					<div class="two-columns">
+						<p>
+							<label>
+								<b>Chief Complaints:</b>
+							</label>
+							<obs conceptId="3ce2b170-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="30"/>
+						</p>
+						<p>
+							<label>
+								<b>History of Present illness:</b>
+							</label>
+							<obs conceptId="24aa74e0-a281-4031-8919-63f3eaf3a729" style="textarea" rows="3" cols="30"/>
+						</p>
 
-	<div>
-		<div class="section">
-			<div class="sectionbody">
-				<table class="baseline-aligned">
-					<font color="blue"><b>Anamneses and other findings and exams </b></font>
+					</div>
 
-					<section headerLabel="HEALTH HISTORY :">
-						<table>
-							<section headerLabel="Present illness">
-								<table>
-									<tr>
-										<td><obs conceptId="3ce2b170-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="30" labelCode="Cheif Complaints" /></td>
-										<td><obs conceptId="24aa74e0-a281-4031-8919-63f3eaf3a729" style="textarea" rows="3" cols="30" labelCode="History of Present illness"/></td>
-									</tr>
-								</table>
-							</section>
+				</div>
+			</section>
+			<section headerCode="Past medical" sectionTag="fieldset" headerTag="legend">
+				<div class="section-container">
+					<div class="two-columns">
+						<p>
+							<label>
+								<b>Immunization (VAT):</b>
+							</label>
+							<obs conceptId="4e3b9dc8-2b11-4a05-972f-f9710471c5d0" style="textarea" rows="3" cols="30"/>
 
-							<section headerLabel="Past medical:">
-								<table>
-									<tr>
-										<td><obs conceptId="4e3b9dc8-2b11-4a05-972f-f9710471c5d0" style="textarea" rows="3" cols="30" labelCode="Immunization (VAT)"  /></td>
+						</p>
+						<p>
+							<label>
+								<b>Gyneco-Obstetrical History:</b>
+							</label>
+							<obs conceptId="e03d0a07-4c9b-4c6a-88b2-5548a99f75da"  style="textarea" rows="3" cols="30"/>
 
-										<td><obs conceptId="3cdcdf84-26fe-102b-80cb-0017a47871b2" style="radio"  answerConceptIds="3cd6f600-26fe-102b-80cb-0017a47871b2,3cd6fac4-26fe-102b-80cb-0017a47871b2,3cd6f86c-26fe-102b-80cb-0017a47871b2" labelCode="Any Allergie?" answerCodes="No,UNKNOWN,YES(specify)" /><obs conceptId="38b0118c-1cf4-40a9-a508-15c48d9586ac" style="textarea" rows="3" cols="30"/></td>
-										<td><obs conceptId="e03d0a07-4c9b-4c6a-88b2-5548a99f75da" labelCode="Gyneco-Obstetrical History" style="textarea" rows="3" cols="30"/></td>
-										<td> <obs conceptId="a949e068-dae9-410f-8608-11a61c391898" labelCode="Lifestyle" style="textarea" rows="3" cols="30"/></td>
-										<td><obs conceptId="acabf02b-a514-419d-af95-76217d1dd97d" labelCode="Psychosocial status" style="textarea" rows="3" cols="30"/></td>
-										<td><obs conceptId="ce576655-89ce-4972-9822-af177e0fce90" labelCode="Nutritional history" style="textarea" rows="3" cols="30"/></td>
-									</tr>
-								</table>
-							</section>
+						</p>
 
-
-							<section headerLabel="Family history:">
-								<table>
-									<tr>
-										<td><obs conceptId="66b3fd76-6bda-472e-a2df-a9ad39aae42e" labelCode="Current Health Status:" style="textarea" rows="3" cols="30"/> </td>
-										<td><obs conceptId="c28bc221-065e-4716-a9b0-b959239bc102" labelCode="Medications:" style="textarea" rows="3" cols="30"/></td>
-									</tr>
-								</table>
-							</section>
-
-						</table>
-					</section>
-
-					<section headerLabel="GENERAL STATUS">
-						<hr />
-						<table class="baseline-aligned">
-							<section headerLabel="AUTO VITAL SIGNS">
-
-								<tr>
-
-									<obsgroup groupingConceptId="3cd74ee8-26fe-102b-80cb-0017a47871b2">
-
-										<td><b>Height: </b><font color="red"><lookup expression="fn.latestObs(5090).getValueNumeric()"/></font></td>
-										<td><b>Weight:</b><font color="red"><lookup expression="fn.latestObs(5089).getValueNumeric()"/></font></td>
-										<td><b>Heart Rate or Pulse:</b> <font color="red"><lookup expression="fn.latestObs(5087).getValueNumeric()"/></font></td>
-										<td><b>SBP:</b><font color="red"><lookup expression="fn.latestObs(5085).getValueNumeric()"/></font></td>
-										<td><b>DBP:</b><font color="red"><lookup expression="fn.latestObs(5086).getValueNumeric()"/></font></td>
-										<td><b>Temperature:</b><font color="red"><lookup expression="fn.latestObs(5088).getValueNumeric()"/></font></td>
-										<td><b>O2 Saturation:</b><font color="red"><lookup expression="fn.latestObs(5092).getValueNumeric()"/></font></td>
-										<td><b>Respiratory Rate:</b><font color="red"><lookup expression="fn.latestObs(5242).getValueNumeric()"/></font></td>
-
-
-									</obsgroup>
-
-								</tr>
-
-								<tr>
-
-									<td><b>Diurese (en littres/24):</b><font color="red"><lookup expression="fn.latestObs(10858).getValueNumeric()"/></font></td>
-
-									<td><b>Fuid input/Selles (Nb de fois/24h):</b><font color="red"><lookup expression="fn.latestObs(11335).getValueNumeric()"/></font></td>
-
-									<td><b>Fluid input/Ponctions (en litres/24h):</b><font color="red"><lookup expression="fn.latestObs(10567).getValueNumeric()"/></font></td>
-									<td><u><h3>OTHERS</h3></u></td>
-									<td><b>Pain:</b><font color="red"><lookup expression="fn.latestObs(13466).getValueText()"/></font></td>
-
-									<td><b>Gyicemia:</b><font color="red"><lookup expression="fn.latestObs(887).getValueNumeric()"/></font></td>
-
-								</tr>
-							</section>
-
-						</table>
-					</section>
-					<section headerLabel="">
-						<tr>
-							<td colspan="2">
-								<fieldset>
-									<legend>
-										<b>SYSTEMS REVIEW</b>
-									</legend>
-									<table>
-										<tr>
-											<td>General aspect / Aspect general</td>
-											<td><obs conceptId="3cd9ae0e-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3"
-													 cols="30" /></td>
-										</tr>
-										<tr>
-											<td colspan="2">
-												<fieldset>
-													<legend>
-														<b>Systems exams / Examens des appareils</b>
-													</legend>
-													<table>
-														<tr>
-															<td>PULMONARY SYSTEM</td>
-															<td><span> <input type="radio"
-																			  name="normal_1" value="normal" />Normal <input
-																	type="radio" name="normal_1" value="abnormal" />Abnormal
-															</span> <span id="pulmonary"> <obs conceptId="3ce15384-26fe-102b-80cb-0017a47871b2"
-																							   style="textarea" rows="1" cols="50" />
-															</span></td>
-														</tr>
-														<tr>
-															<td>CARDIOVASCULAR SYSTEM</td>
-															<td><span> <input type="radio"
-																			  name="normal_2" value="normal" />Normal <input
-																	type="radio" name="normal_2" value="abnormal" />Abnormal
-															</span> <span id="cardio"> <obs conceptId="3ce1567c-26fe-102b-80cb-0017a47871b2"
-																							style="textarea" rows="1" cols="50" />
-															</span></td>
-														</tr>
-														<tr>
-															<td>ABDOMINAL SYSTEM</td>
-															<td><span> <input type="radio"
-																			  name="normal_3" value="normal" />Normal <input
-																	type="radio" name="normal_3" value="abnormal" />Abnormal
-															</span> <span id="abdominal"> <obs conceptId="3ce157ee-26fe-102b-80cb-0017a47871b2"
-																							   style="textarea" rows="1" cols="50" />
-															</span></td>
-														</tr>
-														<tr>
-															<td>NEUROLOGIC SYSTEM</td>
-															<td><span> <input type="radio"
-																			  name="normal_4" value="normal" />Normal <input
-																	type="radio" name="normal_4" value="abnormal" />Abnormal
-															</span> <span id="neurologic"> <obs conceptId="3ce1596a-26fe-102b-80cb-0017a47871b2"
-																								style="textarea" rows="1" cols="50" />
-															</span></td>
-														</tr>
-														<tr>
-															<td>MUSCULOSKELETAL SYSTEM</td>
-															<td><span> <input type="radio"
-																			  name="normal_5" value="normal" />Normal <input
-																	type="radio" name="normal_5" value="abnormal" />Abnormal
-															</span> <span id="musculo"> <obs conceptId="3ce15c58-26fe-102b-80cb-0017a47871b2"
-																							 style="textarea" rows="1" cols="50" />
-															</span></td>
-														</tr>
-														<tr>
-															<td>UROGENITAL SYSTEM</td>
-															<td><span> <input type="radio"
-																			  name="normal_6" value="normal" />Normal <input
-																	type="radio" name="normal_6" value="abnormal" />Abnormal
-															</span> <span id="urogenital"> <obs conceptId="3ce15f46-26fe-102b-80cb-0017a47871b2"
-																								style="textarea" rows="1" cols="50" />
-															</span></td>
-														</tr>
-														<tr>
-															<td>SKIN, GROWTHS, GANGLIONS</td>
-															<td><span> <input type="radio"
-																			  name="normal_7" value="normal" />Normal <input
-																	type="radio" name="normal_7" value="abnormal" />Abnormal
-															</span> <span id="skin"> <obs conceptId="3ce1625c-26fe-102b-80cb-0017a47871b2"
-																						  style="textarea" rows="1" cols="50" />
-															</span></td>
-														</tr>
-														<tr>
-															<td>PSYCHOMOTOR SYSTEM</td>
-															<td><span> <input type="radio"
-																			  name="normal_8" value="normal" />Normal <input
-																	type="radio" name="normal_8" value="abnormal" />Abnormal
-															</span> <span id="psychomotor"> <obs conceptId="00727a2a-821a-4d21-af08-581e04b7b279"
-																								 style="textarea" rows="1" cols="50" />
-															</span></td>
-														</tr>
-														<tr>
-															<td>HEAD, EARS,EYES,NOSE,THROAT</td>
-															<td><span> <input type="radio"
-																			  name="normal_9" value="normal" />Normal <input
-																	type="radio" name="normal_9" value="abnormal" />Abnormal
-															</span> <span id="hd"> <obs id="hd"
-																						conceptId="d2aa91b1-3b54-4c9b-b70b-99451d486395" style="textarea" rows="1" cols="50" />
-															</span></td>
-														</tr>
-														<tr>
-															<td>NECK</td>
-															<td><span> <input type="radio"
-																			  name="normal_10" value="normal" />Normal <input
-																	type="radio" name="normal_10" value="abnormal" />Abnormal
-															</span> <span id="neck"> <obs id="neck"
-																						  conceptId="150fb48b-574a-43c3-afb7-fcff6f06170c" style="textarea" rows="1" cols="50" />
-															</span></td>
-														</tr>
-													</table>
-												</fieldset>
-											</td>
-										</tr>
-									</table>
-								</fieldset>
-							</td>
-						</tr>
-					</section>
-
-
-
-					<tr>
-						<section headerCode="">
-							<div class="sectionbody">
-
-								<!-- Start ICD 11 API -->
-
-								<link href="/openmrs/moduleResources/mohtracportal/ctw.css" rel="stylesheet"/>
-								<div id="searchbox" style="display:none;">
-									<div>
-										ICD 11 Search box:
-
-										<input autocomplete="off" class="ctw-input" data-ctw-apiMinorVersion="2022-02" data-ctw-apiSecured="false" data-ctw-apiServerUrl="http://192.168.0.90:6382" data-ctw-chaptersAvailable="true" data-ctw-flexisearchAvailable="true" data-ctw-height="700px" data-ctw-ino="1" data-ctw-language="en" data-ctw-linearization="mms" data-ctw-wordsAvailable="true" onkeypress="shwoResults()" type="text"> </input>
-
-
-
-										<div style="float: right">
-											<!--   Selected code: <input type="text" id="paste-selectedEntity" value=""></input> -->
-										</div>
-									</div>
-
-
-									<!-- div element used for showing the search results -->
-									<div class="ctw-window" data-ctw-ino="1" id="results"/>
-								</div>
-
-								<script>
-
-									function ctwSelectEntity(selectedEntity) {
-
-									document.getElementById('results').style.display = 'none';
-
-									jQuery(function() {
-									if(jQuery("#primaryButton").val()=="Primay ICD 11 code"){
-									setValue('primary_digno.value', selectedEntity.code);
-									$hfe("span#primary_digno input").focus();
-									}
-									if(jQuery("#secondaryButton").val()=="Secondary ICD 11 code"){
-									setValue('second_digno.value', selectedEntity.code);
-									$hfe("span#second_digno input").focus();
-
-									}
-									});
-
-
-									}
-									function shwoResults(selectedEntity) {
-									document.getElementById('results').style.display = 'block';
-									}
-
-
-
-									function showPrimaryDiagnosisDialog(){
-									$hfe( "#searchbox" ).show();
-									document.getElementById('primaryButton').value="Primay ICD 11 code";
-									document.getElementById('secondaryButton').value="";
-									$hfe('.ctw-input').val('');
-									$hfe(".ctw-input").focus();
-
-									}
-									function showSecondaryDiagnosisDialog(){
-									$hfe( "#searchbox" ).show();
-									document.getElementById('secondaryButton').value="Secondary ICD 11 code";
-									document.getElementById('primaryButton').value="";
-									$hfe('.ctw-input').val('');
-									$hfe(".ctw-input").focus();
-									}
-									/*
-									$jQuery('#primaryButton').click(function() {
-									document.getElementById('secondaryButton').value="";
-									document.getElementById('primaryButton').value="Primay ICD 11 code";
-									});
-
-									$jQuery('#secondaryButton').click(function() {
-									document.getElementById('primaryButton').value="";
-									document.getElementById('secondaryButton').value="Secondary ICD 11 code";
-									});
-									*/
-
-								</script>
-
-								<script src="/openmrs/moduleResources/mohtracportal/ctw.js"/>
-
-
-
-								<!-- End ICD 11 API -->
-
-
-								<table class="baseline-aligned">
-									<tr>
-										<td>- Presumptive Diagnostic 1 </td>
-										<td>
-											<obs answerClasses="ICD-11" conceptId="$@Primary_ICD_diagnosis@" id="primary_digno" size="80" style="autocomplete"/>
-											<span style="color: blue">
-												<input id="primaryButton" onclick="showPrimaryDiagnosisDialog()" type="button"> </input>
-												<b>
-													<i>Type 3 first
-														letters of a diagnosis!</i>
-												</b>
-											</span>
-										</td>
-
-									</tr>
-									<tr>
-										<td>- Presumptive Diagnostic 2</td>
-										<td>
-											<obs answerClasses="ICD-11" conceptId="$@Secondary_ICD_diagnosis@" id="second_digno" size="80" style="autocomplete"/>
-											<span style="color: blue">
-												<input id="secondaryButton" onclick="showPrimaryDiagnosisDialog()" type="button"> </input>
-												<b>
-													<i>Type 3 first
-														letters of a diagnosis!</i>
-												</b>
-											</span>
-										</td>
-
-									</tr>
-								</table>
-							</div>
-						</section>
-						<td>
-							Other presumptive diagnosis not listed:
-						</td>
-						<td>
-							<obs conceptId="a72c0d52-f25c-40f9-a2c1-1cbef67e2731" style="text" rows="2" cols="30" />
-						</td>
-
-					</tr>
-					<section headerLabel="">
-						<table>
-							<tr>
-								<td><b>Pregnancy status</b></td>
-								<td><obs conceptId="3ceb4880-26fe-102b-80cb-0017a47871b2" style="radio" /></td>
-							</tr>
-							<tr>
-								<td><b>HIV Status</b></td>
-								<td><obs id="hiv_status" conceptId="aec6ad18-f4dd-4cfa-b68d-3d7bb6ea908e" style="radio" /></td>
-							</tr>
-							<tr>
-								<td><b>STI Screening</b></td>
-								<td><obs conceptId="$@SEXUALLY_TRANSMITTED_DISEASE_OTHER@" style="radio"
-										 answers="Positive,Negative,Not done,Not applicable" /></td>
-							</tr>
-						</table>
-					</section>
-				</table>
-			</div>
+						<p>
+							<label>
+								<b>
+									Nutritional history:
+								</b>
+							</label>
+							<obs conceptId="ce576655-89ce-4972-9822-af177e0fce90"  style="textarea" rows="3" cols="30"/>
+						</p>
+						<p>
+							<label>
+								<b>
+									Psychosocial status:
+								</b>
+							</label>
+							<obs conceptId="acabf02b-a514-419d-af95-76217d1dd97d"  style="textarea" rows="3" cols="30"/>
+						</p>
+					</div>
+				</div>
+			</section>
 		</div>
-	</div>
+	</section>
+	<section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="SYSTEMS REVIEW">
+		<div class="section-container">
+			<p>
+				<label>
+					<b>
+						General aspect / Aspect general:
+					</b>
+				</label>
+				<obs conceptId="3cd9ae0e-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="30" />
+			</p>
+			<table>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<fieldset>
+							<legend>
+								<b>Systems exams / Examens des appareils</b>
+							</legend>
+							<table>
+								<tr>
+									<td>PULMONARY SYSTEM</td>
+									<td><span> <input type="radio"
+													  name="normal_1" value="normal" />Normal <input
+											type="radio" name="normal_1" value="abnormal" />Abnormal
+									</span> <span id="pulmonary"> <obs conceptId="3ce15384-26fe-102b-80cb-0017a47871b2"
+																	   style="textarea" rows="1" cols="50" />
+									</span></td>
+								</tr>
+								<tr>
+									<td>CARDIOVASCULAR SYSTEM</td>
+									<td><span> <input type="radio"
+													  name="normal_2" value="normal" />Normal <input
+											type="radio" name="normal_2" value="abnormal" />Abnormal
+									</span> <span id="cardio"> <obs conceptId="3ce1567c-26fe-102b-80cb-0017a47871b2"
+																	style="textarea" rows="1" cols="50" />
+									</span></td>
+								</tr>
+								<tr>
+									<td>ABDOMINAL SYSTEM</td>
+									<td><span> <input type="radio"
+													  name="normal_3" value="normal" />Normal <input
+											type="radio" name="normal_3" value="abnormal" />Abnormal
+									</span> <span id="abdominal"> <obs conceptId="3ce157ee-26fe-102b-80cb-0017a47871b2"
+																	   style="textarea" rows="1" cols="50" />
+									</span></td>
+								</tr>
+								<tr>
+									<td>NEUROLOGIC SYSTEM</td>
+									<td><span> <input type="radio"
+													  name="normal_4" value="normal" />Normal <input
+											type="radio" name="normal_4" value="abnormal" />Abnormal
+									</span> <span id="neurologic"> <obs conceptId="3ce1596a-26fe-102b-80cb-0017a47871b2"
+																		style="textarea" rows="1" cols="50" />
+									</span></td>
+								</tr>
+								<tr>
+									<td>MUSCULOSKELETAL SYSTEM</td>
+									<td><span> <input type="radio"
+													  name="normal_5" value="normal" />Normal <input
+											type="radio" name="normal_5" value="abnormal" />Abnormal
+									</span> <span id="musculo"> <obs conceptId="3ce15c58-26fe-102b-80cb-0017a47871b2"
+																	 style="textarea" rows="1" cols="50" />
+									</span></td>
+								</tr>
+								<tr>
+									<td>UROGENITAL SYSTEM</td>
+									<td><span> <input type="radio"
+													  name="normal_6" value="normal" />Normal <input
+											type="radio" name="normal_6" value="abnormal" />Abnormal
+									</span> <span id="urogenital"> <obs conceptId="3ce15f46-26fe-102b-80cb-0017a47871b2"
+																		style="textarea" rows="1" cols="50" />
+									</span></td>
+								</tr>
+								<tr>
+									<td>SKIN, GROWTHS, GANGLIONS</td>
+									<td><span> <input type="radio"
+													  name="normal_7" value="normal" />Normal <input
+											type="radio" name="normal_7" value="abnormal" />Abnormal
+									</span> <span id="skin"> <obs conceptId="3ce1625c-26fe-102b-80cb-0017a47871b2"
+																  style="textarea" rows="1" cols="50" />
+									</span></td>
+								</tr>
+								<tr>
+									<td>PSYCHOMOTOR SYSTEM</td>
+									<td><span> <input type="radio"
+													  name="normal_8" value="normal" />Normal <input
+											type="radio" name="normal_8" value="abnormal" />Abnormal
+									</span> <span id="psychomotor"> <obs conceptId="00727a2a-821a-4d21-af08-581e04b7b279"
+																		 style="textarea" rows="1" cols="50" />
+									</span></td>
+								</tr>
+								<tr>
+									<td>HEAD, EARS,EYES,NOSE,THROAT</td>
+									<td><span> <input type="radio"
+													  name="normal_9" value="normal" />Normal <input
+											type="radio" name="normal_9" value="abnormal" />Abnormal
+									</span> <span id="hd"> <obs id="hd"
+																conceptId="d2aa91b1-3b54-4c9b-b70b-99451d486395" style="textarea" rows="1" cols="50" />
+									</span></td>
+								</tr>
+								<tr>
+									<td>NECK</td>
+									<td><span> <input type="radio"
+													  name="normal_10" value="normal" />Normal <input
+											type="radio" name="normal_10" value="abnormal" />Abnormal
+									</span> <span id="neck"> <obs id="neck"
+																  conceptId="150fb48b-574a-43c3-afb7-fcff6f06170c" style="textarea" rows="1" cols="50" />
+									</span></td>
+								</tr>
+							</table>
+						</fieldset>
+					</td>
+				</tr>
 
+			</table>
+		</div>
+	</section>
 
-	<br/>
+	<section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Presumptive diagnosis">
+		<div class="section-container">
+			<p>
+				<label>
+					<b> First Presumptive Diagnostic</b>
+				</label>
+				<obs answerClasses="ICD-11" conceptId="$@Primary_ICD_diagnosis@" id="primary_digno" size="80" style="autocomplete"/>
 
-	<center>
-		<submit/>
-	</center>
+			</p>
+			<p>
+				<label>
+					<b> Second Presumptive Diagnostic</b>
+				</label>
+				<obs answerClasses="ICD-11" conceptId="$@Secondary_ICD_diagnosis@" id="second_digno" size="80" style="autocomplete"/>
+
+			</p>
+			<p>
+				<label>
+					<b> Other presumptive diagnosis not listed:</b>
+				</label>
+				<obs conceptId="a72c0d52-f25c-40f9-a2c1-1cbef67e2731" style="text" rows="2" cols="30" />
+			</p>
+			<p class="radio">
+				<label>
+					<b>Pregnancy status:</b>
+				</label>
+				<td><obs conceptId="3ceb4880-26fe-102b-80cb-0017a47871b2" style="radio" /></td>
+			</p>
+			<p class="side-by-side">
+				<label>
+					<b>HIV Status:</b>
+				</label>
+				<td><obs id="hiv_status" conceptId="aec6ad18-f4dd-4cfa-b68d-3d7bb6ea908e" style="radio" /></td>
+			</p>
+			<p class="radio">
+				<label>
+					<b>STI Screening:</b>
+				</label>
+				<obs conceptId="$@SEXUALLY_TRANSMITTED_DISEASE_OTHER@" style="radio" answers="Positive,Negative,Not done,Not applicable" />			</p>
+
+		</div>
+	</section>
+
+	<ifMode mode="VIEW" include="false">
+		<div id="buttons">
+
+			<button id="submit" class="submitButton confirm right">
+				<uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+											style="display: none; margin-left: 10px;"></i>
+			</button>
+			<button id="cancel" type="button" class="cancel">
+				<uimessage code="emr.cancel" />
+			</button>
+		</div>
+	</ifMode>
+
 </htmlform>

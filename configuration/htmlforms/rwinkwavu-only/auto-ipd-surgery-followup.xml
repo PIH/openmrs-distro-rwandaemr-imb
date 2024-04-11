@@ -1,1551 +1,450 @@
-<htmlform
-htmlformUuid="339fdac8-3c25-4907-b3c7-543b539b621c" 
-formUuid="18d0006f-5557-43cb-b6e0-4644e15b0b53" 
-formName="Auto IPD Surgery followup" 
-formDescription="Auto IPD Surgery followup" 
-formVersion="1.0" 
-formEncounterType="1bcebba6-fca6-4568-a024-1ec575568b43" 
-formPublished="true" 
-formRetired="false"
->
+<htmlform htmlformUuid="339fdac8-3c25-4907-b3c7-543b539b621c" formUuid="18d0006f-5557-43cb-b6e0-4644e15b0b53"
+          formName="Auto IPD Surgery followup" formDescription="Auto IPD Surgery followup" formVersion="1.0"
+          formEncounterType="1bcebba6-fca6-4568-a024-1ec575568b43" formPublished="true" formRetired="false">
+
     <style>
-body {
-    background-color: #ffffff;
-}
+        form fieldset {
+        display: block;
+        }
 
-.bodycontainer {
-    padding: 2px;
-    background-color: transparent;
-}
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
+        }
 
-.header {
-    font-style: italic;
-    font-family: Gill, Georgia, serif;
-    font-size: x-large;
-    font-weight: bold;
-    color: #02416e;
-    height: 40px;
-    width: 100%;
-    border: 2px solid #009d8e;
-    text-align: center;
-    background-color: #009d8e;
-    margin-bottom: 5px;
-}
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
 
-.container {
-    clear: both;
-    height: auto;
-    width: 100%;
-    padding: 2px;
-    background-color: transparent;
-}
+        .section-header {
+        margin-top: 1.5em;
+        }
 
-.leftsection {
-    clear: both;
-    float: left;
-    width: 50%;
-    margin-bottom: 5px;
-}
+        .past-medical-history-item {}
 
-.sectioninleft {
-    border-right: 2px solid #02416e;
-    background-color: #ebf2f7;
-    border-bottom: 2px solid #02416e;
-    border-left: 2px solid #02416e;
-    border-top: 2px solid #02416e;
-}
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
 
-.rightsection {
-    float: right;
-    width: 50%;
-    margin-bottom: 5px;
-}
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
 
-.sectioninright {
-    background-color: #ebf2f7;
-    border-left: none;
-    border-bottom: 2px solid #02416e;
-    border-right: 2px solid #02416e;
-    border-top: 2px solid #02416e;
-}
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
 
-.section {
-    margin-bottom: 5px;
-    clear: both;
-    background-color: #ebf2f7;
-    border: 2px solid #02416e;
-}
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
 
-.sectionheader {
-    font-style: italic;
-    font-family: Gill, Georgia, serif;
-    font-size: medium;
-    font-weight: bold;
-    height: auto;
-    width: inherit;
-    border: 2px solid #009d8e;
-    text-align: left;
-    padding: 2px;
-    background-color: #009d8e;
-}
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
 
-.sectionbody {
-    clear: both;
-    height: auto;
-    width: inherit;
-    background-color: transparent;
-    padding-left: 5px;
-    padding-right: 5px;
-}
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
 
-.separator {
-    clear: both;
-    font-style: normal;
-    font-family: Gill, Georgia, serif;
-    font-size: larger;
-    font-weight: bold;
-    color: #02416e;
-    height: 30px;
-    border: 2px solid #ccccff;
-    border-left: 2px solid #02416e;
-    border-bottom: none;
-    border-right: 2px solid #02416e;
-    border-top: 2px solid #02416e;
-    text-align: center;
-    background-color: #ebf2f7;
-}
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
 
-.footer {
-    clear: both;
-    height: 20px;
-    width: 100%;
-    border: 2px solid #ccccff;
-    text-align: center;
-    background-color: #fbfce3;
-}
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
 
-input[type="text"] {
-    font-style: italic;
-    font-family: Georgia;
-}
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
 
-input[type="submit"] {
-    font-style: italic;
-    font-family: Georgia;
-}
+        .section {
+        width: 100%;
+        }
 
+        .side-by-side label {
+        display: inline-block;
+        }
 
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
 
+        .date-one-line {
+        display: flex;
+        }
 
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
+        display: block;
+        }
     </style>
 
-    <script type="text/javascript">
-    //if (jQuery) {
-    var $hfe = jQuery.noConflict();
 
-    $hfe(document)
-            .ready(
-                    function() {
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
 
-                        /* This part handles Accordion Functionality */
 
-                        // Hide all DIVs until they are called!
-                        $hfe("#div1").hide();
-                        $hfe("#div2").hide();
-                        $hfe("#div3").hide();
-                        $hfe("#div4").hide();
-                        $hfe("#div5").hide();
-                        $hfe("#div6").hide();
-                        $hfe("#div7").hide();
-                        $hfe("#div8").hide();
-                        $hfe("#div9").hide();
-                        $hfe("#div10").hide();
-                        $hfe("#echographyId").hide();
-                        $hfe("#stomatologyId").hide();
-                        $hfe("#soinsInfirmiersId").hide();
-                        $hfe("#chirurgieId").hide();
-                        $hfe("#radioId").hide();
-                        $hfe("#maternityId").hide();
-                        $hfe("#ophtalmologyId").hide();
-                        $hfe("#kinestherapyId").hide();
-                        $hfe("#oxygenotherapyId").hide();
-
-
-                        $hfe("#close1").click(function() {
-                            $hfe("#div1").css('display', 'none');
-                            $hfe("#tab_content1").css('display', 'none');
-                        });
-                        $hfe("#close2").click(function() {
-                            $hfe("#div2").css('display', 'none');
-                            $hfe("#tab_content2").css('display', 'none');
-                        });
-                        $hfe("#close3").click(function() {
-                            $hfe("#div3").css('display', 'none');
-                            $hfe("#tab_content3").css('display', 'none');
-                        });
-
-                        $hfe("#close4").click(function() {
-                            $hfe("#div4").css('display', 'none');
-                            $hfe("#tab_content4").css('display', 'none');
-                        });
-
-                        $hfe("#close5").click(function() {
-                            $hfe("#div5").css('display', 'none');
-                            $hfe("#tab_content5").css('display', 'none');
-                        });
-
-                        $hfe("#close6").click(function() {
-                            $hfe("#div6").css('display', 'none');
-                            $hfe("#tab_content6").css('display', 'none');
-                        });
-
-                        $hfe("#close7").click(function() {
-                            $hfe("#div7").css('display', 'none');
-                            $hfe("#tab_content7").css('display', 'none');
-                        });
-
-                        $hfe("#close8").click(function() {
-                            $hfe("#div8").css('display', 'none');
-                            $hfe("#tab_content8").css('display', 'none');
-                        });
-
-                        $hfe("#close9").click(function() {
-                            $hfe("#div9").css('display', 'none');
-                            $hfe("#tab_content9").css('display', 'none');
-                        });
-
-                        $hfe("#close10").click(function() {
-                            $hfe("#div10").css('display', 'none');
-                            $hfe("#tab_content10").css('display', 'none');
-                        });
-
-                        $hfe("#echographyCloseId").click(function() {
-                            $hfe("#echographyId").hide();
-                            $hfe("select[name=service]").val("0");
-                        });
-                        $hfe("#stomatologyCloseId").click(function() {
-                            $hfe("#stomatologyId").hide();
-                            $hfe("select[name=service]").val("0");
-                        });
-                        $hfe("#soinsInfirmiersCloseId").click(function() {
-                            $hfe("#soinsInfirmiersId").hide();
-                            $hfe("select[name=service]").val("0");
-                        });
-                        $hfe("#chirurgieCloseId").click(function() {
-                            $hfe("#chirurgieId").hide();
-                            $hfe("select[name=service]").val("0");
-                        });
-                            $hfe("#radioCloseId").click(function() {
-                            $hfe("#radioId").hide();
-                            $hfe("select[name=service]").val("0");
-                        });
-                        $hfe("#maternityCloseId").click(function() {
-                            $hfe("#maternityId").hide();
-                            $hfe("select[name=service]").val("0");
-                        });
-                        $hfe("#ophtalmologyCloseId").click(function() {
-                            $hfe("#ophtalmologyId").hide();
-                            $hfe("select[name=service]").val("0");
-                        });
-                        $hfe("#kinestherapyCloseId").click(function() {
-                            $hfe("#kinestherapyId").hide();
-                            $hfe("select[name=service]").val("0");
-                        });
-                        $hfe("#oxygenotherapyCloseId").click(function() {
-                            $hfe("#oxygenotherapyId").hide();
-                            $hfe("select[name=service]").val("0");
-                        });
-
-                        $hfe("#tab_content1").css('display', 'none');
-                        $hfe("#tab_content2").css('display', 'none');
-                        $hfe("#tab_content3").css('display', 'none');
-                        $hfe("#tab_content4").css('display', 'none');
-                        $hfe("#tab_content5").css('display', 'none');
-                        $hfe("#tab_content6").css('display', 'none');
-                        $hfe("#tab_content7").css('display', 'none');
-                        $hfe("#tab_content8").css('display', 'none');
-                        $hfe("#tab_content9").css('display', 'none');
-                        $hfe("#tab_content10").css('display', 'none');
-
-                        $hfe("#tab1").click(function() {
-
-                            $hfe("#div1").show();
-                            $hfe("#div2").hide();
-                            $hfe("#div3").hide();
-                            $hfe("#div4").hide();
-                            $hfe("#div5").hide();
-                            $hfe("#div6").hide();
-                            $hfe("#div7").hide();
-                            $hfe("#div8").hide();
-                            $hfe("#div9").hide();
-                            $hfe("#div10").hide();
-                            $hfe("#tab_content1").css('display', 'block');
-                            $hfe("#tab_content2").css('display', 'none');
-                            $hfe("#tab_content3").css('display', 'none');
-                            $hfe("#tab_content4").css('display', 'none');
-                            $hfe("#tab_content5").css('display', 'none');
-                            $hfe("#tab_content6").css('display', 'none');
-                            $hfe("#tab_content7").css('display', 'none');
-                            $hfe("#tab_content8").css('display', 'none');
-                            $hfe("#tab_content9").css('display', 'none');
-                            $hfe("#tab_content10").css('display', 'none');
-                        });
-
-                        $hfe("#tab2").click(function() {
-
-                            $hfe("#div2").show();
-                            $hfe("#div1").hide();
-                            $hfe("#div3").hide();
-                            $hfe("#div4").hide();
-                            $hfe("#div5").hide();
-                            $hfe("#div6").hide();
-                            $hfe("#div7").hide();
-                            $hfe("#div8").hide();
-                            $hfe("#div9").hide();
-                            $hfe("#div10").hide();
-                            $hfe("#tab_content2").css('display', 'block');
-                            $hfe("#tab_content1").css('display', 'none');
-                            $hfe("#tab_content3").css('display', 'none');
-                            $hfe("#tab_content4").css('display', 'none');
-                            $hfe("#tab_content5").css('display', 'none');
-                            $hfe("#tab_content6").css('display', 'none');
-                            $hfe("#tab_content7").css('display', 'none');
-                            $hfe("#tab_content8").css('display', 'none');
-                            $hfe("#tab_content9").css('display', 'none');
-                            $hfe("#tab_content10").css('display', 'none');
-                        });
-
-                        $hfe("#tab3").click(function() {
-
-                            $hfe("#div3").show();
-                            $hfe("#div1").hide();
-                            $hfe("#div2").hide();
-                            $hfe("#div4").hide();
-                            $hfe("#div5").hide();
-                            $hfe("#div6").hide();
-                            $hfe("#div7").hide();
-                            $hfe("#div8").hide();
-                            $hfe("#div9").hide();
-                            $hfe("#div10").hide();
-                            $hfe("#tab_content3").css('display', 'block');
-                            $hfe("#tab_content1").css('display', 'none');
-                            $hfe("#tab_content2").css('display', 'none');
-                            $hfe("#tab_content4").css('display', 'none');
-                            $hfe("#tab_content5").css('display', 'none');
-                            $hfe("#tab_content6").css('display', 'none');
-                            $hfe("#tab_content7").css('display', 'none');
-                            $hfe("#tab_content8").css('display', 'none');
-                            $hfe("#tab_content9").css('display', 'none');
-                            $hfe("#tab_content10").css('display', 'none');
-                        });
-
-                        $hfe("#tab4").click(function() {
-
-                            $hfe("#div4").show();
-                            $hfe("#div1").hide();
-                            $hfe("#div2").hide();
-                            $hfe("#div3").hide();
-                            $hfe("#div5").hide();
-                            $hfe("#div6").hide();
-                            $hfe("#div7").hide();
-                            $hfe("#div8").hide();
-                            $hfe("#div9").hide();
-                            $hfe("#div10").hide();
-                            $hfe("#tab_content4").css('display', 'block');
-                            $hfe("#tab_content1").css('display', 'none');
-                            $hfe("#tab_content2").css('display', 'none');
-                            $hfe("#tab_content3").css('display', 'none');
-                            $hfe("#tab_content5").css('display', 'none');
-                            $hfe("#tab_content6").css('display', 'none');
-                            $hfe("#tab_content7").css('display', 'none');
-                            $hfe("#tab_content8").css('display', 'none');
-                            $hfe("#tab_content9").css('display', 'none');
-                            $hfe("#tab_content10").css('display', 'none');
-                        });
-
-                        $hfe("#tab5").click(function() {
-
-                            $hfe("#div5").show();
-                            $hfe("#div1").hide();
-                            $hfe("#div2").hide();
-                            $hfe("#div3").hide();
-                            $hfe("#div4").hide();
-                            $hfe("#div6").hide();
-                            $hfe("#div7").hide();
-                            $hfe("#div8").hide();
-                            $hfe("#div9").hide();
-                            $hfe("#div10").hide();
-                            $hfe("#tab_content5").css('display', 'block');
-                            $hfe("#tab_content1").css('display', 'none');
-                            $hfe("#tab_content2").css('display', 'none');
-                            $hfe("#tab_content3").css('display', 'none');
-                            $hfe("#tab_content4").css('display', 'none');
-                            $hfe("#tab_content6").css('display', 'none');
-                            $hfe("#tab_content7").css('display', 'none');
-                            $hfe("#tab_content8").css('display', 'none');
-                            $hfe("#tab_content9").css('display', 'none');
-                            $hfe("#tab_content10").css('display', 'none');
-                        });
-
-
-                        $hfe("#tab6").click(function() {
-
-                            $hfe("#div6").show();
-                            $hfe("#div1").hide();
-                            $hfe("#div2").hide();
-                            $hfe("#div3").hide();
-                            $hfe("#div4").hide();
-                            $hfe("#div5").hide();
-                            $hfe("#div7").hide();
-                            $hfe("#div8").hide();
-                            $hfe("#div9").hide();
-                            $hfe("#div10").hide();
-                            $hfe("#tab_content6").css('display', 'block');
-                            $hfe("#tab_content1").css('display', 'none');
-                            $hfe("#tab_content2").css('display', 'none');
-                            $hfe("#tab_content3").css('display', 'none');
-                            $hfe("#tab_content4").css('display', 'none');
-                            $hfe("#tab_content5").css('display', 'none');
-                            $hfe("#tab_content7").css('display', 'none');
-                            $hfe("#tab_content8").css('display', 'none');
-                            $hfe("#tab_content9").css('display', 'none');
-                            $hfe("#tab_content10").css('display', 'none');
-                        });
-
-                        $hfe("#tab7").click(function() {
-
-                            $hfe("#div7").show();
-                            $hfe("#div1").hide();
-                            $hfe("#div2").hide();
-                            $hfe("#div3").hide();
-                            $hfe("#div4").hide();
-                            $hfe("#div5").hide();
-                            $hfe("#div6").hide();
-                            $hfe("#div8").hide();
-                            $hfe("#div9").hide();
-                            $hfe("#div10").hide();
-                            $hfe("#tab_content7").css('display', 'block');
-                            $hfe("#tab_content1").css('display', 'none');
-                            $hfe("#tab_content2").css('display', 'none');
-                            $hfe("#tab_content3").css('display', 'none');
-                            $hfe("#tab_content4").css('display', 'none');
-                            $hfe("#tab_content5").css('display', 'none');
-                            $hfe("#tab_content6").css('display', 'none');
-                            $hfe("#tab_content8").css('display', 'none');
-                            $hfe("#tab_content9").css('display', 'none');
-                            $hfe("#tab_content10").css('display', 'none');
-                        });
-
-                        $hfe("#tab8").click(function() {
-
-                            $hfe("#div8").show();
-                            $hfe("#div1").hide();
-                            $hfe("#div2").hide();
-                            $hfe("#div3").hide();
-                            $hfe("#div4").hide();
-                            $hfe("#div5").hide();
-                            $hfe("#div6").hide();
-                            $hfe("#div7").hide();
-                            $hfe("#div9").hide();
-                            $hfe("#div10").hide();
-                            $hfe("#tab_content8").css('display', 'block');
-                            $hfe("#tab_content1").css('display', 'none');
-                            $hfe("#tab_content2").css('display', 'none');
-                            $hfe("#tab_content3").css('display', 'none');
-                            $hfe("#tab_content4").css('display', 'none');
-                            $hfe("#tab_content5").css('display', 'none');
-                            $hfe("#tab_content6").css('display', 'none');
-                            $hfe("#tab_content7").css('display', 'none');
-                            $hfe("#tab_content9").css('display', 'none');
-                            $hfe("#tab_content10").css('display', 'none');
-                        });
-
-                        $hfe("#tab9").click(function() {
-
-                            $hfe("#div9").show();
-                            $hfe("#div1").hide();
-                            $hfe("#div2").hide();
-                            $hfe("#div3").hide();
-                            $hfe("#div4").hide();
-                            $hfe("#div5").hide();
-                            $hfe("#div6").hide();
-                            $hfe("#div7").hide();
-                            $hfe("#div8").hide();
-                            $hfe("#div10").hide();
-                            $hfe("#tab_content9").css('display', 'block');
-                            $hfe("#tab_content1").css('display', 'none');
-                            $hfe("#tab_content2").css('display', 'none');
-                            $hfe("#tab_content3").css('display', 'none');
-                            $hfe("#tab_content4").css('display', 'none');
-                            $hfe("#tab_content5").css('display', 'none');
-                            $hfe("#tab_content6").css('display', 'none');
-                            $hfe("#tab_content7").css('display', 'none');
-                            $hfe("#tab_content8").css('display', 'none');
-                            $hfe("#tab_content10").css('display', 'none');
-                        });
-
-                        $hfe("#tab10").click(function() {
-
-                            $hfe("#div10").show();
-                            $hfe("#div1").hide();
-                            $hfe("#div2").hide();
-                            $hfe("#div3").hide();
-                            $hfe("#div4").hide();
-                            $hfe("#div5").hide();
-                            $hfe("#div6").hide();
-                            $hfe("#div7").hide();
-                            $hfe("#div8").hide();
-                            $hfe("#div9").hide();
-                            $hfe("#tab_content10").css('display', 'block');
-                            $hfe("#tab_content1").css('display', 'none');
-                            $hfe("#tab_content2").css('display', 'none');
-                            $hfe("#tab_content3").css('display', 'none');
-                            $hfe("#tab_content4").css('display', 'none');
-                            $hfe("#tab_content5").css('display', 'none');
-                            $hfe("#tab_content6").css('display', 'none');
-                            $hfe("#tab_content7").css('display', 'none');
-                            $hfe("#tab_content8").css('display', 'none');
-                            $hfe("#tab_content9").css('display', 'none');
-                        });
-
-                        var selected_value;
-
-                        $hfe("select[name=service]").change(function() {
-                            selected_value = $hfe("select[name=service]").val();
-
-                            if (selected_value == "0") {
-                                $hfe("#echographyId").hide();
-                                $hfe("#stomatologyId").hide();
-                                $hfe("#soinsInfirmiersId").hide();
-                                $hfe("#chirurgieId").hide();
-                                $hfe("#radioId").hide();
-                                $hfe("#maternityId").hide();
-                                $hfe("#ophtalmologyId").hide();
-                                $hfe("#kinestherapyId").hide();
-                                $hfe("#oxygenotherapyId").hide();
-                            }
-                            if (selected_value == "1") {
-                                $hfe("#echographyId").show();
-                                $hfe("#stomatologyId").hide();
-                                $hfe("#soinsInfirmiersId").hide();
-                                $hfe("#chirurgieId").hide();
-                                $hfe("#radioId").hide();
-                                $hfe("#maternityId").hide();
-                                $hfe("#ophtalmologyId").hide();
-                                $hfe("#kinestherapyId").hide();
-                                $hfe("#oxygenotherapyId").hide();
-                            }
-                            if (selected_value == "2") {
-                                $hfe("#stomatologyId").show();
-                                $hfe("#echographyId").hide();
-                                $hfe("#soinsInfirmiersId").hide();
-                                $hfe("#chirurgieId").hide();
-                                $hfe("#radioId").hide();
-                                $hfe("#maternityId").hide();
-                                $hfe("#ophtalmologyId").hide();
-                                $hfe("#kinestherapyId").hide();
-                                $hfe("#oxygenotherapyId").hide();
-                            }
-                            if (selected_value == "3") {
-                                $hfe("#soinsInfirmiersId").show();
-                                $hfe("#stomatologyId").hide();
-                                $hfe("#echographyId").hide();
-                                $hfe("#chirurgieId").hide();
-                                $hfe("#radioId").hide();
-                                $hfe("#maternityId").hide();
-                                $hfe("#ophtalmologyId").hide();
-                                $hfe("#kinestherapyId").hide();
-                                $hfe("#oxygenotherapyId").hide();
-                            }
-                            if (selected_value == "4") {
-                                $hfe("#chirurgieId").show();
-                                $hfe("#echographyId").hide();
-                                $hfe("#stomatologyId").hide();
-                                $hfe("#soinsInfirmiersId").hide();
-                                $hfe("#radioId").hide();
-                                $hfe("#maternityId").hide();
-                                $hfe("#ophtalmologyId").hide();
-                                $hfe("#kinestherapyId").hide();
-                                $hfe("#oxygenotherapyId").hide();
-                            }
-                            if (selected_value == "5") {
-                                $hfe("#radioId").show();
-                                $hfe("#echographyId").hide();
-                                $hfe("#stomatologyId").hide();
-                                $hfe("#soinsInfirmiersId").hide();
-                                $hfe("#chirurgieId").hide();
-                                $hfe("#maternityId").hide();
-                                $hfe("#ophtalmologyId").hide();
-                                $hfe("#kinestherapyId").hide();
-                                $hfe("#oxygenotherapyId").hide();
-                            }
-                            if (selected_value == "6") {
-                                $hfe("#radioId").hide();
-                                $hfe("#echographyId").hide();
-                                $hfe("#stomatologyId").hide();
-                                $hfe("#soinsInfirmiersId").hide();
-                                $hfe("#chirurgieId").hide();
-                                $hfe("#maternityId").show();
-                                $hfe("#ophtalmologyId").hide();
-                                $hfe("#kinestherapyId").hide();
-                                $hfe("#oxygenotherapyId").hide();
-                            }
-                            if (selected_value == "7") {
-                                $hfe("#echographyId").hide();
-                                $hfe("#stomatologyId").hide();
-                                $hfe("#soinsInfirmiersId").hide();
-                                $hfe("#chirurgieId").hide();
-                                $hfe("#radioId").hide();
-                                $hfe("#maternityId").hide();
-                                $hfe("#ophtalmologyId").show();
-                                $hfe("#kinestherapyId").hide();
-                                $hfe("#oxygenotherapyId").hide();
-                            }
-                                if (selected_value == "8") {
-                                $hfe("#echographyId").hide();
-                                $hfe("#stomatologyId").hide();
-                                $hfe("#soinsInfirmiersId").hide();
-                                $hfe("#chirurgieId").hide();
-                                $hfe("#radioId").hide();
-                                $hfe("#maternityId").hide();
-                                $hfe("#ophtalmologyId").hide();
-                                $hfe("#kinestherapyId").show();
-                                $hfe("#oxygenotherapyId").hide();
-                            }
-                                if (selected_value == "9") {
-                                $hfe("#echographyId").hide();
-                                $hfe("#stomatologyId").hide();
-                                $hfe("#soinsInfirmiersId").hide();
-                                $hfe("#chirurgieId").hide();
-                                $hfe("#radioId").hide();
-                                $hfe("#maternityId").hide();
-                                $hfe("#ophtalmologyId").hide();
-                                $hfe("#kinestherapyId").hide();
-                                $hfe("#oxygenotherapyId").show();
-                            }
-                        });
-
-                        /* TEnd of part that handles Accordion Functionality */
-
-                        $hfe('#1-removeEntry').remove();
-                        $hfe('#10-addEntry').remove();
-                        $hfe('#1-toggleContainer').show();
-
-                        $hfe('#11-removeEntry').remove();
-                        $hfe('#20-addEntry').remove();
-                        $hfe('#11-toggleContainer').show();
-
-                        $hfe('#21-removeEntry').remove();
-                        $hfe('#30-addEntry').remove();
-                        $hfe('#21-toggleContainer').show();
-                        //});
-
-                        //$hfe(document)
-                        //.ready(
-                        //    function() {
-                        $hfe('button.addEntry')
-                                .live(
-                                        "click",
-                                        function() {
-                                            var correctedAddButtonId = parseFloat(this.id) + 1;
-                                            var contentAddId = "#"
-                                                    + correctedAddButtonId
-                                                    + "-toggleContainer";
-                                            $hfe(contentAddId).toggle(true);
-                                            $hfe('#' + this.id).toggle(false);
-                                            $hfe(
-                                                    '#' + parseFloat(this.id)
-                                                            + '-removeEntry')
-                                                    .toggle(false);
-                                            return false;
-                                        });
-                        //});
-
-                        //$hfe(document)
-                        //.ready(
-                        //function() {
-                        $hfe('button.removeEntry')
-                                .live(
-                                        "click",
-                                        function() {
-                                            var correctedRemoveButtonId = parseFloat(this.id) - 1;
-                                            var contentAddId = "#"
-                                                    + parseFloat(this.id)
-                                                    + "-toggleContainer";
-                                            $hfe(contentAddId).toggle(false);
-                                            $hfe(':input:not(:button)',
-                                                    contentAddId).val([]);
-                                            $hfe(
-                                                    '#'
-                                                            + correctedRemoveButtonId
-                                                            + '-addEntry')
-                                                    .toggle(true);
-                                            $hfe(
-                                                    '#'
-                                                            + correctedRemoveButtonId
-                                                            + '-removeEntry')
-                                                    .toggle(true);
-
-                                            return false;
-                                        });
-
-                        //    });
-
-                        // This where we concatenate History of the illness to the Past Medical
-                        //$hfe(document)
-                        //        .ready(
-                        //                function() {
-                        var past = "";
-                        var answer = "";
-                        var answer1 = '';
-                        var answer2 = '';
-                        var ans1, ans2, ans3, ans4, ans5, ans6, ans7, ans8, ans9, ans10;
-                        ans1 = ans2 = ans3 = ans4 = ans5 = ans6 = ans7 = ans8 = ans9 = ans10 = "";
-
-                        $hfe('button.addEntry')
-                                .click(
-                                        function() {
-                                            if ($hfe("#w20 option:selected")) {
-                                                if ($hfe("#w20 option:selected")
-                                                        .text() != "")
-                                                    ans1 = $hfe(
-                                                            "#w20 option:selected")
-                                                            .text()
-                                                            + ", ";
-                                            }
-                                            if ($hfe("#w22 option:selected")) {
-                                                if ($hfe("#w22 option:selected")
-                                                        .text() != "")
-                                                    ans2 = $hfe(
-                                                            "#w22 option:selected")
-                                                            .text()
-                                                            + ", ";
-                                            }
-                                            if ($hfe("#w24 option:selected")) {
-                                                if ($hfe("#w24 option:selected")
-                                                        .text() != "")
-                                                    ans3 = $hfe(
-                                                            "#w24 option:selected")
-                                                            .text()
-                                                            + ", ";
-                                            }
-                                            if ($hfe("#w26 option:selected")) {
-                                                if ($hfe("#w26 option:selected")
-                                                        .text() != "")
-                                                    ans4 = $hfe(
-                                                            "#w26 option:selected")
-                                                            .text()
-                                                            + ", ";
-                                            }
-                                            if ($hfe("#w28 option:selected")) {
-                                                if ($hfe("#w28 option:selected")
-                                                        .text() != "")
-                                                    ans5 = $hfe(
-                                                            "#w28 option:selected")
-                                                            .text()
-                                                            + ", ";
-                                            }
-                                            if ($hfe("#w30 option:selected")) {
-                                                if ($hfe("#w30 option:selected")
-                                                        .text() != "")
-                                                    ans6 = $hfe(
-                                                            "#w30 option:selected")
-                                                            .text()
-                                                            + ", ";
-                                            }
-                                            if ($hfe("#w32 option:selected")) {
-                                                if ($hfe("#w32 option:selected")
-                                                        .text() != "")
-                                                    ans7 = $hfe(
-                                                            "#w32 option:selected")
-                                                            .text()
-                                                            + ", ";
-                                            }
-                                            if ($hfe("#w34 option:selected")) {
-                                                if ($hfe("#w34 option:selected")
-                                                        .text() != "")
-                                                    ans8 = $hfe(
-                                                            "#w34 option:selected")
-                                                            .text()
-                                                            + ", ";
-                                            }
-                                            if ($hfe("#w36 option:selected")) {
-                                                if ($hfe("#w36 option:selected")
-                                                        .text() != "")
-                                                    ans9 = $hfe(
-                                                            "#w36 option:selected")
-                                                            .text()
-                                                            + ", ";
-                                            }
-                                            if ($hfe("#w38 option:selected")) {
-                                                if ($hfe("#w38 option:selected")
-                                                        .text() != "")
-                                                    ans10 = $hfe(
-                                                            "#w38 option:selected")
-                                                            .text()
-                                                            + ", ";
-                                            }
-
-                                            answer = ans1 + ans2 + ans3 + ans4
-                                                    + ans5 + ans6 + ans7 + ans8
-                                                    + ans9 + ans10;
-                                            $hfe(
-                                                    "span#syndromic_summary textarea")
-                                                    .val(
-                                                            past
-                                                                    + "- SYMPTOMS: "
-                                                                    + answer
-                                                                    + "\n- ILLNESS HISTORY: "
-                                                                    + answer2
-                                                                    + "\n- PAST/ANTECEDENTS: "
-                                                                    + answer1
-                                                                    + "\n- OTHER: ");
-                                        });
-
-                        $hfe("span#past_medical textarea")
-                                .keyup(
-                                        function() {
-                                            answer1 = $hfe(this).val();
-                                            //past += $hfe("span#syndromic_summary").val();
-                                            $hfe(
-                                                    "span#syndromic_summary textarea")
-                                                    .val(
-                                                            past
-                                                                    + "- SYMPTOMS: "
-                                                                    + answer
-                                                                    + "\n- ILLNESS HISTORY: "
-                                                                    + answer2
-                                                                    + "\n- PAST/ANTECEDENTS: "
-                                                                    + answer1
-                                                                    + "\n- OTHER: ");
-                                        });
-
-                        $hfe("span#history_illness textarea")
-                                .keyup(
-                                        function() {
-                                            answer2 = $hfe(this).val();
-                                            //past += $hfe("span#syndromic_summary").val();
-                                            $hfe(
-                                                    "span#syndromic_summary textarea")
-                                                    .val(
-                                                            past
-                                                                    + "- SYMPTOMS: "
-                                                                    + answer
-                                                                    + "\n- ILLNESS HISTORY: "
-                                                                    + answer2
-                                                                    + "\n- PAST/ANTECEDENTS: "
-                                                                    + answer1
-                                                                    + "\n- OTHER: ");
-                        });
-                        //});
-
-                        //$hfe(document).ready( function() {
-
-                        $hfe('span#is_opportunistic input[type=checkbox]')
-                                .attr('disabled', true);
-                        $hfe('span#hiv_status')
-                                .change(
-                                        function() {
-                                            if ($hfe(
-                                                    'span#hiv_status input[type=radio]:checked')
-                                                    .val() == 703) {
-                                                $hfe(
-                                                        'span#is_opportunistic input[type=checkbox]')
-                                                        .attr('disabled', false);
-                                            } else {
-                                                $hfe(
-                                                        'span#is_opportunistic input[type=checkbox]')
-                                                        .attr('disabled', true);
-                                            }
-                                        });
-                        // Setting other non-coded concept available...
-                        $hfe('#other_motive').hide();
-                        $hfe('#cons_motive').change(
-                                function() {
-                                    if ($hfe('#cons_motive option:selected')
-                                            .val() == 5622) {
-                                        $hfe('#other_motive').show();
-                                    }
-                                });
-                        // other_presumptive
-                        $hfe('#other_presumptive').hide();
-                        $hfe('span#presumptive input').change(function() {
-                            var answer = $hfe(this).val();
-                            if (answer.toLowerCase() == "other") {
-                                $hfe('#other_presumptive').show();
-                            } else {
-                                $hfe('#other_presumptive').hide();
-                            }
-                        });
-
-                        // other primary diagnosis
-                        $hfe('#other_primDiag').hide();
-                        $hfe('span#primary_digno input').change(function() {
-                            var answer = $hfe(this).val();
-                            if (answer.toLowerCase() == "other") {
-                                $hfe('#other_primDiag').show();
-                            } else {
-                                $hfe('#other_primDiag').hide();
-                            }
-                        });
-                        // other secondary diagnosis
-                        $hfe('#other_secDiag').hide();
-                        $hfe('span#second_digno input').change(function() {
-                            var answer = $hfe(this).val();
-                            if (answer.toLowerCase() == "other") {
-                                $hfe('#other_secDiag').show();
-                            } else {
-                                $hfe('#other_secDiag').hide();
-                            }
-                        });
-
-                        // Setting the size for the autocomplete fields.
-                        $hfe("span#presumptive input").attr("size", "60");
-                        $hfe("span#primary_digno input").attr("size", "60");
-                        $hfe("span#second_digno input").attr("size", "60");
-                        $hfe("span#encDate input").attr("size", "15");
-
-                        $hfe("input[type=radio][name=normal_1]")
-                                .change(
-                                        function() {
-                                            var answer = $hfe(this).val();
-                                            if (answer == "normal") {
-                                                $hfe("span#pulmonary textarea")
-                                                        .val("Normal");
-                                                $hfe("#pulmonary")
-                                                        .disableSelection();
-                                            } else {
-                                                $hfe("span#pulmonary textarea")
-                                                        .val(
-                                                                "Abnormal because : ");
-                                                $hfe("#pulmonary")
-                                                        .enableSelection();
-                                                $hfe("span#pulmonary textarea")
-                                                        .focus();
-                                            }
-                                        });
-
-                        $hfe("input[type=radio][name=normal_2]").change(
-                                function() {
-                                    var answer = $hfe(this).val();
-                                    if (answer == "normal") {
-                                        $hfe("span#cardio textarea").val(
-                                                "Normal");
-                                        $hfe("#cardio").disableSelection();
-                                    } else {
-                                        $hfe("span#cardio textarea").val(
-                                                "Abnormal because : ");
-                                        $hfe("#cardio").enableSelection();
-                                        $hfe("span#cardio textarea").focus();
-                                    }
-                                });
-
-                        $hfe("input[type=radio][name=normal_3]")
-                                .change(
-                                        function() {
-                                            var answer = $hfe(this).val();
-                                            if (answer == "normal") {
-                                                $hfe("span#abdominal textarea")
-                                                        .val("Normal");
-                                                $hfe("#abdominal")
-                                                        .disableSelection();
-                                            } else {
-                                                $hfe("span#abdominal textarea")
-                                                        .val(
-                                                                "Abnormal because : ");
-                                                $hfe("#abdominal")
-                                                        .enableSelection();
-                                                $hfe("span#abdominal textarea")
-                                                        .focus();
-                                            }
-                                        });
-
-                        $hfe("input[type=radio][name=normal_4]").change(
-                                function() {
-                                    var answer = $hfe(this).val();
-                                    if (answer == "normal") {
-                                        $hfe("span#neurologic textarea").val(
-                                                "Normal");
-                                        $hfe("#neurologic").disableSelection();
-                                    } else {
-                                        $hfe("span#neurologic textarea").val(
-                                                "Abnormal because : ");
-                                        $hfe("#neurologic").enableSelection();
-                                        $hfe("span#neurologic textarea")
-                                                .focus();
-                                    }
-                                });
-
-                        $hfe("input[type=radio][name=normal_5]").change(
-                                function() {
-                                    var answer = $hfe(this).val();
-                                    if (answer == "normal") {
-                                        $hfe("span#musculo textarea").val(
-                                                "Normal");
-                                        $hfe("#musculo").disableSelection();
-                                    } else {
-                                        $hfe("span#musculo textarea").val(
-                                                "Abnormal because : ");
-                                        $hfe("#musculo").enableSelection();
-                                        $hfe("span#musculo textarea").focus();
-                                    }
-                                });
-
-                        $hfe("input[type=radio][name=normal_6]").change(
-                                function() {
-                                    var answer = $hfe(this).val();
-                                    if (answer == "normal") {
-                                        $hfe("span#urogenital textarea").val(
-                                                "Normal");
-                                        $hfe("#urogenital").disableSelection();
-                                    } else {
-                                        $hfe("span#urogenital textarea").val(
-                                                "Abnormal because : ");
-                                        $hfe("#urogenital").enableSelection();
-                                        $hfe("span#urogenital textarea")
-                                                .focus();
-                                    }
-                                });
-
-                        $hfe("input[type=radio][name=normal_7]").change(
-                                function() {
-                                    var answer = $hfe(this).val();
-                                    if (answer == "normal") {
-                                        $hfe("span#skin textarea")
-                                                .val("Normal");
-                                        $hfe("#skin").disableSelection();
-                                    } else {
-                                        $hfe("span#skin textarea").val(
-                                                "Abnormal because : ");
-                                        $hfe("#skin").enableSelection();
-                                        $hfe("span#skin textarea").focus();
-                                    }
-                                });
-
-                        $hfe("input[type=radio][name=normal_8]")
-                                .change(
-                                        function() {
-                                            var answer = $hfe(this).val();
-                                            if (answer == "normal") {
-                                                $hfe(
-                                                        "span#psychomotor textarea")
-                                                        .val("Normal");
-                                                $hfe("#psychomotor")
-                                                        .disableSelection();
-                                            } else {
-                                                $hfe(
-                                                        "span#psychomotor textarea")
-                                                        .val(
-                                                                "Abnormal because : ");
-                                                $hfe("#psychomotor")
-                                                        .enableSelection();
-                                                $hfe(
-                                                        "span#psychomotor textarea")
-                                                        .focus();
-                                            }
-                                        });
-
-                        $hfe("input[type=radio][name=normal_9]").change(
-                                function() {
-                                    var answer = $hfe(this).val();
-                                    if (answer == "normal") {
-                                        $hfe("span#other textarea").val(
-                                                "Normal");
-                                        $hfe("#other").disableSelection();
-                                    } else {
-                                        $hfe("span#other textarea").val(
-                                                "Abnormal because : ");
-                                        $hfe("#other").enableSelection();
-                                        $hfe("span#other textarea").focus();
-                                    }
-                                });
-                    });
-    </script>
-
-    <section>
-        <div class="sectionheader">0. GENERAL INFORMATION</div>
-        <div class="sectionbody">
-            <table border="2" cellspacing="0" cellpadding="6" width="100%">
-                <tr>
-                    <td>
-                        <b><u>Patient:</u></b><lookup expression="patient.personName"/><br/>
-                        <b>Id Number:</b><lookup expression="patient.patientIdentifier.identifier"/><br/>
-                        {
-                        <b>Sex:</b><font color="blue"><lookup expression="patient.gender"/></font>&#160;&#160;&#160;&#160;&#160;&#160;
-                        <b>Age:</b><font color="blue"><lookup expression="patient.age"/></font>&#160;&#160;&#160;&#160;&#160;&#160;
-                        <b>Education Level:</b><font color="blue"><lookup expression="personAttributes.get('Education Level')"/></font>&#160;&#160;&#160;&#160;&#160;&#160;
-                        <b>Religion:</b><font color="blue"><lookup expression="personAttributes.get('Religion')"/></font>&#160;&#160;&#160;&#160;&#160;&#160;
-                        <b>Profession:</b><font color="blue"><lookup expression="personAttributes.get('Profession')"/></font>&#160;&#160;&#160;&#160;&#160;&#160;
-                        <b>Phone number:</b><font color="blue"><lookup expression="personAttributes.get('Phone number')"/></font>
-                        }
-                    </td>
-                </tr>
-            </table>
             <table border="2" cellspacing="0" cellpadding="6" width="100%">
                 <tr>
                     <td>
                         Date:
-                        <encounterDate default="today"/>
+                        <encounterDate default="today" />
                     </td>
                     <td>
                         Health Facility:
-                        <encounterLocation default="GlobalProperty:billing.defaultLocation" />
+                        <encounterLocation id="location" default="GlobalProperty:billing.defaultLocation" />
                     </td>
                     <td>
                         Provider:
                         <encounterProvider default="currentUser" />
                     </td>
                 </tr>
-                <!--<tr>
-                    <td><font color="red">Admission Date</font></td>
-                    <td><lookup expression="fn.latestObs(10045).obsDatetime"/></font></td>
-                </tr>-->
-            </table>
-
-            <table>
-                <tr>
-                    <td class="lblcolor">Temperature</td>
-                    <td>  <font color="red"><lookup expression="fn.latestObs(5088).getValueNumeric()"/></font>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="lblcolor">Weight:</td>
-                    <td>  <font color="red"><lookup expression="fn.latestObs(5089).getValueNumeric()"/></font>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="lblcolor">Height:</td>
-                    <td>   <font color="red"><lookup expression="fn.latestObs(5090).getValueNumeric()"/></font>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="lblcolor">SBP:</td>
-                    <td>  <font color="red"><lookup expression="fn.latestObs(5085).getValueNumeric()"/></font>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="lblcolor">DBP:</td>
-                    <td>  <font color="red"><lookup expression="fn.latestObs(5086).getValueNumeric()"/></font>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="lblcolor">Pulse:</td>
-                    <td>  <font color="red"><lookup expression="fn.latestObs(5087).getValueNumeric()"/></font>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="lblcolor">O2 Saturator:</td>
-                    <td>  <font color="red"><lookup expression="fn.latestObs(5092).getValueNumeric()"/></font>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="lblcolor">CLINICAL IMPRESSION COMMENTS:</td>
-                    <td> <font color="red"><lookup expression="fn.latestObs(1364).getValueText()"/></font>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="lblcolor">RECOMMENDATIONS:</td>
-                    <td> <font color="red"><lookup expression="fn.latestObs(1391).getValueText()"/></font>
-                    </td>
-                </tr>
             </table>
         </div>
     </section>
 
-    <!--    <section headerCode="TRANSFER">
-            <table>
-                <tr>
-                    <td>
-                        <lookup expression="fn.latestObs(106937).getValueComplex()"/>
-                    </td>
-                </tr>
-            </table>
-        </section>-->
-    <!--    <section headerLabel="ADMISSION INFO">
-            <table class="baseline-aligned">
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL SURGERY">
+        <div class="section-container">
 
-                <tr>
-                    <td><b>Desease Type:</b></td>
-                    <td><obs conceptId="106945" answerConceptId="" required="true"/></td>
-                </tr>
-                <tr>
-                    <td><b>Consultation Type</b></td>
-                    <td>
-                        <obs conceptId="d6dafc4b-9ad8-4467-94a9-0eca78648254" required="true"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td><b>Department</b></td>
-                    <td>
-                        <obs conceptId="2cda28df-2fe7-42e0-bb2f-376c9f803537" required="true"/>
-                    </td>
-                </tr>
-            </table>
-        </section>-->
+            <fieldset>
+                <legend>
+                    <b>
+                        CHIRURGIE
+                    </b>
+                </legend>
 
+                <p class="small-input">
+                    No (salle d'op)
 
-    <section headerLabel="RESIDENCE:" >
-        <table  border="1" cellspacing="0" cellpadding="6" width="100%">
-            <tr>
-                <td rowspan="3"><addressHierarchyRwanda/><br/>
-                    <!-- <obs conceptId="3cda3d7e-26fe-102b-80cb-0017a47871b2" labelText="Telephone: " size="9"/>-->
-                </td>
-            </tr>
-        </table>
+                    <obs conceptId="eaca3357-3aee-4c17-b6fe-20548ab57ce6" size="15" />
+
+                    GS-Rh
+
+                    <obs conceptId="844ce323-5e79-4f9d-8c8f-f0382ddac62f" size="15" />
+
+                    Opérateur
+
+                    <obs conceptId="85ed0724-ba45-429f-9c60-2c75d434e2fc" size="15" />
+
+                    Assistant(e) interne
+
+                    <obs conceptId="b324cfc5-e03c-41d5-b347-8888800730ef" size="15" />
+
+                    Assistant(e) externe
+
+                    <obs conceptId="fc67644f-f6cb-4ee7-a81f-f0da3f2e17d0" size="15" />
+
+                    Anesthésiste
+
+                    <obs conceptId="9d521f85-b528-497f-8f40-267b9d569ee8" size="15" />
+
+                    Type d'anesthésie
+
+                    <obs conceptId="d7a04a46-182c-444e-868c-a125af4f3a4a" />
+                </p>
+
+            </fieldset>
+
+        </div>
     </section>
 
-    <section headerCode="">
-        <table border="2" cellspacing="0" cellpadding="6" width="100%">
-            <tr>
-                <td><font color="red">Admission Date</font><lookup expression="fn.latestObs(10045).obsDatetime"/></td>
-            </tr>
-        </table>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Diagnostic pré-opératoire">
+        <div class="section-container">
+
+            <p class="side-by-side radio">
+                <label>Antiseptique</label>
+                <obs conceptId="0ece204e-9532-45f6-970a-2e2abe913b00"
+                     answerConceptId="bc0851fa-eac8-4d31-9d46-2983acf748df" style="radio" />
+                <obs conceptId="0ece204e-9532-45f6-970a-2e2abe913b00"
+                     answerConceptId="513e369e-b0d9-444b-9a41-7a35e8755b4a" style="radio" />
+            </p>
+
+            <p>
+                Constats
+
+                <obs conceptId="7ceb6c80-e50f-471d-be2c-d6ad01154ffd" style="textarea" rows="3" cols="30" />
+            </p>
+
+            <p>
+                Décisions + Description de l'Acte
+
+                <obs conceptId="fa91560e-db54-4e2a-90d0-43cc242da28e" style="textarea" rows="3" cols="30" />
+            </p>
+            <p>
+
+                Commentaires
+
+                <obs conceptId="3cd9d956-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="30" />
+            </p>
+            <p class="side-by-side">
+                Décompte exact des compresses:
+
+                <obs conceptId="a7d0ada9-7a20-46a0-ae3b-c799ece4bf70"
+                     answerConceptIds="3cd6f600-26fe-102b-80cb-0017a47871b2,3cd6f86c-26fe-102b-80cb-0017a47871b2"
+                     style="radio" />
+            </p>
+
+            <p class="side-by-side">
+                Drainage:
+
+                <obs conceptId="a1ecfc28-89c0-4bcf-832c-8fae8822d8e7"
+                     answerConceptIds="3cd6f600-26fe-102b-80cb-0017a47871b2,3cd6f86c-26fe-102b-80cb-0017a47871b2"
+                     style="radio" />
+            </p>
+            <p class="radio">
+                <b>Fermeture de la paroi ou autre</b>
+                <obsgroup groupingConceptId="655f3c73-4747-4f50-bcf3-8cac5e6448ed">
+
+                    <obs conceptId="655f3c73-4747-4f50-bcf3-8cac5e6448ed"
+                         answerConceptId="9f0caa9e-02c2-401d-ac72-a688ecc61647" style="checkbox" />
+                    <obs conceptId="655f3c73-4747-4f50-bcf3-8cac5e6448ed"
+                         answerConceptId="b6383ffa-0835-416f-b3cb-84618beec1a9" style="checkbox" />
+                    <obs conceptId="655f3c73-4747-4f50-bcf3-8cac5e6448ed"
+                         answerConceptId="1669f2a0-ce59-4ad0-83e6-f9901e92d4ae" style="checkbox" />
+                    <obs conceptId="655f3c73-4747-4f50-bcf3-8cac5e6448ed"
+                         answerConceptId="3ce1625c-26fe-102b-80cb-0017a47871b2" style="checkbox" />
+
+                </obsgroup>
+            </p>
+            <p class="date-one-line">
+                <label>Durée opératoire:</label>
+
+                <b>Start date of operation:</b>
+                <obs conceptId="a5ea3596-7e10-4aa5-a132-f30e827f4433" allowTime="true" />&#160;&#160;
+                <br />
+                <br />
+                <b>End date of
+                    operation:</b>
+                <obs conceptId="1bcaa8f2-e0ff-4a6b-976d-dd1ee78070e1" allowTime="true" />
+            </p>
+            <p class="small-input">
+                Nombre de fils utilisés
+
+                <obs conceptId="47337f92-b8b6-4348-90d1-17e0e6381e88" />
+            </p>
+            <p class="small-input">
+                Nombre de poches
+
+                <obs conceptId="a6b03e43-bf52-4d2d-8d30-6939fc0ff2e0" />
+            </p>
+            <p class="small-input">
+                No des poches
+
+                <obs conceptId="61035939-8001-4e2f-91c9-5ffbd94539dd" />
+            </p>
+            <p>
+                Description de la pièce
+
+                <obs conceptId="9ccc668d-a3be-45a3-870f-6655346dfa8e" style="textarea" rows="3" cols="30" />
+            </p>
+
+        </div>
     </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Diagnostic post opératoire">
+        <div class="section-container">
 
-    <div id="tab3" class="sectionheader">
-        <span id="tab_title3">GENERAL SURGERY</span>
-    </div>
-    <div id="tab_content3">
-        <br/>
+            <p>
+                Envoi en anatomie pathologique
 
-        <!-- This div adds Surgery part -->
-        <section>
-            <div class="section">
-                <div class="sectionheader">CHIRURGIE</div>
-                <div class="sectionbody">
-                    <table>
-                        <tr>
-                            <td>No (salle d'op)</td>
-                            <td>
-                                <obs conceptId="eaca3357-3aee-4c17-b6fe-20548ab57ce6"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>GS-Rh</td>
-                            <td>
-                                <obs conceptId="844ce323-5e79-4f9d-8c8f-f0382ddac62f"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Opérateur</td>
-                            <td>
-                                <obs conceptId="85ed0724-ba45-429f-9c60-2c75d434e2fc"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Assistant(e) interne</td>
-                            <td>
-                                <obs conceptId="b324cfc5-e03c-41d5-b347-8888800730ef"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Assistant(e) externe</td>
-                            <td>
-                                <obs conceptId="fc67644f-f6cb-4ee7-a81f-f0da3f2e17d0"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Anesthésiste</td>
-                            <td>
-                                <obs conceptId="9d521f85-b528-497f-8f40-267b9d569ee8"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Type d'anesthésie</td>
-                            <td>
-                                <obs conceptId="d7a04a46-182c-444e-868c-a125af4f3a4a" size=""/>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="sectionheader">Diagnostic pré-opératoire</div>
-            <div class="sectionFieldset">
-                <fieldset>
-                    <legend><b></b></legend>
+                <obs conceptId="503463c1-5e51-4cd3-afe8-7239f95cf3b6"
+                     answerConceptIds="3cd6f600-26fe-102b-80cb-0017a47871b2,3cd6f86c-26fe-102b-80cb-0017a47871b2" />
+            </p>
+            <p>
+                Instruction et Antibiothérapie
 
-                    <table>
-                        <tr>
-                            <td><i>Technique opératoire:</i></td>
-                        </tr>
-                        <tr>
-                            <td>Antiseptique</td>
-                            <td>
+                <obs conceptId="d13cdc5d-5a66-40e5-a5fc-936661ca2257" style="textarea" rows="3" cols="30" />
+            </p>
+            <p class="radio">
+                Protocole thérapeutique médicale:
 
-                             <obs conceptId="0ece204e-9532-45f6-970a-2e2abe913b00" answerConceptId="bc0851fa-eac8-4d31-9d46-2983acf748df" style="checkbox"/>
-                             <obs conceptId="0ece204e-9532-45f6-970a-2e2abe913b00" answerConceptId="513e369e-b0d9-444b-9a41-7a35e8755b4a" style="checkbox"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Constats</td>
-                            <td>
-                                <obs conceptId="7ceb6c80-e50f-471d-be2c-d6ad01154ffd" style="textarea" rows="3" cols="30"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Décisions + Description de l'Acte</td>
-                            <td>
-                                <obs conceptId="fa91560e-db54-4e2a-90d0-43cc242da28e" style="textarea" rows="3" cols="30"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Commentaires</td>
-                            <td>
-                                <obs conceptId="3cd9d956-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="30"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Décompte exact des compresses:</td>
-                            <td>
-                                <obs conceptId="a7d0ada9-7a20-46a0-ae3b-c799ece4bf70" answerConceptIds="3cd6f600-26fe-102b-80cb-0017a47871b2,3cd6f86c-26fe-102b-80cb-0017a47871b2"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Drainage:</td>
-                            <td>
-                                <obs conceptId="a1ecfc28-89c0-4bcf-832c-8fae8822d8e7" answerConceptIds="3cd6f600-26fe-102b-80cb-0017a47871b2,3cd6f86c-26fe-102b-80cb-0017a47871b2"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="lblcolor"><b>Fermeture de la paroi ou autre</b></td>
-                            <obsgroup groupingConceptId="655f3c73-4747-4f50-bcf3-8cac5e6448ed">
-                        <tr>
-                            <td> <obs conceptId="655f3c73-4747-4f50-bcf3-8cac5e6448ed" answerConceptId="9f0caa9e-02c2-401d-ac72-a688ecc61647" style="checkbox"/> 
-                             <obs conceptId="655f3c73-4747-4f50-bcf3-8cac5e6448ed" answerConceptId="b6383ffa-0835-416f-b3cb-84618beec1a9" style="checkbox"/> 
-                             <obs conceptId="655f3c73-4747-4f50-bcf3-8cac5e6448ed" answerConceptId="1669f2a0-ce59-4ad0-83e6-f9901e92d4ae"  style="checkbox"/> 
-                             <obs conceptId="655f3c73-4747-4f50-bcf3-8cac5e6448ed" answerConceptId="3ce1625c-26fe-102b-80cb-0017a47871b2" style="checkbox"/>  </td>
-                        </tr>
-                        </obsgroup>
-                        </tr>
-                        <tr>
-                            <td>Durée opératoire</td>
-                            <td>
-                                <b>Start date of operation:</b><obs conceptId="a5ea3596-7e10-4aa5-a132-f30e827f4433" allowTime="true"/> <b>End date of operation:</b><obs conceptId="1bcaa8f2-e0ff-4a6b-976d-dd1ee78070e1" allowTime="true"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Nombre de fils utilisés</td>
-                            <td>
-                                <obs conceptId="47337f92-b8b6-4348-90d1-17e0e6381e88"/>
-                            </td>
-                        </tr>
-                        <!--<tr> <td>Saignement</td><td><obs conceptId="12215" /></td></tr>-->
-                        <!--<tr><td>Transfusions</td><td><obs conceptId="f127aabc-3933-43ae-a360-6308cbbd8d1d" /></td></tr>-->
-                        <tr>
-                            <td>Nombre de poches</td>
-                            <td>
-                                <obs conceptId="a6b03e43-bf52-4d2d-8d30-6939fc0ff2e0"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>No des poches</td>
-                            <td>
-                                <obs conceptId="61035939-8001-4e2f-91c9-5ffbd94539dd"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Description de la pièce</td>
-                            <td>
-                                <obs conceptId="9ccc668d-a3be-45a3-870f-6655346dfa8e" style="textarea" rows="3" cols="30"/>
-                            </td>
-                        </tr>
-                    </table>
-                </fieldset>
-            </div>
-        </section>
+                <obs conceptId="d01bdf82-1284-4791-ac07-5cfdd5856b15"
+                     answerConceptId="3cd7d6ce-26fe-102b-80cb-0017a47871b2" style="checkbox" />
+                <obs conceptId="d01bdf82-1284-4791-ac07-5cfdd5856b15"
+                     answerConceptId="95df809d-ed68-49b1-8864-cd64afeb7634" style="checkbox" />
+            </p>
+            <p>
+                Protocole thérapeutique nursing:
 
-        <section>
-            <div class="sectionheader">Diagnostic post opératoire</div>
-            <div class="sectionFieldset">
-                <fieldset>
-                    <legend><b></b></legend>
-
-                    <table>
-                        <tr>
-                            <td>Envoi en anatomie pathologique</td>
-                            <td>
-                                <obs conceptId="503463c1-5e51-4cd3-afe8-7239f95cf3b6" answerConceptIds="3cd6f600-26fe-102b-80cb-0017a47871b2,3cd6f86c-26fe-102b-80cb-0017a47871b2"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Instruction et Antibiothérapie</td>
-                            <td>
-                                <obs conceptId="d13cdc5d-5a66-40e5-a5fc-936661ca2257" style="textarea" rows="3" cols="30"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Protocole thérapeutique médicale:</td>
-                            <td>
-                                <obs conceptId="d01bdf82-1284-4791-ac07-5cfdd5856b15" answerConceptId="3cd7d6ce-26fe-102b-80cb-0017a47871b2" style="checkbox"/>
-                                <obs conceptId="d01bdf82-1284-4791-ac07-5cfdd5856b15" answerConceptId="95df809d-ed68-49b1-8864-cd64afeb7634" style="checkbox"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Protocole thérapeutique nursing:</td>
-                            <td>
-                                <obs conceptId="9e7b40e3-208c-4b93-9b84-8fddd4258334"/>
-                            </td>
-                        </tr>
-                    </table>
-                </fieldset>
-
+                <obs conceptId="9e7b40e3-208c-4b93-9b84-8fddd4258334" />
+            </p>
+            <p>
                 <fieldset>
                     <legend><b>ENTREE</b></legend>
                     <table>
-                        <tr>
-                            <td><obs conceptId="4acfbe89-b367-4eab-a98d-62d857cc2451" labelText="Perfusion"/></td>
-                            <td><obs conceptId="15693c2b-21a3-4851-840f-9bcdac34840c" labelText="Transfusion"/></td>
-                            <td><obs conceptId="631143b8-bfe0-4beb-b55f-3564e4a82447" labelText="Ingestation"/></td>
-                        </tr>
+
+                        <obs conceptId="4acfbe89-b367-4eab-a98d-62d857cc2451" labelText="Perfusion" />
+                        <obs conceptId="15693c2b-21a3-4851-840f-9bcdac34840c" labelText="Transfusion" />
+                        <obs conceptId="631143b8-bfe0-4beb-b55f-3564e4a82447" labelText="Ingestation" />
+
                     </table>
                 </fieldset>
-
+            </p>
+            <p>
                 <fieldset>
                     <legend><b>SORTIE</b></legend>
 
                     <table>
-                        <tr>
-                            <td><obs conceptId="106ad75e-0d0e-4fa4-9ee0-ff5578ab9f53" labelText="Drains"/></td>
-                            <!--<tr><td>Urine</td><td><obs conceptId="12198" /></td></tr>-->
-                            <td><obs conceptId="4751b790-81ec-4082-a177-888feb7887a4" labelText="Sonde n-g"/></td>
-                        </tr>
+
+                        <obs conceptId="106ad75e-0d0e-4fa4-9ee0-ff5578ab9f53" labelText="Drains" />
+                        <obs conceptId="4751b790-81ec-4082-a177-888feb7887a4" labelText="Sonde n-g" />
+
                     </table>
                 </fieldset>
+            </p>
+            <p>
+                Bilan des entrees et sorties
 
-                <table class="baseline-aligned">
-                    <tr>
-                        <td class="lblcolor">Bilan des entrees et sorties</td>
-                        <td>
-                            <obs conceptId="c0609ba9-567f-4f47-adba-6dff4dda7509" style="textarea" rows="3" cols="30"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="lblcolor">Evolution utérine</td>
-                        <td>
-                            <obs conceptId="217081c1-0e69-4842-8c00-f32c26372fed"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="lblcolor">Lochies</td>
-                        <td>
-                            <obs conceptId="265fe9dc-a197-4576-874d-a7315d49179f"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="lblcolor">Montee laiteuse</td>
-                        <td>
-                            <obs conceptId="e484c39c-3ace-4b2f-bbfd-15ef36d4d3dc"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="lblcolor">Mollet</td>
-                        <td>
-                            <obs conceptId="1b1182dd-7f70-4285-9f14-e9de5d3783b7"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="lblcolor">Pansement</td>
-                        <td>
-                            <obs conceptId="278d6192-0b00-4c32-8bbc-681ddab3e533"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="lblcolor">Emissions de gaz</td>
-                        <td>
-                            <obs conceptId="86322fa7-76fb-4dce-b75f-888329835bdd"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="lblcolor">Vomissements</td>
-                        <td>
-                            <obs conceptId="ec7b86f1-54da-4f4e-80d7-a1f13dd76139"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="lblcolor">Etat de l'abdomen</td>
-                        <td>
-                            <obs conceptId="3ffdbf0e-b8b3-4a11-95b1-f50a89770340"/>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </section>
+                <obs conceptId="c0609ba9-567f-4f47-adba-6dff4dda7509" style="textarea" rows="3" cols="30" />
+            </p>
+            <p>
+                Evolution utérine
 
-        <section>
-            <div class="sectionheader">Observations</div>
-            <div class="sectionFieldset">
+                <obs conceptId="217081c1-0e69-4842-8c00-f32c26372fed" />
+            </p>
+            <p>
+                Lochies
 
-                <fieldset>
-                    <legend><b></b></legend>
-                    <table class="baseline-aligned">
-                        <tr>
-                            <td><obs conceptId="30e5b774-9c63-4736-a32b-4470f650e5ec" style="textarea" rows="3" cols="30" labelText="Etat d'éveil"/></td>
-                            <td><obs conceptId="e3a7504f-16ce-47ad-8b9b-811292c23854" style="textarea" rows="3" cols="30" labelText="Autres"/></td>
-                        </tr>
-                    </table>
-                </fieldset>
-            </div>
-        </section>
+                <obs conceptId="265fe9dc-a197-4576-874d-a7315d49179f" />
+            </p>
+            <p>
+                Montee laiteuse
 
-        <section>
-            <div class="sectionheader">Treatment Given</div>
-            <div class="sectionFieldset">
-                <fieldset>
-                    <legend>
-                        <b>Detail de Treatment</b>
-                    </legend>
-                    <table class="baseline-aligned">
-                        <tr>
-                            <td><obs conceptId="3cd9d956-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="30" labelText="Treatment Details"/></td>
-                            <!--<td><obs conceptId="3ce87ff6-26fe-102b-80cb-0017a47871b2" labelText="Months"/></td>-->
-                            <td><obs conceptId="481149b4-537b-44ca-bc62-5e32edf1d21b" labelText="Dates"/></td>
-                        </tr>
-                    </table>
-                </fieldset>
-            </div>
-            <div class="sectionFieldset">
-                <fieldset>
-                    <legend>
-                        <b>Detail des Analyses</b>
-                    </legend>
-                    <table class="baseline-aligned">
-                        <tr>
-                            <td><obs conceptId="3cda0160-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="30" labelText="Resultat des analyses"/></td>
-                            <!--<td><obs conceptId="3ce87ff6-26fe-102b-80cb-0017a47871b2" labelText="Months"/></td>-->
-                            <td><obs conceptId="481149b4-537b-44ca-bc62-5e32edf1d21b" labelText="Dates"/></td>
-                        </tr>
-                    </table>
-                </fieldset>
-            </div>
-        </section>
-    </div>
-    <div id="tab4" class="sectionheader">
-        <!--<span id="tab_title4">SURGERY FOR MATERNITY</span>-->
-    </div>
-    <div id="tab_content4">
-        <br/>
-        <section>
-            <div class="section">
-                <div class="sectionheader"></div>
-                <div class="sectionbody">
-                    <table>
-                        <tr>
+                <obs conceptId="e484c39c-3ace-4b2f-bbfd-15ef36d4d3dc" />
+            </p>
+            <p>
 
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </section>
-    </div>
+                Mollet
 
-    <section>
+                <obs conceptId="1b1182dd-7f70-4285-9f14-e9de5d3783b7" />
+            </p>
+            <p>
+                Pansement
 
-        <div class="separator">
-            <submit/>
+                <obs conceptId="278d6192-0b00-4c32-8bbc-681ddab3e533" />
+            </p>
+            <p>
+                Emissions de gaz
+
+                <obs conceptId="86322fa7-76fb-4dce-b75f-888329835bdd" />
+            </p>
+            <p>
+                Vomissements
+
+                <obs conceptId="ec7b86f1-54da-4f4e-80d7-a1f13dd76139" />
+            </p>
+            <p>
+                Etat de l'abdomen
+
+                <obs conceptId="3ffdbf0e-b8b3-4a11-95b1-f50a89770340" />
+            </p>
         </div>
     </section>
+
+
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Observations">
+        <div class="section-container">
+
+            <p>
+                <obs conceptId="30e5b774-9c63-4736-a32b-4470f650e5ec" style="textarea" rows="3" cols="30"
+                     labelText="Etat d'éveil" />
+            </p>
+
+            <p>
+                <obs conceptId="e3a7504f-16ce-47ad-8b9b-811292c23854" style="textarea" rows="3" cols="30"
+                     labelText="Autres" />
+            </p>
+        </div>
+    </section>
+
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Treatment Given">
+        <div class="section-container">
+
+            <fieldset>
+                <legend>
+                    <b>
+                        Detail de Treatment
+                    </b>
+                </legend>
+                <obs conceptId="3cd9d956-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="30"
+                     labelText="Treatment Details" /><br />
+                <obs conceptId="481149b4-537b-44ca-bc62-5e32edf1d21b" labelText="Dates" />
+            </fieldset>
+            <fieldset>
+                <legend>
+                    <b>
+                        Detail des Analyses
+                    </b>
+                </legend>
+
+                <obs conceptId="3cda0160-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="30"
+                     labelText="Resultat des analyses" />
+                <br />
+                <obs conceptId="481149b4-537b-44ca-bc62-5e32edf1d21b" labelText="Dates" />
+            </fieldset>
+        </div>
+    </section>
+
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
 
 
 </htmlform>

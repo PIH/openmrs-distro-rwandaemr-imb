@@ -11,6 +11,7 @@
         "label": "Billing",
         "url": "module/mohbilling/insurancePolicySearch.form",
         "icon": "icon-money",
+        "require": "typeof sessionLocation !== 'undefined' && hasMemberWithProperty(sessionLocation.tags, 'display', 'Billing Location')",
         "requiredPrivilege": "App: coreapps.billingAdmin"
       }
     ]

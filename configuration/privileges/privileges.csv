@@ -10,3 +10,14 @@ f1659225-c339-43d6-9489-3deba279a369,App: coreapps.billingAdmin,This privilege a
 c0079282-e5ab-4b8c-bd31-b40fe87a3439,App: coreapps.laboratory,This privilege allow the user to access laboratory app on 2x home page
 1c419713-1b96-483f-828f-3ad373d908f1,App: coreapps.primarycare,This privilege allow the user to access primary care app on 2x home page
 d07d0e2a-7542-4a65-9ae3-6ce72b26fabd,App: coreapps.programsList,This privilege allow the user to access program list extension on 2x patient dashboard
+f55983af-abd1-455a-82a0-0783ab2cd3e5,App: coreapps.recentVisits,This privilege allow the user to access Encounters extension on 2x patient dashboard
+d44538a8-5e3f-41c1-94c5-408b43e16874,Task: Edit Patient Demographics,Privilege to edit patient demographics through ref app
+239a549a-2e1f-45b5-8345-5fa383f48a3e,Task: Make an internal transfer,This will allow clinician to have access on internal form
+3ddd2246-d813-422a-81bf-bb59d589a127,Task: Make the discharge on reference application,Make the patient discharge using a form
+34eaa179-419b-42c5-9424-b3bb824568cf,App: coreapps.diagnoses,Allow the user to view diagnoses extension on patient dashboard
+32cd0b55-150d-4d03-873b-7588275ae6c6,App: coreapps.obsGraph,Allow the user to view weight graph on patient's dashboard
+11fbe54c-146f-423c-a54f-349d3f2f47a0,App: coreapps.mostRecentVitals,Allow the user to view recent vitals on patient's dashboard
+3c180ae0-5533-4c3c-af71-240bf9d272ce,App: coreapps.attachments,Allow the user to view attachments on patient's dashboard
+8c828e17-77b1-4577-baaf-48f3d08a8e12,App: coreapps.allergies,Allow the user to view allergies on patient's dashboard
+fa4f3105-9cd3-4bf0-adb1-79baa197971e,View Growth Charts monitoring,Allow the user to view patient's growth chart monitoring
+

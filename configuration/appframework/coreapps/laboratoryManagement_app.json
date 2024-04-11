@@ -11,7 +11,8 @@
         "label": "Laboratory Management",
         "url": "module/laboratorymanagement/viewLabOrder.form",
         "icon": "icon-beaker",
-        "requiredPrivilege": "App: coreapps.laboratory"
+        "requiredPrivilege": "App: coreapps.laboratory",
+        "require": "typeof sessionLocation !== 'undefined' && hasMemberWithProperty(sessionLocation.tags, 'display', 'Laboratory Location')"
       }
     ]
   }

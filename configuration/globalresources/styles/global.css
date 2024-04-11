@@ -5,50 +5,16 @@ body {
     max-width: unset !important;
     width: 1200px;
 }
-.dashboard .action-section ul {
-    background-color: #2C3531;
-}
-/*#login-form {
-    color: yellow;
-    text-align: center;
-    background-image: url('/ms/uiframework/resource/file/configuration/globalresources/images/rwanda-flag-std.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}*/
 .patient-header.dead .death-header {
     background: red;
 }
-/*#login-form h1 {
-    color: white;
-}
-form fieldset, .form fieldset{
-       background-color: transparent;
-}
-#login-form ul.select{
-    background-color: transparent;
-}
-#login-form ul.select li{
-    margin: 0 10px;
-        text-align: left;
-        display: inline-block;
-        width: 250px;
-        padding: 5px;
-        color: #e2ea1b;
-        background-color: black;
-        
-}
-#login-form ul.select li.selected {
-    background-color: #F6BE00;
-    color: #3E3E3F;
-    font-weight: bolder;
-    border-color: transparent;
-}
-#login-form a {
-    color: #ffffff;
-    text-decoration: none;
-}*/
-#login-form ul.select li:hover{
-    background-color: #2a8cb6;
-    color: black;
+form input, form select, form textarea, form ul.select, .form input, .form select, .form textarea, .form ul.select {
+  min-width: 80%;
+  color: #003F5E;
+  display: block;
+  padding: 5px 10px;
+  margin: 0;
+  margin-top: 5px;
+  background-color: #FFF;
+  border: 1px solid #DDD;
 }

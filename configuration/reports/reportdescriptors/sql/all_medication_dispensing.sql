@@ -44,7 +44,9 @@ o.obs_id,
 'Old'
 from obs o
 where concept_id = concept_from_mapping('PIH','9070')
-AND o.voided = 0;
+AND o.voided = 0
+AND ((date(o.obs_datetime) >=@startDate) or @startDate is null)
+AND ((date(o.obs_datetime) <=@endDate)  or @endDate is null);
 
 create index med_encounter_id on all_medication_dispensing(encounter_id);
 create index med_obs_group on all_medication_dispensing(obs_group_id);
@@ -221,7 +223,9 @@ concept_name(status_reason, 'en') AS status_reason,
 dosing_instructions prescription
 FROM medication_dispense md
 LEFT OUTER JOIN users u ON md.creator=u.user_id
-LEFT OUTER JOIN order_frequency of2 ON of2.order_frequency_id = md.frequency;
+LEFT OUTER JOIN order_frequency of2 ON of2.order_frequency_id = md.frequency
+WHERE ((date(md.date_created) >=@startDate) or @startDate is null)
+AND ((date(md.date_created) <=@endDate)  or @endDate is null);
 
 
 

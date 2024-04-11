@@ -69,5 +69,27 @@
         }
       }
     ]
+  },
+  {
+    "id": "imbemr.fbfbef74-4b99-4070-95b8-7023e3db51e1.pdcFlowsheet.Form",
+    "order": 5,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "fbfbef74-4b99-4070-95b8-7023e3db51e1",
+      "dashboard": "fbfbef74-4b99-4070-95b8-7023e3db51e1",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.fbfbef74-4b99-4070-95b8-7023e3db51e1.pdcFlowsheet.Form",
+        "extensionPointId": "fbfbef74-4b99-4070-95b8-7023e3db51e1.overallActions",
+        "type": "link",
+        "label": "Flowsheet",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/pdc-flowsheet.xml",
+        "icon": "icon-file",
+        "order": 5
+      }
+    ]
   }
 ]

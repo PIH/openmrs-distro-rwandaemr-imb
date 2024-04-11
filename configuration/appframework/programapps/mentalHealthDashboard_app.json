@@ -69,5 +69,27 @@
         }
       }
     ]
+  },
+  {
+    "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhInitial.Form",
+    "order": 5,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "dashboard": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhInitial.Form",
+        "extensionPointId": "51304c8c-ecc2-4bed-818b-a5c785ad58a6.overallActions",
+        "type": "link",
+        "label": "Initial Encounter",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/mh-initial-encounter.xml",
+        "icon": "icon-file",
+        "order": 5
+      }
+    ]
   }
 ]

@@ -6,7 +6,7 @@
         "label": "coreapps.task.startVisit.label",
         "script": "visit.showQuickVisitCreationDialog({{patient.patientId}})",
         "icon": "icon-check-in",
-        "order": -20,
+        "order": 2,
         "require": "!visit && !patient.person.dead",
         "requiredPrivilege": "Task: coreapps.createVisit"
     },
@@ -17,7 +17,7 @@
         "label": "coreapps.task.createRetrospectiveVisit.label",
         "script": "visit.showRetrospectiveVisitCreationDialog()",
         "icon": "icon-plus",
-        "order": -12,
+        "order": 3,
         "requiredPrivilege": "Task: coreapps.createRetrospectiveVisit"
     },
     {
@@ -27,8 +27,9 @@
         "label": "coreapps.task.mergeVisits.label",
         "url": "coreapps/mergeVisits.page?patientId={{patient.uuid}}",
         "icon": "icon-link",
-        "order": 13,
-        "requiredPrivilege": "Task: coreapps.mergeVisits"
+        "order": 4,
+        "requiredPrivilege": "Task: coreapps.mergeVisits",
+        "require": "patient.age < 6"
     },
     {
         "id": "coreapps.markPatientDead",
@@ -37,7 +38,7 @@
         "label": "coreapps.markPatientDead.label",
         "url": "coreapps/markPatientDead.page?patientId={{patient.uuid}}",
         "icon": "icon-plus-sign-alt",
-        "order": 24,
+        "order": 5,
         "requiredPrivilege": "Task: coreapps.markPatientDead"
     },
     {
@@ -47,7 +48,36 @@
         "label": "coreapps.task.deletePatient.label",
         "script": "delPatient.showDeletePatientCreationDialog(&#x27;{{patient.uuid}}&#x27;)",
         "icon": "icon-remove",
-        "order": 25,
+        "order": 6,
         "requiredPrivilege": "Task: coreapps.deletePatient"
+    },
+    {
+        "id": "referenceapplication.realTime.manualBilling",
+        "extensionPointId": "patientDashboard.overallActions",
+        "type": "link",
+        "label": "Billing",
+        "url": "imbemr/patient/manualBilling.page?patientId={{patient.uuid}}",
+        "icon": "icon-money",
+        "order": 0
+    },
+    {
+        "id": "referenceapplication.realTime.medicalHistory",
+        "extensionPointId": "patientDashboard.overallActions",
+        "type": "link",
+        "label": "Insurance Partner",
+        "url": "imbemr/patient/mohdataflowpatient.page?patientId={{patient.uuid}}",
+        "icon": "icon-road",
+        "order": 1,
+        "requiredPrivilege": "View Medical History Link"
+    },
+    {
+        "id": "org.openmrs.module.growthchart.growthChart",
+        "extensionPointId": "patientDashboard.overallActions",
+        "type": "link",
+        "label": "growthchart.growthCharts",
+        "url": "growthchart/growthCharts.page?patientId={{patient.uuid}}",
+        "icon": "icon-bar-chart",
+        "order": 4,
+        "requiredPrivilege": "View Growth Charts monitoring"
     }
 ]

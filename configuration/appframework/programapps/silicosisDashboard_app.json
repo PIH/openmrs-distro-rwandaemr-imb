@@ -69,5 +69,71 @@
         }
       }
     ]
+  },
+  {
+    "id": "imbemr.326475d7-07f6-4357-ba1b-9098f8137849.enrollment.Form",
+    "order": 1,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "326475d7-07f6-4357-ba1b-9098f8137849",
+      "dashboard": "326475d7-07f6-4357-ba1b-9098f8137849",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.326475d7-07f6-4357-ba1b-9098f8137849.insulinList.Form",
+        "extensionPointId": "326475d7-07f6-4357-ba1b-9098f8137849.overallActions",
+        "type": "link",
+        "label": "Enrollment Form",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/ncd-silicosis--enrollment-form.xml",
+        "icon": "icon-file",
+        "order": 1
+      }
+    ]
+  },
+  {
+    "id": "imbemr.326475d7-07f6-4357-ba1b-9098f8137849.clinicVisits.Form",
+    "order": 2,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "326475d7-07f6-4357-ba1b-9098f8137849",
+      "dashboard": "326475d7-07f6-4357-ba1b-9098f8137849",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.326475d7-07f6-4357-ba1b-9098f8137849.clinicVisits.Form",
+        "extensionPointId": "326475d7-07f6-4357-ba1b-9098f8137849.overallActions",
+        "type": "link",
+        "label": "Other Investigations Form",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/ncd-silicosis--VisitForm.xml",
+        "icon": "icon-file",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "id": "imbemr.326475d7-07f6-4357-ba1b-9098f8137849.exitFromCare.Form",
+    "order": 3,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "326475d7-07f6-4357-ba1b-9098f8137849",
+      "dashboard": "326475d7-07f6-4357-ba1b-9098f8137849",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.326475d7-07f6-4357-ba1b-9098f8137849.exitFromCare.Form",
+        "extensionPointId": "326475d7-07f6-4357-ba1b-9098f8137849.overallActions",
+        "type": "link",
+        "label": "Exit From Care",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/ncd-exit-form-169.xml",
+        "icon": "icon-file",
+        "order": 3
+      }
+    ]
   }
 ]

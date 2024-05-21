@@ -1,0 +1,249 @@
+<htmlform
+        htmlformUuid="35d0162d-090c-451b-b6a2-99ff2f9a419f"
+        formUuid="326aad65-e28a-41ca-b61e-76c6cc673f46"
+        formName="IPD auto Observation or general followup"
+        formDescription="IPD auto Observation or general followup"
+        formVersion="1.0"
+        formEncounterType="5117d944-9a73-4a09-a1ed-08d8407a38ba"
+        formPublished="true"
+        formRetired="false"
+>
+
+    <style>
+        form fieldset {
+        display: block;
+        }
+
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
+        }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
+        width: 100%;
+        }
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
+        display: block;
+        }
+    </style>
+
+    <postSubmissionAction class="org.openmrs.module.mohbilling.automation.CreateBillOnHtmlFormSubmissionAction" />
+
+    <h1>DH - IPD Followup FORM</h1>
+
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
+
+            <table border="2" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
+                    </td>
+                    <td>
+                        Health Facility:
+                        <encounterLocation id="location" default="GlobalProperty:billing.defaultLocation" />
+                    </td>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="SOAP">
+        <div class="section-container">
+
+            <fieldset>
+                <legend>
+                    <b>
+                        1. SUBJECTIVE
+                    </b>
+                </legend>
+                <label>Clinical history:</label>
+                <obs cols="30" conceptId="bc3862d8-6825-4878-8801-f1e7b0790071"
+                     placeholder="Includes what your patient says about her/his health Problem" required="true" rows="3"
+                     style="textarea" />
+            </fieldset>
+            <fieldset>
+                <legend>
+                    <b>
+                        2.OBJECTIVE
+                    </b>
+                </legend>
+                <label>Objective summary:</label>
+                <obs cols="30" conceptId="538e20fb-848a-4b1c-931a-17638fff0b52"
+                     placeholder="This includes:                             Physical exam findings                             Laboratory data                             Imaging results                             Other diagnostic data                             Recognition and review of the documentation of other clinicians."
+                     required="true" rows="3" style="textarea" />
+            </fieldset>
+            <fieldset>
+                <legend>
+                    <b>
+                        3. ASSESSMENT
+                    </b>
+                </legend>
+                <label>Assessment Summary:</label>
+                <obs cols="30" conceptId="3cd9d956-26fe-102b-80cb-0017a47871b2"
+                     placeholder="Includes a summary of your diagnosis of the patient’s existing condition"
+                     required="true" rows="3" style="textarea" />
+            </fieldset>
+            <fieldset>
+                <legend>
+                    <b>
+                        4. PLAN
+                    </b>
+                </legend>
+                <label>Treatment/Action taken:</label>
+                <obs cols="50" conceptId="3ce88a32-26fe-102b-80cb-0017a47871b2" required="true" rows="3"
+                     style="textarea" />
+            </fieldset>
+        </div>
+    </section>
+
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Patient Education">
+        <div class="section-container">
+            <fieldset>
+                <legend>
+                    <b>
+                        Education Information
+                    </b>
+                </legend>
+                <label>Identified Health Education needs</label>
+
+                <obs cols="30" conceptId="e8c8e2d7-2f28-4650-8759-ff0745f7db3d" id="past_medical" required="true"
+                     rows="3" style="textarea" />
+                <label>Education subject</label>
+                <obs cols="30" conceptId="a0c245fb-a639-4288-8919-cfcf051398ec" id="past_medical" required="true"
+                     rows="3" style="textarea" />
+            </fieldset>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Bill Visit and Rooms">
+        <div class="section-container">
+            <fieldset>
+                <legend>
+                    <b>
+                        Visit and Room
+                    </b>
+                </legend>
+                <label>Department</label>
+
+                <obs conceptId="c920931b-fa93-4e99-9e36-28e1e4c16cf7" />
+
+                <label>VISIT TYPE</label>
+                <obs conceptId="d6dafc4b-9ad8-4467-94a9-0eca78648254"
+                     answerConceptIds="82ce723b-1914-4e70-a66f-df40f5a56039,120f4fba-06aa-4c56-9e74-eb2dcdd54404,002bf513-4db7-4491-9df4-f5086227d20b,3974386d-4208-4ffb-b380-9c39ce81534b"
+                     answerLabels="Visite par le médecin généraliste en hospitalisation, Visite par le médecin spécialiste en hospitalisation" />
+                <label>HOSPITALISATION ROOM TYPE</label>
+                <obs conceptId="3168fee2-92aa-451b-b143-e46b56fe1e6f"
+                     answerConceptIds="fff2ed9d-3835-4299-b7a8-89b3945f4c07,47a206ab-6ce8-48e9-83ad-d076cb151889,ae6e54a3-d344-408c-9b95-c85ee7d72582,470f56f5-83a5-4cb2-a9ba-8714d585b63d,10f7ceb6-9a61-4374-80d4-70b0560eb84e,50b7a5e9-6b71-4652-b1b6-2804577dbfa4"
+                     answerLabels="Hospitalisation chambre à deux lits avec toilette à l'intérieur,Hospitalisation chambre à un lit avec toilette à l'extérieur,Hospitalisation chambre à deux lits avec toilette à l'extérieur,
+                            Hospitalisation salle commune/ Jour,Hospitalisation chambre à un lit avec toilette à l'intérieur,PRIVATE ROOM (Chambre Privée)" />
+            </fieldset>
+        </div>
+    </section>
+
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
+
+
+</htmlform>

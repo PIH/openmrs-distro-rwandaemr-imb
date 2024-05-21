@@ -1,2 +1,8 @@
 Uuid,Mapping source,Mapping code,Metadata class name,Metadata uuid
-6c63c917-6b57-458c-8f36-f460ca70f67d,org.openmrs.module.emrapi,emr.primaryIdentifierType,org.openmrs.PatientIdentifierType,c147b1de-2700-102b-80cb-0017a47871b2
+90891af5-340f-4f48-a183-cd73fdeaae47,org.openmrs.module.emrapi,emr.primaryIdentifierType,org.openmrs.PatientIdentifierType,4e458867-9a68-4e55-9fe0-fb49fac4e6b0
+32339567-c4c4-4bf9-804f-de848f1e23c3,org.openmrs.module.emrapi,emr.atFacilityVisitType,org.openmrs.VisitType,d0ce5266-c4ce-4a2a-88e5-88cccd71fe50
+c870634a-7e9b-4e9f-a114-a7e9ac904fc4,org.openmrs.module.emrapi,emr.checkInEncounterType,org.openmrs.EncounterType,66b9053c-c97d-4a6a-992f-0d9af3c17abd
+d6f6549f-6345-40c1-8469-e4bd9b037c13,org.openmrs.module.emrapi,emr.visitNoteEncounterType,org.openmrs.EncounterType,75caca4e-33ca-4b0a-aa63-5ed29f3000f0
+f4a395f1-cda9-470e-9991-0171dd54815b,org.openmrs.module.emrapi,emr.admissionEncounterType,org.openmrs.EncounterType,8e3c016e-cfca-407a-8214-2f071b3d8da2
+6bd40619-719e-4b3c-9b32-e01ccb233bde,org.openmrs.module.emrapi,emr.exitFromInpatientEncounterType,org.openmrs.EncounterType,13703c92-58d2-4d04-a320-8d4699380676
+bc976a45-1d9e-4193-a541-a689ba38cf69,org.openmrs.module.emrapi,emr.transferWithinHospitalEncounterType,org.openmrs.EncounterType,a363b0d4-d430-467d-810c-4a2ee9891430

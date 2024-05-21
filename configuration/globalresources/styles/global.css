@@ -1,0 +1,20 @@
+header {
+    background-color:#00473f;
+}
+body {
+    max-width: unset !important;
+    width: 1200px;
+}
+.patient-header.dead .death-header {
+    background: red;
+}
+form input, form select, form textarea, form ul.select, .form input, .form select, .form textarea, .form ul.select {
+  min-width: 80%;
+  color: #003F5E;
+  display: block;
+  padding: 5px 10px;
+  margin: 0;
+  margin-top: 5px;
+  background-color: #FFF;
+  border: 1px solid #DDD;
+}

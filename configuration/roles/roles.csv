@@ -1,0 +1,2 @@
+Uuid,Role name,Description,Inherited roles,Privileges
+774b2af3-6437-4e5a-a310-547554c7c65c,Anonymous,Privileges for non-authenticated users.,,Get Locations

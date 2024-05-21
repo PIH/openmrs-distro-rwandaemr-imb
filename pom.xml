@@ -16,17 +16,20 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <openMRSVersion>2.5.12</openMRSVersion>
+        <openMRSVersion>2.6.3</openMRSVersion>
         <addresshierarchyVersion>2.15.0</addresshierarchyVersion>
-        <appframeworkVersion>2.17.0</appframeworkVersion>
-        <appuiVersion>1.16.0</appuiVersion>
-        <authenticationVersion>1.0.0</authenticationVersion>
-        <authenticationuiVersion>1.0.0</authenticationuiVersion>
+        <adminuiVersion>1.7.0-SNAPSHOT</adminuiVersion>
+        <allergyuiVersion>1.8.6-SNAPSHOT</allergyuiVersion>
+        <appframeworkVersion>2.18.0-SNAPSHOT</appframeworkVersion>
+        <appuiVersion>1.17.0</appuiVersion>
+        <attachmentsVersion>2.8.0</attachmentsVersion>
+        <authenticationVersion>1.1.0-SNAPSHOT</authenticationVersion>
+        <authenticationuiVersion>1.1.0-SNAPSHOT</authenticationuiVersion>
         <calculationVersion>1.3.0</calculationVersion>
-        <coreappsVersion>1.39.0</coreappsVersion>
+        <coreappsVersion>1.40.0-SNAPSHOT</coreappsVersion>
         <emrapiVersion>1.35.0-SNAPSHOT</emrapiVersion>
         <eventVersion>2.10.0</eventVersion>
-        <fhir2Version>1.7.0</fhir2Version>
+        <fhir2Version>2.0.0-SNAPSHOT</fhir2Version>
         <formconceptsVersion>2.0.1</formconceptsVersion>
         <formentryappVersion>1.4.3</formentryappVersion>
         <groovyVersion>2.3.1</groovyVersion>
@@ -41,19 +44,21 @@
         <initializerVersion>2.7.0-SNAPSHOT</initializerVersion>
         <laboratorymanagementVersion>2.0.0-SNAPSHOT</laboratorymanagementVersion>
         <legacyuiVersion>1.15.0</legacyuiVersion>
-        <metadatamappingVersion>1.6.0</metadatamappingVersion>
+        <metadatamappingVersion>1.7.0-SNAPSHOT</metadatamappingVersion>
         <metadatasharingVersion>1.9.0</metadatasharingVersion>
         <mohappointmentVersion>2.0.1-SNAPSHOT</mohappointmentVersion>
-        <mohbillingVersion>2.0.1-SNAPSHOT</mohbillingVersion>
+        <mohbillingVersion>2.0.2-SNAPSHOT</mohbillingVersion>
+        <mohdataflowmoduleVersion>0.0.5-SNAPSHOT</mohdataflowmoduleVersion>
         <mohtracVersion>2.0.0-SNAPSHOT</mohtracVersion>
         <namephoneticsVersion>1.19.0</namephoneticsVersion>
         <omodExportVersion>2.1.0</omodExportVersion>
         <orderextensionVersion>3.2.0</orderextensionVersion>
+        <owaVersion>1.15.0-SNAPSHOT</owaVersion>
         <patientsummaryVersion>1.4.0</patientsummaryVersion>
         <pharmacymanagementVersion>2.0.0-SNAPSHOT</pharmacymanagementVersion>
         <providermanagementVersion>2.14.0</providermanagementVersion>
-        <registrationappVersion>1.25.0</registrationappVersion>
-        <registrationcoreVersion>1.12.0</registrationcoreVersion>
+        <registrationappVersion>1.26.0-SNAPSHOT</registrationappVersion>
+        <registrationcoreVersion>1.13.0-SNAPSHOT</registrationcoreVersion>
         <reportingVersion>1.26.0</reportingVersion>
         <reportingcompatibilityVersion>2.0.9</reportingcompatibilityVersion>
         <reportingobjectgroupVersion>2.0.1</reportingobjectgroupVersion>

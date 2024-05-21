@@ -4,7 +4,7 @@
         "extensionPointId": "patientHeader.editPatientDemographics",
         "type": "link",
         "label": "general.edit",
-        "url": "registrationapp/editSection.page?patientId={{patient.patientId}}&sectionId=demographics&appId=referenceapplication.registrationapp.registerPatient"
-
+        "url": "registrationapp/editSection.page?patientId={{patient.patientId}}&sectionId=demographics&appId=referenceapplication.registrationapp.registerPatient",
+        "requiredPrivilege": "Task: Edit Patient Demographics"
     }
 ]

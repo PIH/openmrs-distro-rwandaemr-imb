@@ -1,51 +1,19 @@
 [
   {
-    "id": "coreapps.latestObsForConceptList",
-    "instanceOf": "coreapps.template.dashboardWidget",
-    "description": "coreapps.latestObsForConceptList.app.description",
-    "order": 10,
-    "config": {
-      "widget": "latestobsforconceptlist",
-      "icon": "icon-user-md",
-      "label": "coreapps.clinicianfacing.latestObservations",
-      "maxAge": "1m",
-      "concepts": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA, 5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA, 5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA, 5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA, 5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-    },
+    "id": "coreapps.diagnoses",
+    "label": "coreapps.clinicianfacing.diagnoses",
+    "icon": "icon-diagnosis",
+    "order": 1,
     "extensions": [
       {
-        "id": "coreapps.mostRecentVitals.clinicianDashboardFirstColumn",
-        "appId": "coreapps.latestObsForConceptList",
+        "id": "imbemr.diagnoses.clinicianDashboardFirstColumn",
+        "appId": "coreapps.diagnoses",
         "extensionPointId": "patientDashboard.firstColumnFragments",
         "extensionParams": {
           "provider": "coreapps",
-          "fragment": "dashboardwidgets/dashboardWidget"
-        }
-      }
-    ]
-  },
-  {
-    "id": "coreapps.obsAcrossEncounters",
-    "instanceOf": "coreapps.template.dashboardWidget",
-    "description": "coreapps.obsAcrossEncounters.app.description",
-    "order": 10,
-    "config": {
-      "widget": "obsacrossencounters",
-      "icon": "icon-user-md",
-      "label": "coreapps.clinicianfacing.healthTrendSummary",
-      "concepts": "5087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-      "encounterType": "123AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-      "maxRecords": "5",
-      "maxAge": "1m"
-    },
-    "extensions": [
-      {
-        "id": "org.openmrs.module.coreapps.mostRecentVitals.clinicianDashboardFirstColumn",
-        "appId": "coreapps.obsAcrossEncounters",
-        "extensionPointId": "patientDashboard.firstColumnFragments",
-        "extensionParams": {
-          "provider": "coreapps",
-          "fragment": "dashboardwidgets/dashboardWidget"
-        }
+          "fragment": "clinicianfacing/diagnosisWidget"
+        },
+        "requiredPrivilege": "App: coreapps.diagnoses"
       }
     ]
   },
@@ -53,7 +21,7 @@
     "id": "coreapps.visitByEncounterType",
     "instanceOf": "coreapps.template.dashboardWidget",
     "description": "coreapps.visitByEncounterType.app.description",
-    "order": 10,
+    "order": 3,
     "config": {
       "widget": "visitbyencountertype",
       "icon": "icon-calendar",
@@ -63,13 +31,14 @@
     },
     "extensions": [
       {
-        "id": "coreapps.mostRecentVitals.clinicianDashboardSecondColumn",
+        "id": "coreapps.visitByEncounterType.clinicianDashboardSecondColumn",
         "appId": "coreapps.visitByEncounterType",
         "extensionPointId": "patientDashboard.secondColumnFragments",
         "extensionParams": {
           "provider": "coreapps",
           "fragment": "dashboardwidgets/dashboardWidget"
-        }
+        },
+        "requiredPrivilege": "App: coreapps.recentVisits"
       }
     ]
   },
@@ -77,24 +46,25 @@
     "id": "coreapps.obsGraph",
     "instanceOf": "coreapps.template.dashboardWidget",
     "description": "coreapps.obsGraph.app.description",
-    "order": 10,
+    "order": 4,
     "config": {
       "widget": "obsgraph",
       "icon": "icon-bar-chart",
       "label": "coreapps.clinicianfacing.weightGraph",
-      "conceptId": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "conceptId": "3ce93b62-26fe-102b-80cb-0017a47871b2",
       "maxResults": "10",
       "maxAge": "1y"
     },
     "extensions": [
       {
-        "id": "coreapps.mostRecentVitals.clinicianDashboardFirstColumn",
+        "id": "coreapps.obsGraph.clinicianDashboardFirstColumn",
         "appId": "coreapps.obsGraph",
         "extensionPointId": "patientDashboard.firstColumnFragments",
         "extensionParams": {
           "provider": "coreapps",
           "fragment": "dashboardwidgets/dashboardWidget"
-        }
+        },
+        "requiredPrivilege": "App: coreapps.obsGraph"
       }
     ]
   },
@@ -102,7 +72,7 @@
     "id": "coreapps.relationships",
     "instanceOf": "coreapps.template.dashboardWidget",
     "description": "coreapps.relationships.app.description",
-    "order": 10,
+    "order": 5,
     "config": {
       "widget": "relationships",
       "icon": "icon-group",
@@ -112,14 +82,150 @@
     },
     "extensions": [
       {
-        "id": "coreapps.mostRecentVitals.clinicianDashboardSecondColumn",
+        "id": "coreapps.relationships.clinicianDashboardSecondColumn",
         "appId": "coreapps.relationships",
         "extensionPointId": "patientDashboard.secondColumnFragments",
         "extensionParams": {
           "provider": "coreapps",
           "fragment": "dashboardwidgets/dashboardWidget"
-        }
+        },
+        "requiredPrivilege": "App: coreapps.relationships"
       }
     ]
-  } 
+  },
+  {
+    "id": "coreapps.mostRecentVitals",
+    "instanceOf": "coreapps.template.mostRecentEncounter",
+    "description": "coreapps.mostRecentVitals.app.description",
+    "label": "coreapps.clinicianfacing.vitals",
+    "icon": "icon-vitals",
+    "order": 6,
+    "config": {
+      "encounterTypeUuid": "daf32375-d293-4e27-a68d-2a58494c96e1",
+      "encounterDateLabel": "coreapps.clinicianfacing.lastVitalsDateLabel"
+    },
+    "extensions": [
+      {
+        "id": "coreapps.mostRecentVitals.clinicianDashboardFirstColumn",
+        "appId": "coreapps.mostRecentVitals",
+        "extensionPointId": "patientDashboard.firstColumnFragments",
+        "extensionParams": {
+          "provider": "coreapps",
+          "fragment": "encounter/mostRecentEncounter"
+        },
+        "requiredPrivilege": "App: coreapps.mostRecentVitals"
+      }
+    ]
+  },
+  {
+    "id": "coreapps.attachments",
+    "label": "Attachments",
+    "icon": "fas fa-fw fa-paperclip",
+    "order": 7,
+    "extensions": [
+      {
+        "id": "coreapps.attachments.clinicianDashboardSecondColumn",
+        "appId": "coreapps.attachments",
+        "extensionPointId": "patientDashboard.secondColumnFragments",
+        "extensionParams": {
+          "provider": "attachments",
+          "fragment": "dashboardWidget"
+        },
+        "requiredPrivilege": "App: coreapps.attachments"
+      }
+    ]
+  },
+  {
+    "id": "coreapps.allergies",
+    "label": "Allergies",
+    "icon": "fas fa-fw fa-allergies",
+    "order": 8,
+    "extensions": [
+      {
+        "id": "coreapps.allergies.clinicianDashboardSecondColumn",
+        "appId": "coreapps.allergies",
+        "extensionPointId": "patientDashboard.secondColumnFragments",
+        "extensionParams": {
+          "provider": "allergyui",
+          "fragment": "allergies"
+        },
+        "requiredPrivilege": "App: coreapps.allergies"
+      }
+    ]
+  },
+  {
+      "id": "coreapps.app.programsList",
+      "order": 10,
+      "config": {
+        "widget": "programs",
+        "icon": "icon-stethoscope",
+        "label": "coreapps.programsDashboardWidget.label",
+        "dateFormat": "dd MM yyyy",
+        "enableProgramDashboards": true
+      },
+      "extensions": [
+        {
+          "id": "coreapps.app.programsList.secondColumn",
+          "appId": "coreapps.app.programsList",
+          "extensionPointId": "patientDashboard.secondColumnFragments",
+          "extensionParams": {
+            "provider": "coreapps",
+            "fragment": "dashboardwidgets/dashboardWidget"
+          },
+          "requiredPrivilege": "App: coreapps.programsList"
+        }
+      ]
+    },
+  {
+    "id": "coreapps.partogramGrph",
+    "instanceOf": "coreapps.template.dashboardWidget",
+    "description": "coreapps.obsGraph.app.description",
+    "order": 4,
+    "config": {
+      "widget": "obsgraph",
+      "icon": "fas fa-fw fa-chart-area",
+      "label": "Partograph:Uterine Contractions in 10min",
+      "conceptId": "5965b71c-4214-4780-a74e-2de09b06a552",
+      "maxResults": "10",
+      "maxAge": "1y"
+    },
+    "extensions": [
+      {
+        "id": "coreapps.obsGraph.clinicianDashboardFirstColumn",
+        "appId": "coreapps.partogramGrph",
+        "extensionPointId": "patientDashboard.firstColumnFragments",
+        "extensionParams": {
+          "provider": "coreapps",
+          "fragment": "dashboardwidgets/dashboardWidget"
+        },
+        "requiredPrivilege": "App: coreapps.partogramGrph",
+        "require": "typeof sessionLocation !== 'undefined' && hasMemberWithProperty(sessionLocation.tags, 'display', 'Maternity') && visit.admitted && patient.person.gender == 'F'"
+      }
+    ]
+  },
+  {
+  "id": "coreapps.partographData",
+  "instanceOf": "coreapps.template.mostRecentEncounter",
+  "description": "coreapps.mostRecentVitals.app.description",
+  "label": "Partograph data",
+  "icon": "icon-vitals",
+  "order": 6,
+  "config": {
+    "encounterTypeUuid": "f0d3c07e-bb5a-4a99-9643-b49810e18981",
+    "encounterDateLabel": "Partograph data",
+    "detailsUrl": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=referenceapplication:htmlforms/simpleTransfer.xml"
+  },
+  "extensions": [
+    {
+      "id": "coreapps.mostRecentVitals.clinicianDashboardFirstColumn",
+      "appId": "coreapps.partographData",
+      "extensionPointId": "patientDashboard.firstColumnFragments",
+      "extensionParams": {
+        "provider": "coreapps",
+        "fragment": "encounter/mostRecentEncounter"
+      },
+      "requiredPrivilege": "App: coreapps.mostRecentPartographData"
+    }
+  ]
+}
 ]

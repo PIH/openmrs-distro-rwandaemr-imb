@@ -1,0 +1,84 @@
+[
+  {
+    "id": "referenceapplication.registrationapp.registerPatient",
+    "instanceOf": "registrationapp.registerPatient",
+    "label": "Register Patient",
+    "description": "Create a new Patient Record",
+    "extensions": [
+      {
+        "id": "application.registrationapp.summary.editPatientLink",
+        "extensionPointId": "patientDashboard.overallActions",
+        "type": "link",
+        "label": "referenceapplication.app.editRegistrationInfo.label",
+        "url": "registrationapp/registrationSummary.page?patientId={{patient.uuid}}&appId=referenceapplication.registrationapp.registerPatient",
+        "icon": "icon-pencil",
+        "order": 4,
+        "requiredPrivilege": "App: registrationapp.registerPatient"
+      }
+    ],
+    "config": {
+      "afterCreatedUrl": "/coreapps/clinicianfacing/patient.page?patientId={{patientId}}",
+      "sections": [
+        {
+          "id": "contactInfo",
+          "label": "registrationapp.patient.contactInfo.label",
+          "questions": [
+            {
+              "legend": "Person.address",
+              "fields": [
+                {
+                  "type": "personAddress",
+                  "label": "registrationapp.patient.address.question",
+                  "widget": {
+                    "providerName": "registrationapp",
+                    "fragmentId": "field/personAddressWithHierarchy",
+                    "config" : {
+                      "shortcutFor": "address1",
+                      "manualFields": ["address2"]
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "legend": "registrationapp.patient.phone.label",
+              "id": "phoneNumberLabel",
+              "fields": [
+                {
+                  "type": "personAttribute",
+                  "label": "registrationapp.patient.phone.question",
+                  "formFieldName": "phoneNumber",
+                  "uuid": "d6bcc287-4576-4264-961b-6bf1c08fbf68",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text"
+                  },
+                  "cssClasses": ["phone"]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "relationships-info",
+          "label": "registrationapp.person.relationship",
+          "questions": [
+            {
+              "legend": "registrationapp.person.relationship.label",
+              "header": "registrationapp.person.relationship.question",
+              "fields": [
+                {
+                  "type": "personRelationships",
+                  "widget": {
+                    "providerName": "registrationapp",
+                    "fragmentId": "field/personRelationship"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

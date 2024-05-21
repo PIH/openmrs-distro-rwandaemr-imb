@@ -1,0 +1,1843 @@
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/muzima.css" rel="stylesheet">
+    <link href="css/ui-darkness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+  
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/additional-methods.min.js"></script>
+    <script src="js/jquery-autocomplete-min.js"></script>
+    <script src="js/muzima.js"></script>
+  
+    <title>RENAL FUNCTIONAL MONITORING QUESTIONNAIRE </title>
+</head>
+<body class="col-md-10 col-md-offset-1">
+    
+    <div id="pre_populate_data"></div>
+<form id="RenalFunctionalMonitoring_form" name="RenalFunctionalMonitoring_form">
+  <div class="section">
+    <fieldset>
+      <h3>Encounter Details</h3>
+      <div class="form-group">
+        <label for="encounter.location_id">Location Name:<span class="required">*</label>
+        <input class="form-control valid-location-only" id="encounter.location_id" type="text" placeholder="Start typing something..."
+               required="required">
+        <input class="form-control" name="encounter.location_id" type="hidden">
+      </div>
+      <div class="form-group">
+        <label for="encounter.provider_id_select">Provider:</label>
+        <input class="form-control valid-provider-only" id="encounter.provider_id_select" type="text" placeholder="Start typing something...">
+        <input class="form-control" name="encounter.provider_id_select" type="hidden">
+      </div>
+      <div class="form-group hidden">
+        <select id="select_providers"></select>
+      </div>
+      <div class="form-group show_provider_id_text">
+        <label for="encounter.provider_id">Provider's system-id:<span class="required">*</label>
+        <input class="form-control checkDigit" id="encounter.provider_id" name="encounter.provider_id"
+               type="text" required="required" disabled="disabled">
+      </div>
+      <div class="form-group">
+        <label for="encounter.encounter_datetime">Encounter Date:<span class="required">*</label>
+        <input class="form-control datepicker nonFutureDate past-date" id="encounter.encounter_datetime"
+               name="encounter.encounter_datetime" type="text" readonly="readonly"
+               required="required">
+      </div>
+      <div class="form-group">
+        <input class="form-control" id="encounter.form_uuid" name="encounter.form_uuid"
+               type="hidden" required="required">
+      </div>
+    </fieldset>
+  </div>
+  <div class="section">
+    <fieldset>
+      <h3>DEMOGRAPHICS & CLINICAL MEASUREMENTS</h3>
+
+      <div class="form-group">
+        <input class="form-control" id="patient.uuid"
+               name="patient.uuid" type="hidden" readonly="readonly">
+      </div>
+      <div class="form-group">
+        <label for="patient.medical_record_number">Patient identifier:</label>
+        <input class="form-control" id="patient.medical_record_number"
+               name="patient.medical_record_number" type="text" readonly="readonly">
+      </div>
+      <div class="form-group">
+        <label for="patient.given_name">Given Name:</label>
+        <input class="form-control" id="patient.given_name" name="patient.given_name" type="text"
+               readonly="readonly">
+      </div>
+      <div class="form-group">
+        <label for="patient.middle_name">Middle Name:</label>
+        <input class="form-control" id="patient.middle_name" name="patient.middle_name" type="text"
+               readonly="readonly">
+      </div>
+      <div class="form-group">
+        <label for="patient.family_name">Family Name:</label>
+        <input class="form-control" id="patient.family_name" name="patient.family_name" type="text"
+               readonly="readonly">
+      </div>
+      <div class="form-group">
+        <label for="patient.sex">Gender:</label>
+        <select class="form-control" id="patient.sex" name="patient.sex" disabled="disabled">
+          <option value="">...</option>
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="patient.birth_date">Date Of Birth:</label>
+        <input class="form-control" id="patient.birth_date" name="patient.birth_date" type="text"
+               readonly="readonly" disabled="disabled">
+      </div>
+     
+      <!-- <div class="form-group group-set" data-group="patient.personattribute^2">
+        <label for="patient.phone_number">Phone Number: </label>
+        <input class="form-control phoneNumber" id="patient.phone_number" name="attribute_value" type="tel" >
+        <input type="hidden" id="attribute_type_phone" name="attribute_type_name" value="Phone number">
+                      <input type="hidden" id="attribute_type_uuid" name="attribute_type_uuid" value="8b908adf-c964-4959-ad43-e2c7aeaa9c67">
+      </div> -->
+      <div class="form-group">
+        <label for="EducationLevel" >Amashuri warangije:<span class="required">* </label>
+
+        <select id="EducationLevel" class="form-control" name="EducationLevel" required="required" data-concept="3cdcc5e4-26fe-102b-80cb-0017a47871b2^HIGHEST LEVEL OF SCHOOL COMPLETED^99DCT">
+            <option value="">...</option>
+            <option value="c4fe25b6-86ed-46ac-b24f-a9f42e2a0c2a^Illiterate^99DCT" >Ntabwo yize</option>
+            <option value="4e64f4b8-d71c-43e6-a603-265f7464a633^PRIMARY EDUCATION COMPLETE^99DCT" >Abanza</option>
+            <option value="2aa11f5e-6478-4ba0-b8ab-89cea5e5e66e^SECONDARY EDUCATION COMPLETE^99DCT" >Ayisumbuye</option>
+            <option value="7cee1a26-5092-4373-b5cd-7bad591d0c73^UNIVERSITY EDUCATION COMPLETE^99DCT" >Kaminuza</option>
+        </select>
+
+
+    </div>
+    <div class="form-group">
+        <label for="EducationLevel" >Ikiciro cy'ubudehe:<span class="required">*</label>
+
+        <select id="EducationLevel" class="form-control" required="required" name="EducationLevel" data-concept="b9016409-8ca6-4123-97a5-146dc93571e8^UBUDEHE CATEGORY^99DCT">
+            <option value="">...</option>
+            <option value="596daaf5-3d0b-4ddc-a848-1732d70b5962^1^99DCT" >Ubudehe 1</option>
+            <option value="bff8b23f-0d4b-4606-9e72-88c9b401f4d2^2^99DCT" >Ubudehe 2</option>
+            <option value="ed34b78a-e029-4711-a2a0-7cad6160c89c^3^99DCT" >Ubudehe 3</option>
+            <option value="772c4100-270c-49d4-873a-ffec0bbef3d3^4^99DCT" >Ubudehe 4</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="CurrentEmployment" >Umurimo/akazi ukora ni akahe:<span class="required">* </label>
+
+        <select id="CurrentEmployment" class="form-control" required="required" name="CurrentEmployment" data-concept="a752750c-eda8-4d4a-a82d-8475e5e2f17b^Current employement coded^99DCT">
+            <option value="">...</option>
+            <option value="3de617c6-ad12-495d-beac-8035f22a78b4^No employment^99DCT" >Ntakazi nkora</option>
+            <option value="3cd9757e-26fe-102b-80cb-0017a47871b2^FARMER^99DCT" >Umuhinzi mworozi</option>
+            <option value="b30e5317-a359-4672-b8de-542d57e630d1^Business man^99DCT" >Uwikorera</option>
+            <option value="3d391f2c-2567-47a2-8721-f363e34568a9^Students^99DCT" >Umunyeshuri</option>
+            <option value="1b3fa1f4-4646-4232-a556-c0d8d3321ce6^Public servant^99DCT" >Akazi k’umushahara wo ku kwezi</option>
+            <option value="3ce40fca-26fe-102b-80cb-0017a47871b2^HOUSEWORK/FIELDWORK^99DCT" >Imirimo yo murugo</option>
+            <option value="cf23be6e-ea70-4e41-9443-e5933dc9fdd7^Daily wage job^99DCT" >Akazi gahemba nyakabyizi</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="EducationLevel" >Ukoresha ubuhe bwishingizi:<span class="required">*</label>
+
+        <select id="EducationLevel" class="form-control" name="EducationLevel" required="required" data-concept="8da67e73-776c-43f6-9758-79d1f6786db3^RWANDA INSURANCE TYPE^99DCT">
+            <option value="">...</option>
+            <option value="3cd743f8-26fe-102b-80cb-0017a47871b2^NONE^99DCT" >Ntabwo</option>
+            <option value="465d1588-a6f6-41ac-9b9c-cc4fdf140e78^MUTUELLE^99DCT" >Mutuelle</option>
+            <option value="b20600d3-a818-47e7-be3d-d7bfef2acf9a^RAMA^99DCT" >RAMA</option>
+            <option value="95faec27-62af-472f-bdd8-a238b96af067^MMI^99DCT" >MMI</option>
+            <!-- <option value="871b9b48-3613-49a7-b22b-41cb9e6ff6eb^OTHERS^99DCT" >Ubundi</option> -->
+        </select>
+        <label> Ubundi bw'inshingizi:  <input id="OtherInsurance" class="form-control" name="Other(text)" type="text" size="30" data-concept="871b9b48-3613-49a7-b22b-41cb9e6ff6eb^OTHERS^99DCT"/></label>
+
+    </div>
+    <div class="form-group">
+        <label for="EducationLevel" >Irangamimereye ryawe ni irihe:<span class="required">* </label>
+
+        <select id="EducationLevel" class="form-control" name="EducationLevel" required="required" data-concept="2e00481d-9e6e-4740-9dc0-ab6232dff21c^Marital Status^99DCT">
+            <option value="">...</option>
+            <option value="df488243-d1d5-4b50-ae04-40b4ffdcf934^SINGLE OR A CHILD^99DCT" >Ingaragu</option>
+            <option value="3cee0aca-26fe-102b-80cb-0017a47871b2^MARRIED^99DCT" >Uwasezeranye imbere y’amategeko</option>
+            <option value="8d234f0f-c299-42e5-8edf-f2460e64704e^Couple cohabiting partner^99DCT" >Ababana batarasezeranye</option>
+            <option value="3cd6e6f6-26fe-102b-80cb-0017a47871b2^WIDOWED^99DCT" >Uwatandukanye nuwo bashakanye</option>
+            <option value="3cd6e55c-26fe-102b-80cb-0017a47871b2^DIVORCED^99DCT" >Uwapfakaye</option>
+        </select>
+    </div>
+
+    </fieldset>
+  </div>
+  <br/>
+  <div class="section">
+    <div class="form-group">
+      <fieldset>
+        <div>
+          <label><b>Anthropometric measurements</b></label>
+        </div>
+        <label class="font-normal">HEIGHT (CM):<span class="required">*</label>
+        <input id="Height" class="form-control" name="height" type="number" min="3" required="required" data-concept="3ce93cf2-26fe-102b-80cb-0017a47871b2^HEIGHT (CM)^99DCT"/>
+            <br/>
+        <label class="font-normal">Weight (kg):<span class="required">*</label>
+        <input id="Weight" class="form-control" name="Weight" type="number" required="required" data-concept="3ce93b62-26fe-102b-80cb-0017a47871b2^WEIGHT (KG)^99DCT"/>
+            <br/>
+        <label class="font-normal">BMI:<span class="required">*</label>
+        <input id="BMI" class="form-control" name="BMI" type="number" disabled="disabled" data-concept="3ce14da8-26fe-102b-80cb-0017a47871b2^BMI^99DCT"/>
+        <br/>
+        <label class="font-normal"> Systolic Blood pressure (SBP):<span class="required">*</label>
+        <input class="form-control" placeholder="Systolic" id="SystolicBloodpressure" name="Bloodpressure" type="number" required="required" data-concept="3ce934fa-26fe-102b-80cb-0017a47871b2^SYSTOLIC BLOOD PRESSURE^99DCT"/>
+        <label class="font-normal"> Diastolic Blood pressure (DBP):<span class="required">*</label>
+        <input class="form-control" placeholder="Diastolic" id="diastolicBloodpressure" name="Bloodpressure" type="number" required="required" data-concept="3ce93694-26fe-102b-80cb-0017a47871b2^DIASTOLIC BLOOD PRESSURE^99DCT"/>
+                    <br/>
+        <label class="font-normal" class="language en"> Waist circumference (cm) :<span class="required">*</label>
+        <input class="form-control" id="Waistcircumference" name="Waistcircumference" type="number" required="required" data-concept="d735afe6-8fd3-4802-8465-197d324b3085^Waist circumference^99DCT"/>
+                    <br/>
+      </fieldset>
+    </div>
+  </div>
+  <br/>
+  <div class="section">
+    <fieldset>
+      <div>
+        <label><b>Lifestyle questionnaire</b></label>
+      </div>
+      <div class="form-group">
+        <label class="font-normal" >1. Mu mezi 12 ashize, waba warigeze unywa itabi?</label>
+        <br/>
+        <label class="font-normal" required="required">
+            <input id="yesHistoryOfSmoking" name="HistoryOfSmoking" type="radio" 
+                   data-concept="3cdbdca6-26fe-102b-80cb-0017a47871b2^SMOKING HISTORY^99DCT"
+                   value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                  Yego 
+        
+            <input id="noHistoryOfSmoking" name="HistoryOfSmoking" type="radio" 
+                   data-concept="3cdbdca6-26fe-102b-80cb-0017a47871b2^SMOKING HISTORY^99DCT"
+                   value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+                  Oya 
+        </label>
+        <br/>
+        <div id="smokingYes" class="form-group">
+            <label>Niba ari yego , ni ubuhe bwoko bw’itabi wanyoye?</label>
+            <br/>
+            <label class="font-normal">
+                <input id="ManufactureCigarettes" name="TypeOfTobaccoHaveYouUsed" type="checkbox"
+                       data-concept="1c84417d-7b5f-45a1-91f6-444345801298^If yes, what type of tobacco have you used^99DCT"
+                       value="6716a0b8-346b-48b6-8c48-7957174ff870^Manufacture cigarettes^99DCT">
+                       Itabi ryo muruganda (isigara)
+              </label>
+              <br/>
+              <label class="font-normal">
+                <input id="HandRolledCigarette" name="TypeOfTobaccoHaveYouUsed" type="checkbox"
+                       data-concept="1c84417d-7b5f-45a1-91f6-444345801298^If yes, what type of tobacco have you used^99DCT"
+                       value="046b6968-08dd-41bf-b026-ede920b5bb4e^Hand rolled cigarette^99DCT">
+                       Itabi ry’ibibabi
+              </label>
+              <br/>
+              <label class="font-normal">
+                <input id="PipesFullOfTobacco" name="TypeOfTobaccoHaveYouUsed" type="checkbox"
+                       data-concept="1c84417d-7b5f-45a1-91f6-444345801298^If yes, what type of tobacco have you used^99DCT"
+                       value="77359d6f-2e26-4c76-ba29-aa81ad24e5c9^Pipes full of tobacco^99DCT">
+                       Itabi ryo mutwuma twabugenewe (shisha cg Vapors)
+              </label>
+              <br/>
+
+              <label class="font-normal" id="IfUsedManufacturedCigarete">
+                Niba unywa isigara, ugereranyije unywa imiti ingahe buri munsi
+                <input  class="form-control" name="IfUsedManufacturedCigarete" type="text" data-concept="9e9baa72-3690-4956-8ef5-343ae0563f8d^If used manufactured cigarete, how many pieces do you take daily^99DCT"/>
+              </label>
+              <label class="font-normal" id="IfUsedRolledCigarete">
+                Niba unywa itabi ry’ibibabi, ugereranyije unywa ibibabi bingahe buri munsi 
+                <input  class="form-control" name="IfUsedRolledCigarete" type="text" data-concept="72088b84-c937-4179-b635-211c30a2c983^If used rolled cigarette, how many do you take daily^99DCT"/>
+              </label>
+        </div>
+      </div>
+
+      <div class="form-group" required="required">
+        <label class="font-normal" >2. Mumezi 12 ashize waba warigeze kunywa inzoga? Urugero: ikigage, divayi, wiski, urwagwa, byeli……?</label>
+        <br/>
+        <label class="font-normal">
+            <input id="yesConsumedAnAlcoholicDrink" name="ConsumedAnAlcoholicDrink" type="radio" 
+                   data-concept="73062bc9-b53f-4d20-8149-ab0fa84830fd^Have you ever consumed an alcoholic drink^99DCT"
+                   value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+             Yego 
+        </label>
+        <br/>
+        <label class="font-normal">
+            <input id="noConsumedAnAlcoholicDrink" name="ConsumedAnAlcoholicDrink" type="radio" 
+                   data-concept="73062bc9-b53f-4d20-8149-ab0fa84830fd^Have you ever consumed an alcoholic drink^99DCT"
+                   value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+             Oya 
+        </label>
+        <br/>
+        <div id="drinkingYes" class="form-group">
+            <label>Niba ari yego, mumezi 12 ashize ni minsi ingahe wanyoye nibura icupa/ ikirahure kimwe cy’inzoga?</label>
+
+            <label class="font-normal">
+                <input id="daily" name="DrinkingFrequency" type="radio" 
+                       data-concept="7decc405-cf73-46d9-9046-ae9394da38af^If yes,how frequently have you had at least one alcoholic drink^99DCT"
+                       value="3182320f-f1be-4318-9f16-70584b82449a^Daily^99DCT">
+                       Buri munsi	
+              </label>
+              <br/>
+              <label class="font-normal">
+                <input id="almostEveryDay" name="DrinkingFrequency" type="radio"
+                       data-concept="7decc405-cf73-46d9-9046-ae9394da38af^If yes,how frequently have you had at least one alcoholic drink^99DCT"
+                       value="3cd73912-26fe-102b-80cb-0017a47871b2^DAILY OR ALMOST DAILY^99DCT">
+                       Hafi ya buri munsi 
+              </label>
+              <br/>
+              <label class="font-normal">
+                <input id="34DaysPerWeek" name="DrinkingFrequency" type="radio"
+                       data-concept="7decc405-cf73-46d9-9046-ae9394da38af^If yes,how frequently have you had at least one alcoholic drink^99DCT"
+                       value="c66aefef-0b89-49ab-901f-c8c43c0a61ec^3/day x 4 days/week^99DCT">
+                       Iminsi 3-4 mu cyumweru
+              </label>
+              <br/>
+              <label class="font-normal">
+                <input id="onceorlessAWeek" name="DrinkingFrequency" type="radio"
+                       data-concept="7decc405-cf73-46d9-9046-ae9394da38af^If yes,how frequently have you had at least one alcoholic drink^99DCT"
+                       value="8dfe7f54-fa3b-4c88-b85e-f2cfa37fe32c^Once or less than once a week^99DCT">
+                       Inshuro ebyiri cyangwa munsi y'inshuro ebyiri mu cyumweru
+              </label>
+              
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="font-normal" >3. Mu mezi 12 ashize, waba warigeze gukoresha imiti ya Kinyarwanda y’ibyatsi, wivura uburwayi ubwo aribwo bwose?</label>
+        <br/>
+        <label class="font-normal">
+            <input id="yesAnyHerbalOrTraditionalRemedy" name="AnyHerbalOrTraditionalRemedy" type="radio" 
+                   data-concept="977dbab6-1bbd-44a7-ba00-0176f07bcc07^Have you taken any herbal or traditional remedy for your diseases^99DCT"
+                   value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+             Yego 
+        </label>
+        <br/>
+        <label class="font-normal">
+            <input id="noAnyHerbalOrTraditionalRemedy" name="AnyHerbalOrTraditionalRemedy" type="radio" 
+                   data-concept="977dbab6-1bbd-44a7-ba00-0176f07bcc07^Have you taken any herbal or traditional remedy for your diseases^99DCT"
+                   value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+             Oya 
+        </label>
+        <br/>
+        <div id="traditionalYes" class="form-group">
+          <label class="font-normal">
+            Ni ubuhe burwayi warimo wivura?
+            <input id="WhatDiseaseWereYouTreatingTraditionally" class="form-control" name="WhatDiseaseWereYouTreatingTraditionally" type="text" data-concept="1098c845-50ba-41bf-8e64-68873495b436^If yes traditional remedy, What disease were you treating?^99DCT"/>
+          </label>
+          <br/>
+          <label class="font-normal">
+            Ibyatsi wakoresheje byitwa gute? 
+            <input id="HerbsUsed" class="form-control" name="HerbsUsed" type="text" data-concept="02b02d86-b700-482e-88f2-de84ef6d8fff^If yes traditional remedy, What are the names of the herbs you used^99DCT"/>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="font-normal" >4. Mu mezi 12 ashize, waba warigeze gukoresha imiti yo mu bagorozi harimo n’amakara cyangwa icyondo  wivura uburwayi ubwo aribwo bwose?</label>
+        <br/>
+        <label class="font-normal">
+            <input id="yesTraditionalMedicineFromAbagorozi" name="TraditionalMedicineFromAbagorozi" type="radio" 
+                   data-concept="1ed300a3-27b7-4b9d-b2b7-861640530c1f^Have you taken any traditional medicine from Abagorozi^99DCT"
+                   value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+             Yego 
+        </label>
+        <br/>
+        <label class="font-normal">
+            <input id="noTraditionalMedicineFromAbagorozi" name="TraditionalMedicineFromAbagorozi" type="radio" 
+                   data-concept="1ed300a3-27b7-4b9d-b2b7-861640530c1f^Have you taken any traditional medicine from Abagorozi^99DCT"
+                   value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+             Oya 
+        </label>
+        <br/>
+        <div id="abagoroziYes" class="form-group">
+          <label class="font-normal">
+            Ni ubuhe burwayi warimo wivura?
+            <input id="WhatDiseaseWereYouTreatingAbagorozi" class="form-control" name="WhatDiseaseWereYouTreatingAbagorozi" type="text" data-concept="d7d68ada-0453-46eb-8ed1-ae47c41757ee^If yes abagorozi, What disease were you treating^99DCT"/>
+          </label>
+          <br/>
+          <label class="font-normal">
+            Imiti wakoresheje yitwa gute? 
+            <input id="HerbsUsedAbagorozi" class="form-control" name="HerbsUsedAbagorozi" type="text" data-concept="64079291-2dfc-47f7-8f50-09a94c251d7e^If yes abagorozi, What are the names of the herbs you used^99DCT"/>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="font-normal" >5. Mu mezi 12 ashize,  waba warakoresheje umuti wa ibuprofen cyangwa aspirin cyangwa Naproxen, waba wayikuye kwa muganga cyangwa wayiguze muri farumasi Yego</label>
+        <br/>
+        <label class="font-normal">
+            <input id="yesHaveYouUsedIANMedication" name="HaveYouUsedIANMedication" type="radio" 
+                   data-concept="4ab36822-67a0-4e2a-a77b-bfdf427d9066^Have you used ibuprofen, aspirin or Naproxen Medication^99DCT"
+                   value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+             Yego 
+        </label>
+        <br/>
+        <label class="font-normal">
+            <input id="noHaveYouUsedIANMedication" name="HaveYouUsedIANMedication" type="radio" 
+                   data-concept="4ab36822-67a0-4e2a-a77b-bfdf427d9066^Have you used ibuprofen, aspirin or Naproxen Medication^99DCT"
+                   value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+             Oya 
+        </label>
+        <br/>
+      </div>
+
+        <div class="form-group">
+          <label class="font-normal" >6. Haba hari ubwoko bw’amafunguro waba utemerewe kurya cg wasabwe Kugabanya bitewe n’indwara urwaye?</label>
+          <br/>
+          <label class="font-normal">
+              <input id="yesDietNotallowedToEat" name="DietNotallowedToEat" type="radio" 
+                     data-concept="c779cebb-5291-4db0-949c-9696e8a31244^Are there any type of food you should not eat or minimize in your diet due to your disease^99DCT"
+                     value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+               Yego 
+          </label>
+          <br/>
+          <label class="font-normal">
+              <input id="noDietNotallowedToEat" name="DietNotallowedToEat" type="radio"
+                     data-concept="c779cebb-5291-4db0-949c-9696e8a31244^Are there any type of food you should not eat or minimize in your diet due to your disease^99DCT"
+                     value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+               Oya 
+          </label>
+          <br/>
+          <label class="font-normal">
+            <input id="dontKnowDietNotallowedToEat" name="DietNotallowedToEat" type="radio"
+                   data-concept="c779cebb-5291-4db0-949c-9696e8a31244^Are there any type of food you should not eat or minimize in your diet due to your disease^99DCT"
+                   value="3ce0dd64-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+             Simbizi 
+          </label>
+          <div id="dietYes" class="form-group">
+            <label class="font-normal">
+              Niba ari yego, Watubwira nibura ubwoko 3 bw’ibiryo utemerewe cg usabwa Kugabanya kurya?
+              <input id="ThreeFoodsNotEatable" class="form-control" name="ThreeFoodsNotEatable" type="text" size="30" data-concept="f69dd4c4-7928-4e12-9b5a-15fa1a5484ce^If yes, list at least 3 food you know you should not eat or minimize in your diet^99DCT"/>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="font-normal" >7. Ukoresheje igipimo cya nta narimwe, gacye cyane, rimwe na rimwe, kenshi na buri gihe, muminsi 7 ishize ni kukihe gipimo wavuga ko <mark><b>wariye imbuto?</b></mark></label>
+          <br/>
+                  <label class="font-normal">
+                      <input id="neverFrequencyEatFruits" name="FrequencyEatFruits" type="radio"
+                            data-concept="1c2aba52-3b5b-4cf1-bfa5-ef592096e8c1^How frequently, have you eaten fresh fruits^99DCT"
+                            value="3cd72968-26fe-102b-80cb-0017a47871b2^NEVER^99DCT">
+                       Nta narimwe 
+                  </label>
+                  <br/>
+                  <label class="font-normal">
+                    <input id="rarelyFrequencyEatFruits" name="FrequencyEatFruits" type="radio"
+                          data-concept="1c2aba52-3b5b-4cf1-bfa5-ef592096e8c1^How frequently, have you eaten fresh fruits^99DCT"
+                          value="3cdffdae-26fe-102b-80cb-0017a47871b2^RARELY^99DCT">
+                     Gake cyane 
+                 </label>
+                  <br/>
+                 <label class="font-normal">
+                  <input id="sometimesFrequencyEatFruits" name="FrequencyEatFruits" type="radio"
+                        data-concept="1c2aba52-3b5b-4cf1-bfa5-ef592096e8c1^How frequently, have you eaten fresh fruits^99DCT"
+                        value="3cdffac0-26fe-102b-80cb-0017a47871b2^SOMETIMES^99DCT">
+                   Rimwe na rimwe 
+              </label>
+              <br/>
+              <label class="font-normal">
+                <input id="oftenFrequencyEatFruits" name="FrequencyEatFruits" type="radio"
+                      data-concept="1c2aba52-3b5b-4cf1-bfa5-ef592096e8c1^How frequently, have you eaten fresh fruits^99DCT"
+                      value="3ce35260-26fe-102b-80cb-0017a47871b2^OFTEN^99DCT">
+                 Akenshi 
+              </label>
+              <br/>
+
+            <label class="font-normal">
+              <input id="alwaysFrequencyEatFruits" name="FrequencyEatFruits" type="radio"
+                    data-concept="1c2aba52-3b5b-4cf1-bfa5-ef592096e8c1^How frequently, have you eaten fresh fruits^99DCT"
+                    value="3ce0da6c-26fe-102b-80cb-0017a47871b2^ALWAYS^99DCT">
+               Burigihe 
+          </label>
+          <br/>
+          
+        </div>
+
+        <div class="form-group">
+          <label class="font-normal" >8. Ukoresheje igipimo cya nta narimwe, gacye cyane, rimwe na rimwe, kenshi na buri gihe, muminsi 7 ishize ni kangahe <mark><b>wariye imbonga rwatsi?</b></mark></label>
+          <br/>
+                  <label class="font-normal">
+                      <input id="neverFrequencyEatVegetables" name="FrequencyEatVegetables" type="radio"
+                            data-concept="8e2464ce-6d3e-496e-aac3-ed83fddde5c3^How frequently, have you eaten fresh vegetables^99DCT"
+                            value="3cd72968-26fe-102b-80cb-0017a47871b2^NEVER^99DCT">
+                       Nta narimwe 
+                  </label>
+                  <br/>
+                  <label class="font-normal">
+                    <input id="rarelyFrequencyEatVegetables" name="FrequencyEatVegetables" type="radio"
+                          data-concept="8e2464ce-6d3e-496e-aac3-ed83fddde5c3^How frequently, have you eaten fresh vegetables^99DCT"
+                          value="3cdffdae-26fe-102b-80cb-0017a47871b2^RARELY^99DCT">
+                     Gake cyane 
+                 </label>
+                  <br/>
+                 <label class="font-normal">
+                  <input id="sometimesFrequencyEatVegetables" name="FrequencyEatVegetables" type="radio"
+                        data-concept="8e2464ce-6d3e-496e-aac3-ed83fddde5c3^How frequently, have you eaten fresh vegetables^99DCT"
+                        value="3cdffac0-26fe-102b-80cb-0017a47871b2^SOMETIMES^99DCT">
+                   Rimwe na rimwe 
+              </label>
+              <br/>
+              <label class="font-normal">
+                <input id="oftenFrequencyEatVegetables" name="FrequencyEatVegetables" type="radio"
+                      data-concept="8e2464ce-6d3e-496e-aac3-ed83fddde5c3^How frequently, have you eaten fresh vegetables^99DCT"
+                      value="3ce35260-26fe-102b-80cb-0017a47871b2^OFTEN^99DCT">
+                 Akenshi 
+              </label>
+              <br/>
+
+            <label class="font-normal">
+              <input id="alwaysFrequencyEatVegetables" name="FrequencyEatVegetables" type="radio"
+                    data-concept="8e2464ce-6d3e-496e-aac3-ed83fddde5c3^How frequently, have you eaten fresh vegetables^99DCT"
+                    value="3ce0da6c-26fe-102b-80cb-0017a47871b2^ALWAYS^99DCT">
+               Burigihe 
+          </label>
+          <br/>
+          
+        </div>
+
+        <div class="form-group">
+          <label class="font-normal" >9. Ukoresheje igipimo cya nta narimwe, gacye cyane, rimwe na rimwe, kenshi na buri gihe, muminsi 7 ishize ni kenshi bingana iki waba <mark><b>warakoresheje ibituruka ku mata?</b></mark></label>
+          <br/>
+                  <label class="font-normal">
+                      <input id="neverFrequencyEatDairies" name="FrequencyEatDairies" type="radio"
+                            data-concept="b7e5df1f-6a52-4da6-918c-7c4eeb8488f8^How frequently, have you eaten dairy products^99DCT"
+                            value="3cd72968-26fe-102b-80cb-0017a47871b2^NEVER^99DCT">
+                       Nta narimwe 
+                  </label>
+                  <br/>
+                  <label class="font-normal">
+                    <input class="FrequencyEatDairies" name="FrequencyEatDairies" type="radio"
+                          data-concept="b7e5df1f-6a52-4da6-918c-7c4eeb8488f8^How frequently, have you eaten dairy products^99DCT"
+                          value="3cdffdae-26fe-102b-80cb-0017a47871b2^RARELY^99DCT">
+                     Gake cyane 
+                 </label>
+                  <br/>
+                 <label class="font-normal">
+                  <input class="FrequencyEatDairies" name="FrequencyEatDairies" type="radio"
+                        data-concept="b7e5df1f-6a52-4da6-918c-7c4eeb8488f8^How frequently, have you eaten dairy products^99DCT"
+                        value="3cdffac0-26fe-102b-80cb-0017a47871b2^SOMETIMES^99DCT">
+                   Rimwe na rimwe 
+              </label>
+              <br/>
+              <label class="font-normal">
+                <input class="FrequencyEatDairies" name="FrequencyEatDairies" type="radio"
+                      data-concept="b7e5df1f-6a52-4da6-918c-7c4eeb8488f8^How frequently, have you eaten dairy products^99DCT"
+                      value="3ce35260-26fe-102b-80cb-0017a47871b2^OFTEN^99DCT">
+                 Akenshi 
+              </label>
+              <br/>
+
+            <label class="font-normal">
+              <input class="FrequencyEatDairies" name="FrequencyEatDairies" type="radio"
+                    data-concept="b7e5df1f-6a52-4da6-918c-7c4eeb8488f8^How frequently, have you eaten dairy products^99DCT"
+                    value="3ce0da6c-26fe-102b-80cb-0017a47871b2^ALWAYS^99DCT">
+               Burigihe 
+          </label>
+          <br/>
+              <div class="form-group checkboxGroup" id="notNeverYes">
+                <label class="font-normal" >Ni ibihe bituruka ku mata wanyoye?</label>
+                <br/>
+                    <label class="font-normal">
+                        <input class="drinkMilk" name="DairyProductConsummed" type="checkbox"
+                              data-concept="b0fee4ba-0c24-41a8-bfed-fa63392527c2^If not Never, name at least diary product you consumed^99DCT"
+                              value="839148cc-638b-402e-80a9-a7a73c8bfe84^Animal Milk^99DCT">
+                         Inshyushyu 
+                    </label>
+                    <br/>
+                    <label class="font-normal">
+                      <input class="drinkMilk" name="DairyProductConsummed" type="checkbox"
+                            data-concept="b0fee4ba-0c24-41a8-bfed-fa63392527c2^If not Never, name at least diary product you consumed^99DCT"
+                            value="eb6a66d1-b27a-448a-a263-6a8595b99deb^Butter^99DCT">
+                       Amavuta y’inka/marigarine 
+                   </label>
+                    <br/>
+                   <label class="font-normal">
+                    <input class="drinkMilk" name="DairyProductConsummed" type="checkbox"
+                          data-concept="b0fee4ba-0c24-41a8-bfed-fa63392527c2^If not Never, name at least diary product you consumed^99DCT"
+                          value="64b397ee-fa73-45fb-acdf-8b12ef2c28d8^Yoghurt^99DCT">
+                     Ikivuguto cyangwa yahurute 
+                </label>
+                <br/>
+              </div>
+        </div>
+
+        <div class="form-group">
+          <label class="font-normal" >10. Muminsi 7 ishize ni kenshi bingana iki waba warakoresheje <mark><b>ibiryo cyangwa ibirungo bigurishwa mu bikombe?</b></mark> Urugero: Maggi, souce tomatoes, Masala, Asante….etc?</label>
+          <br/>
+                  <label class="font-normal">
+                      <input id="neverFrequencyFoodSpices" name="FrequencyFoodSpices" type="radio"
+                            data-concept="4f13de27-6758-489b-b029-66f47e4e229d^Have you used proceeded food including condiments and spices^99DCT"
+                            value="3cd72968-26fe-102b-80cb-0017a47871b2^NEVER^99DCT">
+                       Nta narimwe 
+                  </label>
+                  <br/>
+                  <label class="font-normal">
+                    <input id="rarelyFrequencyFoodSpices" name="FrequencyFoodSpices" type="radio"
+                          data-concept="4f13de27-6758-489b-b029-66f47e4e229d^Have you used proceeded food including condiments and spices^99DCT"
+                          value="3cdffdae-26fe-102b-80cb-0017a47871b2^RARELY^99DCT">
+                     Gake cyane 
+                 </label>
+                  <br/>
+                 <label class="font-normal">
+                  <input id="sometimesFrequencyFoodSpices" name="FrequencyFoodSpices" type="radio"
+                        data-concept="4f13de27-6758-489b-b029-66f47e4e229d^Have you used proceeded food including condiments and spices^99DCT"
+                        value="3cdffac0-26fe-102b-80cb-0017a47871b2^SOMETIMES^99DCT">
+                   Rimwe na rimwe 
+              </label>
+              <br/>
+              <label class="font-normal">
+                <input id="oftenFrequencyFoodSpices" name="FrequencyFoodSpices" type="radio"
+                      data-concept="4f13de27-6758-489b-b029-66f47e4e229d^Have you used proceeded food including condiments and spices^99DCT"
+                      value="3ce35260-26fe-102b-80cb-0017a47871b2^OFTEN^99DCT">
+                 Akenshi 
+              </label>
+              <br/>
+
+            <label class="font-normal">
+              <input id="alwaysFrequencyFoodSpices" name="FrequencyFoodSpices" type="radio"
+                    data-concept="4f13de27-6758-489b-b029-66f47e4e229d^Have you used proceeded food including condiments and spices^99DCT"
+                    value="3ce0da6c-26fe-102b-80cb-0017a47871b2^ALWAYS^99DCT">
+               Burigihe 
+          </label>
+          <br/>
+          
+        </div>
+
+
+    </fieldset>
+  </div>
+  <br/>
+
+  <div class="section" width="100%">
+    <fieldset>
+      <div>
+        <label><b>Knowledge and behavior towards salt/ Ubumenyi n’imyitwarire kubijyanye n’umunyu</b></label>
+        <br/>
+      </div>
+
+      <div class="form-group">
+        <label class="font-normal" >1. Ukoresheje igipimo cya nta narimwe, gacye cyane, rimwe na rimwe, kenshi na buri gihe , Mumezi 12 ashize ni kangahe waba waragiriwe inama na muganga zo kureka cyangwa kugabanya umunyu urya?<span class="required">*</label>
+        <br/>
+                <label class="font-normal">
+                    <input id="neverAdviceSaltIntake" name="AdviceSaltIntake" type="radio" required
+                          data-concept="50a53dc6-d517-4c59-85ce-ce6f4e8bbb49^How often have you been given advice to reduce salt intake in the past 12 months by your health provider^99DCT"
+                          value="3cd72968-26fe-102b-80cb-0017a47871b2^NEVER^99DCT">
+                     Nta narimwe 
+                </label>
+                <br/>
+                <label class="font-normal">
+                  <input id="rarelyAdviceSaltIntake" name="AdviceSaltIntake" type="radio" required
+                        data-concept="50a53dc6-d517-4c59-85ce-ce6f4e8bbb49^How often have you been given advice to reduce salt intake in the past 12 months by your health provider^99DCT"
+                        value="3cdffdae-26fe-102b-80cb-0017a47871b2^RARELY^99DCT">
+                   Gake cyane 
+               </label>
+                <br/>
+               <label class="font-normal">
+                <input id="sometimesAdviceSaltIntake" name="AdviceSaltIntake" type="radio" required
+                      data-concept="50a53dc6-d517-4c59-85ce-ce6f4e8bbb49^How often have you been given advice to reduce salt intake in the past 12 months by your health provider^99DCT"
+                      value="3cdffac0-26fe-102b-80cb-0017a47871b2^SOMETIMES^99DCT">
+                 Rimwe na rimwe 
+            </label>
+            <br/>
+            <label class="font-normal">
+              <input id="oftenAdviceSaltIntake" name="AdviceSaltIntake" type="radio" required
+                    data-concept="50a53dc6-d517-4c59-85ce-ce6f4e8bbb49^How often have you been given advice to reduce salt intake in the past 12 months by your health provider^99DCT"
+                    value="3ce35260-26fe-102b-80cb-0017a47871b2^OFTEN^99DCT">
+               Akenshi 
+            </label>
+            <br/>
+
+          <label class="font-normal">
+            <input id="alwaysAdviceSaltIntake" name="AdviceSaltIntake" type="radio" required
+                  data-concept="50a53dc6-d517-4c59-85ce-ce6f4e8bbb49^How often have you been given advice to reduce salt intake in the past 12 months by your health provider^99DCT"
+                  value="3ce0da6c-26fe-102b-80cb-0017a47871b2^ALWAYS^99DCT">
+             Burigihe 
+        </label>
+        <br/>
+        
+      </div>
+      </fieldset>
+      </div>
+      <div>
+        <label>
+          2. Ukoresheje igipimo simbikora na gato, simbikora, ndifashe, Ndabikora, cyangwa Ndabikora cyane,  nigute wemeranya nizi nteruro ugaragaza icyo waba  ukora kugirango ugabanye umunyu urya?<span class="required">*
+        </label>
+        <br/>
+
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Ikibazo</th>
+              <th>Simbikora na gato</th>
+              <th>Simbikora</th>
+              <th>Ndifashe</th>
+              <th>Ndabikora</th>
+              <th>Ndabikora cyane</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nirinda kurya ibiryo byatunganirijwe mu nganda cyangwa byo mudukombe/mu macupa</td>
+              <td><input id="stronglyDisagreeAvoidProcessedFoods" name="AvoidProcessedFoods" type="radio" required
+                data-concept="573b7db4-1aa6-4d7e-910d-1846efdaeb2b^I avoid the consumptions of processed food^99DCT"
+                value="3cdf36bc-26fe-102b-80cb-0017a47871b2^STRONGLY DISAGREE^99DCT"></td>
+              <td><input id="DisagreeAvoidProcessedFoods" name="AvoidProcessedFoods" type="radio"
+                data-concept="573b7db4-1aa6-4d7e-910d-1846efdaeb2b^I avoid the consumptions of processed food^99DCT"
+                value="3ce0a240-26fe-102b-80cb-0017a47871b2^DISAGREE^99DCT"></td>
+              <td><input id="neutralAvoidProcessedFoods" name="AvoidProcessedFoods" type="radio"
+                data-concept="573b7db4-1aa6-4d7e-910d-1846efdaeb2b^I avoid the consumptions of processed food^99DCT"
+                value="cb6f4717-da3f-40f9-a26d-7d7d5310338f^Neutral^99DCT"></td>
+              <td><input id="agreeAvoidProcessedFoods" name="AvoidProcessedFoods" type="radio"
+                data-concept="573b7db4-1aa6-4d7e-910d-1846efdaeb2b^I avoid the consumptions of processed food^99DCT"
+                value="3cdf2c4e-26fe-102b-80cb-0017a47871b2^AGREE^99DCT"></td>
+              <td><input id="stronglyAgreeAvoidProcessedFoods" name="AvoidProcessedFoods" type="radio"
+                data-concept="573b7db4-1aa6-4d7e-910d-1846efdaeb2b^I avoid the consumptions of processed food^99DCT"
+                value="3cdf2dca-26fe-102b-80cb-0017a47871b2^STRONGLY AGREE^99DCT"></td>
+            </tr>
+            <tr>
+              <td>Ngenzura ubwinshi bw’umunyu uri mu biribwa igihe ndi guhaha </td>
+              <td><input id="stronglyDisagreeSaltLevelInFood" name="SaltLevelInFood" type="radio" required
+                data-concept="7334c35f-e97d-40a6-88e8-b2e30bbd92d1^I look at the Salt levels on the food I buy^99DCT"
+                value="3cdf36bc-26fe-102b-80cb-0017a47871b2^STRONGLY DISAGREE^99DCT"></td>
+              <td><input id="DisagreeSaltLevelInFood" name="SaltLevelInFood" type="radio"
+                data-concept="7334c35f-e97d-40a6-88e8-b2e30bbd92d1^I look at the Salt levels on the food I buy^99DCT"
+                value="3ce0a240-26fe-102b-80cb-0017a47871b2^DISAGREE^99DCT"></td>
+              <td><input id="neutralSaltLevelInFood" name="SaltLevelInFood" type="radio"
+                data-concept="7334c35f-e97d-40a6-88e8-b2e30bbd92d1^I look at the Salt levels on the food I buy^99DCT"
+                value="cb6f4717-da3f-40f9-a26d-7d7d5310338f^Neutral^99DCT"></td>
+              <td><input id="agreeSaltLevelInFood" name="SaltLevelInFood" type="radio"
+                data-concept="7334c35f-e97d-40a6-88e8-b2e30bbd92d1^I look at the Salt levels on the food I buy^99DCT"
+                value="3cdf2c4e-26fe-102b-80cb-0017a47871b2^AGREE^99DCT"></td>
+              <td><input id="stronglyAgreeSaltLevelInFood" name="SaltLevelInFood" type="radio"
+                data-concept="7334c35f-e97d-40a6-88e8-b2e30bbd92d1^I look at the Salt levels on the food I buy^99DCT"
+                value="3cdf2dca-26fe-102b-80cb-0017a47871b2^STRONGLY AGREE^99DCT"></td>
+            </tr>
+            <tr>
+              <td>Ntabwo njya nongera umunyu mubiryo kumeza</td>
+              <td><input id="stronglyDisagreeNoSaltOnTable" name="NoSaltOnTable" type="radio" required
+                data-concept="aa13c207-c8c8-4cff-9347-0f7023497a5b^I eat meals without added salt on table^99DCT"
+                value="3cdf36bc-26fe-102b-80cb-0017a47871b2^STRONGLY DISAGREE^99DCT"></td>
+              <td><input id="DisagreeNoSaltOnTable" name="NoSaltOnTable" type="radio"
+                data-concept="aa13c207-c8c8-4cff-9347-0f7023497a5b^I eat meals without added salt on table^99DCT"
+                value="3ce0a240-26fe-102b-80cb-0017a47871b2^DISAGREE^99DCT"></td>
+              <td><input id="neutralNoSaltOnTable" name="NoSaltOnTable" type="radio"
+                data-concept="aa13c207-c8c8-4cff-9347-0f7023497a5b^I eat meals without added salt on table^99DCT"
+                value="cb6f4717-da3f-40f9-a26d-7d7d5310338f^Neutral^99DCT"></td>
+              <td><input id="agreeNoSaltOnTable" name="NoSaltOnTable" type="radio"
+                data-concept="aa13c207-c8c8-4cff-9347-0f7023497a5b^I eat meals without added salt on table^99DCT"
+                value="3cdf2c4e-26fe-102b-80cb-0017a47871b2^AGREE^99DCT"></td>
+              <td><input id="stronglyAgreeNoSaltOnTable" name="NoSaltOnTable" type="radio"
+                data-concept="aa13c207-c8c8-4cff-9347-0f7023497a5b^I eat meals without added salt on table^99DCT"
+                value="3cdf2dca-26fe-102b-80cb-0017a47871b2^STRONGLY AGREE^99DCT"></td>
+            </tr>
+            <tr>
+              <td>Mpitamo kureka kurya kugirango ngabanye umunyu ndya</td>
+              <td><input id="stronglyDisagreeAvoidEating" name="AvoidEating" type="radio"required
+                data-concept="468dc3f1-2572-4d83-9d55-48faf041b081^I avoid eating^99DCT"
+                value="3cdf36bc-26fe-102b-80cb-0017a47871b2^STRONGLY DISAGREE^99DCT"></td>
+              <td><input id="DisagreeAvoidEating" name="AvoidEating" type="radio"
+                data-concept="468dc3f1-2572-4d83-9d55-48faf041b081^I avoid eating^99DCT"
+                value="3ce0a240-26fe-102b-80cb-0017a47871b2^DISAGREE^99DCT"></td>
+              <td><input id="neutralAvoidEating" name="AvoidEating" type="radio"
+                data-concept="468dc3f1-2572-4d83-9d55-48faf041b081^I avoid eating^99DCT"
+                value="cb6f4717-da3f-40f9-a26d-7d7d5310338f^Neutral^99DCT"></td>
+              <td><input id="agreeAvoidEating" name="AvoidEating" type="radio"
+                data-concept="468dc3f1-2572-4d83-9d55-48faf041b081^I avoid eating^99DCT"
+                value="3cdf2c4e-26fe-102b-80cb-0017a47871b2^AGREE^99DCT"></td>
+              <td><input id="stronglyAgreeAvoidEating" name="AvoidEating" type="radio"
+                data-concept="468dc3f1-2572-4d83-9d55-48faf041b081^I avoid eating^99DCT"
+                value="3cdf2dca-26fe-102b-80cb-0017a47871b2^STRONGLY AGREE^99DCT"></td>
+            </tr>
+            <tr>
+              <td>Ngura ubwoko bw’umunyu utarimo  sodiyumu nyinshi</td>
+              <td><input id="stronglyBuyWithNoSodium" name="BuyWithNoSodium" type="radio" required
+                data-concept="573b7db4-1aa6-4d7e-910d-1846efdaeb2b^I avoid the consumptions of processed food^99DCT"
+                value="3cdf36bc-26fe-102b-80cb-0017a47871b2^STRONGLY DISAGREE^99DCT"></td>
+              <td><input id="DisagreeBuyWithNoSodium" name="BuyWithNoSodium" type="radio"
+                data-concept="573b7db4-1aa6-4d7e-910d-1846efdaeb2b^I avoid the consumptions of processed food^99DCT"
+                value="3ce0a240-26fe-102b-80cb-0017a47871b2^DISAGREE^99DCT"></td>
+              <td><input id="neutralBuyWithNoSodium" name="BuyWithNoSodium" type="radio"
+                data-concept="573b7db4-1aa6-4d7e-910d-1846efdaeb2b^I avoid the consumptions of processed food^99DCT"
+                value="cb6f4717-da3f-40f9-a26d-7d7d5310338f^Neutral^99DCT"></td>
+              <td><input id="agreeBuyWithNoSodium" name="BuyWithNoSodium" type="radio"
+                data-concept="573b7db4-1aa6-4d7e-910d-1846efdaeb2b^I avoid the consumptions of processed food^99DCT"
+                value="3cdf2c4e-26fe-102b-80cb-0017a47871b2^AGREE^99DCT"></td>
+              <td><input id="stronglyAgreeBuyWithNoSodium" name="BuyWithNoSodium" type="radio"
+                data-concept="573b7db4-1aa6-4d7e-910d-1846efdaeb2b^I avoid the consumptions of processed food^99DCT"
+                value="3cdf2dca-26fe-102b-80cb-0017a47871b2^STRONGLY AGREE^99DCT"></td>
+            </tr>
+            <tr>
+              <td>Ndya ibiryo bitarimo umunyu</td>
+              <td><input id="stronglyDisagreeUnsaltedFood" name="UnsaltedFood" type="radio" required
+                data-concept="e41fd572-e939-412e-8404-0a569f267c60^I eat unsalted foot^99DCT"
+                value="3cdf36bc-26fe-102b-80cb-0017a47871b2^STRONGLY DISAGREE^99DCT"></td>
+              <td><input id="DisagreeUnsaltedFood" name="UnsaltedFood" type="radio"
+                data-concept="e41fd572-e939-412e-8404-0a569f267c60^I eat unsalted foot^99DCT"
+                value="3ce0a240-26fe-102b-80cb-0017a47871b2^DISAGREE^99DCT"></td>
+              <td><input id="neutralUnsaltedFood" name="UnsaltedFood" type="radio"
+                data-concept="e41fd572-e939-412e-8404-0a569f267c60^I eat unsalted foot^99DCT"
+                value="cb6f4717-da3f-40f9-a26d-7d7d5310338f^Neutral^99DCT"></td>
+              <td><input id="agreeUnsaltedFood" name="UnsaltedFood" type="radio"
+                data-concept="e41fd572-e939-412e-8404-0a569f267c60^I eat unsalted foot^99DCT"
+                value="3cdf2c4e-26fe-102b-80cb-0017a47871b2^AGREE^99DCT"></td>
+              <td><input id="stronglyUnsaltedFood" name="UnsaltedFood" type="radio"
+                data-concept="e41fd572-e939-412e-8404-0a569f267c60^I eat unsalted foot^99DCT"
+                value="3cdf2dca-26fe-102b-80cb-0017a47871b2^STRONGLY AGREE^99DCT"></td>
+            </tr>
+            <tr>
+              <td>Nirinda kurya ibiryo byo muri restora</td>
+              <td><input id="stronglyDisagreeAvoidEatingOut" name="AvoidEatingOut" type="radio" required
+                data-concept="74c233e0-170e-4d1a-93dc-6405e95d6ffa^I avoid eating out^99DCT"
+                value="3cdf36bc-26fe-102b-80cb-0017a47871b2^STRONGLY DISAGREE^99DCT"></td>
+              <td><input id="DisagreeAvoidEatingOut" name="AvoidEatingOut" type="radio"
+                data-concept="74c233e0-170e-4d1a-93dc-6405e95d6ffa^I avoid eating out^99DCT"
+                value="3ce0a240-26fe-102b-80cb-0017a47871b2^DISAGREE^99DCT"></td>
+              <td><input id="neutralAvoidEatingOut" name="AvoidEatingOut" type="radio"
+                data-concept="74c233e0-170e-4d1a-93dc-6405e95d6ffa^I avoid eating out^99DCT"
+                value="cb6f4717-da3f-40f9-a26d-7d7d5310338f^Neutral^99DCT"></td>
+              <td><input id="agreeAAvoidEatingOut" name="AvoidEatingOut" type="radio"
+                data-concept="74c233e0-170e-4d1a-93dc-6405e95d6ffa^I avoid eating out^99DCT"
+                value="3cdf2c4e-26fe-102b-80cb-0017a47871b2^AGREE^99DCT"></td>
+              <td><input id="stronglyAgreeAvoidEatingOut" name="AvoidEatingOut" type="radio"
+                data-concept="74c233e0-170e-4d1a-93dc-6405e95d6ffa^I avoid eating out^99DCT"
+                value="3cdf2dca-26fe-102b-80cb-0017a47871b2^STRONGLY AGREE^99DCT"></td>
+            </tr>
+            <tr>
+              <td>Nirinda gutekana umunyu igihe duteka</td>
+              <td><input id="stronglyDisagreeNoUseOfSaltCooking" name="NoUseOfSaltCooking" type="radio" required
+                data-concept="72ee57c6-ac7b-4903-bfe7-f2466cb8bb42^I do not use salt when cooking^99DCT"
+                value="3cdf36bc-26fe-102b-80cb-0017a47871b2^STRONGLY DISAGREE^99DCT"></td>
+              <td><input id="DisagreeNoUseOfSaltCooking" name="NoUseOfSaltCooking" type="radio"
+                data-concept="72ee57c6-ac7b-4903-bfe7-f2466cb8bb42^I do not use salt when cooking^99DCT"
+                value="3ce0a240-26fe-102b-80cb-0017a47871b2^DISAGREE^99DCT"></td>
+              <td><input id="neutralNoUseOfSaltCooking" name="NoUseOfSaltCooking" type="radio"
+                data-concept="72ee57c6-ac7b-4903-bfe7-f2466cb8bb42^I do not use salt when cooking^99DCT"
+                value="cb6f4717-da3f-40f9-a26d-7d7d5310338f^Neutral^99DCT"></td>
+              <td><input id="agreeNoUseOfSaltCooking" name="NoUseOfSaltCooking" type="radio"
+                data-concept="72ee57c6-ac7b-4903-bfe7-f2466cb8bb42^I do not use salt when cooking^99DCT"
+                value="3cdf2c4e-26fe-102b-80cb-0017a47871b2^AGREE^99DCT"></td>
+              <td><input id="stronglyAgreeNoUseOfSaltCooking" name="NoUseOfSaltCooking" type="radio"
+                data-concept="72ee57c6-ac7b-4903-bfe7-f2466cb8bb42^I do not use salt when cooking^99DCT"
+                value="3cdf2dca-26fe-102b-80cb-0017a47871b2^STRONGLY AGREE^99DCT"></td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+   
+  <div class="section">
+    <fieldset>
+      <div class="form-group">
+        <label class="font-normal"><b>Disease history : Waba warigeze ubwirwa na muganga ko urwaye bumwe mu burwayi bukurikira?</b><span class="required">*
+          <b><mark><i>.Hano harimo indwara usanzwe wivuza ndetse n'izindi waba warabwiwe ko urwaye ariko utazivuza hano</i></mark></b>
+        </label>
+      </div>
+      <br/>
+      <div class="form-group">
+        <label class="font-normal">
+          <input id="hivOutPatientDiagnosis"  name="OutPatientDiagnosis" type="checkbox" required
+                data-concept="f0230f4a-1b20-4a47-bce9-c5a9c01367ec^OUTPATIENT DIAGNOSIS^99DCT"
+                value="3cd4eebe-26fe-102b-80cb-0017a47871b2^ACQUIRED IMMUNODEFICIENCY SYNDROME^99DCT">
+                HIV/AIDS
+        </label>
+      <br/>
+      </div>
+      <div class="form-group">
+        <label class="font-normal">
+          <input id="hypertensionOutPatientDiagnosis"  name="OutPatientDiagnosis" type="checkbox"
+                data-concept="f0230f4a-1b20-4a47-bce9-c5a9c01367ec^OUTPATIENT DIAGNOSIS^99DCT"
+                value="3cd50188-26fe-102b-80cb-0017a47871b2^HYPERTENSION^99DCT">Umuvuduko w’amaraso
+       </label>
+        <br/>
+      </div>
+     <div class="form-group">
+      <label class="font-normal">
+        <input id="diabetesOutPatientDiagnosis"  name="OutPatientDiagnosis" type="checkbox"
+              data-concept="f0230f4a-1b20-4a47-bce9-c5a9c01367ec^OUTPATIENT DIAGNOSIS^99DCT"
+              value="edf4ecc4-44f6-457a-b561-179f4426b16a^DIABETES^99DCT">Diyabete
+        </label>
+        <br/>
+     </div>
+      <div class="form-group">
+        <label class="font-normal">
+          <input id="kidneyOutPatientDiagnosis"  name="OutPatientDiagnosis" type="checkbox"
+                data-concept="f0230f4a-1b20-4a47-bce9-c5a9c01367ec^OUTPATIENT DIAGNOSIS^99DCT"
+                value="84003913-a69d-65b1-fd12-77f22ec90aec^XA6KU8-Kidney^99DCT">Uburwayi bw’Impyiko
+        </label>
+        <br/>
+      </div>
+      
+      <div class="form-group">
+        <label class="font-normal">
+          <input id="hepaBOutPatientDiagnosis"  name="OutPatientDiagnosis" type="checkbox"
+                data-concept="f0230f4a-1b20-4a47-bce9-c5a9c01367ec^OUTPATIENT DIAGNOSIS^99DCT"
+                value="3ccc7a0e-26fe-102b-80cb-0017a47871b2^HEPATITIS B^99DCT">Hepatite B
+        </label>
+        <br/>
+      </div>
+      <div class="form-group">
+        <label class="font-normal">
+          <input id="hepaCOutPatientDiagnosis"  name="OutPatientDiagnosis" type="checkbox"
+                data-concept="f0230f4a-1b20-4a47-bce9-c5a9c01367ec^OUTPATIENT DIAGNOSIS^99DCT"
+                value="3ccc7bbc-26fe-102b-80cb-0017a47871b2^HEPATITIS C^99DCT">Hepatite C
+          </label>
+          <br/>
+      </div>
+      <div class="form-group">
+        <label class="font-normal">
+          <input id="UTIOutPatientDiagnosis"  name="OutPatientDiagnosis" type="checkbox"
+                data-concept="f0230f4a-1b20-4a47-bce9-c5a9c01367ec^OUTPATIENT DIAGNOSIS^99DCT"
+                value="3ccca36c-26fe-102b-80cb-0017a47871b2^URINARY TRACT INFECTION^99DCT">Infection yo mu ruhago rw’inkari
+      </label>
+        <br/>
+      </div>
+      <div class="form-group">
+        <label class="font-normal">
+          <input id="heartFailureOutPatientDiagnosis"  name="OutPatientDiagnosis" type="checkbox"
+                data-concept="f0230f4a-1b20-4a47-bce9-c5a9c01367ec^OUTPATIENT DIAGNOSIS^99DCT"
+                value="0670f6b9-5456-4bd3-86b1-846abc4fe2ba^HEART FAILURE^99DCT">Indwara y’umutima
+        </label>
+        <br/>
+      </div>
+      <div class="form-group">
+        <label class="font-normal">
+          <input id="cancerOutPatientDiagnosis"  name="OutPatientDiagnosis" type="checkbox"
+                data-concept="f0230f4a-1b20-4a47-bce9-c5a9c01367ec^OUTPATIENT DIAGNOSIS^99DCT"
+                value="22e045f9-a880-416f-a6b2-0e0706d585bf^Cancer^99DCT">Kanseri
+          </label>
+          <br/>
+      </div>
+   
+    <label>
+      Indi ndwara :<input id="OtherDisease" class="form-control" name="OtherDisease" type="text" data-concept="f9e8e946-d177-4ca9-8004-779ae6abe9df^Other Disease(text)^99DCT"/>
+    </label>
+       
+      </div>
+
+    </fieldset>
+  </div>
+
+  <div class="section checkboxGroup">
+    <fieldset>
+      <div class="form-group">
+        <label class="font-normal"><b>Medication History</b></label>
+        <br/>
+        <br/>
+        <label>Reba mu carine y’umurwayi urebe imiti yaba yarandikiwe mugihe cy'amezi 12 ashize. Niba nta carine yazanye , gerageza umubaze wumve iyo abasha kwibuka.</label>
+      </div>
+      <br/>
+      <div class="form-group" id="ifHIVYes">
+        <label class="font-normal">Select among the following ART regimen [Select all that apply]</label>
+        <br/>
+        <label class="font-normal">
+          <input class="PreviousHivRegimen" name="PreviousHivRegimen" type="checkbox"
+                data-concept="3cdc4bc8-26fe-102b-80cb-0017a47871b2^PREVIOUS TREATMENT REGIMEN^99DCT"
+                value="4ff47449-6108-4823-89b8-986426d84d55^TENOFOVIR LAMIVUDINE NEVIRAPINE^99DCT">TDF+3TC+NVP
+        </label>
+      <br/>
+      <label class="font-normal">
+        <input class="PreviousHivRegimen" name="PreviousHivRegimen" type="checkbox"
+              data-concept="3cdc4bc8-26fe-102b-80cb-0017a47871b2^PREVIOUS TREATMENT REGIMEN^99DCT"
+              value="e43b308c-a303-4524-b4bd-a728a9f52faf^TENOFOVIR LAMIVUDINE EFAVIRENZ^99DCT">TDF+3TC+EFV
+     </label>
+      <br/>
+      <label class="font-normal">
+        <input class="PreviousHivRegimen" name="PreviousHivRegimen" type="checkbox"
+              data-concept="3cdc4bc8-26fe-102b-80cb-0017a47871b2^PREVIOUS TREATMENT REGIMEN^99DCT"
+              value="4db442cc-92ee-4510-b5b7-6fd4d296e301^Dolutegravir Tenofovir Lamivudine^99DCT">TDF+3TC+DTG
+     </label>
+      <br/>
+     <label class="font-normal">
+      <input class="PreviousHivRegimen" name="PreviousHivRegimen" type="checkbox"
+            data-concept="3cdc4bc8-26fe-102b-80cb-0017a47871b2^PREVIOUS TREATMENT REGIMEN^99DCT"
+            value="5634523f-5da1-40be-95db-380e159fd652^TENOFOVIR LAMIVUDINE LOPINAVIR RITONAVIR^99DCT">TDF+3TC+LOP/R
+      </label>
+      <br/>
+      <label class="font-normal">
+        <input class="PreviousHivRegimen" name="PreviousHivRegimen" type="checkbox"
+              data-concept="3cdc4bc8-26fe-102b-80cb-0017a47871b2^PREVIOUS TREATMENT REGIMEN^99DCT"
+              value="838f74e2-c006-47be-bc75-ada2baa2041b^ATAZANAVIR AND RITONAVIR^99DCT">TDF+3TC+ATV/r
+      </label>
+      <br/>
+
+    <label class="font-normal">
+      <input class="PreviousHivRegimen" name="PreviousHivRegimen" type="checkbox"
+            data-concept="3cdc4bc8-26fe-102b-80cb-0017a47871b2^PREVIOUS TREATMENT REGIMEN^99DCT"
+            value="3cdc4a42-26fe-102b-80cb-0017a47871b2^ZIDOVUDINE LAMIVUDINE AND NEVIRAPINE^99DCT">AZT+3TC+NVP
+    </label>
+    <br/>
+    <label class="font-normal">
+      <input class="PreviousHivRegimen" name="PreviousHivRegimen" type="checkbox"
+            data-concept="3cdc4bc8-26fe-102b-80cb-0017a47871b2^PREVIOUS TREATMENT REGIMEN^99DCT"
+            value="3cdc4d3a-26fe-102b-80cb-0017a47871b2^ZIDOVUDINE LAMIVUDINE AND EFAVIRENZ^99DCT">AZT+3TC+EFV
+      </label>
+      <br/>
+      <label class="font-normal">
+        <input class="PreviousHivRegimen" name="PreviousHivRegimen" type="checkbox"
+              data-concept="3cdc4bc8-26fe-102b-80cb-0017a47871b2^PREVIOUS TREATMENT REGIMEN^99DCT"
+              value="b85ee495-4aaa-4037-82ec-ccb781df9741^ZIDOVUDINE LAMIVUDINE LOPINAVIR RITONAVIR^99DCT">AZT+3TC+LPV/r
+    </label>
+      <br/>
+      <label class="font-normal">
+        <input class="PreviousHivRegimen" name="PreviousHivRegimen" type="checkbox"
+              data-concept="3cdc4bc8-26fe-102b-80cb-0017a47871b2^PREVIOUS TREATMENT REGIMEN^99DCT"
+              value="3ce1b8ba-26fe-102b-80cb-0017a47871b2^ZIDOVUDINE LAMIVUDINE AND ABACAVIR^99DCT">ABC+AZT+3TC
+      </label>
+      <br/>
+      <label class="font-normal">
+        <input class="PreviousHivRegimen" name="PreviousHivRegimen" type="checkbox"
+              data-concept="3cdc4bc8-26fe-102b-80cb-0017a47871b2^PREVIOUS TREATMENT REGIMEN^99DCT"
+              value="3ce1b734-26fe-102b-80cb-0017a47871b2^STAVUDINE LAMIVUDINE AND ABACAVIR^99DCT">ABC+3TC+D4T
+        </label>
+        <br/>
+        <label class="font-normal">
+          <input class="PreviousHivRegimen" name="PreviousHivRegimen" type="checkbox"
+                data-concept="3cdc4bc8-26fe-102b-80cb-0017a47871b2^PREVIOUS TREATMENT REGIMEN^99DCT"
+                value="8aadf10d-5c2c-46c0-b422-8ed83d7731be^TENOFOVIR ABACAVIR LOPINAVIR RITONAVIR^99DCT">ABC+TDF+LPV/r
+      </label>
+        <br/>
+    <!-- <label class="font-normal">
+      <input id="heartPreviousHivRegimen" name="PreviousHivRegimen" type="checkbox"
+            data-concept="3cdc4bc8-26fe-102b-80cb-0017a47871b2^PREVIOUS TREATMENT REGIMEN^99DCT"
+            value="0670f6b9-5456-4bd3-86b1-846abc4fe2ba^HEART FAILURE^99DCT">Indwara y’umutima
+    </label>
+    <br/>
+    <label class="font-normal">
+    <input id="cancerPreviousHivRegimen" name="PreviousHivRegimen" type="text"
+          data-concept="3cdc4bc8-26fe-102b-80cb-0017a47871b2^PREVIOUS TREATMENT REGIMEN^99DCT"
+          value="22e045f9-a880-416f-a6b2-0e0706d585bf^Cancer^99DCT">Kanseri
+    </label>
+    <br/> -->
+    <label>
+      Other Regimen:<input id="OtherRegimen" class="form-control" name="OtherRegimen" type="text" data-concept="3ce299b0-26fe-102b-80cb-0017a47871b2^CURRENT CURATIVE REGIMEN OR DRUG, OTHER^99DCT"/>
+    </label>
+       
+      </div>
+      
+      <div class="form-group" id="ifHypertensionYes">
+        <label class="font-normal">(Umuvuduko w’amaraso)]  Select among the following hypertension medication [Select all that apply]</label>
+        <br/>
+        <label class="font-normal">
+          <input class="HTNMedications" name="HTNMedications" type="checkbox"
+                data-concept="c41ab331-2695-487c-ac1e-0b31b4c61486^Hypertension medications^99DCT"
+                value="3cd90ba2-26fe-102b-80cb-0017a47871b2^HYDROCHLOROTHIAZIDE^99DCT">HYDROCHLOROTHIAZIDE
+        </label>
+          <br/>
+          <label class="font-normal">
+            <input class="HTNMedications" name="HTNMedications" type="checkbox"
+                  data-concept="c41ab331-2695-487c-ac1e-0b31b4c61486^Hypertension medications^99DCT"
+                  value="bc20d803-f368-4177-8b36-d1812a977ae2^AMLODIPINE^99DCT">AMLODIPINE
+          </label>
+          <br/>
+          <label class="font-normal">
+            <input class="HTNMedications" name="HTNMedications" type="checkbox"
+                  data-concept="c41ab331-2695-487c-ac1e-0b31b4c61486^Hypertension medications^99DCT"
+                  value="3ccee00a-26fe-102b-80cb-0017a47871b2^NIFEDIPINE^99DCT">NIFEDIPINE
+          </label>
+          <br/>
+          <label class="font-normal">
+          <input class="HTNMedications" name="HTNMedications" type="checkbox"
+                data-concept="c41ab331-2695-487c-ac1e-0b31b4c61486^Hypertension medications^99DCT"
+                value="44299055-6e5f-4548-af34-dcf5e13bb6a5^LISINOPRIL^99DCT">LISINOPRIL
+          </label>
+          <br/>
+          <label class="font-normal">
+            <input class="HTNMedications" name="HTNMedications" type="checkbox"
+                  data-concept="c41ab331-2695-487c-ac1e-0b31b4c61486^Hypertension medications^99DCT"
+                  value="4add1344-ec52-41e3-b5b9-267f19d99aa2^CAPTOPRIL^99DCT">CAPTOPRIL
+          </label>
+          <br/>
+          
+          <label class="font-normal">
+          <input class="HTNMedications" name="HTNMedications" type="checkbox"
+                data-concept="c41ab331-2695-487c-ac1e-0b31b4c61486^Hypertension medications^99DCT"
+                value="d53d1bc4-1b19-4c03-9aae-61e7662acc0e^ATENOLOL^99DCT">ATENOLOL
+          </label>
+          <br/>
+          <label class="font-normal">
+          <input class="HTNMedications" name="HTNMedications" type="checkbox"
+                data-concept="c41ab331-2695-487c-ac1e-0b31b4c61486^Hypertension medications^99DCT"
+                value="b4307c45-16dc-428a-b194-e6ed6470b264^CARVEDILOL^99DCT">CARVEDILOL
+          </label>
+          <br/>
+          <label class="font-normal">
+            <input class="HTNMedications" name="HTNMedications" type="checkbox"
+                  data-concept="c41ab331-2695-487c-ac1e-0b31b4c61486^Hypertension medications^99DCT"
+                  value="3cd52bfe-26fe-102b-80cb-0017a47871b2^HYDRALAZINE^99DCT">HYDRALAZINE
+          </label>
+          <br/>
+          <label class="font-normal">
+            <input class="HTNMedications" name="HTNMedications" type="checkbox"
+                  data-concept="c41ab331-2695-487c-ac1e-0b31b4c61486^Hypertension medications^99DCT"
+                  value="3cd90a12-26fe-102b-80cb-0017a47871b2^ENALAPRIL^99DCT">ENALAPRIL
+          </label>
+          <br/>
+          <label class="font-normal">
+            <input class="HTNMedications" name="HTNMedications" type="checkbox"
+                  data-concept="c41ab331-2695-487c-ac1e-0b31b4c61486^Hypertension medications^99DCT"
+                  value="98042566-aedc-442d-96b3-d055d3dd7d81^Losartan^99DCT">Losartan
+            </label>
+            <br/>
+            <label class="font-normal">
+            <input class="HTNMedications" name="HTNMedications" type="checkbox"
+                  data-concept="c41ab331-2695-487c-ac1e-0b31b4c61486^Hypertension medications^99DCT"
+                  value="3ccee190-26fe-102b-80cb-0017a47871b2^METHYLDOPA^99DCT">METHYLDOPA
+            </label>
+            <br/>
+            <label class="font-normal">
+              <input class="HTNMedications" name="HTNMedications" type="checkbox"
+                    data-concept="c41ab331-2695-487c-ac1e-0b31b4c61486^Hypertension medications^99DCT"
+                    value="3ccce886-26fe-102b-80cb-0017a47871b2^FUROSEMIDE^99DCT">FUROSEMIDE
+            </label>
+            <br/>
+            <label class="font-normal">
+              <input class="HTNMedications" name="HTNMedications" type="checkbox"
+                    data-concept="c41ab331-2695-487c-ac1e-0b31b4c61486^Hypertension medications^99DCT"
+                    value="2f5cfaaf-f29d-4a17-b5ef-d5dc61142939^No Medication^99DCT">No Medication
+            </label>
+            <br/>
+        <label>
+          Other Drug:<input id="OtherRegimenHyper" class="form-control" name="OtherRegimenHyper" type="text" data-concept="3ce299b0-26fe-102b-80cb-0017a47871b2^CURRENT CURATIVE REGIMEN OR DRUG, OTHER^99DCT"/>
+        </label>
+       
+      </div>
+
+      <div class="form-group" id="ifDiabetesYes">
+        <label class="font-normal">(Diyabete)], select among the following  diabetes medication [Select all that apply]</label>
+        <br/>
+        <label class="font-normal">
+          <input class="DiabeteMedications" name="DiabeteMedications" type="checkbox"
+                data-concept="fa9b8b64-7081-41ec-9018-a8ea51464d70^Diabetes Medications^99DCT"
+                value="0084d7bd-a40f-44fb-bd18-2a1853d03ee8^GLIBENCLAMIDE^99DCT">DAONIL
+        </label>
+      <br/>
+      <label class="font-normal">
+        <input class="DiabeteMedications" name="DiabeteMedications" type="checkbox"
+              data-concept="fa9b8b64-7081-41ec-9018-a8ea51464d70^Diabetes Medications^99DCT"
+              value="09c64c66-11d5-4fac-8848-9fd33206fefd^METFORMIN^99DCT">METFORMIN
+      </label>
+      <br/>
+      <label class="font-normal">
+        <input class="DiabeteMedications" name="DiabeteMedications" type="checkbox"
+              data-concept="fa9b8b64-7081-41ec-9018-a8ea51464d70^Diabetes Medications^99DCT"
+              value="3ccf1c1e-26fe-102b-80cb-0017a47871b2^INSULIN, LENTE ^99DCT">INSULIN LENTE 
+      </label>
+      <br/>
+      <label class="font-normal">
+      <input class="DiabeteMedications" name="DiabeteMedications" type="checkbox"
+            data-concept="fa9b8b64-7081-41ec-9018-a8ea51464d70^Diabetes Medications^99DCT"
+            value="0ad8ceac-15f5-102d-96e4-000c29c2a5d7^INSULIN, Regular^99DCT">INSULIN RAPID
+      </label>
+      <br/>
+      <label class="font-normal">
+        <input class="DiabeteMedications" name="DiabeteMedications" type="checkbox"
+              data-concept="fa9b8b64-7081-41ec-9018-a8ea51464d70^Diabetes Medications^99DCT"
+              value="9231cac4-8d3d-4bf5-97a3-81ec912b1899^Insulin 70/30^99DCT">INSULIN MIXTE
+      </label>
+      <br/>
+      <label class="font-normal">
+        <input class="DiabeteMedications" name="DiabeteMedications" type="checkbox"
+              data-concept="fa9b8b64-7081-41ec-9018-a8ea51464d70^Diabetes Medications^99DCT"
+              value="2f5cfaaf-f29d-4a17-b5ef-d5dc61142939^No Medication^99DCT">No Medication
+      </label>
+      <br/>
+      <label>
+      Other Drug:<input id="OtherRegimenDiabe" class="form-control" name="OtherRegimenDiabe" type="text" data-concept="3ce299b0-26fe-102b-80cb-0017a47871b2^CURRENT CURATIVE REGIMEN OR DRUG, OTHER^99DCT"/>
+      </label>
+       
+      </div>
+
+      <div class="form-group" id="ifKidneyYes">
+        <label class="font-normal">(Impyiko)], select among the following  Kidney failure medication [Select all that apply]</label>
+        <br/>
+        <label class="font-normal">
+          <input class="KidneyMedications" name="KidneyMedications" type="checkbox"
+                data-concept="47f1a68d-6b39-4101-95f0-ae0339a8c0ba^RENAL FAILURE CARDIAC MEDICATION^99DCT"
+                value="8e2949d5-10dc-4bde-afd2-3fcc6b6df00e^ISOSORBIDE DINITRATE^99DCT">ISOSORBIDE DINITRATE
+        </label>
+      <br/>
+      <label class="font-normal">
+        <input class="KidneyMedications" name="KidneyMedications" type="checkbox"
+              data-concept="47f1a68d-6b39-4101-95f0-ae0339a8c0ba^RENAL FAILURE CARDIAC MEDICATION^99DCT"
+              value="3cd52bfe-26fe-102b-80cb-0017a47871b2^HYDRALAZINE^99DCT">HYDRALAZINE
+      </label>
+      <br/>
+      
+      <label>
+      Other Drug:<input id="OtherRegimenKidney" class="form-control" name="OtherRegimenKidney" type="text" data-concept="3ce299b0-26fe-102b-80cb-0017a47871b2^CURRENT CURATIVE REGIMEN OR DRUG, OTHER^99DCT"/>
+      </label>
+       
+      </div>
+      
+
+      <div class="form-group" id="hepatitisBDisease">
+          <label>
+          Write the name of the Hepatitis B medication:<input id="HepatitisBmedication" class="form-control" name="HepatitisBmedication" type="text" data-concept="c640658f-ebd2-43e7-b068-57b446f8b0a6^Hepatitis B medication^99DCT"/>
+          </label>
+      </div>
+        <div class="form-group" id="HapatitisCmedicationDisease">
+          <label>
+          Write the name of the Hapatitis C medication:<input id="HapatitisCmedication" class="form-control" name="HapatitisCmedication" type="text" data-concept="53119e72-27bc-41b1-a326-2fcb9bc6fcb1^Hapatitis C medication^99DCT"/>
+          </label>
+      </div>
+      <div class="form-group" id="UTIMedicationDisease">
+        <label>
+          Write the name of the UTI medication:<input id="UTIMedication" class="form-control" name="UTIMedication" type="text" data-concept="de7c6564-9eda-493d-b66b-220242b28120^UTI medication^99DCT"/>
+        </label>
+    </div>
+    <div class="form-group" id="HeartFailureMedicationDisease">
+      <label>
+          Write the name of the Heart failure medication:<input id="HeartFailureMedication" class="form-control" name="HeartFailureMedication" type="text" data-concept="6c7bf47a-008d-424f-bfda-b21568d56247^Heart failure medication^99DCT"/>
+      </label>
+    </div>
+    <div class="form-group" id="CancerMedicationDisease">
+      <label>
+          Write the name of the Cancer medication:<input id="CancerMedication" class="form-control" name="CancerMedication" type="text" data-concept="2e4e5786-da68-4066-93ae-60d56e13478b^Cancer medication^99DCT"/>
+      </label>
+    </div>
+
+      <div class="form-group">
+        <label class="font-normal">Check in patients ‘notebook, if patient was ever prescribed ibuprofen, aspirin or Naproxen Medication in the past 12 months?</label>
+        <br/>
+        <label class="font-normal">
+          <input class="PrescribedDrugs" name="PrescribedDrugs" type="checkbox"
+                data-concept="978e28b3-0fb3-46f8-9c3c-81f0da1229bf^If patient was ever prescribed ibuprofen, aspirin or Naproxen Medication in the past 12 months^99DCT"
+                value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">NO
+        </label>
+      <br/>
+      <label class="font-normal">
+        <input class="PrescribedDrugs" name="PrescribedDrugs" type="checkbox"
+              data-concept="978e28b3-0fb3-46f8-9c3c-81f0da1229bf^If patient was ever prescribed ibuprofen, aspirin or Naproxen Medication in the past 12 months^99DCT"
+              value="3cd5111e-26fe-102b-80cb-0017a47871b2^IBUPROFEN^99DCT">IBUPROFEN
+      </label>
+      <br/>
+      <label class="font-normal">
+        <input class="PrescribedDrugs" name="PrescribedDrugs" type="checkbox"
+              data-concept="978e28b3-0fb3-46f8-9c3c-81f0da1229bf^If patient was ever prescribed ibuprofen, aspirin or Naproxen Medication in the past 12 months^99DCT"
+              value="3cccd35a-26fe-102b-80cb-0017a47871b2^ASPIRIN^99DCT">ASPIRIN
+      </label>
+      <br/>
+      <label class="font-normal">
+      <input class="PrescribedDrugs" name="PrescribedDrugs" type="checkbox"
+            data-concept="978e28b3-0fb3-46f8-9c3c-81f0da1229bf^If patient was ever prescribed ibuprofen, aspirin or Naproxen Medication in the past 12 months^99DCT"
+            value="7fe12c5a-969e-2661-3aef-dbcd7b9b4522^XM1KL8-Naproxen^99DCT">Naproxen
+      </label>
+      <br/>
+     
+       
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="section" width="100%">
+    <fieldset>
+      <div id="pregnancyStatus">
+        <label class="font-normal" >Are you in your menstrual period?</label>
+          <br/>
+          <label class="font-normal">
+              <input id="yesAreYouPregnant" name="AreYouPregnant" type="radio" required
+                     data-concept="00350bbd-a9e3-446a-844d-0436201a810d^Are you pregnant^99DCT"
+                     value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+               Yego 
+          </label>
+          <br/>
+          <label class="font-normal">
+              <input id="noAreYouPregnant" name="AreYouPregnant" type="radio" required
+                     data-concept="00350bbd-a9e3-446a-844d-0436201a810d^Are you pregnant^99DCT"
+                     value="3cd6f86c-26fe-102b-80cb-0017a47871b2^NO^99DCT">
+               Oya 
+          </label>
+          <br/>
+        <br/>
+      </div>
+      <div>
+        <label><b>Laboratory test</b></label>
+      </div>
+      <div class="form-group">
+       
+                <label>
+                  Urine protein, mg/dl:<input id="urineProt" class="form-control" type="number" name="urineProt" data-concept="3538e0f2-b77b-4858-8cb1-c3cfea00856a^Urine protein, mg/dl^99DCT">
+                  <b><mark><i>(Type the number corresponding with color code on dipstick)</i></mark></b>
+                  <br/>
+                  <b><mark><i>(Type 0 if the dipstick shows negative, and type 999 if it shows trace)</i></mark></b>
+                </label>
+                <br/>
+                <label>
+                  Urine glucose mg/dL:
+                  <select  id="urineRedBlood" class="form-control" name="urineRedBlood" data-concept="453b44d5-e4e4-4d6f-96a7-1061b890a85e^Urine glucose mg/dL^99DCT">
+                    <option value="">...</option>
+                    <option value="3cd28732-26fe-102b-80cb-0017a47871b2^NEGATIVE^99DCT" >Negative</option>
+                    <option value="3cd3a7a2-26fe-102b-80cb-0017a47871b2^POSITIVE^99DCT" >10</option>
+                    <option value="6d0d2e97-deca-4b4d-97df-1c5d9c22d768^POSITIVE(+)^99DCT" >250</option>
+                    <option value="2f08b055-afff-48cb-a0f6-c34eb9080aca^POSITIVE(++)^99DCT" >500(++)</option>
+                    <option value="8c1147d0-2dac-4a0b-9b58-56f0cead6ad3^POSITIVE(+++)^99DCT" >1000(+++)</option>
+                </select>
+                  </label>
+                <br/>
+ 
+                <label>
+                  Urine Red blood cell:
+                
+                <select id="urineWhiteBlood" class="form-control" name="urineWhiteBlood" data-concept="0214d71d-5b4b-4061-8876-bb4eb281a879^Urine Red blood cell^99DCT">
+                  <option value="">...</option>
+                  <option value="3cd28732-26fe-102b-80cb-0017a47871b2^NEGATIVE^99DCT" >Negative</option>
+                  <option value="6d0d2e97-deca-4b4d-97df-1c5d9c22d768^POSITIVE(+)^99DCT" >10 (+)</option>
+                  <option value="2f08b055-afff-48cb-a0f6-c34eb9080aca^POSITIVE(++)^99DCT" >50 (++)</option>
+                  <option value="8c1147d0-2dac-4a0b-9b58-56f0cead6ad3^POSITIVE(+++)^99DCT" >250 (+++)</option>
+                  <option value="ea410ccd-b1b7-4fbd-bc0f-bda96da45ea4^Non hemolysis 10 (+)^99DCT" >Non hemolysis 10 (+)</option>
+                  <option value="5cbc651b-4c1d-4888-99f8-aa8cda7a84cb^Non hemolysis 50 (++)^99DCT" >Non hemolysis 50 (++)</option>
+              </select>
+            </label>
+            <br/>
+                <label>
+                  Urine creatinine, umol/l:<input id="urineCreat" class="form-control" name="urineCreat" type="number" data-concept="80bd0e14-c69c-4005-a2f2-0ccbad923bf5^Urine creatinine, mg/dl^99DCT"/>
+                  </label>
+                <br/>
+                <label>
+                  Serum creatinine, umol/l:<input id="serumCreat" class="form-control" name="serumCreat" type="number" data-concept="30e14e28-d6dc-4bf8-a8ec-42cc3e63b3e8^Serum creatinine, mg/dl^99DCT"/>
+                      </label>
+                <br/>
+                
+                <label>
+                  GFR:<input id="gfrData" class="form-control" name="gfrData" type="number" disabled="disabled" data-concept="dad6d793-1a4f-41a4-8efd-003e941810cf^Glomerular Filtration Rate^99DCT"/>
+                      </label>
+                <br/>
+                
+                <!-- <label>
+                  Urine Albumin, g/dl:<input id="urineAlbu" class="form-control" name="urineAlbu" type="number" data-concept="a6a1b8ee-16c8-439c-b518-2216989944ba^Urine Albumin, g/dl^99DCT"/>
+                  </label>
+                <br/> -->
+
+                <!-- <label>
+                  Urine Potassium, mEq/L:<input id="urinePota" class="form-control" name="urinePota" type="number" data-concept="ef3f706b-347d-400b-a371-51b47adb4041^Urine Potassium, mEq/L^99DCT"/>
+                  </label>
+                <br/> -->
+                <label>
+                  Protein and creatinine ratio:<input id="protAndCreat" class="form-control" name="protAndCreat" disabled="disabled" type="number" data-concept="3a7714ef-7f09-493b-bf55-dc71f5339f65^Protein and creatinine ratio^99DCT"/>
+                  </label>
+                <br/>
+                 
+               
+                <label>
+                  Blood Hemogloblin g/dl:<input id="bloodHemo" class="form-control" name="bloodHemo" type="number" data-concept="5aa19cd2-15e9-4999-b2f7-a75a1b2ecc0c^Blood Hemogloblin g/dl^99DCT"/>
+                  </label>
+                <br/>
+                <label>
+                  Blood glucose, mg/dl:<input id="bloodGluco" class="form-control" name="bloodGluco" type="number" data-concept="a3fba301-753c-4e4d-9fc7-c4c3574970e1^Blood glucose, mg/dl^99DCT"/>
+                  </label>
+                <br/>
+      </fieldset>
+      </div>
+      <div class="section" width="100%">
+        <fieldset>    
+          <div class="form-group">
+            <label class="font-normal" >Linkage to care?</label>
+            <br/>
+                    <label class="font-normal">
+                        <input id="LinkToCare" name="LinkToCare" type="checkbox"
+                              data-concept="73769a55-71d4-4e38-b36c-aa603d5a3b27^Link to care^99DCT"
+                              value="3cd6f600-26fe-102b-80cb-0017a47871b2^YES^99DCT">
+                        Yes
+                    </label>
+                    <br/>
+          </div>
+        </fieldset>
+      </div>
+      div
+</form>
+
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+       var dateFormat = "dd-mm-yy";
+        var currentDate = $.datepicker.formatDate(dateFormat, new Date());
+        var encounterDatetime = $('#encounter\\.encounter_datetime');
+        if ($(encounterDatetime).val() == "") {
+            $(encounterDatetime).val(currentDate);
+        }
+
+        $('#save_draft').click(function () {
+        $(this).prop('disabled', true);
+        document.saveDraft(this);
+        $(this).prop('disabled', false);
+        });
+        $('#submit_form').click(function () {
+            $(this).prop('disabled', true);
+            document.submit();
+            $(this).prop('disabled', false);
+        });
+
+        document.setupAutoCompleteData('encounter\\.location_id');
+        document.setupValidationForLocation("$('#encounter\\.location_id').val()","encounter\\.location_id");
+        document.setupAutoCompleteDataForProvider('encounter\\.provider_id_select');
+        document.setupValidationForProvider("$('#encounter\\.provider_id_select').val()","encounter\\.provider_id");
+        $('#encounter\\.provider_id_select').change(function () {
+            if ($('#encounter\\.provider_id_select').val() === '') {
+                $('#encounter\\.provider_id').val('');
+                   $('.show_provider_id_text').show();
+            }
+        });
+        $('.future-or-today-date').change(function () {
+            if ($(this).is(':visible') && $(this).val() != '') {
+                var errors = {};
+                var pattern = /(\d{2})-(\d{2})-(\d{4})/g;
+                var matches = pattern.exec($(this).val());
+                var enteredDate = new Date(matches[3], matches[2] - 1, matches[1]);
+                var today = new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDate());
+                if (enteredDate < today) {
+                    errors[$(this).attr('name')] = "Please enter present or future date.";
+                }
+                toggleValidationMessages(errors);
+            }
+        });
+
+                    var WhereToRefer = [
+            {"val": "64d4a6d9-8e71-4d80-83bc-fc5b5e44703f^Caraes Ndera Hospital^99DCT", "label": "Caraes Ndera Hospital "},
+            {"val": "682754d6-cff2-4f2e-90a3-ea3b1e7fa230^Butaro Hospital^99DCT", "label": "Butaro Hospital "},
+            {"val": "927be708-d8b3-4809-bd7e-c1bea7c821eb^Byumba Hospital^99DCT", "label": "Byumba Hospital "},
+            {"val": "c7e37519-bcea-4a6e-a29d-14cd972fc551^GAHINI HOSPITAL^99DCT", "label": "GAHINI HOSPITAL "},
+            {"val": "20b838ed-d624-4abf-9ae1-7fe2b90133e5^Gakoma Hospital^99DCT", "label": "Gakoma Hospital "},
+            {"val": "a810cdff-0221-425a-bde5-d33f1366a126^GIHUNDWE HOSPITAL^99DCT", "label": "GIHUNDWE HOSPITAL "},
+            {"val": "325e942f-c41d-4032-b86d-2cdff25b7b81^Gisenyi District Hospital^99DCT", "label": "Gisenyi District Hospital "},
+            {"val": "cc121d58-d969-4ae7-a4ba-0d04580fee56^Gitwe Hospital^99DCT", "label": "Gitwe Hospital "},
+            {"val": "74c27b34-2305-4384-ac94-4b3f24e1d98d^Kabaya Hospital^99DCT", "label": "Kabaya Hospital "},
+            {"val": "fbe11e25-c7dd-423c-823a-d62a8f2f7182^KABGAYI HOSPITAL^99DCT", "label": "KABGAYI HOSPITAL "},
+            {"val": "5eb665f3-06b6-4fa7-b111-a9470d15d2ba^KABUTARE^99DCT", "label": "KABUTARE HOSPITAL "},
+            {"val": "9b2d4d19-1e77-4ac7-9dc5-a3c02be14b1a^Kaduha Hospital^99DCT", "label": "Kaduha Hospital "},
+            {"val": "1ae17163-c8c9-44bd-b2eb-8c3f7771180b^KIBAGABAGA^99DCT", "label": "KIBAGABAGA Hospital "},
+            {"val": "eeac5a5c-1c33-4149-a0a5-3d7aef4fc673^Kibilizi Hospital^99DCT", "label": "Kibilizi Hospital "},
+            {"val": "697069e2-233d-44d4-a0fc-66557b01ef36^Kibogora Hospital^99DCT", "label": "Kibogora Hospital "},
+            {"val": "3aa054a5-8eca-4c4b-9d99-752c2ff86cc1^Kigeme Hospital^99DCT", "label": "Kigeme Hospital "},
+            {"val": "2dc4146e-cabd-4597-801b-5da3c2014a4a^Kirehe hospital^99DCT", "label": "Kirehe hospital "},
+            {"val": "6ecc713e-ced3-40ef-8638-5521cc867cff^Kirinda Hospital^99DCT", "label": "Kirinda Hospital "},
+            {"val": "b2f81d84-6c3e-4189-ba0e-f3897378bb93^Kiziguro District Hospital^99DCT", "label": "Kiziguro District Hospital "},
+            {"val": "5db13b6c-0706-4380-b645-db171a0ebd50^Mibilizi Hospital^99DCT", "label": "Mibilizi Hospital "},
+            {"val": "d14a8f85-2a68-4b27-9e4b-bc5364ff1508^Mugonero Hospital^99DCT", "label": "Mugonero Hospital "},
+            {"val": "94e1993c-e6cf-4e86-bb03-5e0912fccd24^Muhima Hospital^99DCT", "label": "Muhima Hospital "},
+            {"val": "a3cbcfd4-e362-4b59-a2de-6c43117b1a25^Muhororo Hospital^99DCT", "label": "Muhororo Hospital "},
+            {"val": "7364e504-c446-4144-9c13-57fca35d519e^Murunda Hospital^99DCT", "label": "Murunda Hospital "},
+            {"val": "62539c87-257a-45d3-ad98-1dfc469517d6^Nemba Hospital^99DCT", "label": "Nemba Hospital "},
+            {"val": "c2a42405-2be8-4a73-8250-c70ea8e643c3^Ngarama Hospital^99DCT", "label": "Ngarama Hospital "},
+            {"val": "8a75974a-67b6-4a57-8902-4217819dba4c^Nyagatare Hospital^99DCT", "label": "Nyagatare Hospital "},
+            {"val": "929e23c1-07c7-445e-8611-65a37e0f1aa5^Nyamata Hospital^99DCT", "label": "Nyamata Hospital "},
+            {"val": "e36e7e90-7d0e-44f9-80c9-529ee5356fb7^Nyanza Hospital^99DCT", "label": "Nyanza Hospital "},
+            {"val": "1a033e97-0411-4911-9183-a31d0ce3c750^Remera-Rukumo Hospital^99DCT", "label": "Remera-Rukumo Hospital "},
+            {"val": "d9c92270-44a1-4498-8a49-84d04f59cd48^Ruli Hospital^99DCT", "label": "Ruli Hospital "},
+            {"val": "12ad8530-0686-4559-be53-748de74caab2^Rutongo Hospital^99DCT", "label": "Rutongo Hospital "},
+            {"val": "83ee379e-1576-4401-9d37-687fb5bba296^SHYIRA HOSPITAL^99DCT", "label": "SHYIRA HOSPITAL "},
+            {"val": "9b04a9ee-60dd-46c6-8ce1-e3657ec55d67^Masaka Hospital^99DCT", "label": "Masaka Hospital "},
+            {"val": "2514bef8-5bc6-4657-bdf5-c5d82abc8e11^Munini Hospital^99DCT", "label": "Munini Hospital "},
+            {"val": "3cda8388-26fe-102b-80cb-0017a47871b2^RWINKWAVU^99DCT", "label": "RWINKWAVU Hospital "},
+            {"val": "bc64178d-d6a5-4289-88ec-debdd7a6f885^Bushenge Hospital^99DCT", "label": "Bushenge Hospital "},
+            {"val": "544547d4-dac5-49e3-9e0d-718a8fe324dc^Kinihira Hospital^99DCT", "label": "Kinihira Hospital "},
+            {"val": "f2e75b8c-b770-4019-a70e-7acec43c53ee^RWAMAGANA HOSPITAL^99DCT", "label": "Rwamagana HOSPITAL "},
+            {"val": "9020f09f-237f-4ccf-a3f9-8755044fbe29^Ruhango Hospital^99DCT", "label": "Ruhango Hospital "},
+            {"val": "3cb82e34-7ea2-44f6-af0b-f0ea4d995bf4^RUHENGERI HOSPITAL^99DCT", "label": "Ruhengeri Hospital "},
+            {"val": "3b49bab4-9e1f-425e-b597-47fa60606fc9^KIBUNGO HOSPITAL^99DCT", "label": "Kibungo Hospital "},
+            {"val": "b757c3c7-d259-419f-9fa8-56292c0d2d0d^Kibuye Hospital^99DCT", "label": "Kibuye Hospital "},
+            {"val": "68222ccb-71ee-418e-a4a4-b924b4e80108^Centre Hôspitalier Universitaire de Kigali (CHUK)^99DCT", "label": "CHUK Hospital "},
+            {"val": "2b472c6b-a0d4-44b1-bb2f-3d44289a19e5^Centre Hôspitalier Universitaire de Butare (CHUB)^99DCT", "label": "CHUB Hospital "},
+            {"val": "c8f88b6d-0781-4171-bf61-88f1681778d8^Rwanda Military Hospital^99DCT", "label": "Rwanda Military Hospital "},
+            {"val": "3cee7fb4-26fe-102b-80cb-0017a47871b2^OTHER NON-CODED^99DCT", "label": "Other "}
+        ];
+        document.setupAutoComplete('obs\\.healthFacility', WhereToRefer);
+        // helps in hide and show. Just set name of checkbox/radio to equate
+        // the class on div to hide, set activate/deactive class on the checkbox/radio
+        // to be clicked
+        // $(document).on("click", function(event){
+        //     var classOfClicked = event.target.className;
+        //     var nameOfClicked = event.target.name;
+        //     var idOfClicked = event.target.id;
+        //     var parentElement = $("input[id='"+idOfClicked+"']").parent().parent();
+        //     if(parentElement.hasClass("checkboxGroup")) {
+        //         parentElement.children().each(function () {
+        //             var nameOfElement = $(this).find("input").attr("name");
+        //             var idOfElement = $(this).find("input").attr("id");
+        //             if(idOfElement!=idOfClicked){
+        //                $("input[id='"+idOfElement+"']").prop('checked', false)
+        //             }
+        //             $("."+nameOfElement).hide();
+        //         })
+        //     }
+        //     if($("input[id='"+idOfClicked+"']").prop('checked')){
+        //         if(classOfClicked=="activate" ){
+        //             $("div."+nameOfClicked).show();
+        //         }
+        //         else if (classOfClicked=="deactivate"){
+        //             $("."+nameOfClicked).find("input").attr("checked",false);
+        //             $("."+nameOfClicked).find("input").val("");
+        //             $("div."+nameOfClicked).hide();
+        //         }
+        //         $("input[name='"+nameOfClicked+"']").each(function() {
+        //             if(this.checked){
+        //                 this.checked=false;
+        //             }
+        //         });
+        //         $("#"+idOfClicked).prop('checked',true);
+        //     }
+        //     else if(!$("input[id='"+idOfClicked+"']").prop('checked')){
+        //         if(classOfClicked=="activate" ){
+        //             $("."+nameOfClicked).find("input").attr("checked",false);
+        //             $("."+nameOfClicked).find("input").val("");
+        //             $("div."+nameOfClicked).hide();
+        //         }
+        //         else if (classOfClicked=="deactivate"){
+        //             $("div."+nameOfClicked).show();
+        //         }
+        // //     }
+        // // });
+        // $(".initialHide").hide();
+
+         // calculting bmi
+
+         $("#Height").change(function() {
+
+        var height = $("#Height").val();
+        var weight = $("#Weight").val();
+        if(height<10){
+            alert("height can't be less than 10");
+            height=0;
+        }
+
+        if(height>0 && weight>0){
+            var bmi = (weight/(height*height))*10000;
+            $("#BMI").val(bmi.toFixed(1));
+        }
+        });
+        $("#Weight").change(function() {
+        var height = $("#Height").val();
+        var weight = $("#Weight").val();
+
+        if(height>0 && weight>0){
+            var bmi = (weight/(height*height))*10000;
+            $("#BMI").val(bmi.toFixed(1));
+        }
+        });
+
+        // calculate protein and creatinine ratio
+        $("#urineProt").change(function() {
+          
+        var prot = $("#urineProt").val();
+        var creatUmol = $("#urineCreat").val();
+        var creat = creatUmol / 88.42;
+
+        if(prot!=null && creat!=null){
+            var proCreat = (prot/creat);
+            $("#protAndCreat").val(proCreat.toFixed(1));
+        }
+        });
+        $("#urineCreat").change(function() {
+          var prot = $("#urineProt").val();
+          var creatUmol = $("#urineCreat").val();
+          var creat = creatUmol / 88.42;
+
+        if(prot!=null && creat!=null){
+            var proCreat = (prot/creat);
+            $("#protAndCreat").val(proCreat.toFixed(1));
+        }
+        });
+
+        $("#smokingYes").hide();
+        $("#drinkingYes").hide();
+        $("#traditionalYes").hide();
+        $("#abagoroziYes").hide();
+        $("#dietYes").hide();
+        $("#ifHIVYes").hide();
+        $("#ifHypertensionYes").hide();
+        $("#ifDiabetesYes").hide();
+        $("#ifOtherDiseases").hide();
+        $("#IfUsedManufacturedCigarete").hide();
+        $("#IfUsedRolledCigarete").hide();
+        $('#notNeverYes').hide();
+        $('#ifKidneyYes').hide();
+        $("#pregnancyStatus").hide();
+        $("#hepatitisBDisease").hide();
+        $("#HapatitisCmedicationDisease").hide();
+        $('#UTIMedicationDisease').hide();
+        $("#HeartFailureMedicationDisease").hide();
+        $("#CancerMedicationDisease").hide();
+
+        var gender =$("#patient\\.sex").val();
+        if(gender == "F"){
+          $("#pregnancyStatus").show();
+        }
+
+        // smoking
+        $("#yesHistoryOfSmoking").click(function() {
+        $("#smokingYes").show();
+        });
+        $("#noHistoryOfSmoking").click(function() {
+        $("#smokingYes").hide();
+        });
+       // =====
+       $('#HandRolledCigarette').change(function() {
+        if ($(this).is(':checked')) {
+          $('#IfUsedRolledCigarete').show();
+        } else {
+          $('#IfUsedRolledCigarete').hide();
+        }
+        });
+        //======
+        $('#ManufactureCigarettes').change(function() {
+        if ($(this).is(':checked')) {
+          $('#IfUsedManufacturedCigarete').show();
+        } else {
+          $('#IfUsedManufacturedCigarete').hide();
+        }
+        });
+
+        // drinking
+        $("#yesConsumedAnAlcoholicDrink").click(function() {
+        $("#drinkingYes").show();
+        });
+        $("#noConsumedAnAlcoholicDrink").click(function() {
+        $("#drinkingYes").hide();
+        });
+
+        // traditional drugs
+        $("#yesAnyHerbalOrTraditionalRemedy").click(function() {
+        $("#traditionalYes").show();
+        });
+        $("#noAnyHerbalOrTraditionalRemedy").click(function() {
+        $("#traditionalYes").hide();
+        });
+
+        // abagorozi drugs
+        $("#yesTraditionalMedicineFromAbagorozi").click(function() {
+        $("#abagoroziYes").show();
+        });
+        $("#noTraditionalMedicineFromAbagorozi").click(function() {
+        $("#abagoroziYes").hide();
+        });
+
+        // diet
+        $("#yesDietNotallowedToEat").click(function() {
+        $("#dietYes").show();
+        });
+        $("#noDietNotallowedToEat").click(function() {
+        $("#dietYes").hide();
+        });
+        $("#dontKnowDietNotallowedToEat").click(function() {
+        $("#dietYes").hide();
+        });
+
+        // if HIV/AIDS
+        $('#hivOutPatientDiagnosis').change(function() {
+        if ($(this).is(':checked')) {
+          $('#ifHIVYes').show();
+        } else {
+          $('#ifHIVYes').hide();
+        }
+        });
+
+           // if Hypertension
+        $('#hypertensionOutPatientDiagnosis').change(function() {
+        if ($(this).is(':checked')) {
+          $('#ifHypertensionYes').show();
+        } else {
+          $('#ifHypertensionYes').hide();
+        }
+        });
+
+           // if diabetes
+        $('#diabetesOutPatientDiagnosis').change(function() {
+        if ($(this).is(':checked')) {
+          $('#ifDiabetesYes').show();
+        } else {
+          $('#ifDiabetesYes').hide();
+        }
+        });
+
+            // if kidney
+        $('#kidneyOutPatientDiagnosis').change(function() {
+        if ($(this).is(':checked')) {
+          $('#ifKidneyYes').show();
+        } else {
+          $('#ifKidneyYes').hide();
+        }
+        });
+
+
+        // if hepatitis B
+
+        $('#hepaBOutPatientDiagnosis').change(function() {
+        if ($(this).is(':checked')) {
+          $("#hepatitisBDisease").show();
+        } else {
+          $("#hepatitisBDisease").hide();
+        }
+        });
+         // if hepatitis C
+
+         $('#hepaCOutPatientDiagnosis').change(function() {
+        if ($(this).is(':checked')) {
+          $("#HapatitisCmedicationDisease").show();
+        } else {
+          $("#HapatitisCmedicationDisease").hide();
+        }
+        });
+         // if Urinary trac infection
+
+         $('#UTIOutPatientDiagnosis').change(function() {
+        if ($(this).is(':checked')) {
+          $("#UTIMedicationDisease").show();
+        } else {
+          $("#UTIMedicationDisease").hide();
+        }
+        });
+         // if heart failure
+
+         $('#heartFailureOutPatientDiagnosis').change(function() {
+        if ($(this).is(':checked')) {
+          $("#HeartFailureMedicationDisease").show();
+        } else {
+          $("#HeartFailureMedicationDisease").hide();
+        }
+        });
+         // if cancer
+
+         $('#cancerOutPatientDiagnosis').change(function() {
+        if ($(this).is(':checked')) {
+          $("#CancerMedicationDisease").show();
+        } else {
+          $("#CancerMedicationDisease").hide();
+        }
+        });
+    
+
+        // milk use
+
+        $('.FrequencyEatDairies').change(function() {
+        if ($(this).is(':checked')) {
+          $('#notNeverYes').show();
+        } else {
+          $('#notNeverYes').hide();
+        }
+        });
+
+        $('#neverFrequencyEatDairies').change(function() {
+        if ($(this).is(':checked')) {
+          $('#notNeverYes').hide();
+        } 
+        });
+        
+
+        //Other insurance
+
+        // Get the selected text of the select element
+        const selectedText = $("#EducationLevel").val();
+
+        // // Use the selected text as needed
+        // if(selectedText == "Ubundi"){
+        //   alert('choose');
+        //   $("#OtherInsurance").show();
+        // }else{
+        //   $("#OtherInsurance").hide();
+        // }
+
+        
+        $("#serumCreat").change(function() {
+          var creatInumol = $("#serumCreat").val();
+          var creat = creatInumol / 88.42;
+          var gender =$("#patient\\.sex").val();
+          var dob =new Date($("#patient\\.birth_date").val());
+
+          var ageDiffMs = Date.now() - dob.getTime();
+          var ageDate = new Date(ageDiffMs);
+
+          // extract the year from the age date
+          var age = Math.abs(ageDate.getUTCFullYear() - 1970);
+
+          if(gender == "M"){
+            // alert("1st done");
+              var gfrVal = (creat/0.9);
+
+              var gfrRevised = 141 * Math.pow(Math.min(creat/0.9,1),-0.411) * Math.pow(Math.max(creat/0.9,1),-1.209) * Math.pow(0.993, age) * 1.159;
+              $("#gfrData").val(gfrRevised.toFixed(1));
+
+              // if(gfrVal < 1){
+
+              //   var gfrPowered1 = Math.pow(gfrVal, -0.411);
+              //   var gfrPowered2 = Math.pow(1, -1.209);
+              //   var agePowered = Math.pow(0.993, age);
+              //   var gfrFinal = 141 * gfrPowered1 * gfrPowered2 * agePowered * 1.159;
+              //   $("#gfrData").val(gfrFinal.toFixed(1));
+
+              // }else if(gfrVal > 1){
+
+              //   var gfrPowered1 = Math.pow(1, -0.411);
+              //   var gfrPowered2 = Math.pow(gfrVal, -1.209);
+              //   var agePowered = Math.pow(0.993, age);
+
+              //   var gfrFinal = 141 * gfrPowered1 * gfrPowered2 * agePowered * 1.159;
+              //   $("#gfrData").val(gfrFinal.toFixed(1));
+
+              // }else if(gfrVal == 1){
+              //   var gfrPowered1 = Math.pow(1, -0.411);
+              //   var gfrPowered2 = Math.pow(1, -1.209);
+              //   var agePowered = Math.pow(0.993, age);
+
+              //   var gfrFinal = 141 * gfrPowered1 * gfrPowered2 * agePowered * 1.159;
+              //   $("#gfrData").val(gfrFinal.toFixed(1));
+
+              // }
+          }else if(gender == "F"){
+
+            var gfrRevised = (141 * Math.pow(Math.min(creat/0.7,1),-0.329) * Math.pow(Math.max(creat/0.7,1),-1.209) * Math.pow(0.993, age) * 1.018 * 1.159);
+            $("#gfrData").val(gfrRevised.toFixed(1));
+            // alert("1st done");
+              // var gfrVal = (creat/0.7);
+
+              // if(gfrVal < 1){
+
+              //   var gfrPowered1 = Math.pow(gfrVal, -0.329);
+              //   var gfrPowered2 = Math.pow(1, -1.209);
+              //   var agePowered = Math.pow(0.993, age);
+              //   var gfrFinal = 141 * gfrPowered1 * gfrPowered2 * agePowered * 1.018 * 1.159;
+              //   $("#gfrData").val(gfrFinal.toFixed(1));
+
+              // }else if(gfrVal > 1){
+
+              //   var gfrPowered1 = Math.pow(1, -0.329);
+              //   var gfrPowered2 = Math.pow(gfrVal, -1.209);
+              //   var agePowered = Math.pow(0.993, age);
+
+              //   var gfrFinal = 141 * gfrPowered1 * gfrPowered2 * agePowered * 1.018 * 1.159;
+              //   $("#gfrData").val(gfrFinal.toFixed(1));
+
+              // }else if(gfrVal == 1){
+              //   var gfrPowered1 = Math.pow(1, -0.329);
+              //   var gfrPowered2 = Math.pow(1, -1.209);
+              //   var agePowered = Math.pow(0.993, age);
+
+              //   var gfrFinal = 141 * gfrPowered1 * gfrPowered2 * agePowered * 1.018 * 1.159;
+              //   $("#gfrData").val(gfrFinal.toFixed(1));
+
+              // }
+          }
+        });
+
+
+    });
+    $(document).on("click", function(event){
+                var classOfClicked = event.target.className;
+                var nameOfClicked = event.target.name;
+                var idOfClicked = event.target.id;
+                var parentElement = $("input[id='"+idOfClicked+"']").parent().parent();
+                if(parentElement.hasClass("checkboxGroup")) {
+                    parentElement.children().each(function () {
+                        var nameOfElement = $(this).find("input").attr("name");
+                        var idOfElement = $(this).find("input").attr("id");
+                        if(idOfElement!=idOfClicked){
+                           $("input[id='"+idOfElement+"']").prop('checked', false)
+                        }
+                        $("."+nameOfElement).hide();
+                    })
+                }
+  });
+
+
+</script>
+</html>

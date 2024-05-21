@@ -1,0 +1,394 @@
+<htmlform formUuid="aa195bd3-3782-4682-a748-cd8530b1823b" formName="Neonatal Discharge Form"
+          formEncounterType="13703c92-58d2-4d04-a320-8d4699380676">
+    <macros>
+        paperFormId = Flow-DM-RW.V2.0.akb.15May09 headerColor =#009d8e
+        fontOnHeaderColor = white
+    </macros>
+
+    <script type="text/javascript">
+        beforeSubmit.push(function () {
+        var c = confirm(
+        "Do you want to submit? If yes, Confirm with OK. If No, click on Cancel"
+        );
+        if (c) {
+        return true;
+        } else {
+        return false;
+        }
+        });
+    </script>
+
+    <style>
+        form fieldset {
+        display: block;
+        }
+
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
+        }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
+        width: 100%;
+        }
+
+        .div {
+        float: left;
+        }
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        .date-one-line {
+        display: flex;
+        }
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
+        }
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
+        }
+
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
+        display: block;
+        }
+    </style>
+
+    <postSubmissionAction class="org.openmrs.module.mohbilling.automation.CloseGlobalBillOnHtmlFormSubmissionAction" />
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
+            <table>
+                <tr>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
+                    </td>
+                    <td>
+                        Health Facility:
+                        <encounterLocation id="location" default="GlobalProperty:billing.defaultLocation" />
+                    </td>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title"
+             headerCode="Discharge Criteria: All requirements must be fulfilled and recorded">
+        <div class="section-container">
+
+            <p class="radio">
+                <obs conceptId="a2c68fb9-9225-463e-8a87-9a62ec8e53a2" answerConceptId="5f7ac339-a159-4d58-811b-e8f74537af3a"
+                     style="radio"
+                     answerLabel="Complete enteral nutrition: Breastfeed > 8 times a day(if bottle used, > 100ml/kg)" />
+                <br />
+                <obs conceptId="a2c68fb9-9225-463e-8a87-9a62ec8e53a2" answerConceptId="7271c1cf-6745-48e7-8beb-c0a97523c631"
+                     style="radio" />
+                <br />
+                <obs conceptId="a2c68fb9-9225-463e-8a87-9a62ec8e53a2" answerConceptId="  b3e22325-21c2-4a8c-8feb-97f7a76176e1"
+                     style="radio" />
+                <br />
+                <obs conceptId="a2c68fb9-9225-463e-8a87-9a62ec8e53a2" answerConceptId="7fc54120-9795-4cd0-a6db-b562dfa85ade"
+                     style="radio"
+                     answerLabel=" No contraindications to discharge(Danger signs: hypothermia, fever, respiratory distress, RR &gt;70, inadequate oral feeding jaundice, vomiting, diarhea or seizures)" />
+                <br />
+                <obs conceptId="a2c68fb9-9225-463e-8a87-9a62ec8e53a2" answerConceptId="c996e2a3-6ff9-4a1f-83ca-eb9b6ff44602"
+                     style="radio" />
+                <br />
+            </p>
+            <fieldset>
+                <legend>
+                    <b>If &lt; 2 kg</b>
+                </legend>
+                <p class="radio">
+                    <obs conceptId="ea1a95f6-3fda-4ecc-a1e4-144128adcdc0" answerConceptId="  ba8e615e-7569-4964-a6f0-553a5d4a94dd"
+                         style="radio" />
+                    <br />
+                    <obs conceptId="ea1a95f6-3fda-4ecc-a1e4-144128adcdc0" answerConceptId="60cb0725-2ecb-4879-9412-06320055ba6a"
+                         style="radio" />
+                    <br />
+                    <obs conceptId="ea1a95f6-3fda-4ecc-a1e4-144128adcdc0" answerConceptId="  21b1bb0a-a863-4e90-8e41-ace426c645bc"
+                         style="radio" />
+                    <br />
+                    <obs conceptId="ea1a95f6-3fda-4ecc-a1e4-144128adcdc0" answerConceptId="  889d11a7-9a82-442c-8454-5b7b5c1290ff"
+                         style="radio" />
+                    <br />
+                    <obs conceptId="ea1a95f6-3fda-4ecc-a1e4-144128adcdc0" answerConceptId="92d2771b-7b10-40e3-95e1-68a7c86ef6de"
+                         style="radio" />
+                    <br />
+                    <obs conceptId="ea1a95f6-3fda-4ecc-a1e4-144128adcdc0" answerConceptId="9757bded-05c4-4e22-b4ed-74de73012533"
+                         style="radio" />
+                    <br />
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>
+                    <b>
+                        If Mother is HIV Positive
+                    </b>
+                </legend>
+                <p class="radio">
+                    <obs conceptId="e57ba4ae-65a4-46fb-9be8-c859513db6b6" answerConceptId="  62fee4ac-4a77-4999-9f13-e5f916feed8a"
+                         style="radio" />
+                </p>
+                <p class="date-one-line">
+                    <obs conceptId="89302537-0205-45ad-9451-003210c37aa1" labelText="Date of appointment in EMTCT:" />
+                </p>
+                <p class="flexView small-input">
+                    NVP
+                    <obs conceptId="b7e34ddf-5f0c-4562-a9e2-4d0ace082496" />ml oral once a day
+                </p>
+                <p class="radio">
+                    <obs conceptId="e57ba4ae-65a4-46fb-9be8-c859513db6b6" answerConceptId="  3e0dccce-8f64-44e6-b058-32bc2d9cdc5e"
+                         style="radio" />
+                </p>
+
+
+            </fieldset>
+        </div>
+    </section>
+
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Documentation">
+        <div class="section-container">
+
+            <p class="radio">
+                <obs conceptId="dc421fe3-f1b2-460d-87a7-22e2945f7423" answerConceptId="69058143-3672-48fd-936e-ea5b2bcdbb92"
+                     style="radio" />
+                <obs conceptId="dc421fe3-f1b2-460d-87a7-22e2945f7423" answerConceptId="179fe747-57a0-4d88-a5d5-c000c4cfb2da"
+                     style="radio" />
+            </p>
+            <p class="side-by-side">
+                <label><b>DISCHARGE ORDER:</b></label>
+                <obs conceptId="0e0bef29-a18e-41d7-b01d-2469d08eb396"
+                     answerConceptIds="186ddbae-4cf8-4bee-91ff-25d655548f08,b6fdf7c9-6be2-4d2b-89e3-bcb9ba97dc37" style="radio" />
+            </p>
+            <p class="side-by-side">
+                <label>Discharge neonatal place:</label>
+                <obs conceptId="21ec66e9-4d0d-4b44-b89b-f8d5b98f93f4"
+                     answerConceptIds="b4575421-f21c-442a-9d81-995f46255025, 252b7ac0-6b12-445e-89d0-0746df8fea88" style="radio" />
+            </p>
+            <p class="date-one-line">
+                <label>Appointment (within 1 or 2 weeks):</label>
+                <obs conceptId="557cd74e-c396-4471-b4a1-240e281e8172" allowFutureDates="true" />
+            </p>
+            <p class="flexView">
+                <label>Location</label>:
+                <obs conceptId="3b761db6-8739-408c-98ef-425d388e0301" />
+            </p>
+            <p class="radio">
+                <obs conceptId="d31421c6-5b67-4fdc-9128-f441608f20a7" answerConceptId="  b6f35f48-4f6f-4c65-885e-5851cd93d5ec"
+                     style="radio" />
+                <br />
+                <obs conceptId="d31421c6-5b67-4fdc-9128-f441608f20a7" answerConceptId="  621fe15e-3a40-416d-aca6-370d1a07b5b3"
+                     style="radio" />
+                <br />
+                <obs conceptId="d31421c6-5b67-4fdc-9128-f441608f20a7" answerConceptId="  048fc8bf-0907-406f-807e-8837fb4227c1"
+                     style="radio" />
+                <br />
+                <obs conceptId="d31421c6-5b67-4fdc-9128-f441608f20a7" answerConceptId="  47ede9f4-53a4-49e6-9ae5-0405319eb0ab"
+                     style="radio" />
+                <br />
+                <obs conceptId="d31421c6-5b67-4fdc-9128-f441608f20a7" answerConceptId="d7ad18d1-c2a8-4f66-b7e6-8b93cb5f7518"
+                     style="radio" />
+                <br />
+                <obs conceptId="d31421c6-5b67-4fdc-9128-f441608f20a7" answerConceptId="175e8c38-2fc7-45dc-be00-9aa3f3eda333"
+                     style="radio" />
+                <br />
+                <obs conceptId="aeb9d81f-3949-4083-881a-edfa5315fd30" style="textarea" rows="3" cols="20" labelText="Other:" />
+
+            </p>
+            <fieldset>
+                <legend>
+                    <b>
+                        Consider transfer if:
+                    </b>
+                </legend>
+                <p class="radio">
+                    <obs conceptId="efa470d7-f922-4b45-9e34-f2415304dd8c" answerConceptId="  4b55a53c-eced-4601-b968-e441e27ea14f"
+                         style="radio" />
+                    <br />
+                    <obs conceptId="efa470d7-f922-4b45-9e34-f2415304dd8c"
+                         answerConceptId="    96e56af5-ca1e-4917-8d85-069ccf2119c2" style="radio" />
+                    <br />
+                    <obs conceptId="efa470d7-f922-4b45-9e34-f2415304dd8c" answerConceptId=" cf733421-d38a-11e8-b6e2-0c5b8f279a64"
+                         answerLabel="Severe Sepsis" style="radio" />
+                    <br />
+                    <obs conceptId="efa470d7-f922-4b45-9e34-f2415304dd8c" answerConceptId="db886b2d-d8af-443b-81ac-013abca8ac42"
+                         answerLabel="Severe respiratory distress" style="radio" />
+                    <br />
+                    <obs conceptId="131065c1-dd3d-4163-9bec-09f5b76a2658" style="textarea" rows="3" cols="20"
+                         labelText="Other:" />
+
+                </p>
+            </fieldset>
+            <p class="radio">
+                <obs conceptId="56eb354e-a4e5-455a-a2b9-4748306aaeb8" answerConceptId="77462de6-c450-43e2-a941-ec83f830ede5"
+                     answerLabel="DIED" style="radio" id="isDied">
+                    <!-- <controls>
+                      <when value="77462de6-c450-43e2-a941-ec83f830ede5" thenDisplay="#dd" />
+                  </controls>
+                  <span id="dd">
+                    <obs conceptId="44a73fee-c4fa-4ffb-9a0d-20f45db3711d" labelText="Reason:" style="textarea" rows="3" cols="20" />
+
+                  </span> -->
+                </obs>
+
+            </p>
+
+        </div>
+    </section>
+
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
+
+</htmlform>

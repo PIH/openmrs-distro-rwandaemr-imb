@@ -1,0 +1,202 @@
+<htmlform
+        formDescription="This form will be used by x-Ray Technicians to send results"
+        formEncounterType="cd4f9f32-6eb6-4cad-986b-00449593e7e0"
+        formName="Radiology results form"
+        formPublished="true"
+        formRetired="false"
+        formUuid="d9dd8fda-eb72-4579-a86e-e4c1f6bbb21f"
+        formVersion="1.0"
+        htmlformUuid="dc103ae0-e53d-4495-921a-861b97ca20ac">
+
+    <style type="text/css">
+        form fieldset {
+        display: block;
+        }
+
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
+        }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
+        width: 100%;
+        }
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        p input {
+        min-width: 5em;
+
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
+        }
+
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
+        display: block;
+        }
+    </style>
+
+    <!-- RADIOLOGY  FORM -->
+    <postSubmissionAction class="org.openmrs.module.mohbilling.automation.CreateBillOnHtmlFormSubmissionAction" />
+    <h1>RADIOLOGY RESULTS FORM</h1>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
+
+
+            <table border="2" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
+                    </td>
+                    <td>
+                        Health Facility:
+                        <encounterLocation id="location" default="GlobalProperty:billing.defaultLocation" />
+                    </td>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </section>
+
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="RADIOLOGY RESULTS">
+        <div class="section-container">
+
+            <fieldset>
+                <legend>
+                    <b>
+                        <font color="red">RADIOGRAPHER'S COMMENTS: EXPOSURE FACTORS:</font>
+                    </b>
+                </legend>
+                <p>
+                    <label for="">Radiology Finding: </label>
+                    <obs cols="80" conceptId="3cdd0da6-26fe-102b-80cb-0017a47871b2" rows="3" style="textarea" />
+                </p>
+                <p>
+                    <label for="">Echograph Finding:</label>
+                    <obs cols="80" conceptId="8d8597b4-0b54-4bc1-a35c-fa06d80e7a2b" rows="3" style="textarea" />
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>
+                    <b>
+                        <font color="green">ATTACH IMAGE</font>
+                    </b>
+                </legend>
+                <p>
+                    <obs conceptId="3d47a038-c74a-4246-a0aa-40a0db014fe7" />
+                </p>
+                <p>
+                    <obs conceptId="930257d0-6ee2-451c-bef3-a1e7c20ff5ff" />
+                </p>
+                <p>
+                    <obs conceptId="c80acf00-6be0-4d41-908b-78995fd183ca" />
+                </p>
+            </fieldset>
+        </div>
+    </section>
+
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
+
+
+</htmlform>

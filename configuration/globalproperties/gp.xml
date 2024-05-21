@@ -8,4 +8,12 @@
         </globalProperty>
 
     </globalProperties>
+    <globalProperties>
+
+        <!-- EMR API -->
+        <globalProperty>
+            <property>emr.concept.diagnosisSetOfSets</property>
+            <value>f5ba47a8-c124-4fc9-9da7-598e7455efd6</value>
+        </globalProperty>
+    </globalProperties>
 </config>

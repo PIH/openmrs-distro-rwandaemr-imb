@@ -15,9 +15,10 @@ d44538a8-5e3f-41c1-94c5-408b43e16874,Task: Edit Patient Demographics,Privilege t
 239a549a-2e1f-45b5-8345-5fa383f48a3e,Task: Make an internal transfer,This will allow clinician to have access on internal form
 3ddd2246-d813-422a-81bf-bb59d589a127,Task: Make the discharge on reference application,Make the patient discharge using a form
 34eaa179-419b-42c5-9424-b3bb824568cf,App: coreapps.diagnoses,Allow the user to view diagnoses extension on patient dashboard
-32cd0b55-150d-4d03-873b-7588275ae6c6,App: coreapps.obsGraph,Allow the user to view weight graph on patient's dashboard
-11fbe54c-146f-423c-a54f-349d3f2f47a0,App: coreapps.mostRecentVitals,Allow the user to view recent vitals on patient's dashboard
-3c180ae0-5533-4c3c-af71-240bf9d272ce,App: coreapps.attachments,Allow the user to view attachments on patient's dashboard
-8c828e17-77b1-4577-baaf-48f3d08a8e12,App: coreapps.allergies,Allow the user to view allergies on patient's dashboard
-fa4f3105-9cd3-4bf0-adb1-79baa197971e,View Growth Charts monitoring,Allow the user to view patient's growth chart monitoring
-
+32cd0b55-150d-4d03-873b-7588275ae6c6,App: coreapps.obsGraph,Allow the user to view weight graph on patient dashboard
+11fbe54c-146f-423c-a54f-349d3f2f47a0,App: coreapps.mostRecentVitals,Allow the user to view recent vitals on patient dashboard
+3c180ae0-5533-4c3c-af71-240bf9d272ce,App: coreapps.attachments,Allow the user to view attachments on patient dashboard
+8c828e17-77b1-4577-baaf-48f3d08a8e12,App: coreapps.allergies,Allow the user to view allergies on patient dashboard
+fa4f3105-9cd3-4bf0-adb1-79baa197971e,View Growth Charts monitoring,Allow the user to view patient growth chart monitoring
+1fc2dd5e-c44d-4366-a57e-705e0a005979,App: coreapps.systemAdministration,App: coreapps.systemAdministration
+d44538a8-5e3f-41c1-94c5-408b43e16874,Task: Edit Patient Demographics,Privilege to edit patient demographics through ref app

@@ -1,8 +1,8 @@
 <htmlform
 		htmlformUuid="412f19e4-deff-482f-a6f4-99f828046275"
 		formUuid="51563eef-17a4-4bba-9141-57f4dca3bd00"
-		formName="Auto IPD consultation"
-		formDescription="Auto IPD consultation"
+		formName="Consultation Form"
+		formDescription="Consultation Form"
 		formVersion="1.0"
 		formEncounterType="75caca4e-33ca-4b0a-aa63-5ed29f3000f0"
 		formPublished="true"

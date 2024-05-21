@@ -1,110 +1,238 @@
-<htmlform 
-	htmlformUuid="fef6d9c5-14d6-44b6-b23a-c05bdf367922" 
-	formUuid="1df78f57-990d-46a7-aa9b-9a992d32ea57" 
-	formName="NCD - Patient Follow-up Outcome" 
-	formDescription="Used when a patient has been contacted due to missing a visit" 
-	formVersion="1.0" 
-	formEncounterType="166da42f-4595-445c-8f8a-f815fe9a47ec" 
-	formPublished="false" 
-	formRetired="false"
+<htmlform
+		htmlformUuid="fef6d9c5-14d6-44b6-b23a-c05bdf367922"
+		formUuid="1df78f57-990d-46a7-aa9b-9a992d32ea57"
+		formName="NCD - Patient Follow-up Outcome"
+		formDescription="Used when a patient has been contacted due to missing a visit"
+		formVersion="1.0"
+		formEncounterType="166da42f-4595-445c-8f8a-f815fe9a47ec"
+		formPublished="false"
+		formRetired="false"
 > <!--
 	  NCD - Patient Follow-up Outcome
 		Author:  
 		Builder: LKellett
 		started on Jan 17, 2013		
 	-->
-<style>
-.formName {
-	background-color: #e0e0ff;
-}
+	<style>
+		.field-error {
+		color: #ff6666;
+		font-size: 1.1em;
+		display: block;
+		}
 
-.section {
-	border: 1px solid #660099;
-	width: 99%;
-	padding: 2px;
-	text-align: left;
-	margin-bottom: 10px;
-}
+		form fieldset {
+		display: block;
+		}
 
-.sectionHeader {
-	background-color:#660099;
-	color: white;
-	display: block;
-	padding: 2px;
-	font-weight: bold;
-}
+		.family-history-item .label {
+		display: inline-block;
+		width: 250px;
+		}
 
-table.symptoms th {
-	text-align: right;
-}
+		.family-history-item .relative {
+		display: inline-block;
+		width: 120px;
+		}
 
-th.subheader {
-	background-color: #8FABC7;
-	color: white
-}
+		.section-header {
+		margin-top: 1.5em;
+		}
 
-td {
-	vertical-align: top;
-}
+		.past-medical-history-item {}
+
+		.past-medical-history-item input[type=checkbox] {
+		float: none;
+		vertical-align: middle;
+		}
+
+		.past-medical-history-item input[type=text] {
+		min-width: 200px;
+		display: inline !important;
+		vertical-align: middle;
+		padding: 1px 10px;
+		}
+
+		.past-medical-history-item>span,
+		.past-medical-history-item>label {
+		display: inline !important;
+		vertical-align: middle;
+		}
+
+		.two-columns {
+		column-count: 2;
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		}
+
+		.three-columns {
+		column-count: 3;
+		-webkit-column-count: 3;
+		-moz-column-count: 3;
+		}
+
+		p.radio>* {
+		display: inline;
+		float: none !important;
+		min-width: initial;
+		}
+
+		.section-container {
+		background: #F2F2F2;
+		box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+		padding: 10px 5px 10px 15px;
+		line-height: 1.5em;
+		/*add this for vertical spacing between elements*/
+		}
+
+		.section-container-color {
+		background: #F2F2F2;
+		box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+		padding: 10px 5px 10px 15px;
+		line-height: 1.5em;
+		/*add this for vertical spacing between elements*/
+		}
+
+		.section-container input[type="checkbox"] {
+		margin: 0px 5px;
+		/*changed values to vertical, horizontal*/
+		top: 5px;
+		/*added to offset the checkbox position to line up*/
+		}
+
+		.section-container label {
+		/*new definition to override labels inside section-containers*/
+		margin: 0px;
+		}
+
+		.section {
+		width: 100%;
+		}
+
+		.div {
+		float: left;
+		}
+
+		form input[type="radio"],
+		.form input[type="radio"] {
+		float: none;
+		display: inline-block;
+		}
+
+		.side-by-side label {
+		display: inline-block;
+		}
+
+		.date-one-line {
+		display: flex;
+		}
+
+		.date-one-line label {
+		align-self: center;
+		margin-right: 1em;
+		}
+
+		.date-one-line span {
+		display: flex;
+		}
+
+		.hasDatepicker {
+		min-width: 120px;
+		margin-top: 0px;
+		}
+
+		.hfe-hours,
+		.hfe-minutes,
+		.hfe-seconds {
+		width: 70px;
+		min-width: 70px;
+		margin: 0px 10px 0px 10px;
+		}
+
+		.five-columns,
+		.four-columns,
+		.three-columns,
+		.two-columns {
+		display: table;
+		height: 100%;
+		width: 100%;
+		}
+
+		.two-columns>div {
+		display: table-cell;
+		width: 50%;
+		}
+
+		.three-columns>div {
+		display: table-cell;
+		width: 33%;
+		}
+
+		.four-columns>div {
+		display: table-cell;
+		width: 25%;
+		}
+
+		.five-columns>div {
+		display: table-cell;
+		width: 20%;
+		}
+
+		.small-input input {
+		min-width: 5em;
+		}
+
+		.flexView {
+		display: flex;
+		}
+	</style>
 
 
+	<h2>NCD Patient Follow-up Outcome</h2>
 
-div.paddedTable span {
-	padding-right: 20px;
-}
+	<section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+		<div class="section-container">
 
-.indented {
-	padding-left: 20pt;
-	padding-right: 20pt;
-}
 
-.bigIndent {
-	padding-left: 40pt;
-	padding-right: 10pt;
-}
+			<table border="2" cellspacing="0" cellpadding="6" width="100%">
+				<tr>
+					<td>
+						Date:
+						<encounterDate default="today" />
+					</td>
+					<td>
+						Health Facility:
+						<encounterLocation default="GlobalProperty:billing.defaultLocation" />
+					</td>
+					<td>
+						Provider:
+						<encounterProvider default="currentUser" />
+					</td>
+				</tr>
+			</table>
+		</div>
+	</section>
 
-.newpage {
-	color: #8FABC7;
-	font-weight: bold;
-}
-table{
-border-collapse:collapse;
-}
+	<section sectionTag="fieldset" headerTag="legend">
+		<div class="section-container">
+			<p class="date-one-line">
 
-</style>
+				<obs conceptId="3ce94df0-26fe-102b-80cb-0017a47871b2" labelText="Next scheduled visit:" allowFutureDates="true"/>
+			</p>
+		</div>
+	</section>
 
-<section  headerLabel="NCD Patient Follow-up Outcome">
-</section>
-<section>
 
-<table border="0" cellspacing="0" cellpadding="6" width="100%">
-	<tr>
-		<td><b> IMB ID: <lookup class="value"
-					expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> </b></td>
-		<td>Date: <encounterDate default="today" /></td>
-	</tr>
-	<tr>
-		<td>Nom / Last name: <lookup class="value"
-				expression="patient.personName.familyName" /></td>
-		<td>Prénom/ First name: <lookup class="value"
-				expression="patient.personName.givenName" /></td>
-	</tr>
-	<tr>
-		<td>Clinique / Clinic: <encounterLocation /> </td>
-		<td>Clinicien/Provider:<encounterProvider /></td>
-	</tr>
-</table>
-</section>
+	<ifMode mode="VIEW" include="false">
+		<div id="buttons">
 
-<section>
-<table border="0" cellspacing="0" cellpadding="6" width="100%">
-	<tr>
-    	<td colspan="2"><obs conceptId="3ce94df0-26fe-102b-80cb-0017a47871b2" labelText="Next scheduled visit:" allowFutureDates="true"/></td>           
-    </tr>
-</table>
-</section>
-
- 
-<submit />
+			<button id="submit" class="submitButton confirm right">
+				<uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+											style="display: none; margin-left: 10px;"></i>
+			</button>
+			<button id="cancel" type="button" class="cancel">
+				<uimessage code="emr.cancel" />
+			</button>
+		</div>
+	</ifMode>
 
 </htmlform>

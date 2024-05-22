@@ -22,6 +22,23 @@
         @Specimen_Code@ = 16cd65e3-45af-4291-88fd-fe4d91847e4f
         @Failed_results@ = 3b989534-ca6b-4bef-b99c-cd8397b1cdbe
         @RETURN_VISIT_DATE@ = 3ce94df0-26fe-102b-80cb-0017a47871b2
+        @HPV_31@ = 198b9d57-3485-44d9-a217-854f54b0fa71
+        @HPV_33@ = 8447c8d5-2b25-4493-a73b-0260eba89a59
+        @HPV_35@ = cd560cd5-aa27-4bee-af53-34bd25085a04
+        @HPV_39@ = 65488086-9214-4023-ae07-9645d02fa072
+        @HPV_45@ = e25fe88d-807c-460f-9af6-5014c0b34215
+        @HPV_51@ = abce5039-0895-4086-8ca3-20c9c20841ce
+        @HPV_52@ = 2470fab8-d2ac-4fa9-9339-53459d337c5a
+        @HPV_53@ = 4b1380c7-2a04-4b2c-89df-05458cb4217f
+        @HPV_56@ = fa898d97-dd36-44e0-9fbe-f217a5560f9d
+        @HPV_58@ = bd7ef4b1-c84b-4d1b-9771-5cf5aa55d7f6
+        @HPV_59@ = 8d166674-9325-436d-95c6-a8321692496c
+        @HPV_66@ = 523b0f10-91eb-43de-bcc3-f1594929b514
+        @HPV_68@ = 3ca76719-dc99-42b7-842c-570d0dc55b8c
+        @HPV_73@ = 80ed3ab9-5989-429c-9754-9a1a691ff8bf
+        @HPV_82@ = 4ad7e1b2-0444-4f97-9e73-f24b7298c990
+        @Other_Sample_ID_code@ = 90c2ef4d-e4f3-4ab1-80b8-856dbf1b90e2
+
 
     </macros>
 
@@ -391,7 +408,7 @@
                         id="encounterLocation" />
                 </td>
                 <td>Provider:<encounterProvider id="encounterProvider"
-                                                default="currentUser"/>
+                                                role="Provider" default="currentUser"/>
                 </td>
 
             </tr>
@@ -409,6 +426,24 @@
                     <!--                               data-concept="16cd65e3-45af-4291-88fd-fe4d91847e4f^Specimen Code^99DCT">-->
                     <obs id="specimenCode" conceptId="$@Specimen_Code@" required="true"/>
                     (Fosaid/year(e.g 23 0r 24)/patient number in register)
+
+                    <br/>
+                    <br/>
+                </td>
+            </tr>
+            <tr>
+                <td>Other sample code</td>
+                <td>
+                    <obs id="specimenCode" conceptId="$@Other_Sample_ID_code@" />
+
+<!--                    <label>-->
+<!--                        Other sample code-->
+<!--                    </label>-->
+<!--                    <br/>-->
+<!--                    <label class="font-normal">-->
+<!--                        <input id="obs.OtherSampleIDCode" name="obs.OtherSampleIDCode" type="text"-->
+<!--                               data-concept="90c2ef4d-e4f3-4ab1-80b8-856dbf1b90e2^Other Sample ID code^99DCT">-->
+<!--                    </label>-->
 
                 </td>
             </tr>
@@ -446,7 +481,23 @@
                         If positive,specify
                         <obs conceptId="$@HPV_positive_Type@" answerConceptId="$@HPV_16@" answerLabel="HPV 16" style="checkbox"/>
                         <obs conceptId="$@HPV_positive_Type@" answerConceptId="$@HPV_18@" answerLabel="HPV 18" style="checkbox"/>
+                        <obs conceptId="$@HPV_positive_Type@" answerConceptId="$@HPV_31@" answerLabel="HPV 31" style="checkbox"/>
+                        <obs conceptId="$@HPV_positive_Type@" answerConceptId="$@HPV_33@" answerLabel="HPV 33" style="checkbox"/>
+                        <obs conceptId="$@HPV_positive_Type@" answerConceptId="$@HPV_35@" answerLabel="HPV 35" style="checkbox"/>
+                        <obs conceptId="$@HPV_positive_Type@" answerConceptId="$@HPV_39@" answerLabel="HPV 39" style="checkbox"/>
+                        <obs conceptId="$@HPV_positive_Type@" answerConceptId="$@HPV_45@" answerLabel="HPV 45" style="checkbox"/>
+                        <obs conceptId="$@HPV_positive_Type@" answerConceptId="$@HPV_51@" answerLabel="HPV 51" style="checkbox"/>
+                        <obs conceptId="$@HPV_positive_Type@" answerConceptId="$@HPV_52@" answerLabel="HPV 52" style="checkbox"/>
+                        <obs conceptId="$@HPV_positive_Type@" answerConceptId="$@HPV_53@" answerLabel="HPV 53" style="checkbox"/>
+                        <obs conceptId="$@HPV_positive_Type@" answerConceptId="$@HPV_56@" answerLabel="HPV 56" style="checkbox"/>
+                        <obs conceptId="$@HPV_positive_Type@" answerConceptId="$@HPV_58@" answerLabel="HPV 58" style="checkbox"/>
+                        <obs conceptId="$@HPV_positive_Type@" answerConceptId="$@HPV_59@" answerLabel="HPV 59" style="checkbox"/>
+                        <obs conceptId="$@HPV_positive_Type@" answerConceptId="$@HPV_66@" answerLabel="HPV 66" style="checkbox"/>
+                        <obs conceptId="$@HPV_positive_Type@" answerConceptId="$@HPV_68@" answerLabel="HPV 68" style="checkbox"/>
+                        <obs conceptId="$@HPV_positive_Type@" answerConceptId="$@HPV_73@" answerLabel="HPV 73" style="checkbox"/>
+                        <obs conceptId="$@HPV_positive_Type@" answerConceptId="$@HPV_82@" answerLabel="HPV 82" style="checkbox"/>
                         <obs conceptId="$@HPV_positive_Type@" answerConceptId="$@Other_HR_HPV@" answerLabel="Other HR HPV" style="checkbox"/>
+
                     </span>
                 </td>
             </tr>

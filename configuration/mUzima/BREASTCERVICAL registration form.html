@@ -203,7 +203,7 @@
                     <option value="F">Female</option>
                 </select>
             </div>
-            <div class="form-group">
+            <div class="form-group"  id="birthdate_type_div">
                 <label for="tmp.birthdate_type">Will Record Date of Birth... <span class="required">*</span></label>
                 <select class="form-control" name="tmp.birthdate_type" id="tmp.birthdate_type" required="required">
                     <option value="">...</option>
@@ -393,6 +393,9 @@
         });
         dobType.trigger('change');
 
+        if ($('#tmp\\.birthdate_type').val() == '' && $('#patient\\.birth_date').val() != '' && $('#patient\\.birthdate_estimated').val() == 'true') {
+		        $('#birthdate_type_div').hide();
+        }
 
       document.setupAutoCompleteData('encounter\\.location_id');
 

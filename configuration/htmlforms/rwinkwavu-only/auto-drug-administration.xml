@@ -1,13 +1,6 @@
-<htmlform
-htmlformUuid="9d558488-71bb-4a4f-b10e-e2c364f1b338" 
-formUuid="a2c7d231-e9b1-415c-808f-94c27b917ec9" 
-formName="Auto Drug administration" 
-formDescription="Drug administration" 
-formVersion="1.0" 
-formEncounterType="46212022-c447-462f-a85e-65f8d6fac788" 
-formPublished="true" 
-formRetired="false"
->
+<htmlform htmlformUuid="9d558488-71bb-4a4f-b10e-e2c364f1b338" formUuid="a2c7d231-e9b1-415c-808f-94c27b917ec9"
+          formName="Auto Drug administration" formDescription="Drug administration" formVersion="1.0"
+          formEncounterType="46212022-c447-462f-a85e-65f8d6fac788" formPublished="true" formRetired="false">
 
     <macros>
         paperFormId = Flow-DM-RW.V2.0.akb.15May09
@@ -25,302 +18,372 @@ formRetired="false"
 
     </macros>
     <style>
-        th.tableHeader {
-        background-color: #009d8e;
-        color: #FFFFFF;
-        font-size: 16px;
-        text-align: left;
-        }
-        .sectionHeader { background-color: #009d8e;
-        color: white; display: block; padding: 2px; font-weight:bold; }
-        ul {
-        list-style-type: square;
-        font-family: Verdana, Arial, Helvetica, sans-serif;
-        font-size: 11px;
-        }
-
-        tr.spaceUnder>td {
-        padding-bottom: 1em;
-        }
-
-        td {
-        font-size: 15px;
-        }
-
-        #container {
-        position: relative;
-        margin: auto;
-        width: 1400px;
-        height: auto;
-        }
-
-        @media print {
-        #container {
-        display: none;
-        }
-
-        #printArea {
+        form fieldset {
         display: block;
         }
 
-        #userBar {
-        display: none;
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
         }
 
-        #banner {
-        display: none;
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
         }
 
-        #footer {
-        display: none;
+        .section-header {
+        margin-top: 1.5em;
         }
 
-        #htmlFormEntryBanner {
-        display: none;
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
         }
 
-        .error {
-        display: none;
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
         }
 
-        .lables {
-        width: 200px;
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
         }
 
-        table {
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
         width: 100%;
         }
 
-        table,td,th {
-        border: 1px solid black;
-        border-collapse: collapse;
+        .div {
+        float: left;
         }
 
-        th {
-        text-align: left;
-        background-color: #D9D9D9;
-        font-size: 10px;
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
         }
 
-        td {
-        font-size: 10px;
+        .side-by-side label {
+        display: inline-block;
         }
 
-        .selectedCancerStagingKeys {
-        page-break-before: always;
-        border: 0px;
+        .date-one-line {
+        display: flex;
         }
 
-        table.selectedCancerStagingKeys td {
-        border: 0px;
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
         }
 
-        #signature {
-        border: none;
-        }
-        #signature td {
-        border: none;
-        }
+        .date-one-line span {
+        display: flex;
         }
 
-        @media screen {
-        table {
-        border: 1px solid #DFDFDF;
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
         width: 100%;
-        border-color: #009d8e;
         }
 
-        #container {
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
+        }
+
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
         display: block;
         }
-
-        #printArea {
-        display: none;
-        }
-        }
-
     </style>
+    <h1>DRUG ADMINISTRATION FORM</h1>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
 
-    <section headerLabel="DRUG ADMINISTRATION FORM">
-        <table cellspacing="0" cellpadding="6" width="100%" style="background-color:AliceBlue">
-            <tr>
-                <td><img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left" height="65"></img>
-                    <b>REPUBLIC OF RWANDA<br/>MINISTRY OF HEALTH</b>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <b>
-                      Health Facility:  <encounterLocation default="GlobalProperty:billing.defaultLocation"/>
-                    </b><br/>
-                </td>
-                <td>
-                    <b>Date:
-                        <encounterDate default="today" allowTime="true" showTime="true"/>
-                    </b>
-                </td>
-            </tr>
-        </table>
-    </section>
 
-    <section headerLabel="Patient Information">
-        <table cellspacing="0" cellpadding="6" width="100%" style="background-color:AliceBlue">
-            <tr>
-                <td>
-                    Primary Care ID Type:
-                    <lookup class="value" expression="patientIdentifiers.get(&quot;Primary Care ID Type&quot;)"/>
-                    <br/>
-                </td>
-                <td>
-                    Nom / Last name:
-                    <lookup class="value" expression="patient.personName.familyName"/>
-                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                </td>
-                <td>
-                    Prénom/ First name:
-                    <lookup class="value" expression="patient.personName.givenName"/>
-                    <br/>
-                </td>
-                <td>
-                    Sexe/Sex:
-                    <lookup class="value" expression="patient.Gender"/>
-                    <br/>
-                </td>
-                <td>
-                    Date de naissance/Date of birth:
-                    <lookup class="value" expression="patient.birthdate"/> <b>age:</b> <font color="blue"><lookup expression="patient.age"/></font></td>
-                     <td> <b> Weight:</b> <font color="red"><lookup expression="fn.latestObs(5089).getValueNumeric()"/></font></td>
-            </tr>
-            <tr>
-                <td class="lblcolor">Dernier Detail de Treatment </td>
-                <td><font color="red"><lookup expression="fn.latestObs(1364).getValueText()"/></font></td>
-                <td><font color="red"><lookup expression="fn.latestObs(3974).getValueDate()"/></font></td>
-            </tr>
-        </table>
+            <table border="2" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
+                    </td>
+                    <td>
+                        Health Facility:
+                        <encounterLocation id="location" default="GlobalProperty:billing.defaultLocation" />
+                    </td>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
+                    </td>
+                </tr>
+            </table>
+        </div>
     </section>
 
 
-    <section headerLabel="LISTE DES MEDICAMENTS/ MEDICATION LIST">
-        <table cellspacing="0" cellpadding="6" width="100%" style="background-color:AliceBlue">
-            <tr class="strong">
-                <th>Drugs Administrated</th>
-                <th>Frequancy</th>
-                <th>Route</th>
-            </tr>
-            <obsgroup groupingConceptId="f1c30c00-d794-4475-ae03-295a3d94764f">
-                <tr>
-                    <td>
-                        <!-- Drud -->
-                        1. R/
-                        <obs conceptId="5e152a81-8635-41d6-aef2-2527a5f584f3" style="textarea" rows="3" cols="30"/>
-                    </td>
-                    <td>
-                        <!-- Frequancy -->
-                        <obs conceptId="2ebd3f49-f4cc-4dc9-b5bc-cb71fec8e3ff" style="textarea" rows="3" cols="30"/>
-                    </td>
-                  <!--  <td>-->
-                        <!-- Date -->
-                       <!-- <obs conceptId="99846f06-761c-487b-bddf-762f241c4946" showTime="true"  allowTime="true"/>-->
-                    <!--</td>-->
-                    <td>
-                        <!-- Route -->
-                        <obs conceptId="1e0eaaf0-3452-4bbf-8f05-420751d719d8" />
-                    </td>
-                </tr>
-            </obsgroup>
-            <obsgroup groupingConceptId="2a415d0a-4095-450e-bec3-a9afa624840c">
 
-                <tr>
-                    <td>
-                        <!-- Drud -->
-                        2. R/
-                        <obs conceptId="5e152a81-8635-41d6-aef2-2527a5f584f3" style="textarea" rows="3" cols="30"/>
-                    </td>
-                    <td>
-                        <!-- Frequancy -->
-                        <obs conceptId="2ebd3f49-f4cc-4dc9-b5bc-cb71fec8e3ff" style="textarea" rows="3" cols="30"/>
-                    </td>
-                   
-                    <td>
-                        <!-- Route -->
-                        <obs conceptId="1e0eaaf0-3452-4bbf-8f05-420751d719d8" />
-                    </td>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title"
+             headerCode="LISTE DES MEDICAMENTS/ MEDICATION LIST">
+        <div class="section-container">
+            <table border="1" >
+                <tr class="strong">
+                    <th>Drugs Administrated</th>
+                    <th>Frequency</th>
+                    <th>DateTime</th>
+                    <th>Route</th>
                 </tr>
-            </obsgroup>
-            <obsgroup groupingConceptId="2a415d0a-4095-450e-bec3-a9afa624840c">
 
-                <tr>
-                    <td>
-                        <!-- Drud -->
-                        3. R/
-                        <obs conceptId="5e152a81-8635-41d6-aef2-2527a5f584f3" style="textarea" rows="3" cols="30"/>
-                    </td>
-                    <td>
-                        <!-- Frequancy -->
-                        <obs conceptId="2ebd3f49-f4cc-4dc9-b5bc-cb71fec8e3ff" style="textarea" rows="3" cols="30"/>
-                    </td>
-                
-                    <td>
-                        <!-- Route -->
-                        <obs conceptId="1e0eaaf0-3452-4bbf-8f05-420751d719d8" />
-                    </td>
-                </tr>
-            </obsgroup>
-            <obsgroup groupingConceptId="2a415d0a-4095-450e-bec3-a9afa624840c">
+                <obsgroup groupingConceptId="2a415d0a-4095-450e-bec3-a9afa624840c">
 
-                <tr>
-                    <td>
-                        <!-- Drud -->
-                        4. R/
-                        <obs conceptId="5e152a81-8635-41d6-aef2-2527a5f584f3" style="textarea" rows="3" cols="30"/>
-                    </td>
-                    <td>
-                        <!-- Frequancy -->
-                        <obs conceptId="2ebd3f49-f4cc-4dc9-b5bc-cb71fec8e3ff" style="textarea" rows="3" cols="30"/>
-                    </td>
-                  
-                    <td>
-                        <!-- Route -->
-                        <obs conceptId="1e0eaaf0-3452-4bbf-8f05-420751d719d8" />
-                    </td>
-                </tr>
-            </obsgroup>
- <obsgroup groupingConceptId="2a415d0a-4095-450e-bec3-a9afa624840c">
+                    <tr>
+                        <td class="small-input">
+                            <!-- Drud -->
+                            1. R/
+                            <obs conceptId="5e152a81-8635-41d6-aef2-2527a5f584f3" size="20" />
+                        </td>
+                        <td class="small-input">
+                            <!-- Frequancy -->
+                            <obs conceptId="2ebd3f49-f4cc-4dc9-b5bc-cb71fec8e3ff" size="10" />
+                        </td>
+                        <td class="date-one-line" colspan="3">
+                            <!-- Date -->
+                            <obs conceptId="249b6f2a-3f58-45ca-8a8f-a758ebfc9682" allowFutureDates="true" />
+                        </td>
+                        <td>
+                            <!-- Route -->
+                            <obs conceptId="1e0eaaf0-3452-4bbf-8f05-420751d719d8" />
+                        </td>
+                    </tr>
+                </obsgroup>
+                <obsgroup groupingConceptId="2a415d0a-4095-450e-bec3-a9afa624840c">
 
-                <tr>
-                    <td>
-                        <!-- Drud -->
-                        5. R/
-                        <obs conceptId="5e152a81-8635-41d6-aef2-2527a5f584f3" style="textarea" rows="3" cols="30"/>
-                    </td>
-                    <td>
-                        <!-- Frequancy -->
-                        <obs conceptId="2ebd3f49-f4cc-4dc9-b5bc-cb71fec8e3ff" style="textarea" rows="3" cols="30"/>
-                    </td>
-                   
-                    <td>
-                        <!-- Route -->
-                        <obs conceptId="1e0eaaf0-3452-4bbf-8f05-420751d719d8" />
-                    </td>
-                </tr>
-            </obsgroup>
-        </table>
+                    <tr>
+                        <td class="small-input">
+                            <!-- Drud -->
+                            2. R/
+                            <obs conceptId="5e152a81-8635-41d6-aef2-2527a5f584f3" size="20" />
+                        </td>
+                        <td class="small-input">
+                            <!-- Frequancy -->
+                            <obs conceptId="2ebd3f49-f4cc-4dc9-b5bc-cb71fec8e3ff" size="10" />
+                        </td>
+                        <td class="date-one-line" colspan="3">
+                            <obs conceptId="249b6f2a-3f58-45ca-8a8f-a758ebfc9682" allowFutureDates="true" />
+                        </td>
+                        <td>
+                            <!-- Route -->
+                            <obs conceptId="1e0eaaf0-3452-4bbf-8f05-420751d719d8" />
+                        </td>
+                    </tr>
+                </obsgroup>
+                <obsgroup groupingConceptId="2a415d0a-4095-450e-bec3-a9afa624840c">
+
+                    <tr>
+                        <td class="small-input">
+                            <!-- Drud -->
+                            3. R/
+                            <obs conceptId="5e152a81-8635-41d6-aef2-2527a5f584f3" size="20" />
+                        </td>
+                        <td class="small-input">
+                            <!-- Frequancy -->
+                            <obs conceptId="2ebd3f49-f4cc-4dc9-b5bc-cb71fec8e3ff" size="10" />
+                        </td>
+                        <td class="date-one-line" colspan="3">
+                            <!-- Date -->
+                            <obs conceptId="249b6f2a-3f58-45ca-8a8f-a758ebfc9682" allowFutureDates="true" />
+                        </td>
+                        <td>
+                            <!-- Route -->
+                            <obs conceptId="1e0eaaf0-3452-4bbf-8f05-420751d719d8" />
+                        </td>
+                    </tr>
+                </obsgroup>
+                <obsgroup groupingConceptId="2a415d0a-4095-450e-bec3-a9afa624840c">
+
+                    <tr>
+                        <td class="small-input">
+                            <!-- Drud -->
+                            4. R/
+                            <obs conceptId="5e152a81-8635-41d6-aef2-2527a5f584f3" size="20" />
+                        </td>
+                        <td class="small-input">
+                            <!-- Frequancy -->
+                            <obs conceptId="2ebd3f49-f4cc-4dc9-b5bc-cb71fec8e3ff" size="10" />
+                        </td>
+                        <td class="date-one-line" colspan="3">
+                            <!-- Date -->
+                            <obs conceptId="249b6f2a-3f58-45ca-8a8f-a758ebfc9682" allowFutureDates="true" />
+                        </td>
+                        <td>
+                            <!-- Route -->
+                            <obs conceptId="1e0eaaf0-3452-4bbf-8f05-420751d719d8" />
+                        </td>
+                    </tr>
+                </obsgroup>
+                <obsgroup groupingConceptId="2a415d0a-4095-450e-bec3-a9afa624840c">
+
+                    <tr>
+                        <td class="small-input">
+                            <!-- Drud -->
+                            5. R/
+                            <obs conceptId="5e152a81-8635-41d6-aef2-2527a5f584f3" size="20" />
+                        </td>
+                        <td class="small-input">
+                            <!-- Frequancy -->
+                            <obs conceptId="2ebd3f49-f4cc-4dc9-b5bc-cb71fec8e3ff" size="10" />
+                        </td>
+                        <td class="date-one-line" colspan="3">
+                            <!-- Date -->
+                            <obs conceptId="249b6f2a-3f58-45ca-8a8f-a758ebfc9682" allowFutureDates="true" />
+                        </td>
+                        <td>
+                            <!-- Route -->
+                            <obs conceptId="1e0eaaf0-3452-4bbf-8f05-420751d719d8" />
+                        </td>
+                    </tr>
+                </obsgroup>
+                <obsgroup groupingConceptId="2a415d0a-4095-450e-bec3-a9afa624840c">
+
+                    <tr>
+                        <td class="small-input">
+                            <!-- Drud -->
+                            6. R/
+                            <obs conceptId="5e152a81-8635-41d6-aef2-2527a5f584f3" size="20" />
+                        </td>
+                        <td class="small-input">
+                            <!-- Frequancy -->
+                            <obs conceptId="2ebd3f49-f4cc-4dc9-b5bc-cb71fec8e3ff" size="10" />
+                        </td>
+                        <td class="date-one-line" colspan="3">
+                            <!-- Date -->
+                            <obs conceptId="249b6f2a-3f58-45ca-8a8f-a758ebfc9682" allowFutureDates="true" />
+                        </td>
+                        <td>
+                            <!-- Route -->
+                            <obs conceptId="1e0eaaf0-3452-4bbf-8f05-420751d719d8" />
+                        </td>
+                    </tr>
+                </obsgroup>
+            </table>
+        </div>
     </section>
 
 
-    <section headerLabel="APROVAL (Filled after Printing)">
-        <table cellspacing="0" cellpadding="6" width="100%" style="background-color:AliceBlue">
-            <tr>
-                <td>
-                    <strong>Provider:</strong>
-                    <encounterProvider default="currentUser"/>
-                </td>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="APROVAL (Filled after Printing)">
+        <div class="section-container">
+            <table cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        <strong>Provider:</strong>
+                        <encounterProvider default="currentUser" />
+                    </td>
 
-            </tr>
-        </table>
+                </tr>
+            </table>
+        </div>
     </section>
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
 
-    <center>
-        <submit/>
-    </center>
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
+
 </htmlform>

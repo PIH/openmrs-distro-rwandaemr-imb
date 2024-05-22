@@ -17,9 +17,10 @@
     "extensionPointId": "org.openmrs.module.authenticationui.loginPage.config",
     "type": "config",
     "extensionParams": {
-      "show-locations": false,
-      "require-location": false,
-      "allow-password-reset": false
+      "show-locations": true,
+      "require-location": true,
+      "allow-password-reset": true,
+      "welcome-message": "Welcome to Rwanda EMR"
     }
   }
 ]

@@ -1,0 +1,1411 @@
+<htmlform
+		htmlformUuid="412f19e4-deff-482f-a6f4-99f828046275"
+		formUuid="51563eef-17a4-4bba-9141-57f4dca3bd00"
+		formName="Consultation Form"
+		formDescription="Consultation Form"
+		formVersion="1.0"
+		formEncounterType="75caca4e-33ca-4b0a-aa63-5ed29f3000f0"
+		formPublished="true"
+		formRetired="false"
+>
+
+	<macros>
+		headerColor = #009d8e
+		fontOnHeaderColor = white
+		@SEXUALLY_TRANSMITTED_DISEASE_OTHER@ = 3cd9e838-26fe-102b-80cb-0017a47871b2
+		@SYMPTOM_PRESENT@ = 3cd95a58-26fe-102b-80cb-0017a47871b2
+		@Physiotheraphy_Assessment@ = d54a43f2-1049-49cf-beb3-e21c4c8a2823
+		@Traumatique@ = a616d68b-749a-49e0-af17-93a9947920a1
+		@Orthopedique@ = 62c43390-aa85-4350-980f-e5d210d2e7f8
+		@Rhumatisme@ = b465d7f2-24ec-4dfb-befd-6b0b28e4d4f3
+		@Systeme_Nerveux_Central@ = c5076a80-3e0a-4641-aa96-100a69838b63
+		@Systeme_Nerveux_Peripherique@ = 29395609-3205-4e90-9643-ec818d6e621c
+		@Affection_du_systeme_respiratoire@ = c1d8063f-a933-4de3-83fc-a3da12018aff
+		@Working_Environment@ = 32e98cd7-7eb7-4da4-9c2d-6bd99f572ecb
+		@Dizziness@ = f8df890b-3e19-4a5c-9fbc-8d1bf44a49b1
+		@Aggravating_factors@ = a20c19a1-007c-456f-a805-6fe9e1ec19d3
+		@Releasing_factors@ = 1a207968-710f-4768-ae0f-c6059940f027
+		@Joint_Status@ = a1635ebe-6d06-4a7c-841c-75156bd72d2b
+		@Sensation_Palpation@ = 791d7b76-169e-4979-a386-ed30cabf1e61
+		@Sensation_Palpation_deep@ = 4b994956-acd7-44f4-9733-224bf6027f14
+		@Sensation_Palpation_Superficial@ = 64e24208-3238-4041-8e82-13a1cbe7850b
+		@Muscle_status@ = 7f561e35-35f9-4b76-9200-d264451bafc8
+		@YES@ = 3cd6f600-26fe-102b-80cb-0017a47871b2
+		@NO@ = 3cd6f86c-26fe-102b-80cb-0017a47871b2
+		@Numero_d_une_dent@ = 87cfa842-03d1-497c-8c19-4ffed300329f
+		@Action_sur_une_dent@ = 0a24547e-36dc-426a-bb4a-fb3a93470022
+		@Examen_de_Dentition_Secondaire_construct@ = fe176631-0e46-4c9d-8267-94a44a4cc73b
+		@Temporomandibular_joint_TMJ_disorders@ = 4c2292c9-6728-4235-a9a6-64a81b34bd5e
+		@LYMPHNODS@ = 099b0d7c-1bc2-424a-b26a-851679f98cc3
+		@FACIAL_SKIN@ = a0055c0e-eef0-457f-975b-55ce69505c9b
+		@FACIAL_ASYMETRY@ = db13ecb7-27de-4074-8557-29e3f9abe9f9
+		@ORAL_TEST_OF_SOFT_TISSUE@ = ecb66fa2-212f-4a6f-9244-c4594264af27
+		@ORAL_TEST_OF_hARD_TISSUE@ = d1c86386-3dd8-4562-877a-668aec5d2e21
+		@Acuite_visuelle_Oeil_Droit@ = a838e4b3-1e27-4b42-a118-fcc6f8fc4526
+		@Acuite_visuelle_Oeil_Gauche@ = ddf867f1-7e98-4bf6-a52e-a3dd179c8d5a
+		@Paupiere@ = 7dd8bdbb-8b79-42e0-95e3-c69761dc3b51
+		@Conjoctive@ = b5d85e29-cfd0-4d79-a067-80c16dc83d65
+		@Cornee@ = db986b47-a20e-439c-ae88-20dcd5a77c08
+		@Chambre_anterieure@ = e34689e3-6b6c-4af6-a7c7-5fde2ad67f15
+		@Iris@ = 8ed3374f-a500-4f93-92f8-c9887d2dd3df
+		@Pupille@ = 1346ff7a-cd97-4e67-b39e-319205ca8a00
+		@Cristallin@ = 64ec929e-662e-4330-a872-03591fb9b4a6
+		@Fond_d_oeil@ = 9350d545-827a-4156-a515-051586b367c1
+		@Test_cylindrique_de_l_oeil_droit@ = d899a77d-4b9a-4d7c-91e9-e4b9a1db2cc3
+		@Axe_visuel_de_l_oeil_droit@ = 57828f2f-56f9-429a-93d8-42abce347119
+		@Test_spherique_de_l_oeil_gauche@ = a7bdea70-acca-45b1-a554-d5d0512194da
+		@Test_cylindrique_de_l_oeil_gauche@ = b7048443-541e-4622-99d8-9a6d6c53216f
+		@Axe_visuel_de_l_oeil_gauche@ = 93eeab43-88b9-4437-9740-46884a21da84
+		@Test_de_vision_de_pres@ = b69b7995-5d5d-4e0f-b9ea-7caeb9470ad8
+		@Test_spherique_de_l_oeil_droit@ = 941a7754-d43a-4b33-8ab8-9c49a76f470f
+		@Test_de_vision_de_loin@ = 98f2afd3-ab5a-4f3a-9954-712c1e072c79
+		@Examen_Bio-Microscopique_AV_OG@ = 16d2cc60-9b46-4ba4-94d8-01df5ce4fa5b
+		@PRIMARY_CARE_SERVICE_REQUESTED@ = 2cda28df-2fe7-42e0-bb2f-376c9f803537
+		@Consultation@ = d6dafc4b-9ad8-4467-94a9-0eca78648254
+		@Presumptive_diagnosis_or_Hypothesis@ =08dd5ecf-b381-47ea-a0f1-cd91a65505f7
+		@Primary_ICD_diagnosis@ = 2dce81f9-3874-4247-b441-6369ca0725c2
+		@OUTPATIENT_DIAGNOSIS_NON-CODED@ = a72c0d52-f25c-40f9-a2c1-1cbef67e2731
+		@Secondary_ICD_diagnosis@ = afb8006f-e7c4-45bd-82bd-16f6e4b4b51d
+
+	</macros>
+
+	<style>
+		.field-error {
+		color: #ff6666;
+		font-size: 1.1em;
+		display: block;
+		}
+		form fieldset {
+		display: block;
+		}
+
+		.family-history-item .label {
+		display: inline-block;
+		width: 250px;
+		}
+		.family-history-item .relative {
+		display: inline-block;
+		width: 120px;
+		}
+
+		.section-header {
+		margin-top: 1.5em;
+		}
+
+		.past-medical-history-item {
+		}
+
+		.past-medical-history-item input[type=checkbox] {
+		float: none;
+		vertical-align: middle;
+		}
+
+		.past-medical-history-item input[type=text] {
+		min-width: 200px;
+		display: inline !important;
+		vertical-align: middle;
+		padding: 1px 10px;
+		}
+
+		.past-medical-history-item > span, .past-medical-history-item > label {
+		display: inline !important;
+		vertical-align: middle;
+		}
+
+		.two-columns {
+		column-count: 2;
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		}
+		.three-columns {
+		column-count: 3;
+		-webkit-column-count: 3;
+		-moz-column-count: 3;
+		}
+
+		p.radio > * {
+		display: inline;
+		float: none !important;
+		min-width: initial;
+		}
+
+		.section-container {
+		background: #F2F2F2;
+		box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+		padding: 10px 5px 10px 15px;
+		line-height: 1.5em; /*add this for vertical spacing between elements*/
+		}
+
+		.section-container-color {
+		background: #F2F2F2;
+		box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+		padding: 10px 5px 10px 15px;
+		line-height: 1.5em; /*add this for vertical spacing between elements*/
+		}
+
+		.section-container input[type="checkbox"] {
+		margin: 0px 5px; /*changed values to vertical, horizontal*/
+		top:5px; /*added to offset the checkbox position to line up*/
+		}
+
+		.section-container label { /*new definition to override labels inside section-containers*/
+		margin: 0px;
+		}
+
+		.section {
+		width: 100%;
+		}
+		form input[type="radio"], .form input[type="radio"] {
+		float: none;
+		display: inline-block;
+		}
+		.side-by-side label {
+		display: inline-block;
+		}
+
+		#data-collection {
+		display: inline-block;
+		width: 58%;
+		vertical-align: top;
+		}
+
+		#encounter-diagnoses-target {
+		display: inline-block;
+		width: 40%;
+		vertical-align: top;
+		}
+
+		#encounter-diagnoses-app {
+		margin-bottom: 20px;
+		}
+	</style>
+
+
+
+	<script type="text/javascript">
+		//if (jQuery) {
+		var $hfe = jQuery.noConflict();
+
+		$hfe(document)
+		.ready(
+		function() {
+
+		/* This part handles Accordion Functionality */
+
+		// Hide all DIVs until they are called!
+		$hfe("#div1").hide();
+		$hfe("#div2").hide();
+		$hfe("#div3").hide();
+		$hfe("#div4").hide();
+		$hfe("#div5").hide();
+		$hfe("#div6").hide();
+		$hfe("#div7").hide();
+		$hfe("#div8").hide();
+		$hfe("#div9").hide();
+		$hfe("#div10").hide();
+		$hfe("#echographyId").hide();
+		$hfe("#stomatologyId").hide();
+		$hfe("#soinsInfirmiersId").hide();
+		$hfe("#chirurgieId").hide();
+		$hfe("#radioId").hide();
+		$hfe("#maternityId").hide();
+		$hfe("#ophtalmologyId").hide();
+		$hfe("#kinestherapyId").hide();
+		$hfe("#oxygenotherapyId").hide();
+
+
+		$hfe("#close1").click(function() {
+		$hfe("#div1").css('display', 'none');
+		$hfe("#tab_content1").css('display', 'none');
+		});
+		$hfe("#close2").click(function() {
+		$hfe("#div2").css('display', 'none');
+		$hfe("#tab_content2").css('display', 'none');
+		});
+		$hfe("#close3").click(function() {
+		$hfe("#div3").css('display', 'none');
+		$hfe("#tab_content3").css('display', 'none');
+		});
+
+		$hfe("#close4").click(function() {
+		$hfe("#div4").css('display', 'none');
+		$hfe("#tab_content4").css('display', 'none');
+		});
+
+		$hfe("#close5").click(function() {
+		$hfe("#div5").css('display', 'none');
+		$hfe("#tab_content5").css('display', 'none');
+		});
+
+		$hfe("#close6").click(function() {
+		$hfe("#div6").css('display', 'none');
+		$hfe("#tab_content6").css('display', 'none');
+		});
+
+		$hfe("#close7").click(function() {
+		$hfe("#div7").css('display', 'none');
+		$hfe("#tab_content7").css('display', 'none');
+		});
+
+		$hfe("#close8").click(function() {
+		$hfe("#div8").css('display', 'none');
+		$hfe("#tab_content8").css('display', 'none');
+		});
+
+		$hfe("#close9").click(function() {
+		$hfe("#div9").css('display', 'none');
+		$hfe("#tab_content9").css('display', 'none');
+		});
+
+		$hfe("#close10").click(function() {
+		$hfe("#div10").css('display', 'none');
+		$hfe("#tab_content10").css('display', 'none');
+		});
+
+		$hfe("#echographyCloseId").click(function() {
+		$hfe("#echographyId").hide();
+		$hfe("select[name=service]").val("0");
+		});
+		$hfe("#stomatologyCloseId").click(function() {
+		$hfe("#stomatologyId").hide();
+		$hfe("select[name=service]").val("0");
+		});
+		$hfe("#soinsInfirmiersCloseId").click(function() {
+		$hfe("#soinsInfirmiersId").hide();
+		$hfe("select[name=service]").val("0");
+		});
+		$hfe("#chirurgieCloseId").click(function() {
+		$hfe("#chirurgieId").hide();
+		$hfe("select[name=service]").val("0");
+		});
+		$hfe("#radioCloseId").click(function() {
+		$hfe("#radioId").hide();
+		$hfe("select[name=service]").val("0");
+		});
+		$hfe("#maternityCloseId").click(function() {
+		$hfe("#maternityId").hide();
+		$hfe("select[name=service]").val("0");
+		});
+		$hfe("#ophtalmologyCloseId").click(function() {
+		$hfe("#ophtalmologyId").hide();
+		$hfe("select[name=service]").val("0");
+		});
+		$hfe("#kinestherapyCloseId").click(function() {
+		$hfe("#kinestherapyId").hide();
+		$hfe("select[name=service]").val("0");
+		});
+		$hfe("#oxygenotherapyCloseId").click(function() {
+		$hfe("#oxygenotherapyId").hide();
+		$hfe("select[name=service]").val("0");
+		});
+
+		$hfe("#tab_content1").css('display', 'none');
+		$hfe("#tab_content2").css('display', 'none');
+		$hfe("#tab_content3").css('display', 'none');
+		$hfe("#tab_content4").css('display', 'none');
+		$hfe("#tab_content5").css('display', 'none');
+		$hfe("#tab_content6").css('display', 'none');
+		$hfe("#tab_content7").css('display', 'none');
+		$hfe("#tab_content8").css('display', 'none');
+		$hfe("#tab_content9").css('display', 'none');
+		$hfe("#tab_content10").css('display', 'none');
+
+		$hfe("#tab1").click(function() {
+
+		$hfe("#div1").show();
+		$hfe("#div2").hide();
+		$hfe("#div3").hide();
+		$hfe("#div4").hide();
+		$hfe("#div5").hide();
+		$hfe("#div6").hide();
+		$hfe("#div7").hide();
+		$hfe("#div8").hide();
+		$hfe("#div9").hide();
+		$hfe("#div10").hide();
+		$hfe("#tab_content1").css('display', 'block');
+		$hfe("#tab_content2").css('display', 'none');
+		$hfe("#tab_content3").css('display', 'none');
+		$hfe("#tab_content4").css('display', 'none');
+		$hfe("#tab_content5").css('display', 'none');
+		$hfe("#tab_content6").css('display', 'none');
+		$hfe("#tab_content7").css('display', 'none');
+		$hfe("#tab_content8").css('display', 'none');
+		$hfe("#tab_content9").css('display', 'none');
+		$hfe("#tab_content10").css('display', 'none');
+		});
+
+		$hfe("#tab2").click(function() {
+
+		$hfe("#div2").show();
+		$hfe("#div1").hide();
+		$hfe("#div3").hide();
+		$hfe("#div4").hide();
+		$hfe("#div5").hide();
+		$hfe("#div6").hide();
+		$hfe("#div7").hide();
+		$hfe("#div8").hide();
+		$hfe("#div9").hide();
+		$hfe("#div10").hide();
+		$hfe("#tab_content2").css('display', 'block');
+		$hfe("#tab_content1").css('display', 'none');
+		$hfe("#tab_content3").css('display', 'none');
+		$hfe("#tab_content4").css('display', 'none');
+		$hfe("#tab_content5").css('display', 'none');
+		$hfe("#tab_content6").css('display', 'none');
+		$hfe("#tab_content7").css('display', 'none');
+		$hfe("#tab_content8").css('display', 'none');
+		$hfe("#tab_content9").css('display', 'none');
+		$hfe("#tab_content10").css('display', 'none');
+		});
+
+		$hfe("#tab3").click(function() {
+
+		$hfe("#div3").show();
+		$hfe("#div1").hide();
+		$hfe("#div2").hide();
+		$hfe("#div4").hide();
+		$hfe("#div5").hide();
+		$hfe("#div6").hide();
+		$hfe("#div7").hide();
+		$hfe("#div8").hide();
+		$hfe("#div9").hide();
+		$hfe("#div10").hide();
+		$hfe("#tab_content3").css('display', 'block');
+		$hfe("#tab_content1").css('display', 'none');
+		$hfe("#tab_content2").css('display', 'none');
+		$hfe("#tab_content4").css('display', 'none');
+		$hfe("#tab_content5").css('display', 'none');
+		$hfe("#tab_content6").css('display', 'none');
+		$hfe("#tab_content7").css('display', 'none');
+		$hfe("#tab_content8").css('display', 'none');
+		$hfe("#tab_content9").css('display', 'none');
+		$hfe("#tab_content10").css('display', 'none');
+		});
+
+		$hfe("#tab4").click(function() {
+
+		$hfe("#div4").show();
+		$hfe("#div1").hide();
+		$hfe("#div2").hide();
+		$hfe("#div3").hide();
+		$hfe("#div5").hide();
+		$hfe("#div6").hide();
+		$hfe("#div7").hide();
+		$hfe("#div8").hide();
+		$hfe("#div9").hide();
+		$hfe("#div10").hide();
+		$hfe("#tab_content4").css('display', 'block');
+		$hfe("#tab_content1").css('display', 'none');
+		$hfe("#tab_content2").css('display', 'none');
+		$hfe("#tab_content3").css('display', 'none');
+		$hfe("#tab_content5").css('display', 'none');
+		$hfe("#tab_content6").css('display', 'none');
+		$hfe("#tab_content7").css('display', 'none');
+		$hfe("#tab_content8").css('display', 'none');
+		$hfe("#tab_content9").css('display', 'none');
+		$hfe("#tab_content10").css('display', 'none');
+		});
+
+		$hfe("#tab5").click(function() {
+
+		$hfe("#div5").show();
+		$hfe("#div1").hide();
+		$hfe("#div2").hide();
+		$hfe("#div3").hide();
+		$hfe("#div4").hide();
+		$hfe("#div6").hide();
+		$hfe("#div7").hide();
+		$hfe("#div8").hide();
+		$hfe("#div9").hide();
+		$hfe("#div10").hide();
+		$hfe("#tab_content5").css('display', 'block');
+		$hfe("#tab_content1").css('display', 'none');
+		$hfe("#tab_content2").css('display', 'none');
+		$hfe("#tab_content3").css('display', 'none');
+		$hfe("#tab_content4").css('display', 'none');
+		$hfe("#tab_content6").css('display', 'none');
+		$hfe("#tab_content7").css('display', 'none');
+		$hfe("#tab_content8").css('display', 'none');
+		$hfe("#tab_content9").css('display', 'none');
+		$hfe("#tab_content10").css('display', 'none');
+		});
+
+
+		$hfe("#tab6").click(function() {
+
+		$hfe("#div6").show();
+		$hfe("#div1").hide();
+		$hfe("#div2").hide();
+		$hfe("#div3").hide();
+		$hfe("#div4").hide();
+		$hfe("#div5").hide();
+		$hfe("#div7").hide();
+		$hfe("#div8").hide();
+		$hfe("#div9").hide();
+		$hfe("#div10").hide();
+		$hfe("#tab_content6").css('display', 'block');
+		$hfe("#tab_content1").css('display', 'none');
+		$hfe("#tab_content2").css('display', 'none');
+		$hfe("#tab_content3").css('display', 'none');
+		$hfe("#tab_content4").css('display', 'none');
+		$hfe("#tab_content5").css('display', 'none');
+		$hfe("#tab_content7").css('display', 'none');
+		$hfe("#tab_content8").css('display', 'none');
+		$hfe("#tab_content9").css('display', 'none');
+		$hfe("#tab_content10").css('display', 'none');
+		});
+
+		$hfe("#tab7").click(function() {
+
+		$hfe("#div7").show();
+		$hfe("#div1").hide();
+		$hfe("#div2").hide();
+		$hfe("#div3").hide();
+		$hfe("#div4").hide();
+		$hfe("#div5").hide();
+		$hfe("#div6").hide();
+		$hfe("#div8").hide();
+		$hfe("#div9").hide();
+		$hfe("#div10").hide();
+		$hfe("#tab_content7").css('display', 'block');
+		$hfe("#tab_content1").css('display', 'none');
+		$hfe("#tab_content2").css('display', 'none');
+		$hfe("#tab_content3").css('display', 'none');
+		$hfe("#tab_content4").css('display', 'none');
+		$hfe("#tab_content5").css('display', 'none');
+		$hfe("#tab_content6").css('display', 'none');
+		$hfe("#tab_content8").css('display', 'none');
+		$hfe("#tab_content9").css('display', 'none');
+		$hfe("#tab_content10").css('display', 'none');
+		});
+
+		$hfe("#tab8").click(function() {
+
+		$hfe("#div8").show();
+		$hfe("#div1").hide();
+		$hfe("#div2").hide();
+		$hfe("#div3").hide();
+		$hfe("#div4").hide();
+		$hfe("#div5").hide();
+		$hfe("#div6").hide();
+		$hfe("#div7").hide();
+		$hfe("#div9").hide();
+		$hfe("#div10").hide();
+		$hfe("#tab_content8").css('display', 'block');
+		$hfe("#tab_content1").css('display', 'none');
+		$hfe("#tab_content2").css('display', 'none');
+		$hfe("#tab_content3").css('display', 'none');
+		$hfe("#tab_content4").css('display', 'none');
+		$hfe("#tab_content5").css('display', 'none');
+		$hfe("#tab_content6").css('display', 'none');
+		$hfe("#tab_content7").css('display', 'none');
+		$hfe("#tab_content9").css('display', 'none');
+		$hfe("#tab_content10").css('display', 'none');
+		});
+
+		$hfe("#tab9").click(function() {
+
+		$hfe("#div9").show();
+		$hfe("#div1").hide();
+		$hfe("#div2").hide();
+		$hfe("#div3").hide();
+		$hfe("#div4").hide();
+		$hfe("#div5").hide();
+		$hfe("#div6").hide();
+		$hfe("#div7").hide();
+		$hfe("#div8").hide();
+		$hfe("#div10").hide();
+		$hfe("#tab_content9").css('display', 'block');
+		$hfe("#tab_content1").css('display', 'none');
+		$hfe("#tab_content2").css('display', 'none');
+		$hfe("#tab_content3").css('display', 'none');
+		$hfe("#tab_content4").css('display', 'none');
+		$hfe("#tab_content5").css('display', 'none');
+		$hfe("#tab_content6").css('display', 'none');
+		$hfe("#tab_content7").css('display', 'none');
+		$hfe("#tab_content8").css('display', 'none');
+		$hfe("#tab_content10").css('display', 'none');
+		});
+
+		$hfe("#tab10").click(function() {
+
+		$hfe("#div10").show();
+		$hfe("#div1").hide();
+		$hfe("#div2").hide();
+		$hfe("#div3").hide();
+		$hfe("#div4").hide();
+		$hfe("#div5").hide();
+		$hfe("#div6").hide();
+		$hfe("#div7").hide();
+		$hfe("#div8").hide();
+		$hfe("#div9").hide();
+		$hfe("#tab_content10").css('display', 'block');
+		$hfe("#tab_content1").css('display', 'none');
+		$hfe("#tab_content2").css('display', 'none');
+		$hfe("#tab_content3").css('display', 'none');
+		$hfe("#tab_content4").css('display', 'none');
+		$hfe("#tab_content5").css('display', 'none');
+		$hfe("#tab_content6").css('display', 'none');
+		$hfe("#tab_content7").css('display', 'none');
+		$hfe("#tab_content8").css('display', 'none');
+		$hfe("#tab_content9").css('display', 'none');
+		});
+
+		var selected_value;
+
+		$hfe("select[name=service]").change(function() {
+		selected_value = $hfe("select[name=service]").val();
+
+		if (selected_value == "0") {
+		$hfe("#echographyId").hide();
+		$hfe("#stomatologyId").hide();
+		$hfe("#soinsInfirmiersId").hide();
+		$hfe("#chirurgieId").hide();
+		$hfe("#radioId").hide();
+		$hfe("#maternityId").hide();
+		$hfe("#ophtalmologyId").hide();
+		$hfe("#kinestherapyId").hide();
+		$hfe("#oxygenotherapyId").hide();
+		}
+		if (selected_value == "1") {
+		$hfe("#echographyId").show();
+		$hfe("#stomatologyId").hide();
+		$hfe("#soinsInfirmiersId").hide();
+		$hfe("#chirurgieId").hide();
+		$hfe("#radioId").hide();
+		$hfe("#maternityId").hide();
+		$hfe("#ophtalmologyId").hide();
+		$hfe("#kinestherapyId").hide();
+		$hfe("#oxygenotherapyId").hide();
+		}
+		if (selected_value == "2") {
+		$hfe("#stomatologyId").show();
+		$hfe("#echographyId").hide();
+		$hfe("#soinsInfirmiersId").hide();
+		$hfe("#chirurgieId").hide();
+		$hfe("#radioId").hide();
+		$hfe("#maternityId").hide();
+		$hfe("#ophtalmologyId").hide();
+		$hfe("#kinestherapyId").hide();
+		$hfe("#oxygenotherapyId").hide();
+		}
+		if (selected_value == "3") {
+		$hfe("#soinsInfirmiersId").show();
+		$hfe("#stomatologyId").hide();
+		$hfe("#echographyId").hide();
+		$hfe("#chirurgieId").hide();
+		$hfe("#radioId").hide();
+		$hfe("#maternityId").hide();
+		$hfe("#ophtalmologyId").hide();
+		$hfe("#kinestherapyId").hide();
+		$hfe("#oxygenotherapyId").hide();
+		}
+		if (selected_value == "4") {
+		$hfe("#chirurgieId").show();
+		$hfe("#echographyId").hide();
+		$hfe("#stomatologyId").hide();
+		$hfe("#soinsInfirmiersId").hide();
+		$hfe("#radioId").hide();
+		$hfe("#maternityId").hide();
+		$hfe("#ophtalmologyId").hide();
+		$hfe("#kinestherapyId").hide();
+		$hfe("#oxygenotherapyId").hide();
+		}
+		if (selected_value == "5") {
+		$hfe("#radioId").show();
+		$hfe("#echographyId").hide();
+		$hfe("#stomatologyId").hide();
+		$hfe("#soinsInfirmiersId").hide();
+		$hfe("#chirurgieId").hide();
+		$hfe("#maternityId").hide();
+		$hfe("#ophtalmologyId").hide();
+		$hfe("#kinestherapyId").hide();
+		$hfe("#oxygenotherapyId").hide();
+		}
+		if (selected_value == "6") {
+		$hfe("#radioId").hide();
+		$hfe("#echographyId").hide();
+		$hfe("#stomatologyId").hide();
+		$hfe("#soinsInfirmiersId").hide();
+		$hfe("#chirurgieId").hide();
+		$hfe("#maternityId").show();
+		$hfe("#ophtalmologyId").hide();
+		$hfe("#kinestherapyId").hide();
+		$hfe("#oxygenotherapyId").hide();
+		}
+		if (selected_value == "7") {
+		$hfe("#echographyId").hide();
+		$hfe("#stomatologyId").hide();
+		$hfe("#soinsInfirmiersId").hide();
+		$hfe("#chirurgieId").hide();
+		$hfe("#radioId").hide();
+		$hfe("#maternityId").hide();
+		$hfe("#ophtalmologyId").show();
+		$hfe("#kinestherapyId").hide();
+		$hfe("#oxygenotherapyId").hide();
+		}
+		if (selected_value == "8") {
+		$hfe("#echographyId").hide();
+		$hfe("#stomatologyId").hide();
+		$hfe("#soinsInfirmiersId").hide();
+		$hfe("#chirurgieId").hide();
+		$hfe("#radioId").hide();
+		$hfe("#maternityId").hide();
+		$hfe("#ophtalmologyId").hide();
+		$hfe("#kinestherapyId").show();
+		$hfe("#oxygenotherapyId").hide();
+		}
+		if (selected_value == "9") {
+		$hfe("#echographyId").hide();
+		$hfe("#stomatologyId").hide();
+		$hfe("#soinsInfirmiersId").hide();
+		$hfe("#chirurgieId").hide();
+		$hfe("#radioId").hide();
+		$hfe("#maternityId").hide();
+		$hfe("#ophtalmologyId").hide();
+		$hfe("#kinestherapyId").hide();
+		$hfe("#oxygenotherapyId").show();
+		}
+		});
+
+		/* TEnd of part that handles Accordion Functionality */
+
+		$hfe('#1-removeEntry').remove();
+		$hfe('#10-addEntry').remove();
+		$hfe('#1-toggleContainer').show();
+
+		$hfe('#11-removeEntry').remove();
+		$hfe('#20-addEntry').remove();
+		$hfe('#11-toggleContainer').show();
+
+		$hfe('#21-removeEntry').remove();
+		$hfe('#30-addEntry').remove();
+		$hfe('#21-toggleContainer').show();
+		//});
+
+		//$hfe(document)
+		//.ready(
+		//	function() {
+		$hfe('button.addEntry')
+		.live(
+		"click",
+		function() {
+		var correctedAddButtonId = parseFloat(this.id) + 1;
+		var contentAddId = "#"
+		+ correctedAddButtonId
+		+ "-toggleContainer";
+		$hfe(contentAddId).toggle(true);
+		$hfe('#' + this.id).toggle(false);
+		$hfe(
+		'#' + parseFloat(this.id)
+		+ '-removeEntry')
+		.toggle(false);
+		return false;
+		});
+		//});
+
+		//$hfe(document)
+		//.ready(
+		//function() {
+		$hfe('button.removeEntry')
+		.live(
+		"click",
+		function() {
+		var correctedRemoveButtonId = parseFloat(this.id) - 1;
+		var contentAddId = "#"
+		+ parseFloat(this.id)
+		+ "-toggleContainer";
+		$hfe(contentAddId).toggle(false);
+		$hfe(':input:not(:button)',
+		contentAddId).val([]);
+		$hfe(
+		'#'
+		+ correctedRemoveButtonId
+		+ '-addEntry')
+		.toggle(true);
+		$hfe(
+		'#'
+		+ correctedRemoveButtonId
+		+ '-removeEntry')
+		.toggle(true);
+
+		return false;
+		});
+
+		//	});
+
+		// This where we concatenate History of the illness to the Past Medical
+		//$hfe(document)
+		//		.ready(
+		//				function() {
+		var past = "";
+		var answer = "";
+		var answer1 = '';
+		var answer2 = '';
+		var ans1, ans2, ans3, ans4, ans5, ans6, ans7, ans8, ans9, ans10;
+		ans1 = ans2 = ans3 = ans4 = ans5 = ans6 = ans7 = ans8 = ans9 = ans10 = "";
+
+		$hfe('button.addEntry')
+		.click(
+		function() {
+		if ($hfe("#w20 option:selected")) {
+		if ($hfe("#w20 option:selected")
+		.text() != "")
+		ans1 = $hfe(
+		"#w20 option:selected")
+		.text()
+		+ ", ";
+		}
+		if ($hfe("#w22 option:selected")) {
+		if ($hfe("#w22 option:selected")
+		.text() != "")
+		ans2 = $hfe(
+		"#w22 option:selected")
+		.text()
+		+ ", ";
+		}
+		if ($hfe("#w24 option:selected")) {
+		if ($hfe("#w24 option:selected")
+		.text() != "")
+		ans3 = $hfe(
+		"#w24 option:selected")
+		.text()
+		+ ", ";
+		}
+		if ($hfe("#w26 option:selected")) {
+		if ($hfe("#w26 option:selected")
+		.text() != "")
+		ans4 = $hfe(
+		"#w26 option:selected")
+		.text()
+		+ ", ";
+		}
+		if ($hfe("#w28 option:selected")) {
+		if ($hfe("#w28 option:selected")
+		.text() != "")
+		ans5 = $hfe(
+		"#w28 option:selected")
+		.text()
+		+ ", ";
+		}
+		if ($hfe("#w30 option:selected")) {
+		if ($hfe("#w30 option:selected")
+		.text() != "")
+		ans6 = $hfe(
+		"#w30 option:selected")
+		.text()
+		+ ", ";
+		}
+		if ($hfe("#w32 option:selected")) {
+		if ($hfe("#w32 option:selected")
+		.text() != "")
+		ans7 = $hfe(
+		"#w32 option:selected")
+		.text()
+		+ ", ";
+		}
+		if ($hfe("#w34 option:selected")) {
+		if ($hfe("#w34 option:selected")
+		.text() != "")
+		ans8 = $hfe(
+		"#w34 option:selected")
+		.text()
+		+ ", ";
+		}
+		if ($hfe("#w36 option:selected")) {
+		if ($hfe("#w36 option:selected")
+		.text() != "")
+		ans9 = $hfe(
+		"#w36 option:selected")
+		.text()
+		+ ", ";
+		}
+		if ($hfe("#w38 option:selected")) {
+		if ($hfe("#w38 option:selected")
+		.text() != "")
+		ans10 = $hfe(
+		"#w38 option:selected")
+		.text()
+		+ ", ";
+		}
+
+		answer = ans1 + ans2 + ans3 + ans4
+		+ ans5 + ans6 + ans7 + ans8
+		+ ans9 + ans10;
+		$hfe(
+		"span#syndromic_summary textarea")
+		.val(
+		past
+		+ "- SYMPTOMS: "
+		+ answer
+		+ "\n- ILLNESS HISTORY: "
+		+ answer2
+		+ "\n- PAST/ANTECEDENTS: "
+		+ answer1
+		+ "\n- OTHER: ");
+		});
+
+		$hfe("span#past_medical textarea")
+		.keyup(
+		function() {
+		answer1 = $hfe(this).val();
+		//past += $hfe("span#syndromic_summary").val();
+		$hfe(
+		"span#syndromic_summary textarea")
+		.val(
+		past
+		+ "- SYMPTOMS: "
+		+ answer
+		+ "\n- ILLNESS HISTORY: "
+		+ answer2
+		+ "\n- PAST/ANTECEDENTS: "
+		+ answer1
+		+ "\n- OTHER: ");
+		});
+
+		$hfe("span#history_illness textarea")
+		.keyup(
+		function() {
+		answer2 = $hfe(this).val();
+		//past += $hfe("span#syndromic_summary").val();
+		$hfe(
+		"span#syndromic_summary textarea")
+		.val(
+		past
+		+ "- SYMPTOMS: "
+		+ answer
+		+ "\n- ILLNESS HISTORY: "
+		+ answer2
+		+ "\n- PAST/ANTECEDENTS: "
+		+ answer1
+		+ "\n- OTHER: ");
+		});
+		//});
+
+		//$hfe(document).ready( function() {
+
+		$hfe('span#is_opportunistic input[type=checkbox]')
+		.attr('disabled', true);
+		$hfe('span#hiv_status')
+		.change(
+		function() {
+		if ($hfe(
+		'span#hiv_status input[type=radio]:checked')
+		.val() == 703) {
+		$hfe(
+		'span#is_opportunistic input[type=checkbox]')
+		.attr('disabled', false);
+		} else {
+		$hfe(
+		'span#is_opportunistic input[type=checkbox]')
+		.attr('disabled', true);
+		}
+		});
+		// Setting other non-coded concept available...
+		$hfe('#other_motive').hide();
+		$hfe('#cons_motive').change(
+		function() {
+		if ($hfe('#cons_motive option:selected')
+		.val() == 5622) {
+		$hfe('#other_motive').show();
+		}
+		});
+		// other_presumptive
+		$hfe('#other_presumptive').hide();
+		$hfe('span#presumptive input').change(function() {
+		var answer = $hfe(this).val();
+		if (answer.toLowerCase() == "other") {
+		$hfe('#other_presumptive').show();
+		} else {
+		$hfe('#other_presumptive').hide();
+		}
+		});
+
+		// other primary diagnosis
+		$hfe('#other_primDiag').hide();
+		$hfe('span#primary_digno input').change(function() {
+		var answer = $hfe(this).val();
+		if (answer.toLowerCase() == "other") {
+		$hfe('#other_primDiag').show();
+		} else {
+		$hfe('#other_primDiag').hide();
+		}
+		});
+		// other secondary diagnosis
+		$hfe('#other_secDiag').hide();
+		$hfe('span#second_digno input').change(function() {
+		var answer = $hfe(this).val();
+		if (answer.toLowerCase() == "other") {
+		$hfe('#other_secDiag').show();
+		} else {
+		$hfe('#other_secDiag').hide();
+		}
+		});
+
+		// Setting the size for the autocomplete fields.
+		$hfe("span#presumptive input").attr("size", "60");
+		$hfe("span#primary_digno input").attr("size", "60");
+		$hfe("span#second_digno input").attr("size", "60");
+		$hfe("span#encDate input").attr("size", "15");
+
+		$hfe("input[type=radio][name=normal_1]")
+		.change(
+		function() {
+		var answer = $hfe(this).val();
+		if (answer == "normal") {
+		$hfe("span#pulmonary textarea")
+		.val("Normal");
+		$hfe("#pulmonary")
+		.disableSelection();
+		} else {
+		$hfe("span#pulmonary textarea")
+		.val(
+		"Abnormal because : ");
+		$hfe("#pulmonary")
+		.enableSelection();
+		$hfe("span#pulmonary textarea")
+		.focus();
+		}
+		});
+
+		$hfe("input[type=radio][name=normal_2]").change(
+		function() {
+		var answer = $hfe(this).val();
+		if (answer == "normal") {
+		$hfe("span#cardio textarea").val(
+		"Normal");
+		$hfe("#cardio").disableSelection();
+		} else {
+		$hfe("span#cardio textarea").val(
+		"Abnormal because : ");
+		$hfe("#cardio").enableSelection();
+		$hfe("span#cardio textarea").focus();
+		}
+		});
+
+		$hfe("input[type=radio][name=normal_3]")
+		.change(
+		function() {
+		var answer = $hfe(this).val();
+		if (answer == "normal") {
+		$hfe("span#abdominal textarea")
+		.val("Normal");
+		$hfe("#abdominal")
+		.disableSelection();
+		} else {
+		$hfe("span#abdominal textarea")
+		.val(
+		"Abnormal because : ");
+		$hfe("#abdominal")
+		.enableSelection();
+		$hfe("span#abdominal textarea")
+		.focus();
+		}
+		});
+
+		$hfe("input[type=radio][name=normal_4]").change(
+		function() {
+		var answer = $hfe(this).val();
+		if (answer == "normal") {
+		$hfe("span#neurologic textarea").val(
+		"Normal");
+		$hfe("#neurologic").disableSelection();
+		} else {
+		$hfe("span#neurologic textarea").val(
+		"Abnormal because : ");
+		$hfe("#neurologic").enableSelection();
+		$hfe("span#neurologic textarea")
+		.focus();
+		}
+		});
+
+		$hfe("input[type=radio][name=normal_5]").change(
+		function() {
+		var answer = $hfe(this).val();
+		if (answer == "normal") {
+		$hfe("span#musculo textarea").val(
+		"Normal");
+		$hfe("#musculo").disableSelection();
+		} else {
+		$hfe("span#musculo textarea").val(
+		"Abnormal because : ");
+		$hfe("#musculo").enableSelection();
+		$hfe("span#musculo textarea").focus();
+		}
+		});
+
+		$hfe("input[type=radio][name=normal_6]").change(
+		function() {
+		var answer = $hfe(this).val();
+		if (answer == "normal") {
+		$hfe("span#urogenital textarea").val(
+		"Normal");
+		$hfe("#urogenital").disableSelection();
+		} else {
+		$hfe("span#urogenital textarea").val(
+		"Abnormal because : ");
+		$hfe("#urogenital").enableSelection();
+		$hfe("span#urogenital textarea")
+		.focus();
+		}
+		});
+
+		$hfe("input[type=radio][name=normal_7]").change(
+		function() {
+		var answer = $hfe(this).val();
+		if (answer == "normal") {
+		$hfe("span#skin textarea")
+		.val("Normal");
+		$hfe("#skin").disableSelection();
+		} else {
+		$hfe("span#skin textarea").val(
+		"Abnormal because : ");
+		$hfe("#skin").enableSelection();
+		$hfe("span#skin textarea").focus();
+		}
+		});
+
+		$hfe("input[type=radio][name=normal_8]")
+		.change(
+		function() {
+		var answer = $hfe(this).val();
+		if (answer == "normal") {
+		$hfe(
+		"span#psychomotor textarea")
+		.val("Normal");
+		$hfe("#psychomotor")
+		.disableSelection();
+		} else {
+		$hfe(
+		"span#psychomotor textarea")
+		.val(
+		"Abnormal because : ");
+		$hfe("#psychomotor")
+		.enableSelection();
+		$hfe(
+		"span#psychomotor textarea")
+		.focus();
+		}
+		});
+
+		$hfe("input[type=radio][name=normal_9]").change(
+		function() {
+		var answer = $hfe(this).val();
+		if (answer == "normal") {
+		$hfe("span#hd textarea").val(
+		"Normal");
+		$hfe("#hd").disableSelection();
+		} else {
+		$hfe("span#hd textarea").val(
+		"Abnormal because : ");
+		$hfe("#hd").enableSelection();
+		$hfe("span#hd textarea").focus();
+		}
+		});
+		$hfe("input[type=radio][name=normal_10]").change(
+		function() {
+		var answer = $hfe(this).val();
+		if (answer == "normal") {
+		$hfe("span#neck textarea").val(
+		"Normal");
+		$hfe("#neck").disableSelection();
+		} else {
+		$hfe("span#neck textarea").val(
+		"Abnormal because : ");
+		$hfe("#neck").enableSelection();
+		$hfe("span#neck textarea").focus();
+		}
+		});
+		});
+
+	</script>
+	<script type="text/javascript">
+		if(jQuery){
+		$j(document).ready(function(){
+		$j(".checkboxGroup").each(function(){
+		var group = $j(this);
+		var uncheckAll = function(){
+		group.find("input[type$='checkbox']").attr("checked",false);
+		group.find("input[type$='checkbox']").change();
+		}
+		var uncheckRadioAndAll = function(){
+		group.find("#checkboxAll,#checkboxRadio").find("input[type$='checkbox']").attr("checked",false);
+		group.find("#checkboxAll,#checkboxRadio").find("input[type$='checkbox']").change();
+		}
+		group.find("#checkboxRadio").find("input[type$='checkbox']").click(function(){
+		uncheckAll();
+		$j(this).siblings("input[type$='checkbox']").attr("checked",false);
+		$j(this).attr("checked",true);
+		$j(this).change();
+		});
+		});
+		});
+		}
+	</script>
+	<h2>Consultation Form</h2>
+
+	<!--  <postSubmissionAction class="org.openmrs.module.mohbilling.automation.CreateBillOnHtmlFormSubmissionAction"/>-->
+
+	<section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+		<div class="section-container">
+
+
+			<table border="2" cellspacing="0" cellpadding="6" width="100%">
+				<tr>
+					<td>
+						Date:
+						<encounterDate default="today"/>
+					</td>
+					<td>
+						Health Facility:
+						<encounterLocation id="location" default="GlobalProperty:billing.defaultLocation" />
+					</td>
+					<td>
+						Provider:
+						<encounterProvider default="currentUser" />
+					</td>
+				</tr>
+			</table>
+		</div>
+	</section>
+
+	<section sectionTag="fieldset" headerTag="legend" headerStyle="title"
+			 headerCode="Anamneses and other findings and exams">
+		<div class="section-container">
+			<section headerCode="HEALTH HISTORY" sectionTag="fieldset" headerTag="legend">
+				<div class="section-container">
+					<div class="two-columns">
+						<p>
+							<label>
+								<b>Chief Complaints:</b>
+							</label>
+							<obs conceptId="3ce2b170-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="30"/>
+						</p>
+						<p>
+							<label>
+								<b>History of Present illness:</b>
+							</label>
+							<obs conceptId="24aa74e0-a281-4031-8919-63f3eaf3a729" style="textarea" rows="3" cols="30"/>
+						</p>
+
+					</div>
+
+				</div>
+			</section>
+			<section headerCode="Past medical" sectionTag="fieldset" headerTag="legend">
+				<div class="section-container">
+					<div class="two-columns">
+						<p>
+							<label>
+								<b>Immunization (VAT):</b>
+							</label>
+							<obs conceptId="4e3b9dc8-2b11-4a05-972f-f9710471c5d0" style="textarea" rows="3" cols="30"/>
+
+						</p>
+						<p>
+							<label>
+								<b>Gyneco-Obstetrical History:</b>
+							</label>
+							<obs conceptId="e03d0a07-4c9b-4c6a-88b2-5548a99f75da"  style="textarea" rows="3" cols="30"/>
+
+						</p>
+
+						<p>
+							<label>
+								<b>
+									Nutritional history:
+								</b>
+							</label>
+							<obs conceptId="ce576655-89ce-4972-9822-af177e0fce90"  style="textarea" rows="3" cols="30"/>
+						</p>
+						<p>
+							<label>
+								<b>
+									Psychosocial status:
+								</b>
+							</label>
+							<obs conceptId="acabf02b-a514-419d-af95-76217d1dd97d"  style="textarea" rows="3" cols="30"/>
+						</p>
+					</div>
+				</div>
+			</section>
+		</div>
+	</section>
+	<section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="SYSTEMS REVIEW">
+		<div class="section-container">
+			<p>
+				<label>
+					<b>
+						General aspect / Aspect general:
+					</b>
+				</label>
+				<obs conceptId="3cd9ae0e-26fe-102b-80cb-0017a47871b2" style="textarea" rows="3" cols="30" />
+			</p>
+			<table>
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<fieldset>
+							<legend>
+								<b>Systems exams / Examens des appareils</b>
+							</legend>
+							<table>
+								<tr>
+									<td>PULMONARY SYSTEM</td>
+									<td><span> <input type="radio"
+													  name="normal_1" value="normal" />Normal <input
+											type="radio" name="normal_1" value="abnormal" />Abnormal
+									</span> <span id="pulmonary"> <obs conceptId="3ce15384-26fe-102b-80cb-0017a47871b2"
+																	   style="textarea" rows="1" cols="50" />
+									</span></td>
+								</tr>
+								<tr>
+									<td>CARDIOVASCULAR SYSTEM</td>
+									<td><span> <input type="radio"
+													  name="normal_2" value="normal" />Normal <input
+											type="radio" name="normal_2" value="abnormal" />Abnormal
+									</span> <span id="cardio"> <obs conceptId="3ce1567c-26fe-102b-80cb-0017a47871b2"
+																	style="textarea" rows="1" cols="50" />
+									</span></td>
+								</tr>
+								<tr>
+									<td>ABDOMINAL SYSTEM</td>
+									<td><span> <input type="radio"
+													  name="normal_3" value="normal" />Normal <input
+											type="radio" name="normal_3" value="abnormal" />Abnormal
+									</span> <span id="abdominal"> <obs conceptId="3ce157ee-26fe-102b-80cb-0017a47871b2"
+																	   style="textarea" rows="1" cols="50" />
+									</span></td>
+								</tr>
+								<tr>
+									<td>NEUROLOGIC SYSTEM</td>
+									<td><span> <input type="radio"
+													  name="normal_4" value="normal" />Normal <input
+											type="radio" name="normal_4" value="abnormal" />Abnormal
+									</span> <span id="neurologic"> <obs conceptId="3ce1596a-26fe-102b-80cb-0017a47871b2"
+																		style="textarea" rows="1" cols="50" />
+									</span></td>
+								</tr>
+								<tr>
+									<td>MUSCULOSKELETAL SYSTEM</td>
+									<td><span> <input type="radio"
+													  name="normal_5" value="normal" />Normal <input
+											type="radio" name="normal_5" value="abnormal" />Abnormal
+									</span> <span id="musculo"> <obs conceptId="3ce15c58-26fe-102b-80cb-0017a47871b2"
+																	 style="textarea" rows="1" cols="50" />
+									</span></td>
+								</tr>
+								<tr>
+									<td>UROGENITAL SYSTEM</td>
+									<td><span> <input type="radio"
+													  name="normal_6" value="normal" />Normal <input
+											type="radio" name="normal_6" value="abnormal" />Abnormal
+									</span> <span id="urogenital"> <obs conceptId="3ce15f46-26fe-102b-80cb-0017a47871b2"
+																		style="textarea" rows="1" cols="50" />
+									</span></td>
+								</tr>
+								<tr>
+									<td>SKIN, GROWTHS, GANGLIONS</td>
+									<td><span> <input type="radio"
+													  name="normal_7" value="normal" />Normal <input
+											type="radio" name="normal_7" value="abnormal" />Abnormal
+									</span> <span id="skin"> <obs conceptId="3ce1625c-26fe-102b-80cb-0017a47871b2"
+																  style="textarea" rows="1" cols="50" />
+									</span></td>
+								</tr>
+								<tr>
+									<td>PSYCHOMOTOR SYSTEM</td>
+									<td><span> <input type="radio"
+													  name="normal_8" value="normal" />Normal <input
+											type="radio" name="normal_8" value="abnormal" />Abnormal
+									</span> <span id="psychomotor"> <obs conceptId="00727a2a-821a-4d21-af08-581e04b7b279"
+																		 style="textarea" rows="1" cols="50" />
+									</span></td>
+								</tr>
+								<tr>
+									<td>HEAD, EARS,EYES,NOSE,THROAT</td>
+									<td><span> <input type="radio"
+													  name="normal_9" value="normal" />Normal <input
+											type="radio" name="normal_9" value="abnormal" />Abnormal
+									</span> <span id="hd"> <obs id="hd"
+																conceptId="d2aa91b1-3b54-4c9b-b70b-99451d486395" style="textarea" rows="1" cols="50" />
+									</span></td>
+								</tr>
+								<tr>
+									<td>NECK</td>
+									<td><span> <input type="radio"
+													  name="normal_10" value="normal" />Normal <input
+											type="radio" name="normal_10" value="abnormal" />Abnormal
+									</span> <span id="neck"> <obs id="neck"
+																  conceptId="150fb48b-574a-43c3-afb7-fcff6f06170c" style="textarea" rows="1" cols="50" />
+									</span></td>
+								</tr>
+							</table>
+						</fieldset>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+	</section>
+
+	<section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Presumptive diagnosis">
+		<div class="section-container">
+			<p>
+				<label>
+					<b> First Presumptive Diagnostic</b>
+				</label>
+				<obs answerClasses="ICD-11" conceptId="$@Primary_ICD_diagnosis@" id="primary_digno" size="80" style="autocomplete"/>
+
+			</p>
+			<p>
+				<label>
+					<b> Second Presumptive Diagnostic</b>
+				</label>
+				<obs answerClasses="ICD-11" conceptId="$@Secondary_ICD_diagnosis@" id="second_digno" size="80" style="autocomplete"/>
+
+			</p>
+			<p>
+				<label>
+					<b> Other presumptive diagnosis not listed:</b>
+				</label>
+				<obs conceptId="a72c0d52-f25c-40f9-a2c1-1cbef67e2731" style="text" rows="2" cols="30" />
+			</p>
+			<p class="radio">
+				<label>
+					<b>Pregnancy status:</b>
+				</label>
+				<td><obs conceptId="3ceb4880-26fe-102b-80cb-0017a47871b2" style="radio" /></td>
+			</p>
+			<p class="side-by-side">
+				<label>
+					<b>HIV Status:</b>
+				</label>
+				<td><obs id="hiv_status" conceptId="aec6ad18-f4dd-4cfa-b68d-3d7bb6ea908e" style="radio" /></td>
+			</p>
+			<p class="radio">
+				<label>
+					<b>STI Screening:</b>
+				</label>
+				<obs conceptId="$@SEXUALLY_TRANSMITTED_DISEASE_OTHER@" style="radio" answers="Positive,Negative,Not done,Not applicable" />			</p>
+
+		</div>
+	</section>
+
+	<ifMode mode="VIEW" include="false">
+		<div id="buttons">
+
+			<button id="submit" class="submitButton confirm right">
+				<uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+											style="display: none; margin-left: 10px;"></i>
+			</button>
+			<button id="cancel" type="button" class="cancel">
+				<uimessage code="emr.cancel" />
+			</button>
+		</div>
+	</ifMode>
+
+</htmlform>

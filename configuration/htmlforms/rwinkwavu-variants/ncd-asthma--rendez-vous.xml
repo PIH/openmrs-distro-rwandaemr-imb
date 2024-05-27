@@ -1,12 +1,12 @@
-<htmlform 
-	htmlformUuid="73259bba-2702-434a-8ad8-280f6fbed363" 
-	formUuid="832d1420-bb75-4a2d-acf4-e6abe765adcf" 
-	formName="NCD Asthma: Rendez-Vous" 
-	formDescription="To capture NCDS" 
-	formVersion="0.0.1" 
-	formEncounterType="820004cd-5f2b-40a9-bf26-bf6f5a945790" 
-	formPublished="true" 
-	formRetired="false"
+<htmlform
+        htmlformUuid="73259bba-2702-434a-8ad8-280f6fbed363"
+        formUuid="832d1420-bb75-4a2d-acf4-e6abe765adcf"
+        formName="NCD Asthma: Rendez-Vous"
+        formDescription="To capture NCDS"
+        formVersion="0.0.1"
+        formEncounterType="820004cd-5f2b-40a9-bf26-bf6f5a945790"
+        formPublished="true"
+        formRetired="false"
 >
     <!-- Asthma flowsheet:  Clinic visits
          written by jberchmas
@@ -50,236 +50,334 @@
 
     </macros>
     <style>
-        th.tableHeader {
-        background-color: #009d8e;
-        color: #FFFFFF;
-        font-size: 16px;
-        text-align: left;
-        }
-        .sectionHeader { background-color: #009d8e;
-        color: white; display: block; padding: 2px; font-weight:bold; }
-        ul {
-        list-style-type: square;
-        font-family: Verdana, Arial, Helvetica, sans-serif;
-        font-size: 11px;
-        }
-
-        tr.spaceUnder>td {
-        padding-bottom: 1em;
-        }
-
-        td {
-        font-size: 15px;
-        }
-
-        #container {
-        
-        margin: auto;
-        
-        height: auto;
-        }
-
-        @media print {
-        #container {
-        display: none;
-        }
-
-        #printArea {
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
         display: block;
         }
 
-        #userBar {
-        display: none;
-        }
-
-        #banner {
-        display: none;
-        }
-
-        #footer {
-        display: none;
-        }
-
-        #htmlFormEntryBanner {
-        display: none;
-        }
-
-        .error {
-        display: none;
-        }
-
-        .lables {
-        width: 200px;
-        }
-
-        table {
-        width: 100%;
-        }
-
-        table,td,th {
-        border: 1px solid black;
-        border-collapse: collapse;
-        }
-
-        th {
-        text-align: left;
-        background-color: #D9D9D9;
-        font-size: 10px;
-        }
-
-        td {
-        font-size: 10px;
-        }
-
-        .selectedCancerStagingKeys {
-        page-break-before: always;
-        border: 0px;
-        }
-
-        table.selectedCancerStagingKeys td {
-        border: 0px;
-        }
-
-        #signature {
-        border: none;
-        }
-        #signature td {
-        border: none;
-        }
-        }
-
-        @media screen {
-        table {
-        border: 1px solid #DFDFDF;
-        width: 100%;
-        border-color: #009d8e;
-        }
-
-        #container {
+        form fieldset {
         display: block;
         }
 
-        #printArea {
-        display: none;
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
         }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
+        width: 100%;
+        }
+
+        .div {
+        float: left;
+        }
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        .date-one-line {
+        display: flex;
+        }
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
+        }
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
         }
     </style>
-    <table cellspacing="0" cellpadding="6" width="100%">
-        <tr>
-            <td><img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left"
-                     height="65" ></img>
-                <b>REPUBLIC OF RWANDA
-                    <br />MINISTRY OF HEALTH</b>
-            </td>
-            <td><strong>RENDEZ-VOUS/</strong> CLINIC VISITS <br/>
-                <b> IMB ID: <lookup class="value"
-                                    expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
-                                                                                                       expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
-                <br/>
-                Nom / Last name: <lookup class="value" expression="patient.personName.familyName" />
-                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                Prénom/ First name: <lookup class="value" expression="patient.personName.givenName" />
-            </td>
-        </tr>
-        <tr>
-            <td>Clinique / Clinic: <encounterLocation />
-            </td>
-            <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                Provider:<encounterProvider id="encounterProvider"
-                                            role="Provider" default="currentUser"/>
-            </td>
-        </tr>
-    </table>
 
-    <section headerLabel=" RENDEZ-VOUS / CLINIC VISITS" >
-        <table border="1" width="100%">
-            <tr>
-                <td>EMR</td>
-                <td>Poids/Wt</td>
-                <td>Taille/Ht</td>
-                <td>T/A/BP</td>
-                <td>Débit de pointe/peak flow</td>
-                <td>Bonne technique d'inhalateur/Good inhaler technique</td>
-                <td>Inhaler counseling provided</td>
-                <td>Spacer Provided</td>
-                <td>Missed Medecines?</td>
-                <td>Pain score (1-10)</td>
-                <td>RDV</td>
-            </tr>
 
-            <tr>
-                <td rowspan="3"></td>
-                <td><obs conceptId="$@WEIGHT@" /></td>
-                <td><obs conceptId="3ce93cf2-26fe-102b-80cb-0017a47871b2" /></td>
-                <td><obs conceptId="$@SYSTOLIC_BP@" /> <obs conceptId="$@DIASTOLIC_BP@" /></td>
-                <td><obs conceptId="e5e67313-b658-4118-9a71-5d5b60fc81d7" /></td>
-                <td><obs conceptId="0e39fb30-b0c6-44b0-96c1-c80f7fa90d9c" answerConceptId="$@YES@" answerLabel="oui/yes" /><br/> <obs conceptId="0e39fb30-b0c6-44b0-96c1-c80f7fa90d9c" answerConceptId="$@NO@" answerLabel="non/no" /> <br /><obs conceptId="0e39fb30-b0c6-44b0-96c1-c80f7fa90d9c" answerConceptId="PIH: 7399" answerLabel="entrainement brève donné/brief coaching given" /></td>
-                <td><obs conceptId="$@INHALER_AND_SPACER@" answerConceptId="$@YES@" answerLabel="oui/yes" /><br/> <obs conceptId="$@INHALER_AND_SPACER@" answerConceptId="$@NO@" answerLabel="non/no" /></td>
-                <td><obs conceptId="$@ASTHMA_SPACER@" answerConceptId="$@YES@" answerLabel="oui/yes" /><br/> <obs conceptId="$@ASTHMA_SPACER@" answerConceptId="$@NO@" answerLabel="non/no" /><br/> <obs conceptId="$@ASTHMA_SPACER@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A" /></td>
-                <td><obs conceptId="$@MISSED_ANY_MEDICATION@" answerConceptId="$@YES@" answerLabel="oui/yes" /><br/> <obs conceptId="$@MISSED_ANY_MEDICATION@" answerConceptId="$@NO@" answerLabel="non/no" /></td>
-                <td rowspan="3">
-                    Physical(1-10)
-                    <br/>
-                    <obs conceptId="$@Physical_pain_score@"/>
-                    <br/>
-                    <br/>
-                    Psychological
-                    <br/>
-                    <obs conceptId="$@Psychological_pain_score@" answerConceptId="$@YES@" answerLabel="Yes" style="radio"/>
-                    <br/>
-                    <obs conceptId="$@Psychological_pain_score@" answerConceptId="$@NO@" answerLabel="no" style="radio"/>
-                    <br/>
-                    <br/>
-                    Spiritual
-                    <br/>
-                    <obs conceptId="$@Spiritual_pain_score@" answerConceptId="$@YES@" answerLabel="Yes" style="radio"/>
-                    <br/>
-                    <obs conceptId="$@Spiritual_pain_score@" answerConceptId="$@NO@" answerLabel="No" style="radio"/>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
 
-                </td>
-
-                <td rowspan="3"> <obs conceptId="$@RETURN_VISIT_DATE@" allowFutureDates="true" /></td>
-            </tr>
-            <tr>
-                <td> Reveille a cause des dyspnees/waking up due to dyspnea</td>
-                <td>Besoins salbutamol<br/>/salbutamol use</td>
-                <td>Limitations d'activities due aux d'yspnees?/ Workinglimitations due to dyspnea</td>
-                <td>Classification d'asthme/Asthma classification</td>
-                <td colspan="4"><center>Plan</center> </td>
-            </tr>
-            <tr>
-                <td><obs conceptId="$@WAKING_UP_DUE_TO_DYSPNEA@" answerConceptId="$@LESS_OR_EQUAL_2DAYS@" answerLabel="-=2 jours/semaine/-=2 days/week" /><br/> <obs conceptId="$@WAKING_UP_DUE_TO_DYSPNEA@" answerConceptId="$@GREATER_OR_EQUAL_2DAYS@" answerLabel="+=2 jours/semaine/+=2 days per week" /> <br /><obs conceptId="$@WAKING_UP_DUE_TO_DYSPNEA@" answerConceptId="$@DAILY@" answerLabel="quotidien/daily" /><br/><obs conceptId="$@WAKING_UP_DUE_TO_DYSPNEA@" answerConceptId="$@SEVERAL_TIMES@" answerLabel="plusieurs foir/jour/several times/day" /></td>
-                <td><obs conceptId="$@SALBUTAMOL_USE@" answerConceptId="$@LESS_OR_EQUAL_2DAYS@" answerLabel="-=2 jours/semaine/-=2 days/week" /><br/> <obs conceptId="$@SALBUTAMOL_USE@" answerConceptId="$@GREATER_OR_EQUAL_2DAYS@" answerLabel="+=2 jours/semaine/+=2 days per week" /> <br /><obs conceptId="$@SALBUTAMOL_USE@" answerConceptId="$@DAILY@" answerLabel="quotidien/daily" /><br/><obs conceptId="$@SALBUTAMOL_USE@" answerConceptId="$@SEVERAL_TIMES@" answerLabel="plusieurs foir/jour/several times/day" /></td>
-
-                <td> <obs conceptId="$@DYSPNEA@" answerConceptId="$@YES@" answerLabel="oui/Yes" /><br/> <obs conceptId="$@DYSPNEA@" answerConceptId="$@NO@" answerLabel="Non/No" /> </td>
-                <td ><obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@NOT_INDICATED@" answerLabel="pas d'asthme/not asthma" /><br />
-                    <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@INTERMITTENT@" answerLabel="intermittent/intermittent" /> <br />
-                    <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@MID_PERSISTENT@" answerLabel="persistant léger/mid persistent" /> <br />
-                    <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@MODERATE_PERSISTENT@" answerLabel="persistant modéré/moderate persistent" /> <br />
-                    <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@SEVERE_PERSISTENT@" answerLabel="persistant sévère/severe persistent" /> <br />
-                    <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@SEVERE_UNCONTROLLED@" answerLabel="sévère incontrôlé/severe uncontrolled" />
-                </td>
-                <td colspan="4">
-                    <obs conceptId="$@STEP_THERAPY@" answerConceptId="$@STEP_UP@" answerLabel="monter étape/step up" /> <br />
-                    <obs conceptId="$@STEP_THERAPY@" answerConceptId="$@CONTINUE_REGIMEN@" answerLabel="continuer le même traitment/continue the same treatment" /> <br />
-                    <obs conceptId="$@STEP_THERAPY@" answerConceptId="$@STEP_DOWN@" answerLabel="descendre etape/step down" /> <br />
-                </td>
-
-            </tr>
-            <tr>
-                <td></td>
-                <td colspan="10">
-                    Commentaire / Comments: <br /><obs conceptId="$@COMMENTS@" rows="2" cols="60" />
-                </td>
-            </tr>
-        </table>
+            <table border="1" style="table-layout: fixed;" cellspacing="0" cellpadding="6" width="80%">
+                <tr>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
+                    </td>
+                    <td>
+                        Health Facility:
+                        <encounterLocation default="GlobalProperty:billing.defaultLocation" />
+                    </td>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
+                    </td>
+                </tr>
+            </table>
+        </div>
     </section>
 
-    <br />
-    <center>
-        <submit />
-    </center>
-    <br />
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode=" RENDEZ-VOUS / CLINIC VISITS" >
+        <div class="section-container">
+
+            <table border="1" width="100%" style="table-layout: fixed;" >
+                <tr>
+                    <td>Poids/Wt</td>
+                    <td>Taille/Ht</td>
+                    <td>T/A/BP</td>
+                    <td>Débit de pointe/peak flow</td>
+                    <td>Bonne technique d'inhalateur/Good inhaler technique</td>
+                    <td>Inhaler counseling provided</td>
+                    <td>Spacer Provided</td>
+                    <td>Missed Medecines?</td>
+                    <td>Pain score (1-10)</td>
+                    <td>RDV</td>
+                </tr>
+
+                <tr>
+                    <td><obs conceptId="$@WEIGHT@" /></td>
+                    <td><obs conceptId="3ce93cf2-26fe-102b-80cb-0017a47871b2" /></td>
+                    <td><obs conceptId="$@SYSTOLIC_BP@" /> <obs conceptId="$@DIASTOLIC_BP@" /></td>
+                    <td><obs conceptId="e5e67313-b658-4118-9a71-5d5b60fc81d7" /></td>
+                    <td>
+                        <p class="radio">
+                            <obs conceptId="0e39fb30-b0c6-44b0-96c1-c80f7fa90d9c" answerConceptId="$@YES@" answerLabel="oui/yes" style="radio"/><br/> <obs conceptId="0e39fb30-b0c6-44b0-96c1-c80f7fa90d9c" answerConceptId="$@NO@" answerLabel="non/no" style="radio"/> <br /><obs conceptId="0e39fb30-b0c6-44b0-96c1-c80f7fa90d9c" answerConceptId="PIH: 7399" answerLabel="entrainement brève donné/brief coaching given" style="radio"/>
+                        </p>
+                    </td>
+                    <td>
+                        <p class="radio">
+                            <obs conceptId="$@INHALER_AND_SPACER@" answerConceptId="$@YES@" answerLabel="oui/yes" style="radio"/><br/> <obs conceptId="$@INHALER_AND_SPACER@" answerConceptId="$@NO@" answerLabel="non/no" style="radio"/>
+                        </p>
+                    </td>
+                    <td>
+                        <p class="radio">
+                            <obs conceptId="$@ASTHMA_SPACER@" answerConceptId="$@YES@" answerLabel="oui/yes" style="radio"/><br/> <obs conceptId="$@ASTHMA_SPACER@" answerConceptId="$@NO@" answerLabel="non/no" style="radio"/><br/> <obs conceptId="$@ASTHMA_SPACER@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A" style="radio"/>
+                        </p>
+                    </td>
+                    <td>
+                        <p class="radio">
+                            <obs conceptId="$@MISSED_ANY_MEDICATION@" answerConceptId="$@YES@" answerLabel="oui/yes" style="radio"/><br/> <obs conceptId="$@MISSED_ANY_MEDICATION@" answerConceptId="$@NO@" answerLabel="non/no" style="radio"/>
+                        </p>
+                    </td>
+                    <td rowspan="3">
+                        <p class="side-by-side">
+                            Physical(1-10)
+                            <br/>
+                            <obs conceptId="$@Physical_pain_score@"/>
+                            <br/>
+                            <br/>
+                            Psychological
+                            <br/>
+                            <obs conceptId="$@Psychological_pain_score@" answerConceptId="$@YES@" answerLabel="Yes" style="radio"/>
+                            <br/>
+                            <obs conceptId="$@Psychological_pain_score@" answerConceptId="$@NO@" answerLabel="no" style="radio"/>
+                            <br/>
+                            <br/>
+                            Spiritual
+                            <br/>
+                            <obs conceptId="$@Spiritual_pain_score@" answerConceptId="$@YES@" answerLabel="Yes" style="radio"/>
+                            <br/>
+                            <obs conceptId="$@Spiritual_pain_score@" answerConceptId="$@NO@" answerLabel="No" style="radio"/>
+
+                        </p>
+
+                    </td>
+
+                    <td rowspan="3"> <obs conceptId="$@RETURN_VISIT_DATE@" allowFutureDates="true" /></td>
+                </tr>
+                <tr>
+                    <td> Reveille a cause des dyspnees/waking up due to dyspnea</td>
+                    <td>Besoins salbutamol<br/>/salbutamol use</td>
+                    <td>Limitations d'activities due aux d'yspnees?/ Workinglimitations due to dyspnea</td>
+                    <td>Classification d'asthme/Asthma classification</td>
+                    <td colspan="4"><center>Plan</center> </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="radio">
+                            <obs conceptId="$@WAKING_UP_DUE_TO_DYSPNEA@" answerConceptId="$@LESS_OR_EQUAL_2DAYS@" answerLabel="-=2 jours/semaine/-=2 days/week" style="radio"/><br/> <obs conceptId="$@WAKING_UP_DUE_TO_DYSPNEA@" answerConceptId="$@GREATER_OR_EQUAL_2DAYS@" answerLabel="+=2 jours/semaine/+=2 days per week" style="radio"/> <br /><obs conceptId="$@WAKING_UP_DUE_TO_DYSPNEA@" answerConceptId="$@DAILY@" answerLabel="quotidien/daily" style="radio"/><br/><obs conceptId="$@WAKING_UP_DUE_TO_DYSPNEA@" answerConceptId="$@SEVERAL_TIMES@" answerLabel="plusieurs foir/jour/several times/day" style="radio"/>
+
+                        </p>
+                    </td>
+                    <td>
+                        <p class="radio">
+                            <obs conceptId="$@SALBUTAMOL_USE@" answerConceptId="$@LESS_OR_EQUAL_2DAYS@" answerLabel="-=2 jours/semaine/-=2 days/week" style="radio" /><br/> <obs conceptId="$@SALBUTAMOL_USE@" answerConceptId="$@GREATER_OR_EQUAL_2DAYS@" answerLabel="+=2 jours/semaine/+=2 days per week" style="radio"/> <br /><obs conceptId="$@SALBUTAMOL_USE@" answerConceptId="$@DAILY@" answerLabel="quotidien/daily" style="radio"/><br/><obs conceptId="$@SALBUTAMOL_USE@" answerConceptId="$@SEVERAL_TIMES@" answerLabel="plusieurs foir/jour/several times/day" style="radio"/>
+                        </p>
+                    </td>
+
+                    <td>
+                        <p class="radio">
+                            <obs conceptId="$@DYSPNEA@" answerConceptId="$@YES@" answerLabel="oui/Yes"  style="radio"/><br/> <obs conceptId="$@DYSPNEA@" answerConceptId="$@NO@" answerLabel="Non/No"  style="radio"/>
+                        </p>
+                    </td>
+                    <td >
+                        <p class="radio">
+                            <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@NOT_INDICATED@" answerLabel="pas d'asthme/not asthma" style="radio"/><br />
+                            <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@INTERMITTENT@" answerLabel="intermittent/intermittent" style="radio"/> <br />
+                            <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@MID_PERSISTENT@" answerLabel="persistant léger/mid persistent" style="radio"/> <br />
+                            <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@MODERATE_PERSISTENT@" answerLabel="persistant modéré/moderate persistent" style="radio"/> <br />
+                            <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@SEVERE_PERSISTENT@" answerLabel="persistant sévère/severe persistent" style="radio"/> <br />
+                            <obs conceptId="$@ASHTMA_CLASSIFICATION@" answerConceptId="$@SEVERE_UNCONTROLLED@" answerLabel="sévère incontrôlé/severe uncontrolled" style="radio"/>
+                        </p>
+
+                    </td>
+                    <td colspan="4">
+                        <p class="radio">
+                            <obs conceptId="$@STEP_THERAPY@" answerConceptId="$@STEP_UP@" answerLabel="monter étape/step up" style="radio"/> <br />
+                            <obs conceptId="$@STEP_THERAPY@" answerConceptId="$@CONTINUE_REGIMEN@" answerLabel="continuer le même traitment/continue the same treatment" style="radio"/> <br />
+                            <obs conceptId="$@STEP_THERAPY@" answerConceptId="$@STEP_DOWN@" answerLabel="descendre etape/step down" style="radio"/> <br />
+                        </p>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="10">
+                        Commentaire / Comments: <br /><obs conceptId="$@COMMENTS@" rows="2" cols="60" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
 
 </htmlform>
-

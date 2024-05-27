@@ -1,12 +1,12 @@
-<htmlform 
-	htmlformUuid="2711862b-5eb5-4718-99fd-40765c0c9870" 
-	formUuid="bb15ac86-a604-4277-a476-2cca5a0c5dc8" 
-	formName="NCD Diabetes: Insulin List" 
-	formDescription="List d Insuline diabete" 
-	formVersion="0.1" 
-	formEncounterType="d8327a41-a0cc-49c5-af0e-63f0ba960330" 
-	formPublished="${trueIfRwinkwavu}" 
-	formRetired="false"
+<htmlform
+        htmlformUuid="2711862b-5eb5-4718-99fd-40765c0c9870"
+        formUuid="bb15ac86-a604-4277-a476-2cca5a0c5dc8"
+        formName="NCD Diabetes: Insulin List"
+        formDescription="List d Insuline diabete"
+        formVersion="0.1"
+        formEncounterType="d8327a41-a0cc-49c5-af0e-63f0ba960330"
+        formPublished="${trueIfRwinkwavu}"
+        formRetired="false"
 >
     <!-- Diabetes flowsheet:  Insulin list
          Written by jberchmas
@@ -15,7 +15,7 @@
         paperFormId = Flow-DM-RW.V2.0.akb.15May09
         headerColor =#009d8e
         fontOnHeaderColor = white
-            <!-- drugs -->
+        <!-- drugs -->
         @MORNING_DOSE_IN_MILLIGRAMS@ = f032b306-4d4b-4b02-8335-3cce084f30a6
         @NOON_DOSE_IN_MILLIGRAMS@ = 41abbe03-04da-4b5d-8223-0a249245dcf1
         @NIGHT_DOSE_IN_MILLIGRAMS@ = 305c266e-2035-4ef2-ab44-b4e70756998d
@@ -26,166 +26,215 @@
         @Insulin_70/30_mixte@ = d18fc471-51b7-4469-83b5-03f0716a1af6
 
     </macros>
-		<style type="text/css">
-	  .orderwidget-drug-section { padding: 10px; border: 1px dotted black; }
-	  .order-field { display: inline-block; padding: 0px; }
-	  .order-field.action { display: block; }
-	  .order-field.dateActivated { padding-right: 20px; }
-	  .order-field-label { display: inline-block; padding-right: 5px; vertical-align: middle; }
-	  .order-field-label:after { content: ""; white-space: pre; }
-	  .order-field-widget { display: inline-block; }
-	</style>
+    <style type="text/css">
+        .orderwidget-drug-section { padding: 10px; border: 1px dotted black; }
+        .order-field { display: inline-block; padding: 0px; }
+        .order-field.action { display: block; }
+        .order-field.dateActivated { padding-right: 20px; }
+        .order-field-label { display: inline-block; padding-right: 5px; vertical-align: middle; }
+        .order-field-label:after { content: ""; white-space: pre; }
+        .order-field-widget { display: inline-block; }
+    </style>
     <style>
-        th.tableHeader {
-        background-color: #009d8e;
-        color: #FFFFFF;
-        font-size: 16px;
-        text-align: left;
-        }
-        .sectionHeader { background-color: #009d8e;
-        color: white; display: block; padding: 2px; font-weight:bold; }
-        ul {
-        list-style-type: square;
-        font-family: Verdana, Arial, Helvetica, sans-serif;
-        font-size: 11px;
-        }
-
-        tr.spaceUnder>td {
-        padding-bottom: 1em;
-        }
-
-        td {
-        font-size: 15px;
-        }
-
-        #container {
-        
-        margin: auto;
-        
-        height: auto;
-        }
-
-        @media print {
-        #container {
-        display: none;
-        }
-
-        #printArea {
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
         display: block;
         }
 
-        #userBar {
-        display: none;
-        }
-
-        #banner {
-        display: none;
-        }
-
-        #footer {
-        display: none;
-        }
-
-        #htmlFormEntryBanner {
-        display: none;
-        }
-
-        .error {
-        display: none;
-        }
-
-        .lables {
-        width: 200px;
-        }
-
-        table {
-        width: 100%;
-        }
-
-        table,td,th {
-        border: 1px solid black;
-        border-collapse: collapse;
-        }
-
-        th {
-        text-align: left;
-        background-color: #D9D9D9;
-        font-size: 10px;
-        }
-
-        td {
-        font-size: 10px;
-        }
-
-        .selectedCancerStagingKeys {
-        page-break-before: always;
-        border: 0px;
-        }
-
-        table.selectedCancerStagingKeys td {
-        border: 0px;
-        }
-
-        #signature {
-        border: none;
-        }
-        #signature td {
-        border: none;
-        }
-        }
-
-        @media screen {
-        table {
-        border: 1px solid #DFDFDF;
-        width: 100%;
-        border-color: #009d8e;
-        }
-
-        #container {
+        form fieldset {
         display: block;
         }
 
-        #printArea {
-        display: none;
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
         }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
+        width: 100%;
+        }
+
+        .div {
+        float: left;
+        }
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        .date-one-line {
+        display: flex;
+        }
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
+        }
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
         }
     </style>
+    <h2>LISTE D'INSULINE/INSULIN LIST</h2>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
 
-    <table cellspacing="0" cellpadding="6" width="100%">
-        <tr>
-            <td><img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left"
-                     height="65" ></img>
-                <b>REPUBLIC OF RWANDA
-                    <br />MINISTRY OF HEALTH</b>
-            </td>
-            <td><strong> LISTE D'INSULINE/</strong>INSULIN LIST <br/>
-                <b> IMB ID: <lookup class="value"
-                                    expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
-                                                                                                       expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
-                <br/>
-                Nom / Last name: <lookup class="value" expression="patient.personName.familyName" />
-                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                Prénom/ First name: <lookup class="value" expression="patient.personName.givenName" />
-            </td>
-        </tr>
-        <tr>
-            <td>Clinique / Clinic: <encounterLocation />
-            </td>
-            <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                Provider:<encounterProvider id="encounterProvider"
-                                            role="Provider" />
-            </td>
-        </tr>
-    </table>
 
-    <section>
-        <div>
-            <table border="1" >
+            <table border="2" cellspacing="0" cellpadding="6" width="100%">
                 <tr>
-                    <th class="tableHeader" colspan="9">
-                        <center><strong>LISTE D'INSULINE/</strong> INSULIN LIST</center>
-                    </th>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
+                    </td>
+                    <td>
+                        Health Facility:
+                        <encounterLocation default="GlobalProperty:billing.defaultLocation" />
+                    </td>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
+                    </td>
                 </tr>
+            </table>
+        </div>
+    </section>
+
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="LISTE D'INSULINE/INSULIN LIST">
+        <div class="section-container">
+            <table border="1"  width="100%">
+
                 <tr>
                     <th> <strong> EMR </strong> </th>
                     <th> <strong> Type d'Insuline </strong>
@@ -207,74 +256,74 @@
                 <tr>
                     <td> </td>
                     <td>
-					
-                        
-						
-	<drugOrder orderType="131168f4-15f5-102d-96e4-000c29c2a5d7" selectLabel="Order Drug">
-        <orderTemplate>
-            <orderProperty name="drug" label="Drug*">
-                <option value="$@Insuline_rapide@" />
-                <option value="$@Insulin_lente@" />
-                <option value="$@Insulin_70/30_mixte@" />
-            </orderProperty>
-            <orderProperty name="action">
-                <option value="NEW" label="Place a new Order"/>
-                <option value="REVISE" label="Revise this Order"/>
-                <option value="RENEW" label="Renew this Order"/>
-                <option value="DISCONTINUE" label="Discontinue this Order"/>
-            </orderProperty>
-            <div style="padding:0px;">
-            <orderProperty name="dose" label="Dose*"/>
-            <orderProperty name="doseUnits" label="Units*">
-                <option value="4020" label="tablets"/>
-                <option value="05d778f0-6282-4eed-9c58-6b5d0703c5a7" label="milligrams"/>
-				<option value="07b05a2a-87ff-44ce-bb5c-5d6855bf8b11" label="units"/>
-            </orderProperty>
-            <orderProperty name="frequency" label="Frequency*">
-                <option value="707ad8b7-d902-11ea-80fb-0242ac110002
-" label="1 / day"/> 
-                <option value="87ea7c89-d8f9-11ea-80fb-0242ac110002
+
+
+
+                        <drugOrder orderType="131168f4-15f5-102d-96e4-000c29c2a5d7" selectLabel="Order Drug">
+                            <orderTemplate>
+                                <orderProperty name="drug" label="Drug*">
+                                    <option value="$@Insuline_rapide@" />
+                                    <option value="$@Insulin_lente@" />
+                                    <option value="$@Insulin_70/30_mixte@" />
+                                </orderProperty>
+                                <orderProperty name="action">
+                                    <option value="NEW" label="Place a new Order"/>
+                                    <option value="REVISE" label="Revise this Order"/>
+                                    <option value="RENEW" label="Renew this Order"/>
+                                    <option value="DISCONTINUE" label="Discontinue this Order"/>
+                                </orderProperty>
+                                <div style="padding:0px;">
+                                    <orderProperty name="dose" label="Dose*"/>
+                                    <orderProperty name="doseUnits" label="Units*">
+                                        <option value="4020" label="tablets"/>
+                                        <option value="05d778f0-6282-4eed-9c58-6b5d0703c5a7" label="milligrams"/>
+                                        <option value="07b05a2a-87ff-44ce-bb5c-5d6855bf8b11" label="units"/>
+                                    </orderProperty>
+                                    <orderProperty name="frequency" label="Frequency*">
+                                        <option value="707ad8b7-d902-11ea-80fb-0242ac110002
+" label="1 / day"/>
+                                        <option value="87ea7c89-d8f9-11ea-80fb-0242ac110002
 " label="2 / day"/>
-                <option value="d8290a00-d926-11ea-8b36-0242ac110002
+                                        <option value="d8290a00-d926-11ea-8b36-0242ac110002
 " label="3 / day"/>
-                <option value="405a5af1-d927-11ea-8b36-0242ac110002
+                                        <option value="405a5af1-d927-11ea-8b36-0242ac110002
 " label="4 / day"/>
-                <option value="405a5af1-d927-11ea-8b36-0242ac110002
+                                        <option value="405a5af1-d927-11ea-8b36-0242ac110002
 " label="5 / day"/>
-                <option value="f11513cb-eee1-11ea-b492-0242ac110002
+                                        <option value="f11513cb-eee1-11ea-b492-0242ac110002
 " label="6 / day"/>
-                <option value="9212ab7b-eee4-11ea-b492-0242ac110002
+                                        <option value="9212ab7b-eee4-11ea-b492-0242ac110002
 " label="7 / day"/>
-            </orderProperty>
-			</div>
-               
-            <orderProperty name="asNeeded"/>
-			<div style="padding:0px;">
-				<orderProperty name="dateActivated"/>
-				<orderProperty name="duration" label="Duration in days (blank=no end)"/>
+                                    </orderProperty>
+                                </div>
 
-			</div>
-            <div style="display:none;">
-			    <orderProperty name="dateActivated"/>
-			    <orderProperty name="route" value="3327" />
-				<orderProperty name="urgency" value="ROUTINE"/>
-				<orderProperty name="dosingType" value="org.openmrs.SimpleDosingInstructions"/>
-				<orderProperty name="instructions" textArea="true" textAreaRows="4" textAreaColumns="100"/>
-                <orderProperty name="previousOrder"/>
-                <orderProperty name="careSetting" value="OUTPATIENT"/>
-                <orderProperty name="quantity" value="0"/>
-                <orderProperty name="quantityUnits" value="6735094c-8416-43e3-8a3c-091332a08cb7"/> <!-- unspecified -->
-                <orderProperty name="numRefills" value="0"/>
-								<orderProperty name="durationUnits" value="SNOMED CT:258703001">
-					<option value="SNOMED CT:258703001" label="Days"/>
-				</orderProperty>
-            </div>
-			<orderProperty name="discontinueReason" >
-			<optionGroup concept="$@REASON_ORDER_STOPPED@"/>
-			</orderProperty>
+                                <orderProperty name="asNeeded"/>
+                                <div style="padding:0px;">
+                                    <orderProperty name="dateActivated"/>
+                                    <orderProperty name="duration" label="Duration in days (blank=no end)"/>
 
-        </orderTemplate>
-    </drugOrder>
+                                </div>
+                                <div style="display:none;">
+                                    <orderProperty name="dateActivated"/>
+                                    <orderProperty name="route" value="3327" />
+                                    <orderProperty name="urgency" value="ROUTINE"/>
+                                    <orderProperty name="dosingType" value="org.openmrs.SimpleDosingInstructions"/>
+                                    <orderProperty name="instructions" textArea="true" textAreaRows="4" textAreaColumns="100"/>
+                                    <orderProperty name="previousOrder"/>
+                                    <orderProperty name="careSetting" value="OUTPATIENT"/>
+                                    <orderProperty name="quantity" value="0"/>
+                                    <orderProperty name="quantityUnits" value="6735094c-8416-43e3-8a3c-091332a08cb7"/> <!-- unspecified -->
+                                    <orderProperty name="numRefills" value="0"/>
+                                    <orderProperty name="durationUnits" value="SNOMED CT:258703001">
+                                        <option value="SNOMED CT:258703001" label="Days"/>
+                                    </orderProperty>
+                                </div>
+                                <orderProperty name="discontinueReason" >
+                                    <optionGroup concept="$@REASON_ORDER_STOPPED@"/>
+                                </orderProperty>
+
+                            </orderTemplate>
+                        </drugOrder>
 
                     </td>
                     <td>
@@ -294,11 +343,17 @@
         </div>
     </section>
 
-    <center>
-        <br/>
-        <submit />
-        <br/>
-    </center>
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
 
 </htmlform>
-

@@ -1,12 +1,12 @@
-<htmlform 
-	htmlformUuid="0c92d7a3-49a3-43aa-a226-02ea59418c18" 
-	formUuid="ec4e4184-c44b-416e-bf9a-c871822e156b" 
-	formName="NCD Diabetes: rendez-vous" 
-	formDescription="Rendez-vous" 
-	formVersion="0.1" 
-	formEncounterType="d8327a41-a0cc-49c5-af0e-63f0ba960330" 
-	formPublished="true" 
-	formRetired="false"
+<htmlform
+        htmlformUuid="0c92d7a3-49a3-43aa-a226-02ea59418c18"
+        formUuid="ec4e4184-c44b-416e-bf9a-c871822e156b"
+        formName="NCD Diabetes: rendez-vous"
+        formDescription="Rendez-vous"
+        formVersion="0.1"
+        formEncounterType="d8327a41-a0cc-49c5-af0e-63f0ba960330"
+        formPublished="true"
+        formRetired="false"
 >
     <!-- NCD RBC / Diabetes / Rendez-Vous
          -->
@@ -54,246 +54,361 @@
     </macros>
 
     <style>
-        th.tableHeader {
-        background-color: #009d8e;
-        color: #FFFFFF;
-        font-size: 16px;
-        text-align: left;
-        }
-        .sectionHeader { background-color: #009d8e;
-        color: white; display: block; padding: 2px; font-weight:bold; }
-        ul {
-        list-style-type: square;
-        font-family: Verdana, Arial, Helvetica, sans-serif;
-        font-size: 11px;
-        }
-
-        tr.spaceUnder>td {
-        padding-bottom: 1em;
-        }
-
-        td {
-        font-size: 15px;
-        }
-
-        #container {
-        
-        margin: auto;
-        
-        height: auto;
-        }
-
-        @media print {
-        #container {
-        display: none;
-        }
-
-        #printArea {
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
         display: block;
         }
 
-        #userBar {
-        display: none;
-        }
-
-        #banner {
-        display: none;
-        }
-
-        #footer {
-        display: none;
-        }
-
-        #htmlFormEntryBanner {
-        display: none;
-        }
-
-        .error {
-        display: none;
-        }
-
-        .lables {
-        width: 200px;
-        }
-
-        table {
-        width: 100%;
-        }
-
-        table,td,th {
-        border: 1px solid black;
-        border-collapse: collapse;
-        }
-
-        th {
-        text-align: left;
-        background-color: #D9D9D9;
-        font-size: 10px;
-        }
-
-        td {
-        font-size: 10px;
-        }
-
-        .selectedCancerStagingKeys {
-        page-break-before: always;
-        border: 0px;
-        }
-
-        table.selectedCancerStagingKeys td {
-        border: 0px;
-        }
-
-        #signature {
-        border: none;
-        }
-        #signature td {
-        border: none;
-        }
-        }
-
-        @media screen {
-        table {
-        border: 1px solid #DFDFDF;
-        width: 100%;
-        border-color: #009d8e;
-        }
-
-        #container {
+        form fieldset {
         display: block;
         }
 
-        #printArea {
-        display: none;
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
         }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
+        width: 100%;
+        }
+
+        .div {
+        float: left;
+        }
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        .date-one-line {
+        display: flex;
+        }
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
+        }
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
         }
     </style>
 
-    <table cellspacing="0" cellpadding="6" width="100%">
-        <tr>
-            <td><img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left"
-                     height="65" ></img>
-                <b>REPUBLIC OF RWANDA
-                    <br />MINISTRY OF HEALTH</b>
-            </td>
-            <td><strong> RENDEZ-VOUS / </strong>CLINIC VISITS <br/>
-                <b> IMB ID: <lookup class="value"
-                                    expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
-                                                                                                       expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
-                <br/>
-                Nom / Last name: <lookup class="value" expression="patient.personName.familyName" />
-                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                Prénom/ First name: <lookup class="value" expression="patient.personName.givenName" />
-            </td>
-        </tr>
-        <tr>
-            <td>Clinique / Clinic: <encounterLocation />
-            </td>
-            <td>Date: <encounterDate id="encounterDate"  /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                Provider:<encounterProvider id="encounterProvider"
-                                            role="Provider" default="currentUser"/>
-            </td>
-        </tr>
-    </table>
-    <section headerLabel=" RENDEZ-VOUS / CLINIC VISITS" >
-        <table border="1" width="100%">
-            <tr>
-                <td>Poids/ Weight</td>
-                <td>Taille/ Height</td>
-                <td>T.A/BP</td>
-                <td>Pouls/ Pulse</td>
-                <td>Protein urie</td>
-                <td>Glycemie</td>
-                <td>HbA1c</td>
-                <td>Na  (SERUM SODIUM)</td>
-                <td>K  (SERUM POTASSIUM)</td>
-                <td>Créatinine and clearance</td>
-                <td>Compliance/ Adherence </td>
-                <td>Pieds/ Feet</td>
-                <td>RDV</td>
-            </tr>
 
-            <tr>
-                <td><obs conceptId="$@WEIGHT@" /></td>
-                <td><obs conceptId="$@HEIGHT@"/>cm</td>
-                <td><obs conceptId="$@SYSTOLIC_BP@" /> <obs conceptId="$@DIASTOLIC_BP@" />mmHg</td>
-                <td><obs conceptId="$@PULSE@" /></td>
-                <td><obs conceptId="$@PROTEIN@" />mg/dl</td>
-                <td><obs conceptId="$@GLYCEMIA@"/>mg/dl<br/>
-                    <obs conceptId="$@GLUCOSE@" answerConceptIds="$@FASTING@,$@RANDOM@" answerLabels="   F,R" style="radio"/>
-                </td>
-                <td><obs conceptId="$@HBA1C@" />%</td>
-                <td><obs conceptId="$@NA@" /></td>
-                <td><obs conceptId="$@K@" /></td>
-                <td><obs conceptId="$@CR@" /> <obs conceptId="$@CLEARANCE@" /> </td>
-                <td><obs conceptId="$@ADHERENCE@" answerConceptIds="$@YES@,$@NO@" answerLabels="oui/yes, non/no" style="radio"/></td>
-                <td>Sensation:<br /> D/R: <obs conceptId="$@SENSATION_IN_RIGHT_FOOT@" />/6 <br />D/L: <obs conceptId="$@SENSATION_IN_LEFT_FOOT@" />/6<br />Plaies/sores<obs conceptId="$@FINDS@"  answerConceptId="$@FOOTSORES@" answerLabel="Yes" /><obs conceptId="$@FINDS@"  answerConceptId="$@NOFOOTSORES@" answerLabel="No" /></td>
-                <td><obs conceptId="$@RETURN_VISIT_DATE@" allowFutureDates="true" /></td>
-            </tr>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
 
-            <tr>
-                <td colspan="15"><strong>Episodes d'hypoglycemie(Meme aujourd'hui</strong>/ History of Hypoglicemic episodes including today: <obs conceptId="$@HYPOGLYCEMIA@
-" answerConceptId="$@YES@" answerLabel="oui/yes" /> <obs conceptId="$@HYPOGLYCEMIA@
-" answerConceptId="$@NO@" answerLabel="non/no" />  Quand?/When?: <obs conceptId="$@PART_OF_THEDAY@" answerConceptId="$@MORNING@" answerLabel="le matin/morning" />  <obs conceptId="$@PART_OF_THEDAY@" answerConceptId="$@AFTERNOON@" answerLabel="l'apres midi/Afternoon" /> <obs conceptId="$@PART_OF_THEDAY@" answerConceptId="$@EVENING@" answerLabel="le soir /evening" /> A manqué de nouriture?/Lacked of food?<obs conceptId="$@FOOD_INSECURITY@" answerConceptId="$@YES@" answerLabel="oui/yes" /> <obs conceptId="$@FOOD_INSECURITY@" answerConceptId="$@NO@" answerLabel="non/no" />
-                </td>
-            </tr>
+            <table border="1" style="table-layout: fixed;" cellspacing="0" cellpadding="6" width="80%">
+                <tr>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
+                    </td>
+                    <td>
+                        Health Facility:
+                        <encounterLocation default="GlobalProperty:billing.defaultLocation" />
+                    </td>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="RENDEZ-VOUS / CLINIC VISITS">
+        <div class="section-container">
+            <table border="1" style="table-layout: fixed;" width="80%">
+                <tr>
+                    <td>Poids/ Weight</td>
+                    <td>Taille/ Height</td>
+                    <td>T.A/BP</td>
+                    <td>Pouls/ Pulse</td>
+                    <td>Protein urie</td>
+                    <td colspan="2">Glycemie</td>
+                    <td>HbA1c</td>
+                    <td>Na  (SERUM SODIUM)</td>
+                    <td>K  (SERUM POTASSIUM)</td>
+                    <td>Créatinine and clearance</td>
+                    <td colspan="2">Compliance/ Adherence </td>
+                    <td colspan="2">Pieds/ Feet</td>
+                    <td>RDV</td>
+                </tr>
 
-            <tr>
-                <td rowspan="2">Note: Lab.tests according <br/> to protocal <b>Glycemie:<br/>F</b>=Fasting/ A jeune <br/><b>R</b>=random/ Aleatoire
-                </td>
+                <tr>
+                    <td>
+                        <obs conceptId="$@WEIGHT@" />
+                    </td>
+                    <td>
+                        <obs conceptId="$@HEIGHT@"/>cm
+                    </td>
+                    <td>
+                        <obs conceptId="$@SYSTOLIC_BP@" /> <obs conceptId="$@DIASTOLIC_BP@" />mmHg
+                    </td>
+                    <td>
+                        <obs conceptId="$@PULSE@" />
+                    </td>
+                    <td>
+                        <obs conceptId="$@PROTEIN@" />mg/dl
+                    </td>
+                    <td colspan="2">
+                        <p class="side-by-side small-input">
+                            <obs conceptId="$@GLYCEMIA@"/>mg/dl
+                            <obs conceptId="$@GLUCOSE@" answerConceptIds="$@FASTING@,$@RANDOM@" answerLabels="F,R" style="radio"/>
+                        </p>
 
-                <td colspan="14">
-                    <b>Section pour Commentaires/</b>Comment Section
+                    </td>
+                    <td>
+                        <obs conceptId="$@HBA1C@" />%
+                    </td>
+                    <td>
+                        <obs conceptId="$@NA@" />
+                    </td>
+                    <td>
+                        <obs conceptId="$@K@" />
+                    </td>
+                    <td>
+                        <obs conceptId="$@CR@" /> <obs conceptId="$@CLEARANCE@" />
+                    </td>
+                    <td colspan="2">
+                        <p class="side-by-side">
 
-                </td>
+                            <obs conceptId="$@ADHERENCE@" answerConceptIds="$@YES@,$@NO@" answerLabels="oui/yes, non/no" style="radio"/>
+                        </p>
+                    </td>
+                    <td colspan="2">
+                        Sensation:<br /> D/R: <obs conceptId="$@SENSATION_IN_RIGHT_FOOT@" />/6 <br />D/L: <obs conceptId="$@SENSATION_IN_LEFT_FOOT@" />/6<br />Plaies/sores<obs conceptId="$@FINDS@"  answerConceptId="$@FOOTSORES@" answerLabel="Yes" /><obs conceptId="$@FINDS@"  answerConceptId="$@NOFOOTSORES@" answerLabel="No" />
+                    </td>
+                    <td>
+                        <obs conceptId="$@RETURN_VISIT_DATE@" allowFutureDates="true" />
+                    </td>
+                </tr>
 
-            </tr>
-            <tr>
-                <td colspan="14">
-                    <obs conceptId="$@COMMENT_AT_CONCLUSION_OF_EXAMINATION@"  cols="60" />
-                </td>
 
-            </tr>
-            <tr >
+                <tr>
 
-                <th  class="tableHeader" colspan="4">
-                    <strong> Pain evaluation </strong>
-                </th>
-                <th class="tableHeader" colspan="3">
-                    <strong>Physical</strong>
-                </th>
-                <th class="tableHeader" colspan="4">
-                    <strong> Psychological (if applicable) </strong>
-                </th>
-                <th class="tableHeader" colspan="4">
-                    <strong>Spiritual (if applicable)</strong>
-                </th>
-            </tr>
-            <tr>
-                <td colspan="4">
-                    <strong>Score(0-10)</strong>
-                </td>
-                <td colspan="3"> <obs conceptId="$@Physical_pain_score@"/> </td>
-                <td colspan="4"> <obs conceptId="$@Psychological_pain_score@" answerConceptIds="$@YES@,$@NO@" answerLabel="Yes,No" style="radio"/>  </td>
-                <td colspan="4"> <obs conceptId="$@Spiritual_pain_score@" answerConceptIds="$@YES@,$@NO@" answerLabel="Yes,No" style="radio"/> </td>
-            </tr>
-            <tr>
-                <td colspan="4">
-                    <strong>Comments</strong>
-                </td>
-                <td colspan="11">
-                    <obs conceptId="$@Pain_score_comments@" cols="60"/>
-                </td>
-            </tr>
+                    <td colspan="16">
+                        <p class="radio side-by-side small-input">
 
-        </table>
+                            <strong>Episodes d'hypoglycemie(Meme aujourd'hui</strong>/ History of Hypoglicemic episodes including today: <obs conceptId="$@HYPOGLYCEMIA@
+                        " answerConceptId="$@YES@" answerLabel="oui/yes" /> <obs conceptId="$@HYPOGLYCEMIA@
+                        " answerConceptId="$@NO@" answerLabel="non/no" />  Quand?/When?: <obs conceptId="$@PART_OF_THEDAY@" answerConceptId="$@MORNING@" answerLabel="le matin/morning" />  <obs conceptId="$@PART_OF_THEDAY@" answerConceptId="$@AFTERNOON@" answerLabel="l'apres midi/Afternoon" /> <obs conceptId="$@PART_OF_THEDAY@" answerConceptId="$@EVENING@" answerLabel="le soir /evening" /> A manqué de nouriture?/Lacked of food?<obs conceptId="$@FOOD_INSECURITY@" answerConceptId="$@YES@" answerLabel="oui/yes" /> <obs conceptId="$@FOOD_INSECURITY@" answerConceptId="$@NO@" answerLabel="non/no" />
+                        </p>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <p>
+                        <td colspan="4">
+                            <p>
+                                Note: Lab.tests according <br/> to protocal <b>Glycemie:<br/>F</b>=Fasting/ A jeune <br/><b>R</b>=random/ Aleatoire
+                            </p>
+                        </td>
+
+                        <td colspan="12">
+                            <p>
+                                <b>Section pour Commentaires/</b>Comment Section
+                                <br/>
+                                <obs conceptId="$@COMMENT_AT_CONCLUSION_OF_EXAMINATION@"  cols="80" />
+                            </p>
+
+                        </td>
+                    </p>
+
+                </tr>
+                <tr>
+
+                    <th  class="tableHeader" colspan="4">
+                        <strong> Pain evaluation </strong>
+                    </th>
+                    <th class="tableHeader" colspan="4">
+                        <strong>Physical</strong>
+                    </th>
+                    <th class="tableHeader" colspan="4">
+                        <strong> Psychological (if applicable) </strong>
+                    </th>
+                    <th class="tableHeader" colspan="4">
+                        <strong>Spiritual (if applicable)</strong>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <strong>Score(0-10)</strong>
+                    </td>
+                    <td colspan="4"> <obs conceptId="$@Physical_pain_score@"/> </td>
+
+                    <td colspan="4">
+                        <p class="side-by-side">
+                            <obs conceptId="$@Psychological_pain_score@" answerConceptIds="$@YES@,$@NO@" answerLabel="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+
+                    <td colspan="4">
+                        <p class="side-by-side">
+                            <obs conceptId="$@Spiritual_pain_score@" answerConceptIds="$@YES@,$@NO@" answerLabel="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="4">
+                        <strong>Comments</strong>
+                    </td>
+                    <td colspan="12">
+                        <obs conceptId="$@Pain_score_comments@" cols="80"/>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
     </section>
 
-    <br />
-    <center>
-        <submit />
-    </center>
-    <br />
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
+
     <encounterVoided/>
 </htmlform>
 

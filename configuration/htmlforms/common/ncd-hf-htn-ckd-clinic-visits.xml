@@ -1,12 +1,12 @@
-<htmlform 
-	htmlformUuid="bfc0f47a-7cb8-4851-95de-f0369c7dd745" 
-	formUuid="d9d135f9-7540-4b47-bf48-73c8441f58d1" 
-	formName="NCD HF/HTN/CKD Clinic Visits" 
-	formDescription="This is a form that was created primarily for NCD HF/HTN/CKD flowsheet" 
-	formVersion="1.0" 
-	formEncounterType="735a3bd0-0daa-4ee7-8bea-dc4c99f9ec1b" 
-	formPublished="true" 
-	formRetired="false"
+<htmlform
+        htmlformUuid="bfc0f47a-7cb8-4851-95de-f0369c7dd745"
+        formUuid="d9d135f9-7540-4b47-bf48-73c8441f58d1"
+        formName="NCD HF/HTN/CKD Clinic Visits"
+        formDescription="This is a form that was created primarily for NCD HF/HTN/CKD flowsheet"
+        formVersion="1.0"
+        formEncounterType="735a3bd0-0daa-4ee7-8bea-dc4c99f9ec1b"
+        formPublished="true"
+        formRetired="false"
 >
     <!--  -->
     <macros>
@@ -48,61 +48,202 @@
     </macros>
 
     <style>
-        th.tableHeader {
-        background-color: #009d8e;
-        color: #FFFFFF;
-        font-size: 16px;
-        text-align: left;
-        }
-        .section {
-        border: 1px solid $headerColor;
-        padding: 2px;
-        text-align: left;
-        margin-bottom: 1em;
-        }
-        .sectionHeader {
-        background-color: $headerColor;
-        color: $fontOnHeaderColor;
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
         display: block;
-        padding: 2px;
-        font-weight: bold;
         }
-        table.baseline-aligned td {
-        vertical-align: baseline;
+
+        form fieldset {
+        display: block;
+        }
+
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
+        }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
+        width: 100%;
+        }
+
+        .div {
+        float: left;
+        }
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        .date-one-line {
+        display: flex;
+        }
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
+        }
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
         }
     </style>
 
-    <section headerLabel="1. Encounter Details">
-        <table cellspacing="0" cellpadding="6" width="100%">
-            <tr>
-                <td><img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left"
-                         height="65" ></img>
-                    <b>REPUBLIC OF RWANDA
-                        <br />MINISTRY OF HEALTH</b>
-                </td>
-                <td><strong>RENDEZ-VOUS/</strong> CLINIC VISITS <br/>
-                    <b> IMB ID: <lookup class="value"
-                                        expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
-                                                                                                           expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
-                    <br/>
-                    Nom / Last name: <lookup class="value" expression="patient.personName.familyName" />
-                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                    Prénom/ First name: <lookup class="value" expression="patient.personName.givenName" />
-                </td>
-            </tr>
-            <tr>
-                <td>Clinique / Clinic: <encounterLocation/>
-                </td>
-                <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
 
-                    Provider:<encounterProvider id="encounterProvider"
-                                                role="Provider" default="currentUser"/>
-                </td>
-            </tr>
-        </table>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
+
+            <table border="1" style="table-layout: fixed;" cellspacing="0" cellpadding="6" width="80%">
+                <tr>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
+                    </td>
+                    <td>
+                        Health Facility:
+                        <encounterLocation default="GlobalProperty:billing.defaultLocation" />
+                    </td>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
+                    </td>
+                </tr>
+            </table>
+        </div>
     </section>
-    <section headerLabel="2. Rendez-Vous/CLINIC VISITS">
-        <div style="overflow-x:auto;width:100%">
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Rendez-Vous/CLINIC VISITS">
+        <div class="section-container">
             <table border="2" cellspacing="0" cellpadding="2" width="100%" >
                 <tr>
                     <th>EMR</th>
@@ -129,15 +270,27 @@
                     <td><obs conceptId="$@temperature@"/></td>
                     <td><obs conceptId="$@pulse@"/></td>
                     <td><obs conceptId="$@NYHA@"/></td>
-                    <td><obs conceptId="$@bloodVolumeStatus@" answerConceptIds="$@HYPERVOLEMIC@, $@EUVOLEMIC@, $@HYPOVOLEMIC@" answerLabels="Hyper, Eu, Hypo" style="radio"/></td>
-                    <td><obs conceptId="$@adherence@" answerConceptIds="$@YES@, $@NO@, $@NOT_APPLICABLE@" answerLabels="oui/yes, non/no, NA" style="radio"/></td>
+                    <td>
+                        <p class="side-by-side">
+                            <obs conceptId="$@bloodVolumeStatus@" answerConceptIds="$@HYPERVOLEMIC@, $@EUVOLEMIC@, $@HYPOVOLEMIC@" answerLabels="Hyper, Eu, Hypo" style="radio"/>
+                        </p>
+                    </td>
+                    <td>
+                        <p class="side-by-side">
+                            <obs conceptId="$@adherence@" answerConceptIds="$@YES@, $@NO@, $@NOT_APPLICABLE@" answerLabels="oui/yes, non/no, NA" style="radio"/>
+                        </p>
+                    </td>
                     <td><obs conceptId="$@sodium@"/> mmoI/L</td>
                     <td><obs conceptId="$@potassium@"/> mEq/L </td>
                     <td><obs conceptId="$@carbondioxide@"/></td>
                     <td><obs conceptId="$@creatinine@"/>mmoI/L</td>
                     <td><obs conceptId="$@HGB@"/> (mg/dl)</td>
                     <td><obs conceptId="$@INR@"/></td>
-                    <td><obs conceptId="$@familyPlanning@" answerConceptIds ="$@YES@, $@NO@, $@NOT_APPLICABLE@" answerLabels="yes, no, NA"  style="radio"/></td>
+                    <td>
+                        <p class="side-by-side">
+                            <obs conceptId="$@familyPlanning@" answerConceptIds ="$@YES@, $@NO@, $@NOT_APPLICABLE@" answerLabels="yes, no, NA"  style="radio"/>
+                        </p>
+                    </td>
                     <td><obs conceptId="$@returnDate@" allowFutureDates="true"/></td>
                 </tr>
                 <tr>
@@ -164,8 +317,16 @@
                         <strong>Score(0-10)</strong>
                     </td>
                     <td colspan="3"> <obs conceptId="$@Physical_pain_score@"/> </td>
-                    <td colspan="4"> <obs conceptId="$@Psychological_pain_score@" answerConceptIds="$@YES@,$@NO@" answerLabel="Yes,No" style="radio"/>  </td>
-                    <td colspan="4"> <obs conceptId="$@Spiritual_pain_score@" answerConceptIds="$@YES@,$@NO@" answerLabel="Yes,No" style="radio"/> </td>
+                    <td colspan="4">
+                        <p class="side-by-side">
+                            <obs conceptId="$@Psychological_pain_score@" answerConceptIds="$@YES@,$@NO@" answerLabel="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                    <td colspan="4">
+                        <p class="side-by-side">
+                            <obs conceptId="$@Spiritual_pain_score@" answerConceptIds="$@YES@,$@NO@" answerLabel="Yes,No" style="radio"/>
+                        </p>
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="4">
@@ -180,7 +341,17 @@
         </div>
     </section>
 
-    <submit/>
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
     <encounterVoided/>
 </htmlform>
-

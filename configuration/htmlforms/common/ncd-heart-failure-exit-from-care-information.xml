@@ -1,12 +1,12 @@
-<htmlform 
-	htmlformUuid="43b9d8f7-818b-4cc5-8da8-b54a841a150a" 
-	formUuid="781458f9-1629-4eaa-a311-5890f59086ac" 
-	formName="NCD HEART FAILURE Exit From Care Information" 
-	formDescription="This is a flowsheet that was created primarily for NCD HEART FAILURE flowsheet" 
-	formVersion="1.0" 
-	formEncounterType="609cd2f6-6acf-4a08-8557-16de80fb403c" 
-	formPublished="false" 
-	formRetired="false"
+<htmlform
+        htmlformUuid="43b9d8f7-818b-4cc5-8da8-b54a841a150a"
+        formUuid="781458f9-1629-4eaa-a311-5890f59086ac"
+        formName="NCD HEART FAILURE Exit From Care Information"
+        formDescription="This is a flowsheet that was created primarily for NCD HEART FAILURE flowsheet"
+        formVersion="1.0"
+        formEncounterType="609cd2f6-6acf-4a08-8557-16de80fb403c"
+        formPublished="false"
+        formRetired="false"
 > <!--
            NCD - HF_HTM_CKD Exit Forms
             Pilot_4July_v1.3NT
@@ -289,185 +289,253 @@
 
     </macros>
 
-
     <style>
-        th.tableHeader {
-        background-color: #009d8e;
-        color: #FFFFFF;
-        font-size: 16px;
-        text-align: left;
-        }
-
-        ul {
-        list-style-type: square;
-        font-family: Verdana, Arial, Helvetica, sans-serif;
-        font-size: 11px;
-        }
-
-        tr.spaceUnder>td {
-        padding-bottom: 1em;
-        }
-
-        td {
-        font-size: 15px;
-        }
-
-        #container {Diabetes
-        
-        margin: auto;
-        
-        height: auto;
-        }
-
-        @media print {
-        #container {
-        display: none;
-        }
-
-        #printArea {
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
         display: block;
         }
 
-        #userBar {
-        display: none;
-        }
-
-        #banner {
-        display: none;
-        }
-
-        #footer {
-        display: none;
-        }
-
-        #htmlFormEntryBanner {
-        display: none;
-        }
-
-        .error {
-        display: none;
-        }
-
-        .lables {
-        width: 200px;
-        }
-
-        table {
-        width: 100%;
-        }
-
-        table,td,th {
-        border: 1px solid black;
-        border-collapse: collapse;
-        }
-
-        th {
-        text-align: left;
-        background-color: #D9D9D9;
-        font-size: 10px;
-        }
-
-        td {
-        font-size: 10px;
-        }
-
-        .selectedCancerStagingKeys {
-        page-break-before: always;
-        border: 0px;
-        }
-
-        table.selectedCancerStagingKeys td {
-        border: 0px;
-        }
-
-        #signature {
-        border: none;
-        }
-        #signature td {
-        border: none;
-        }
-        }
-
-        @media screen {
-        table {
-        border: 1px solid #DFDFDF;
-        width: 100%;
-        border-color: #009d8e;
-        }
-
-        #container {
+        form fieldset {
         display: block;
         }
 
-        #printArea {
-        display: none;
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
         }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
+        width: 100%;
+        }
+
+        .div {
+        float: left;
+        }
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        .date-one-line {
+        display: flex;
+        }
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
+        }
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
         }
     </style>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
 
-    <div id="container" style="width:100%">
-        <section>
 
-            <table cellspacing="0" cellpadding="6" width="100%">
+            <table border="2" cellspacing="0" cellpadding="6" width="100%">
                 <tr>
-                    <td><img src="/openmrs/moduleResources/mohbilling/images/rwanda-logo.jpg" align="left"
-                             height="65" ></img>
-                        <b>REPUBLIC OF RWANDA
-                            <br />MINISTRY OF HEALTH</b>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
                     </td>
-                    <td><strong>INFORMATION SUR LA SORTIE DU PROGRAM/</strong>EXIT FROM CARE INFORMATION <br/>
-                        <b> IMB ID: <lookup class="value"
-                                            expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
-                                                                                                               expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
-                        <br/>
-                        Nom / Last name: <lookup class="value" expression="patient.personName.familyName" />
-                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                        Prénom/ First name: <lookup class="value" expression="patient.personName.givenName" />
+                    <td>
+                        Health Facility:
+                        <encounterLocation default="GlobalProperty:billing.defaultLocation" />
                     </td>
-                </tr>
-                <tr>
-                    <td>Clinique / Clinic: <encounterLocation />
-                    </td>
-                    <td>Date: <encounterDate id="encounterDate" default="today" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                        Provider:<encounterProvider />
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
                     </td>
                 </tr>
             </table>
-            <table border="1">
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="EXIT FROM CARE INFORMATION">
+        <div class="section-container">
+            <table border="1" width="100%">
                 <tr >
                     <th class="tableHeader">
                         <strong>EMR</strong>
                     </th>
                     <th class="tableHeader"></th>
                     <th class="tableHeader">
-                        <strong> Raisons</strong>Reasons
+                        <strong> Raisons/</strong>Reasons
                     </th>
                 </tr>
                 <tr>
                     <td></td>
                     <td><strong>Sortie/</strong> Exit</td>
-                    <td>
+                    <td class="radio">
                         If the patient is exiting permanently, fill this drop down. <exitFromCare/><br/>
-                        <obs conceptId="$@TOP_NCD_REASON_FOR_EXIT@"
-                             answerConceptId="$@PATIENT_DIED@" answerLabel=""/> <strong>Decede/</strong>Death
-                        <obs conceptId="$@TOP_NCD_REASON_FOR_EXIT@"
-                             answerConceptId="$@LTFU@" answerLabel=""/><strong>Abandon/</strong>Lost To Follow Up
-                        <obs conceptId="$@TOP_NCD_REASON_FOR_EXIT@"
-                             answerConceptId="$@TRANSFERED@" answerLabel=""/><strong>Transfere: FOSA/</strong>Referred(Facility):
-                        <obs	conceptId="$@FACILITY@" />
-                        <obs conceptId="$@TOP_NCD_REASON_FOR_EXIT@"
-                             answerConceptId="$@DECLINED_CARE@" answerLabel=""/><strong>Refus/</strong> Declined
+                        <p class="radio">
 
+                            <obs conceptId="$@TOP_NCD_REASON_FOR_EXIT@"
+                                 answerConceptId="$@PATIENT_DIED@" answerLabel="" style="radio"/> <strong>Decede/</strong>Death
+                            <br/>
+                            <obs conceptId="$@TOP_NCD_REASON_FOR_EXIT@"
+                                 answerConceptId="$@LTFU@" answerLabel="" style="radio"/><strong>Abandon/</strong>Lost To Follow Up
+                            <br/>
+                            <obs conceptId="$@TOP_NCD_REASON_FOR_EXIT@"
+                                 answerConceptId="$@TRANSFERED@" answerLabel="" style="radio"/><strong>Transfere: FOSA/</strong>Referred(Facility):
+                            <obs conceptId="$@FACILITY@" />
+                            <br/>
+                            <obs conceptId="$@TOP_NCD_REASON_FOR_EXIT@"
+                                 answerConceptId="$@DECLINED_CARE@" answerLabel="" style="radio"/><strong>Refus/</strong> Declined
+                        </p>
                     </td>
                 </tr>
 
             </table>
+        </div>
+    </section>
 
-        </section>
-        <br />
+    <completeProgram programId="$@heart_failure_program@"/>
 
-        <completeProgram programId="$@heart_failure_program@"/>
-        <submit />
-        <br/>
-    </div>
+
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
+
 </htmlform>

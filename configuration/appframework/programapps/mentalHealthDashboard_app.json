@@ -91,5 +91,269 @@
         "order": 5
       }
     ]
+  },
+  {
+    "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhAccessBasicInfo.Form",
+    "order": 6,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "dashboard": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhAccessBasicInfo.Form",
+        "extensionPointId": "51304c8c-ecc2-4bed-818b-a5c785ad58a6.overallActions",
+        "type": "link",
+        "label": "Access Basic Information",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/mh-access-basic-information-form.xml",
+        "icon": "icon-file",
+        "order": 6
+      }
+    ]
+  },
+  {
+    "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhAccessInpatientAdmission.Form",
+    "order": 7,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "dashboard": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhAccessInpatientAdmission.Form",
+        "extensionPointId": "51304c8c-ecc2-4bed-818b-a5c785ad58a6.overallActions",
+        "type": "link",
+        "label": "Access Inpatient Admission",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/mh-access-inpatient-admission.xml",
+        "icon": "icon-file",
+        "order": 7
+      }
+    ]
+  },
+  {
+    "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhAccessOutpatientVisit.Form",
+    "order": 8,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "dashboard": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhAccessOutpatientVisit.Form",
+        "extensionPointId": "51304c8c-ecc2-4bed-818b-a5c785ad58a6.overallActions",
+        "type": "link",
+        "label": "Initial Encounter",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/mh-access-outpatient-visit.xml",
+        "icon": "icon-file",
+        "order": 8
+      }
+    ]
+  },
+  {
+    "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhDiagnosis.Form",
+    "order": 9,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "dashboard": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhDiagnosis.Form",
+        "extensionPointId": "51304c8c-ecc2-4bed-818b-a5c785ad58a6.overallActions",
+        "type": "link",
+        "label": "Diagnosis",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/mh-diagnosis.xml",
+        "icon": "icon-file",
+        "order": 9
+      }
+    ]
+  },
+  {
+    "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhMedicationList.Form",
+    "order": 10,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "dashboard": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhMedicationList.Form",
+        "extensionPointId": "51304c8c-ecc2-4bed-818b-a5c785ad58a6.overallActions",
+        "type": "link",
+        "label": "Medication List",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/mh-medication-list.xml",
+        "icon": "icon-file",
+        "order": 10
+      }
+    ]
+  },
+  {
+    "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhInvestigations.Form",
+    "order": 11,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "dashboard": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhInvestigations.Form",
+        "extensionPointId": "51304c8c-ecc2-4bed-818b-a5c785ad58a6.overallActions",
+        "type": "link",
+        "label": "Investigations",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/mh-investigations.xml",
+        "icon": "icon-file",
+        "order": 11
+      }
+    ]
+  },
+  {
+    "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhMissedVisit.Form",
+    "order": 12,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "dashboard": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhMissedVisit.Form",
+        "extensionPointId": "51304c8c-ecc2-4bed-818b-a5c785ad58a6.overallActions",
+        "type": "link",
+        "label": "Missed Visit",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/mh-missed-visit-form.xml",
+        "icon": "icon-file",
+        "order": 12
+      }
+    ]
+  },
+  {
+    "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhPhqScore9.Form",
+    "order": 13,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "dashboard": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhPhqScore9.Form",
+        "extensionPointId": "51304c8c-ecc2-4bed-818b-a5c785ad58a6.overallActions",
+        "type": "link",
+        "label": "PHQ Score 9",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/mh-phq-9-score.xml",
+        "icon": "icon-file",
+        "order": 13
+      }
+    ]
+  },
+  {
+    "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhPharmacotherapy.Form",
+    "order": 14,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "dashboard": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhPharmacotherapy.Form",
+        "extensionPointId": "51304c8c-ecc2-4bed-818b-a5c785ad58a6.overallActions",
+        "type": "link",
+        "label": "Pharmacotherapy",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/mh-routine-encounter----pharmacotherapy.xml",
+        "icon": "icon-file",
+        "order": 14
+      }
+    ]
+  },
+  {
+    "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhPsychotherapyApproachVisit.Form",
+    "order": 15,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "dashboard": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhPsychotherapyApproachVisit.Form",
+        "extensionPointId": "51304c8c-ecc2-4bed-818b-a5c785ad58a6.overallActions",
+        "type": "link",
+        "label": "Psychotherapy approach visit",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/mh-routine-encounter---psychotherapy-approach-visit.xml",
+        "icon": "icon-file",
+        "order": 15
+      }
+    ]
+  },
+  {
+    "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhSuicideRiskAssessment.Form",
+    "order": 16,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "dashboard": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhSuicideRiskAssessment.Form",
+        "extensionPointId": "51304c8c-ecc2-4bed-818b-a5c785ad58a6.overallActions",
+        "type": "link",
+        "label": "Suicide Risk Assessment",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/mh-suicide-risk-assessment.xml",
+        "icon": "icon-file",
+        "order": 16
+      }
+    ]
+  },
+  {
+    "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhSuicideSafetyPlan.Form",
+    "order": 17,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "dashboard": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhSuicideSafetyPlan.Form",
+        "extensionPointId": "51304c8c-ecc2-4bed-818b-a5c785ad58a6.overallActions",
+        "type": "link",
+        "label": "Suicide Safety Plan",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/mh-suicide-safety-plan.xml",
+        "icon": "icon-file",
+        "order": 17
+      }
+    ]
   }
 ]

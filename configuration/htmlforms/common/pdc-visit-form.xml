@@ -1,12 +1,12 @@
 <htmlform
-	htmlformUuid="8d628dd9-63fa-4391-8800-a11f61cd2ffc"
-	formUuid="98906e08-00ac-41de-8a2b-a318694c33dc"
-	formName="PDC Visit Form"
-	formDescription="Pediatric Development Visit form"
-	formVersion="0.1"
-	formEncounterType="71826dd4-330d-4548-9fd8-6703682fbd3a"
-	formPublished="${trueIfRwinkwavu}"
-	formRetired="false"
+        htmlformUuid="8d628dd9-63fa-4391-8800-a11f61cd2ffc"
+        formUuid="98906e08-00ac-41de-8a2b-a318694c33dc"
+        formName="PDC Visit Form"
+        formDescription="Pediatric Development Visit form"
+        formVersion="0.1"
+        formEncounterType="71826dd4-330d-4548-9fd8-6703682fbd3a"
+        formPublished="${trueIfRwinkwavu}"
+        formRetired="false"
 > <!--
 	   PDC Visit Form
 	   Visit Form 5July 2014_Marked for EMR 6Aug2014_HM.docx
@@ -18,239 +18,239 @@
     <script>
 
         $j( document ).ready(function() {
-            $j('tr.checkboxGroup input[type=checkbox]').each(function() {
-                $j(this).click(function () {
-                    var clicked = $j(this).closest('tr').attr("id");
-                    $j('tr.checkboxGroup input[type=checkbox]').each(function() { //loop through each checkbox
-                        var current = $j(this).closest('tr').attr("id");
-                    if(current == clicked)
-                        this.checked = false; //deselect all checkboxes with class "checkbox1"
-                       });
-                    this.checked = true;
-                 });
-            });
+        $j('tr.checkboxGroup input[type=checkbox]').each(function() {
+        $j(this).click(function () {
+        var clicked = $j(this).closest('tr').attr("id");
+        $j('tr.checkboxGroup input[type=checkbox]').each(function() { //loop through each checkbox
+        var current = $j(this).closest('tr').attr("id");
+        if(current == clicked)
+        this.checked = false; //deselect all checkboxes with class "checkbox1"
+        });
+        this.checked = true;
+        });
+        });
 
 
-            $j('td.checkboxGroupIG input[type=checkbox]').each(function() {
-                $j(this).click(function () {
-                    var clicked = $j(this).closest('td').attr("id");
-                    $j('td.checkboxGroupIG input[type=checkbox]').each(function() { //loop through each checkbox
-                        var current = $j(this).closest('td').attr("id");
-                    if(current == clicked)
-                        this.checked = false; //deselect all checkboxes with class "checkbox1"
-                       });
-                    this.checked = true;
-                 });
-            });
+        $j('td.checkboxGroupIG input[type=checkbox]').each(function() {
+        $j(this).click(function () {
+        var clicked = $j(this).closest('td').attr("id");
+        $j('td.checkboxGroupIG input[type=checkbox]').each(function() { //loop through each checkbox
+        var current = $j(this).closest('td').attr("id");
+        if(current == clicked)
+        this.checked = false; //deselect all checkboxes with class "checkbox1"
+        });
+        this.checked = true;
+        });
+        });
 
-            $j('td.checkboxGroupHAZ input[type=checkbox]').each(function() {
-                $j(this).click(function () {
-                    var clicked = $j(this).closest('td').attr("id");
-                    $j('td.checkboxGroupHAZ input[type=checkbox]').each(function() { //loop through each checkbox
-                        var current = $j(this).closest('td').attr("id");
-                    if(current == clicked)
-                        this.checked = false; //deselect all checkboxes with class "checkbox1"
-                       });
-                    this.checked = true;
-                 });
-            });
+        $j('td.checkboxGroupHAZ input[type=checkbox]').each(function() {
+        $j(this).click(function () {
+        var clicked = $j(this).closest('td').attr("id");
+        $j('td.checkboxGroupHAZ input[type=checkbox]').each(function() { //loop through each checkbox
+        var current = $j(this).closest('td').attr("id");
+        if(current == clicked)
+        this.checked = false; //deselect all checkboxes with class "checkbox1"
+        });
+        this.checked = true;
+        });
+        });
 
-            $j('td.checkboxGroupWAZ input[type=checkbox]').each(function() {
-                $j(this).click(function () {
-                    var clicked = $j(this).closest('td').attr("id");
-                    $j('td.checkboxGroupWAZ input[type=checkbox]').each(function() { //loop through each checkbox
-                        var current = $j(this).closest('td').attr("id");
-                    if(current == clicked)
-                        this.checked = false; //deselect all checkboxes with class "checkbox1"
-                       });
-                    this.checked = true;
-                 });
-            });
+        $j('td.checkboxGroupWAZ input[type=checkbox]').each(function() {
+        $j(this).click(function () {
+        var clicked = $j(this).closest('td').attr("id");
+        $j('td.checkboxGroupWAZ input[type=checkbox]').each(function() { //loop through each checkbox
+        var current = $j(this).closest('td').attr("id");
+        if(current == clicked)
+        this.checked = false; //deselect all checkboxes with class "checkbox1"
+        });
+        this.checked = true;
+        });
+        });
 
-            $j('td.checkboxGroupWHZ input[type=checkbox]').each(function() {
-                $j(this).click(function () {
-                    var clicked = $j(this).closest('td').attr("id");
-                    $j('td.checkboxGroupWHZ input[type=checkbox]').each(function() { //loop through each checkbox
-                        var current = $j(this).closest('td').attr("id");
-                    if(current == clicked)
-                        this.checked = false; //deselect all checkboxes with class "checkbox1"
-                       });
-                    this.checked = true;
-                 });
-            });
+        $j('td.checkboxGroupWHZ input[type=checkbox]').each(function() {
+        $j(this).click(function () {
+        var clicked = $j(this).closest('td').attr("id");
+        $j('td.checkboxGroupWHZ input[type=checkbox]').each(function() { //loop through each checkbox
+        var current = $j(this).closest('td').attr("id");
+        if(current == clicked)
+        this.checked = false; //deselect all checkboxes with class "checkbox1"
+        });
+        this.checked = true;
+        });
+        });
 
-            $j('td.checkboxGroupHCAZ input[type=checkbox]').each(function() {
-                $j(this).click(function () {
-                    var clicked = $j(this).closest('td').attr("id");
-                    $j('td.checkboxGroupHCAZ input[type=checkbox]').each(function() { //loop through each checkbox
-                        var current = $j(this).closest('td').attr("id");
-                    if(current == clicked)
-                        this.checked = false; //deselect all checkboxes with class "checkbox1"
-                       });
-                    this.checked = true;
-                 });
-            });
-            $j('td.checkboxGroupFeeding input[type=checkbox]').each(function() {
-                $j(this).click(function () {
-                    var clicked = $j(this).closest('td').attr("id");
-                    $j('td.checkboxGroupFeeding input[type=checkbox]').each(function() { //loop through each checkbox
-                        var current = $j(this).closest('td').attr("id");
-                    if(current == clicked)
-                        this.checked = false; //deselect all checkboxes with class "checkbox1"
-                       });
-                    this.checked = true;
-                 });
-            });
-            $j('tr#row20 input[type=checkbox]').each(function() { //loop through each checkbox
-                $j(this).click(function () {
-                    var clicked = $j(this).closest('span').attr("id");
-                    if(clicked == 'patientNeedsFollowUpNo')
-                        $j("#toggleable1").show();
-                    if(clicked == 'patientNeedsFollowUpYes')
-                        $j("#toggleable1").hide();
-                  });
-             });
+        $j('td.checkboxGroupHCAZ input[type=checkbox]').each(function() {
+        $j(this).click(function () {
+        var clicked = $j(this).closest('td').attr("id");
+        $j('td.checkboxGroupHCAZ input[type=checkbox]').each(function() { //loop through each checkbox
+        var current = $j(this).closest('td').attr("id");
+        if(current == clicked)
+        this.checked = false; //deselect all checkboxes with class "checkbox1"
+        });
+        this.checked = true;
+        });
+        });
+        $j('td.checkboxGroupFeeding input[type=checkbox]').each(function() {
+        $j(this).click(function () {
+        var clicked = $j(this).closest('td').attr("id");
+        $j('td.checkboxGroupFeeding input[type=checkbox]').each(function() { //loop through each checkbox
+        var current = $j(this).closest('td').attr("id");
+        if(current == clicked)
+        this.checked = false; //deselect all checkboxes with class "checkbox1"
+        });
+        this.checked = true;
+        });
+        });
+        $j('tr#row20 input[type=checkbox]').each(function() { //loop through each checkbox
+        $j(this).click(function () {
+        var clicked = $j(this).closest('span').attr("id");
+        if(clicked == 'patientNeedsFollowUpNo')
+        $j("#toggleable1").show();
+        if(clicked == 'patientNeedsFollowUpYes')
+        $j("#toggleable1").hide();
+        });
+        });
 
 
 
-             if(getValue("encounterDate.value") &#60;&#61;'2019-05-20'){
+        if(getValue("encounterDate.value") &#60;&#61;'2019-05-20'){
 
-                $j(".before20190520changes").show();
+        $j(".before20190520changes").show();
 
-             }else{
+        }else{
 
-                 $j(".before20190520changes").hide();
+        $j(".before20190520changes").hide();
 
-             }
+        }
 
-             getField('encounterDate.value').change(function() {
+        getField('encounterDate.value').change(function() {
 
-                if(getValue("encounterDate.value") &#60;&#61; '2019-05-20'){
+        if(getValue("encounterDate.value") &#60;&#61; '2019-05-20'){
 
-                    $j(".before20190520changes").show();
+        $j(".before20190520changes").show();
 
-                }else{
-                    $j(".before20190520changes").hide();
-                }
+        }else{
+        $j(".before20190520changes").hide();
+        }
 
-             });
+        });
         beforeSubmit.push(function() {
-            /* pop ups */
-                var inadequate = getValue('inadequate.value');
-                var AGE_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2 = getValue('AGE_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2.value');
-                var AGE_Z_SCORE_LESS_THAN_THREE = getValue('AGE_Z_SCORE_LESS_THAN_THREE.value');
-                var HT_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2 = getValue('HT_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2.value');
-                var HT_Z_SCORE_LESS_THAN_THREE = getValue('HT_Z_SCORE_LESS_THAN_THREE.value');
+        /* pop ups */
+        var inadequate = getValue('inadequate.value');
+        var AGE_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2 = getValue('AGE_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2.value');
+        var AGE_Z_SCORE_LESS_THAN_THREE = getValue('AGE_Z_SCORE_LESS_THAN_THREE.value');
+        var HT_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2 = getValue('HT_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2.value');
+        var HT_Z_SCORE_LESS_THAN_THREE = getValue('HT_Z_SCORE_LESS_THAN_THREE.value');
 
-                if(inadequate != null &#38;&#38; inadequate != ''){
-                    window.alert("Please fill out malnutrition form");
-                }
-                else if(AGE_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2 != null &#38;&#38; AGE_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2 != ''){
-                    window.alert("Please fill out malnutrition form");
-                }
-                else if(AGE_Z_SCORE_LESS_THAN_THREE != null &#38;&#38; AGE_Z_SCORE_LESS_THAN_THREE != ''){
-                    window.alert("Please fill out malnutrition form");
-                }
-                else if(HT_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2 != null &#38;&#38; HT_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2 != ''){
-                    window.alert("Please fill out malnutrition form");
-                }
-                else if(HT_Z_SCORE_LESS_THAN_THREE != null &#38;&#38; HT_Z_SCORE_LESS_THAN_THREE != ''){
-                    window.alert("Please fill out malnutrition form");
-                }
-            return true;
+        if(inadequate != null &#38;&#38; inadequate != ''){
+        window.alert("Please fill out malnutrition form");
+        }
+        else if(AGE_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2 != null &#38;&#38; AGE_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2 != ''){
+        window.alert("Please fill out malnutrition form");
+        }
+        else if(AGE_Z_SCORE_LESS_THAN_THREE != null &#38;&#38; AGE_Z_SCORE_LESS_THAN_THREE != ''){
+        window.alert("Please fill out malnutrition form");
+        }
+        else if(HT_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2 != null &#38;&#38; HT_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2 != ''){
+        window.alert("Please fill out malnutrition form");
+        }
+        else if(HT_Z_SCORE_LESS_THAN_THREE != null &#38;&#38; HT_Z_SCORE_LESS_THAN_THREE != ''){
+        window.alert("Please fill out malnutrition form");
+        }
+        return true;
 
         });
         /* auto calculations */
-            autoFillChronologicalAndCorrectedAge();
-            getField("encounterDate.value").change(function() {
-                autoFillChronologicalAndCorrectedAge();
-            });
+        autoFillChronologicalAndCorrectedAge();
+        getField("encounterDate.value").change(function() {
+        autoFillChronologicalAndCorrectedAge();
+        });
         /* INTERVAL GROWTH */
 
 
-            getField("WEIGHT.value").change(function() {
+        getField("WEIGHT.value").change(function() {
 
-                var prevousWeight = $j('#prevousWeight').text();
-                var prevousWeightObsDatetime = $j('#prevousWeightObsDatetime').text();
-                var currentDate = getValue('encounterDate.value');
-                var prevousWeightDateObj = new Date(prevousWeightObsDatetime);
-                var currentDateObj = new Date(currentDate);
-                var differenceInTime = currentDateObj - prevousWeightDateObj;
-                var differenceIndays = differenceInTime / (24 * 60 * 60 * 1000);
-                var intervalGrowth = (getValue('WEIGHT.value') - prevousWeight) * 1000/ differenceIndays
-                intervalGrowth = parseFloat(intervalGrowth.toFixed(2));
-                if($j.isNumeric(prevousWeight)){
-                    setValue('INTERVAL_GROWTH.value', intervalGrowth);
-                }
+        var prevousWeight = $j('#prevousWeight').text();
+        var prevousWeightObsDatetime = $j('#prevousWeightObsDatetime').text();
+        var currentDate = getValue('encounterDate.value');
+        var prevousWeightDateObj = new Date(prevousWeightObsDatetime);
+        var currentDateObj = new Date(currentDate);
+        var differenceInTime = currentDateObj - prevousWeightDateObj;
+        var differenceIndays = differenceInTime / (24 * 60 * 60 * 1000);
+        var intervalGrowth = (getValue('WEIGHT.value') - prevousWeight) * 1000/ differenceIndays
+        intervalGrowth = parseFloat(intervalGrowth.toFixed(2));
+        if($j.isNumeric(prevousWeight)){
+        setValue('INTERVAL_GROWTH.value', intervalGrowth);
+        }
 
-            });
+        });
 
 
 
 
         });
         function autoFillChronologicalAndCorrectedAge(){
-            var birthDate = $j('#birthdate span').text();
-            var currentDate = getValue('encounterDate.value');
-            var birthDateObj = new Date(birthDate);
-            var currentDateObj = new Date(currentDate);
-            var ageInMilliseconds = currentDateObj - birthDateObj;
-            setValue('Chronological_Age.value', chronologicalAge(ageInMilliseconds));
-            //corrected age
-            var gestAgeInweeks = $j('#GestationalAge').text();
-            if (gestAgeInweeks &#60; 37 &#38;&#38; (1/gestAgeInweeks) &#33;&#61; "Infinity"){
-                var correctedAgeInMilliseconds = ageInMilliseconds - ((40-gestAgeInweeks) * 7 * 24 * 60 * 60 * 1000);
-                setValue('CORRECTED_AGE.value', chronologicalAge(correctedAgeInMilliseconds));
-            }
+        var birthDate = $j('#birthdate span').text();
+        var currentDate = getValue('encounterDate.value');
+        var birthDateObj = new Date(birthDate);
+        var currentDateObj = new Date(currentDate);
+        var ageInMilliseconds = currentDateObj - birthDateObj;
+        setValue('Chronological_Age.value', chronologicalAge(ageInMilliseconds));
+        //corrected age
+        var gestAgeInweeks = $j('#GestationalAge').text();
+        if (gestAgeInweeks &#60; 37 &#38;&#38; (1/gestAgeInweeks) &#33;&#61; "Infinity"){
+        var correctedAgeInMilliseconds = ageInMilliseconds - ((40-gestAgeInweeks) * 7 * 24 * 60 * 60 * 1000);
+        setValue('CORRECTED_AGE.value', chronologicalAge(correctedAgeInMilliseconds));
+        }
         }
         function chronologicalAge(ageInMilliseconds){
 
-            var signOfMilliseconds = Math.sign(ageInMilliseconds);
-            ageInMilliseconds = ageInMilliseconds * signOfMilliseconds;
+        var signOfMilliseconds = Math.sign(ageInMilliseconds);
+        ageInMilliseconds = ageInMilliseconds * signOfMilliseconds;
 
-            var years = 0;
-            var months = 0;
-            var weeks = 0;
-            var days = 0;
-            var pyears= Math.floor(ageInMilliseconds/(12*30*24*60*60*1000));
-            if( pyears >=1)
-            {
-                years = pyears;
-                ageInMilliseconds = ageInMilliseconds - (pyears* (12*30*24*60*60*1000));
-            };
-            var pmonths= Math.floor(ageInMilliseconds/(30*24*60*60*1000));
-            if( pmonths >=1)
-            {
-                months = pmonths;
-                ageInMilliseconds = ageInMilliseconds - (pmonths* (30*24*60*60*1000));
-            };
-            var pweeks= Math.floor(ageInMilliseconds/(7*24*60*60*1000));
-            if( pweeks >=1)
-            {
-                weeks = pweeks;
-                ageInMilliseconds = ageInMilliseconds - (pweeks* (7*24*60*60*1000));
-            };
-            var pdays= Math.floor(ageInMilliseconds/(7*24*60*60*1000));
-            if( pdays >=1)
-            {
-                days = pweeks;
-            };
+        var years = 0;
+        var months = 0;
+        var weeks = 0;
+        var days = 0;
+        var pyears= Math.floor(ageInMilliseconds/(12*30*24*60*60*1000));
+        if( pyears >=1)
+        {
+        years = pyears;
+        ageInMilliseconds = ageInMilliseconds - (pyears* (12*30*24*60*60*1000));
+        };
+        var pmonths= Math.floor(ageInMilliseconds/(30*24*60*60*1000));
+        if( pmonths >=1)
+        {
+        months = pmonths;
+        ageInMilliseconds = ageInMilliseconds - (pmonths* (30*24*60*60*1000));
+        };
+        var pweeks= Math.floor(ageInMilliseconds/(7*24*60*60*1000));
+        if( pweeks >=1)
+        {
+        weeks = pweeks;
+        ageInMilliseconds = ageInMilliseconds - (pweeks* (7*24*60*60*1000));
+        };
+        var pdays= Math.floor(ageInMilliseconds/(7*24*60*60*1000));
+        if( pdays >=1)
+        {
+        days = pweeks;
+        };
 
-            if(years >= 1){
-                years = years * signOfMilliseconds
-            }
-            else if(months >= 1){
-                months = months * signOfMilliseconds
-            }
-            else if(weeks >= 1){
-                weeks = weeks * signOfMilliseconds
-            }
-            else if(days >= 1){
-                days = days * signOfMilliseconds
-            }
-            var chronologicalAge = years + " years " + months + " months " + weeks + " weeks "+ days + " days";
+        if(years >= 1){
+        years = years * signOfMilliseconds
+        }
+        else if(months >= 1){
+        months = months * signOfMilliseconds
+        }
+        else if(weeks >= 1){
+        weeks = weeks * signOfMilliseconds
+        }
+        else if(days >= 1){
+        days = days * signOfMilliseconds
+        }
+        var chronologicalAge = years + " years " + months + " months " + weeks + " weeks "+ days + " days";
 
-            return chronologicalAge;
+        return chronologicalAge;
         }
 
     </script>
@@ -434,850 +434,987 @@
     </macros>
 
     <style>
-        .formName {
-        background-color: #e0e0ff;
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
+        display: block;
+        }
+
+        form fieldset {
+        display: block;
+        }
+
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
+        }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
         }
 
         .section {
-        border: 1px solid #8FABC7;
-        width: 99%;
-        padding: 2px;
-        text-align: left;
-        margin-bottom: 10px;
-        }
-
-        .disabled {
-        color: #C0C0C0;
-        }
-        td {
-        vertical-align: top;
-        }
-
-        table {
-        border-collapse: collapse;
-        }
-
-        .hidden {
-        color: #D8D8D8;
-        width: 19%;
-        }
-
-        @media print {
-        #container {
-        display: block;
-        /* font-size: 11px;
-        table-layout: auto; */
-        }
-        #printArea {
-        display: none;
-        }
-        #userBar {
-        display: none;
-        }
-        #banner {
-        display: none;
-        }
-        #footer {
-        display: none;
-        }
-        #submitArea{
-        display: none;
-        }
-        #htmlFormEntryBanner {
-        display: none;
-        }
-        .error {
-        display: none;
-        }
-        .lables {
-        width: 200px;
-        }
-        table {
         width: 100%;
         }
-        table,td,th {
-        border: 1px solid black;
-        border-collapse: collapse;
+
+        .div {
+        float: left;
         }
-        th {
-        text-align: left;
-        background-color: #D9D9D9;
-        font-size: 10px;
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
         }
-        td {
-        font-size: 16px;
+
+        .side-by-side label {
+        display: inline-block;
         }
-        .value {
-        font-size: 20px;
-        font-weight: bold;
-        font-style: italic;
+
+        .date-one-line {
+        display: flex;
         }
-        .selectedCancerStagingKeys {
-        page-break-before: always;
-        border: 0px;
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
         }
-        table.selectedCancerStagingKeys td {
-        border: 0px;
+
+        .date-one-line span {
+        display: flex;
         }
-        #signature {
-        border: none;
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
         }
-        #signature td {
-        border: none;
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
         }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
+        }
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
         }
     </style>
 
-    <section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
 
-        <table border="2" cellspacing="0" cellpadding="6" width="100%">
-            <tr>
-                <td><b>IMB ID #: <lookup
-                        class="value"
-                        expression="patientIdentifiers.get(&quot;IMB ID&quot;)" />
-                </b></td>
-                <td>Date: <encounterDate
-                        default="today" id="encounterDate"/></td>
-                <td>
-                    <span id="birthdate" class="hidden"> <lookup class="value" expression="patient.birthdate"/> </span>
-                    <span id="GestationalAge" class="hidden"> <lookup expression="fn.latestObs('1409AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA').valueNumeric"/> </span>
-                </td>
-            </tr>
-            <tr>
-                <td>Last name/<span
-                        class="disabled">Nom: </span> <lookup class="value"
-                                                              expression="patient.personName.familyName" /></td>
-                <td>First name/<span
-                        class="disabled">Prenom: </span> <lookup class="value"
-                                                                 expression="patient.personName.givenName" /></td>
-                <td>Gender: <lookup
-                        class="value" expression="patient.Gender" /></td>
-            </tr>
-            <tr>
-                <td><img
-                        src="/openmrs/moduleResources/rwandareports/images/pihHands.png"
-                        align="left" height="65"></img>
-                    <h2>
-                        &#160;&#160;Inshuti Mu Buzima <br /> &#160;&#160;PIH Rwanda
-                    </h2></td>
-                <td><strong> Chronic Disease Clinic Visit Form –
-                    Pediatric Developmental Clinic</strong></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Clinic or Hospital:</td>
-                <td><encounterLocation id="encounterLocation"  /></td>
-                <td>Author:<encounterProvider id="encounterProvider" /></td>
-            </tr>
-        </table>
+            <table border="1" style="table-layout: fixed;" cellspacing="0" cellpadding="6" width="80%">
+                <tr>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
+                    </td>
+                    <td>
+                        Health Facility:
+                        <encounterLocation default="GlobalProperty:billing.defaultLocation" />
+                    </td>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
+                    </td>
+                </tr>
+            </table>
+        </div>
     </section>
-    <br />
-    <table border="2" cellspacing="0" cellpadding="6" width="100%">
-        <tr id="row1" class="checkboxGroup">
-            <td>Have there been any demographic changes? (ex. contact
-                information)<br />
-                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                <obs id="changeInDemographicsYes" conceptId="$@DEMOGRAPHIC_CHANGES@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" /> (complete the Change in Demographics form)
-                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                <obs id="changeInDemographicsNo" conceptId="$@DEMOGRAPHIC_CHANGES@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Type of Visit: <obs conceptId="$@REASON_FOR_VISIT@" answerConceptIds="$@Standard_visit@,$@REGULAR_FOLLOWUP_VISIT@" answerLabels="Standard Visit (complete the standard visit form) ,Follow-up for a specific issue (malnutrition etc.)" style="radio"/>
-            </td>
-        </tr>
-    </table>
-    <br />
-    <table border="2" cellspacing="0" cellpadding="6" width="100%">
-        <tr>
-            <td colspan="2" align="center">Danger Signs</td>
-        </tr>
-        <tr>
-            <td rowspan="4" style="vertical-align: middle;">Danger Signs</td>
-            <td>
-                <obsgroup groupingConceptId="addf0593-74ae-4ece-b1dc-ea90b2d79e5a">
-                    <table border="1">
-                        <tr>
-                            <td colspan="4">Does the patient have any of the following danger signs?</td>
 
-
-                        </tr>
-                        <tr id="row2" class="checkboxGroup">
-                            <td>Problems breathing with chest indrawing, rapid breathing, stridor</td>
-                            <td width="150px">
-<!--                                <obs id="breathingDangerSignsPresentYes" conceptId="$@BREATHING_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />-->
-<!--                                <br/>-->
-<!--                                <obs id="breathingDangerSignsPresentNo" conceptId="$@BREATHING_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />-->
-                                <obs conceptId="$@BREATHING_DANGER_SIGNS_PRESENT@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" />
-                                &#160;&#160;&#160;&#160;&#160;&#160;
-                            </td>
-                            <td> Palmo-plantar pallor</td>
-                            <td width="150px">
-                                <obs conceptId="$@Palmo-plantar_pallor_Danger_signs_present@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" />
-                                <br/>
-                            </td>
-
-                        </tr>
-                        <tr id="row3" class="checkboxGroup">
-                            <td>Convulsions</td>
-                            <td width="150px">
-<!--                                <obs id="convulsionsDangerSignsPresentYes" conceptId="$@CONVULSIONS_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />-->
-<!--                                <br/>-->
-<!--                                <obs id="convulsionsDangerSignsPresentNo" conceptId="$@CONVULSIONS_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />-->
-                                <obs conceptId="$@CONVULSIONS_DANGER_SIGNS_PRESENT@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" />
-                            </td>
-                            <td> History of fever</td>
-                            <td width="150px">
-                                <obs conceptId="$@History_of_fever@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" />
-                            </td>
-                        </tr>
-                        <tr id="row4" class="checkboxGroup">
-                            <td>Lethargy or unresponsiveness</td>
-                            <td width="150px">
-<!--                                <obs id="lethargyDangerSignsPresentYes" conceptId="$@LETHARGY_OR_UNRESPONSIVENESS_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />-->
-<!--                                <br/>-->
-<!--                                <obs id="lethargyDangerSignsPresentNo" conceptId="$@LETHARGY_OR_UNRESPONSIVENESS_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />-->
-<!--                                &#160;&#160;&#160;&#160;&#160;&#160;-->
-                                <obs conceptId="$@LETHARGY_OR_UNRESPONSIVENESS_DANGER_SIGNS_PRESENT@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" />
-                            </td>
-                            <td> Bilateral pitting oedema</td>
-                            <td width="150px">
-                                <obs conceptId="$@Bilateral_pitting_oedema_danger_signs_present@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" />
-                            </td>
-
-                        </tr>
-
-                        <tr id="row5" class="checkboxGroup">
-                            <td>Umbilical cord redness</td>
-                            <td width="150px">
-<!--                                <obs id="umbilicalDangerSignsPresentYes" conceptId="$@UMBILICAL_CORD_REDNESS_DANGER_SIGNS@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />-->
-<!--                                <br/>-->
-<!--                                <obs id="umbilicalDangerSignsPresentNo" conceptId="$@UMBILICAL_CORD_REDNESS_DANGER_SIGNS@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />-->
-<!--                                &#160;&#160;&#160;&#160;&#160;&#160;-->
-                                <obs conceptId="$@UMBILICAL_CORD_REDNESS_DANGER_SIGNS@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                            </td>
-                            <td> Unable to feed </td>
-                            <td width="150px">
-                                <obs conceptId="$@unable_to_feed@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                            </td>
-
-                        </tr>
-                        <tr id="row6" class="checkboxGroup">
-                            <td>Stiff neck or bulging fontanelles</td>
-                            <td width="150px">
-<!--                                <obs id="stiffNeckDangerSignsPresentYes" conceptId="$@STIFF_NECK_OR_BULGING_FONTANELLES_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />-->
-<!--                                <br/>-->
-<!--                                <obs id="stiffNeckDangerSignsPresentNo" conceptId="$@STIFF_NECK_OR_BULGING_FONTANELLES_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />-->
-<!--                                &#160;&#160;&#160;&#160;&#160;&#160;-->
-                                <obs conceptId="$@STIFF_NECK_OR_BULGING_FONTANELLES_DANGER_SIGNS_PRESENT@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                            </td>
-                            <td> Coughing or tearing while feeding </td>
-                            <td width="150px">
-                                <obs conceptId="$@Coughing_or_tearing_while_feeding@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td> Diarrhea</td>
-                            <td width="150px">
-                                <obs conceptId="$@Diarrhea_Danger_signs@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" />
-                            </td>
-                            <td > Rigid muscles or jaw clenching that prevents feeding </td>
-                            <td width="150px">
-                                <obs conceptId="$@Rigid_muscles_or_jaw_clenching_that_prevents_feeding@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td> Dehydration</td>
-                            <td width="150px">
-                                <obs conceptId="$@Dehydration_Danger_signs_Present@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" />
-                            </td>
-                            <td> Excessive sweating when feeding </td>
-                            <td width="150px">
-                                <obs conceptId="$@Excessive_sweating_when_feeding@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> Vomiting everything</td>
-                            <td width="150px">
-                                <obs conceptId="$@Does_Vomiting_everything@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" />
-                            </td>
-                            <td> Baby tires quickly when feeding </td>
-                            <td width="150px">
-                                <obs conceptId="$@tires_quickly_when_feeding@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                            </td>
-                        </tr>
-                        <tr id="row7" class="checkboxGroup">
-                            <td colspan="4"><br/>If yes above, was:
-                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                                <obs id="actionTakenPhysicianNotified" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PHYSICIAN_NOTIFIED@" answerLabel="physician notified" style="checkbox" />
-                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                                <obs id="actionTakenPatientReferredToDH" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@" answerLabel="patient referred to DH" style="checkbox" />
-                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                                <obs id="actionTakenPatientReferredToIMCI" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_IMCI@" answerLabel="patient referred to IMCI" style="checkbox" />
-                            </td>
-                        </tr>
-                    </table>
-                </obsgroup>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <obsgroup groupingConceptId="9d6782db-2a24-4894-8c9a-b5180ed984d6">
-                    <table>
-                        <tr>
-                            <td>Temperature:<obs conceptId="$@TEMPERATURE@" labelText="" />°C</td>
-                            <td align="left">Normal Temperature for age:<br/>
-                                *Infant &lt;2 months: between 35.5 and 37.5°C.<br/>
-                                *Age 2-59 months: ≤ 37.5 °C <br/><br/> <br/>
-                            </td>
-                        </tr>
-                        <tr id="row8" class="checkboxGroup">
-                            <td colspan="2">Is temperature abnormal for age range?
-                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                                <obs id="abnormalTemperatureYes" conceptId="$@ABNORMAL_TEMPERATURE_FOR_AGE_RANGE@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
-                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                                <obs id="abnormalTemperatureNo" conceptId="$@ABNORMAL_TEMPERATURE_FOR_AGE_RANGE@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
-                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                            </td>
-                        </tr>
-                        <tr id="row9" class="checkboxGroup">
-                            <td colspan="4"><br/>If yes above, was:
-                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                                <obs id="actionTakenPhysicianNotified" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PHYSICIAN_NOTIFIED@" answerLabel="physician notified" style="checkbox" />
-                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                                <obs id="actionTakenPatientReferredToDH" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@" answerLabel="patient referred to DH" style="checkbox" />
-                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                                <obs id="actionTakenPatientReferredToIMCI" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_IMCI@" answerLabel="patient referred to IMCI" style="checkbox" />
-                            </td>
-                        </tr>
-                    </table>
-                </obsgroup>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <table>
-                    <tr>
-                        <td>Respiratory Rate:<obs conceptId="$@RESPIRATORY_RATE@" labelText="" />Breaths/minute</td>
-                        <td align="left">Normal Respiratory Rates for age:<br/>
-                            *Infant &lt;2 months:  &lt;60 breaths per minute<br/>
-                            *Infant 2-12 months:  &lt;50 breaths per minute<br/>
-                            *Child 1-5 years: &lt; 40 breaths per minute <br/><br/> <br/>
-                        </td>
-                    </tr>
-                    <tr id="row10" class="checkboxGroup">
-                        <td colspan="2">Is respiratory rate abnormal for age range?
-                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                            <obs id="abnormalRespiratoryRateYes" conceptId="$@ABNORMAL_TEMPERATURE_FOR_AGE_RANGE@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
-                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                            <obs id="abnormalRespiratoryRateNo" conceptId="$@ABNORMAL_TEMPERATURE_FOR_AGE_RANGE@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
-                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                        </td>
-                    </tr>
-                    <tr id="row11" class="checkboxGroup">
-                        <td colspan="4"><br/>If yes above, was:
-                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                            <obs id="actionTakenPhysicianNotified" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PHYSICIAN_NOTIFIED@" answerLabel="physician notified" style="checkbox" />
-                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                            <obs id="actionTakenPatientReferredToDH" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@" answerLabel="patient referred to DH" style="checkbox" />
-                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                            <obs id="actionTakenPatientReferredToIMCI" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_IMCI@" answerLabel="patient referred to IMCI" style="checkbox" />
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-        </tr>
-    </table>
-    <br />
-    <table border="2" cellspacing="0" cellpadding="6" width="100%">
-        <tr style="background-color: #3333cc;">
-            <td colspan="2" align="center">Growth, Nutrition and Development</td>
-        </tr>
-        <!--        <tr class="disabled">-->
-        <!--            <td>Age</td>-->
-        <!--            <td>_____________________(days/weeks/months/years)</td>-->
-        <!--        </tr>-->
-        <tr>
-            <td>
-                <table border="1" cellspacing="0" cellpadding="6" width="100%">
-                    <tr class="checkboxGroup">
-                        <td>Chronological Age</td>
-                        <td>
-<!--                            <obs id="Chronological_Age" conceptId="$@Chronological_Age@"/>-->
-                            <obs id="Chronological_Age" conceptId="$@chonological_age_text@" size="30"/>
-                        </td>
-<!--                        <td>-->
-<!--                            <obs id="DAYS" conceptId="$@TIME_UNITS@" answerConceptId="$@DAYS@" answerLabel="days" style="checkbox"/> &#160;&#160;-->
-<!--                            <obs id="WEEKS" conceptId="$@TIME_UNITS@" answerConceptId="$@WEEKS@" answerLabel="weeks" style="checkbox"/>-->
-<!--                            <br/>-->
-<!--                            <obs id="MONTHS" conceptId="$@TIME_UNITS@" answerConceptId="$@MONTHS@" answerLabel="months" style="checkbox"/>-->
-<!--                            <obs id="YEARS" conceptId="$@TIME_UNITS@" answerConceptId="$@YEARS@" answerLabel="years" style="checkbox"/>-->
-<!--                        </td>-->
-                    </tr>
-                </table>
-            </td>
-            <td>
-                <table border="1" cellspacing="0" cellpadding="6" width="100%">
-                    <tr>
-                        <td>Corrected Age (if GA <br /> &lt;37 weeks and &lt;2 <br />
-                            years old)
-                        </td>
-                        <td>
-<!--                            <obs conceptId="$@CORRECTED_AGE@" labelText="" />-->
-                            <obs id="CORRECTED_AGE" conceptId="$@CORRECTED_AGE_in_Text@" size="30"/>
-
-                        </td>
-                        <td>(weeks) <b>*Note: If possible, use this age
-                            for determining z-scores below</b>
-                            <!--                            <span class="disabled">☐ N/A &#160;&#160;&#160;&#160;&#160;&#160;&#160; ☐ No Info</span>-->
-
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <table border="2" cellspacing="0" cellpadding="6" width="100%">
-                    <tr>
-                        <td>Weight</td>
-                        <td>Height/Length</td>
-                        <td>Interval Growth</td>
-                        <td class="before20190520changes">Head Circumference</td>
-                        <td>Wt/Age Z-score</td>
-                        <td class="before20190520changes">Height/Age Z-score</td>
-                        <td>Wt/Ht Z-score</td>
-                        <td class="before20190520changes">HC/Age Z-score</td>
-                    </tr>
-                    <tr >
-                        <td><obs id="WEIGHT" conceptId="$@WEIGHT@" labelText="" /><br/>kg</td>
-                        <td><obs conceptId="$@HEIGHT@" labelText="" /><br/>cm
-                        </td>
-                        <td align="left" class="checkboxGroupIG">
-                            <span id="prevousWeight" class="hidden"> <lookup expression="fn.latestObs('3ce93b62-26fe-102b-80cb-0017a47871b2').valueNumeric"/> </span>
-                            <span id="prevousWeightObsDatetime" class="hidden"> <lookup expression="fn.latestObs('3ce93b62-26fe-102b-80cb-0017a47871b2').obsDatetime"/> </span>
-                            <obs id="INTERVAL_GROWTH" conceptId="$@INTERVAL_GROWTH@" labelText="" /><br/>
-
-                            <span class="">
-                                <obs id="" conceptId="$@INTERVAL_GROWTH_CODED@" answerConceptId="$@NO_PREVIOUS_WEIGHT@" answerLabel="no previous weight" style="checkbox" />
-                                <br />
-                                <obs id="" conceptId="$@INTERVAL_GROWTH_CODED@" answerConceptId="$@ADEQUATE@" answerLabel="adequate" style="checkbox" />
-                                <br />
-                                <obs id="inadequate" conceptId="$@INTERVAL_GROWTH_CODED@" answerConceptId="$@INADEQUATE@" answerLabel="inadequate" style="checkbox" />
-                                <br />
-                                <obs id="" conceptId="$@INTERVAL_GROWTH_CODED@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A (z-score 	&#60; -2 AND &#62;6mo)" style="checkbox" />
-                                <br />
-					        </span>
-                        </td>
-
-                        <td align="left" class="before20190520changes"><obs conceptId="$@HEAD_CIRCUMFERENCE@" labelText="" /><br/>
-                            <span class="">cm<br/>
-					             <obs id="" conceptId="$@HEAD_CIRCUMFERENCE_CODED@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A (	&#60; 40 weeks corrected age or &#62; 3years)" style="checkbox" />
-					        </span>
-                        </td>
-                        <td align="left" class="checkboxGroupWAZ">
-                            <obs conceptId="$@WEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@Z_SCORE_GREATER_THAN_TWO@" answerLabel="&#62;&#61; -2" style="checkbox" /><br />
-                            <obs id="AGE_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2" conceptId="$@WEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2@" answerLabel="&#62;&#61; -3 AND &#60; -2 " style="checkbox" /><br />
-                            <obs id="AGE_Z_SCORE_LESS_THAN_THREE" conceptId="$@WEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@Z_SCORE_LESS_THAN_THREE@" answerLabel="&#60; -3" style="checkbox" /><br/>
-                            <obs conceptId="$@WEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A &#60; 40 weeks corrected age" style="checkbox" />
-                        </td>
-                        <!--                        <span class="before20190520changes">-->
-                        <td align="left" class="checkboxGroupHAZ before20190520changes"><obs conceptId="$@HEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@Z_SCORE_GREATER_THAN_TWO@" answerLabel="&#62;&#61; -2" style="checkbox" /><br /> <obs conceptId="$@HEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2@" answerLabel="&#62;&#61; -3 AND &lt; -2 " style="checkbox" /><br />
-                            <obs conceptId="$@HEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@Z_SCORE_LESS_THAN_THREE@" answerLabel="&#60; -3" style="checkbox" /><br/>
-                            <obs conceptId="$@HEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A &#60; 40 weeks corrected age" style="checkbox" />
-                        </td>
-                        <!--                        </span>-->
-                        <td align="left" class="checkboxGroupWHZ">
-                            <obs conceptId="$@WEIGHT_FOR_HEIGHT_Z_SCORE@" answerConceptId="$@Z_SCORE_GREATER_THAN_TWO@" answerLabel="&#62;&#61; -2" style="checkbox" /><br />
-                            <obs id="HT_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2" conceptId="$@WEIGHT_FOR_HEIGHT_Z_SCORE@" answerConceptId="$@Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2@" answerLabel="&#62;&#61; -3 AND &#60; -2 " style="checkbox" /><br />
-                            <obs id="HT_Z_SCORE_LESS_THAN_THREE" conceptId="$@WEIGHT_FOR_HEIGHT_Z_SCORE@" answerConceptId="$@Z_SCORE_LESS_THAN_THREE@" answerLabel="&#60; -3" style="checkbox" /><br/>
-                            <obs conceptId="$@WEIGHT_FOR_HEIGHT_Z_SCORE@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A &#60;40 weeks corrected age" style="checkbox" />
-                        </td>
-                        <!--                        <span class="before20190520changes">-->
-                        <td align="left" class="checkboxGroupHCAZ before20190520changes"><obs conceptId="$@HC_FOR_AGE_Z_SCORE@" answerConceptId="$@z-score_greater_than_three@" answerLabel=" &#62;+3" style="checkbox" /><br /> <obs conceptId="$@HC_FOR_AGE_Z_SCORE@" answerConceptId="$@z-score_greater_than_minus_three_and_less_three@" answerLabel="&#62; -3 AND &#60;&#61; +3 " style="checkbox" /><br />
-                            <obs conceptId="$@HC_FOR_AGE_Z_SCORE@" answerConceptId="$@Z_SCORE_LESS_THAN_THREE@" answerLabel="&#60;-3" style="checkbox" /><br/>
-                            <obs conceptId="$@HC_FOR_AGE_Z_SCORE@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A &#62;3 years" style="checkbox" />
-                        </td>
-                        <!--                        </span>-->
-
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <!--        <span class="before20190520changes">-->
-        <!--<tr class="disabled">-->
-        <!--<td>Traditional Medicine</td>-->
-        <!--<td>Has the patient received any traditional-->
-        <!--medications/treatments? ☐ Yes___________________________________☐ No-->
-        <!--</td>-->
-        <!--</tr>-->
-
-        <tr class="before20190520changes">
-            <td>
-                Feeding
-            </td>
-            <td>
-                What is the child feeding? <obs conceptId="$@Child_Feeding_On@" answerConceptId="$@Breastmilk_only@" answerLabel="Breastmilk only" style="checkbox"/>
-                <obs conceptId="$@Child_Feeding_On@" answerConceptId="$@Breastmilk_and_Formula@" answerLabel="Breastmilk + formula" style="checkbox"/>
-                <obs conceptId="$@Child_Feeding_On@" answerConceptId="$@Yes_only_formula@" answerLabel="Formula only" style="checkbox"/>
-                &#160;&#160;&#160; If breastmilk,
-                <obs conceptId="$@Way_of_breastfeeding@" answerConceptIds="$@Cup_Feeding@,$@Breast_only@" answerLabels="Cup feeding,Breast Only" style="radio"/>
-
-                <br/>
-                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                <obs conceptId="$@Child_Feeding_On@" answerConceptId="$@Breastmilk_and_other_liquids/foods@" answerLabel="Breastmilk + other liquids/foods" style="checkbox"/>
-                <obs conceptId="$@Other_liquids/foods_with_breastmilk_child_feeding_on@"/>
-                <obs conceptId="$@Child_Feeding_On@" answerConceptId="$@Foods/liquids_only@" answerLabel="Foods/liquids only(no breastmilk + formula)" style="checkbox"/>
-                <obs conceptId="$@Foods/liquids_only_child_feeding_on@" />
-                <br/>
-                <label class="disabled">
-                    Is the child being fed appropriately for age? ☐ Yes ☐ No If no, specify what is not being done:
-                </label>
-            </td>
-        </tr>
-        <!--        </span>-->
-        <tr>
-            <td>
-                Feeding Assessment (only if applicable)
-                <obs conceptId="$@feeding_Assessment@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A" style="checkbox"/>
-            </td>
-            <td>
-                <span class="before20190520changes">
-                    Does the child have a feeding difficulty?
-                    <obs conceptId="$@Feeding_difficulty@" answerConceptIds="$@mild/moderate@,$@SEVERE@,$@NOT_APPLICABLE@"
-                         answerLabels="Mild/moderate (yellow),Severe (red),N/A" style="radio"/>
-                    If mild/moderate/severe,specify:
-                    <obs conceptId="$@specify_on_feeding_difficulty@"/>
-                    <br/>
-                    <label class="disabled">
-                        Have you made changes to the child’s food/liquid consistency? ☐ No ☐ Yes If yes, ☐ Altered food consistency ☐ Altered liquid consistency ☐ Other:__________________
-                    </label>
-                </span>
-                <strong>Standard Visit:</strong>
-                <p>
-                    • &#60;6 months, go to Infants &#60;6 Months Feeding Assessment (breastfed or non-breastfed infant) job aid and document on PDC Standard Visit Flow Sheet <br/>
-                    • &#62;&#61;6 months, go to 6-59 Months General Child Feeding Assessment job aid and document on PDC Standard Visit Flow Sheet <br/>
-                    • &#62;&#61;6 months, conduct 6-59 Child Feeding Difficulty Assessment, if necessary <br/>
-                </p>
-                <strong>Malnutrition Visit:</strong>
-                <p>
-                    • &#60;6 months, go to Infants &#60;6 Months Feeding Assessment (breastfed or non-breastfed infant) job aid and document on Acute Malnutrition &#60;6 Months form <br/>
-                    • &#62;&#61;6 months, go to 6-59 Months General Child Feeding Assessment job aid and document on document on Growth Failure 6-59 Months form <br/>
-                    • &#62;&#61;6 months, conduct 6-59 Child Feeding Difficulty Assessment, if necessary <br/>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Malnutrition <br/>
-                Assessment
-            </td>
-            <td>
-                Does the child require treatment for malnutrition/growth failure in PDC? <br/>
-                <obs conceptId="$@Require_malnutrition/growth_failure_treatment@" answerConceptIds="$@NO@,$@YES@" answerLabels="NO,YES" style="radio"/> :
-                <obs conceptId="$@when_to_start_treatment(coded)@" answerConceptIds="$@previously_started@,$@Start_today@" answerLabels="Previously started (continue malnutrition/growth failure form),start today (start malnutrition/growth failure form)" style="radio"/>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                Hydrocephalus <br/>
-                (only if applicable) <br/>
-                <obs conceptId="$@Hydrocephalus@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A" style="checkbox"/>
-            </td>
-            <td>
-                <table>
-                    <tr>
-                        <td>
-                            <strong>Head circumference:</strong> <obs conceptId="$@HEAD_CIRCUMFERENCE@" /><span class="">cm </span><br/> <br/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong>Signs of Increased ICP:</strong><br/>
-                            (If yes, refer to DH)
-                        </td>
-                        <td>
-                            <obs conceptId="$@ICP_signs@" answerConceptId="$@sutures_widely_spaced@" answerLabel="sutures widely spaced" style="checkbox"/>&#160;&#160;&#160;&#160;
-                            <obs conceptId="$@ICP_signs@" answerConceptId="$@tense_fontanelles@" answerLabel="tense fontanelles" style="checkbox"/>
-                            <obs conceptId="$@ICP_signs@" answerConceptId="$@IRRITABILITY@" answerLabel="irritability" style="checkbox"/>
-                            <obs conceptId="$@ICP_signs@" answerConceptId="$@alteration_in_normal_behavior@" answerLabel="alteration in normal behavior" style="checkbox"/>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="">
+        <div class="section-container">
+            <br />
+            <table border="2" cellspacing="0" cellpadding="6" width="100%">
+                <tr id="row1" class="checkboxGroup">
+                    <td>
+                        <p class="radio">
+                            Have there been any demographic changes? (ex. contact
+                            information)<br />
+                            <obs id="changeInDemographicsYes" conceptId="$@DEMOGRAPHIC_CHANGES@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />(complete the Change in Demographics form)
                             <br/>
-                            <obs conceptId="$@ICP_signs@" answerConceptId="$@downward_eye_deviation@" answerLabel="downward eye deviation" style="checkbox"/>&#160;
-                            <obs conceptId="$@ICP_signs@" answerConceptId="$@CONVULSIONS_DANGER_SIGNS_PRESENT@" answerLabel="convulsions" style="checkbox"/>&#160;&#160;&#160;&#160;&#160;&#160;
-                            <obs conceptId="$@ICP_signs@" answerConceptId="$@HEADACHE@" answerLabel="headaches" style="checkbox"/>
-                            <obs conceptId="$@ICP_signs@" answerConceptId="$@visual_problems@" answerLabel="visual problems" style="checkbox"/>
-                            <br/>
-                            <obs conceptId="$@ICP_signs@" answerConceptId="$@developmental_regression@" answerLabel="developmental regression" style="checkbox"/>
-                            <obs conceptId="$@ICP_signs@" answerConceptId="$@VOMITING@" answerLabel="vomiting" style="checkbox"/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                            <obs conceptId="$@ICP_signs@" answerConceptId="$@poor_feeding@" answerLabel="poor feeding" style="checkbox"/>
-                            <br/><br/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <strong> Follow-up after detecting abnormal HC growth:</strong>
-                            <br/>
-                            <obsgroup groupingConceptId="$@At_2_weeks@">
-                                &#160;&#160;&#160;
-                                At 2 weeks after abnormal HC: is HC continuing to cross z-score lines?
-                                <obs conceptId="$@HC_continuing_to_cross_z-score_lines@" answerConceptIds="$@NOT_APPLICABLE@,$@NO@,$@YES@"
-                                     answerLabels="N/A,Yes(refer to neurosurgery),No(follow-up 2 weeks)" style="radio"/>
-                            </obsgroup>
-                            <br/>
-                            <obsgroup groupingConceptId="$@At_1_month@">
-                                &#160;&#160;&#160;
-                                At 1 month after abnormal HC: is HC continuing to cross z-score lines?
-                                <obs conceptId="$@HC_continuing_to_cross_z-score_lines@" answerConceptIds="$@NOT_APPLICABLE@,$@NO@,$@YES@"
-                                     answerLabels="N/A,Yes(refer to neurosurgery),No(return to regular follow-up)" style="radio"/>
-                            </obsgroup>
-                        </td>
-                    </tr>
-                    <tr class="checkboxGroup">
-                        <td colspan="2">
-                            <br/> <br/>
-                            <strong>Referred to Neurosurgery:</strong>
-                            <obs id="referred" conceptId="$@Referred_to_Neurosurgery@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox"/>
-                            ,referred to: <obs conceptId="$@Surgery_Location_(non_coded)@"/>
-                            <obs id="not_referred" conceptId="$@Referred_to_Neurosurgery@" answerConceptId="$@NO@" answerLabel="No" style="checkbox"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <br/> <br/>
-                            VP Shunt:
-                            <obs conceptId="$@VP_Shunt@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                            <br/>
-                            &#160;&#160;&#160;
-                            Signs of shunt malfunction?
-                            <obs conceptId="$@Signs_of_shunt_malfunction@" answerConceptIds="$@HC_greaterthan_+3_and_crossed_1+_z-score_line_within_2_months@,$@Increase_HC_growth_in_child_with_stable_HC@,$@ICP@" answerLabels="HC>+3 and crossed 1+ z-score line within 2 months,Increase HC growth in child with stable HC,ICP" style="radio"/>
-                            <br/>
-                            &#160;&#160;&#160;
-                            Signs of shunt infection?
-                            <obs conceptId="$@Signs_of_shunt_infection@" answerConceptIds="$@redness_along_shunt_track@,$@Fever,_convulsions,_signs_of_meningitis@"
-                                 answerLabels="Any redness along shunt track ,Fever convulsions signs of meningitis" style="radio"/> ?
-                            <br/>
-                            &#160;&#160;&#160;
-                            <strong>IF YES:</strong>
-                            <obs conceptId ="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@" answerLabel="Refer to DH" style="radio"/>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <!--        <span class="before20190520changes">-->
-        <tr class="before20190520changes">
-            <td style="vertical-align: middle;">Development</td>
-            <td>
-                <table>
-                    <tr id="row12" class="checkboxGroup">
-                        <td>ASQ Scores by Domain:<br /> Age used:
-                            &#160;
-                            <obs id="ageUsedSixMonths" conceptId="$@AGE_USED@" answerConceptId="$@SIX_MONTHS@" answerLabel="6 months" style="checkbox" />
-                            &#160;&#160;&#160;&#160;&#160;&#160;
-                            <obs id="ageUsedTwelveMonths" conceptId="$@AGE_USED@" answerConceptId="$@TWELVE_MONTHS@" answerLabel="12 months" style="checkbox" />
-                            &#160;&#160;&#160;&#160;&#160;&#160;
-                            <obs id="ageUsedEighteenMonths" conceptId="$@AGE_USED@" answerConceptId="$@EIGHTEEN_MONTHS@" answerLabel="18 months" style="checkbox" />
-                            &#160;&#160;&#160;&#160;&#160;&#160;
-                            <obs id="ageUsedTwentyFourMonths" conceptId="$@AGE_USED@" answerConceptId="$@TWENTY_FOUR_MONTHS@" answerLabel="24 months" style="checkbox" />
-                            &#160;&#160;&#160;&#160;&#160;&#160;
-                            <obs id="ageUsedThirtySixMonths" conceptId="$@AGE_USED@" answerConceptId="$@THIRTY_SIX_MONTHS@" answerLabel="36 months" style="checkbox" />
-                            &#160;&#160;&#160;&#160;&#160;&#160;
-                            <obs id="ageUsedFortyEightMonths" conceptId="$@AGE_USED@" answerConceptId="$@FORTY_EIGHT_MONTHS@" answerLabel="48 months" style="checkbox" />
-                            &#160;&#160;&#160;&#160;&#160;&#160;
-                            <obs id="ageUsedSixtyMonths" conceptId="$@AGE_USED@" answerConceptId="$@SIXTY_MONTHS@" answerLabel="60 months" style="checkbox" />
-                            &#160;&#160;&#160;&#160;&#160;&#160;
-                            <obs id="ageUsedNotApplicable" conceptId="$@AGE_USED@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A (no ASQ needed during visit)" style="checkbox" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><br /> <br />
-                            <table cellspacing="0" cellpadding="6">
-                                <tr id="row13" class="checkboxGroup">
-                                    <td>Communication:</td>
-                                    <td>
-                                        Score:<obs conceptId="$@Communication_score@"/>
+                            <obs id="changeInDemographicsNo" conceptId="$@DEMOGRAPHIC_CHANGES@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
+                        </p>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Type of Visit: <obs conceptId="$@REASON_FOR_VISIT@" answerConceptIds="$@Standard_visit@,$@REGULAR_FOLLOWUP_VISIT@" answerLabels="Standard Visit (complete the standard visit form) ,Follow-up for a specific issue (malnutrition etc.)" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
+            <br />
+            <table border="2" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td colspan="2" align="center">Danger Signs</td>
+                </tr>
+                <tr>
+                    <td rowspan="4" style="vertical-align: middle;">Danger Signs</td>
+                    <td>
+                        <obsgroup groupingConceptId="addf0593-74ae-4ece-b1dc-ea90b2d79e5a">
+                            <table border="1">
+                                <tr>
+                                    <td colspan="4">Does the patient have any of the following danger signs?</td>
+
+
+                                </tr>
+                                <tr id="row2" class="checkboxGroup">
+                                    <td>Problems breathing with chest indrawing, rapid breathing, stridor</td>
+                                    <td width="150px">
+                                        <!--                                <obs id="breathingDangerSignsPresentYes" conceptId="$@BREATHING_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />-->
+                                        <!--                                <br/>-->
+                                        <!--                                <obs id="breathingDangerSignsPresentNo" conceptId="$@BREATHING_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />-->
+                                        <p class="side-by-side">
+                                            <obs conceptId="$@BREATHING_DANGER_SIGNS_PRESENT@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" />
+                                        </p>
                                         &#160;&#160;&#160;&#160;&#160;&#160;
-                                        <obs id="ASQCommunicationNormal" conceptId="$@COMMUNICATION@" answerConceptId="$@NORMAL@" answerLabel="normal (white)" style="checkbox" />
-                                        &#160;&#160;&#160;&#160;&#160;&#160;
-                                        <obs id="ASQCommunicationAbnormal" conceptId="$@COMMUNICATION@" answerConceptId="$@Monitor@" answerLabel="monitor(gray)" style="checkbox" />
-                                        &#160;&#160;&#160;&#160;&#160;&#160;
-                                        <obs id="ASQCommunicationAbnormal" conceptId="$@COMMUNICATION@" answerConceptId="$@ABNORMAL@" answerLabel="abnormal (black)" style="checkbox" />
+                                    </td>
+                                    <td> Palmo-plantar pallor</td>
+                                    <td width="150px">
+                                        <p class="side-by-side">
+                                            <obs conceptId="$@Palmo-plantar_pallor_Danger_signs_present@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" />
+                                        </p>
+                                        <br/>
+                                    </td>
+
+                                </tr>
+                                <tr id="row3" class="checkboxGroup">
+                                    <td>Convulsions</td>
+                                    <td width="150px">
+                                        <!--                                <obs id="convulsionsDangerSignsPresentYes" conceptId="$@CONVULSIONS_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />-->
+                                        <!--                                <br/>-->
+                                        <!--                                <obs id="convulsionsDangerSignsPresentNo" conceptId="$@CONVULSIONS_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />-->
+                                        <p class="side-by-side">
+
+                                            <obs conceptId="$@CONVULSIONS_DANGER_SIGNS_PRESENT@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" /></p>
+                                    </td>
+                                    <td> History of fever</td>
+                                    <td width="150px">
+                                        <p class="side-by-side">
+                                            <obs conceptId="$@History_of_fever@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" />
+                                        </p>
                                     </td>
                                 </tr>
-                                <tr id="row14" class="checkboxGroup">
-                                    <td>Large Muscle Movements:</td>
-                                    <td>
-                                        Score:<obs conceptId="$@Large_Muscle_Movement_Score@"/>
-                                        &#160;&#160;&#160;&#160;&#160;&#160;
-                                        <obs id="ASQLargeMuscleMovementsNormal" conceptId="$@LARGE_MUSCLE_MOVEMENTS@" answerConceptId="$@NORMAL@" answerLabel="normal (white)" style="checkbox" />
-                                        &#160;&#160;&#160;&#160;&#160;&#160;
-                                        <obs id="ASQCommunicationAbnormal" conceptId="$@LARGE_MUSCLE_MOVEMENTS@" answerConceptId="$@Monitor@" answerLabel="monitor(gray)" style="checkbox" />
-                                        &#160;&#160;&#160;&#160;&#160;&#160;
-                                        <obs id="ASQLargeMuscleMovementsAbnormal" conceptId="$@LARGE_MUSCLE_MOVEMENTS@" answerConceptId="$@ABNORMAL@" answerLabel="abnormal (black)" style="checkbox" />
+                                <tr id="row4" class="checkboxGroup">
+                                    <td>Lethargy or unresponsiveness</td>
+                                    <td width="150px">
+                                        <!--                                <obs id="lethargyDangerSignsPresentYes" conceptId="$@LETHARGY_OR_UNRESPONSIVENESS_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />-->
+                                        <!--                                <br/>-->
+                                        <!--                                <obs id="lethargyDangerSignsPresentNo" conceptId="$@LETHARGY_OR_UNRESPONSIVENESS_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />-->
+                                        <!--                                &#160;&#160;&#160;&#160;&#160;&#160;-->
+                                        <p class="side-by-side">
+                                            <obs conceptId="$@LETHARGY_OR_UNRESPONSIVENESS_DANGER_SIGNS_PRESENT@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" />
+                                        </p>
+                                    </td>
+                                    <td> Bilateral pitting oedema</td>
+                                    <td width="150px">
+                                        <p class="side-by-side">
+                                            <obs conceptId="$@Bilateral_pitting_oedema_danger_signs_present@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" /></p>
+                                    </td>
+
+                                </tr>
+
+                                <tr id="row5" class="checkboxGroup">
+                                    <td>Umbilical cord redness</td>
+                                    <td width="150px">
+                                        <!--                                <obs id="umbilicalDangerSignsPresentYes" conceptId="$@UMBILICAL_CORD_REDNESS_DANGER_SIGNS@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />-->
+                                        <!--                                <br/>-->
+                                        <!--                                <obs id="umbilicalDangerSignsPresentNo" conceptId="$@UMBILICAL_CORD_REDNESS_DANGER_SIGNS@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />-->
+                                        <!--                                &#160;&#160;&#160;&#160;&#160;&#160;-->
+                                        <p class="side-by-side">
+                                            <obs conceptId="$@UMBILICAL_CORD_REDNESS_DANGER_SIGNS@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/></p>
+                                    </td>
+                                    <td> Unable to feed </td>
+                                    <td width="150px">
+                                        <p class="side-by-side">
+                                            <obs conceptId="$@unable_to_feed@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/></p>
+                                    </td>
+
+                                </tr>
+                                <tr id="row6" class="checkboxGroup">
+                                    <td>Stiff neck or bulging fontanelles</td>
+                                    <td width="150px">
+                                        <!--                                <obs id="stiffNeckDangerSignsPresentYes" conceptId="$@STIFF_NECK_OR_BULGING_FONTANELLES_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />-->
+                                        <!--                                <br/>-->
+                                        <!--                                <obs id="stiffNeckDangerSignsPresentNo" conceptId="$@STIFF_NECK_OR_BULGING_FONTANELLES_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />-->
+                                        <!--                                &#160;&#160;&#160;&#160;&#160;&#160;-->
+                                        <p class="side-by-side">
+                                            <obs conceptId="$@STIFF_NECK_OR_BULGING_FONTANELLES_DANGER_SIGNS_PRESENT@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/></p>
+                                    </td>
+                                    <td> Coughing or tearing while feeding </td>
+                                    <td width="150px">
+                                        <p class="side-by-side">
+                                            <obs conceptId="$@Coughing_or_tearing_while_feeding@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/></p>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td> Diarrhea</td>
+                                    <td width="150px">
+                                        <p class="side-by-side">
+                                            <obs conceptId="$@Diarrhea_Danger_signs@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" /></p>
+                                    </td>
+                                    <td > Rigid muscles or jaw clenching that prevents feeding </td>
+                                    <td width="150px">
+                                        <p class="side-by-side">
+                                            <obs conceptId="$@Rigid_muscles_or_jaw_clenching_that_prevents_feeding@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/></p>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td> Dehydration</td>
+                                    <td width="150px">
+                                        <p class="side-by-side">
+                                            <obs conceptId="$@Dehydration_Danger_signs_Present@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" /></p>
+                                    </td>
+                                    <td> Excessive sweating when feeding </td>
+                                    <td width="150px">
+                                        <p class="side-by-side">
+                                            <obs conceptId="$@Excessive_sweating_when_feeding@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/></p>
                                     </td>
                                 </tr>
-                                <tr id="row15" class="checkboxGroup">
-                                    <td>Small Muscle Movements:</td>
-                                    <td>
-                                        Score:<obs conceptId="$@Small_Muscle_Movements_Score@"/>
-                                        &#160;&#160;&#160;&#160;&#160;&#160;
-                                        <obs id="ASQSmallMuscleMovementsNormal" conceptId="$@SMALL_MUSCLE_MOVEMENTS@" answerConceptId="$@NORMAL@" answerLabel="normal (white)" style="checkbox" />
-                                        &#160;&#160;&#160;&#160;&#160;&#160;
-                                        <obs id="ASQCommunicationAbnormal" conceptId="$@SMALL_MUSCLE_MOVEMENTS@" answerConceptId="$@Monitor@" answerLabel="monitor(gray)" style="checkbox" />
-                                        &#160;&#160;&#160;&#160;&#160;&#160;
-                                        <obs id="ASQSmallMuscleMovementsAbnormal" conceptId="$@SMALL_MUSCLE_MOVEMENTS@" answerConceptId="$@ABNORMAL@" answerLabel="abnormal (black)" style="checkbox" />
+                                <tr>
+                                    <td> Vomiting everything</td>
+                                    <td width="150px">
+                                        <p class="side-by-side">
+                                            <obs conceptId="$@Does_Vomiting_everything@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" /></p>
+                                    </td>
+                                    <td> Baby tires quickly when feeding </td>
+                                    <td width="150px">
+                                        <p class="side-by-side">
+                                            <obs conceptId="$@tires_quickly_when_feeding@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/></p>
                                     </td>
                                 </tr>
-                                <tr id="row16" class="checkboxGroup">
-                                    <td>Problem Solving:</td>
-                                    <td>
-                                        Score:<obs conceptId="$@Problem_solving_score@"/>
-                                        &#160;&#160;&#160;&#160;&#160;&#160;
-                                        <obs id="ASQProblemSolvingNormal" conceptId="$@PROBLEM_SOLVING@" answerConceptId="$@NORMAL@" answerLabel="normal (white)" style="checkbox" />
-                                        &#160;&#160;&#160;&#160;&#160;&#160;
-                                        <obs id="ASQCommunicationAbnormal" conceptId="$@PROBLEM_SOLVING@" answerConceptId="$@Monitor@" answerLabel="monitor(gray)" style="checkbox" />
-                                        &#160;&#160;&#160;&#160;&#160;&#160;
-                                        <obs id="ASQSProblemSolvingAbnormal" conceptId="$@PROBLEM_SOLVING@" answerConceptId="$@ABNORMAL@" answerLabel="abnormal (black)" style="checkbox" />
+                                <tr id="row7" class="checkboxGroup">
+                                    <td colspan="4">
+                                        If yes above, was:
+                                        <br/>
+                                        <p class="radio">
+
+                                            <obs id="actionTakenPhysicianNotified" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PHYSICIAN_NOTIFIED@" answerLabel="physician notified" style="checkbox" />
+                                            <obs id="actionTakenPatientReferredToDH" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@" answerLabel="patient referred to DH" style="checkbox" />
+                                            <obs id="actionTakenPatientReferredToIMCI" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_IMCI@" answerLabel="patient referred to IMCI" style="checkbox" />
+                                        </p>
                                     </td>
                                 </tr>
-                                <tr id="row17" class="checkboxGroup">
-                                    <td>Personal - Social:</td>
-                                    <td>
-                                        Score:<obs conceptId="$@Personal_Social@"/>
-                                        &#160;&#160;&#160;&#160;&#160;&#160;
-                                        <obs id="ASQPersonalSocialNormal" conceptId="$@PERSONAL_SOCIAL@" answerConceptId="$@NORMAL@" answerLabel="normal (white)" style="checkbox" />
-                                        &#160;&#160;&#160;&#160;&#160;&#160;
-                                        <obs id="ASQCommunicationAbnormal" conceptId="$@PERSONAL_SOCIAL@" answerConceptId="$@Monitor@" answerLabel="monitor(gray)" style="checkbox" />
-                                        &#160;&#160;&#160;&#160;&#160;&#160;
-                                        <obs id="ASQPersonalSocialAbnormal" conceptId="$@PERSONAL_SOCIAL@" answerConceptId="$@ABNORMAL@" answerLabel="abnormal (black)" style="checkbox" />
+                            </table>
+                        </obsgroup>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obsgroup groupingConceptId="9d6782db-2a24-4894-8c9a-b5180ed984d6">
+                            <table>
+                                <tr>
+                                    <td>Temperature:<obs conceptId="$@TEMPERATURE@" labelText="" />°C</td>
+                                    <td align="left">Normal Temperature for age:<br/>
+                                        *Infant &lt;2 months: between 35.5 and 37.5°C.<br/>
+                                        *Age 2-59 months: ≤ 37.5 °C <br/><br/> <br/>
                                     </td>
                                 </tr>
-                            </table></td>
+                                <tr id="row8" class="checkboxGroup">
+                                    <td colspan="2">
+                                        <p class="radio">
+                                            Is temperature abnormal for age range?
+                                            <obs id="abnormalTemperatureYes" conceptId="$@ABNORMAL_TEMPERATURE_FOR_AGE_RANGE@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
+                                            <obs id="abnormalTemperatureNo" conceptId="$@ABNORMAL_TEMPERATURE_FOR_AGE_RANGE@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr id="row9" class="checkboxGroup">
+                                    <td colspan="4">If yes above, was:
+                                        <br/>
+                                        <p class="radio">
+                                            <obs id="actionTakenPhysicianNotified" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PHYSICIAN_NOTIFIED@" answerLabel="physician notified" style="checkbox" />
+                                            <obs id="actionTakenPatientReferredToDH" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@" answerLabel="patient referred to DH" style="checkbox" />
+                                            <obs id="actionTakenPatientReferredToIMCI" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_IMCI@" answerLabel="patient referred to IMCI" style="checkbox" />
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </obsgroup>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>Respiratory Rate:<obs conceptId="$@RESPIRATORY_RATE@" labelText="" />Breaths/minute</td>
+                                <td align="left">Normal Respiratory Rates for age:<br/>
+                                    *Infant &lt;2 months:  &lt;60 breaths per minute<br/>
+                                    *Infant 2-12 months:  &lt;50 breaths per minute<br/>
+                                    *Child 1-5 years: &lt; 40 breaths per minute <br/><br/> <br/>
+                                </td>
+                            </tr>
+                            <tr id="row10" class="checkboxGroup">
+                                <td colspan="2">
+                                    <p class="radio">
+                                        Is respiratory rate abnormal for age range?
+                                        <obs id="abnormalRespiratoryRateYes" conceptId="$@ABNORMAL_TEMPERATURE_FOR_AGE_RANGE@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
+                                        <obs id="abnormalRespiratoryRateNo" conceptId="$@ABNORMAL_TEMPERATURE_FOR_AGE_RANGE@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr id="row11" class="checkboxGroup">
+                                <td colspan="4">If yes above, was:
+                                    <br/>
+                                    <p class="radio">
+                                        <obs id="actionTakenPhysicianNotified" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PHYSICIAN_NOTIFIED@" answerLabel="physician notified" style="checkbox" />
+                                        <obs id="actionTakenPatientReferredToDH" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@" answerLabel="patient referred to DH" style="checkbox" />
+                                        <obs id="actionTakenPatientReferredToIMCI" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_IMCI@" answerLabel="patient referred to IMCI" style="checkbox" />
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Growth, Nutrition and Development">
+        <div class="section-container">
+            <table border="2" cellspacing="0" cellpadding="6" width="100%">
+                <!--        <tr class="disabled">-->
+                <!--            <td>Age</td>-->
+                <!--            <td>_____________________(days/weeks/months/years)</td>-->
+                <!--        </tr>-->
+                <tr>
+                    <td>
+                        <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                            <tr class="checkboxGroup">
+                                <td>Chronological Age</td>
+                                <td>
+                                    <!--                            <obs id="Chronological_Age" conceptId="$@Chronological_Age@"/>-->
+                                    <obs id="Chronological_Age" conceptId="$@chonological_age_text@" size="30"/>
+                                </td>
+                                <!--                        <td>-->
+                                <!--                            <obs id="DAYS" conceptId="$@TIME_UNITS@" answerConceptId="$@DAYS@" answerLabel="days" style="checkbox"/> &#160;&#160;-->
+                                <!--                            <obs id="WEEKS" conceptId="$@TIME_UNITS@" answerConceptId="$@WEEKS@" answerLabel="weeks" style="checkbox"/>-->
+                                <!--                            <br/>-->
+                                <!--                            <obs id="MONTHS" conceptId="$@TIME_UNITS@" answerConceptId="$@MONTHS@" answerLabel="months" style="checkbox"/>-->
+                                <!--                            <obs id="YEARS" conceptId="$@TIME_UNITS@" answerConceptId="$@YEARS@" answerLabel="years" style="checkbox"/>-->
+                                <!--                        </td>-->
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                            <tr>
+                                <td>Corrected Age (if GA <br /> &lt;37 weeks and &lt;2 <br />
+                                    years old)
+                                </td>
+                                <td>
+                                    <!--                            <obs conceptId="$@CORRECTED_AGE@" labelText="" />-->
+                                    <obs id="CORRECTED_AGE" conceptId="$@CORRECTED_AGE_in_Text@" size="30"/>
+
+                                </td>
+                                <td>(weeks) <b>*Note: If possible, use this age
+                                    for determining z-scores below</b>
+                                    <!--                            <span class="disabled">☐ N/A &#160;&#160;&#160;&#160;&#160;&#160;&#160; ☐ No Info</span>-->
+
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <table border="2" cellspacing="0" cellpadding="6" width="100%">
+                            <tr>
+                                <td>Weight</td>
+                                <td>Height/Length</td>
+                                <td>Interval Growth</td>
+                                <td class="before20190520changes">Head Circumference</td>
+                                <td>Wt/Age Z-score</td>
+                                <td class="before20190520changes">Height/Age Z-score</td>
+                                <td>Wt/Ht Z-score</td>
+                                <td class="before20190520changes">HC/Age Z-score</td>
+                            </tr>
+                            <tr >
+                                <td><p class="small-input">
+                                    <obs id="WEIGHT" conceptId="$@WEIGHT@" labelText="" />
+                                </p><br/>kg</td>
+                                <td><p class="small-input">
+                                    <obs conceptId="$@HEIGHT@" labelText="" />
+                                </p><br/>cm
+                                </td>
+                                <td align="left" class="checkboxGroupIG">
+                                    <span id="prevousWeight" class="hidden"> <lookup expression="fn.latestObs('3ce93b62-26fe-102b-80cb-0017a47871b2').valueNumeric"/> </span>
+                                    <span id="prevousWeightObsDatetime" class="hidden"> <lookup expression="fn.latestObs('3ce93b62-26fe-102b-80cb-0017a47871b2').obsDatetime"/> </span>
+                                    <obs id="INTERVAL_GROWTH" conceptId="$@INTERVAL_GROWTH@" labelText="" /><br/>
+
+                                    <span class="">
+                                        <p class="radio">
+                                            <obs id="" conceptId="$@INTERVAL_GROWTH_CODED@" answerConceptId="$@NO_PREVIOUS_WEIGHT@" answerLabel="no previous weight" style="checkbox" />
+                                            <br />
+                                            <obs id="" conceptId="$@INTERVAL_GROWTH_CODED@" answerConceptId="$@ADEQUATE@" answerLabel="adequate" style="checkbox" />
+                                            <br />
+                                            <obs id="inadequate" conceptId="$@INTERVAL_GROWTH_CODED@" answerConceptId="$@INADEQUATE@" answerLabel="inadequate" style="checkbox" />
+                                            <br />
+                                            <obs id="" conceptId="$@INTERVAL_GROWTH_CODED@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A (z-score 	&#60; -2 AND &#62;6mo)" style="checkbox" />
+                                            <br />
+                                        </p>
+                                    </span>
+                                </td>
+
+                                <td align="left" class="before20190520changes"><obs conceptId="$@HEAD_CIRCUMFERENCE@" labelText="" /><br/>
+                                    <span class="">cm<br/>
+                                        <obs id="" conceptId="$@HEAD_CIRCUMFERENCE_CODED@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A (	&#60; 40 weeks corrected age or &#62; 3years)" style="checkbox" />
+                                    </span>
+                                </td>
+                                <td align="left" class="checkboxGroupWAZ">
+                                    <p class="radio">
+                                        <obs conceptId="$@WEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@Z_SCORE_GREATER_THAN_TWO@" answerLabel="&#62;&#61; -2" style="checkbox" /><br />
+                                        <obs id="AGE_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2" conceptId="$@WEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2@" answerLabel="&#62;&#61; -3 AND &#60; -2 " style="checkbox" /><br />
+                                        <obs id="AGE_Z_SCORE_LESS_THAN_THREE" conceptId="$@WEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@Z_SCORE_LESS_THAN_THREE@" answerLabel="&#60; -3" style="checkbox" /><br/>
+                                        <obs conceptId="$@WEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A &#60; 40 weeks corrected age" style="checkbox" />
+                                    </p>
+                                </td>
+                                <!--                        <span class="before20190520changes">-->
+                                <td align="left" class="checkboxGroupHAZ before20190520changes">
+                                    <p class="radio">
+                                        <obs conceptId="$@HEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@Z_SCORE_GREATER_THAN_TWO@" answerLabel="&#62;&#61; -2" style="checkbox" /><br /> <obs conceptId="$@HEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2@" answerLabel="&#62;&#61; -3 AND &lt; -2 " style="checkbox" /><br />
+                                        <obs conceptId="$@HEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@Z_SCORE_LESS_THAN_THREE@" answerLabel="&#60; -3" style="checkbox" /><br/>
+                                        <obs conceptId="$@HEIGHT_FOR_AGE_Z_SCORE@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A &#60; 40 weeks corrected age" style="checkbox" />
+                                    </p>
+                                </td>
+                                <!--                        </span>-->
+                                <td align="left" class="checkboxGroupWHZ">
+                                    <p class="radio">
+                                        <obs conceptId="$@WEIGHT_FOR_HEIGHT_Z_SCORE@" answerConceptId="$@Z_SCORE_GREATER_THAN_TWO@" answerLabel="&#62;&#61; -2" style="checkbox" /><br />
+                                        <obs id="HT_Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2" conceptId="$@WEIGHT_FOR_HEIGHT_Z_SCORE@" answerConceptId="$@Z_SCORE_GREATERTHAN_3_AND_LESSTHAN_2@" answerLabel="&#62;&#61; -3 AND &#60; -2 " style="checkbox" /><br />
+                                        <obs id="HT_Z_SCORE_LESS_THAN_THREE" conceptId="$@WEIGHT_FOR_HEIGHT_Z_SCORE@" answerConceptId="$@Z_SCORE_LESS_THAN_THREE@" answerLabel="&#60; -3" style="checkbox" /><br/>
+                                        <obs conceptId="$@WEIGHT_FOR_HEIGHT_Z_SCORE@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A &#60;40 weeks corrected age" style="checkbox" />
+                                    </p>
+                                </td>
+                                <!--                        <span class="before20190520changes">-->
+                                <td align="left" class="checkboxGroupHCAZ before20190520changes">
+                                    <p>
+                                        <obs conceptId="$@HC_FOR_AGE_Z_SCORE@" answerConceptId="$@z-score_greater_than_three@" answerLabel=" &#62;+3" style="checkbox" /><br /> <obs conceptId="$@HC_FOR_AGE_Z_SCORE@" answerConceptId="$@z-score_greater_than_minus_three_and_less_three@" answerLabel="&#62; -3 AND &#60;&#61; +3 " style="checkbox" /><br />
+                                        <obs conceptId="$@HC_FOR_AGE_Z_SCORE@" answerConceptId="$@Z_SCORE_LESS_THAN_THREE@" answerLabel="&#60;-3" style="checkbox" /><br/>
+                                        <obs conceptId="$@HC_FOR_AGE_Z_SCORE@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A &#62;3 years" style="checkbox" />
+                                    </p>
+                                </td>
+                                <!--                        </span>-->
+
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!--        <span class="before20190520changes">-->
+                <!--<tr class="disabled">-->
+                <!--<td>Traditional Medicine</td>-->
+                <!--<td>Has the patient received any traditional-->
+                <!--medications/treatments? ☐ Yes___________________________________☐ No-->
+                <!--</td>-->
+                <!--</tr>-->
+
+                <tr class="before20190520changes">
+                    <td>
+                        Feeding
+                    </td>
+                    <td>
+                        <p class="side-by-side radio">
+                            What is the child feeding? <obs conceptId="$@Child_Feeding_On@" answerConceptId="$@Breastmilk_only@" answerLabel="Breastmilk only" style="checkbox"/>
+                            <obs conceptId="$@Child_Feeding_On@" answerConceptId="$@Breastmilk_and_Formula@" answerLabel="Breastmilk + formula" style="checkbox"/>
+                            <obs conceptId="$@Child_Feeding_On@" answerConceptId="$@Yes_only_formula@" answerLabel="Formula only" style="checkbox"/>
+                            &#160;&#160;&#160; If breastmilk,
+                            <obs conceptId="$@Way_of_breastfeeding@" answerConceptIds="$@Cup_Feeding@,$@Breast_only@" answerLabels="Cup feeding,Breast Only" style="radio"/>
+
+                            <br/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <obs conceptId="$@Child_Feeding_On@" answerConceptId="$@Breastmilk_and_other_liquids/foods@" answerLabel="Breastmilk + other liquids/foods" style="checkbox"/>
+                            <obs conceptId="$@Other_liquids/foods_with_breastmilk_child_feeding_on@"/>
+                            <obs conceptId="$@Child_Feeding_On@" answerConceptId="$@Foods/liquids_only@" answerLabel="Foods/liquids only(no breastmilk + formula)" style="checkbox"/>
+                            <obs conceptId="$@Foods/liquids_only_child_feeding_on@" />
+                            <br/>
+                        </p>
+                        <label class="disabled">
+                            Is the child being fed appropriately for age? ☐ Yes ☐ No If no, specify what is not being done:
+                        </label>
+                    </td>
+                </tr>
+                <!--        </span>-->
+                <tr>
+                    <td>
+                        Feeding Assessment (only if applicable)
+                        <obs conceptId="$@feeding_Assessment@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A" style="checkbox"/>
+                    </td>
+                    <td>
+                        <span class="before20190520changes">
+                            Does the child have a feeding difficulty?
+                            <obs conceptId="$@Feeding_difficulty@" answerConceptIds="$@mild/moderate@,$@SEVERE@,$@NOT_APPLICABLE@"
+                                 answerLabels="Mild/moderate (yellow),Severe (red),N/A" style="radio"/>
+                            If mild/moderate/severe,specify:
+                            <obs conceptId="$@specify_on_feeding_difficulty@"/>
+                            <br/>
+                            <label class="disabled">
+                                Have you made changes to the child’s food/liquid consistency? ☐ No ☐ Yes If yes, ☐ Altered food consistency ☐ Altered liquid consistency ☐ Other:__________________
+                            </label>
+                        </span>
+                        <strong>Standard Visit:</strong>
+                        <p>
+                            • &#60;6 months, go to Infants &#60;6 Months Feeding Assessment (breastfed or non-breastfed infant) job aid and document on PDC Standard Visit Flow Sheet <br/>
+                            • &#62;&#61;6 months, go to 6-59 Months General Child Feeding Assessment job aid and document on PDC Standard Visit Flow Sheet <br/>
+                            • &#62;&#61;6 months, conduct 6-59 Child Feeding Difficulty Assessment, if necessary <br/>
+                        </p>
+                        <strong>Malnutrition Visit:</strong>
+                        <p>
+                            • &#60;6 months, go to Infants &#60;6 Months Feeding Assessment (breastfed or non-breastfed infant) job aid and document on Acute Malnutrition &#60;6 Months form <br/>
+                            • &#62;&#61;6 months, go to 6-59 Months General Child Feeding Assessment job aid and document on document on Growth Failure 6-59 Months form <br/>
+                            • &#62;&#61;6 months, conduct 6-59 Child Feeding Difficulty Assessment, if necessary <br/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Malnutrition <br/>
+                        Assessment
+                    </td>
+                    <td>
+                        <p class="side-by-side">
+                            Does the child require treatment for malnutrition/growth failure in PDC? <br/>
+                            <obs conceptId="$@Require_malnutrition/growth_failure_treatment@" answerConceptIds="$@NO@,$@YES@" answerLabels="NO,YES" style="radio"/> :
+                            <obs conceptId="$@when_to_start_treatment(coded)@" answerConceptIds="$@previously_started@,$@Start_today@" answerLabels="Previously started (continue malnutrition/growth failure form),start today (start malnutrition/growth failure form)" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Hydrocephalus <br/>
+                        (only if applicable) <br/>
+                        <p class="radio">
+                            <obs conceptId="$@Hydrocephalus@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A" style="checkbox"/>
+                        </p>
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <strong>Head circumference:</strong> <obs conceptId="$@HEAD_CIRCUMFERENCE@" /><span class="">cm </span><br/> <br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Signs of Increased ICP:</strong><br/>
+                                    (If yes, refer to DH)
+                                </td>
+                                <td>
+                                    <p class="radio">
+                                        <obs conceptId="$@ICP_signs@" answerConceptId="$@sutures_widely_spaced@" answerLabel="sutures widely spaced" style="checkbox"/>&#160;&#160;&#160;&#160;
+                                        <obs conceptId="$@ICP_signs@" answerConceptId="$@tense_fontanelles@" answerLabel="tense fontanelles" style="checkbox"/>
+                                        <obs conceptId="$@ICP_signs@" answerConceptId="$@IRRITABILITY@" answerLabel="irritability" style="checkbox"/>
+                                        <obs conceptId="$@ICP_signs@" answerConceptId="$@alteration_in_normal_behavior@" answerLabel="alteration in normal behavior" style="checkbox"/>
+                                        <br/>
+                                        <obs conceptId="$@ICP_signs@" answerConceptId="$@downward_eye_deviation@" answerLabel="downward eye deviation" style="checkbox"/>&#160;
+                                        <obs conceptId="$@ICP_signs@" answerConceptId="$@CONVULSIONS_DANGER_SIGNS_PRESENT@" answerLabel="convulsions" style="checkbox"/>&#160;&#160;&#160;&#160;&#160;&#160;
+                                        <obs conceptId="$@ICP_signs@" answerConceptId="$@HEADACHE@" answerLabel="headaches" style="checkbox"/>
+                                        <obs conceptId="$@ICP_signs@" answerConceptId="$@visual_problems@" answerLabel="visual problems" style="checkbox"/>
+                                        <br/>
+                                        <obs conceptId="$@ICP_signs@" answerConceptId="$@developmental_regression@" answerLabel="developmental regression" style="checkbox"/>
+                                        <obs conceptId="$@ICP_signs@" answerConceptId="$@VOMITING@" answerLabel="vomiting" style="checkbox"/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                        <obs conceptId="$@ICP_signs@" answerConceptId="$@poor_feeding@" answerLabel="poor feeding" style="checkbox"/>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <strong> Follow-up after detecting abnormal HC growth:</strong>
+                                    <br/>
+                                    <obsgroup groupingConceptId="$@At_2_weeks@">
+                                        &#160;&#160;&#160;
+                                        <p class="side-by-side">
+                                            At 2 weeks after abnormal HC: is HC continuing to cross z-score lines?
+                                            <obs conceptId="$@HC_continuing_to_cross_z-score_lines@" answerConceptIds="$@NOT_APPLICABLE@,$@NO@,$@YES@"
+                                                 answerLabels="N/A,Yes(refer to neurosurgery),No(follow-up 2 weeks)" style="radio"/>
+                                        </p>
+                                    </obsgroup>
+                                    <br/>
+                                    <obsgroup groupingConceptId="$@At_1_month@">
+                                        &#160;&#160;&#160;
+                                        <p class="side-by-side">
+                                            At 1 month after abnormal HC: is HC continuing to cross z-score lines?
+                                            <obs conceptId="$@HC_continuing_to_cross_z-score_lines@" answerConceptIds="$@NOT_APPLICABLE@,$@NO@,$@YES@"
+                                                 answerLabels="N/A,Yes(refer to neurosurgery),No(return to regular follow-up)" style="radio"/>
+                                        </p>
+                                    </obsgroup>
+                                </td>
+                            </tr>
+                            <tr class="checkboxGroup">
+                                <td colspan="2">
+
+                                    <br/> <br/>
+                                    <strong>Referred to Neurosurgery:</strong>
+                                    <p class="radio side-by-side">
+                                        <obs id="referred" conceptId="$@Referred_to_Neurosurgery@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox"/>
+                                        ,referred to: <obs conceptId="$@Surgery_Location_(non_coded)@"/> <br/>
+                                        <obs id="not_referred" conceptId="$@Referred_to_Neurosurgery@" answerConceptId="$@NO@" answerLabel="No" style="checkbox"/>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <br/> <br/>
+                                    <p class="radio side-by-side">
+                                        VP Shunt:
+                                        <obs conceptId="$@VP_Shunt@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                                        <br/>
+                                        &#160;&#160;&#160;
+                                        Signs of shunt malfunction?
+                                        <obs conceptId="$@Signs_of_shunt_malfunction@" answerConceptIds="$@HC_greaterthan_+3_and_crossed_1+_z-score_line_within_2_months@,$@Increase_HC_growth_in_child_with_stable_HC@,$@ICP@" answerLabels="HC>+3 and crossed 1+ z-score line within 2 months,Increase HC growth in child with stable HC,ICP" style="radio"/>
+                                        <br/>
+                                        &#160;&#160;&#160;
+                                        Signs of shunt infection?
+                                        <obs conceptId="$@Signs_of_shunt_infection@" answerConceptIds="$@redness_along_shunt_track@,$@Fever,_convulsions,_signs_of_meningitis@"
+                                             answerLabels="Any redness along shunt track ,Fever convulsions signs of meningitis" style="radio"/> ?
+                                        <br/>
+                                        &#160;&#160;&#160;
+                                        <strong>IF YES:</strong>
+                                        <obs conceptId ="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@" answerLabel="Refer to DH" style="radio"/>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!--        <span class="before20190520changes">-->
+                <tr class="before20190520changes">
+                    <td style="vertical-align: middle;">Development</td>
+                    <td>
+                        <table>
+                            <tr id="row12" class="checkboxGroup">
+                                <td>
+                                    <p class="radio">
+                                        ASQ Scores by Domain:<br /> Age used:
+                                        <obs id="ageUsedSixMonths" conceptId="$@AGE_USED@" answerConceptId="$@SIX_MONTHS@" answerLabel="6 months" style="checkbox" />
+                                        <obs id="ageUsedTwelveMonths" conceptId="$@AGE_USED@" answerConceptId="$@TWELVE_MONTHS@" answerLabel="12 months" style="checkbox" />
+                                        <obs id="ageUsedEighteenMonths" conceptId="$@AGE_USED@" answerConceptId="$@EIGHTEEN_MONTHS@" answerLabel="18 months" style="checkbox" />
+                                        <obs id="ageUsedTwentyFourMonths" conceptId="$@AGE_USED@" answerConceptId="$@TWENTY_FOUR_MONTHS@" answerLabel="24 months" style="checkbox" />
+                                        <obs id="ageUsedThirtySixMonths" conceptId="$@AGE_USED@" answerConceptId="$@THIRTY_SIX_MONTHS@" answerLabel="36 months" style="checkbox" />
+                                        <obs id="ageUsedFortyEightMonths" conceptId="$@AGE_USED@" answerConceptId="$@FORTY_EIGHT_MONTHS@" answerLabel="48 months" style="checkbox" />
+                                        <obs id="ageUsedSixtyMonths" conceptId="$@AGE_USED@" answerConceptId="$@SIXTY_MONTHS@" answerLabel="60 months" style="checkbox" />
+                                        <obs id="ageUsedNotApplicable" conceptId="$@AGE_USED@" answerConceptId="$@NOT_APPLICABLE@" answerLabel="N/A (no ASQ needed during visit)" style="checkbox" />
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><br /> <br />
+                                    <table cellspacing="0" cellpadding="6">
+                                        <tr id="row13" class="checkboxGroup">
+                                            <td>Communication:</td>
+                                            <td>
+                                                <p class="radio">
+                                                    Score:<obs conceptId="$@Communication_score@"/>
+                                                    <obs id="ASQCommunicationNormal" conceptId="$@COMMUNICATION@" answerConceptId="$@NORMAL@" answerLabel="normal (white)" style="checkbox" />
+                                                    <obs id="ASQCommunicationAbnormal" conceptId="$@COMMUNICATION@" answerConceptId="$@Monitor@" answerLabel="monitor(gray)" style="checkbox" />
+                                                    <obs id="ASQCommunicationAbnormal" conceptId="$@COMMUNICATION@" answerConceptId="$@ABNORMAL@" answerLabel="abnormal (black)" style="checkbox" />
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr id="row14" class="checkboxGroup">
+                                            <td>Large Muscle Movements:</td>
+                                            <td>
+                                                <p class="radio">
+                                                    Score:<obs conceptId="$@Large_Muscle_Movement_Score@"/>
+                                                    <obs id="ASQLargeMuscleMovementsNormal" conceptId="$@LARGE_MUSCLE_MOVEMENTS@" answerConceptId="$@NORMAL@" answerLabel="normal (white)" style="checkbox" />
+                                                    <obs id="ASQCommunicationAbnormal" conceptId="$@LARGE_MUSCLE_MOVEMENTS@" answerConceptId="$@Monitor@" answerLabel="monitor(gray)" style="checkbox" />
+                                                    <obs id="ASQLargeMuscleMovementsAbnormal" conceptId="$@LARGE_MUSCLE_MOVEMENTS@" answerConceptId="$@ABNORMAL@" answerLabel="abnormal (black)" style="checkbox" />
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr id="row15" class="checkboxGroup">
+                                            <td>Small Muscle Movements:</td>
+                                            <td>
+                                                <p class="radio">
+                                                    Score:<obs conceptId="$@Small_Muscle_Movements_Score@"/>
+                                                    <obs id="ASQSmallMuscleMovementsNormal" conceptId="$@SMALL_MUSCLE_MOVEMENTS@" answerConceptId="$@NORMAL@" answerLabel="normal (white)" style="checkbox" />
+                                                    <obs id="ASQCommunicationAbnormal" conceptId="$@SMALL_MUSCLE_MOVEMENTS@" answerConceptId="$@Monitor@" answerLabel="monitor(gray)" style="checkbox" />
+                                                    <obs id="ASQSmallMuscleMovementsAbnormal" conceptId="$@SMALL_MUSCLE_MOVEMENTS@" answerConceptId="$@ABNORMAL@" answerLabel="abnormal (black)" style="checkbox" />
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr id="row16" class="checkboxGroup">
+                                            <td>Problem Solving:</td>
+                                            <td>
+                                                Score:<obs conceptId="$@Problem_solving_score@"/>
+                                                &#160;&#160;&#160;&#160;&#160;&#160;
+                                                <obs id="ASQProblemSolvingNormal" conceptId="$@PROBLEM_SOLVING@" answerConceptId="$@NORMAL@" answerLabel="normal (white)" style="checkbox" />
+                                                &#160;&#160;&#160;&#160;&#160;&#160;
+                                                <obs id="ASQCommunicationAbnormal" conceptId="$@PROBLEM_SOLVING@" answerConceptId="$@Monitor@" answerLabel="monitor(gray)" style="checkbox" />
+                                                &#160;&#160;&#160;&#160;&#160;&#160;
+                                                <obs id="ASQSProblemSolvingAbnormal" conceptId="$@PROBLEM_SOLVING@" answerConceptId="$@ABNORMAL@" answerLabel="abnormal (black)" style="checkbox" />
+                                            </td>
+                                        </tr>
+                                        <tr id="row17" class="checkboxGroup">
+                                            <td>Personal - Social:</td>
+                                            <td>
+                                                Score:<obs conceptId="$@Personal_Social@"/>
+                                                &#160;&#160;&#160;&#160;&#160;&#160;
+                                                <obs id="ASQPersonalSocialNormal" conceptId="$@PERSONAL_SOCIAL@" answerConceptId="$@NORMAL@" answerLabel="normal (white)" style="checkbox" />
+                                                &#160;&#160;&#160;&#160;&#160;&#160;
+                                                <obs id="ASQCommunicationAbnormal" conceptId="$@PERSONAL_SOCIAL@" answerConceptId="$@Monitor@" answerLabel="monitor(gray)" style="checkbox" />
+                                                &#160;&#160;&#160;&#160;&#160;&#160;
+                                                <obs id="ASQPersonalSocialAbnormal" conceptId="$@PERSONAL_SOCIAL@" answerConceptId="$@ABNORMAL@" answerLabel="abnormal (black)" style="checkbox" />
+                                            </td>
+                                        </tr>
+                                    </table></td>
+                            </tr>
+                            <tr>
+                                <td class="disabled">Developmental counseling provided:
+                                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;☐
+                                    Yes&#160;&#160;&#160;&#160; ☐ No &#160;&#160;&#160;&#160;&#160; ☐
+                                    N/A</td>
+                            </tr>
+                            <tr id="row18" class="checkboxGroup">
+                                <td >Did the caregiver Participate in the morning group session?
+                                    &#160;&#160;&#160;&#160;<obs id="receivedECDEducationYes" conceptId="$@Caregiver_participate_in_morning_group_session@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs id="receivedECDEducationNo" conceptId="$@Caregiver_participate_in_morning_group_session@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
+                                </td>
+                            </tr>
+                            <tr class="disabled">
+                                <td>How many play things does child have? ☐
+                                    0&#160;&#160;&#160;&#160;☐ 1&#160;&#160;&#160;&#160;☐ 2+</td>
+                            </tr>
+                            <tr >
+                                <td>
+                                    How many times has caregiver engaged in an activity to play or teach child directly in the past 3 days?
+                                    <obs conceptId="$@caregiver_play_or_teach_child_directly_in_the_past_3_days@" answerConceptIds="$@0@,$@1@,$@2@,$@3@,$@4+@" answerLabels="0  ,1  ,2  ,3  ,4+" style="radio"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr class="before20190520changes">
+                    <td>
+                        Vision
+                    </td>
+                    <td>
+                        <label class="disabled">
+                            Is Child unable to fix and follow objects with their eyes? ☐ yes ☐ no
+                            <br/>
+                            Wandering eyes or squinting? ☐ yes ☐ no
+                            <br/>
+                            Does caregiver have any concern about child's vision ☐ yes ☐ no
+                            <br/>
+                        </label>
+                        If yes to any of the above:<obs conceptId="$@patient_reffered_for_vision@" answerConceptId="$@referred_to_Ophthalmology_at_the_DH@"
+                                                        answerLabel="patient referred for hearing screening at the DH" style="radio"/>
+                    </td>
+                </tr>
+                <tr class="before20190520changes">
+                    <td>
+                        Hearing
+                    </td>
+                    <td>
+                        <label class="disabled">
+                            Is child unable to respond to noise? ☐ yes ☐ no
+                            <br/>
+                            Any concern with hearing             ☐ yes ☐ no
+                            <br/>
+                        </label>
+                        If yes to any of the above:<obs conceptId="$@patient_reffered_for_Hearing@" answerConceptId="$@referred_for_hearing_screening_at_the_DH@"
+                                                        answerLabel="patient referred for hearing screening at the DH" style="radio" />
+                    </td>
+                </tr>
+                <tr class="disabled before20190520changes">
+                    <td>Vaccination Status</td>
+                    <td>☐ Completed(verified) ☐ Completed(unverified) ☐ On schedule(verified) ☐ On schedule(unverified) ☐ Not on schedule </td>
+                </tr>
+                <!--        </span>-->
+                <tr>
+                    <td>
+                        Socio-economic Assistance:
+                    </td>
+                    <td>
+                        <p class="radio">
+                            <obs id="recommendedTransport" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@" answerConceptId="$@ASSISTANCE_WITH_TRANSPORT@" answerLabel="" style="checkbox" labelText="Transport given today"/>                 <br/>
+
+                            <obs id="recommendedCHWVisits" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@" answerConceptId="$@COMMUNITY_HEALTH_WORKER_HOME_VISITS@" answerLabel="" style="checkbox" /> Social worker home visit recommended today<br/>
+                            <obs id="recommendedOther" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@" answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other:" style="checkbox" /><obs conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_NON_CODED@" labelText="" />
+                            <br/>
+                            <obs id="NotRecommended" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE@" answerConceptId="$@NO_SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@" answerLabel="" style="checkbox" />No Social Supports Recommended
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Areas of Concern for Next Appointment /
+                        Additional Comments: <br/>
+                        <obs conceptId="$@Clinican_notes@" cols="150"/>
+                        <br/><br/><br/>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Disposition">
+        <div class="section-container">
+            <table border="2" cellspacing="0"
+                   cellpadding="6" width="100%">
+                <tr id="row20" class="checkboxGroup">
+                    <td>
+                        <p class="radio">
+                            Follow-up needed: <br/>
+                            <obs id="patientNeedsFollowUpYes" conceptId="$@NEED_FOLLOW_UP@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
+                        </p>
+                        <obs conceptId="$@RETURN_VISIT_DATE@"  allowFutureDates="true" labelText="" /><br/>
+                        <p class="radio">
+                            <obs id="patientNeedsFollowUpNo" conceptId="$@NEED_FOLLOW_UP@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
+                        </p>
+                    </td>
+                </tr>
+                <tbody id="toggleable1">
+                    <tr>
+                        <td>
+                            <p class="radio">
+                                If no:
+                                <br /><obs id="noFolloUpReasonDischarge" conceptId="$@REASON_FOR_NOT_DOING_FOLLOW_UP@" answerConceptId="$@DISCHARGED@" answerLabel="" style="checkbox" />
+                                Discharge:<obs id="reasonFodischargeMetConditions" conceptId="$@REASON_FOR_DISCHARGE@" answerConceptId="$@PATIENT_MET_CONDITION_SPECIFIC_CRITERIA@" answerLabel="" style="checkbox" /> <br />
+                                met condition-specific criteria<br />
+                                <obs id="reasonForDischargeMoreThanFiveYearsOld" conceptId="$@REASON_FOR_DISCHARGE@" answerConceptId="$@MORE_THAT_FIVE_YEARS_OLD@" answerLabel="" style="checkbox" /> &gt;5 years of age
+                            </p>
+                        </td>
                     </tr>
                     <tr>
-                        <td class="disabled">Developmental counseling provided:
-                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;☐
-                            Yes&#160;&#160;&#160;&#160; ☐ No &#160;&#160;&#160;&#160;&#160; ☐
-                            N/A</td>
+                        <td><obs id="noFolloUpReasonTransferredOut" conceptId="$@REASON_FOR_NOT_DOING_FOLLOW_UP@" answerConceptId="$@PATIENT_TRANSFERRED_OUT@" answerLabel="" style="checkbox" /> Transfer:<obs conceptId="$@TRANSFER_OUT_TO@" labelText="" /></td>
                     </tr>
-                    <tr id="row18" class="checkboxGroup">
-                        <td >Did the caregiver Participate in the morning group session?
-                            &#160;&#160;&#160;&#160;<obs id="receivedECDEducationYes" conceptId="$@Caregiver_participate_in_morning_group_session@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs id="receivedECDEducationNo" conceptId="$@Caregiver_participate_in_morning_group_session@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
-                        </td>
+                    <tr>
+                        <td><obs id="noFolloUpReasonDied" conceptId="$@REASON_FOR_NOT_DOING_FOLLOW_UP@" answerConceptId="$@PATIENT_DIED@" answerLabel="" style="checkbox" /> Died</td>
                     </tr>
-                    <tr class="disabled">
-                        <td>How many play things does child have? ☐
-                            0&#160;&#160;&#160;&#160;☐ 1&#160;&#160;&#160;&#160;☐ 2+</td>
-                    </tr>
-                    <tr >
-                        <td>
-                            How many times has caregiver engaged in an activity to play or teach child directly in the past 3 days?
-                            <obs conceptId="$@caregiver_play_or_teach_child_directly_in_the_past_3_days@" answerConceptIds="$@0@,$@1@,$@2@,$@3@,$@4+@" answerLabels="0  ,1  ,2  ,3  ,4+" style="radio"/>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <tr class="before20190520changes">
-            <td>
-                Vision
-            </td>
-            <td>
-                <label class="disabled">
-                    Is Child unable to fix and follow objects with their eyes? ☐ yes ☐ no
-                    <br/>
-                    Wandering eyes or squinting? ☐ yes ☐ no
-                    <br/>
-                    Does caregiver have any concern about child's vision ☐ yes ☐ no
-                    <br/>
-                </label>
-                If yes to any of the above:<obs conceptId="$@patient_reffered_for_vision@" answerConceptId="$@referred_to_Ophthalmology_at_the_DH@"
-                                                answerLabel="patient referred for hearing screening at the DH" style="radio"/>
-            </td>
-        </tr>
-        <tr class="before20190520changes">
-            <td>
-                Hearing
-            </td>
-            <td>
-                <label class="disabled">
-                    Is child unable to respond to noise? ☐ yes ☐ no
-                    <br/>
-                    Any concern with hearing             ☐ yes ☐ no
-                    <br/>
-                </label>
-                If yes to any of the above:<obs conceptId="$@patient_reffered_for_Hearing@" answerConceptId="$@referred_for_hearing_screening_at_the_DH@"
-                                                answerLabel="patient referred for hearing screening at the DH" style="radio" />
-            </td>
-        </tr>
-        <tr class="disabled before20190520changes">
-            <td>Vaccination Status</td>
-            <td>☐ Completed(verified) ☐ Completed(unverified) ☐ On schedule(verified) ☐ On schedule(unverified) ☐ Not on schedule </td>
-        </tr>
-        <!--        </span>-->
-        <tr>
-            <td>
-                Socio-economic Assistance:
-            </td>
-            <td>
-                <obs id="recommendedTransport" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@" answerConceptId="$@ASSISTANCE_WITH_TRANSPORT@" answerLabel="" style="checkbox" /> Transport given today
-                <obs id="recommendedCHWVisits" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@" answerConceptId="$@COMMUNITY_HEALTH_WORKER_HOME_VISITS@" answerLabel="" style="checkbox" /> Social worker home visit recommended today
-                <obs id="recommendedOther" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@" answerConceptId="$@OTHER_NON_CODED@" answerLabel="Other:" style="checkbox" /><obs conceptId="$@SOCIO_ECONOMIC_ASSISTANCE_NON_CODED@" labelText="" />
-                <br/>
-                <obs id="NotRecommended" conceptId="$@SOCIO_ECONOMIC_ASSISTANCE@" answerConceptId="$@NO_SOCIO_ECONOMIC_ASSISTANCE_RECOMMENDED@" answerLabel="" style="checkbox" />No Social Supports Recommended
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">Areas of Concern for Next Appointment /
-                Additional Comments: <br/>
-                <obs conceptId="$@Clinican_notes@" cols="150"/>
-                <br/><br/><br/>
-
-            </td>
-        </tr>
-    </table>
-    <br />
-    <table border="2" cellspacing="0"
-           cellpadding="6" width="100%">
-        <tr style="background-color: #3333cc;">
-            <td align="center">Disposition</td>
-        </tr>
-        <tr id="row20" class="checkboxGroup">
-            <td>Follow-up needed:&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                <obs id="patientNeedsFollowUpYes" conceptId="$@NEED_FOLLOW_UP@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs conceptId="$@RETURN_VISIT_DATE@"  allowFutureDates="true" labelText="" />
-                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs id="patientNeedsFollowUpNo" conceptId="$@NEED_FOLLOW_UP@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" /></td>
-        </tr>
-        <tbody id="toggleable1">
-        <tr>
-            <td>If no: <br />
-                <br /><obs id="noFolloUpReasonDischarge" conceptId="$@REASON_FOR_NOT_DOING_FOLLOW_UP@" answerConceptId="$@DISCHARGED@" answerLabel="" style="checkbox" /> Discharge:&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs id="reasonFodischargeMetConditions" conceptId="$@REASON_FOR_DISCHARGE@" answerConceptId="$@PATIENT_MET_CONDITION_SPECIFIC_CRITERIA@" answerLabel="" style="checkbox" /> met
-                condition-specific criteria&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                <obs id="reasonForDischargeMoreThanFiveYearsOld" conceptId="$@REASON_FOR_DISCHARGE@" answerConceptId="$@MORE_THAT_FIVE_YEARS_OLD@" answerLabel="" style="checkbox" /> &gt;5 years of age
-            </td>
-        </tr>
-        <tr>
-            <td><obs id="noFolloUpReasonTransferredOut" conceptId="$@REASON_FOR_NOT_DOING_FOLLOW_UP@" answerConceptId="$@PATIENT_TRANSFERRED_OUT@" answerLabel="" style="checkbox" /> Transfer:<obs conceptId="$@TRANSFER_OUT_TO@" labelText="" /></td>
-        </tr>
-        <tr>
-            <td><obs id="noFolloUpReasonDied" conceptId="$@REASON_FOR_NOT_DOING_FOLLOW_UP@" answerConceptId="$@PATIENT_DIED@" answerLabel="" style="checkbox" /> Died</td>
-        </tr>
-        </tbody>
-    </table>
+                </tbody>
+            </table>
+        </div>
+    </section>
     <br/>
     <encounterVoided/>
     <br />
-    <div id="submitArea">
-        <submit />
-    </div><br />
-    <br />
-    <br />
-    <br />
-</htmlform>
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
 
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
+</htmlform>

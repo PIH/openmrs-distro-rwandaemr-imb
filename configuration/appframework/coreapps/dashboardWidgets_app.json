@@ -202,30 +202,5 @@
         "require": "typeof sessionLocation !== 'undefined' && hasMemberWithProperty(sessionLocation.tags, 'display', 'Maternity') && visit.admitted && patient.person.gender == 'F'"
       }
     ]
-  },
-  {
-  "id": "coreapps.partographData",
-  "instanceOf": "coreapps.template.mostRecentEncounter",
-  "description": "coreapps.mostRecentVitals.app.description",
-  "label": "Partograph data",
-  "icon": "icon-vitals",
-  "order": 6,
-  "config": {
-    "encounterTypeUuid": "f0d3c07e-bb5a-4a99-9643-b49810e18981",
-    "encounterDateLabel": "Partograph data",
-    "detailsUrl": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=referenceapplication:htmlforms/simpleTransfer.xml"
-  },
-  "extensions": [
-    {
-      "id": "coreapps.mostRecentVitals.clinicianDashboardFirstColumn",
-      "appId": "coreapps.partographData",
-      "extensionPointId": "patientDashboard.firstColumnFragments",
-      "extensionParams": {
-        "provider": "coreapps",
-        "fragment": "encounter/mostRecentEncounter"
-      },
-      "requiredPrivilege": "App: coreapps.mostRecentPartographData"
-    }
-  ]
-}
+  }
 ]

@@ -244,7 +244,7 @@
     </section>
     <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Rendez-Vous/CLINIC VISITS">
         <div class="section-container">
-            <table border="2" cellspacing="0" cellpadding="2" width="100%" >
+            <table border="2" style="table-layout: fixed;" cellspacing="0" cellpadding="2" width="100%" >
                 <tr>
                     <th>EMR</th>
                     <th>Poid/Wt</th>

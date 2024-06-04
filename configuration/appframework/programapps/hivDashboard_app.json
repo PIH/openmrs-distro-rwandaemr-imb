@@ -1,6 +1,6 @@
 [
   {
-    "id": "imbemr.hivProgramDashboard.currentEnrollment",
+    "id": "imbemr.cf7c0e30-2700-102b-80cb-0017a47871b2.currentEnrollment",
     "order": 1,
     "config": {
       "widget": "programstatus",
@@ -11,8 +11,8 @@
     },
     "extensions": [
       {
-        "id": "imbemr.hivProgramDashboard.currentEnrollment.extension",
-        "appId": "imbemr.hivProgramDashboard.currentEnrollment",
+        "id": "imbemr.cf7c0e30-2700-102b-80cb-0017a47871b2.currentEnrollment.extension",
+        "appId": "imbemr.cf7c0e30-2700-102b-80cb-0017a47871b2.currentEnrollment",
         "extensionPointId": "cf7c0e30-2700-102b-80cb-0017a47871b2.firstColumnFragments",
         "extensionParams": {
           "provider": "coreapps",
@@ -22,7 +22,7 @@
     ]
   },
   {
-    "id": "imbemr.hivProgramDashboard.previousEnrollment",
+    "id": "imbemr.cf7c0e30-2700-102b-80cb-0017a47871b2.previousEnrollment",
     "order": 2,
     "config": {
       "icon": "fas fa-fw fa-stethoscope",
@@ -33,8 +33,8 @@
     },
     "extensions": [
       {
-        "id": "imbemr.hivProgramDashboard.previousEnrollment.extension",
-        "appId": "imbemr.hivProgramDashboard.previousEnrollment",
+        "id": "imbemr.cf7c0e30-2700-102b-80cb-0017a47871b2.previousEnrollment.extension",
+        "appId": "imbemr.cf7c0e30-2700-102b-80cb-0017a47871b2.previousEnrollment",
         "extensionPointId": "cf7c0e30-2700-102b-80cb-0017a47871b2.firstColumnFragments",
         "extensionParams": {
           "provider": "coreapps",
@@ -44,7 +44,7 @@
     ]
   },
   {
-    "id": "imbemr.hivProgramDashboard.obsGraph.weight",
+    "id": "imbemr.cf7c0e30-2700-102b-80cb-0017a47871b2.obsGraph.weight",
     "order": 3,
     "config": {
       "widget": "obsgraph",
@@ -60,8 +60,8 @@
     },
     "extensions": [
       {
-        "id": "imbemr.hivProgramDashboard.obsGraphWeight.extension",
-        "appId": "imbemr.hivProgramDashboard.obsGraph.weight",
+        "id": "imbemr.cf7c0e30-2700-102b-80cb-0017a47871b2.obsGraphWeight.extension",
+        "appId": "imbemr.cf7c0e30-2700-102b-80cb-0017a47871b2.obsGraph.weight",
         "extensionPointId": "cf7c0e30-2700-102b-80cb-0017a47871b2.secondColumnFragments",
         "extensionParams": {
           "provider": "coreapps",
@@ -71,7 +71,7 @@
     ]
   },
   {
-    "id": "imbemr.hivProgramDashboard.obsGraph.cd4",
+    "id": "imbemr.cf7c0e30-2700-102b-80cb-0017a47871b2.obsGraph.cd4",
     "order": 4,
     "config": {
       "widget": "obsgraph",
@@ -86,8 +86,8 @@
     },
     "extensions": [
       {
-        "id": "imbemr.hivProgramDashboard.obsGraphCD4.extension",
-        "appId": "imbemr.hivProgramDashboard.obsGraph.cd4",
+        "id": "imbemr.cf7c0e30-2700-102b-80cb-0017a47871b2.obsGraphCD4.extension",
+        "appId": "imbemr.cf7c0e30-2700-102b-80cb-0017a47871b2.obsGraph.cd4",
         "extensionPointId": "cf7c0e30-2700-102b-80cb-0017a47871b2.secondColumnFragments",
         "extensionParams": {
           "provider": "coreapps",
@@ -97,7 +97,7 @@
     ]
   },
   {
-    "id": "imbemr.hivProgramDashboard.obsGraph.viralLoad",
+    "id": "imbemr.cf7c0e30-2700-102b-80cb-0017a47871b2.obsGraph.viralLoad",
     "order": 4,
     "config": {
       "widget": "obsgraph",
@@ -112,8 +112,8 @@
     },
     "extensions": [
       {
-        "id": "imbemr.hivProgramDashboard.obsGraphViralLoad.extension",
-        "appId": "imbemr.hivProgramDashboard.obsGraph.viralLoad",
+        "id": "imbemr.cf7c0e30-2700-102b-80cb-0017a47871b2.obsGraphViralLoad.extension",
+        "appId": "imbemr.cf7c0e30-2700-102b-80cb-0017a47871b2.obsGraph.viralLoad",
         "extensionPointId": "cf7c0e30-2700-102b-80cb-0017a47871b2.secondColumnFragments",
         "extensionParams": {
           "provider": "coreapps",
@@ -121,5 +121,28 @@
         }
       }
     ]
-  }
+  },
+
+  {
+  "id": "imbemr.cf7c0e30-2700-102b-80cb-0017a47871b2.flowsheet",
+  "order": 5,
+  "config": {
+    "icon": "fas fa-fw fa-stethoscope",
+    "label": "coreapps.programHistoryDashboardWidget.label",
+    "program": "cf7c0e30-2700-102b-80cb-0017a47871b2",
+    "dashboard": "cf7c0e30-2700-102b-80cb-0017a47871b2",
+    "includeActive": false
+  },
+  "extensions": [
+    {
+      "id": "imbemr.cf7c0e30-2700-102b-80cb-0017a47871b2.flowsheet",
+      "extensionPointId": "cf7c0e30-2700-102b-80cb-0017a47871b2.overallActions",
+      "type": "link",
+      "label": "Adult HIV Flowsheet",
+      "url": "rwandahivflowsheet/adulthivflowsheet.form?patientId={{patient.uuid}}",
+      "icon": "icon-file",
+      "order": 5
+    }
+  ]
+}
 ]

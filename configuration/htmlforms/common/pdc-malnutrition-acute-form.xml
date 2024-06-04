@@ -1,12 +1,12 @@
-<htmlform 
-	htmlformUuid="38ae6361-fe58-456c-bc8e-1bb5401ad184" 
-	formUuid="e290d58d-b404-4e86-851b-e0bf79bc929e" 
-	formName="PDC malnutrition Acute form" 
-	formDescription="This is a flowsheet that was created for PDC Malnutrition flowsheet" 
-	formVersion="1.0" 
-	formEncounterType="71826dd4-330d-4548-9fd8-6703682fbd3a" 
-	formPublished="true" 
-	formRetired="false"
+<htmlform
+        htmlformUuid="38ae6361-fe58-456c-bc8e-1bb5401ad184"
+        formUuid="e290d58d-b404-4e86-851b-e0bf79bc929e"
+        formName="PDC malnutrition Acute form"
+        formDescription="This is a flowsheet that was created for PDC Malnutrition flowsheet"
+        formVersion="1.0"
+        formEncounterType="71826dd4-330d-4548-9fd8-6703682fbd3a"
+        formPublished="true"
+        formRetired="false"
 > <!--
            PDC - Malnutrition
             Pilot_4July_v1.3NT
@@ -77,118 +77,177 @@
     </macros>
 
 
+
     <style>
-        th.tableHeader {
-        background-color: #009d8e;
-        color: #FFFFFF;
-        font-size: 16px;
-        text-align: left;
-        }
-
-        ul {
-        list-style-type: square;
-        font-family: Verdana, Arial, Helvetica, sans-serif;
-        font-size: 11px;
-        }
-
-        tr.spaceUnder>td {
-        padding-bottom: 1em;
-        }
-
-        td {
-        font-size: 15px;
-        }
-
-        #container {
-        
-        margin: auto;
-        
-        height: auto;
-        }
-
-        @media print {
-        #container {
-        display: none;
-        }
-
-        #printArea {
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
         display: block;
         }
 
-        #userBar {
-        display: none;
-        }
-
-        #banner {
-        display: none;
-        }
-
-        #footer {
-        display: none;
-        }
-
-        #htmlFormEntryBanner {
-        display: none;
-        }
-
-        .error {
-        display: none;
-        }
-
-        .lables {
-        width: 200px;
-        }
-
-        table {
-        width: 100%;
-        }
-
-        table,td,th {
-        border: 1px solid black;
-        border-collapse: collapse;
-        }
-
-        th {
-        text-align: left;
-        background-color: #D9D9D9;
-        font-size: 10px;
-        }
-
-        td {
-        font-size: 10px;
-        }
-
-        .selectedCancerStagingKeys {
-        page-break-before: always;
-        border: 0px;
-        }
-
-        table.selectedCancerStagingKeys td {
-        border: 0px;
-        }
-
-        #signature {
-        border: none;
-        }
-        #signature td {
-        border: none;
-        }
-        }
-
-        @media screen {
-        table {
-        border: 1px solid #DFDFDF;
-        width: 100%;
-        border-color: #009d8e;
-        }
-
-        #container {
+        form fieldset {
         display: block;
         }
 
-        #printArea {
-        display: none;
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
         }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
+        width: 100%;
+        }
+
+        .div {
+        float: left;
+        }
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        .date-one-line {
+        display: flex;
+        }
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
+        }
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
         }
     </style>
     <script type="text/javascript">
@@ -198,89 +257,77 @@
         $j("#theWholeTable").hide();
 
 
-			$j("input#first").click(function(){
-			    $j("#theWholeTable").show();
-				$j(".firstVisit").show();
-                $j(".firstAndSecondVisits").show();
-                $j(".secondAndAbove").hide();
-                $j(".thirdAndabove").hide();
+        $j("input#first").click(function(){
+        $j("#theWholeTable").show();
+        $j(".firstVisit").show();
+        $j(".firstAndSecondVisits").show();
+        $j(".secondAndAbove").hide();
+        $j(".thirdAndabove").hide();
 
-			});
-			$j("input#second").click(function(){
-			    $j("#theWholeTable").show();
-				$j(".firstVisit").hide();
-                $j(".firstAndSecondVisits").show();
-                $j(".secondAndAbove").show();
-                $j(".thirdAndabove").hide();
+        });
+        $j("input#second").click(function(){
+        $j("#theWholeTable").show();
+        $j(".firstVisit").hide();
+        $j(".firstAndSecondVisits").show();
+        $j(".secondAndAbove").show();
+        $j(".thirdAndabove").hide();
 
-			});
-			$j("input#other").click(function(){
-			    $j("#theWholeTable").show();
-				$j(".firstVisit").hide();
-                $j(".firstAndSecondVisits").hide();
-                $j(".secondAndAbove").show();
-                $j(".thirdAndabove").show();
+        });
+        $j("input#other").click(function(){
+        $j("#theWholeTable").show();
+        $j(".firstVisit").hide();
+        $j(".firstAndSecondVisits").hide();
+        $j(".secondAndAbove").show();
+        $j(".thirdAndabove").show();
 
-			});
-			if(getValue("encounterDate.value") &#60;&#61;'2019-05-20'){
-                $j(".before20190520changes").show();
-            }else{
-                 $j(".before20190520changes").hide();
-            }
-            getField('encounterDate.value').change(function() {
-                if(getValue("encounterDate.value") &#60;&#61; '2019-05-20'){
-                    $j(".before20190520changes").show();
-                }else{
-                    $j(".before20190520changes").hide();
-                }
-            });
+        });
+        if(getValue("encounterDate.value") &#60;&#61;'2019-05-20'){
+        $j(".before20190520changes").show();
+        }else{
+        $j(".before20190520changes").hide();
+        }
+        getField('encounterDate.value').change(function() {
+        if(getValue("encounterDate.value") &#60;&#61; '2019-05-20'){
+        $j(".before20190520changes").show();
+        }else{
+        $j(".before20190520changes").hide();
+        }
+        });
 
-		});
+        });
     </script>
-    <div id="container"  style="width:100%">
-        <section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
 
-            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+            <table border="1" style="table-layout: fixed;" cellspacing="0" cellpadding="6" width="80%">
                 <tr>
-                    <td><b> IMB ID: <lookup class="value"
-                                            expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
-                                                                                                               expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
                     </td>
-                    <td>Date and Time: <encounterDate id="encounterDate" default="today" showTime="true"/>
-                    </td>before20190520changes
-                </tr>
-                <tr>
-                    <td>Nom / Last name: <lookup class="value"
-                                                 expression="patient.personName.familyName" />
+                    <td>
+                        Health Facility:
+                        <encounterLocation default="GlobalProperty:billing.defaultLocation" />
                     </td>
-                    <td>Prénom/ First name: <lookup class="value"
-                                                    expression="patient.personName.givenName" />
-                    </td>
-                </tr>
-
-                <tr>
-                    <td><img src="/openmrs/moduleResources/rwandareports/images/pihHands.png" align="left"
-                             height="65" ></img>
-                        <h2>
-                            Inshuti Mu Buzima <br /> PIH Rwanda
-                        </h2>
-                    </td>
-                    <td><strong> PDC Acute malnutrition </strong> <br />
-                    </td>
-                </tr>
-                <tr>
-                    <td>Clinique / Clinic: <encounterLocation />
-                    </td>
-                    <td>Author:<encounterProvider/>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
                     </td>
                 </tr>
             </table>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
             <table>
                 <tr>
-                    <td> Select visit:
-                        <input type="radio" name="visit" value="first" id="first"/> Visit 1
-                        <input type="radio" name="visit" value="second" id="second"/> Visit 2
-                        <input type="radio" name="visit" value="other" id="other"/> Other visit
+                    <td>
+                        <p class="side-by-side">
+                            Select visit:
+                            <input type="radio" name="visit" value="first" id="first"/> Visit 1
+                            <input type="radio" name="visit" value="second" id="second"/> Visit 2
+                            <input type="radio" name="visit" value="other" id="other"/> Other visit
+                        </p>
 
                     </td>
                 </tr>
@@ -294,8 +341,10 @@
                 </tr>
                 <tr>
                     <td>
-                        <obs conceptId="$@Previous_visit_Classification@" answerConceptIds="$@Green_visit_class@,$@Yellow_visit_class@,$@Red(DH_transit)_visit_class@"
-                             answerLabels="Green,Yellow,Red(DH transfer)" style="radio"/>
+                        <p class="side-by-side">
+                            <obs conceptId="$@Previous_visit_Classification@" answerConceptIds="$@Green_visit_class@,$@Yellow_visit_class@,$@Red(DH_transit)_visit_class@"
+                                 answerLabels="Green,Yellow,Red(DH transfer)" style="radio"/>
+                        </p>
                     </td>
                 </tr>
                 <tr>
@@ -305,47 +354,45 @@
                 </tr>
                 <tr>
                     <td>
+                        <p class="radio side-by-side">
+                            <strong>Breastfed Concerns</strong> <br/>
 
-                        <strong>Breastfed Concerns</strong> <br/>
+                            <obs conceptId="$@Breastfeeding_Concerns@" answerConceptId="$@NONE@" answerLabel="None" style="checkbox"/> <br/>
+                            <obs conceptId="$@Breastfeeding_Concerns@" answerConceptId="$@Not_well_attached_for_breastfeeding@" answerLabel="Not well attached" style="checkbox"/><br/>
+                            <obs conceptId="$@Breastfeeding_Concerns@" answerConceptId="$@Not_sucking_effectively@" answerLabel="Not sucking effectively" style="checkbox"/> <br/>
+                            <obs conceptId="$@Breastfeeding_Concerns@" answerConceptId="$@Receives_other_liquids/foods@" answerLabel="Receives other liquids/food" style="checkbox"/>
+                            <br/>
+                            <strong>Non-Breastfed Concerns</strong> <br/>
 
-                        <obs conceptId="$@Breastfeeding_Concerns@" answerConceptId="$@NONE@" answerLabel="None" style="checkbox"/> <br/>
-                        <obs conceptId="$@Breastfeeding_Concerns@" answerConceptId="$@Not_well_attached_for_breastfeeding@" answerLabel="Not well attached" style="checkbox"/><br/>
-                        <obs conceptId="$@Breastfeeding_Concerns@" answerConceptId="$@Not_sucking_effectively@" answerLabel="Not sucking effectively" style="checkbox"/> <br/>
-                        <obs conceptId="$@Breastfeeding_Concerns@" answerConceptId="$@Receives_other_liquids/foods@" answerLabel="Receives other liquids/food" style="checkbox"/>
-                        <br/>
-                        <strong>Non-Breastfed Concerns</strong> <br/>
+                            <obs conceptId="$@Non-Breastfeeding_Concerns@" answerConceptId="$@NONE@" answerLabel="None" style="checkbox"/> <br/>
+                            <obs conceptId="$@Non-Breastfeeding_Concerns@" answerConceptId="$@Innappropriate_BMS@" answerLabel="Inappropriate BMS" style="checkbox"/><br/>
+                            <obs conceptId="$@Non-Breastfeeding_Concerns@" answerConceptId="$@Poor_preparation_for_Breast_Feeding@" answerLabel="Poor preparation" style="checkbox"/> <br/>
+                            <obs conceptId="$@Non-Breastfeeding_Concerns@" answerConceptId="$@less_than_500ml_BMS/24_hours@" answerLabel="&#60;500ml BMS/24 hours" style="checkbox"/> <br/>
+                            <obs conceptId="$@Non-Breastfeeding_Concerns@" answerConceptId="$@Receives_other_liquids/foods@" answerLabel="Receives other liquids/food" style="checkbox"/>
 
-                        <obs conceptId="$@Non-Breastfeeding_Concerns@" answerConceptId="$@NONE@" answerLabel="None" style="checkbox"/> <br/>
-                        <obs conceptId="$@Non-Breastfeeding_Concerns@" answerConceptId="$@Innappropriate_BMS@" answerLabel="Inappropriate BMS" style="checkbox"/><br/>
-                        <obs conceptId="$@Non-Breastfeeding_Concerns@" answerConceptId="$@Poor_preparation_for_Breast_Feeding@" answerLabel="Poor preparation" style="checkbox"/> <br/>
-                        <obs conceptId="$@Non-Breastfeeding_Concerns@" answerConceptId="$@less_than_500ml_BMS/24_hours@" answerLabel="&#60;500ml BMS/24 hours" style="checkbox"/> <br/>
-                        <obs conceptId="$@Non-Breastfeeding_Concerns@" answerConceptId="$@Receives_other_liquids/foods@" answerLabel="Receives other liquids/food" style="checkbox"/>
+                            <br/>
+                            <strong>Breastfed &#38; Non-Breastfed Concerns</strong> <br/>
 
-                        <br/>
-                        <strong>Breastfed &#38; Non-Breastfed Concerns</strong> <br/>
+                            <obs conceptId="$@Breastfed_and_non-breastfed_concerns@" answerConceptId="$@NONE@" answerLabel="None" style="checkbox"/> <br/>
+                            <obs conceptId="$@Breastfed_and_non-breastfed_concerns@" answerConceptId="$@less_than_8_feeds_24_hours@" answerLabel="&#60;8 in 24 hours" style="checkbox"/>
+                            <obs conceptId="$@Breastfed_and_non-breastfed_concerns@" answerConceptId="$@Refuses_to_feed@" answerLabel="Refuses to feed" style="checkbox"/> <br/>
+                            <obs conceptId="$@Breastfed_and_non-breastfed_concerns@" answerConceptId="$@ORAL_THRUSH@" answerLabel="Oral thrush" style="checkbox"/> <br/>
+                            <obs conceptId="$@Breastfed_and_non-breastfed_concerns@" answerConceptId="$@Severe_feeding_problem@" answerLabel="Severe feeding problem" style="checkbox"/>
+                            , specify:
+                            <obs conceptId="$@Severe_feeding_problem@"/>
+                        </p>
 
-                        <obs conceptId="$@Breastfed_and_non-breastfed_concerns@" answerConceptId="$@NONE@" answerLabel="None" style="checkbox"/> <br/>
-                        <obs conceptId="$@Breastfed_and_non-breastfed_concerns@" answerConceptId="$@less_than_8_feeds_24_hours@" answerLabel="&#60;8 in 24 hours" style="checkbox"/>
-                        <obs conceptId="$@Breastfed_and_non-breastfed_concerns@" answerConceptId="$@Refuses_to_feed@" answerLabel="Refuses to feed" style="checkbox"/> <br/>
-                        <obs conceptId="$@Breastfed_and_non-breastfed_concerns@" answerConceptId="$@ORAL_THRUSH@" answerLabel="Oral thrush" style="checkbox"/> <br/>
-                        <obs conceptId="$@Breastfed_and_non-breastfed_concerns@" answerConceptId="$@Severe_feeding_problem@" answerLabel="Severe feeding problem" style="checkbox"/>
-                        , specify:
-                        <obs conceptId="$@Severe_feeding_problem@"/>
-
-
-
-
-
-
-
-                        <hr/>
-                        <strong>Maternal MUAC(mm)</strong> <br/>
-                        <obs conceptId="$@Material_MUAC_(MM)@" answerConceptIds="$@lessthan230@,$@greaterorequal230@,$@Not_available@" style="radio"/>
-                        <strong>Maternal Concerns </strong>
-                        <obs conceptId="$@Maternal_Concerns@" answerConceptIds="$@NONE@,$@Too_Little_Milk@,$@OTHER_NON-CODED@"
-                             answerLabels="None,Too Little,Other" style="radio"/>
-                        ,specify:
-                        <obs conceptId="$@Other_Maternal_Concerns@" />
+                        <p class="side-by-side">
+                            <strong>Maternal MUAC(mm):</strong>
+                            <obs conceptId="$@Material_MUAC_(MM)@" answerConceptIds="$@lessthan230@,$@greaterorequal230@,$@Not_available@" style="radio"/>
+                        </p>
+                        <p class="side-by-side">
+                            <strong>Maternal Concerns </strong>
+                            <obs conceptId="$@Maternal_Concerns@" answerConceptIds="$@NONE@,$@Too_Little_Milk@,$@OTHER_NON-CODED@"
+                                 answerLabels="None,Too Little,Other" style="radio"/>
+                            ,specify:
+                            <obs conceptId="$@Other_Maternal_Concerns@" />
+                        </p>
                     </td>
                 </tr>
 
@@ -356,8 +403,10 @@
                 </tr>
                 <tr>
                     <td>
-                        <obs conceptId="$@Current_Visit_Classification@" answerConceptIds="$@Green_visit_class@,$@Yellow_visit_class@,$@Red(DH_transit)_visit_class@"
-                             answerLabels="Green,Yellow,Red(DH transfer)" style="radio"/>
+                        <p class="side-by-side">
+                            <obs conceptId="$@Current_Visit_Classification@" answerConceptIds="$@Green_visit_class@,$@Yellow_visit_class@,$@Red(DH_transit)_visit_class@"
+                                 answerLabels="Green,Yellow,Red(DH transfer)" style="radio"/>
+                        </p>
                     </td>
                 </tr>
                 <tr class="before20190520changes">
@@ -367,30 +416,32 @@
                 </tr>
                 <tr class="before20190520changes">
                     <td>
-                        <strong>Assessment needed by: </strong>
-                        <obs conceptId="$@Assessment_Needed_By@" answerConceptId="$@Social_Worker@"
-                             answerLabel="Social worker" style="checkbox"/>
-                        <obs conceptId="$@Assessment_Needed_By@" answerConceptId="$@INTEGRATED_MANAGEMENT_OF_CHILDHOOD_ILLNESS@"
-                             answerLabel="Doctor" style="checkbox"/>
-                        <obs conceptId="$@Assessment_Needed_By@" answerConceptId="$@Doctor@"
-                             answerLabel="IMCI" style="checkbox"/>
-                        <br/>
-                        <strong>Counseling on:</strong>
-                        <br/>
-                        <obs conceptId="$@counseling_on@" answerConceptId="$@Breastfeeding_frequency@" answerLabel="Breastfeeding frequency" style="checkbox"/> <br/>
-                        <obs conceptId="$@counseling_on@" answerConceptId="$@Receives_other_liquids/foods@" answerLabel="Receives other liquids/foods" style="checkbox"/> <br/>
-                        <obs conceptId="$@counseling_on@" answerConceptId="$@Good_Attachment_or_suckling@" answerLabel="Good attachment or suckling" style="checkbox"/> <br/>
-                        <obs conceptId="$@counseling_on@" answerConceptId="$@Expressing_and_cup_feeding@" answerLabel="Expressing and cup feeding" style="checkbox"/> <br/>
-                        <obs conceptId="$@counseling_on@" answerConceptId="$@nutrition_for_breastfeeding_women@" answerLabel="Nutrition for breastfeeding women" style="checkbox"/> <br/>
-                        <obs conceptId="$@counseling_on@" answerConceptId="$@Breast_problems@" answerLabel="Breast problems" style="checkbox"/> <br/>
-                        <obs conceptId="$@counseling_on@" answerConceptId="$@Not_enough_breastmilk@" answerLabel="Not enough breastmilk" style="checkbox"/> <br/>
-                        <obs conceptId="$@counseling_on@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other" style="checkbox"/>
-                        ,Specify:<obs conceptId="$@Other_counselled_on@" />
-                        <br/>
-                        Completed by
-                        <obs conceptId="$@Completed_by@" answerConceptId="$@Nurse@" answerLabel="Nurse" style="checkbox"/>
-                        <obs conceptId="$@Completed_by@" answerConceptId="$@Social_Worker@" answerLabel="Social worker" style="checkbox"/>
+                        <p class="radio side-by-side">
+                            <strong>Assessment needed by: </strong>
+                            <obs conceptId="$@Assessment_Needed_By@" answerConceptId="$@Social_Worker@"
+                                 answerLabel="Social worker" style="checkbox"/>
+                            <obs conceptId="$@Assessment_Needed_By@" answerConceptId="$@INTEGRATED_MANAGEMENT_OF_CHILDHOOD_ILLNESS@"
+                                 answerLabel="Doctor" style="checkbox"/>
+                            <obs conceptId="$@Assessment_Needed_By@" answerConceptId="$@Doctor@"
+                                 answerLabel="IMCI" style="checkbox"/>
+                            <br/>
+                            <strong>Counseling on:</strong>
+                            <br/>
+                            <obs conceptId="$@counseling_on@" answerConceptId="$@Breastfeeding_frequency@" answerLabel="Breastfeeding frequency" style="checkbox"/> <br/>
+                            <obs conceptId="$@counseling_on@" answerConceptId="$@Receives_other_liquids/foods@" answerLabel="Receives other liquids/foods" style="checkbox"/> <br/>
+                            <obs conceptId="$@counseling_on@" answerConceptId="$@Good_Attachment_or_suckling@" answerLabel="Good attachment or suckling" style="checkbox"/> <br/>
+                            <obs conceptId="$@counseling_on@" answerConceptId="$@Expressing_and_cup_feeding@" answerLabel="Expressing and cup feeding" style="checkbox"/> <br/>
+                            <obs conceptId="$@counseling_on@" answerConceptId="$@nutrition_for_breastfeeding_women@" answerLabel="Nutrition for breastfeeding women" style="checkbox"/> <br/>
+                            <obs conceptId="$@counseling_on@" answerConceptId="$@Breast_problems@" answerLabel="Breast problems" style="checkbox"/> <br/>
+                            <obs conceptId="$@counseling_on@" answerConceptId="$@Not_enough_breastmilk@" answerLabel="Not enough breastmilk" style="checkbox"/> <br/>
+                            <obs conceptId="$@counseling_on@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other" style="checkbox"/>
+                            ,Specify:<obs conceptId="$@Other_counselled_on@" />
+                            <br/>
+                            Completed by
+                            <obs conceptId="$@Completed_by@" answerConceptId="$@Nurse@" answerLabel="Nurse" style="checkbox"/>
+                            <obs conceptId="$@Completed_by@" answerConceptId="$@Social_Worker@" answerLabel="Social worker" style="checkbox"/>
 
+                        </p>
                     </td>
                 </tr>
                 <tr>
@@ -400,13 +451,15 @@
                 </tr>
                 <tr>
                     <td>
-                        <span class="secondAndAbove">
-                            <obs conceptId="$@Maternal_Food_Package@" answerConceptIds="$@NO@,$@2-week@,$@1-month@" answerLabels="No Yes:,2-week,1-month" style="radio"/>
-                            <br/>
-                            if green,end on:
-                            <obs conceptId="$@Maternal_Food_Package_End_Time@"/>
-                        </span>
-                        <span class="firstVisit"> Not applicable on 1st visit </span>
+                        <p class="side-by-side">
+                            <span class="secondAndAbove">
+                                <obs conceptId="$@Maternal_Food_Package@" answerConceptIds="$@NO@,$@2-week@,$@1-month@" answerLabels="No Yes:,2-week,1-month" style="radio"/>
+                                <br/>
+                                if green,end on:
+                                <obs conceptId="$@Maternal_Food_Package_End_Time@"/>
+                            </span>
+                            <span class="firstVisit"> Not applicable on 1st visit </span>
+                        </p>
                     </td>
                 </tr>
                 <tr>
@@ -416,24 +469,29 @@
                 </tr>
                 <tr>
                     <td>
-                        <span class="thirdAndabove">
-                            <obs conceptId="$@PDC_Infant_Formula@" answerConceptId="$@Yes_enhanced_calories_with_EBM@" answerLabel="Yes,enhanced calories with EBM" style="checkbox"/>
-                            <br/>
-                            <obs conceptId="$@PDC_Infant_Formula@" answerConceptId="$@Yes_only_formula@" answerLabel="Yes,only formula" style="checkbox"/>
-                            <br/>
-                            # of cans provided:
-                            <obs conceptId="$@Number_of_Cans_Provided@"/>
-                            <br/>
-                            Reason for formula:
-                            <obs conceptId="$@PDC_Infant_Formula@" answerConceptId="$@Maternal_Death@" answerLabel="Maternal Death" style="checkbox"/>
-                        <obs conceptId="$@PDC_Infant_Formula@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other" style="checkbox"/>
+                        <span class="thirdAndabove side-by-side radio">
+                            <p class="radio side-by-side">
+                                <obs conceptId="$@PDC_Infant_Formula@" answerConceptId="$@Yes_enhanced_calories_with_EBM@" answerLabel="Yes,enhanced calories with EBM" style="checkbox"/>
+                                <br/>
+                                <obs conceptId="$@PDC_Infant_Formula@" answerConceptId="$@Yes_only_formula@" answerLabel="Yes,only formula" style="checkbox"/>
+                                <br/>
+                                # of cans provided:
+                                <obs conceptId="$@Number_of_Cans_Provided@"/>
+                                <br/>
+                                Reason for formula:
+                                <obs conceptId="$@PDC_Infant_Formula@" answerConceptId="$@Maternal_Death@" answerLabel="Maternal Death" style="checkbox"/>
+                                <obs conceptId="$@PDC_Infant_Formula@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other" style="checkbox"/>
+                            </p>
                         </span>
-                        <span class="firstAndSecondVisits">
-                            Not Applicable on 1<sup>st</sup> visit,unless pre-existing reason that formula was started.
-                            <strong>Child taking formula already because:</strong>
-                            <obs conceptId="$@PDC_Infant_Formula@" answerConceptId="$@Maternal_Death@" answerLabel="Maternal Death" style="checkbox"/>
-                        <obs conceptId="$@PDC_Infant_Formula@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other" style="checkbox"/>
 
+                        <span class="firstAndSecondVisits">
+                            <p class="radio side-by-side">
+                                Not Applicable on 1<sup>st</sup> visit,unless pre-existing reason that formula was started.                                <br/>
+
+                                <strong>Child taking formula already because:</strong>
+                                <obs conceptId="$@PDC_Infant_Formula@" answerConceptId="$@Maternal_Death@" answerLabel="Maternal Death" style="checkbox"/>
+                                <obs conceptId="$@PDC_Infant_Formula@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other" style="checkbox"/>
+                            </p>
                         </span>
 
                     </td>
@@ -445,8 +503,10 @@
                 </tr>
                 <tr>
                     <td>
-                        <obs conceptId="$@PDC_Malnutrition_status@" answerConceptIds="$@Continue_PDC_malnutrition_treatment@,$@Cured_(malnutrition)@,$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@,
+                        <p class="side-by-side">
+                            <obs conceptId="$@PDC_Malnutrition_status@" answerConceptIds="$@Continue_PDC_malnutrition_treatment@,$@Cured_(malnutrition)@,$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@,
                         $@LOST_TO_FOLLOWUP@" answerLabels="Continue PDC Malnutrition Treatment,Cured(malnutrition),Referred to DH,Lost-to-follow up" style="radio"/>
+                        </p>
                     </td>
                 </tr>
                 <tr>
@@ -460,13 +520,20 @@
                     </td>
                 </tr>
             </table>
-        </section>
-        <br />
-        <encounterVoided/>
-        <br/>
-            <center>
-                <submit />
-            </center>
-        <br/>
-    </div>
+        </div>
+    </section>
+    <br />
+    <encounterVoided/>
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
 </htmlform>

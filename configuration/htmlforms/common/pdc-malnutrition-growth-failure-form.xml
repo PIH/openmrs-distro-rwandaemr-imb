@@ -1,12 +1,12 @@
-<htmlform 
-	htmlformUuid="a61740ed-1171-4258-8feb-c0e5d5eda680" 
-	formUuid="d7ebfec2-0266-4c2f-9c1f-346e5355e47f" 
-	formName="PDC malnutrition Growth Failure form" 
-	formDescription="This form is created for the PDC malnutrition flowsheet" 
-	formVersion="1.0" 
-	formEncounterType="71826dd4-330d-4548-9fd8-6703682fbd3a" 
-	formPublished="true" 
-	formRetired="false"
+<htmlform
+        htmlformUuid="a61740ed-1171-4258-8feb-c0e5d5eda680"
+        formUuid="d7ebfec2-0266-4c2f-9c1f-346e5355e47f"
+        formName="PDC malnutrition Growth Failure form"
+        formDescription="This form is created for the PDC malnutrition flowsheet"
+        formVersion="1.0"
+        formEncounterType="71826dd4-330d-4548-9fd8-6703682fbd3a"
+        formPublished="true"
+        formRetired="false"
 > <!--
            PDC - Malnutrition
             Pilot_4July_v1.3NT
@@ -117,175 +117,219 @@
 
 
     <style>
-        th.tableHeader {
-        background-color: #009d8e;
-        color: #FFFFFF;
-        font-size: 16px;
-        text-align: left;
-        }
-
-        ul {
-        list-style-type: square;
-        font-family: Verdana, Arial, Helvetica, sans-serif;
-        font-size: 11px;
-        }
-
-        tr.spaceUnder>td {
-        padding-bottom: 1em;
-        }
-
-        td {
-        font-size: 15px;
-        }
-
-        #container {
-        
-        margin: auto;
-        
-        height: auto;
-        }
-
-        @media print {
-        #container {
-        display: none;
-        }
-
-        #printArea {
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
         display: block;
         }
 
-        #userBar {
-        display: none;
-        }
-
-        #banner {
-        display: none;
-        }
-
-        #footer {
-        display: none;
-        }
-
-        #htmlFormEntryBanner {
-        display: none;
-        }
-
-        .error {
-        display: none;
-        }
-
-        .lables {
-        width: 200px;
-        }
-
-        table {
-        width: 100%;
-        }
-
-        table,td,th {
-        border: 1px solid black;
-        border-collapse: collapse;
-        }
-
-        th {
-        text-align: left;
-        background-color: #D9D9D9;
-        font-size: 10px;
-        }
-
-        td {
-        font-size: 10px;
-        }
-
-        .selectedCancerStagingKeys {
-        page-break-before: always;
-        border: 0px;
-        }
-
-        table.selectedCancerStagingKeys td {
-        border: 0px;
-        }
-
-        #signature {
-        border: none;
-        }
-        #signature td {
-        border: none;
-        }
-        }
-
-        @media screen {
-        table {
-        border: 1px solid #DFDFDF;
-        width: 100%;
-        border-color: #009d8e;
-        }
-
-        #container {
+        form fieldset {
         display: block;
         }
 
-        #printArea {
-        display: none;
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
         }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
+        width: 100%;
+        }
+
+        .div {
+        float: left;
+        }
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        .date-one-line {
+        display: flex;
+        }
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
+        }
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
         }
     </style>
     <script type="text/javascript">
         $j(document).ready(function() {
 
-			if(getValue("encounterDate.value") &#60;&#61;'2019-05-20'){
-                $j(".before20190520changes").show();
-            }else{
-                 $j(".before20190520changes").hide();
-            }
-            getField('encounterDate.value').change(function() {
-                if(getValue("encounterDate.value") &#60;&#61; '2019-05-20'){
-                    $j(".before20190520changes").show();
-                }else{
-                    $j(".before20190520changes").hide();
-                }
-            });
+        if(getValue("encounterDate.value") &#60;&#61;'2019-05-20'){
+        $j(".before20190520changes").show();
+        }else{
+        $j(".before20190520changes").hide();
+        }
+        getField('encounterDate.value').change(function() {
+        if(getValue("encounterDate.value") &#60;&#61; '2019-05-20'){
+        $j(".before20190520changes").show();
+        }else{
+        $j(".before20190520changes").hide();
+        }
+        });
 
-		});
+        });
     </script>
-    <div id="container"  style="width:100%">
-        <section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
 
-            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+            <table border="1" style="table-layout: fixed;" cellspacing="0" cellpadding="6" width="80%">
                 <tr>
-                    <td><b> IMB ID: <lookup class="value"
-                                            expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
-                                                                                                               expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
                     </td>
-                    <td>Date and Time: <encounterDate id="encounterDate" default="today" showTime="true"/>
+                    <td>
+                        Health Facility:
+                        <encounterLocation default="GlobalProperty:billing.defaultLocation" />
                     </td>
-                </tr>
-                <tr>
-                    <td>Nom / Last name: <lookup class="value"
-                                                 expression="patient.personName.familyName" />
-                    </td>
-                    <td>Prénom/ First name: <lookup class="value"
-                                                    expression="patient.personName.givenName" />
-                    </td>
-                </tr>
-
-                <tr>
-                    <td><img src="/openmrs/moduleResources/rwandareports/images/pihHands.png" align="left"
-                             height="65" ></img>
-                        <h2>
-                            Inshuti Mu Buzima <br /> PIH Rwanda
-                        </h2>
-                    </td>
-                    <td><strong> PDC Growth Failure</strong> <br />
-                    </td>
-                </tr>
-                <tr>
-                    <td>Clinique / Clinic: <encounterLocation />
-                    </td>
-                    <td>Author:<encounterProvider/>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
                     </td>
                 </tr>
             </table>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
+
             <table BORDER="1">
                 <tr>
                     <th class="tableHeader">
@@ -306,68 +350,70 @@
                 <tr>
                     <td>
 
-                        <strong>Breastfeeding status</strong>
-                        <br/>
-                        <obs conceptId="$@Breastfeeding_status@" answerConceptId="$@NO@" answerLabels="No" style="checkbox"/> <br/>
-                        Yes: <obs conceptId="$@Breastfeeding_status@" answerConceptId="$@Only/mostly_breastfeeding@" answerLabels="Only/mostly breastfeeding" style="checkbox"/> <br/>
-                        Yes: <obs conceptId="$@Breastfeeding_status@" answerConceptId="$@Not_started_complementary_foods@" answerLabels="Not started complementary foods" style="checkbox"/> <br/>
-                        Yes: <obs conceptId="$@Breastfeeding_status@" answerConceptId="$@Breastfeeds_first_then_eats_meals@" answerLabels="Breastfeeds first then eats meals" style="checkbox"/> <br/>
-                        Yes: <obs conceptId="$@Breastfeeding_status@" answerConceptId="$@Eats_meals_first_then_breastfeeds@" answerLabels="Eats meals first then breastfeeds" style="checkbox"/> <br/>
-                        <br/>
+                        <p class="radio">
+                            <strong>Breastfeeding status</strong>
+                            <br/>
+                            <obs conceptId="$@Breastfeeding_status@" answerConceptId="$@NO@" answerLabels="No" style="checkbox"/> <br/>
+                            Yes: <obs conceptId="$@Breastfeeding_status@" answerConceptId="$@Only/mostly_breastfeeding@" answerLabels="Only/mostly breastfeeding" style="checkbox"/> <br/>
+                            Yes: <obs conceptId="$@Breastfeeding_status@" answerConceptId="$@Not_started_complementary_foods@" answerLabels="Not started complementary foods" style="checkbox"/> <br/>
+                            Yes: <obs conceptId="$@Breastfeeding_status@" answerConceptId="$@Breastfeeds_first_then_eats_meals@" answerLabels="Breastfeeds first then eats meals" style="checkbox"/> <br/>
+                            Yes: <obs conceptId="$@Breastfeeding_status@" answerConceptId="$@Eats_meals_first_then_breastfeeds@" answerLabels="Eats meals first then breastfeeds" style="checkbox"/> <br/>
+                        </p>
+                        <p class="radio">
+                            <strong>Food variety</strong>
+                            <br/>
+                            <obs conceptId="$@Food_Variety_Concerns@" answerConceptId="$@NONE@" answerLabels="No" style="checkbox"/> <br/>
+                            Yes: <obs conceptId="$@Food_Variety_Concerns@" answerConceptId="$@Eats_food_from_less_than_four_food_groups_per_day@" answerLabels="&#60;4 food groups per day" style="checkbox"/> <br/>
+                        </p>
 
+                        <p class="radio">
+                            <strong>Food texture</strong>
+                            <br/>
+                            <obs conceptId="$@Food_texture_concerns@" answerConceptId="$@NONE@" answerLabels="No" style="checkbox"/> <br/>
+                            Yes: <obs conceptId="$@Food_texture_concerns@" answerConceptId="$@Not_appropriate_for_age@" answerLabels="Not changing over time/not appropriate for age" style="checkbox"/> <br/>
+                            <br/>
 
-                        <strong>Food variety</strong>
-                        <br/>
-                        <obs conceptId="$@Food_Variety_Concerns@" answerConceptId="$@NONE@" answerLabels="No" style="checkbox"/> <br/>
-                        Yes: <obs conceptId="$@Food_Variety_Concerns@" answerConceptId="$@Eats_food_from_less_than_four_food_groups_per_day@" answerLabels="&#60;4 food groups per day" style="checkbox"/> <br/>
-                        <br/>
+                        </p>
+                        <p class="radio">
+                            <strong>Food frequency/quantity</strong>
+                            <br/>
+                            <obs conceptId="$@Food_frequency/quantity_concerns@" answerConceptId="$@NONE@" answerLabels="No" style="checkbox"/> <br/>
+                            Yes: <obs conceptId="$@Food_frequency/quantity_concerns@" answerConceptId="$@Not_appropriate_for_age@" answerLabels="Not appropriate for age" style="checkbox"/> <br/>
+                        </p>
+                        <p class="radio">
+                            <strong>Responsive feeding</strong>
+                            <br/>
+                            <obs conceptId="$@Responsive_Feeding@" answerConceptId="$@No_concern@" answerLabels="No" style="checkbox"/>
+                            <obs conceptId="$@Responsive_Feeding@" answerConceptId="$@Concern@" answerLabels="Yes" style="checkbox"/> <br/>
+                        </p>
 
-                        <strong>Food texture</strong>
-                        <br/>
-                        <obs conceptId="$@Food_texture_concerns@" answerConceptId="$@NONE@" answerLabels="No" style="checkbox"/> <br/>
-                        Yes: <obs conceptId="$@Food_texture_concerns@" answerConceptId="$@Not_appropriate_for_age@" answerLabels="Not changing over time/not appropriate for age" style="checkbox"/> <br/>
-                        <br/>
+                        <p class="radio">
+                            <strong>Non-nutritious foods</strong>
+                            <br/>
+                            <obs conceptId="$@Non-nutritious_foods@" answerConceptId="$@No_concern@" answerLabels="No" style="checkbox"/>
+                            <obs conceptId="$@Non-nutritious_foods@" answerConceptId="$@Concern@" answerLabels="Yes" style="checkbox"/> <br/>
+                        </p>
 
-                        <strong>Food frequency/quantity</strong>
-                        <br/>
-                        <obs conceptId="$@Food_frequency/quantity_concerns@" answerConceptId="$@NONE@" answerLabels="No" style="checkbox"/> <br/>
-                        Yes: <obs conceptId="$@Food_frequency/quantity_concerns@" answerConceptId="$@Not_appropriate_for_age@" answerLabels="Not appropriate for age" style="checkbox"/> <br/>
-                        <br/>
-
-                        <strong>Responsive feeding</strong>
-                        <br/>
-                        <obs conceptId="$@Responsive_Feeding@" answerConceptId="$@No_concern@" answerLabels="No" style="checkbox"/>
-                        <obs conceptId="$@Responsive_Feeding@" answerConceptId="$@Concern@" answerLabels="Yes" style="checkbox"/> <br/>
-                        <br/>
-
-                        <strong>Non-nutritious foods</strong>
-                        <br/>
-                        <obs conceptId="$@Non-nutritious_foods@" answerConceptId="$@No_concern@" answerLabels="No" style="checkbox"/>
-                        <obs conceptId="$@Non-nutritious_foods@" answerConceptId="$@Concern@" answerLabels="Yes" style="checkbox"/> <br/>
-                        <br/>
-
-                        <strong>Feeding difficulties</strong>
-                        <br/>
-                        <obs conceptId="$@Feeding_Difficulties@" answerConceptId="$@No_concern@" answerLabels="No" style="checkbox"/> <br/>
-                        Yes: <obs conceptId="$@Feeding_Difficulties@" answerConceptId="$@Coughs_chokes_or_gags_while_eating@" answerLabels="Coughs, chokes or gags while eating" style="checkbox"/> <br/>
-                        Yes: <obs conceptId="$@Feeding_Difficulties@" answerConceptId="$@Liquids/foods_falling_out_of_mouth@" answerLabels="Liquids/foods falling out of mouth" style="checkbox"/> <br/>
-                        Yes: <obs conceptId="$@Feeding_Difficulties@" answerConceptId="$@Difficulty_chewing@" answerLabels="Difficulty chewing" style="checkbox"/> <br/>
-                        Yes: <obs conceptId="$@Feeding_Difficulties@" answerConceptId="$@Keep_food_in_their_mouth_without_swallowing@" answerLabels="Keep food in their mouth without swallowing" style="checkbox"/> <br/>
-                        Yes: <obs conceptId="$@Feeding_Difficulties@" answerConceptId="$@OTHER_NON-CODED@" answerLabels="Other" style="checkbox"/> :
-                        <obs conceptId="$@Other_feeding_difficulties@" />
-
-                        <br/>
-
-                        <br/>
-
-                        <hr/>
-                        <strong>Growth Curve</strong>
-                        <obs conceptId="$@Growth_Curve@" answerConceptIds="$@Up@,$@Flat_or_down@" answerLabels="Up,Flat or down" style="radio"/>
-                        <br/>
-                        <strong>Maternal Concerns</strong>
-                        <obs conceptId="$@Maternal_Concerns@" answerConceptIds="$@NONE@,$@OTHER_NON-CODED@" answerLabels="None,Other" style="radio"/>
-                        ,specify:
-                        <obs conceptId="$@Other_Maternal_Concerns@" />
+                        <p class="radio">
+                            <strong>Feeding difficulties</strong>
+                            <br/>
+                            <obs conceptId="$@Feeding_Difficulties@" answerConceptId="$@No_concern@" answerLabels="No" style="checkbox"/> <br/>
+                            Yes: <obs conceptId="$@Feeding_Difficulties@" answerConceptId="$@Coughs_chokes_or_gags_while_eating@" answerLabels="Coughs, chokes or gags while eating" style="checkbox"/> <br/>
+                            Yes: <obs conceptId="$@Feeding_Difficulties@" answerConceptId="$@Liquids/foods_falling_out_of_mouth@" answerLabels="Liquids/foods falling out of mouth" style="checkbox"/> <br/>
+                            Yes: <obs conceptId="$@Feeding_Difficulties@" answerConceptId="$@Difficulty_chewing@" answerLabels="Difficulty chewing" style="checkbox"/> <br/>
+                            Yes: <obs conceptId="$@Feeding_Difficulties@" answerConceptId="$@Keep_food_in_their_mouth_without_swallowing@" answerLabels="Keep food in their mouth without swallowing" style="checkbox"/> <br/>
+                            Yes: <obs conceptId="$@Feeding_Difficulties@" answerConceptId="$@OTHER_NON-CODED@" answerLabels="Other" style="checkbox"/> :
+                            <obs conceptId="$@Other_feeding_difficulties@" />
+                        </p>
+                        <p class="side-by-side">
+                            <strong>Growth Curve</strong>
+                            <obs conceptId="$@Growth_Curve@" answerConceptIds="$@Up@,$@Flat_or_down@" answerLabels="Up,Flat or down" style="radio"/>
+                            <br/>
+                            <strong>Maternal Concerns</strong>
+                            <obs conceptId="$@Maternal_Concerns@" answerConceptIds="$@NONE@,$@OTHER_NON-CODED@" answerLabels="None,Other" style="radio"/>
+                            ,specify:
+                            <obs conceptId="$@Other_Maternal_Concerns@" />
+                        </p>
                     </td>
                 </tr>
                 <tr>
@@ -377,8 +423,10 @@
                 </tr>
                 <tr>
                     <td>
-                        <obs conceptId="$@Current_Visit_Classification@" answerConceptIds="$@Green_visit_class@,$@Yellow_visit_class@,$@Red(HC)@,$@Red(DH_transit)_visit_class@
+                        <p class="side-by-side">
+                            <obs conceptId="$@Current_Visit_Classification@" answerConceptIds="$@Green_visit_class@,$@Yellow_visit_class@,$@Red(HC)@,$@Red(DH_transit)_visit_class@
                         ,$@Currently_in_HC_Malnutrition_program@" answerLabels="Green,Yellow,Red(HC),Red(DH transfer),Referred to HC malnutrition program" style="radio"/>
+                        </p>
                     </td>
                 </tr>
                 <tr class="before20190520changes">
@@ -388,30 +436,32 @@
                 </tr>
                 <tr class="before20190520changes">
                     <td>
-                        <strong>Assessment needed by: </strong>
-                        <obs conceptId="$@Assessment_Needed_By@" answerConceptId="$@Social_Worker@"
-                             answerLabel="Social worker" style="checkbox"/>
-                        <obs conceptId="$@Assessment_Needed_By@" answerConceptId="$@INTEGRATED_MANAGEMENT_OF_CHILDHOOD_ILLNESS@"
-                             answerLabel="Doctor" style="checkbox"/>
-                        <obs conceptId="$@Assessment_Needed_By@" answerConceptId="$@Doctor@"
-                             answerLabel="IMCI" style="checkbox"/>
-                        <br/>
-                        <strong>Counseling on:</strong>
-                        <br/>
-                        <obs conceptId="$@counseling_on@" answerConceptId="$@complementary_feeding@" answerLabel="Complementary feeding" style="checkbox"/> <br/>
-                        <obs conceptId="$@counseling_on@" answerConceptId="$@Variety_of_foods@" answerLabel="Variety of foods" style="checkbox"/>
-                        <obs conceptId="$@counseling_on@" answerConceptId="$@POOR_APPETITE@" answerLabel="Poor appetite" style="checkbox"/> <br/>
-                        <obs conceptId="$@counseling_on@" answerConceptId="$@Feeding_non-breastfed_child@" answerLabel="Feeding non-breastfed child" style="checkbox"/> <br/>
-                        <obs conceptId="$@counseling_on@" answerConceptId="$@Hygiene_and_sanitation@" answerLabel="Hygiene and sanitation" style="checkbox"/> <br/>
-                        <obs conceptId="$@counseling_on@" answerConceptId="$@Difficulty_chewing@" answerLabel="Difficulty chewing" style="checkbox"/>
-                        <obs conceptId="$@counseling_on@" answerConceptId="$@SWALLOWING_DIFFICULTIES@" answerLabel="Difficulty Swallowing" style="checkbox"/> <br/>
-                        <obs conceptId="$@counseling_on@" answerConceptId="$@High_energy_foods@" answerLabel="High energy foods" style="checkbox"/> <br/>
-                        <obs conceptId="$@counseling_on@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other" style="checkbox"/>
-                        ,Specify:<obs conceptId="$@Other_counselled_on@" />
-                        <br/>
-                        Completed by
-                        <obs conceptId="$@Completed_by@" answerConceptId="$@Nurse@" answerLabel="Nurse" style="checkbox"/>
-                        <obs conceptId="$@Completed_by@" answerConceptId="$@Social_Worker@" answerLabel="Social worker" style="checkbox"/>
+                        <p class="radio side-by-side">
+                            <strong>Assessment needed by: </strong>
+                            <obs conceptId="$@Assessment_Needed_By@" answerConceptId="$@Social_Worker@"
+                                 answerLabel="Social worker" style="checkbox"/>
+                            <obs conceptId="$@Assessment_Needed_By@" answerConceptId="$@INTEGRATED_MANAGEMENT_OF_CHILDHOOD_ILLNESS@"
+                                 answerLabel="Doctor" style="checkbox"/>
+                            <obs conceptId="$@Assessment_Needed_By@" answerConceptId="$@Doctor@"
+                                 answerLabel="IMCI" style="checkbox"/>
+                            <br/>
+                            <strong>Counseling on:</strong>
+                            <br/>
+                            <obs conceptId="$@counseling_on@" answerConceptId="$@complementary_feeding@" answerLabel="Complementary feeding" style="checkbox"/> <br/>
+                            <obs conceptId="$@counseling_on@" answerConceptId="$@Variety_of_foods@" answerLabel="Variety of foods" style="checkbox"/>
+                            <obs conceptId="$@counseling_on@" answerConceptId="$@POOR_APPETITE@" answerLabel="Poor appetite" style="checkbox"/> <br/>
+                            <obs conceptId="$@counseling_on@" answerConceptId="$@Feeding_non-breastfed_child@" answerLabel="Feeding non-breastfed child" style="checkbox"/> <br/>
+                            <obs conceptId="$@counseling_on@" answerConceptId="$@Hygiene_and_sanitation@" answerLabel="Hygiene and sanitation" style="checkbox"/> <br/>
+                            <obs conceptId="$@counseling_on@" answerConceptId="$@Difficulty_chewing@" answerLabel="Difficulty chewing" style="checkbox"/>
+                            <obs conceptId="$@counseling_on@" answerConceptId="$@SWALLOWING_DIFFICULTIES@" answerLabel="Difficulty Swallowing" style="checkbox"/> <br/>
+                            <obs conceptId="$@counseling_on@" answerConceptId="$@High_energy_foods@" answerLabel="High energy foods" style="checkbox"/> <br/>
+                            <obs conceptId="$@counseling_on@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other" style="checkbox"/>
+                            ,Specify:<obs conceptId="$@Other_counselled_on@" />
+                            <br/>
+                            Completed by
+                            <obs conceptId="$@Completed_by@" answerConceptId="$@Nurse@" answerLabel="Nurse" style="checkbox"/>
+                            <obs conceptId="$@Completed_by@" answerConceptId="$@Social_Worker@" answerLabel="Social worker" style="checkbox"/>
+                        </p>
                     </td>
                 </tr>
                 <tr>
@@ -421,10 +471,12 @@
                 </tr>
                 <tr>
                     <td>
-                        <obs conceptId="$@Maternal_Food_Package@" answerConceptIds="$@NO@,$@2-week@,$@1-month@" answerLabels="No Yes:,2-week,1-month" style="radio"/>
-                        <br/>
-                        if green,end on:
-                        <obs conceptId="$@Maternal_Food_Package_End_Time@" allowFutureDates="true"/>
+                        <p class="side-by-side">
+                            <obs conceptId="$@Maternal_Food_Package@" answerConceptIds="$@NO@,$@2-week@,$@1-month@" answerLabels="No Yes:,2-week,1-month" style="radio"/>
+                            <br/>
+                            if green,end on:
+                            <obs conceptId="$@Maternal_Food_Package_End_Time@" allowFutureDates="true"/>
+                        </p>
                     </td>
                 </tr>
                 <tr class="before20190520changes">
@@ -434,24 +486,26 @@
                 </tr>
                 <tr class="before20190520changes">
                     <td>
-                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@complementary_feeding@" answerLabel="Complementary feeding" style="checkbox"/>
-                        <br/>
-                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@BREASTFEEDING@" answerLabel="Breastfeeding" style="checkbox"/>
-                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@Start_cows_milk@" answerLabel="Start cow's milk" style="checkbox"/>
-                        <br/>
-                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@Variety_of_foods@" answerLabel="Improve food variety" style="checkbox"/>
-                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@food_frequency@" answerLabel="Food frequency" style="checkbox"/>
-                        <br/>
-                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@Change_food/drink_consistency@" answerLabel="Change food/drink consistency" style="checkbox"/>
-                        <br/>
-                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@Hygiene_and_sanitation@" answerLabel="Improve hygiene/sanitation" style="checkbox"/>
-                        <br/>
-                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@Feeding_child_with_poor_appetite@" answerLabel="Feeding child with poor appetit" style="checkbox"/>
-                        <br/>
-                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@High_energy_foods@" answerLabel="Add high energy foods" style="checkbox"/>
-                        <br/>
-                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other" style="checkbox"/>
-                        ,specify:<obs conceptId="$@Other_Feeding_Intervetion@"/>
+                        <p class="side-by-side radio">
+                            <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@complementary_feeding@" answerLabel="Complementary feeding" style="checkbox"/>
+                            <br/>
+                            <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@BREASTFEEDING@" answerLabel="Breastfeeding" style="checkbox"/>
+                            <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@Start_cows_milk@" answerLabel="Start cow's milk" style="checkbox"/>
+                            <br/>
+                            <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@Variety_of_foods@" answerLabel="Improve food variety" style="checkbox"/>
+                            <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@food_frequency@" answerLabel="Food frequency" style="checkbox"/>
+                            <br/>
+                            <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@Change_food/drink_consistency@" answerLabel="Change food/drink consistency" style="checkbox"/>
+                            <br/>
+                            <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@Hygiene_and_sanitation@" answerLabel="Improve hygiene/sanitation" style="checkbox"/>
+                            <br/>
+                            <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@Feeding_child_with_poor_appetite@" answerLabel="Feeding child with poor appetit" style="checkbox"/>
+                            <br/>
+                            <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@High_energy_foods@" answerLabel="Add high energy foods" style="checkbox"/>
+                            <br/>
+                            <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other" style="checkbox"/>
+                            ,specify:<obs conceptId="$@Other_Feeding_Intervetion@"/>
+                        </p>
                     </td>
                 </tr>
                 <tr>
@@ -461,8 +515,10 @@
                 </tr>
                 <tr>
                     <td>
-                        <obs conceptId="$@PDC_Malnutrition_status@" answerConceptIds="$@Continue_PDC_malnutrition_treatment@,$@Cured_(malnutrition)@,
+                        <p class="side-by-side">
+                            <obs conceptId="$@PDC_Malnutrition_status@" answerConceptIds="$@Continue_PDC_malnutrition_treatment@,$@Cured_(malnutrition)@,
                         $@LOST_TO_FOLLOWUP@,$@Referred_to_HC@,$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@" answerLabels="Continue PDC Malnutrition Treatment,Cured(malnutrition),Lost-to-follow up,Referred to HC,Referred to DH" style="radio"/>
+                        </p>
                     </td>
                 </tr>
                 <tr>
@@ -477,13 +533,20 @@
                     </td>
                 </tr>
             </table>
-        </section>
-        <br />
-        <encounterVoided/>
-        <br/>
-        <center>
-            <submit />
-        </center>
-        <br/>
-    </div>
+        </div>
+    </section>
+    <br />
+    <encounterVoided/>
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
 </htmlform>

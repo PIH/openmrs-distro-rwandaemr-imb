@@ -1,12 +1,12 @@
-<htmlform 
-	htmlformUuid="fe6c10ed-a56a-4b54-99c0-78c78efbec5e" 
-	formUuid="4e269404-5bd2-4e67-aa09-b0b4b7e585ad" 
-	formName="PDC Conditional Specific (Cleft Lip)" 
-	formDescription="PDC Conditional Specific (Cleft Lip)" 
-	formVersion="0.1" 
-	formEncounterType="71826dd4-330d-4548-9fd8-6703682fbd3a" 
-	formPublished="true" 
-	formRetired="false"
+<htmlform
+        htmlformUuid="fe6c10ed-a56a-4b54-99c0-78c78efbec5e"
+        formUuid="4e269404-5bd2-4e67-aa09-b0b4b7e585ad"
+        formName="PDC Conditional Specific (Cleft Lip)"
+        formDescription="PDC Conditional Specific (Cleft Lip)"
+        formVersion="0.1"
+        formEncounterType="71826dd4-330d-4548-9fd8-6703682fbd3a"
+        formPublished="true"
+        formRetired="false"
 > <!--
            PDC - Malnutrition
             Pilot_4July_v1.3NT
@@ -92,315 +92,363 @@
 
 
     <style>
-        th.tableHeader {
-        background-color: #009d8e;
-        color: #FFFFFF;
-        font-size: 16px;
-        text-align: left;
-        }
-
-        ul {
-        list-style-type: square;
-        font-family: Verdana, Arial, Helvetica, sans-serif;
-        font-size: 11px;
-        }
-
-        tr.spaceUnder>td {
-        padding-bottom: 1em;
-        }
-
-        td {
-        font-size: 15px;
-        }
-
-        #container {
-        
-        margin: auto;
-        
-        height: auto;
-        }
-
-        @media print {
-        #container {
-        display: none;
-        }
-
-        #printArea {
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
         display: block;
         }
 
-        #userBar {
-        display: none;
-        }
-
-        #banner {
-        display: none;
-        }
-
-        #footer {
-        display: none;
-        }
-
-        #htmlFormEntryBanner {
-        display: none;
-        }
-
-        .error {
-        display: none;
-        }
-
-        .lables {
-        width: 200px;
-        }
-
-        table {
-        width: 100%;
-        }
-
-        table,td,th {
-        border: 1px solid black;
-        border-collapse: collapse;
-        }
-
-        th {
-        text-align: left;
-        background-color: #D9D9D9;
-        font-size: 10px;
-        }
-
-        td {
-        font-size: 10px;
-        }
-
-        .selectedCancerStagingKeys {
-        page-break-before: always;
-        border: 0px;
-        }
-
-        table.selectedCancerStagingKeys td {
-        border: 0px;
-        }
-
-        #signature {
-        border: none;
-        }
-        #signature td {
-        border: none;
-        }
-        }
-
-        @media screen {
-        table {
-        border: 1px solid #DFDFDF;
-        width: 100%;
-        border-color: #009d8e;
-        }
-
-        #container {
+        form fieldset {
         display: block;
         }
 
-        #printArea {
-        display: none;
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
         }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
+        width: 100%;
+        }
+
+        .div {
+        float: left;
+        }
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        .date-one-line {
+        display: flex;
+        }
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
+        }
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
         }
     </style>
+
     <script type="text/javascript">
         $j(document).ready(function() {
 
 
-            $j("#theWholeTable").hide();
+        $j("#theWholeTable").hide();
 
 
-            $j("input#IntakeAssessment").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").show();
-                $j("#noActiveConcerns").hide();
-                $j("#painAndDischarge").hide();
-                $j("#IMCI").hide();
-                $j("#referToDH").hide();
-                $j("#surgeryStatus").hide();
-                $j("#surgeryCompleted").hide();
-            });
-            $j("input#firstmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#noActiveConcerns").hide();
-                $j("#painAndDischarge").show();
-                $j("#IMCI").hide();
-                $j("#referToDH").show();
-                $j("#surgeryStatus").hide();
-                $j("#surgeryCompleted").hide();
-            });
-            $j("input#secondmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#noActiveConcerns").hide();
-                $j("#painAndDischarge").show();
-                $j("#IMCI").show();
-                $j("#referToDH").show();
-                $j("#surgeryStatus").show();
-                $j("#surgeryCompleted").hide();
-            });
-            $j("input#forthmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#noActiveConcerns").hide();
-                $j("#painAndDischarge").show();
-                $j("#IMCI").show();
-                $j("#referToDH").show();
-                $j("#surgeryStatus").show();
-                $j("#surgeryCompleted").show();
-            });
-            $j("input#sixthmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#noActiveConcerns").hide();
-                $j("#painAndDischarge").show();
-                $j("#IMCI").show();
-                $j("#referToDH").show();
-                $j("#surgeryStatus").show();
-                $j("#surgeryCompleted").show();
-            });
-            $j("input#ninethmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#noActiveConcerns").hide();
-                $j("#painAndDischarge").show();
-                $j("#IMCI").show();
-                $j("#referToDH").show();
-                $j("#surgeryStatus").show();
-                $j("#surgeryCompleted").show();
-            });
-            $j("input#twelvethmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#noActiveConcerns").hide();
-                $j("#painAndDischarge").show();
-                $j("#IMCI").show();
-                $j("#referToDH").show();
-                $j("#surgeryStatus").show();
-                $j("#surgeryCompleted").show();
-            });
-            $j("input#eighteenthmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#noActiveConcerns").hide();
-                $j("#painAndDischarge").show();
-                $j("#IMCI").show();
-                $j("#referToDH").show();
-                $j("#surgeryStatus").show();
-                $j("#surgeryCompleted").show();
-            });
-            $j("input#twentyfourthmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#noActiveConcerns").show();
-                $j("#painAndDischarge").show();
-                $j("#IMCI").show();
-                $j("#referToDH").show();
-                $j("#surgeryStatus").show();
-                $j("#surgeryCompleted").show();
-            });
-            $j("input#thirtiethmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#noActiveConcerns").hide();
-                $j("#painAndDischarge").show();
-                $j("#IMCI").show();
-                $j("#referToDH").show();
-                $j("#surgeryStatus").show();
-                $j("#surgeryCompleted").show();
-            });
-            $j("input#thirtysixthmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#noActiveConcerns").hide();
-                $j("#painAndDischarge").show();
-                $j("#IMCI").show();
-                $j("#referToDH").show();
-                $j("#surgeryStatus").show();
-                $j("#surgeryCompleted").show();
-            });
-            $j("input#fortyeighthfmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#noActiveConcerns").hide();
-                $j("#painAndDischarge").show();
-                $j("#IMCI").show();
-                $j("#referToDH").show();
-                $j("#surgeryStatus").show();
-                $j("#surgeryCompleted").show();
-            });
-            $j("input#sixtiethmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#noActiveConcerns").hide();
-                $j("#painAndDischarge").show();
-                $j("#IMCI").show();
-                $j("#referToDH").show();
-                $j("#surgeryStatus").show();
-                $j("#surgeryCompleted").show();
-            });
+        $j("input#IntakeAssessment").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").show();
+        $j("#noActiveConcerns").hide();
+        $j("#painAndDischarge").hide();
+        $j("#IMCI").hide();
+        $j("#referToDH").hide();
+        $j("#surgeryStatus").hide();
+        $j("#surgeryCompleted").hide();
+        });
+        $j("input#firstmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#noActiveConcerns").hide();
+        $j("#painAndDischarge").show();
+        $j("#IMCI").hide();
+        $j("#referToDH").show();
+        $j("#surgeryStatus").hide();
+        $j("#surgeryCompleted").hide();
+        });
+        $j("input#secondmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#noActiveConcerns").hide();
+        $j("#painAndDischarge").show();
+        $j("#IMCI").show();
+        $j("#referToDH").show();
+        $j("#surgeryStatus").show();
+        $j("#surgeryCompleted").hide();
+        });
+        $j("input#forthmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#noActiveConcerns").hide();
+        $j("#painAndDischarge").show();
+        $j("#IMCI").show();
+        $j("#referToDH").show();
+        $j("#surgeryStatus").show();
+        $j("#surgeryCompleted").show();
+        });
+        $j("input#sixthmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#noActiveConcerns").hide();
+        $j("#painAndDischarge").show();
+        $j("#IMCI").show();
+        $j("#referToDH").show();
+        $j("#surgeryStatus").show();
+        $j("#surgeryCompleted").show();
+        });
+        $j("input#ninethmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#noActiveConcerns").hide();
+        $j("#painAndDischarge").show();
+        $j("#IMCI").show();
+        $j("#referToDH").show();
+        $j("#surgeryStatus").show();
+        $j("#surgeryCompleted").show();
+        });
+        $j("input#twelvethmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#noActiveConcerns").hide();
+        $j("#painAndDischarge").show();
+        $j("#IMCI").show();
+        $j("#referToDH").show();
+        $j("#surgeryStatus").show();
+        $j("#surgeryCompleted").show();
+        });
+        $j("input#eighteenthmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#noActiveConcerns").hide();
+        $j("#painAndDischarge").show();
+        $j("#IMCI").show();
+        $j("#referToDH").show();
+        $j("#surgeryStatus").show();
+        $j("#surgeryCompleted").show();
+        });
+        $j("input#twentyfourthmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#noActiveConcerns").show();
+        $j("#painAndDischarge").show();
+        $j("#IMCI").show();
+        $j("#referToDH").show();
+        $j("#surgeryStatus").show();
+        $j("#surgeryCompleted").show();
+        });
+        $j("input#thirtiethmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#noActiveConcerns").hide();
+        $j("#painAndDischarge").show();
+        $j("#IMCI").show();
+        $j("#referToDH").show();
+        $j("#surgeryStatus").show();
+        $j("#surgeryCompleted").show();
+        });
+        $j("input#thirtysixthmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#noActiveConcerns").hide();
+        $j("#painAndDischarge").show();
+        $j("#IMCI").show();
+        $j("#referToDH").show();
+        $j("#surgeryStatus").show();
+        $j("#surgeryCompleted").show();
+        });
+        $j("input#fortyeighthfmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#noActiveConcerns").hide();
+        $j("#painAndDischarge").show();
+        $j("#IMCI").show();
+        $j("#referToDH").show();
+        $j("#surgeryStatus").show();
+        $j("#surgeryCompleted").show();
+        });
+        $j("input#sixtiethmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#noActiveConcerns").hide();
+        $j("#painAndDischarge").show();
+        $j("#IMCI").show();
+        $j("#referToDH").show();
+        $j("#surgeryStatus").show();
+        $j("#surgeryCompleted").show();
+        });
 
 
 
-		});
+        });
     </script>
-    <div id="container"  style="width:100%">
-        <section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
 
-            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+            <table border="1" style="table-layout: fixed;" cellspacing="0" cellpadding="6" width="80%">
                 <tr>
-                    <td><b> IMB ID: <lookup class="value"
-                                            expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
-                                                                                                               expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
                     </td>
-                    <td>Date and Time: <encounterDate id="encounterDate" default="today" showTime="true"/>
+                    <td>
+                        Health Facility:
+                        <encounterLocation default="GlobalProperty:billing.defaultLocation" />
                     </td>
-                </tr>
-                <tr>
-                    <td>Nom / Last name: <lookup class="value"
-                                                 expression="patient.personName.familyName" />
-                    </td>
-                    <td>Prénom/ First name: <lookup class="value"
-                                                    expression="patient.personName.givenName" />
-                    </td>
-                </tr>
-
-                <tr>
-                    <td><img src="/openmrs/moduleResources/rwandareports/images/pihHands.png" align="left"
-                             height="65" ></img>
-                        <h2>
-                            Inshuti Mu Buzima <br /> PIH Rwanda
-                        </h2>
-                    </td>
-                    <td><strong> PDC Condition specific form(Cleft Lip/Palate)</strong> <br />
-                    </td>
-                </tr>
-                <tr>
-                    <td>Clinique / Clinic: <encounterLocation />
-                    </td>
-                    <td>Author:<encounterProvider/>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
                     </td>
                 </tr>
             </table>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="">
+        <div class="section-container">
+
             <table>
                 <tr>
-                    <td> Select visit:
-                        <input type="radio" name="visit" value="Intake Assessment" id="IntakeAssessment"/> Intake Assessment
-                        <input type="radio" name="visit" value="first month" id="firstmonth"/> 1 month
-                        <input type="radio" name="visit" value="second month" id="secondmonth"/> 2 month
-                        <input type="radio" name="visit" value="forth month" id="forthmonth"/> 4 month
-                        <input type="radio" name="visit" value="sixth month" id="sixthmonth"/> 6 month
-                        <input type="radio" name="visit" value="nineth month" id="ninethmonth"/> 9 month
-                        <input type="radio" name="visit" value="twelveth month" id="twelvethmonth"/> 12 month
-                        <input type="radio" name="visit" value="eighteenth month" id="eighteenthmonth"/> 18 month
-                        <input type="radio" name="visit" value="twentyfourth month" id="twentyfourthmonth"/> 24 month
-                        <input type="radio" name="visit" value="thirtieth month" id="thirtiethmonth"/> 30 month
-                        <input type="radio" name="visit" value="thirtysixth month" id="thirtysixthmonth"/> 36 month
-                        <input type="radio" name="visit" value="fortyeighth month" id="fortyeighthfmonth"/> 48 month
-                        <input type="radio" name="visit" value="sixtieth month" id="sixtiethmonth"/> 60 month
+                    <td>
+                        <p class="radio">
+                            Select visit:
+                            <input type="radio" name="visit" value="Intake Assessment" id="IntakeAssessment"/> Intake Assessment
+                            <input type="radio" name="visit" value="first month" id="firstmonth"/> 1 month
+                            <input type="radio" name="visit" value="second month" id="secondmonth"/> 2 month
+                            <input type="radio" name="visit" value="forth month" id="forthmonth"/> 4 month
+                            <input type="radio" name="visit" value="sixth month" id="sixthmonth"/> 6 month
+                            <input type="radio" name="visit" value="nineth month" id="ninethmonth"/> 9 month
+                            <input type="radio" name="visit" value="twelveth month" id="twelvethmonth"/> 12 month
+                            <input type="radio" name="visit" value="eighteenth month" id="eighteenthmonth"/> 18 month
+                            <input type="radio" name="visit" value="twentyfourth month" id="twentyfourthmonth"/> 24 month
+                            <input type="radio" name="visit" value="thirtieth month" id="thirtiethmonth"/> 30 month
+                            <input type="radio" name="visit" value="thirtysixth month" id="thirtysixthmonth"/> 36 month
+                            <input type="radio" name="visit" value="fortyeighth month" id="fortyeighthfmonth"/> 48 month
+                            <input type="radio" name="visit" value="sixtieth month" id="sixtiethmonth"/> 60 month
+                        </p>
                     </td>
                 </tr>
             </table>
@@ -414,46 +462,50 @@
                 <tr>
                     <td>
                         <span id="intakeAssessmentDiplay">
-                            - Types of Defect
-                            <obs conceptId="$@Type_of_Defect@" answerConceptIds="$@Cleft_Lip@,$@Cleft_Palate@" answerLabels="Cleft Lip,Cleft Palate" style="radio"/>
-                            <br/><br/>
+                            <p class="side-by-side">
+                                - Types of Defect
+                                <obs conceptId="$@Type_of_Defect@" answerConceptIds="$@Cleft_Lip@,$@Cleft_Palate@" answerLabels="Cleft Lip,Cleft Palate" style="radio"/>
+                                <br/><br/>
 
-                            - Cleft breastfeeding counselling provided?
-                            <obs conceptId="$@Cleft_breastfeeding_counselling_provided@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                            <br/><br/>
+                                - Cleft breastfeeding counselling provided?
+                                <obs conceptId="$@Cleft_breastfeeding_counselling_provided@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                                <br/><br/>
 
-                            - Assessment of other abnormalities:
-                            <obs conceptId="$@Assessment_of_other_abnormalities@" answerConceptId="$@Difficulty_Breathing@" answerLabel="Difficulty Respiration" style="checkbox"/>
-                            <obs conceptId="$@Assessment_of_other_abnormalities@" answerConceptId="$@small_jaw@" answerLabel="Small jaw" style="checkbox"/>
-                            <obs conceptId="$@Assessment_of_other_abnormalities@" answerConceptId="$@ear_pain_or_ear_discharge@" answerLabel="Ear pain/discharge" style="checkbox"/>
-                            <obs conceptId="$@Assessment_of_other_abnormalities@" answerConceptId="$@CARDIAC_MURMUR@" answerLabel="Heart murmur" style="checkbox"/>
-                            <obs conceptId="$@Assessment_of_other_abnormalities@" answerConceptId="$@Facial_abnormalities@" answerLabel="Facial abnormalities(aside from cleft)" style="checkbox"/>
-                            <br/><br/>
+                            </p>
+                            <p class="radio side-by-side">
+                                - Assessment of other abnormalities:
+                                <obs conceptId="$@Assessment_of_other_abnormalities@" answerConceptId="$@Difficulty_Breathing@" answerLabel="Difficulty Respiration" style="checkbox"/>
+                                <obs conceptId="$@Assessment_of_other_abnormalities@" answerConceptId="$@small_jaw@" answerLabel="Small jaw" style="checkbox"/>
+                                <obs conceptId="$@Assessment_of_other_abnormalities@" answerConceptId="$@ear_pain_or_ear_discharge@" answerLabel="Ear pain/discharge" style="checkbox"/>
+                                <obs conceptId="$@Assessment_of_other_abnormalities@" answerConceptId="$@CARDIAC_MURMUR@" answerLabel="Heart murmur" style="checkbox"/>
+                                <obs conceptId="$@Assessment_of_other_abnormalities@" answerConceptId="$@Facial_abnormalities@" answerLabel="Facial abnormalities(aside from cleft)" style="checkbox"/>
+                                <br/><br/>
+                            </p>
+                            <p class="side-by-side">
+                                - If abnormality referred to DH?
+                                <obs conceptId="$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                                <br/><br/>
 
-                            - If abnormality referred to DH?
-                            <obs conceptId="$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                            <br/><br/>
+                                - Anticipated surgery Age
+                                <obs conceptId="$@Anticipated_surgery_age@" answerConceptIds="$@3_to_6_months_for_cleft_lip@,$@9_to_10_months_for_cleft_palate@" answerLabels="3-6 months for cleft lip,9-10 months for cleft palate" style="radio"/>
 
-                            - Anticipated surgery Age
-                            <obs conceptId="$@Anticipated_surgery_age@" answerConceptIds="$@3_to_6_months_for_cleft_lip@,$@9_to_10_months_for_cleft_palate@" answerLabels="3-6 months for cleft lip,9-10 months for cleft palate" style="radio"/>
-
-                            <br/><br/> <br/> <br/>
+                            </p>
                         </span>
                         <span id="noActiveConcerns">
                             If no active concerns, and surgical repair complete,child may be discharged from PDC
                             <br/><br/>
                         </span>
-                        <span id="painAndDischarge">
-                            - Any ear pain or ear discharge? <br/>
+                        <span id="painAndDischarge" class="side-by-side">
+                            - Any ear pain or ear discharge?
                             <obs conceptId="$@ear_pain_or_ear_discharge@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
-                            , then:
                             <br/>
-                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            , then:
+                            <p class="side-by-side radio">
                                 <obs conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_IMCI@" answerLabel="Refer to IMCI" style="checkbox" id="IMCI"/>
                                 <br/>
-                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                                 <obs conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@" answerLabel="Refer to the hospital (chronic,mastoiditis)" style="checkbox" id="referToDH"/>
                                 <br/><br/>
+                            </p>
                         </span>
 
                         <span id="surgeryStatus">
@@ -463,35 +515,40 @@
                                 <obs conceptId="$@Date_surgery_completed@"/>
                                 <br/>
                             </span>
-                            <obs conceptId="$@SURGERY_STATUS@" answerConceptId="$@Planned@" answerLabel="Scheduled for date" style="checkbox"/>
-                            <obs conceptId="$@DATE_OF_SURGERY@"/>
-                            <br/>
-                            <obs conceptId="$@SURGERY_STATUS@" answerConceptId="$@Not_planned@" answerLabel="Not yet scheduled" style="checkbox"/>
-                            <br/><br/>
-
-                            Recommendations/follow-up
-                            <br/>
-                            <obs conceptId="$@Clinican_notes@" cols="70"/>
+                            <span class="radio date-one-line">
+                                <obs conceptId="$@SURGERY_STATUS@" answerConceptId="$@Planned@" answerLabel="Scheduled for date" style="checkbox"/>
+                                <obs conceptId="$@DATE_OF_SURGERY@"/>
+                                <br/>
+                            </span>
+                            <p class="radio">
+                                <obs conceptId="$@SURGERY_STATUS@" answerConceptId="$@Not_planned@" answerLabel="Not yet scheduled" style="checkbox"/>
+                                <br/><br/>
+                            </p>
+                            <p>
+                                Recommendations/follow-up
+                                <br/>
+                                <obs conceptId="$@Clinican_notes@" cols="70"/>
+                            </p>
                         </span>
-
-
-
-
-
                     </td>
                 </tr>
-
-
-
             </table>
-        </section>
-        <br />
-        <encounterVoided/>
-        <br/>
-        <center>
-            <submit />
-        </center>
-        <br/>
-    </div>
-</htmlform>
+        </div>
+    </section>
+    <br />
+    <encounterVoided/>
 
+
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
+</htmlform>

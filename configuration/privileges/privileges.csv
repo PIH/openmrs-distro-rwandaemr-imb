@@ -22,3 +22,4 @@ d44538a8-5e3f-41c1-94c5-408b43e16874,Task: Edit Patient Demographics,Privilege t
 fa4f3105-9cd3-4bf0-adb1-79baa197971e,View Growth Charts monitoring,Allow the user to view patient growth chart monitoring
 1fc2dd5e-c44d-4366-a57e-705e0a005979,App: coreapps.systemAdministration,App: coreapps.systemAdministration
 d44538a8-5e3f-41c1-94c5-408b43e16874,Task: Edit Patient Demographics,Privilege to edit patient demographics through ref app
+36127a40-17e3-4a63-87ad-4f70903588c7,App: coreapps.findHivPatient,Have access to search HIV patients

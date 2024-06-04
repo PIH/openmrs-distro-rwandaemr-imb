@@ -1,12 +1,12 @@
-<htmlform 
-	htmlformUuid="56248265-509d-4748-9705-dfae3c98ac30" 
-	formUuid="025ce56f-fee8-4e8a-bc62-b552c797d3ad" 
-	formName="PDC Condition specific (Trisomy 21)" 
-	formDescription="PDC Condition specific (Trisomy 21)" 
-	formVersion="0.1" 
-	formEncounterType="71826dd4-330d-4548-9fd8-6703682fbd3a" 
-	formPublished="true" 
-	formRetired="false"
+<htmlform
+        htmlformUuid="56248265-509d-4748-9705-dfae3c98ac30"
+        formUuid="025ce56f-fee8-4e8a-bc62-b552c797d3ad"
+        formName="PDC Condition specific (Trisomy 21)"
+        formDescription="PDC Condition specific (Trisomy 21)"
+        formVersion="0.1"
+        formEncounterType="71826dd4-330d-4548-9fd8-6703682fbd3a"
+        formPublished="true"
+        formRetired="false"
 > <!--
            PDC - Malnutrition
             Pilot_4July_v1.3NT
@@ -93,444 +93,488 @@
 
 
     <style>
-        th.tableHeader {
-        background-color: #009d8e;
-        color: #FFFFFF;
-        font-size: 16px;
-        text-align: left;
-        }
-
-        ul {
-        list-style-type: square;
-        font-family: Verdana, Arial, Helvetica, sans-serif;
-        font-size: 11px;
-        }
-
-        tr.spaceUnder>td {
-        padding-bottom: 1em;
-        }
-
-        td {
-        font-size: 15px;
-        }
-
-        #container {
-        
-        margin: auto;
-        
-        height: auto;
-        }
-
-        @media print {
-        #container {
-        display: none;
-        }
-
-        #printArea {
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
         display: block;
         }
 
-        #userBar {
-        display: none;
-        }
-
-        #banner {
-        display: none;
-        }
-
-        #footer {
-        display: none;
-        }
-
-        #htmlFormEntryBanner {
-        display: none;
-        }
-
-        .error {
-        display: none;
-        }
-
-        .lables {
-        width: 200px;
-        }
-
-        table {
-        width: 100%;
-        }
-
-        table,td,th {
-        border: 1px solid black;
-        border-collapse: collapse;
-        }
-
-        th {
-        text-align: left;
-        background-color: #D9D9D9;
-        font-size: 10px;
-        }
-
-        td {
-        font-size: 10px;
-        }
-
-        .selectedCancerStagingKeys {
-        page-break-before: always;
-        border: 0px;
-        }
-
-        table.selectedCancerStagingKeys td {
-        border: 0px;
-        }
-
-        #signature {
-        border: none;
-        }
-        #signature td {
-        border: none;
-        }
-        }
-
-        @media screen {
-        table {
-        border: 1px solid #DFDFDF;
-        width: 100%;
-        border-color: #009d8e;
-        }
-
-        #container {
+        form fieldset {
         display: block;
         }
 
-        #printArea {
-        display: none;
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
         }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
+        width: 100%;
+        }
+
+        .div {
+        float: left;
+        }
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        .date-one-line {
+        display: flex;
+        }
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
+        }
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
         }
     </style>
     <script type="text/javascript">
         $j(document).ready(function() {
 
 
-            $j("#theWholeTable").hide();
+        $j("#theWholeTable").hide();
 
 
-            $j("input#IntakeAssessment").click(function(){
-                $j("#theWholeTable").show();
-                $j("#DiagnosisConfirmedLabel").show();
-                $j("#IMCI").hide();
-                $j("#DiagnosisConfirmed").show();
-                $j("#DiagnosisConfirmedResults").show();
-                $j("#NoPriorEchoResultsRecorded").hide();
-                $j("#Thyroid").show();
-                $j("#delayedMeconiumOrStool").show();
-                $j("#CBC").hide();
-                $j("#Echocardiogram").show();
-                $j("#EchocardiogramResults").show();
-                $j("#GIConcernsLabel").show();
-                $j("#passStool").show();
-                $j("#diarrheaOrVomiting").show();
-                $j("#referDHLabel").show();
-                $j("#ophthalmologyexamRecommendation").hide();
+        $j("input#IntakeAssessment").click(function(){
+        $j("#theWholeTable").show();
+        $j("#DiagnosisConfirmedLabel").show();
+        $j("#IMCI").hide();
+        $j("#DiagnosisConfirmed").show();
+        $j("#DiagnosisConfirmedResults").show();
+        $j("#NoPriorEchoResultsRecorded").hide();
+        $j("#Thyroid").show();
+        $j("#delayedMeconiumOrStool").show();
+        $j("#CBC").hide();
+        $j("#Echocardiogram").show();
+        $j("#EchocardiogramResults").show();
+        $j("#GIConcernsLabel").show();
+        $j("#passStool").show();
+        $j("#diarrheaOrVomiting").show();
+        $j("#referDHLabel").show();
+        $j("#ophthalmologyexamRecommendation").hide();
 
-            });
-            $j("input#firstmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#DiagnosisConfirmedLabel").hide();
-                $j("#IMCI").hide();
-                $j("#DiagnosisConfirmed").hide();
-                $j("#DiagnosisConfirmedResults").hide();
-                $j("#NoPriorEchoResultsRecorded").show();
-                $j("#Thyroid").hide();
-                $j("#delayedMeconiumOrStool").hide();
-                $j("#CBC").hide();
-                $j("#Echocardiogram").show();
-                $j("#EchocardiogramResults").show();
-                $j("#GIConcernsLabel").show();
-                $j("#passStool").show();
-                $j("#diarrheaOrVomiting").show();
-                $j("#referDHLabel").show();
-                $j("#ophthalmologyexamRecommendation").hide();
+        });
+        $j("input#firstmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#DiagnosisConfirmedLabel").hide();
+        $j("#IMCI").hide();
+        $j("#DiagnosisConfirmed").hide();
+        $j("#DiagnosisConfirmedResults").hide();
+        $j("#NoPriorEchoResultsRecorded").show();
+        $j("#Thyroid").hide();
+        $j("#delayedMeconiumOrStool").hide();
+        $j("#CBC").hide();
+        $j("#Echocardiogram").show();
+        $j("#EchocardiogramResults").show();
+        $j("#GIConcernsLabel").show();
+        $j("#passStool").show();
+        $j("#diarrheaOrVomiting").show();
+        $j("#referDHLabel").show();
+        $j("#ophthalmologyexamRecommendation").hide();
 
-            });
-            $j("input#secondmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#DiagnosisConfirmedLabel").hide();
-                $j("#IMCI").show();
-                $j("#DiagnosisConfirmed").hide();
-                $j("#DiagnosisConfirmedResults").hide();
-                $j("#NoPriorEchoResultsRecorded").show();
-                $j("#Thyroid").hide();
-                $j("#delayedMeconiumOrStool").hide();
-                $j("#CBC").hide();
-                $j("#Echocardiogram").show();
-                $j("#EchocardiogramResults").show();
-                $j("#GIConcernsLabel").show();
-                $j("#passStool").show();
-                $j("#diarrheaOrVomiting").show();
-                $j("#referDHLabel").show();
-                $j("#ophthalmologyexamRecommendation").hide();
+        });
+        $j("input#secondmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#DiagnosisConfirmedLabel").hide();
+        $j("#IMCI").show();
+        $j("#DiagnosisConfirmed").hide();
+        $j("#DiagnosisConfirmedResults").hide();
+        $j("#NoPriorEchoResultsRecorded").show();
+        $j("#Thyroid").hide();
+        $j("#delayedMeconiumOrStool").hide();
+        $j("#CBC").hide();
+        $j("#Echocardiogram").show();
+        $j("#EchocardiogramResults").show();
+        $j("#GIConcernsLabel").show();
+        $j("#passStool").show();
+        $j("#diarrheaOrVomiting").show();
+        $j("#referDHLabel").show();
+        $j("#ophthalmologyexamRecommendation").hide();
 
-            });
-            $j("input#forthmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#DiagnosisConfirmedLabel").hide();
-                $j("#IMCI").show();
-                $j("#DiagnosisConfirmed").hide();
-                $j("#DiagnosisConfirmedResults").hide();
-                $j("#NoPriorEchoResultsRecorded").show();
-                $j("#Thyroid").hide();
-                $j("#delayedMeconiumOrStool").hide();
-                $j("#CBC").hide();
-                $j("#Echocardiogram").show();
-                $j("#EchocardiogramResults").show();
-                $j("#GIConcernsLabel").show();
-                $j("#passStool").show();
-                $j("#diarrheaOrVomiting").show();
-                $j("#referDHLabel").show();
-                $j("#ophthalmologyexamRecommendation").hide();
+        });
+        $j("input#forthmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#DiagnosisConfirmedLabel").hide();
+        $j("#IMCI").show();
+        $j("#DiagnosisConfirmed").hide();
+        $j("#DiagnosisConfirmedResults").hide();
+        $j("#NoPriorEchoResultsRecorded").show();
+        $j("#Thyroid").hide();
+        $j("#delayedMeconiumOrStool").hide();
+        $j("#CBC").hide();
+        $j("#Echocardiogram").show();
+        $j("#EchocardiogramResults").show();
+        $j("#GIConcernsLabel").show();
+        $j("#passStool").show();
+        $j("#diarrheaOrVomiting").show();
+        $j("#referDHLabel").show();
+        $j("#ophthalmologyexamRecommendation").hide();
 
-            });
-            $j("input#sixthmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#DiagnosisConfirmedLabel").hide();
-                $j("#IMCI").show();
-                $j("#DiagnosisConfirmed").hide();
-                $j("#DiagnosisConfirmedResults").hide();
-                $j("#NoPriorEchoResultsRecorded").show();
-                $j("#Thyroid").hide();
-                $j("#delayedMeconiumOrStool").hide();
-                $j("#CBC").hide();
-                $j("#Echocardiogram").show();
-                $j("#EchocardiogramResults").show();
-                $j("#GIConcernsLabel").show();
-                $j("#passStool").show();
-                $j("#diarrheaOrVomiting").show();
-                $j("#referDHLabel").show();
-                $j("#ophthalmologyexamRecommendation").hide();
+        });
+        $j("input#sixthmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#DiagnosisConfirmedLabel").hide();
+        $j("#IMCI").show();
+        $j("#DiagnosisConfirmed").hide();
+        $j("#DiagnosisConfirmedResults").hide();
+        $j("#NoPriorEchoResultsRecorded").show();
+        $j("#Thyroid").hide();
+        $j("#delayedMeconiumOrStool").hide();
+        $j("#CBC").hide();
+        $j("#Echocardiogram").show();
+        $j("#EchocardiogramResults").show();
+        $j("#GIConcernsLabel").show();
+        $j("#passStool").show();
+        $j("#diarrheaOrVomiting").show();
+        $j("#referDHLabel").show();
+        $j("#ophthalmologyexamRecommendation").hide();
 
-            });
-            $j("input#ninethmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#DiagnosisConfirmedLabel").hide();
-                $j("#IMCI").show();
-                $j("#DiagnosisConfirmed").hide();
-                $j("#DiagnosisConfirmedResults").hide();
-                $j("#NoPriorEchoResultsRecorded").show();
-                $j("#Thyroid").hide();
-                $j("#delayedMeconiumOrStool").hide();
-                $j("#CBC").hide();
-                $j("#Echocardiogram").show();
-                $j("#EchocardiogramResults").show();
-                $j("#GIConcernsLabel").show();
-                $j("#passStool").show();
-                $j("#diarrheaOrVomiting").show();
-                $j("#referDHLabel").show();
-                $j("#ophthalmologyexamRecommendation").hide();
+        });
+        $j("input#ninethmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#DiagnosisConfirmedLabel").hide();
+        $j("#IMCI").show();
+        $j("#DiagnosisConfirmed").hide();
+        $j("#DiagnosisConfirmedResults").hide();
+        $j("#NoPriorEchoResultsRecorded").show();
+        $j("#Thyroid").hide();
+        $j("#delayedMeconiumOrStool").hide();
+        $j("#CBC").hide();
+        $j("#Echocardiogram").show();
+        $j("#EchocardiogramResults").show();
+        $j("#GIConcernsLabel").show();
+        $j("#passStool").show();
+        $j("#diarrheaOrVomiting").show();
+        $j("#referDHLabel").show();
+        $j("#ophthalmologyexamRecommendation").hide();
 
-            });
-            $j("input#twelvethmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#DiagnosisConfirmedLabel").hide();
-                $j("#IMCI").show();
-                $j("#DiagnosisConfirmed").hide();
-                $j("#DiagnosisConfirmedResults").hide();
-                $j("#NoPriorEchoResultsRecorded").show();
-                $j("#Thyroid").hide();
-                $j("#delayedMeconiumOrStool").hide();
-                $j("#CBC").show();
-                $j("#Echocardiogram").show();
-                $j("#EchocardiogramResults").show();
-                $j("#GIConcernsLabel").show();
-                $j("#passStool").show();
-                $j("#diarrheaOrVomiting").show();
-                $j("#referDHLabel").show();
-                $j("#ophthalmologyexamRecommendation").hide();
+        });
+        $j("input#twelvethmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#DiagnosisConfirmedLabel").hide();
+        $j("#IMCI").show();
+        $j("#DiagnosisConfirmed").hide();
+        $j("#DiagnosisConfirmedResults").hide();
+        $j("#NoPriorEchoResultsRecorded").show();
+        $j("#Thyroid").hide();
+        $j("#delayedMeconiumOrStool").hide();
+        $j("#CBC").show();
+        $j("#Echocardiogram").show();
+        $j("#EchocardiogramResults").show();
+        $j("#GIConcernsLabel").show();
+        $j("#passStool").show();
+        $j("#diarrheaOrVomiting").show();
+        $j("#referDHLabel").show();
+        $j("#ophthalmologyexamRecommendation").hide();
 
-            });
-            $j("input#eighteenthmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#DiagnosisConfirmedLabel").hide();
-                $j("#IMCI").show();
-                $j("#DiagnosisConfirmed").hide();
-                $j("#DiagnosisConfirmedResults").hide();
-                $j("#NoPriorEchoResultsRecorded").hide();
-                $j("#Thyroid").hide();
-                $j("#delayedMeconiumOrStool").hide();
-                $j("#CBC").hide();
-                $j("#Echocardiogram").hide();
-                $j("#EchocardiogramResults").hide();
-                $j("#GIConcernsLabel").show();
-                $j("#passStool").show();
-                $j("#diarrheaOrVomiting").show();
-                $j("#referDHLabel").show();
-                $j("#ophthalmologyexamRecommendation").hide();
-
-
-            });
-            $j("input#twentyfourthmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#DiagnosisConfirmedLabel").hide();
-                $j("#IMCI").show();
-                $j("#DiagnosisConfirmed").hide();
-                $j("#DiagnosisConfirmedResults").hide();
-                $j("#NoPriorEchoResultsRecorded").hide();
-                $j("#Thyroid").hide();
-                $j("#delayedMeconiumOrStool").hide();
-                $j("#CBC").show();
-                $j("#Echocardiogram").hide();
-                $j("#EchocardiogramResults").hide();
-                $j("#GIConcernsLabel").show();
-                $j("#passStool").show();
-                $j("#diarrheaOrVomiting").show();
-                $j("#referDHLabel").show();
-                $j("#ophthalmologyexamRecommendation").hide();
+        });
+        $j("input#eighteenthmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#DiagnosisConfirmedLabel").hide();
+        $j("#IMCI").show();
+        $j("#DiagnosisConfirmed").hide();
+        $j("#DiagnosisConfirmedResults").hide();
+        $j("#NoPriorEchoResultsRecorded").hide();
+        $j("#Thyroid").hide();
+        $j("#delayedMeconiumOrStool").hide();
+        $j("#CBC").hide();
+        $j("#Echocardiogram").hide();
+        $j("#EchocardiogramResults").hide();
+        $j("#GIConcernsLabel").show();
+        $j("#passStool").show();
+        $j("#diarrheaOrVomiting").show();
+        $j("#referDHLabel").show();
+        $j("#ophthalmologyexamRecommendation").hide();
 
 
-            });
-            $j("input#thirtiethmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#DiagnosisConfirmedLabel").hide();
-                $j("#IMCI").show();
-                $j("#DiagnosisConfirmed").hide();
-                $j("#DiagnosisConfirmedResults").hide();
-                $j("#NoPriorEchoResultsRecorded").hide();
-                $j("#Thyroid").hide();
-                $j("#delayedMeconiumOrStool").hide();
-                $j("#CBC").hide();
-                $j("#Echocardiogram").hide();
-                $j("#EchocardiogramResults").hide();
-                $j("#GIConcernsLabel").hide();
-                $j("#passStool").hide();
-                $j("#diarrheaOrVomiting").hide();
-                $j("#referDHLabel").hide();
-                $j("#ophthalmologyexamRecommendation").hide();
-
-            });
-            $j("input#thirtysixthmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#DiagnosisConfirmedLabel").hide();
-                $j("#IMCI").show();
-                $j("#DiagnosisConfirmed").hide();
-                $j("#DiagnosisConfirmedResults").hide();
-                $j("#NoPriorEchoResultsRecorded").hide();
-                $j("#Thyroid").hide();
-                $j("#delayedMeconiumOrStool").hide();
-                $j("#CBC").show();
-                $j("#Echocardiogram").hide();
-                $j("#EchocardiogramResults").hide();
-                $j("#GIConcernsLabel").hide();
-                $j("#passStool").hide();
-                $j("#diarrheaOrVomiting").hide();
-                $j("#referDHLabel").hide();
-                $j("#ophthalmologyexamRecommendation").hide();
-
-            });
-            $j("input#fortyeighthfmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#DiagnosisConfirmedLabel").hide();
-                $j("#IMCI").show();
-                $j("#DiagnosisConfirmed").hide();
-                $j("#DiagnosisConfirmedResults").hide();
-                $j("#NoPriorEchoResultsRecorded").hide();
-                $j("#Thyroid").hide();
-                $j("#delayedMeconiumOrStool").hide();
-                $j("#CBC").show();
-                $j("#Echocardiogram").hide();
-                $j("#EchocardiogramResults").hide();
-                $j("#GIConcernsLabel").hide();
-                $j("#passStool").hide();
-                $j("#diarrheaOrVomiting").hide();
-                $j("#referDHLabel").hide();
-                $j("#ophthalmologyexamRecommendation").hide();
-
-            });
-            $j("input#sixtiethmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#DiagnosisConfirmedLabel").hide();
-                $j("#IMCI").show();
-                $j("#DiagnosisConfirmed").hide();
-                $j("#DiagnosisConfirmedResults").hide();
-                $j("#NoPriorEchoResultsRecorded").hide();
-                $j("#Thyroid").show();
-                $j("#delayedMeconiumOrStool").hide();
-                $j("#CBC").show();
-                $j("#Echocardiogram").hide();
-                $j("#EchocardiogramResults").hide();
-                $j("#GIConcernsLabel").hide();
-                $j("#passStool").hide();
-                $j("#diarrheaOrVomiting").hide();
-                $j("#referDHLabel").hide();
-                $j("#ophthalmologyexamRecommendation").show();
+        });
+        $j("input#twentyfourthmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#DiagnosisConfirmedLabel").hide();
+        $j("#IMCI").show();
+        $j("#DiagnosisConfirmed").hide();
+        $j("#DiagnosisConfirmedResults").hide();
+        $j("#NoPriorEchoResultsRecorded").hide();
+        $j("#Thyroid").hide();
+        $j("#delayedMeconiumOrStool").hide();
+        $j("#CBC").show();
+        $j("#Echocardiogram").hide();
+        $j("#EchocardiogramResults").hide();
+        $j("#GIConcernsLabel").show();
+        $j("#passStool").show();
+        $j("#diarrheaOrVomiting").show();
+        $j("#referDHLabel").show();
+        $j("#ophthalmologyexamRecommendation").hide();
 
 
-            });
+        });
+        $j("input#thirtiethmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#DiagnosisConfirmedLabel").hide();
+        $j("#IMCI").show();
+        $j("#DiagnosisConfirmed").hide();
+        $j("#DiagnosisConfirmedResults").hide();
+        $j("#NoPriorEchoResultsRecorded").hide();
+        $j("#Thyroid").hide();
+        $j("#delayedMeconiumOrStool").hide();
+        $j("#CBC").hide();
+        $j("#Echocardiogram").hide();
+        $j("#EchocardiogramResults").hide();
+        $j("#GIConcernsLabel").hide();
+        $j("#passStool").hide();
+        $j("#diarrheaOrVomiting").hide();
+        $j("#referDHLabel").hide();
+        $j("#ophthalmologyexamRecommendation").hide();
+
+        });
+        $j("input#thirtysixthmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#DiagnosisConfirmedLabel").hide();
+        $j("#IMCI").show();
+        $j("#DiagnosisConfirmed").hide();
+        $j("#DiagnosisConfirmedResults").hide();
+        $j("#NoPriorEchoResultsRecorded").hide();
+        $j("#Thyroid").hide();
+        $j("#delayedMeconiumOrStool").hide();
+        $j("#CBC").show();
+        $j("#Echocardiogram").hide();
+        $j("#EchocardiogramResults").hide();
+        $j("#GIConcernsLabel").hide();
+        $j("#passStool").hide();
+        $j("#diarrheaOrVomiting").hide();
+        $j("#referDHLabel").hide();
+        $j("#ophthalmologyexamRecommendation").hide();
+
+        });
+        $j("input#fortyeighthfmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#DiagnosisConfirmedLabel").hide();
+        $j("#IMCI").show();
+        $j("#DiagnosisConfirmed").hide();
+        $j("#DiagnosisConfirmedResults").hide();
+        $j("#NoPriorEchoResultsRecorded").hide();
+        $j("#Thyroid").hide();
+        $j("#delayedMeconiumOrStool").hide();
+        $j("#CBC").show();
+        $j("#Echocardiogram").hide();
+        $j("#EchocardiogramResults").hide();
+        $j("#GIConcernsLabel").hide();
+        $j("#passStool").hide();
+        $j("#diarrheaOrVomiting").hide();
+        $j("#referDHLabel").hide();
+        $j("#ophthalmologyexamRecommendation").hide();
+
+        });
+        $j("input#sixtiethmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#DiagnosisConfirmedLabel").hide();
+        $j("#IMCI").show();
+        $j("#DiagnosisConfirmed").hide();
+        $j("#DiagnosisConfirmedResults").hide();
+        $j("#NoPriorEchoResultsRecorded").hide();
+        $j("#Thyroid").show();
+        $j("#delayedMeconiumOrStool").hide();
+        $j("#CBC").show();
+        $j("#Echocardiogram").hide();
+        $j("#EchocardiogramResults").hide();
+        $j("#GIConcernsLabel").hide();
+        $j("#passStool").hide();
+        $j("#diarrheaOrVomiting").hide();
+        $j("#referDHLabel").hide();
+        $j("#ophthalmologyexamRecommendation").show();
+
+
+        });
 
 
 
-		});
+        });
     </script>
-    <div id="container"  style="width:100%">
-        <section>
 
-            <table border="1" cellspacing="0" cellpadding="6" width="100%">
-                <tr>
-                    <td><b> IMB ID: <lookup class="value"
-                                            expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
-                                                                                                               expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
-                    </td>
-                    <td>Date and Time: <encounterDate id="encounterDate" default="today" showTime="true"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nom / Last name: <lookup class="value"
-                                                 expression="patient.personName.familyName" />
-                    </td>
-                    <td>Prénom/ First name: <lookup class="value"
-                                                    expression="patient.personName.givenName" />
-                    </td>
-                </tr>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
 
+            <table border="1" style="table-layout: fixed;" cellspacing="0" cellpadding="6" width="80%">
                 <tr>
-                    <td><img src="/openmrs/moduleResources/rwandareports/images/pihHands.png" align="left"
-                             height="65" ></img>
-                        <h2>
-                            Inshuti Mu Buzima <br /> PIH Rwanda
-                        </h2>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
                     </td>
-                    <td><strong> PDC Condition specific form</strong> <br />
+                    <td>
+                        Health Facility:
+                        <encounterLocation default="GlobalProperty:billing.defaultLocation" />
                     </td>
-                </tr>
-                <tr>
-                    <td>Clinique / Clinic: <encounterLocation />
-                    </td>
-                    <td>Author:<encounterProvider/>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
                     </td>
                 </tr>
             </table>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="">
+        <div class="section-container">
 
             <table>
                 <tr>
-                    <td> Select visit:
-                        <input type="radio" name="visit" value="Intake Assessment" id="IntakeAssessment"/> Intake Assessment
-                        <input type="radio" name="visit" value="first month" id="firstmonth"/> 1 month
-                        <input type="radio" name="visit" value="second month" id="secondmonth"/> 2 month
-                        <input type="radio" name="visit" value="forth month" id="forthmonth"/> 4 month
-                        <input type="radio" name="visit" value="sixth month" id="sixthmonth"/> 6 month
-                        <input type="radio" name="visit" value="nineth month" id="ninethmonth"/> 9 month
-                        <input type="radio" name="visit" value="twelveth month" id="twelvethmonth"/> 12 month
-                        <input type="radio" name="visit" value="eighteenth month" id="eighteenthmonth"/> 18 month
-                        <input type="radio" name="visit" value="twentyfourth month" id="twentyfourthmonth"/> 24 month
-                        <input type="radio" name="visit" value="thirtieth month" id="thirtiethmonth"/> 30 month
-                        <input type="radio" name="visit" value="thirtysixth month" id="thirtysixthmonth"/> 36 month
-                        <input type="radio" name="visit" value="fortyeighth month" id="fortyeighthfmonth"/> 48 month
-                        <input type="radio" name="visit" value="sixtieth month" id="sixtiethmonth"/> 60 month
+                    <td>
+                        <p class="radio">
+                            Select visit:
+                            <input type="radio" name="visit" value="Intake Assessment" id="IntakeAssessment"/> Intake Assessment
+                            <input type="radio" name="visit" value="first month" id="firstmonth"/> 1 month
+                            <input type="radio" name="visit" value="second month" id="secondmonth"/> 2 month
+                            <input type="radio" name="visit" value="forth month" id="forthmonth"/> 4 month
+                            <input type="radio" name="visit" value="sixth month" id="sixthmonth"/> 6 month
+                            <input type="radio" name="visit" value="nineth month" id="ninethmonth"/> 9 month
+                            <input type="radio" name="visit" value="twelveth month" id="twelvethmonth"/> 12 month
+                            <input type="radio" name="visit" value="eighteenth month" id="eighteenthmonth"/> 18 month
+                            <input type="radio" name="visit" value="twentyfourth month" id="twentyfourthmonth"/> 24 month
+                            <input type="radio" name="visit" value="thirtieth month" id="thirtiethmonth"/> 30 month
+                            <input type="radio" name="visit" value="thirtysixth month" id="thirtysixthmonth"/> 36 month
+                            <input type="radio" name="visit" value="fortyeighth month" id="fortyeighthfmonth"/> 48 month
+                            <input type="radio" name="visit" value="sixtieth month" id="sixtiethmonth"/> 60 month
 
-
-
-
+                        </p>
                     </td>
                 </tr>
             </table>
-            <table border="1" id="theWholeTable">
+            <table border="1" id="theWholeTable"  style="table-layout: fixed;" cellspacing="0" cellpadding="6" width="100%">
 
                 <tr>
                     <th class="tableHeader">
@@ -539,116 +583,132 @@
                 </tr>
                 <tr>
                     <td>
-                        <span id="DiagnosisConfirmedLabel">
-                            Diagnosis confirmed by Karyotype
+                        <p class="side-by-side">
+                            <span id="DiagnosisConfirmedLabel">
+                                Diagnosis confirmed by Karyotype
 
-                        <br/>
-                        </span>
-                        <span id="DiagnosisConfirmed">
-                            <obs conceptId="$@CONFIRMED_DIAGNOSIS@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/> ,
-                            <obs conceptId="$@Diagnosis_confirmation_date@"/>
-                        </span>
-                        <span id="DiagnosisConfirmedResults">
-                            Results: <obs conceptId="$@Diagnosis_confirmation_results@"/>
-                            <br/><br/>
-                        </span>
-                        <span id="GIConcernsLabel">
-                            <strong>Screen: GI Concerns</strong>
-                            <br/>
-                        </span>
-                        <span id="passStool">
-                            - How often does the child pass stool?
-                            <obs conceptId="$@pass_stool@" answerConceptIds="$@NORMAL@,$@ABNORMAL@" answerLabels="Normal,Abnomral(&#60;1 in 7 days)" style="radio"/>
-                            <br/>
-                        </span>
-                        <span id="diarrheaOrVomiting">
-                        - Does the child have persistent diarrhea or vomiting?
-                        <obs conceptId="$@persistent_diarrhea@" answerConceptIds="$@NO@,$@YES@" answerLabels="No(normal),Yes(abnormal)" style="radio"/>
-                        <br/>
-                        </span>
-                        <span id="delayedMeconiumOrStool">
-                            - After birth, did the child have delayed passage of meconium/stool?
-                            <obs conceptId="$@delayed_passage_of_meconium/stool@" answerConceptIds="$@NO@,$@YES@" answerLabels="No(normal),Yes(abnormal)" style="radio"/>
-                            <br/> <br/>
-                        </span>
-                        <span id="referDHLabel">
-                            <i>If any abnormal results above, refer to DH for further evaluation.</i>
-                            <br/>
-                        </span>
+                                <br/>
+                            </span>
+                            <span id="DiagnosisConfirmed">
+                                <obs conceptId="$@CONFIRMED_DIAGNOSIS@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/> ,
+                                <obs conceptId="$@Diagnosis_confirmation_date@"/>
+                            </span>
+                            <span id="DiagnosisConfirmedResults">
+                                Results: <obs conceptId="$@Diagnosis_confirmation_results@"/>
+                                <br/><br/>
+                            </span>
+                        </p>
+                        <p class="side-by-side">
+                            <span id="GIConcernsLabel">
+                                <strong>Screen: GI Concerns</strong>
+                                <br/>
+                            </span>
+                            <span id="passStool">
+                                - How often does the child pass stool?
+                                <obs conceptId="$@pass_stool@" answerConceptIds="$@NORMAL@,$@ABNORMAL@" answerLabels="Normal,Abnomral(&#60;1 in 7 days)" style="radio"/>
+                                <br/>
+                            </span>
+                            <span id="diarrheaOrVomiting">
+                                - Does the child have persistent diarrhea or vomiting?
+                                <obs conceptId="$@persistent_diarrhea@" answerConceptIds="$@NO@,$@YES@" answerLabels="No(normal),Yes(abnormal)" style="radio"/>
+                                <br/>
+                            </span>
+                            <span id="delayedMeconiumOrStool">
+                                - After birth, did the child have delayed passage of meconium/stool?
+                                <obs conceptId="$@delayed_passage_of_meconium/stool@" answerConceptIds="$@NO@,$@YES@" answerLabels="No(normal),Yes(abnormal)" style="radio"/>
+                                <br/> <br/>
+                            </span>
+                            <span id="referDHLabel">
+                                <i>If any abnormal results above, refer to DH for further evaluation.</i>
+                                <br/>
+                            </span>
+                        </p>
+
                         <span id="OtherConcernsLabel">
                             <strong> Screen: Other Concerns</strong>
                             <br/>
                         </span>
-                        <span id="earPainOrdischarge">
+                        <span id="earPainOrdischarge" class="side-by-side">
                             - Any ear pain or ear discharge? <br/>
                             <obs conceptId="$@ear_pain_or_ear_discharge@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
                             , then
+                        </span>
+                        <br/>
+                        <p class="radio side-by-side">
                             <obs id="IMCI" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_IMCI@" answerLabel="Refer to IMCI" style="radio"/>
                             <obs conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PATIENT_REFERRED_TO_DISTRICT_HOSPITAL@" answerLabel="Refer to DH(chronic,mastoids)" style="radio"/>
-                            <br/>
-                        </span>
-                        <span id="apnea">
-                            - Any signs of obstructive sleep apnea(snoring,pauses in breathing or choking/gasping during sleep)?
+                        </p>
+                        <p class="side-by-side">
+                            <span id="apnea">
+                                - Any signs of obstructive sleep apnea(snoring,pauses in breathing or choking/gasping during sleep)?
 
-                            <obs conceptId="$@sign_of_obstructive_sleep_apnea@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
-                            <br/>
-                        </span>
-                        <span id="NechpainOrWeaknessOrtinglingInArmsOrLegs">
-                            - Any neck pain, weakness or tingling in arms/legs? <br/>
-                            <obs conceptId="$@neck_pain_weakness_or_tingling_in_arms/legs@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
-                            (possible cervical spine instability,refer to DH for neck radiograph)
-                            <br/>
-                        </span>
-                        <span id="Thyroid">
-                            - Thyroid(TSH) Test <br/>
-                            <obs conceptId="$@Thyroid_test@" answerConceptIds="$@NOT_DONE@,$@Done@" answerLabels="Not Done,Done" style="radio"/>
-                            ,
-                            <obs conceptId="$@Thyroid_test_Date@"/>
-                            Results:
-                            <obs conceptId="$@Thyroid_test_results@" answerConceptIds="$@NORMAL@,$@ABNORMAL@" answerLabels="Normal,Abnomral" style="radio"/>
-                            <br/> <br/>
-                        </span>
-                        <span id="CBC">
-                            CBC:
+                                <obs conceptId="$@sign_of_obstructive_sleep_apnea@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
+                                <br/>
+                            </span>
+                            <span id="NechpainOrWeaknessOrtinglingInArmsOrLegs">
+                                - Any neck pain, weakness or tingling in arms/legs? <br/>
+                                <obs conceptId="$@neck_pain_weakness_or_tingling_in_arms/legs@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
+                                (possible cervical spine instability,refer to DH for neck radiograph)
+                                <br/>
+                            </span>
+                            <span id="Thyroid">
+                                - Thyroid(TSH) Test <br/>
+                                <obs conceptId="$@Thyroid_test@" answerConceptIds="$@NOT_DONE@,$@Done@" answerLabels="Not Done,Done" style="radio"/>
+                                ,
+                                <obs conceptId="$@Thyroid_test_Date@"/>
+                                Results:
+                                <obs conceptId="$@Thyroid_test_results@" answerConceptIds="$@NORMAL@,$@ABNORMAL@" answerLabels="Normal,Abnomral" style="radio"/>
+                                <br/> <br/>
+                            </span>
+                            <span id="CBC">
+                                CBC:
 
-                            <obs conceptId="$@COMPLETE_BLOOD_COUNT_Test_Done@" answerConceptIds="$@NOT_DONE@,$@Done@" answerLabels="Not Done,Done" style="radio"/>
-                            , results
-                            <obs conceptId="$@Complete_blood_count_results_no-coded@"/>
+                                <obs conceptId="$@COMPLETE_BLOOD_COUNT_Test_Done@" answerConceptIds="$@NOT_DONE@,$@Done@" answerLabels="Not Done,Done" style="radio"/>
+                                , results
+                                <obs conceptId="$@Complete_blood_count_results_no-coded@"/>
 
-                            <br/><br/>
-                        </span>
-                        <span id="NoPriorEchoResultsRecorded">
-                            If no prior Echo results recorded:
-                            <br/> <br/>
-                        </span>
-                        <span id="Echocardiogram">
-                            - Echocardiogram <br/>
+                                <br/><br/>
+                            </span>
+                            <span id="NoPriorEchoResultsRecorded">
+                                If no prior Echo results recorded:
+                                <br/> <br/>
+                            </span>
+                            <span id="Echocardiogram">
+                                - Echocardiogram <br/>
 
-                            <obs conceptId="$@Thyroid_test@" answerConceptId="$@NOT_DONE@" answerLabel="Not Done" style="radio"/> ,need to schedule. &#160;&#160;&#160;&#160;
-                            Done
-                            <obs conceptId="$@Date_ECHOCARDIOGRAM_Taken@"/> <br/>
-                        </span>
-                        <span id="EchocardiogramResults">
-                            &#160;&#160; Results:
-                            <obs conceptId="$@DDB_ECHOCARDIOGRAPH_RESULT@" answerConceptIds="$@ECHOCARDIOGRAM_NORMAL@,$@ABNORMAL@" answerLabels="Normal,Abnomral" style="radio"/>
-                            , follow-up needed.
-                            <br/><br/>
-                        </span>
-                        <span id="ophthalmologyexamRecommendation">
-                            Consider Ophthalmology exam prior to discharge if child has not yet been seen by an ophthalmologist for vision problems
-                        </span>
+                                <obs conceptId="$@Thyroid_test@" answerConceptId="$@NOT_DONE@" answerLabel="Not Done" style="radio"/> ,need to schedule. &#160;&#160;&#160;&#160;
+                                Done
+                                <obs conceptId="$@Date_ECHOCARDIOGRAM_Taken@"/> <br/>
+                            </span>
+                            <span id="EchocardiogramResults">
+                                &#160;&#160; Results:
+                                <obs conceptId="$@DDB_ECHOCARDIOGRAPH_RESULT@" answerConceptIds="$@ECHOCARDIOGRAM_NORMAL@,$@ABNORMAL@" answerLabels="Normal,Abnomral" style="radio"/>
+                                , follow-up needed.
+                                <br/><br/>
+                            </span>
+                            <span id="ophthalmologyexamRecommendation">
+                                Consider Ophthalmology exam prior to discharge if child has not yet been seen by an ophthalmologist for vision problems
+                            </span>
+                        </p>
                     </td>
                 </tr>
 
             </table>
-        </section>
-        <br />
-        <encounterVoided/>
-        <br/>
-        <center>
-            <submit />
-        </center>
-        <br/>
-    </div>
-</htmlform>
+        </div>
+    </section>
+    <br />
+    <encounterVoided/>
 
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
+</htmlform>

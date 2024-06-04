@@ -1,18 +1,18 @@
-<htmlform 
-	htmlformUuid="b5cebdda-9351-4883-8bae-1f775cd5f553" 
-	formUuid="27b07e0d-5c6f-4836-9329-9476dead9e25" 
-	formName="PDC Home Visit Form" 
-	formDescription="PDC form for home visits equivalent to mUzima version" 
-	formVersion="1.0" 
-	formEncounterType="5a65dfa3-03bd-4849-9a31-4b01d9afc5a9" 
-	formPublished="true" 
-	formRetired="false"
+<htmlform
+        htmlformUuid="b5cebdda-9351-4883-8bae-1f775cd5f553"
+        formUuid="27b07e0d-5c6f-4836-9329-9476dead9e25"
+        formName="PDC Home Visit Form"
+        formDescription="PDC form for home visits equivalent to mUzima version"
+        formVersion="1.0"
+        formEncounterType="5a65dfa3-03bd-4849-9a31-4b01d9afc5a9"
+        formPublished="true"
+        formRetired="false"
 >
- <!--PDC Home Visit form
-	Author: Todd
-	Prime copy source:
-	
-	 --> <macros>
+    <!--PDC Home Visit form
+       Author: Todd
+       Prime copy source:
+
+        --> <macros>
     @ACCOMPAGNATEUR_PHONE_NUMBER@ = 5c9cb4a0-7b67-4c00-a926-ff7eaa8f0089
     @ACCOMPAGNATUER_LAST_NAME@ = 3ce29faa-26fe-102b-80cb-0017a47871b2
     @NAMES_AND_FIRSTNAMES_OF_CONTACT@ = 3cd997f2-26fe-102b-80cb-0017a47871b2
@@ -109,222 +109,247 @@
 
 
     <style>
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
+        display: block;
+        }
+
+        form fieldset {
+        display: block;
+        }
+
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
+        }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
         .section {
-        border: 1px solid$headerColor;
-        padding: 2px;
-        text-align: left;
-        margin-bottom: 1em;
-        }
-
-        .sectionHeader {
-        background-color: $headerColor;
-        color: $fontOnHeaderColor;
-        display: block;
-        padding: 2px;
-        font-weight: bold;
-        }
-
-        table {
-        border: 1px solid black;
-        }
-
-        table.baseline-aligned td {
-        vertical-align: baseline;
-        }
-
-        th.tableHeader {
-        background-color: #009d8e;
-        color: #FFFFFF;
-        font-size: 16px;
-        text-align: left;
-        }
-
-        ul {
-        list-style-type: square;
-        font-family: Verdana, Arial, Helvetica, sans-serif;
-        font-size: 11px;
-        }
-
-        tr.spaceUnder>td {
-        padding-bottom: 1em;
-
-        }
-
-        td {
-        font-size: 15px;
-        }
-
-        #container {
-        
-        margin: auto;
-        
-        height: auto;
-        }
-
-
-
-        @media print {
-        #container {
-        display: none;
-        }
-        #printArea {
-        display: block;
-        }
-        #userBar {
-        display: none;
-        }
-        #banner {
-        display: none;
-        }
-        #footer {
-        display: none;
-        }
-        #htmlFormEntryBanner {
-        display: none;
-        }
-        .error {
-        display: none;
-        }
-        .lables {
-        width: 200px;
-        }
-        table {
         width: 100%;
         }
-        table, td, th {
-        border: 1px solid black;
-        border-collapse: collapse;
-        }
-        th {
-        text-align: left;
-        background-color: #D9D9D9;
-        font-size: 10px;
-        }
-        td {
-        font-size: 10px;
-        }
-        .selectedCancerStagingKeys {
-        page-break-before: always;
-        border: 0px;
-        }
-        table.selectedCancerStagingKeys td {
-        border: 0px;
-        }
-        #signature {
-        border: none;
-        }
-        #signature td {
-        border: none;
-        }
+
+        .div {
+        float: left;
         }
 
-        @media screen {
-        table {
-        border: 1px solid #DFDFDF;
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        .date-one-line {
+        display: flex;
+        }
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
         width: 100%;
-        border-color: #009d8e;
         }
-        #container {
-        display: block;
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
         }
-        #printArea {
-        display: none;
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
         }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
         }
     </style>
+
     <script type="text/javascript">
-	$j(document).ready(function() {
-		getField('HCG.value').change(function() {
-			var BetaHCG = getValue("HCG.value");
-			if( BetaHCG != null &amp;&amp; BetaHCG >= 500 &amp;&amp; BetaHCG &lt; 10000 ) {
-				var BHCGmL = calculateBetaHCG(BetaHCG);
-					setValue('HCG.value', BHCGmL);
-					}
+        $j(document).ready(function() {
+        getField('HCG.value').change(function() {
+        var BetaHCG = getValue("HCG.value");
+        if( BetaHCG != null &amp;&amp; BetaHCG >= 500 &amp;&amp; BetaHCG &lt; 10000 ) {
+        var BHCGmL = calculateBetaHCG(BetaHCG);
+        setValue('HCG.value', BHCGmL);
+        }
 
-			});
-		});
+        });
+        });
 
-		function calculateBetaHCG(BetaHCG) {
-		    var BHCG;
+        function calculateBetaHCG(BetaHCG) {
+        var BHCG;
 
-		    BHCG = (BetaHCG*1000)
+        BHCG = (BetaHCG*1000)
 
-		    return BHCG;
-		}
+        return BHCG;
+        }
 
-		 </script>
+    </script>
 
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
 
-
-    <div id="container">
-        <!-- Generic Disease workup header  -->
-        <section>
-
-            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+            <table border="1" style="table-layout: fixed;" cellspacing="0" cellpadding="6" width="80%">
                 <tr>
-                    <td><img src="/openmrs/moduleResources/rwandareports/images/pihHands.png" align="left"
-                             height="65" ></img>
-                        <h2>
-                            Inshuti Mu Buzima <br /> PIH Rwanda
-                        </h2>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
                     </td>
-                    <td><strong> PDC Home Visit form</strong> <br />
+                    <td>
+                        Health Facility:
+                        <encounterLocation default="GlobalProperty:billing.defaultLocation" />
+                    </td>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
                     </td>
                 </tr>
                 <tr>
-                    <td><b> IMB ID: <lookup class="value"
-                                            expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
-                                                                                                               expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
-                    </td>
-                    <td>Noms / Names:
-                        <lookup class="value" expression="patient.personName.familyName" />
-                        &#160;&#160;
-                        <lookup class="value" expression="patient.personName.givenName" />
-                    </td>
-
-                </tr>
-
-                <tr>
-                    <td>Gender: <lookup class="value" expression="patient.gender" /></td>
-                    <td>Date of Birth: <lookup class="value" expression="patient.birth" /></td>
-                </tr>
-                <tr>
-                    <td>Patient address:
-
-                        <lookup expression="patient.personAddress.countyDistrict"/>
-                        ,&#160;&#160;
-                        <lookup expression="patient.personAddress.cityVillage"/>
-
-                    </td>
                     <td>Patient Diagnosis:
                         <lookup complexExpression="$fn.latestObs(8170).valueCoded.name"/>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        Author:<encounterProvider/>
-                    </td>
-                    <td>
-                        Date: <encounterDate id="encounterDate" default="today" />
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>Clinique / Clinic: <encounterLocation />
                     </td>
                     <td>
                         Parent name: <obs conceptId="$@NAMES_AND_FIRSTNAMES_OF_CONTACT@" />
                         <br/>
                         Phone Number: <obs conceptId="$@TELEPHONE_NUMBER_OF_CONTACT@" />
                         <br/>
-                        Relationship:
-                        <obs conceptId="$@RELATIONSHIP_OF_RELATIVE_TO_PATIENT@" answerConceptId="$@MOTHER@" answerLabel="Mother" />&#160;&#160;
-                        <obs conceptId="$@RELATIONSHIP_OF_RELATIVE_TO_PATIENT@" answerConceptId="$@FATHER@" answerLabel="Father" />&#160;&#160;
-<!--                        <obs conceptId="$@RELATIONSHIP_OF_RELATIVE_TO_PATIENT@" answerConceptId="b307989a-bb33-448d-9000-5cdecc9f6618" answerLabel="Grandmother" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;-->
-                        <br/>
-                        <obs conceptId="$@RELATIONSHIP_OF_RELATIVE_TO_PATIENT@" answerConceptId="$@OTHER_RELATIVE@" answerLabel="Other:" />
-                        <obs conceptId="$@RELATIONSHIP_OF_RELATIVE_TO_PATIENT_NON_CODED@"/>
+                        <p class="radio">
+                            Relationship:
+                            <obs conceptId="$@RELATIONSHIP_OF_RELATIVE_TO_PATIENT@" answerConceptId="$@MOTHER@" answerLabel="Mother" />&#160;&#160;
+                            <obs conceptId="$@RELATIONSHIP_OF_RELATIVE_TO_PATIENT@" answerConceptId="$@FATHER@" answerLabel="Father" />&#160;&#160;
+                            <!--                        <obs conceptId="$@RELATIONSHIP_OF_RELATIVE_TO_PATIENT@" answerConceptId="b307989a-bb33-448d-9000-5cdecc9f6618" answerLabel="Grandmother" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;-->
+                            <br/>
+                            <obs conceptId="$@RELATIONSHIP_OF_RELATIVE_TO_PATIENT@" answerConceptId="$@OTHER_RELATIVE@" answerLabel="Other:" />
+                            <obs conceptId="$@RELATIONSHIP_OF_RELATIVE_TO_PATIENT_NON_CODED@"/>
+                        </p>
+                    </td>
+                    <td >
+                        <p class="side-by-side">
+                            Age:
+                            <obs conceptId="$@Chronological_Age@"/>
+                            <br/>
+
+                            <obs  conceptId="$@TIME_UNITS@" answerConceptIds="$@DAYS@,$@WEEKS@,$@MONTHS@,$@YEARS@" answerLabels="days,weeks,months,years" style="radio"/>
+
+                        </p>
+
                     </td>
                 </tr>
                 <tr>
@@ -337,435 +362,458 @@
                         CHW/Village rep Phone number:
                         <obs conceptId="$@ACCOMPAGNATEUR_PHONE_NUMBER@"/>
                     </td>
+                    <td>
+                        <p class="radio">
+                            <b>Reason for visit</b>
+                            <br/>
+                            <obs conceptId="$@Reason_for_home_visit@" answerConceptId="$@Concern_about_growth_and_nutrition@" answerLabel="Concern about growth and nutrition" />
+                            <br/>
+                            <obs conceptId="$@Reason_for_home_visit@" answerConceptId="$@Concern_about_illness@" answerLabel="Concern about illness" />
+                            <br/>
+                            <obs conceptId="$@Reason_for_home_visit@" answerConceptId="$@Concern_about_developmental_social_and/or_family_issues@" answerLabel="Concern about developmental social and/or family issues" />
+                            <br/>
+                            <obs conceptId="$@Reason_for_home_visit@" answerConceptId="$@Concern_about_home_environment_safety@" answerLabel="Concern about home environment safety" />
+                            <br/>
+                            <obs conceptId="$@Reason_for_home_visit@" answerConceptId="$@Loss_to_follow_up_or_missed_visits@" answerLabel="Loss to follow up or missed visits" />
+                            <br/>
+                            <obs conceptId="$@Reason_for_home_visit@" answerConceptId="$@Requested_by_parent@" answerLabel="Requested by parent" />
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <th class="tableHeader">
+                        <b>A. Illness, thermoregulation</b>
+                    </th>
+
                 </tr>
                 <tr>
                     <td>
-                        <b>Reason for visit</b>
-                        <br/>
-                        <obs conceptId="$@Reason_for_home_visit@" answerConceptId="$@Concern_about_growth_and_nutrition@" answerLabel="Concern about growth and nutrition" />
-                        <obs conceptId="$@Reason_for_home_visit@" answerConceptId="$@Concern_about_illness@" answerLabel="Concern about illness" />
-                        <br/>
-                        <obs conceptId="$@Reason_for_home_visit@" answerConceptId="$@Concern_about_developmental_social_and/or_family_issues@" answerLabel="Concern about developmental social and/or family issues" />
-                        <obs conceptId="$@Reason_for_home_visit@" answerConceptId="$@Concern_about_home_environment_safety@" answerLabel="Concern about home environment safety" />
-                        <br/>
-                        <obs conceptId="$@Reason_for_home_visit@" answerConceptId="$@Loss_to_follow_up_or_missed_visits@" answerLabel="Loss to follow up or missed visits" />
-                        <obs conceptId="$@Reason_for_home_visit@" answerConceptId="$@Requested_by_parent@" answerLabel="Requested by parent" />
-                    </td>
-                    <td >
-                        Age:
-                        <obs conceptId="$@Chronological_Age@"/>
-                        <br/>
-                        <obs  conceptId="$@TIME_UNITS@" answerConceptIds="$@DAYS@,$@WEEKS@,$@MONTHS@,$@YEARS@" answerLabels="days,weeks,months,years" style="radio"/>
-
+                        <p class="side-by-side">
+                            Concern for illness
+                            <obs  conceptId="$@Concern_about_illness@" answerConceptIds="$@Acute@,$@Chronic@,$@NOT_APPLICABLE@" answerLabels="Acute,Chronic,N/A" style="radio"/>
+                        </p>
                     </td>
 
                 </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Diarrhea
+                            <br/>
+                            <obs  conceptId="$@DIARRHEA_CURRENT@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Is the patient receiving correct treatment?
+                            <br/>
+                            <obs  conceptId="$@Patient_receiving_correct_treatment@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Concern about use of traditional medicine
+                            <br/>
+                            <obs  conceptId="$@Concern_about_use_of_traditional_medicine@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Abnormal signs/symptoms are
+                            <br/>
+                            <obs  conceptId="$@Abnormal_signs_symptoms@" answerConceptIds="$@Resolved@,$@WORSE@" answerLabels="resolved,persistent/worse" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Verify medication adherence and appropriate administration
+                            <br/>
+                            <obs  conceptId="$@ADHERENCE_TO_TAKING_MEDICATION@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Patient is kept warm adequately
+                            <br/>
+                            <obs  conceptId="$@Patient_kept_warm_adequately@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            When appropriate, is KMC practiced at home (in infants &#60;2.500 kgs)?
+                            <br/>
+                            <obs  conceptId="$@Kangaroo_Mother_Care_done_at_home@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Counseling topics discussed/demonstrated:
+                            <br/>
+                            <obs  conceptId="$@Counseling_topics_discussed_or_demonstrated_concerning_illness_thermoregulation@" cols="60"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="tableHeader">
+                        <b>B. Growth and nutrition (select all that apply)</b>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Symptoms of or concern for poor interval growth, low Z-scores
+                            <br/>
+                            <obs  conceptId="$@Symptoms_of_or_concern_for_poor_interval_growth@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Poor breastfeeding, insufficient breast milk, non-exclusive breastfeeding in &#60;6 month old
+                            <br/>
+                            <obs  conceptId="$@Concern_for_poor_breastfeeding@" answerConceptIds="$@YES@,$@NO@,$@NOT_APPLICABLE@" answerLabels="Yes,No,N/A" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            The family's food supply at home is
+                            <br/>
+                            <obs  conceptId="$@Food_supply@" answerConceptIds="$@ADEQUATE@,$@limited@" answerLabels="adequate,Limited" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Does the child appear malnourished?
+                            <br/>
+                            <obs  conceptId="$@Malnourished@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                            <br/>
+                            Meets admission criteria?
+                            <br/>
+                            <obs  conceptId="$@Meets_admission_criteria@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Is the child followed in a nutrition program at the HC?
+                            <br/>
+                            <obs  conceptId="$@In_nutrition_program_at_health_center@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                            <br/> <br/>
+                            Is the child enrolled at any of social support program (food package/formula)?
+                            <br/>
+                            <obs  conceptId="$@In_social_support_program@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Other:
+                        <br/>
+                        <obs  conceptId="$@Other_Growth_and_nutrition_question@" cols="60"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Counseling topics discussed/demonstrated:
+                        <br/>
+                        <obs  conceptId="$@Counseling_topics_discussed_or_demonstrated_concerning_Growth_and_nutrition@" cols="60"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="tableHeader">
+                        <b>C. Developmental, social, and/or family issues</b>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Does the parent regularly engage the child in stimulating, age-appropriate verbal interactions and play
+                            that supports physical/cognitive/social and language development (telling stories, talking)?
+                            <br/>
+                            <obs  conceptId="$@engage_the_child_in_stimulating_age-appropriate_verbal_interactions@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Does the parent use safe household items as toys and/or homemade toys (dolls, cars on string, etc)?
+                            <br/>
+                            <obs  conceptId="$@Use_safe_household_items_as_toys_or_homemade_toys@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Does the parent use non-physical/abusive discipline methods?
+                            <br/>
+                            <obs  conceptId="$@Use_of_non-physical_or_abusive_discipline_methods@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Does the child appear clean and cared for?
+                            <br/>
+                            <obs  conceptId="$@appear_clean_and_cared_for@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Parent reports being stigmatized by the family or neighbors
+                            <br/>
+                            <obs  conceptId="$@Parent_being_stigmatized_by_the_family_or_neighbors@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Is the parent well supported by the spouse/family in caring for the child?
+                            <br/>
+                            <obs  conceptId="$@Parent_well_supported_by_the_spouse/family_in_caring_for_the_child@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Other/Parental concerns:
+                        <br/>
+                        <obs  conceptId="$@Other_parental_concerns@" cols="60"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Counseling topics discussed/demonstrated (see Play and communication guide questionnaire for additional assessment):
+                        <br/>
+                        <obs  conceptId="$@Counseling_topics_discussed/demonstrated_concerning_developmental_social_and/or_familly_issues@" cols="60"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="tableHeader">
+                        <b>D. Concern about home environment safety</b>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Is the home environment safe from potential hazards to the child, e.g.,open toilet, open fire, sharp items, choking hazards, medications?
+                            <br/>
+                            <obs  conceptId="$@Home_environment_safe_from_potential_hazards_to_the_child@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Is the child supervised at all times to avoid injuries?
+                            <br/>
+                            <obs  conceptId="$@Child_supervised_at_all_times_to_avoid_injuries@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Soap and water are available to wash hands with after using the toilet
+                            <br/>
+                            <obs  conceptId="$@Soap_and_water_available_after_use_of_toilet@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side">
+                            Safe food preparation and storage
+                            <br/>
+                            <obs  conceptId="$@Safe_food_preparation_and_storage@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Other:
+                        <br/>
+                        <obs  conceptId="$@Other_concerns_about_home_environment_safery@" cols="60"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Counseling topics discussed/demonstrated:
+                        <br/>
+                        <obs  conceptId="$@counseling_topics_discussed/demonstrated_concerning_home_environment_safety@" cols="60"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="tableHeader">
+                        <b>E. Loss to follow up or missed visits</b>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p class="radio">
+                            <obs  conceptId="$@Reason_for_missed_visit@" answerConceptId="$@PATIENT_DIED@" answerLabel="Patient died" style="radio"/>
+                            <br/>
+
+                            <obs  conceptId="$@Reason_for_missed_visit@" answerConceptId="$@Declined_Care@" answerLabel="Parent declines care" style="radio"/>
+                            <br/>
+
+                            <obs  conceptId="$@Reason_for_missed_visit@" answerConceptId="$@Did_not_understand_that_he/she_had_to_come_in@" answerLabel="Parent was not aware/informed to return to clinic" style="radio"/>
+                            <br/>
+
+                            <obs  conceptId="$@Reason_for_missed_visit@" answerConceptId="$@Changed_residence_or_health_facility@" answerLabel="Parent changed residence or health facility" style="radio"/>
+                            <br/>
+
+                            <obs  conceptId="$@Reason_for_missed_visit@" answerConceptId="$@financial_Reasons@" answerLabel="unable to return due to financial constraints" style="radio"/>
+                            <br/>
+
+                            <obs  conceptId="$@Reason_for_missed_visit@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other" style="radio" />
+                            : <obs conceptId="$@Other(text)@" cols="60"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Counseling topics discussed/demonstrated:
+                        <obs conceptId="$@Counseling_topics_discussed/demostrated_concerning_loss_to_follow_up_or_missed_visit@" cols="60"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="tableHeader">
+                        <b>F. Requested by parent or CHW</b>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="radio">
+                            <obs  conceptId="$@Requested_by_parent@" answerConceptId="$@Need_for_parental_guidance_education_regarding_care_of_the_child@"
+                                  answerLabel="Need for parental guidance, education regarding care of the child" style="radio"/>
+                            <br/>
+
+                            <obs  conceptId="$@Requested_by_parent@" answerConceptId="$@Parents_concern@" answerLabel="Parent's concern" style="radio"/>
+                            : <obs conceptId="$@Parents_concern@" cols="60"/>
+                            <br/>
+
+                            <obs  conceptId="$@Requested_by_parent@" answerConceptId="$@CHWs_concern@" answerLabel="CHW's concern" style="radio"/>
+                            : <obs conceptId="$@CHWs_concern@" cols="60"/>
+                            <br/>
+
+                            <obs  conceptId="$@Requested_by_parent@" answerConceptId="$@Other_parental_concerns@" answerLabel="Other" style="radio"/>
+                            : <obs conceptId="$@Other_parental_concerns@" cols="60"/>
+                            <br/>
+
+                            Counseling topics discussed/demonstrated
+                            : <obs conceptId="$@Counseling_topics_discussed/demonstrated_concerning_parental_or_chw_request@" cols="60"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="tableHeader">
+                        <b>G. Recommendations</b>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="radio">
+                            <obs  conceptId="$@Recommendations@" answerConceptId="$@CHW_visit_to_assess_and_assist@" answerLabel="CHW will come to assess and assist" style="checkbox"/>
+                            <br/>
+                            (frequency: <obs conceptId="$@Assess_and_assist_frequency@"/> )
+                            <br/>
+                        </p>
+                        <p class="date-one-line">
+                            <obs  conceptId="$@Recommendations@" answerConceptId="$@Nurse_will_return_on@" answerLabel="Nurse will return on " style="checkbox"/>
+                            : <obs conceptId="$@Nurse_will_return_on@" allowFutureDates="true"/> to continue support and re-evaluate
+                            <br/>
+                        </p>
+                        <p class="date-one-line">
+                            <obs  conceptId="$@Recommendations@" answerConceptId="$@Social_worker_will_return_on@" answerLabel="Social worker will return on " style="checkbox"/>
+                            : <obs conceptId="$@Social_worker_will_return_on@" allowFutureDates="true"/> to re-evaluate
+                            <br/>
+                        </p>
+                        <p class="date-one-line">
+                            <obs  conceptId="$@Recommendations@" answerConceptId="$@Bring_patient_to_the_hospital_or_health_center@" answerLabel="Advised to bring patient to the hospital / health center on" style="checkbox"/>
+                            : <obs conceptId="$@RETURN_VISIT_DATE@" allowFutureDates="true"/>
+                            <br/>
+                        </p>
+                        <p class="radio">
+                            <obs  conceptId="$@Recommendations@" answerConceptId="$@PATIENT_REFERRED_TO_ANOTHER_SITE@" answerLabel="Referral to health facility" style="checkbox"/>
+                            : <obs conceptId="$@Health_Facility_Text@"/>
+                        </p>
+                        <p class="date-one-line">
+                            Date :
+                            <obs conceptId="$@RETURN_VISIT_DATE@" allowFutureDates="true"/>
+                        </p>
+                        <p class="radio">
+                            <obs  conceptId="$@Recommendations@" answerConceptId="$@Type_of_assistance_needed@" answerLabel="Type of assistance needed" style="checkbox"/>
+                            : <obs conceptId="$@Type_of_assistance_needed@" cols="60"/>
+                            <br/>
+
+                            <obs  conceptId="$@Recommendations@" answerConceptId="$@Other_recommendations@" answerLabel="Other recommendations" style="checkbox"/>
+                            : <obs conceptId="$@Other_recommendations@" cols="60"/>
+                        </p>
+
+                    </td>
+                </tr>
+                <tr>
+                    <th class="tableHeader">
+                        <b>Summative comments and recommendations by health provider/social worker: </b>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="$@summative_comments_and_recommendations@" cols="100" rows="10"/>
+                    </td>
+                </tr>
             </table>
-            <br />
-        </section>
-    </div>
-
-    <section>
-        <table border="1" cellspacing="0" cellpadding="6" width="100%">
-            <tr>
-                <th class="tableHeader">
-                    <b>A. Illness, thermoregulation</b>
-                </th>
-
-            </tr>
-            <tr>
-                <td>
-                    Concern for illness
-                    <obs  conceptId="$@Concern_about_illness@" answerConceptIds="$@Acute@,$@Chronic@,$@NOT_APPLICABLE@" answerLabels="Acute,Chronic,N/A" style="radio"/>
-                </td>
-
-            </tr>
-            <tr>
-                <td>
-                    Diarrhea
-                    <br/>
-                    <obs  conceptId="$@DIARRHEA_CURRENT@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Is the patient receiving correct treatment?
-                    <br/>
-                    <obs  conceptId="$@Patient_receiving_correct_treatment@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Concern about use of traditional medicine
-                    <br/>
-                    <obs  conceptId="$@Concern_about_use_of_traditional_medicine@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Abnormal signs/symptoms are
-                    <br/>
-                    <obs  conceptId="$@Abnormal_signs_symptoms@" answerConceptIds="$@Resolved@,$@WORSE@" answerLabels="resolved,persistent/worse" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Verify medication adherence and appropriate administration
-                    <br/>
-                    <obs  conceptId="$@ADHERENCE_TO_TAKING_MEDICATION@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Patient is kept warm adequately
-                    <br/>
-                    <obs  conceptId="$@Patient_kept_warm_adequately@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    When appropriate, is KMC practiced at home (in infants &#60;2.500 kgs)?
-                    <br/>
-                    <obs  conceptId="$@Kangaroo_Mother_Care_done_at_home@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Counseling topics discussed/demonstrated:
-                    <br/>
-                    <obs  conceptId="$@Counseling_topics_discussed_or_demonstrated_concerning_illness_thermoregulation@" cols="60"/>
-                </td>
-            </tr>
-            <tr>
-                <th class="tableHeader">
-                    <b>B. Growth and nutrition (select all that apply)</b>
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    Symptoms of or concern for poor interval growth, low Z-scores
-                    <br/>
-                    <obs  conceptId="$@Symptoms_of_or_concern_for_poor_interval_growth@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Poor breastfeeding, insufficient breast milk, non-exclusive breastfeeding in &#60;6 month old
-                    <br/>
-                    <obs  conceptId="$@Concern_for_poor_breastfeeding@" answerConceptIds="$@YES@,$@NO@,$@NOT_APPLICABLE@" answerLabels="Yes,No,N/A" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    The family's food supply at home is
-                    <br/>
-                    <obs  conceptId="$@Food_supply@" answerConceptIds="$@ADEQUATE@,$@limited@" answerLabels="adequate,Limited" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Does the child appear malnourished?
-                    <br/>
-                    <obs  conceptId="$@Malnourished@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                    <br/>
-                    Meets admission criteria?
-                    <br/>
-                    <obs  conceptId="$@Meets_admission_criteria@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Is the child followed in a nutrition program at the HC?
-                    <br/>
-                    <obs  conceptId="$@In_nutrition_program_at_health_center@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                    <br/> <br/>
-                    Is the child enrolled at any of social support program (food package/formula)?
-                    <br/>
-                    <obs  conceptId="$@In_social_support_program@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Other:
-                    <br/>
-                    <obs  conceptId="$@Other_Growth_and_nutrition_question@" cols="60"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Counseling topics discussed/demonstrated:
-                    <br/>
-                    <obs  conceptId="$@Counseling_topics_discussed_or_demonstrated_concerning_Growth_and_nutrition@" cols="60"/>
-                </td>
-            </tr>
-            <tr>
-                <th class="tableHeader">
-                    <b>C. Developmental, social, and/or family issues</b>
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    Does the parent regularly engage the child in stimulating, age-appropriate verbal interactions and play
-                    that supports physical/cognitive/social and language development (telling stories, talking)?
-                    <br/>
-                    <obs  conceptId="$@engage_the_child_in_stimulating_age-appropriate_verbal_interactions@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Does the parent use safe household items as toys and/or homemade toys (dolls, cars on string, etc)?
-                    <br/>
-                    <obs  conceptId="$@Use_safe_household_items_as_toys_or_homemade_toys@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Does the parent use non-physical/abusive discipline methods?
-                    <br/>
-                    <obs  conceptId="$@Use_of_non-physical_or_abusive_discipline_methods@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Does the child appear clean and cared for?
-                    <br/>
-                    <obs  conceptId="$@appear_clean_and_cared_for@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Parent reports being stigmatized by the family or neighbors
-                    <br/>
-                    <obs  conceptId="$@Parent_being_stigmatized_by_the_family_or_neighbors@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Is the parent well supported by the spouse/family in caring for the child?
-                    <br/>
-                    <obs  conceptId="$@Parent_well_supported_by_the_spouse/family_in_caring_for_the_child@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Other/Parental concerns:
-                    <br/>
-                    <obs  conceptId="$@Other_parental_concerns@" cols="60"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Counseling topics discussed/demonstrated (see Play and communication guide questionnaire for additional assessment):
-                    <br/>
-                    <obs  conceptId="$@Counseling_topics_discussed/demonstrated_concerning_developmental_social_and/or_familly_issues@" cols="60"/>
-                </td>
-            </tr>
-            <tr>
-                <th class="tableHeader">
-                    <b>D. Concern about home environment safety</b>
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    Is the home environment safe from potential hazards to the child, e.g.,open toilet, open fire, sharp items, choking hazards, medications?
-                    <br/>
-                    <obs  conceptId="$@Home_environment_safe_from_potential_hazards_to_the_child@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Is the child supervised at all times to avoid injuries?
-                    <br/>
-                    <obs  conceptId="$@Child_supervised_at_all_times_to_avoid_injuries@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Soap and water are available to wash hands with after using the toilet
-                    <br/>
-                    <obs  conceptId="$@Soap_and_water_available_after_use_of_toilet@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Safe food preparation and storage
-                    <br/>
-                    <obs  conceptId="$@Safe_food_preparation_and_storage@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Other:
-                    <br/>
-                    <obs  conceptId="$@Other_concerns_about_home_environment_safery@" cols="60"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Counseling topics discussed/demonstrated:
-                    <br/>
-                    <obs  conceptId="$@counseling_topics_discussed/demonstrated_concerning_home_environment_safety@" cols="60"/>
-                </td>
-            </tr>
-            <tr>
-                <th class="tableHeader">
-                    <b>E. Loss to follow up or missed visits</b>
-                </th>
-            </tr>
-
-            <tr>
-                <td>
-
-                    <obs  conceptId="$@Reason_for_missed_visit@" answerConceptId="$@PATIENT_DIED@" answerLabel="Patient died" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-
-                    <obs  conceptId="$@Reason_for_missed_visit@" answerConceptId="$@Declined_Care@" answerLabel="Parent declines care" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-
-                    <obs  conceptId="$@Reason_for_missed_visit@" answerConceptId="$@Did_not_understand_that_he/she_had_to_come_in@" answerLabel="Parent was not aware/informed to return to clinic" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-
-                    <obs  conceptId="$@Reason_for_missed_visit@" answerConceptId="$@Changed_residence_or_health_facility@" answerLabel="Parent changed residence or health facility" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-
-                    <obs  conceptId="$@Reason_for_missed_visit@" answerConceptId="$@financial_Reasons@" answerLabel="unable to return due to financial constraints" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-
-                    <obs  conceptId="$@Reason_for_missed_visit@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other" style="radio" />
-                    : <obs conceptId="$@Other(text)@" cols="60"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Counseling topics discussed/demonstrated:
-                    <obs conceptId="$@Counseling_topics_discussed/demostrated_concerning_loss_to_follow_up_or_missed_visit@" cols="60"/>
-                </td>
-            </tr>
-            <tr>
-                <th class="tableHeader">
-                    <b>F. Requested by parent or CHW</b>
-                </th>
-            </tr>
-            <tr>
-                <td>
-
-                    <obs  conceptId="$@Requested_by_parent@" answerConceptId="$@Need_for_parental_guidance_education_regarding_care_of_the_child@"
-                            answerLabel="Need for parental guidance, education regarding care of the child" style="radio"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-
-                    <obs  conceptId="$@Requested_by_parent@" answerConceptId="$@Parents_concern@" answerLabel="Parent's concern" style="radio"/>
-                    : <obs conceptId="$@Parents_concern@" cols="60"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-
-                    <obs  conceptId="$@Requested_by_parent@" answerConceptId="$@CHWs_concern@" answerLabel="CHW's concern" style="radio"/>
-                    : <obs conceptId="$@CHWs_concern@" cols="60"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-
-                    <obs  conceptId="$@Requested_by_parent@" answerConceptId="$@Other_parental_concerns@" answerLabel="Other" style="radio"/>
-                    : <obs conceptId="$@Other_parental_concerns@" cols="60"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-
-                    Counseling topics discussed/demonstrated
-                    : <obs conceptId="$@Counseling_topics_discussed/demonstrated_concerning_parental_or_chw_request@" cols="60"/>
-                </td>
-            </tr>
-            <tr>
-                <th class="tableHeader">
-                    <b>G. Recommendations</b>
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    <obs  conceptId="$@Recommendations@" answerConceptId="$@CHW_visit_to_assess_and_assist@" answerLabel="CHW will come to assess and assist" style="checkbox"/>
-                    <br/>
-                    (frequency: <obs conceptId="$@Assess_and_assist_frequency@"/> )
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <obs  conceptId="$@Recommendations@" answerConceptId="$@Nurse_will_return_on@" answerLabel="Nurse will return on " style="checkbox"/>
-                    : <obs conceptId="$@Nurse_will_return_on@" allowFutureDates="true"/> to continue support and re-evaluate
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <obs  conceptId="$@Recommendations@" answerConceptId="$@Social_worker_will_return_on@" answerLabel="Social worker will return on " style="checkbox"/>
-                    : <obs conceptId="$@Social_worker_will_return_on@" allowFutureDates="true"/> to re-evaluate
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <obs  conceptId="$@Recommendations@" answerConceptId="$@Bring_patient_to_the_hospital_or_health_center@" answerLabel="Advised to bring patient to the hospital / health center on" style="checkbox"/>
-                    : <obs conceptId="$@RETURN_VISIT_DATE@" allowFutureDates="true"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <obs  conceptId="$@Recommendations@" answerConceptId="$@PATIENT_REFERRED_TO_ANOTHER_SITE@" answerLabel="Referral to health facility" style="checkbox"/>
-                    : <obs conceptId="$@Health_Facility_Text@"/>
-                    Date :
-                    <obs conceptId="$@RETURN_VISIT_DATE@" allowFutureDates="true"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <obs  conceptId="$@Recommendations@" answerConceptId="$@Type_of_assistance_needed@" answerLabel="Type of assistance needed" style="checkbox"/>
-                    : <obs conceptId="$@Type_of_assistance_needed@" cols="60"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <obs  conceptId="$@Recommendations@" answerConceptId="$@Other_recommendations@" answerLabel="Other recommendations" style="checkbox"/>
-                    : <obs conceptId="$@Other_recommendations@" cols="60"/>
-                </td>
-            </tr>
-            <tr>
-                <th class="tableHeader">
-                    <b>Summative comments and recommendations by health provider/social worker: </b>
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    <obs conceptId="$@summative_comments_and_recommendations@" cols="100" rows="10"/>
-                </td>
-            </tr>
-        </table>
+        </div>
     </section>
     <br/>
     <encounterVoided/>
-    <br/>
-    <submit />
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
 
 
 </htmlform>

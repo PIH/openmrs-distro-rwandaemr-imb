@@ -1,12 +1,12 @@
-<htmlform 
-	htmlformUuid="16729709-1b5b-47e7-8661-6cccb75aa72c" 
-	formUuid="7356b5df-dc1d-41ff-a70a-b45378dbffc4" 
-	formName="PDC Conditional Specific (Global Developmental Delay)" 
-	formDescription="PDC Conditional Specific (Global Developmental Delay)" 
-	formVersion="0.1" 
-	formEncounterType="71826dd4-330d-4548-9fd8-6703682fbd3a" 
-	formPublished="true" 
-	formRetired="false"
+<htmlform
+        htmlformUuid="16729709-1b5b-47e7-8661-6cccb75aa72c"
+        formUuid="7356b5df-dc1d-41ff-a70a-b45378dbffc4"
+        formName="PDC Conditional Specific (Global Developmental Delay)"
+        formDescription="PDC Conditional Specific (Global Developmental Delay)"
+        formVersion="0.1"
+        formEncounterType="71826dd4-330d-4548-9fd8-6703682fbd3a"
+        formPublished="true"
+        formRetired="false"
 > <!--
            PDC - Malnutrition
             Pilot_4July_v1.3NT
@@ -92,303 +92,351 @@
 
 
     <style>
-        th.tableHeader {
-        background-color: #009d8e;
-        color: #FFFFFF;
-        font-size: 16px;
-        text-align: left;
-        }
-
-        ul {
-        list-style-type: square;
-        font-family: Verdana, Arial, Helvetica, sans-serif;
-        font-size: 11px;
-        }
-
-        tr.spaceUnder>td {
-        padding-bottom: 1em;
-        }
-
-        td {
-        font-size: 15px;
-        }
-
-        #container {
-        
-        margin: auto;
-        
-        height: auto;
-        }
-
-        @media print {
-        #container {
-        display: none;
-        }
-
-        #printArea {
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
         display: block;
         }
 
-        #userBar {
-        display: none;
-        }
-
-        #banner {
-        display: none;
-        }
-
-        #footer {
-        display: none;
-        }
-
-        #htmlFormEntryBanner {
-        display: none;
-        }
-
-        .error {
-        display: none;
-        }
-
-        .lables {
-        width: 200px;
-        }
-
-        table {
-        width: 100%;
-        }
-
-        table,td,th {
-        border: 1px solid black;
-        border-collapse: collapse;
-        }
-
-        th {
-        text-align: left;
-        background-color: #D9D9D9;
-        font-size: 10px;
-        }
-
-        td {
-        font-size: 10px;
-        }
-
-        .selectedCancerStagingKeys {
-        page-break-before: always;
-        border: 0px;
-        }
-
-        table.selectedCancerStagingKeys td {
-        border: 0px;
-        }
-
-        #signature {
-        border: none;
-        }
-        #signature td {
-        border: none;
-        }
-        }
-
-        @media screen {
-        table {
-        border: 1px solid #DFDFDF;
-        width: 100%;
-        border-color: #009d8e;
-        }
-
-        #container {
+        form fieldset {
         display: block;
         }
 
-        #printArea {
-        display: none;
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
         }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
+        width: 100%;
+        }
+
+        .div {
+        float: left;
+        }
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        .date-one-line {
+        display: flex;
+        }
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
+        }
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
         }
     </style>
+
     <script type="text/javascript">
         $j(document).ready(function() {
 
 
-            $j("#theWholeTable").hide();
+        $j("#theWholeTable").hide();
 
 
-            $j("input#IntakeAssessment").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").show();
-                $j("#motorDevelopemt").hide();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").hide();
-                $j("#commentsOnEIPGroup").hide();
+        $j("input#IntakeAssessment").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").show();
+        $j("#motorDevelopemt").hide();
+        $j("#cerebralPalsy").show();
+        $j("#bonePain").show();
+        $j("#familyInEIPGroup").hide();
+        $j("#commentsOnEIPGroup").hide();
 
-            });
-            $j("input#firstmonth").click(function(){
-                $j("#theWholeTable").hide();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").hide();
-                $j("#cerebralPalsy").hide();
-                $j("#bonePain").hide();
-                $j("#familyInEIPGroup").hide();
-                $j("#commentsOnEIPGroup").hide();
-            });
-            $j("input#secondmonth").click(function(){
-                $j("#theWholeTable").hide();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").hide();
-                $j("#cerebralPalsy").hide();
-                $j("#bonePain").hide();
-                $j("#familyInEIPGroup").hide();
-                $j("#commentsOnEIPGroup").hide();
-            });
-            $j("input#forthmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").show();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").hide();
-                $j("#commentsOnEIPGroup").hide();
-            });
-            $j("input#sixthmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").show();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").hide();
-                $j("#commentsOnEIPGroup").hide();
-            });
-            $j("input#ninethmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").show();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").show();
-                $j("#commentsOnEIPGroup").show();
-            });
-            $j("input#twelvethmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").show();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").show();
-                $j("#commentsOnEIPGroup").show();
-            });
-            $j("input#eighteenthmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").show();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").show();
-                $j("#commentsOnEIPGroup").show();
-            });
-            $j("input#twentyfourthmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").show();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").show();
-                $j("#commentsOnEIPGroup").show();
-            });
-            $j("input#thirtiethmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").show();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").show();
-                $j("#commentsOnEIPGroup").show();
-            });
-            $j("input#thirtysixthmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").show();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").show();
-                $j("#commentsOnEIPGroup").show();
-            });
-            $j("input#fortyeighthfmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").show();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").hide();
-                $j("#commentsOnEIPGroup").hide();
-            });
-            $j("input#sixtiethmonth").click(function(){
-                $j("#theWholeTable").show();
-                $j("#intakeAssessmentDiplay").hide();
-                $j("#motorDevelopemt").show();
-                $j("#cerebralPalsy").show();
-                $j("#bonePain").show();
-                $j("#familyInEIPGroup").hide();
-                $j("#commentsOnEIPGroup").hide();
-            });
+        });
+        $j("input#firstmonth").click(function(){
+        $j("#theWholeTable").hide();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#motorDevelopemt").hide();
+        $j("#cerebralPalsy").hide();
+        $j("#bonePain").hide();
+        $j("#familyInEIPGroup").hide();
+        $j("#commentsOnEIPGroup").hide();
+        });
+        $j("input#secondmonth").click(function(){
+        $j("#theWholeTable").hide();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#motorDevelopemt").hide();
+        $j("#cerebralPalsy").hide();
+        $j("#bonePain").hide();
+        $j("#familyInEIPGroup").hide();
+        $j("#commentsOnEIPGroup").hide();
+        });
+        $j("input#forthmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#motorDevelopemt").show();
+        $j("#cerebralPalsy").show();
+        $j("#bonePain").show();
+        $j("#familyInEIPGroup").hide();
+        $j("#commentsOnEIPGroup").hide();
+        });
+        $j("input#sixthmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#motorDevelopemt").show();
+        $j("#cerebralPalsy").show();
+        $j("#bonePain").show();
+        $j("#familyInEIPGroup").hide();
+        $j("#commentsOnEIPGroup").hide();
+        });
+        $j("input#ninethmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#motorDevelopemt").show();
+        $j("#cerebralPalsy").show();
+        $j("#bonePain").show();
+        $j("#familyInEIPGroup").show();
+        $j("#commentsOnEIPGroup").show();
+        });
+        $j("input#twelvethmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#motorDevelopemt").show();
+        $j("#cerebralPalsy").show();
+        $j("#bonePain").show();
+        $j("#familyInEIPGroup").show();
+        $j("#commentsOnEIPGroup").show();
+        });
+        $j("input#eighteenthmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#motorDevelopemt").show();
+        $j("#cerebralPalsy").show();
+        $j("#bonePain").show();
+        $j("#familyInEIPGroup").show();
+        $j("#commentsOnEIPGroup").show();
+        });
+        $j("input#twentyfourthmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#motorDevelopemt").show();
+        $j("#cerebralPalsy").show();
+        $j("#bonePain").show();
+        $j("#familyInEIPGroup").show();
+        $j("#commentsOnEIPGroup").show();
+        });
+        $j("input#thirtiethmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#motorDevelopemt").show();
+        $j("#cerebralPalsy").show();
+        $j("#bonePain").show();
+        $j("#familyInEIPGroup").show();
+        $j("#commentsOnEIPGroup").show();
+        });
+        $j("input#thirtysixthmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#motorDevelopemt").show();
+        $j("#cerebralPalsy").show();
+        $j("#bonePain").show();
+        $j("#familyInEIPGroup").show();
+        $j("#commentsOnEIPGroup").show();
+        });
+        $j("input#fortyeighthfmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#motorDevelopemt").show();
+        $j("#cerebralPalsy").show();
+        $j("#bonePain").show();
+        $j("#familyInEIPGroup").hide();
+        $j("#commentsOnEIPGroup").hide();
+        });
+        $j("input#sixtiethmonth").click(function(){
+        $j("#theWholeTable").show();
+        $j("#intakeAssessmentDiplay").hide();
+        $j("#motorDevelopemt").show();
+        $j("#cerebralPalsy").show();
+        $j("#bonePain").show();
+        $j("#familyInEIPGroup").hide();
+        $j("#commentsOnEIPGroup").hide();
+        });
 
 
 
-		});
+        });
     </script>
-    <div id="container"  style="width:100%">
-        <section>
 
-            <table border="1" cellspacing="0" cellpadding="6" width="100%">
-                <tr>
-                    <td><b> IMB ID: <lookup class="value"
-                                            expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> <lookup class="value"
-                                                                                                               expression="patientIdentifiers.get(&quot;IMB Primary Care Registration ID&quot;)" /></b>
-                    </td>
-                    <td>Date and Time: <encounterDate id="encounterDate" default="today" showTime="true"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nom / Last name: <lookup class="value"
-                                                 expression="patient.personName.familyName" />
-                    </td>
-                    <td>Prénom/ First name: <lookup class="value"
-                                                    expression="patient.personName.givenName" />
-                    </td>
-                </tr>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
 
+            <table border="1" style="table-layout: fixed;" cellspacing="0" cellpadding="6" width="80%">
                 <tr>
-                    <td><img src="/openmrs/moduleResources/rwandareports/images/pihHands.png" align="left"
-                             height="65" ></img>
-                        <h2>
-                            Inshuti Mu Buzima <br /> PIH Rwanda
-                        </h2>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
                     </td>
-                    <td><strong> PDC Condition specific form</strong> <br />
+                    <td>
+                        Health Facility:
+                        <encounterLocation default="GlobalProperty:billing.defaultLocation" />
                     </td>
-                </tr>
-                <tr>
-                    <td>Clinique / Clinic: <encounterLocation />
-                    </td>
-                    <td>Author:<encounterProvider/>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
                     </td>
                 </tr>
             </table>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
             <table>
                 <tr>
-                    <td> Select visit:
-                        <input type="radio" name="visit" value="Intake Assessment" id="IntakeAssessment"/> Intake Assessment
-                        <input type="radio" name="visit" value="first month" id="firstmonth"/> 1 month
-                        <input type="radio" name="visit" value="second month" id="secondmonth"/> 2 month
-                        <input type="radio" name="visit" value="forth month" id="forthmonth"/> 4 month
-                        <input type="radio" name="visit" value="sixth month" id="sixthmonth"/> 6 month
-                        <input type="radio" name="visit" value="nineth month" id="ninethmonth"/> 9 month
-                        <input type="radio" name="visit" value="twelveth month" id="twelvethmonth"/> 12 month
-                        <input type="radio" name="visit" value="eighteenth month" id="eighteenthmonth"/> 18 month
-                        <input type="radio" name="visit" value="twentyfourth month" id="twentyfourthmonth"/> 24 month
-                        <input type="radio" name="visit" value="thirtieth month" id="thirtiethmonth"/> 30 month
-                        <input type="radio" name="visit" value="thirtysixth month" id="thirtysixthmonth"/> 36 month
-                        <input type="radio" name="visit" value="fortyeighth month" id="fortyeighthfmonth"/> 48 month
-                        <input type="radio" name="visit" value="sixtieth month" id="sixtiethmonth"/> 60 month
+                    <td>
+                        <p class="radio">
+                            Select visit:
+                            <input type="radio" name="visit" value="Intake Assessment" id="IntakeAssessment"/> Intake Assessment
+                            <input type="radio" name="visit" value="first month" id="firstmonth"/> 1 month
+                            <input type="radio" name="visit" value="second month" id="secondmonth"/> 2 month
+                            <input type="radio" name="visit" value="forth month" id="forthmonth"/> 4 month
+                            <input type="radio" name="visit" value="sixth month" id="sixthmonth"/> 6 month
+                            <input type="radio" name="visit" value="nineth month" id="ninethmonth"/> 9 month
+                            <input type="radio" name="visit" value="twelveth month" id="twelvethmonth"/> 12 month
+                            <input type="radio" name="visit" value="eighteenth month" id="eighteenthmonth"/> 18 month
+                            <input type="radio" name="visit" value="twentyfourth month" id="twentyfourthmonth"/> 24 month
+                            <input type="radio" name="visit" value="thirtieth month" id="thirtiethmonth"/> 30 month
+                            <input type="radio" name="visit" value="thirtysixth month" id="thirtysixthmonth"/> 36 month
+                            <input type="radio" name="visit" value="fortyeighth month" id="fortyeighthfmonth"/> 48 month
+                            <input type="radio" name="visit" value="sixtieth month" id="sixtiethmonth"/> 60 month
+                        </p>
                     </td>
                 </tr>
             </table>
@@ -402,92 +450,97 @@
 
                 <tr>
                     <td>
-                        <span id="intakeAssessmentDiplay">
-                        <strong>History and Potential Underlying Causes of Delay</strong>
-                        <br/>
-                        - Mother experienced repeated miscarriages
-                        <obs conceptId="$@experienced_repeated_miscarriages@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
-                        <br/>
-                        - Perinatal asphyxia
-                        <obs conceptId="$@Perinatal_Asphyxia@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
-                        <br/>
-                        -Maternal history of syphilis
-                        <obs conceptId="$@Maternal_history_of_syphilis@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes(refer to DH)" style="radio"/>
-                        <br/>
-                        <obs conceptId="$@HIV-exposed@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
-                        : child's HIV status
-                        <obs conceptId="$@HIV_STATUS@" answerConceptIds="$@NEGATIVE@,$@POSITIVE@" answerLabels="HIV-,HIV+" style="radio"/>
-                        <br/>
-                        -Was there any regression where child lost developmental milestones?
-                        <obs conceptId="$@developmental_regression@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes(refer to DH)" style="radio"/>
-                        <br/>
-                        -Hypothyroidism (Large tongue,course hair, or poor growth)? <br/>
-                        <obs conceptId="$@Hypothyroidism@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes(refer to DH for TSH testing)" style="radio"/>
-                        <br/>
+                        <p class="side-by-side radio">
+                            <span id="intakeAssessmentDiplay">
+                                <strong>History and Potential Underlying Causes of Delay</strong>
+                                <br/>
+                                - Mother experienced repeated miscarriages
+                                <obs conceptId="$@experienced_repeated_miscarriages@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
+                                <br/>
+                                - Perinatal asphyxia
+                                <obs conceptId="$@Perinatal_Asphyxia@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
+                                <br/>
+                                -Maternal history of syphilis
+                                <obs conceptId="$@Maternal_history_of_syphilis@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes(refer to DH)" style="radio"/>
+                                <br/>
+                                <obs conceptId="$@HIV-exposed@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
+                                : child's HIV status
+                                <obs conceptId="$@HIV_STATUS@" answerConceptIds="$@NEGATIVE@,$@POSITIVE@" answerLabels="HIV-,HIV+" style="radio"/>
+                                <br/>
+                                -Was there any regression where child lost developmental milestones?
+                                <obs conceptId="$@developmental_regression@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes(refer to DH)" style="radio"/>
+                                <br/>
+                                -Hypothyroidism (Large tongue,course hair, or poor growth)? <br/>
+                                <obs conceptId="$@Hypothyroidism@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes(refer to DH for TSH testing)" style="radio"/>
+                                <br/>
 
-                        -Anemia (pallor, low hemoglobin, tachypnea/tachycardia with no cough/fever)? <br/>
-                        <obs conceptId="$@ANEMIA@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes(initiate iron treatment)" style="radio"/>
-                        <br/>
-                        -Genetic Syndrome Diagnosis confirmed by karyotype <br/>
-                        <obs conceptId="$@Genetic_Syndrome_Diagnosis_confirmed@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
-                        on
-                        <obs conceptId="$@Date_of_Genetic_Syndrome_Diagnosis@"/> <br/>
+                                -Anemia (pallor, low hemoglobin, tachypnea/tachycardia with no cough/fever)? <br/>
+                                <obs conceptId="$@ANEMIA@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes(initiate iron treatment)" style="radio"/>
+                                <br/>
+                                -Genetic Syndrome Diagnosis confirmed by karyotype <br/>
+                                <obs conceptId="$@Genetic_Syndrome_Diagnosis_confirmed@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
+                                on
+                                <obs conceptId="$@Date_of_Genetic_Syndrome_Diagnosis@"/> <br/>
 
-                        Results:
-                        <obs conceptId="$@Genetic_Syndrome_Diagnosis_results@"/> <br/> <br/>
+                                Results:
+                                <obs conceptId="$@Genetic_Syndrome_Diagnosis_results@"/> <br/> <br/>
 
-                        <strong>Assessment</strong>
-                        <br/>
-                        </span>
-                        <span id="motorDevelopemt">
-                            Any increase or decrease in tone or delays in motor development? <br/>
-                            <obs conceptId="$@increase_or_decrease_in_tone_or_delays_in_motor_development@" answerConceptIds="$@NO@,$@Yes_referred_to_physiotherapy@,$@Yes_already_under_physio_care@" answerLabels="No,Yes refer to physiotherapy,Yes already under physio care" style="radio"/>
-                            <br/><br/>
-                        </span>
-                        <span id="cerebralPalsy">
-                            -Any signs of cerebral palsy (spasticity, increased tone,floppy)?
-                            <br/>
+                                <strong>Assessment</strong>
+                                <br/>
+                            </span>
+                            <span id="motorDevelopemt">
+                                Any increase or decrease in tone or delays in motor development? <br/>
+                                <obs conceptId="$@increase_or_decrease_in_tone_or_delays_in_motor_development@" answerConceptIds="$@NO@,$@Yes_referred_to_physiotherapy@,$@Yes_already_under_physio_care@" answerLabels="No,Yes refer to physiotherapy,Yes already under physio care" style="radio"/>
+                                <br/><br/>
+                            </span>
+                            <span id="cerebralPalsy">
+                                -Any signs of cerebral palsy (spasticity, increased tone,floppy)?
+                                <br/>
 
-                            <obs conceptId="$@CEREBRAL_PALSY@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
-                            , then:
-                            <obs conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptIds="$@Referred_to_mental_health@,$@already_under_Mental_health_care@" answerLabels="refer to mental health (MH),already under MH care" style="radio"/>
-                            <br/><br/>
-                        </span>
-                        <span id="bonePain">
-                            -Any localized bone pain (pathologic fracture)?
+                                <obs conceptId="$@CEREBRAL_PALSY@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
+                                , then:
+                                <obs conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptIds="$@Referred_to_mental_health@,$@already_under_Mental_health_care@" answerLabels="refer to mental health (MH),already under MH care" style="radio"/>
+                                <br/><br/>
+                            </span>
+                            <span id="bonePain">
+                                -Any localized bone pain (pathologic fracture)?
 
-                            <obs conceptId="$@localized_bone_pain@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
-                            <br/><br/>
-                        </span>
-                        <span id="familyInEIPGroup">
-                            Is child and family part of EIP group?<br/>
-                            <obs conceptId="$@Is_child_and_family_part_of_EIP_group@" answerConceptId="$@NO@" answerLabel="No" style="checkbox"/>
-                            :
-                            <obs conceptId="$@referred_to_EIP_group@" answerConceptIds="$@Referred_today@,$@Not_interested@" answerLabels="Referred today,Not interested" style="radio"/>
-                            <br/>
-                            <obs conceptId="$@Is_child_and_family_part_of_EIP_group@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox"/>
-                            <br/><br/>
-                        </span>
-                        <span id="commentsOnEIPGroup">
-                            comments on EIP Group(satisfaction, questions,and progress at home)?
-                            <obs conceptId="$@Clinican_notes@" cols="70"/>
-                        </span>
+                                <obs conceptId="$@localized_bone_pain@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio"/>
+                                <br/><br/>
+                            </span>
+                            <span id="familyInEIPGroup">
+                                Is child and family part of EIP group?<br/>
+                                <obs conceptId="$@Is_child_and_family_part_of_EIP_group@" answerConceptId="$@NO@" answerLabel="No" style="checkbox"/>
+                                :
+                                <obs conceptId="$@referred_to_EIP_group@" answerConceptIds="$@Referred_today@,$@Not_interested@" answerLabels="Referred today,Not interested" style="radio"/>
+                                <br/>
+                                <obs conceptId="$@Is_child_and_family_part_of_EIP_group@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox"/>
+                                <br/><br/>
+                            </span>
+                            <span id="commentsOnEIPGroup">
+                                comments on EIP Group(satisfaction, questions,and progress at home)?
+                                <obs conceptId="$@Clinican_notes@" cols="70"/>
+                            </span>
 
-
+                        </p>
                     </td>
                 </tr>
-
-
-
-
             </table>
-        </section>
-        <br />
-        <encounterVoided/>
-        <br/>
-        <center>
-            <submit />
-        </center>
-        <br/>
-    </div>
+        </div>
+    </section>
+    <br />
+    <encounterVoided/>
+
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
 </htmlform>

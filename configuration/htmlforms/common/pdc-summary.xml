@@ -1,11 +1,11 @@
-<htmlform 
-	htmlformUuid="4adb4ca8-976d-48fc-9149-a04584b1012a" 
-	formUuid="e1e2b51e-6ee6-472d-aa00-deb8be53b176" 
-	formName="PDC SUMMARY" 
-	formVersion="1.0" 
-	formEncounterType="71826dd4-330d-4548-9fd8-6703682fbd3a" 
-	formPublished="true" 
-	formRetired="false"
+<htmlform
+        htmlformUuid="4adb4ca8-976d-48fc-9149-a04584b1012a"
+        formUuid="e1e2b51e-6ee6-472d-aa00-deb8be53b176"
+        formName="PDC SUMMARY"
+        formVersion="1.0"
+        formEncounterType="71826dd4-330d-4548-9fd8-6703682fbd3a"
+        formPublished="true"
+        formRetired="false"
 > <!--
            PDC - Malnutrition
             Pilot_4July_v1.3NT
@@ -15,9 +15,9 @@
         -->
 
     <macros>
-      
-		
-		
+
+
+
         @has_had_feeding_difficulty@ = 0e306cec-899d-4be1-a538-88a0c7ef47ed
         @YES@ = 3cd6f600-26fe-102b-80cb-0017a47871b2
         @NO@=3cd6f86c-26fe-102b-80cb-0017a47871b2
@@ -151,206 +151,398 @@
         @RETURN_VISIT_DATE@ = 3ce94df0-26fe-102b-80cb-0017a47871b2
 
 
-<!-- New to the PDC Standard form   -->
-		@PDC_VISIT_PERIOD@=0cae5c81-abd8-4c53-b5af-7548e19034b8
-		@INTAKE_VISIT@=6754bba6-4010-48da-9ce9-0dd7f170b537
-		@GEST-3@=a65a6104-4dbb-4cb3-8786-63305a5ea0ef
-		@GEST-2@=06edf9db-bf9f-4dd9-a7cb-77b8f578aadd
-		@GEST-1@=36e2e745-0a54-42f6-aee0-1cfeac700db5
-		@GEST_FULL@=a257ae04-cb2c-4f9e-b1b6-8cad2f025ca7
-		@WEEK_1@=97be6a9f-ee62-4496-ae5c-eb1d07435ec9
-		@WEEK_2@=d5af61e1-e76c-46ea-8320-48d7d40e507f
-		@WEEK_3@=1c228b8c-4d7e-49f5-91a2-e44e66bef253
-		@MONTH_1@=4b7630e6-bf93-4fc8-a518-52ae473181ca
-		@MONTH_2@=ef023324-2613-4cfd-8d92-dc3e7fa9b71a
-		@MONTH_4@=9deb16da-fe21-4fa3-81f7-07d3bbc6a054
-		@MONTH_6@=4aaf8138-1e04-4f1c-bc4a-91e7e6277592
-		@MONTH_9@=68d94526-2af9-41f2-bfd2-3b0122cb2afe
-		@MONTH_12@=12745d5f-7015-4707-b279-3737f2899de1
-		@MONTH_18@=27808bdc-eabb-4116-81ba-0eba9d8545ad
-		@MONTH_24@=1c448e50-02bb-4c29-b9dc-9024fc96140a
-		@MONTH_30@=dab280d5-4507-4634-9565-819e68b4cf2b
-		@MONTH_36@=77becd01-1bb8-43f0-9cbb-28609de25860
-		@MONTH_48@=cdc56f0f-670f-40e2-a147-86f65d79bf50
-		@MONTH_60@=16a57e1d-88b8-41dd-bbde-b3963a84175d
-	
-		@REASON_FOR_REFERRAL_FROM_PDC@=8ee868ab-9d64-4ba2-97a2-cc83d353970c
-		@LETHARGIC@=da80ee1a-c80a-4823-a856-1313a100641c
-		@TENSE_FONTANELLE@=4359741e-7a6f-43cf-8896-69b69bc8b78e
-		
-		@NONE@=3cd743f8-26fe-102b-80cb-0017a47871b2
-		@NOT_WELL_ATTACHED@=2839c2bc-4784-4306-af23-dc91121ab79d
-		@NOT_SUCKING@=b4b4211a-2e15-4757-8856-1691068ae724
-		@BREASTFEEDING_CONCERNS@=1670fd60-ebcf-41d5-ae4c-bcaab5757b4e
-		
-		@NONE@=3cd743f8-26fe-102b-80cb-0017a47871b2
-		@NOT_WELL_ATTACHED@=2839c2bc-4784-4306-af23-dc91121ab79d
-		@NOT_SUCKING@=b4b4211a-2e15-4757-8856-1691068ae724
-		@BREASTFEEDING_CONCERNS@=1670fd60-ebcf-41d5-ae4c-bcaab5757b4e
-		@INAPPROPRIATE_BMS@=ae83b4e7-ec90-4acf-a9e2-1bd31a976ead
-		@LESS_BMS@=fe5d99f4-cdc0-4db0-a420-3f5040cda0a4
-		@POOR_PREP@=a035d114-1522-461b-9cb6-154459a70afe
-		@NON_BREASTFEEDING_CONCERNS@=afae4439-48df-494c-934e-375f5e606bd4
-		@FEW_FEEDS@=1c758c0d-d972-474b-a584-fa6ce97f1f86
-		@REFUSES_TO_FEED@=5d118e7a-c8fc-45a8-b21a-0d8cd65f257c
-		@THRUSH@=3cebb5fe-26fe-102b-80cb-0017a47871b2
-		@OTHER_LIQUIDS@=13c73335-6d2c-49d3-966f-0d19a963cd32
+        <!-- New to the PDC Standard form   -->
+        @PDC_VISIT_PERIOD@=0cae5c81-abd8-4c53-b5af-7548e19034b8
+        @INTAKE_VISIT@=6754bba6-4010-48da-9ce9-0dd7f170b537
+        @GEST-3@=a65a6104-4dbb-4cb3-8786-63305a5ea0ef
+        @GEST-2@=06edf9db-bf9f-4dd9-a7cb-77b8f578aadd
+        @GEST-1@=36e2e745-0a54-42f6-aee0-1cfeac700db5
+        @GEST_FULL@=a257ae04-cb2c-4f9e-b1b6-8cad2f025ca7
+        @WEEK_1@=97be6a9f-ee62-4496-ae5c-eb1d07435ec9
+        @WEEK_2@=d5af61e1-e76c-46ea-8320-48d7d40e507f
+        @WEEK_3@=1c228b8c-4d7e-49f5-91a2-e44e66bef253
+        @MONTH_1@=4b7630e6-bf93-4fc8-a518-52ae473181ca
+        @MONTH_2@=ef023324-2613-4cfd-8d92-dc3e7fa9b71a
+        @MONTH_4@=9deb16da-fe21-4fa3-81f7-07d3bbc6a054
+        @MONTH_6@=4aaf8138-1e04-4f1c-bc4a-91e7e6277592
+        @MONTH_9@=68d94526-2af9-41f2-bfd2-3b0122cb2afe
+        @MONTH_12@=12745d5f-7015-4707-b279-3737f2899de1
+        @MONTH_18@=27808bdc-eabb-4116-81ba-0eba9d8545ad
+        @MONTH_24@=1c448e50-02bb-4c29-b9dc-9024fc96140a
+        @MONTH_30@=dab280d5-4507-4634-9565-819e68b4cf2b
+        @MONTH_36@=77becd01-1bb8-43f0-9cbb-28609de25860
+        @MONTH_48@=cdc56f0f-670f-40e2-a147-86f65d79bf50
+        @MONTH_60@=16a57e1d-88b8-41dd-bbde-b3963a84175d
 
-		@BREASTFED_AND_NON_CONCERNS@=205a2ed1-b711-4e77-b010-5b23dae2032b
-		
-		@VISIT_CLASSIFICATION@=c3322e03-a654-4191-82f8-8da31a8a2e1e
-		@GREEN@=0aca6602-0c87-4871-99ae-4b5a19ee6261
-		@YELLOW@=9dbd379f-ceea-40eb-b205-15b13dc4bd07
-		@RED@=e56d20c0-d43b-454e-92b1-b6128100fcd7
-		
-		@ONLY_BREASTMILK@=fec3eb7c-7582-496b-9b18-a944f0258853
-		
-		@FOOD_VARIETY@=0733fc90-58cb-4f51-8905-d7135be07593
-		@LITTLE_VARIETY@=d52b2005-0709-4e7c-8001-be7390d8f2ba
-		@NO_ANIMAL@=68975d1e-62fe-4ff6-a979-67903dcb4d2d
-		@FOOD_TEXTURE@=1bb04bad-683c-4e96-a04d-f8e861f6d6f5
-		@CONCERN@=ac7f1a9a-6bb2-4310-9455-55eedabdaefa
-		@FOOD_FREQUENCY@=84644755-bedd-4ae6-b4ef-84229f70d10c
-		@LITTLE_FOOD@=f88da1ab-5ed5-441d-ad41-11cdd138f94b
-		@FEEDING_DIFFICULTIES@=0a91130b-66e1-42fc-994a-abe9180a5ecf
-		@RESPONSIVE_FEEDING@=1cdfccf5-4ef3-49fa-9c9d-34574ea7b8dc
-		@NO_CONCERN@=7b798689-3aab-4224-b4e3-6e7f8fb33b4f
-		@NON_NUTRITIOUS_FOOD@=5d78fcf5-ebe1-48b9-ac0c-6553e2f25843
-		
-		@FEEDING_DIFFICULTY@=d52ea917-4170-4b61-8951-581214bfde9b
-		
-		@HISTORY_OF_CONVULSIONS@=5f777da5-2125-4e47-91f8-b2fbfd94d92f
-		@HISTORY_OF_CONVULSIONS_STATUS@=df6f6b5e-c5ef-4bf5-b7dc-61cfd864176e
-		@PROBLEM_RESOLVED@=3cf34490-26fe-102b-80cb-0017a47871b2
-		@CURRENT@=3cdbdb2a-26fe-102b-80cb-0017a47871b2
-		@ANTICONVULSANT_STATUS@=c97d5190-67a6-4bc5-a9ea-8d140a98dd07
-		@ANTICONVULSANT@=b63ea11d-9745-4401-b380-43829012833d
-		@ANTICONVULSANT_DOSE@=bb5acdf1-29aa-46d3-a54c-f7cd07a6b309
-		@CONVULSIONS_ON_ANTICONVULSANTS@=0947c911-5e6a-4750-b555-3b47ba34b57c
-		@RESPONSE_TO_CONVULSIONS@=a7fbb010-e90d-4574-88fe-632a29140f94
-		@REFER_TO_MH@=7f6ac893-a682-4198-95be-59bbaaea8a56
-		@DOSE_CHANGE@=15c5c473-19c4-4866-9cbc-a964c289faf2
-		
-		@WEIGHT_DOSE_ADJUST@=64a344ef-ad14-440d-a872-4ce40e803f52
-		@CONVULSE_DOSE_ADJUST@=415fe1d9-9133-4c33-b443-a7f141dec069
-		@DISCONTINUE_DRUGS@=e39c4557-59b8-4407-9aea-ec909e077677
-		@CHANGE_ANTICONVULSANTS@=da6f6f63-7858-4762-adf5-e4b21330f783
-		
-		@GMCD@=e322ceed-c9df-4991-8471-269bca8efdc0
-		@EXPRESSIVE_LANGUAGE@=3d52e8c0-6100-41a3-8259-13d7578c1d86
-		@GMCD_CONCERNS@=5e284647-3b3a-409e-8fde-8bf5f232a9e4
-		@RECEPTIVE_LANGUAGE@=564cc1f6-7096-455b-b081-1b660446f49c
-		@GROSS_MOTOR@=f6afe774-394c-4591-be9e-875e4989eecd
-		@FINE_MOTOR@=acdcd429-b08a-4924-8229-c0ac9e360ed9
-		@RELATING@=1dddc9c6-7aca-4942-86cb-4d39339b767f
-		@PLAY@=278705ba-e8dd-43a1-bc62-daa8718db877
-		@SELF_HELP@=e797e67b-aaa7-4059-8bb0-d49dc4d0a72a
-		@GMCD_CLASS@=a6a6d424-1575-46bc-9988-bd92f851cf88
-		@GMCD_ACTION@=c39bef43-6dbd-49cf-bf90-369b54c7c5ac
-		@COUNSELLED@=ab1ccdbd-cde9-4c9b-9b15-a97e951f5f7e
-		@PLAY_COACHING@=99cf5b7e-9ba8-42d0-9fa9-72dc1c32dbdb
-		@REFER_FROM_PDC@=dde46ca6-d320-4935-8e6d-015bc97cf33c
-		@EIP_GROUP@=267efb02-9503-40c1-ac51-8d77fec9a329
-		@PEDIATRICIAN@=3376d997-c8e5-49a5-9a5e-8c3b0d183606
-		@PHYSIOTHERAPY@=501f3661-329e-4da6-8619-03843fa2105e
-		@OTHER_PDC_REFERRAL@=84dc9652-3bc1-4215-aab3-51ebc30305ec
-		
-		@PAPER_RUB_TEST@=1cb75c4e-ec3e-4590-8a16-0633a7cd0489
-		@RESPONDED_BOTH_EARS@=bbf34bb9-2258-4b8a-8e28-27de200f4f7d
-		@EAR_NOT_RESPONDED@=e909761c-e5a6-4de0-8e8c-0598e71cb0ad
-		@UNABLE_TO_RESPOND_TO_NOISE@=6d96fce4-db33-46a5-818d-65499d78ac65
-		@HEARING_CONCERN@=cf6cda5d-c4fc-46cc-b884-36d1362bc997
-		@REFER_TO_HEARING_SCREENING@=5dc1b92e-1b1c-462c-be36-780f6d14d2ac
-		
-		@UNABLE_TO_FIX_AND_FOLLOW@=a5914fd5-d24d-4cf4-a49b-11f94f6fe73f
-		@LAZY_EYE@=6cf20faf-ed51-4fe5-b1dd-6b28f3507ead
-		@EYE_CONCERNS@=ee0345c7-79cd-4752-bb92-9465a7ad83a2
-		@REFER_TO_OPHTHA@=74d581c2-1176-4c1c-b8b9-ab307eb2d8a7
-		
-		@HOLD_CLOSE_TO_SEE@=81f78203-8b3f-43b1-a09f-7ee6b990f546
-		
-		@FAMILY_PLANNING@=3ceb46fa-26fe-102b-80cb-0017a47871b2
-		@REFERRED_TO_FP@=d8dac0cd-b1fa-47a9-a459-2f6469245f4f
-		@FP_RESPONSE@=35bba000-c07d-4dee-bfa3-a2752634a456
-		@NOT_WANT_FP@=9b0f6172-f2a4-4199-a6ab-b654d53a3b94
-		@FP_METHOD@=9dc4818d-049b-4a39-bf3c-69b12ea18f34
-		
-		@KMC_AT_HOME@=4579757f-d395-4440-aca7-ed352f8c4bbb
-		@KMC_COUNSELING@=0a17a6a2-4516-4588-bd66-4382944f50c0
-		@KMC_COMMENTS@=133ab9a2-90d8-4854-a505-ddb50b7ff33c
-		
-		@DIFFICULTY_BREATHING@=5ce970b9-a66d-4f99-abe0-35c6fbf43b7c
-		
-		@UNDESCENDED_TESTES@=123813AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-		
-		@HEMOGLOBIN@=3ccc7158-26fe-102b-80cb-0017a47871b2
-		@IRON_SUPPLEMENT@=fee72e25-fcb3-408a-86db-a6740546b19c
-		@CURRENTLY_RECEIVING@=db7f075c-8c3c-4d38-8591-e550711549a3
-		@START_TODAY@=e2f2c8fc-42f5-4b40-a916-39635153ce78
-		@IRON_SUPPLEMENT_LEVEL@=64cf4b67-2201-413a-84ca-d62dcb1dfe56
-		@PROPHYLAXIS@=f597dc5d-1fd2-42d8-add2-f5a1b894724b
-		@TREATMENT@=3cd7c6fc-26fe-102b-80cb-0017a47871b2
-		@IRON_DOSE@=67d826a2-7274-42a0-a2c3-042c50ca3338
-		
-		@PROBLEM_LIST@=3cd94c66-26fe-102b-80cb-0017a47871b2
-		@FEEDING_ISSUE@=9d52d009-6456-44b5-aba7-f415dd4172d0
-		@UNDERWEIGHT@=8dc65af3-610b-43f5-85be-70128d07bb61
-		@STUNTED@=4df68846-21a0-481f-83af-8a7d14f76537
-		@ANEMIA@=3ccc4764-26fe-102b-80cb-0017a47871b2
-		@VISION_PROBLEM@=118938AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-		@HEARING_PROBLEM@=117698AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-		@DEVELOPMENTAL_DELAY@=cc77e021-a330-4263-8a5a-8c92696c28e3
-		@CONVULSIONS@=00fbaa09-d8d0-4392-841b-2d25d7f523c5
-		@RESPIRATORY_ISSUE@=0a25bad4-bd59-47e3-b933-36e39a3a46b9
-		@ENLARGED_HEAD@=31c32fc7-e738-45e8-a22f-2c6a8270a0fa
-		@NO_MUTUELLE@=784550d7-3646-4bdc-a0e1-9ac3432923fa
-		@CAREGIVER_MENTAL_HEALTH_ISSUE@=a6512198-1922-47c2-a6ab-2c0298cb932e
-		@FAMILY_CONFLICT@=e8512765-c936-4cbd-90dd-43ac7333eae2
-		@CHILD_NOT_REGISTERED@=c698e8b4-f247-4061-bc3e-9a93f84ed19c
-		@CHILD_PROTECTION_CONCERNS@=b8ad65fd-b91d-432a-9895-ffd294090f94
-		@NO_UBUDEHE@=80e9cba8-b507-4989-bdf8-5e6ac2acbe24
-		
-		@OTHER_PROBLEM@=467160ae-9f0b-40d8-9a2d-2ecab1292173
+        @REASON_FOR_REFERRAL_FROM_PDC@=8ee868ab-9d64-4ba2-97a2-cc83d353970c
+        @LETHARGIC@=da80ee1a-c80a-4823-a856-1313a100641c
+        @TENSE_FONTANELLE@=4359741e-7a6f-43cf-8896-69b69bc8b78e
+
+        @NONE@=3cd743f8-26fe-102b-80cb-0017a47871b2
+        @NOT_WELL_ATTACHED@=2839c2bc-4784-4306-af23-dc91121ab79d
+        @NOT_SUCKING@=b4b4211a-2e15-4757-8856-1691068ae724
+        @BREASTFEEDING_CONCERNS@=1670fd60-ebcf-41d5-ae4c-bcaab5757b4e
+
+        @NONE@=3cd743f8-26fe-102b-80cb-0017a47871b2
+        @NOT_WELL_ATTACHED@=2839c2bc-4784-4306-af23-dc91121ab79d
+        @NOT_SUCKING@=b4b4211a-2e15-4757-8856-1691068ae724
+        @BREASTFEEDING_CONCERNS@=1670fd60-ebcf-41d5-ae4c-bcaab5757b4e
+        @INAPPROPRIATE_BMS@=ae83b4e7-ec90-4acf-a9e2-1bd31a976ead
+        @LESS_BMS@=fe5d99f4-cdc0-4db0-a420-3f5040cda0a4
+        @POOR_PREP@=a035d114-1522-461b-9cb6-154459a70afe
+        @NON_BREASTFEEDING_CONCERNS@=afae4439-48df-494c-934e-375f5e606bd4
+        @FEW_FEEDS@=1c758c0d-d972-474b-a584-fa6ce97f1f86
+        @REFUSES_TO_FEED@=5d118e7a-c8fc-45a8-b21a-0d8cd65f257c
+        @THRUSH@=3cebb5fe-26fe-102b-80cb-0017a47871b2
+        @OTHER_LIQUIDS@=13c73335-6d2c-49d3-966f-0d19a963cd32
+
+        @BREASTFED_AND_NON_CONCERNS@=205a2ed1-b711-4e77-b010-5b23dae2032b
+
+        @VISIT_CLASSIFICATION@=c3322e03-a654-4191-82f8-8da31a8a2e1e
+        @GREEN@=0aca6602-0c87-4871-99ae-4b5a19ee6261
+        @YELLOW@=9dbd379f-ceea-40eb-b205-15b13dc4bd07
+        @RED@=e56d20c0-d43b-454e-92b1-b6128100fcd7
+
+        @ONLY_BREASTMILK@=fec3eb7c-7582-496b-9b18-a944f0258853
+
+        @FOOD_VARIETY@=0733fc90-58cb-4f51-8905-d7135be07593
+        @LITTLE_VARIETY@=d52b2005-0709-4e7c-8001-be7390d8f2ba
+        @NO_ANIMAL@=68975d1e-62fe-4ff6-a979-67903dcb4d2d
+        @FOOD_TEXTURE@=1bb04bad-683c-4e96-a04d-f8e861f6d6f5
+        @CONCERN@=ac7f1a9a-6bb2-4310-9455-55eedabdaefa
+        @FOOD_FREQUENCY@=84644755-bedd-4ae6-b4ef-84229f70d10c
+        @LITTLE_FOOD@=f88da1ab-5ed5-441d-ad41-11cdd138f94b
+        @FEEDING_DIFFICULTIES@=0a91130b-66e1-42fc-994a-abe9180a5ecf
+        @RESPONSIVE_FEEDING@=1cdfccf5-4ef3-49fa-9c9d-34574ea7b8dc
+        @NO_CONCERN@=7b798689-3aab-4224-b4e3-6e7f8fb33b4f
+        @NON_NUTRITIOUS_FOOD@=5d78fcf5-ebe1-48b9-ac0c-6553e2f25843
+
+        @FEEDING_DIFFICULTY@=d52ea917-4170-4b61-8951-581214bfde9b
+
+        @HISTORY_OF_CONVULSIONS@=5f777da5-2125-4e47-91f8-b2fbfd94d92f
+        @HISTORY_OF_CONVULSIONS_STATUS@=df6f6b5e-c5ef-4bf5-b7dc-61cfd864176e
+        @PROBLEM_RESOLVED@=3cf34490-26fe-102b-80cb-0017a47871b2
+        @CURRENT@=3cdbdb2a-26fe-102b-80cb-0017a47871b2
+        @ANTICONVULSANT_STATUS@=c97d5190-67a6-4bc5-a9ea-8d140a98dd07
+        @ANTICONVULSANT@=b63ea11d-9745-4401-b380-43829012833d
+        @ANTICONVULSANT_DOSE@=bb5acdf1-29aa-46d3-a54c-f7cd07a6b309
+        @CONVULSIONS_ON_ANTICONVULSANTS@=0947c911-5e6a-4750-b555-3b47ba34b57c
+        @RESPONSE_TO_CONVULSIONS@=a7fbb010-e90d-4574-88fe-632a29140f94
+        @REFER_TO_MH@=7f6ac893-a682-4198-95be-59bbaaea8a56
+        @DOSE_CHANGE@=15c5c473-19c4-4866-9cbc-a964c289faf2
+
+        @WEIGHT_DOSE_ADJUST@=64a344ef-ad14-440d-a872-4ce40e803f52
+        @CONVULSE_DOSE_ADJUST@=415fe1d9-9133-4c33-b443-a7f141dec069
+        @DISCONTINUE_DRUGS@=e39c4557-59b8-4407-9aea-ec909e077677
+        @CHANGE_ANTICONVULSANTS@=da6f6f63-7858-4762-adf5-e4b21330f783
+
+        @GMCD@=e322ceed-c9df-4991-8471-269bca8efdc0
+        @EXPRESSIVE_LANGUAGE@=3d52e8c0-6100-41a3-8259-13d7578c1d86
+        @GMCD_CONCERNS@=5e284647-3b3a-409e-8fde-8bf5f232a9e4
+        @RECEPTIVE_LANGUAGE@=564cc1f6-7096-455b-b081-1b660446f49c
+        @GROSS_MOTOR@=f6afe774-394c-4591-be9e-875e4989eecd
+        @FINE_MOTOR@=acdcd429-b08a-4924-8229-c0ac9e360ed9
+        @RELATING@=1dddc9c6-7aca-4942-86cb-4d39339b767f
+        @PLAY@=278705ba-e8dd-43a1-bc62-daa8718db877
+        @SELF_HELP@=e797e67b-aaa7-4059-8bb0-d49dc4d0a72a
+        @GMCD_CLASS@=a6a6d424-1575-46bc-9988-bd92f851cf88
+        @GMCD_ACTION@=c39bef43-6dbd-49cf-bf90-369b54c7c5ac
+        @COUNSELLED@=ab1ccdbd-cde9-4c9b-9b15-a97e951f5f7e
+        @PLAY_COACHING@=99cf5b7e-9ba8-42d0-9fa9-72dc1c32dbdb
+        @REFER_FROM_PDC@=dde46ca6-d320-4935-8e6d-015bc97cf33c
+        @EIP_GROUP@=267efb02-9503-40c1-ac51-8d77fec9a329
+        @PEDIATRICIAN@=3376d997-c8e5-49a5-9a5e-8c3b0d183606
+        @PHYSIOTHERAPY@=501f3661-329e-4da6-8619-03843fa2105e
+        @OTHER_PDC_REFERRAL@=84dc9652-3bc1-4215-aab3-51ebc30305ec
+
+        @PAPER_RUB_TEST@=1cb75c4e-ec3e-4590-8a16-0633a7cd0489
+        @RESPONDED_BOTH_EARS@=bbf34bb9-2258-4b8a-8e28-27de200f4f7d
+        @EAR_NOT_RESPONDED@=e909761c-e5a6-4de0-8e8c-0598e71cb0ad
+        @UNABLE_TO_RESPOND_TO_NOISE@=6d96fce4-db33-46a5-818d-65499d78ac65
+        @HEARING_CONCERN@=cf6cda5d-c4fc-46cc-b884-36d1362bc997
+        @REFER_TO_HEARING_SCREENING@=5dc1b92e-1b1c-462c-be36-780f6d14d2ac
+
+        @UNABLE_TO_FIX_AND_FOLLOW@=a5914fd5-d24d-4cf4-a49b-11f94f6fe73f
+        @LAZY_EYE@=6cf20faf-ed51-4fe5-b1dd-6b28f3507ead
+        @EYE_CONCERNS@=ee0345c7-79cd-4752-bb92-9465a7ad83a2
+        @REFER_TO_OPHTHA@=74d581c2-1176-4c1c-b8b9-ab307eb2d8a7
+
+        @HOLD_CLOSE_TO_SEE@=81f78203-8b3f-43b1-a09f-7ee6b990f546
+
+        @FAMILY_PLANNING@=3ceb46fa-26fe-102b-80cb-0017a47871b2
+        @REFERRED_TO_FP@=d8dac0cd-b1fa-47a9-a459-2f6469245f4f
+        @FP_RESPONSE@=35bba000-c07d-4dee-bfa3-a2752634a456
+        @NOT_WANT_FP@=9b0f6172-f2a4-4199-a6ab-b654d53a3b94
+        @FP_METHOD@=9dc4818d-049b-4a39-bf3c-69b12ea18f34
+
+        @KMC_AT_HOME@=4579757f-d395-4440-aca7-ed352f8c4bbb
+        @KMC_COUNSELING@=0a17a6a2-4516-4588-bd66-4382944f50c0
+        @KMC_COMMENTS@=133ab9a2-90d8-4854-a505-ddb50b7ff33c
+
+        @DIFFICULTY_BREATHING@=5ce970b9-a66d-4f99-abe0-35c6fbf43b7c
+
+        @UNDESCENDED_TESTES@=123813AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+        @HEMOGLOBIN@=3ccc7158-26fe-102b-80cb-0017a47871b2
+        @IRON_SUPPLEMENT@=fee72e25-fcb3-408a-86db-a6740546b19c
+        @CURRENTLY_RECEIVING@=db7f075c-8c3c-4d38-8591-e550711549a3
+        @START_TODAY@=e2f2c8fc-42f5-4b40-a916-39635153ce78
+        @IRON_SUPPLEMENT_LEVEL@=64cf4b67-2201-413a-84ca-d62dcb1dfe56
+        @PROPHYLAXIS@=f597dc5d-1fd2-42d8-add2-f5a1b894724b
+        @TREATMENT@=3cd7c6fc-26fe-102b-80cb-0017a47871b2
+        @IRON_DOSE@=67d826a2-7274-42a0-a2c3-042c50ca3338
+
+        @PROBLEM_LIST@=3cd94c66-26fe-102b-80cb-0017a47871b2
+        @FEEDING_ISSUE@=9d52d009-6456-44b5-aba7-f415dd4172d0
+        @UNDERWEIGHT@=8dc65af3-610b-43f5-85be-70128d07bb61
+        @STUNTED@=4df68846-21a0-481f-83af-8a7d14f76537
+        @ANEMIA@=3ccc4764-26fe-102b-80cb-0017a47871b2
+        @VISION_PROBLEM@=118938AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        @HEARING_PROBLEM@=117698AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        @DEVELOPMENTAL_DELAY@=cc77e021-a330-4263-8a5a-8c92696c28e3
+        @CONVULSIONS@=00fbaa09-d8d0-4392-841b-2d25d7f523c5
+        @RESPIRATORY_ISSUE@=0a25bad4-bd59-47e3-b933-36e39a3a46b9
+        @ENLARGED_HEAD@=31c32fc7-e738-45e8-a22f-2c6a8270a0fa
+        @NO_MUTUELLE@=784550d7-3646-4bdc-a0e1-9ac3432923fa
+        @CAREGIVER_MENTAL_HEALTH_ISSUE@=a6512198-1922-47c2-a6ab-2c0298cb932e
+        @FAMILY_CONFLICT@=e8512765-c936-4cbd-90dd-43ac7333eae2
+        @CHILD_NOT_REGISTERED@=c698e8b4-f247-4061-bc3e-9a93f84ed19c
+        @CHILD_PROTECTION_CONCERNS@=b8ad65fd-b91d-432a-9895-ffd294090f94
+        @NO_UBUDEHE@=80e9cba8-b507-4989-bdf8-5e6ac2acbe24
+
+        @OTHER_PROBLEM@=467160ae-9f0b-40d8-9a2d-2ecab1292173
         @WT_AGE_Z_SCORE@=c9d8c9db-518c-4a00-985d-d2fc8ac1f739
         @CLINICIAN_NOTE@=6602a73b-b8d3-40bc-bae8-f00ff3b9cceb
         @FEEDING_ASSESSMENT@=c3322e03-a654-4191-82f8-8da31a8a2e1e
-		
+
     </macros>
 
+    <style>
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
+        display: block;
+        }
 
-    <section>
+        form fieldset {
+        display: block;
+        }
 
-        <table border="1" cellspacing="0" cellpadding="6" width="100%">
-            <tr>
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
+        }
 
-                <td>Date and Time: <encounterDate id="encounterDate" default="today" />
-                </td>
-            </tr>
-            <tr>
-                <td>Clinique / Clinic: <encounterLocation />
-                </td>
-                <td>Author:<encounterProvider />
-                </td>
-            </tr>
-        </table>
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
 
-        <obs conceptId="$@WEIGHT@"/>
-        <obs conceptId="$@HEIGHT@"/>
-        <obs conceptId="$@WEIGHT_FOR_AGE_Z_SCORE@"/>
-        <obs conceptId="$@WEIGHT_FOR_HEIGHT_Z_SCORE@"/>
-        <obs conceptId="$@HEIGHT_FOR_AGE_Z_SCORE@"/>
-        <obs conceptId="$@HEAD_CIRCUMFERENCE@"/>
-        <obs conceptId="$@ANTICONVULSANT@"/>
-        <obs conceptId="$@GMCD_CLASS@"/>
-        <obs conceptId="$@IRON_DOSE@" />
-        <obs conceptId="$@PROBLEM_LIST@"/>
-        <obs conceptId="$@REASON_FOR_REFERRAL_FROM_PDC@" />
+        .section-header {
+        margin-top: 1.5em;
+        }
 
-        <obs conceptId="$@WT_AGE_Z_SCORE@"/>
-        <obs conceptId="$@CLINICIAN_NOTE@"/>
-        <obs conceptId="$@FEEDING_ASSESSMENT@"/>
+        .past-medical-history-item {}
 
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
+        width: 100%;
+        }
+
+        .div {
+        float: left;
+        }
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        .date-one-line {
+        display: flex;
+        }
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
+        }
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
+        }
+    </style>
+
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
+
+            <table border="1" style="table-layout: fixed;" cellspacing="0" cellpadding="6" width="80%">
+                <tr>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
+                    </td>
+                    <td>
+                        Health Facility:
+                        <encounterLocation default="GlobalProperty:billing.defaultLocation" />
+                    </td>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Summary">
+        <div class="section-container">
+            <p>
+                <obs conceptId="$@WEIGHT@" style="text"/>
+                <obs conceptId="$@HEIGHT@"/>
+                <obs conceptId="$@WEIGHT_FOR_AGE_Z_SCORE@"/>
+                <obs conceptId="$@WEIGHT_FOR_HEIGHT_Z_SCORE@"/>
+                <obs conceptId="$@HEIGHT_FOR_AGE_Z_SCORE@"/>
+                <obs conceptId="$@HEAD_CIRCUMFERENCE@"/>
+                <obs conceptId="$@ANTICONVULSANT@"/>
+                <obs conceptId="$@GMCD_CLASS@"/>
+                <obs conceptId="$@IRON_DOSE@" />
+                <obs conceptId="$@PROBLEM_LIST@"/>
+                <obs conceptId="$@REASON_FOR_REFERRAL_FROM_PDC@" />
+
+                <obs conceptId="$@WT_AGE_Z_SCORE@"/>
+                <obs conceptId="$@CLINICIAN_NOTE@"/>
+                <obs conceptId="$@FEEDING_ASSESSMENT@"/>
+            </p>
+        </div>
     </section>
 
-</htmlform>
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
 
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
+</htmlform>

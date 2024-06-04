@@ -1,18 +1,11 @@
-<htmlform 
-	htmlformUuid="0fe277bc-841e-4799-b8f9-ebaf5c64f337" 
-	formUuid="c0107214-0064-4fc1-b948-0bd21fcd2c69" 
-	formName="PDC Referral Form" 
-	formDescription="Pediatric Development Clinic Referral form" 
-	formVersion="1.0" 
-	formEncounterType="71826dd4-330d-4548-9fd8-6703682fbd3a" 
-	formPublished="true" 
-	formRetired="false"
-> <!--
+<htmlform htmlformUuid="0fe277bc-841e-4799-b8f9-ebaf5c64f337" formUuid="c0107214-0064-4fc1-b948-0bd21fcd2c69"
+          formName="PDC Referral Form" formDescription="Pediatric Development Clinic Referral form" formVersion="1.0"
+          formEncounterType="71826dd4-330d-4548-9fd8-6703682fbd3a" formPublished="true" formRetired="false"> <!--
 	   PDC Referral form
 	   PDC_referral_FORM.doc
 		Author:  Hema
-		Builder: Neza 
-		started on Sept 22, 2012		
+		Builder: Neza
+		started on Sept 22, 2012
 	-->
     <macros>
         @BIRTHWEIGHT_KG@=3cf15b3a-26fe-102b-80cb-0017a47871b2
@@ -91,610 +84,898 @@
 
     </macros>
     <style>
-        .formName {
-        background-color: #e0e0ff;
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
+        display: block;
+        }
+
+        form fieldset {
+        display: block;
+        }
+
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
+        }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
         }
 
         .section {
-        border: 1px solid #8FABC7;
-        width: 99%;
-        padding: 2px;
-        text-align: left;
-        margin-bottom: 10px;
+        width: 100%;
         }
 
-        .disabled {
-        color: #D8D8D8;
+        .div {
+        float: left;
         }
 
-        .sectionHeader {
-        background-color: #3333cc;
-        color: white;
-        display: block;
-        padding: 2px;
-        font-weight: bold;
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
         }
 
-        table.symptoms th {
-        text-align: right;
+        .side-by-side label {
+        display: inline-block;
         }
 
-        th.subheader {
-        background-color: #8FABC7;
-        color: white
+        .date-one-line {
+        display: flex;
         }
 
-        .note {
-        color: red;
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
         }
 
-        td {
-        vertical-align: top;
+        .date-one-line span {
+        display: flex;
         }
 
-        table.labTable td {
-        color: red;
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
         }
 
-        table.labTable
-        td.dateField {
-        text-align: right;
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
         }
 
-        table.identifierTable td {
-        padding-right: 10px;
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
         }
 
-        div.paddedTable span {
-        padding-right: 20px;
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
         }
 
-        .indented {
-        padding-left: 20pt;
-        padding-right: 20pt;
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
         }
 
-        .bigIndent {
-        padding-left: 40pt;
-        padding-right: 10pt;
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
         }
 
-        .newpage {
-        color: #8FABC7;
-        font-weight: bold;
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
         }
 
-        table {
-        border-collapse: collapse;
+        .small-input input {
+        min-width: 5em;
         }
 
-        .disdiv {
-        background-color: white;
+        .flexView {
+        display: flex;
         }
     </style>
     <script>
-	$j(function() {
-		$j('.disdiv').find('input').attr('disabled', 'true');
-	});
-</script>
+        $j(function () {
+        $j('.disdiv').find('input').attr('disabled', 'true');
+        });
+    </script>
     <script type="text/javascript">
-	if (jQuery) {
-		$j(document)
-				.ready(
-						function() {
-							if ($j.browser.msie) {
-								$j(":checkbox").click(function() {
-									$j(this).change();
-								});
-							}
-							$j(".checkboxGroup")
-									.each(
-											function() {
-												var group = $j(this);
-												var uncheckAll = function() {
-													group
-															.find(
-																	"input[type$='checkbox']")
-															.attr("checked",
-																	false);
-													group
-															.find(
-																	"input[type$='checkbox']")
-															.change();
-												}
-												var uncheckRadioAndAll = function() {
-													group
-															.find(
-																	"#checkboxAll,#checkboxRadio")
-															.find(
-																	"input[type$='checkbox']")
-															.attr("checked",
-																	false);
-													group
-															.find(
-																	"#checkboxAll,#checkboxRadio")
-															.find(
-																	"input[type$='checkbox']")
-															.change();
-												}
+        if (jQuery) {
+        $j(document)
+        .ready(
+        function () {
+        if ($j.browser.msie) {
+        $j(":checkbox").click(function () {
+        $j(this).change();
+        });
+        }
+        $j(".checkboxGroup")
+        .each(
+        function () {
+        var group = $j(this);
+        var uncheckAll = function () {
+        group
+        .find(
+        "input[type$='checkbox']")
+        .attr("checked",
+        false);
+        group
+        .find(
+        "input[type$='checkbox']")
+        .change();
+        }
+        var uncheckRadioAndAll = function () {
+        group
+        .find(
+        "#checkboxAll,#checkboxRadio")
+        .find(
+        "input[type$='checkbox']")
+        .attr("checked",
+        false);
+        group
+        .find(
+        "#checkboxAll,#checkboxRadio")
+        .find(
+        "input[type$='checkbox']")
+        .change();
+        }
 
-												group
-														.find("#checkboxAll")
-														.find("input")
-														.click(
-																function() {
-																	var flip;
-																	var checked = $j(
-																			this)
-																			.siblings(
-																					":checkbox:first")
-																			.attr(
-																					"checked");
-																	if ($j(this)
-																			.attr(
-																					"name") == $j(
-																			this)
-																			.parents(
-																					"#checkboxAll:first")
-																			.find(
-																					":checkbox:first")
-																			.attr(
-																					"name")) {
-																		checked = $j(
-																				this)
-																				.attr(
-																						"checked");
-																		flip = checked;
-																	} else {
-																		flip = !checked;
-																	}
-																	if ($j(this)
-																			.attr(
-																					"type") == "text")
-																		if (flip == false)
-																			flip = !filp; // this is so the user doesn't go to check the checkbox, then uncheck it when they hit the input.
-																	uncheckAll();
-																	$j(this)
-																			.parents(
-																					"#checkboxAll:first")
-																			.find(
-																					":checkbox")
-																			.attr(
-																					"checked",
-																					flip);
-																	$j(this)
-																			.parents(
-																					"#checkboxAll:first")
-																			.find(
-																					":checkbox")
-																			.change();
-																});
+        group
+        .find("#checkboxAll")
+        .find("input")
+        .click(
+        function () {
+        var flip;
+        var checked = $j(
+        this)
+        .siblings(
+        ":checkbox:first")
+        .attr(
+        "checked");
+        if ($j(this)
+        .attr(
+        "name") == $j(
+        this)
+        .parents(
+        "#checkboxAll:first")
+        .find(
+        ":checkbox:first")
+        .attr(
+        "name")) {
+        checked = $j(
+        this)
+        .attr(
+        "checked");
+        flip = checked;
+        } else {
+        flip = !checked;
+        }
+        if ($j(this)
+        .attr(
+        "type") == "text")
+        if (flip == false)
+        flip = !filp; // this is so the user doesn't go to check the checkbox, then uncheck it when they hit the input.
+        uncheckAll();
+        $j(this)
+        .parents(
+        "#checkboxAll:first")
+        .find(
+        ":checkbox")
+        .attr(
+        "checked",
+        flip);
+        $j(this)
+        .parents(
+        "#checkboxAll:first")
+        .find(
+        ":checkbox")
+        .change();
+        });
 
-												group
-														.find("#checkboxRadio")
-														.find(
-																"input[type$='checkbox']")
-														.click(
-																function() {
-																	uncheckAll();
-																	$j(this)
-																			.siblings(
-																					"input[type$='checkbox']")
-																			.attr(
-																					"checked",
-																					false);
-																	$j(this)
-																			.attr(
-																					"checked",
-																					true);
-																	$j(this)
-																			.change();
-																});
+        group
+        .find("#checkboxRadio")
+        .find(
+        "input[type$='checkbox']")
+        .click(
+        function () {
+        uncheckAll();
+        $j(this)
+        .siblings(
+        "input[type$='checkbox']")
+        .attr(
+        "checked",
+        false);
+        $j(this)
+        .attr(
+        "checked",
+        true);
+        $j(this)
+        .change();
+        });
 
-												group
-														.find(
-																"#checkboxCheckbox")
-														.click(
-																function() {
-																	uncheckRadioAndAll();
-											  });
-											});
-						                });
-	}
+        group
+        .find(
+        "#checkboxCheckbox")
+        .click(
+        function () {
+        uncheckRadioAndAll();
+        });
+        });
+        });
+        }
 
-	/* $j(document).ready(function() {
-		getField('weight.value').change(function() {
-			var birthWeight = getValue("weight.value");
-			if(birthWeight != null){
-				var bweight = calculateBirthWeight(birthWeight);
-					setValue('weight.value', bweight);
-					}
-			});
-		});
-	 */
-	$j(document).ready(function() {
-		getField('weight.value').change(function() {
-			var birthWeight = getValue("weight.value");
-			if( birthWeight != null &amp;&amp; birthWeight >= 500 &amp;&amp; birthWeight &lt; 10000 ) {
-				var bweight = calculateBirthWeight(birthWeight);
-					setValue('weight.value', bweight);
-					}
-			else if(birthWeight != null &amp;&amp; birthWeight &lt; 10){
-				var bweight = birthWeight;
-				setValue('weight.value', bweight);
-				alert("BirthWeight is already in Kg and will not be converted");
-			}
+        /* $j(document).ready(function() {
+        getField('weight.value').change(function() {
+        var birthWeight = getValue("weight.value");
+        if(birthWeight != null){
+        var bweight = calculateBirthWeight(birthWeight);
+        setValue('weight.value', bweight);
+        }
+        });
+        });
+        */
+        $j(document).ready(function () {
+        getField('weight.value').change(function () {
+        var birthWeight = getValue("weight.value");
+        if (birthWeight != null &amp;&amp; birthWeight >= 500 &amp;&amp; birthWeight &lt; 10000 ) {
+        var bweight = calculateBirthWeight(birthWeight);
+        setValue('weight.value', bweight);
+        }
+        else if (birthWeight != null &amp;&amp; birthWeight &lt; 10){
+        var bweight = birthWeight;
+        setValue('weight.value', bweight);
+        alert("BirthWeight is already in Kg and will not be converted");
+        }
 
-			else if ( (birthWeight != null &amp;&amp; birthWeight > 10 &amp;&amp; birthWeight &lt; 500) || birthWeight > 10000 ) {
-				alert("please enter a valid birthweight between 500 and 10000");
-		    }
+        else if ((birthWeight != null &amp;&amp; birthWeight > 10 &amp;&amp; birthWeight &lt; 500) || birthWeight > 10000 ) {
+        alert("please enter a valid birthweight between 500 and 10000");
+        }
 
 
         });
-    });
-    $j(document).ready(function(){
-        beforeSubmit.push(function() {
+        });
+        $j(document).ready(function () {
+        beforeSubmit.push(function () {
         /* pop ups */
-            var Trisomy_21_suspected_or_confirmed = getValue('Trisomy_21_suspected_or_confirmed.value');
-            var Cleft_Lip_or_Palate = getValue('Cleft_Lip_or_Palate.value');
-            var Other_Developmental_Delay = getValue('Other_Developmental_Delay.value');
-            var formsToFill = "";
+        var Trisomy_21_suspected_or_confirmed = getValue('Trisomy_21_suspected_or_confirmed.value');
+        var Cleft_Lip_or_Palate = getValue('Cleft_Lip_or_Palate.value');
+        var Other_Developmental_Delay = getValue('Other_Developmental_Delay.value');
+        var formsToFill = "";
 
 
-            if(Trisomy_21_suspected_or_confirmed != null &#38;&#38; Trisomy_21_suspected_or_confirmed != ''){
-                formsToFill = formsToFill+ " PDC Condition specific (Trisomy 21) ,";
-            }
-            if(Cleft_Lip_or_Palate != null &#38;&#38; Cleft_Lip_or_Palate != ''){
-                formsToFill = formsToFill+ " PDC Conditional Specific (Cleft Lip) ,"
-            }
-            if(Other_Developmental_Delay != null &#38;&#38; Other_Developmental_Delay != ''){
-                formsToFill = formsToFill+ " PDC Conditional Specific (Global Developmental Delay) ,"
-            }
+        if (Trisomy_21_suspected_or_confirmed != null &#38;&#38; Trisomy_21_suspected_or_confirmed != ''){
+        formsToFill = formsToFill + " PDC Condition specific (Trisomy 21) ,";
+        }
+        if (Cleft_Lip_or_Palate != null &#38;&#38; Cleft_Lip_or_Palate != ''){
+        formsToFill = formsToFill + " PDC Conditional Specific (Cleft Lip) ,"
+        }
+        if (Other_Developmental_Delay != null &#38;&#38; Other_Developmental_Delay != '') {
+        formsToFill = formsToFill + " PDC Conditional Specific (Global Developmental Delay) ,"
+        }
 
-            window.alert("Please fill out These forms : " + formsToFill);
-            return true;
+        window.alert("Please fill out These forms : " + formsToFill);
+        return true;
         });
 
 
-    });
+        });
 
 
 
 
-		function calculateBirthWeight(birthWeight) {
-		    var bsa;
+        function calculateBirthWeight(birthWeight) {
+        var bsa;
 
-		    bsa = (birthWeight*0.001)
+        bsa = (birthWeight * 0.001)
 
-		    return bsa;
-		}
+        return bsa;
+        }
 
-</script> <section>
+    </script>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
 
-        <table border="0" cellspacing="0" cellpadding="6" width="100%">
-            <tr>
-                <td><img src="/openmrs/moduleResources/rwandareports/images/pihHands.png" align="left"
-                         height="65" ></img>
-                    <h2>
-                        &#160;&#160;Inshuti Mu Buzima <br /> &#160;&#160;PIH Rwanda
-                    </h2></td>
-                <td><strong> PDC Program / <span class="disabled">Programme de PDC </span>
-                </strong> <br /> PDC_2014Aug22_JJWv1.doc</td>
-            </tr>
-            <tr>
-                <td><b>ID #: <lookup class="value"
-                                     expression="patientIdentifiers.get(&quot;IMB ID&quot;)" /> </b></td>
-                <td>Referral Date: <encounterDate default="today" /></td>
-                <td>Location: <encounterLocation /></td>
-                <td>Date of PDC Appointment:<obs conceptId="$@RETURN_VISIT_DATE@" allowFutureDates="true" /></td>
+            <table border="1" style="table-layout: fixed;" cellspacing="0" cellpadding="6" width="80%">
+                <tr>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
+                    </td>
+                    <td>
+                        Health Facility:
+                        <encounterLocation default="GlobalProperty:billing.defaultLocation" />
+                    </td>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="date-one-line">
+                            Date of PDC Appointment:
+                            <obs conceptId="$@RETURN_VISIT_DATE@" allowFutureDates="true" />
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            Mother's Name (First and Last):
+                            <obs conceptId="$@FIRST_NAME_OF_MOTHER@" labelText="" />&#160;&#160;
+                            <obs conceptId="$@LAST_NAME_OF_MOTHER@" labelText="" />
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            Phone Number:
+                            <obs conceptId="$@TELEPHONE_NUMBER@" />
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title"
+             headerCode="Pediatric Development Clinic Referral Form">
+        <div class="section-container">
+            <table border="1" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td width="20%">
+                        <p class="date-one-line">
+                            <b>Date of Admission</b>
+                            <obs conceptId="$@ADMISSION_DATE@" />
+                        </p>
+                    </td>
+                    <td width="20%">
+                        <p class="date-one-line small-input">
+                            <b>Date of Birth</b>
+                            <lookup expression="patient.birthdate" />
+                            <patient field="birthDateOrAge" />
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%">
+                        <p class="flexView small-input">
+                            <b>Gestational Age</b>
+                            <obs conceptId="$@Gestational_age_at_birth_in_weeks@" />(Weeks)
+                        </p>
+                    </td>
+                    <td width="20%">
+                        <p class="flexView small-input">
+                            <b>Birth Weight</b>
+                            <obs conceptId="$@BIRTHWEIGHT_KG@" id="weight" />(grams) entered but saved in Kg
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Birth History</b></td>
+                    <td>
+                        <table width="100%">
 
-            </tr>
-            <tr>
-                <td>Last name/<span class="disabled">Nom: </span><lookup class="value"
-                                                                         expression="patient.personName.familyName" /></td>
-                <td>First name/<span class="disabled">Prenom: </span><lookup class="value"
-                                                                             expression="patient.personName.givenName" /></td>
-                <td>Sex: <lookup class="value" expression="patient.Gender"/></td>
-                <td></td>
-            </tr>
-            <tr><td><addressHierarchyRwanda/></td>
-            </tr>
+                            <tr>
+                                <td colspan="9">
+                                    <table width="100%">
+                                        <tr>
+                                            <td class="checkboxGroup">
+                                                <span id="checkboxRadio">
+                                                    <p class="radio">
+                                                        Site of Birth:&#160;&#160;
+                                                        <obs conceptId="$@BIRTH_LOCATION_TYPE@"
+                                                             answerConceptId="$@HOSPITAL@" answerLabel="Hospital" />
+                                                        &#160;&#160;&#160;&#160;&#160;&#160;
+                                                        <obs conceptId="$@BIRTH_LOCATION_TYPE@"
+                                                             answerConceptId="$@HEALTH_CENTER@"
+                                                             answerLabel="Health Center" />
+                                                        &#160;&#160;&#160;&#160;&#160;&#160;
+                                                        <obs conceptId="$@BIRTH_LOCATION_TYPE@"
+                                                             answerConceptId="$@HOUSE@" answerLabel="Home" />
+                                                        &#160;&#160;&#160;&#160;&#160;&#160;
+                                                        <obs conceptId="$@BIRTH_LOCATION_TYPE@"
+                                                             answerConceptId="$@ROAD@" answerLabel="En route" />
+                                                        &#160;&#160;&#160;&#160;&#160;&#160;
+                                                        <obs conceptId="$@BIRTH_LOCATION_TYPE@"
+                                                             answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other:" />
+                                                        &#160;&#160;&#160;&#160;&#160;&#160;
+                                                        <obs conceptId="$@BIRTH_LOCATION_TYPE_NON_CODED@" />
+                                                    </p>
+                                                </span><br /><br />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="checkboxGroup"><span
+                                                    id="checkboxRadio">
+                                                <p class="radio">
+                                                    Delivery:&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                                    <obs conceptId="$@METHOD_OF_DELIVERY@"
+                                                         answerConceptId="$@SPONTANEOUS_VAGINAL_DELIVERY@"
+                                                         answerLabel="Vaginal" />
+                                                    &#160;&#160;&#160;&#160;&#160;&#160;
+                                                    <obs conceptId="$@METHOD_OF_DELIVERY@"
+                                                         answerConceptId="$@CESAREAN_SECTION@" answerLabel="C-Section" />
+                                                </p>
+                                            </span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="checkboxGroup"><span id="checkboxRadio">
+                                                <p class="side-by-side radio">
+                                                    Presence Of Meconium:
+                                                    <obs conceptId="$@Presence_Of_Meconium@" answerConceptId="$@YES@"
+                                                         answerLabel="Yes" />
+                                                    &#160;&#160;&#160;&#160;&#160;&#160;
+                                                    <obs conceptId="$@Presence_Of_Meconium@" answerConceptId="$@NO@"
+                                                         answerLabel="No" />
+                                                </p>
+                                            </span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p class="small-input flexView">
+                                                    Apgars:
+                                                    <obs conceptId="$@APGAR1@" />/
+                                                    <obs conceptId="$@APGAR5@" />/
+                                                    <obs conceptId="$@APGAR10@" />
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maternal Risk Factors:<br /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p class="radio side-by-side">
+                                                    HIV:&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                                    <obs conceptId="$@RESULT_OF_HIV_TEST@" answerConceptId="$@POSITIVE@"
+                                                         answerLabel="Seropositive" />
+                                                    &#160;&#160;&#160;&#160;&#160;&#160;
+                                                    <obs conceptId="$@RESULT_OF_HIV_TEST@" answerConceptId="$@NEGATIVE@"
+                                                         answerLabel="Seronegative" />
+                                                    &#160;&#160;&#160;&#160;If positive, on ARVs?
+                                                    <obs conceptId="$@ON_ARVS@" answerConceptId="$@YES@" />
+                                                    <obs conceptId="$@ON_ARVS@" answerConceptId="$@NO@" />
+                                                </p>
+                                            </td>
+                                        </tr>
 
-            <tr>
-                <td>Mother's Name (First and Last):&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                    <obs conceptId="$@FIRST_NAME_OF_MOTHER@" labelText="" /> </td>
-                <td><obs conceptId="$@LAST_NAME_OF_MOTHER@" labelText="" /></td>
-                <td> &#160;&#160;&#160;&#160;&#160;&#160;Phone Number:</td>
-                <td><obs conceptId="$@TELEPHONE_NUMBER@" /></td>
-            </tr>
+                                        <tr>
+                                            <td class="checkboxGroup"><span id="checkboxRadio">
+                                                <p class="radio side-by-side">
+                                                    Prolonged Rupture
+                                                    Membrane:
+                                                    <obs conceptId="$@Prolonged_Rupture_Membrane@"
+                                                         answerConceptId="$@YES@" answerLabel="Yes" />
+                                                    &#160;&#160;&#160;&#160;&#160;&#160;
+                                                    <obs conceptId="$@Prolonged_Rupture_Membrane@"
+                                                         answerConceptId="$@NO@" answerLabel="No" />
+                                                </p>
+                                            </span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="checkboxGroup"><span id="checkboxRadio">
+                                                <p class="radio side-by-side">
+                                                    Maternal Fever:
+                                                    <obs conceptId="$@Maternal_Fever@" answerConceptId="$@YES@"
+                                                         answerLabel="Yes" />
+                                                    &#160;&#160;&#160;&#160;&#160;&#160;
+                                                    <obs conceptId="$@Maternal_Fever@" answerConceptId="$@NO@"
+                                                         answerLabel="No" />
+                                                </p>
+                                            </span></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
 
+                <tr>
+                    <td><b>Neonatal Unit Stay:</b></td>
+                    <td>
+                        <table width="100%">
 
-        </table>
-    </section> <section headerLabel="Pediatric Development Clinic Referral Form">
-        <table border="1" cellspacing="0" cellpadding="6" width="100%">
-            <tr >
-                <td width="20%"><b>Date of Admission</b></td>
-                <td> <obs conceptId="$@ADMISSION_DATE@" />   </td>
+                            <tr>
+                                <td colspan="9">
+                                    <table width="100%">
+                                        <tr>
+                                            <td class="checkboxGroup"><span id="checkboxRadio">
+                                                <p class="radio side-by-side">
+                                                    Antibiotic therapy:
+                                                    <obs conceptId="$@Antibiotic_therapy@" answerConceptId="$@YES@"
+                                                         answerLabel="Yes" />
+                                                    <obs conceptId="$@Antibiotic_therapy@" answerConceptId="$@NO@"
+                                                         answerLabel="No" />
+                                                    &#160;&#160;&#160;<b>If yes</b>, on antibiotics for
+                                                    <obs conceptId="$@ANTIBIOTIC_DURATION@" style="radio" />
+                                                </p>
+                                            </span></td>
 
-            </tr>
+                                        </tr>
+                                        <tr>
+                                            <td class="checkboxGroup"><span id="checkboxRadio">
+                                                <p class="radio side-by-side">
+                                                    Supplemental Oxygen:
+                                                    <obs conceptId="$@Supplemental_Oxygen@" answerConceptId="$@YES@"
+                                                         answerLabel="Yes" />
+                                                    <obs conceptId="$@Supplemental_Oxygen@" answerConceptId="$@NO@"
+                                                         answerLabel="No" />
+                                                    &#160;&#160;&#160;<b>If yes,</b> on oxygen for
+                                                    <obs conceptId="$@OXYGEN_DURATION@" style="radio" />
+                                                </p>
+                                            </span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="checkboxGroup"><span id="checkboxRadio">
+                                                <p class="radio side-by-side">
+                                                    If yes, did the infant
+                                                    require CPAP?
+                                                    <obs conceptId="$@CPAP@" answerConceptId="$@YES@"
+                                                         answerLabel="Yes" />
+                                                    <obs conceptId="$@CPAP@" answerConceptId="$@NO@" answerLabel="No" />
+                                                </p>
+                                            </span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span id="checkboxRadio">
+                                                <p class="side-by-side radio">
+                                                    Convulsions:
+                                                    <obs conceptId="$@CONVULSIONS_DANGER_SIGNS_PRESENT@"
+                                                         answerConceptId="$@YES@" answerLabel="Yes" />
+                                                    <obs conceptId="$@CONVULSIONS_DANGER_SIGNS_PRESENT@"
+                                                         answerConceptId="$@NO@" answerLabel="No" />
+                                                    &#160;&#160;&#160;<b>IF yes,</b> did the child receive
+                                                    anticonvulsants
+                                                    <obs conceptId="$@ANTICONVULSANTS_RECEIVED@"
+                                                         answerConceptId="$@YES@" style="radio" />
+                                                    <obs conceptId="$@ANTICONVULSANTS_RECEIVED@" answerConceptId="$@NO@"
+                                                         style="radio" />
+                                                    <br />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                                                    <b>IF yes,</b> duration of convulstions
+                                                    <obs conceptId="$@CONVULSIONS_DURATION@" style="radio" /> <br />
+                                                    Enhanced calorie feeding:
+                                                    <obs conceptId="$@Enhanced_calorie_feeding@"
+                                                         answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No"
+                                                         style="radio" />
+                                                </p>
 
-            <tr>
-                <td width="20%"><b>Date of Birth</b></td>
-                <td><lookup expression="patient.birthdate"/>  <patient field="birthDateOrAge" />
-                </td>
-            </tr>
-            <tr>
-                <td width="20%"><b>Gestational Age</b></td>
-                <td><obs conceptId="$@Gestational_age_at_birth_in_weeks@" />(Weeks)</td>
-            </tr>
+                                            </span></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Discharge Information:</b></td>
+                    <td>
+                        <table width="100%">
 
-
-            <tr>
-                <td width="20%"><b>Birth Weight</b></td>
-                <td><obs conceptId="$@BIRTHWEIGHT_KG@" id="weight"/>(grams) entered but saved in Kg</td>
-            </tr>
-            <tr >
-                <td><b>Birth History</b></td>
-                <td>
-                    <table width="100%" >
-
-                        <tr>
-                            <td colspan="9">
-                                <table width="100%" >
-                                    <tr ><td class="checkboxGroup">
-                                        <span id="checkboxRadio">Site of Birth:&#160;&#160;
-                                            <obs conceptId="$@BIRTH_LOCATION_TYPE@" answerConceptId="$@HOSPITAL@" answerLabel="Hospital" />
-                                            &#160;&#160;&#160;&#160;&#160;&#160;
-                                            <obs conceptId="$@BIRTH_LOCATION_TYPE@" answerConceptId="$@HEALTH_CENTER@" answerLabel="Health Center" />
-                                            &#160;&#160;&#160;&#160;&#160;&#160;
-                                            <obs conceptId="$@BIRTH_LOCATION_TYPE@" answerConceptId="$@HOUSE@" answerLabel="Home" />
-                                            &#160;&#160;&#160;&#160;&#160;&#160;
-                                            <obs conceptId="$@BIRTH_LOCATION_TYPE@" answerConceptId="$@ROAD@" answerLabel="En route" />
-                                            &#160;&#160;&#160;&#160;&#160;&#160;
-                                            <obs conceptId="$@BIRTH_LOCATION_TYPE@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other:" />
-                                            &#160;&#160;&#160;&#160;&#160;&#160;
-                                            <obs conceptId="$@BIRTH_LOCATION_TYPE_NON_CODED@" />
-                                        </span><br/><br/></td>
-                                    </tr>
-                                    <tr ><td class="checkboxGroup"><span id="checkboxRadio">Delivery:&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-			<obs conceptId="$@METHOD_OF_DELIVERY@" answerConceptId="$@SPONTANEOUS_VAGINAL_DELIVERY@" answerLabel="Vaginal" />
-			 &#160;&#160;&#160;&#160;&#160;&#160;
-			<obs conceptId="$@METHOD_OF_DELIVERY@" answerConceptId="$@CESAREAN_SECTION@" answerLabel="C-Section" />
-			</span></td>
-                                    </tr>
-                                    <tr ><td class="checkboxGroup"><span id="checkboxRadio">Presence Of Meconium:
-			<obs conceptId="$@Presence_Of_Meconium@" answerConceptId="$@YES@" answerLabel="Yes" />
-			 &#160;&#160;&#160;&#160;&#160;&#160;
-			<obs conceptId="$@Presence_Of_Meconium@" answerConceptId="$@NO@" answerLabel="No" />
-			</span></td>
-                                    </tr>
-                                    <tr ><td >Apgars:
-                                        <obs conceptId="$@APGAR1@"/>/<obs conceptId="$@APGAR5@"/>/<obs conceptId="$@APGAR10@"/></td></tr>
-                                    <tr ><td >Maternal Risk Factors:<br/></td></tr>
-                                    <tr ><td >HIV:&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                                        <obs conceptId="$@RESULT_OF_HIV_TEST@" answerConceptId="$@POSITIVE@" answerLabel="Seropositive" />
-                                        &#160;&#160;&#160;&#160;&#160;&#160;
-                                        <obs conceptId="$@RESULT_OF_HIV_TEST@" answerConceptId="$@NEGATIVE@" answerLabel="Seronegative" />
-                                        &#160;&#160;&#160;&#160;If positive, on ARVs?<obs conceptId="$@ON_ARVS@" answerConceptId="$@YES@" /><obs conceptId="$@ON_ARVS@" answerConceptId="$@NO@" />
-
-                                    </td>
-                                    </tr>
-
-                                    <tr ><td class="checkboxGroup"><span id="checkboxRadio">Prolonged Rupture Membrane:
-			<obs conceptId="$@Prolonged_Rupture_Membrane@" answerConceptId="$@YES@" answerLabel="Yes" />
-			 &#160;&#160;&#160;&#160;&#160;&#160;
-			<obs conceptId="$@Prolonged_Rupture_Membrane@" answerConceptId="$@NO@" answerLabel="No" />
-			</span></td>
-                                    </tr>
-                                    <tr ><td class="checkboxGroup"><span id="checkboxRadio">Maternal Fever:
-			<obs conceptId="$@Maternal_Fever@" answerConceptId="$@YES@" answerLabel="Yes" />
-			 &#160;&#160;&#160;&#160;&#160;&#160;
-			<obs conceptId="$@Maternal_Fever@" answerConceptId="$@NO@" answerLabel="No" />
-			</span></td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-
-            <tr>
-                <td><b>Neonatal Unit Stay:</b></td>
-                <td>
-                    <table width="100%">
-
-                        <tr >
-                            <td colspan="9">
-                                <table width="100%" >
-                                    <tr><td class="checkboxGroup"><span id="checkboxRadio">Antibiotic therapy:
-			<obs conceptId="$@Antibiotic_therapy@" answerConceptId="$@YES@" answerLabel="Yes" />
-			<obs conceptId="$@Antibiotic_therapy@" answerConceptId="$@NO@" answerLabel="No" />
-			&#160;&#160;&#160;<b>If yes</b>, on antibiotics for<obs conceptId="$@ANTIBIOTIC_DURATION@" style="radio"/>
-			</span></td>
-
-                                    </tr>
-                                    <tr ><td class="checkboxGroup"><span id="checkboxRadio" >Supplemental Oxygen:
-			<obs conceptId="$@Supplemental_Oxygen@" answerConceptId="$@YES@" answerLabel="Yes" />
-			<obs conceptId="$@Supplemental_Oxygen@" answerConceptId="$@NO@" answerLabel="No" />
-			&#160;&#160;&#160;<b>If yes,</b> on oxygen for<obs conceptId="$@OXYGEN_DURATION@" style="radio"/>
-			</span></td>
-                                    </tr>
-                                    <tr ><td class="checkboxGroup"><span id="checkboxRadio" >If yes, did the infant require CPAP?
-			<obs conceptId="$@CPAP@" answerConceptId="$@YES@" answerLabel="Yes" />
-			<obs conceptId="$@CPAP@" answerConceptId="$@NO@" answerLabel="No" />
-			</span></td>
-                                    </tr>
-                                    <tr ><td ><span id="checkboxRadio" >Convulsions:
-			<obs conceptId="$@CONVULSIONS_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" />
-			<obs conceptId="$@CONVULSIONS_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" />
-			&#160;&#160;&#160;<b>IF yes,</b> did the child receive anticonvulsants
-			<obs conceptId="$@ANTICONVULSANTS_RECEIVED@" answerConceptId="$@YES@" style="radio"/>
-			<obs conceptId="$@ANTICONVULSANTS_RECEIVED@" answerConceptId="$@NO@" style="radio"/>
-			<br/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-			<b>IF yes,</b> duration of convulstions	<obs conceptId="$@CONVULSIONS_DURATION@" style="radio"/> <br/>
-            Enhanced calorie feeding: <obs conceptId="$@Enhanced_calorie_feeding@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio"/>
-
-			</span></td></tr></table></td>
-                        </tr></table></td>
-            </tr>
-            <tr>
-                <td><b>Discharge Information:</b></td>
-                <td>
-                    <table width="100%">
-
-                        <tr >
-                            <td colspan="9">
-                                <table width="100%" >
-                                    <tr ><td class="checkboxGroup" ><span id="checkboxRadio"  >Date of Discharge:<obs conceptId="$@DISCHARGE_DATE@"/></span></td>
-                                    </tr>
-                                    <tr ><td ><span id="checkboxRadio">Discharge Weight:
-			<obs conceptId="$@Discharge_Weight@" />(grams)
-			<div >Weight gain in week prior to discharge
-                                <obs conceptId="$@WEIGHT_GAIN@" /> (grams/day)</div>
-			</span></td>
-                                    </tr>
-                                    <!--
+                            <tr>
+                                <td colspan="9">
+                                    <table width="100%">
+                                        <tr>
+                                            <td class="checkboxGroup"><span id="checkboxRadio">
+                                                <p class="date-one-line">
+                                                    Date of Discharge:
+                                                    <obs conceptId="$@DISCHARGE_DATE@" />
+                                                </p>
+                                            </span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span id="checkboxRadio">
+                                                <p class="small-input flexView">
+                                                    Discharge Weight:
+                                                    <obs conceptId="$@Discharge_Weight@" />(grams)&#160;&#160;
+                                                    Weight gain in week prior to discharge
+                                                    <obs conceptId="$@WEIGHT_GAIN@" /> (grams/day)
+                                                </p>
+                                            </span></td>
+                                        </tr>
+                                        <!--
                                     <tr><td class="checkboxGroup"><span id="checkboxRadio">Other Comments: <obs conceptId="$@COMMENTS@" cols="90"/></span></td>
                                     </tr>
 
                                     -->
-                                    <tr>
-                                        <td>Discharge Medications : Iron <obs conceptId="$@IRON@" answerConceptId="$@YES@"/>
-                                            <obs conceptId="$@IRON@" answerConceptId="$@NO@" answerLabel="No"/>&#160;&#160;&#160;&#160;
-                                            Anticonvulsants: <obs conceptId="$@ANTICONVULSANTS_ON_DISCHARGE@" answerConceptId="$@YES@" answerLabel="Yes"/> &#160;&#160;
-                                            DOSE: <obs conceptId="$@ANTICONVULSANT_DOSE@" />  grams/day
-                                            <obs conceptId="$@ANTICONVULSANTS_ON_DISCHARGE@" answerConceptId="$@NO@" answerLabel="No"/>&#160;&#160;&#160;&#160;
-                                            <br/>
-                                            &#160;&#160;&#160;&#160;
-                                            NVP: <obs conceptId="$@NVP@" answerConceptId="$@YES@" answerLabel="Yes"/>
-                                            <obs conceptId="$@NVP@" answerConceptId="$@NO@" answerLabel="No"/>
-                                            Other meds :
-                                            <obs conceptId="$@Other_medication@"/>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Feeding type at discharge: Breastmilk: <obs conceptId="$@BREASTMILK@" answerConceptId="$@YES@"/>
-                                            <obs conceptId="$@BREASTMILK@" answerConceptId="$@NO@" answerLabel="No"/>&#160;&#160;&#160;&#160;
-                                            Infant Formula:  <obs conceptId="$@INFANT_FORMULA@" answerConceptId="$@YES@" answerLabel="Yes"/> &#160;&#160;
+                                        <tr>
+                                            <td>
+                                                <p class="radio side-by-side">
+                                                    Discharge Medications : Iron
+                                                    <obs conceptId="$@IRON@" answerConceptId="$@YES@" />
+                                                    <obs conceptId="$@IRON@" answerConceptId="$@NO@" answerLabel="No" />
+                                                    &#160;&#160;&#160;&#160;
+                                                    Anticonvulsants:
+                                                    <obs conceptId="$@ANTICONVULSANTS_ON_DISCHARGE@"
+                                                         answerConceptId="$@YES@" answerLabel="Yes" /> &#160;&#160;
+                                                    DOSE:
+                                                    <obs conceptId="$@ANTICONVULSANT_DOSE@" /> grams/day
+                                                    <obs conceptId="$@ANTICONVULSANTS_ON_DISCHARGE@" answerConceptId="$@NO@"
+                                                         answerLabel="No" />&#160;&#160;&#160;&#160;
+                                                    <br />
+                                                    &#160;&#160;&#160;&#160;
+                                                    NVP:
+                                                    <obs conceptId="$@NVP@" answerConceptId="$@YES@" answerLabel="Yes" />
+                                                    <obs conceptId="$@NVP@" answerConceptId="$@NO@" answerLabel="No" />
+                                                    Other meds :
+                                                    <obs conceptId="$@Other_medication@" />
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p class="radio side-by-side">
+                                                    Feeding type at discharge: Breastmilk:
+                                                    <obs conceptId="$@BREASTMILK@" answerConceptId="$@YES@" />
+                                                    <obs conceptId="$@BREASTMILK@" answerConceptId="$@NO@"
+                                                         answerLabel="No" />&#160;&#160;&#160;&#160;
+                                                    Infant Formula:
+                                                    <obs conceptId="$@INFANT_FORMULA@" answerConceptId="$@YES@"
+                                                         answerLabel="Yes" /> &#160;&#160;
 
-                                            <obs conceptId="$@INFANT_FORMULA@" answerConceptId="$@NO@" answerLabel="No"/>&#160;&#160;&#160;&#160;
+                                                    <obs conceptId="$@INFANT_FORMULA@" answerConceptId="$@NO@"
+                                                         answerLabel="No" />&#160;&#160;&#160;&#160;
 
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Feeding method at discharge: Breastfeeding<obs conceptId="$@BREASTFEEDING@" answerConceptId="$@YES@"/>
-                                            <obs conceptId="$@BREASTFEEDING@" answerConceptId="$@NO@" answerLabel="No"/>&#160;&#160;&#160;&#160;
-                                            Cup Feeding: <obs conceptId="$@CUP_FEEDING@" answerConceptId="$@YES@" answerLabel="Yes"/>
-                                            <obs conceptId="$@CUP_FEEDING@" answerConceptId="$@NO@" answerLabel="No"/>&#160;&#160;&#160;&#160;
-                                            Other: <obs conceptId="$@OTHER_FEEDING_METHOD@" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mother on food supplement while inpatient <obs conceptId="$@FOOD_SUPPLEMENT@" answerConceptId="$@YES@"/>
-                                            <obs conceptId="$@FOOD_SUPPLEMENT@" answerConceptId="$@NO@" answerLabel="No"/>&#160;&#160;&#160;&#160;
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p class="side-by-side radio">
+                                                    Feeding method at discharge: Breastfeeding
+                                                    <obs conceptId="$@BREASTFEEDING@" answerConceptId="$@YES@" />
+                                                    <obs conceptId="$@BREASTFEEDING@" answerConceptId="$@NO@"
+                                                         answerLabel="No" />&#160;&#160;&#160;&#160;
+                                                    Cup Feeding:
+                                                    <obs conceptId="$@CUP_FEEDING@" answerConceptId="$@YES@"
+                                                         answerLabel="Yes" />
+                                                    <obs conceptId="$@CUP_FEEDING@" answerConceptId="$@NO@"
+                                                         answerLabel="No" />&#160;&#160;&#160;&#160;
+                                                    Other:
+                                                    <obs conceptId="$@OTHER_FEEDING_METHOD@" />
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p class="radio side-by-side">
+                                                    Mother on food supplement while inpatient
+                                                    <obs conceptId="$@FOOD_SUPPLEMENT@" answerConceptId="$@YES@" />
+                                                    <obs conceptId="$@FOOD_SUPPLEMENT@" answerConceptId="$@NO@"
+                                                         answerLabel="No" />&#160;&#160;&#160;&#160;
 
-                                        </td>
-                                    </tr>
-                                    <tr ><td class="checkboxGroup"><span id="checkboxRadio">
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="checkboxGroup"><span id="checkboxRadio">
 
-                                        Other Notes: <obs conceptId="$@COMMENTS@" rows="4" cols="90"/></span>
-                                    </td>
-                                    </tr>
-                                </table></td>
-                        </tr></table></td>
-            </tr>
-            <tr>
-                <td><b>Reason for Referral:</b></td>
-                <td><span id="checkboxRadio"><table width="100%">
-                    <tr>
-                        <td>Reason for Referral:<br/>
-
-
-                            <obs conceptId="$@Reasons_for_Referral@" answerConceptId="$@Low_Birth_Weight@" answerLabel="Low Birth Weight (&#60; 2000g)" /> <br/>
-                            <obs conceptId="$@Reasons_for_Referral@" answerConceptId="$@Premature_Birth@" answerLabel="Premature Birth (gestational age &#60; 37 weeks)" /><br/>
-                            <obs conceptId="$@Reasons_for_Referral@" answerConceptId="$@Hypoxic_ischemic_encephalopathy@" answerLabel="Hypoxic ischemic encephalopathy(history of perinatal convulsion, no cry at 5 minutes or Apgar score &#60; 5 at 5 minutes)" /><br/>
-                            <obs conceptId="$@Reasons_for_Referral@" answerConceptId="$@CENTRAL_NERVOUS_SYSTEM_INFECTION@" answerLabel="Central Nervous System Infection" /><br/>
-                            <obs conceptId="$@Reasons_for_Referral@" answerConceptId="$@Hydrocephalus_HC_Z-score@" answerLabel="Hydrocephalus(HC Z-score > +3, ICP, sunsetting eyes, new seizures with increasing HC, HC crossing &#62; 2 z-score lines) " /><br/>
-                            <obs id="Trisomy_21_suspected_or_confirmed" conceptId="$@Reasons_for_Referral@" answerConceptId="$@Trisomy_21_suspected_or_confirmed@" answerLabel="Trisomy 21 (suspected or confirmed)" /> <br/>
-                            <obs id="Cleft_Lip_or_Palate" conceptId="$@Reasons_for_Referral@" answerConceptId="$@Cleft_Lip_or_Palate@" answerLabel="Cleft Lip or Palate " /><br/>
-                            <obs id="Other_Developmental_Delay" conceptId="$@Reasons_for_Referral@" answerConceptId="$@Other_Developmental_Delay_Suspected_Neuromuscular_Disease_and_Suspected_Genetic_Syndromes@" answerLabel="Other Developmental Delay, Suspected Neuromuscular Disease, and Suspected Genetic Syndromes" /><br/>
-                            <obs conceptId="$@Reasons_for_Referral@" answerConceptId="$@SEVERE_MALNUTRITION@" answerLabel="Severe malnutrition requiring hospitalization (infants &#60; 12 months of age)" /><br/>
-                            <obs conceptId="$@Reasons_for_Referral@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Others:" />
-                            <obs conceptId="$@Reasons_for_Referral_non_coded@" /><br/>
-
-                        </td>
-                    </tr>
-                </table>
-		</span></td>
-            </tr>
-            <tr>
-                <td><b>Referred by:</b></td>
-                <td class="checkboxGroup"><span id="checkboxRadio">
-		     <table width="100%"><tr>
-                 <td><obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@"
-                          answerConceptId="$@HEALTH_CENTER@"
-                          answerLabel="Health Center" /><br />
-                 </td>
-                 <td><obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@"
-                          answerConceptId="$@DISTRICT_HOSPITAL@"
-                          answerLabel="District Hospital" />
-                 </td>
-                 <td>
-                     <obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@"
-                          answerConceptId="$@OTHER_NON-CODED@"
-                          answerLabel="Other:" />
-                    <obs conceptId = "$@OTHER_TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL_NON-CODED@" />
-
-                 </td></tr>
-             </table></span></td>
-            </tr>
-            <tr >
-                <td><b>Timeframe for Follow- up:</b></td>
-                <td>
-                    <table width="100%">
-
-                        <tr >
-                            <td colspan="9">
-                                <table width="100%" >
-                                    <tr><td class="checkboxGroup"><span id="checkboxRadio">
-		Low Birth Weight/Premature within 1 week<br/>
-		Severe HIE within 1 week<br/>
-        Hydrocephalus within 1 week<br/>
-		</span>
-                                    </td>
-                                        <td><span id="checkboxRadio">
-		Moderate/Mild HIE within 1 month<br/>
-
-		General Developmental Delay within 1 month<br/>
-		Trisomy 21 within 1 month<br/>
-
-		</span></td>
-                                        <td>
-                                            <span id="chekcboRadio">
-                                                Cleft lip/Cleft palate within 1 week <br/>
-                                                Malnutrition within 1 week
+                                                Other Notes:
+                                                <obs conceptId="$@COMMENTS@" rows="4" cols="90" />
                                             </span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Reason for Referral:</b></td>
+                    <td><span id="checkboxRadio">
+                        <table width="100%">
+                            <tr>
+                                <td>
+                                    <p class="radio">
+                                        Reason for Referral:<br />
+                                        <obs conceptId="$@Reasons_for_Referral@" answerConceptId="$@Low_Birth_Weight@"
+                                             answerLabel="Low Birth Weight (&#60; 2000g)" /> <br />
+                                        <obs conceptId="$@Reasons_for_Referral@" answerConceptId="$@Premature_Birth@"
+                                             answerLabel="Premature Birth (gestational age &#60; 37 weeks)" /><br />
+                                        <obs conceptId="$@Reasons_for_Referral@"
+                                             answerConceptId="$@Hypoxic_ischemic_encephalopathy@"
+                                             answerLabel="Hypoxic ischemic encephalopathy(history of perinatal convulsion, no cry at 5 minutes or Apgar score &#60; 5 at 5 minutes)" />
+                                        <br />
+                                        <obs conceptId="$@Reasons_for_Referral@"
+                                             answerConceptId="$@CENTRAL_NERVOUS_SYSTEM_INFECTION@"
+                                             answerLabel="Central Nervous System Infection" /><br />
+                                        <obs conceptId="$@Reasons_for_Referral@"
+                                             answerConceptId="$@Hydrocephalus_HC_Z-score@"
+                                             answerLabel="Hydrocephalus(HC Z-score > +3, ICP, sunsetting eyes, new seizures with increasing HC, HC crossing &#62; 2 z-score lines) " />
+                                        <br />
+                                        <obs id="Trisomy_21_suspected_or_confirmed" conceptId="$@Reasons_for_Referral@"
+                                             answerConceptId="$@Trisomy_21_suspected_or_confirmed@"
+                                             answerLabel="Trisomy 21 (suspected or confirmed)" /> <br />
+                                        <obs id="Cleft_Lip_or_Palate" conceptId="$@Reasons_for_Referral@"
+                                             answerConceptId="$@Cleft_Lip_or_Palate@"
+                                             answerLabel="Cleft Lip or Palate " /><br />
+                                        <obs id="Other_Developmental_Delay" conceptId="$@Reasons_for_Referral@"
+                                             answerConceptId="$@Other_Developmental_Delay_Suspected_Neuromuscular_Disease_and_Suspected_Genetic_Syndromes@"
+                                             answerLabel="Other Developmental Delay, Suspected Neuromuscular Disease, and Suspected Genetic Syndromes" />
+                                        <br />
+                                        <obs conceptId="$@Reasons_for_Referral@"
+                                             answerConceptId="$@SEVERE_MALNUTRITION@"
+                                             answerLabel="Severe malnutrition requiring hospitalization (infants &#60; 12 months of age)" />
+                                        <br />
+                                        <obs conceptId="$@Reasons_for_Referral@" answerConceptId="$@OTHER_NON-CODED@"
+                                             answerLabel="Others:" />
+                                        <obs conceptId="$@Reasons_for_Referral_non_coded@" /><br />
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </span></td>
+                </tr>
+                <tr>
+                    <td><b>Referred by:</b></td>
+                    <td class="checkboxGroup"><span id="checkboxRadio">
+                        <table width="100%">
+                            <tr>
+                                <td>
+                                    <p class="radio">
+                                        <obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@"
+                                             answerConceptId="$@HEALTH_CENTER@" answerLabel="Health Center" /><br />
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="radio">
+                                        <obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@"
+                                             answerConceptId="$@DISTRICT_HOSPITAL@" answerLabel="District Hospital" />
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="radio">
+                                        <obs conceptId="$@TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL@"
+                                             answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other:" />
+                                        <obs conceptId="$@OTHER_TYPE_OF_REFERRING_CLINIC_OR_HOSPITAL_NON-CODED@" />
+                                    </p>
 
-                                        </td>
-                                    </tr>
-                                </table></td>
-                        </tr></table></td>
-            </tr>
+                                </td>
+                            </tr>
+                        </table>
+                    </span></td>
+                </tr>
+                <tr>
+                    <td><b>Timeframe for Follow- up:</b></td>
+                    <td>
+                        <table width="100%">
 
-        </table>
+                            <tr>
+                                <td colspan="9">
+                                    <table width="100%">
+                                        <tr>
+                                            <td class="checkboxGroup"><span id="checkboxRadio">
+                                                Low Birth Weight/Premature within 1 week<br />
+                                                Severe HIE within 1 week<br />
+                                                Hydrocephalus within 1 week<br />
+                                            </span>
+                                            </td>
+                                            <td><span id="checkboxRadio">
+                                                Moderate/Mild HIE within 1 month<br />
+
+                                                General Developmental Delay within 1 month<br />
+                                                Trisomy 21 within 1 month<br />
+
+                                            </span></td>
+                                            <td>
+                                                <span id="chekcboRadio">
+                                                    Cleft lip/Cleft palate within 1 week <br />
+                                                    Malnutrition within 1 week
+                                                </span>
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
     </section>
-    <br/>
+    <br />
     <table>
         <tr>
-            <td>Signature: <encounterProvider role="Oncology Provider" /></td></tr>
+            <td>Signature:
+                <encounterProvider role="Oncology Provider" />
+            </td>
+        </tr>
     </table>
-    <br/>
-    <encounterVoided/>
-    <br/>
-    <submit />
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+    <br />
+    <encounterVoided />
+    <br />
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
 </htmlform>

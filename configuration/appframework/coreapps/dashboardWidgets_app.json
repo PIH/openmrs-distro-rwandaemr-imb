@@ -18,27 +18,23 @@
     ]
   },
   {
-    "id": "coreapps.visitByEncounterType",
-    "instanceOf": "coreapps.template.dashboardWidget",
-    "description": "coreapps.visitByEncounterType.app.description",
+    "id": "imbemr.recentEncounters",
+    "description": "coreapps.mostRecentVitals.app.description",
+    "label": "imbemr.clinicianfacing.recentEncounters",
+    "icon": "icon-calendar",
     "order": 3,
     "config": {
-      "widget": "visitbyencountertype",
-      "icon": "icon-calendar",
-      "label": "coreapps.clinicianfacing.recentVisits",
-      "maxRecords": "3",
-      "combineEncounterTypes": "true"
+      "limit": "5"
     },
     "extensions": [
       {
-        "id": "coreapps.visitByEncounterType.clinicianDashboardSecondColumn",
-        "appId": "coreapps.visitByEncounterType",
+        "id": "imbemr.recentEncounters.clinicianDashboardSecondColumn",
+        "appId": "imbemr.recentEncounters",
         "extensionPointId": "patientDashboard.secondColumnFragments",
         "extensionParams": {
-          "provider": "coreapps",
-          "fragment": "dashboardwidgets/dashboardWidget"
-        },
-        "requiredPrivilege": "App: coreapps.recentVisits"
+          "provider": "imbemr",
+          "fragment": "patient/encountersSection"
+        }
       }
     ]
   },

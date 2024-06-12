@@ -1,4 +1,4 @@
-<htmlform formEncounterType="7b68d557-85ef-4fc8-b767-4fa4f5eb5c23" formName="Transfer Within Hospital (Simple)" formUuid="a007bbfe-fbe5-11e2-8ff2-fd54ab5fdb2a" formVersion="1.0">
+<htmlform formEncounterType="a363b0d4-d430-467d-810c-4a2ee9891430" formName="Transfer Within Hospital (Simple)" formUuid="a007bbfe-fbe5-11e2-8ff2-fd54ab5fdb2a" formVersion="1.0">
 
     <script type="text/javascript">
         $(function() {

@@ -1,7 +1,10 @@
 <htmlform formDescription="Radiology Form" formEncounterType="e9355a6e-b2df-44b4-911c-104c6a41ed24"
 		  formName="Radiology Form" formPublished="true" formRetired="false" formUuid="906677bc-1930-4791-9e75-a0cc7b44ad95"
 		  formVersion="1.0" htmlformUuid="15450dd7-ab8d-4ac0-9893-c1bbf2536f7e">
-
+	<macros>
+		@Type_of_Radiology@=a691882f-ad3b-48b3-80ed-b8609728a84a
+		@Radiology_report@=6d28e69f-e456-4721-b104-6c4ef4f8b911
+	</macros>
 	<style type="text/css">
 		form fieldset {
 		display: block;
@@ -114,7 +117,28 @@
 		display: block;
 		}
 	</style>
+	<ifMode mode="VIEW" include="false">
+		<script type="text/javascript">
+			$j(document).ready(function () {
 
+			$j(".before20240607changes").hide();
+
+			if (getValue("encounterDate.value") &#60;&#61; '2024-06-07'){
+			$j(".before20240607changes").show();
+			}else {
+			$j(".before20240607changes").hide();
+			}
+			getField('encounterDate.value').change(function () {
+			if (getValue("encounterDate.value") &#60;&#61; '2024-06-07'){
+			$j(".before20240607changes").show();
+			}else {
+			$j(".before20240607changes").hide();
+			}
+			});
+
+			});
+		</script>
+	</ifMode>
 	<!-- RADIOLOGY  FORM -->
 	<postSubmissionAction class="org.openmrs.module.mohbilling.automation.CreateBillOnHtmlFormSubmissionAction" />
 	<h1>RADIOLOGY REQUEST FORM</h1>
@@ -147,6 +171,28 @@
 			</table>
 		</div>
 	</section>
+	<ifMode mode="VIEW" include="true">
+		<section class="before20240607changes" sectionTag="fieldset" headerTag="legend" headerStyle="title"
+				 headerCode="Old Radiology Reports">
+			<div class="section-container">
+				<table class="baseline-aligned">
+					<tr>
+						<td>Type of radiology</td>
+						<td>
+							<obs conceptId="$@Type_of_Radiology@" style="text" />
+						</td>
+					</tr>
+					<tr>
+						<td>Radiology report</td>
+						<td>
+							<obs conceptId="6d28e69f-e456-4721-b104-6c4ef4f8b911" style="text" cols="50" rows="5" />
+						</td>
+					</tr>
+
+				</table>
+			</div>
+		</section>
+	</ifMode>
 	<section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="1. X-RAY TESTS REQUEST">
 		<div class="section-container">
 

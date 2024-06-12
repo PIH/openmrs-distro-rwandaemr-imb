@@ -335,10 +335,10 @@
     ]
   },
   {
-    "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhSuicideSafetyPlan.Form",
-    "order": 17,
+    "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.regimens",
+    "order": 5,
     "config": {
-      "icon": "fas fa-fw fa-stethoscope",
+      "icon": "fas fa-fw fa-briefcase-medical",
       "label": "coreapps.programHistoryDashboardWidget.label",
       "program": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
       "dashboard": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
@@ -346,13 +346,13 @@
     },
     "extensions": [
       {
-        "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhSuicideSafetyPlan.Form",
+        "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.exitFromCare.Form",
         "extensionPointId": "51304c8c-ecc2-4bed-818b-a5c785ad58a6.overallActions",
         "type": "link",
-        "label": "Suicide Safety Plan",
-        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/mh-suicide-safety-plan.xml",
-        "icon": "icon-file",
-        "order": 17
+        "label": "Regimens",
+        "url": "imbemr/patient/regimen.page?patientId={{patient.uuid}}",
+        "icon": "fas fa-fw fa-briefcase-medical",
+        "order": 15
       }
     ]
   }

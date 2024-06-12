@@ -1,4 +1,10 @@
-<htmlform formUuid="aa195bd3-3782-4682-a748-cd8530b1823b" formName="Neonatal Discharge Form"
+<htmlform formDescription="Neonatal Discharge Form"
+          formName="Neonatal Discharge Form"
+          formPublished="true"
+          formRetired="false"
+          formUuid="aa195bd3-3782-4682-a748-cd8530b1823b"
+          formVersion="1.0"
+          htmlformUuid="3f2af8bb-8301-4c5b-af3b-ebd946af4b60"
           formEncounterType="13703c92-58d2-4d04-a320-8d4699380676">
     <macros>
         paperFormId = Flow-DM-RW.V2.0.akb.15May09 headerColor =#009d8e

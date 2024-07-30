@@ -247,10 +247,10 @@
     ]
   },
   {
-    "id": "imbemr.e60a89ad-de11-421a-b5bf-b489e264ffa6.exitFromCare.Form",
+    "id": "imbemr.e60a89ad-de11-421a-b5bf-b489e264ffa6.regimens",
     "order": 5,
     "config": {
-      "icon": "fas fa-fw fa-stethoscope",
+      "icon": "fas fa-fw fa-briefcase-medical",
       "label": "coreapps.programHistoryDashboardWidget.label",
       "program": "e60a89ad-de11-421a-b5bf-b489e264ffa6",
       "dashboard": "e60a89ad-de11-421a-b5bf-b489e264ffa6",
@@ -261,10 +261,10 @@
         "id": "imbemr.e60a89ad-de11-421a-b5bf-b489e264ffa6.exitFromCare.Form",
         "extensionPointId": "e60a89ad-de11-421a-b5bf-b489e264ffa6.overallActions",
         "type": "link",
-        "label": "Exit From Care",
-        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/ncd-exit-form-169.xml",
-        "icon": "icon-file",
-        "order": 5
+        "label": "Regimens",
+        "url": "imbemr/patient/regimen.page?patientId={{patient.uuid}}",
+        "icon": "fas fa-fw fa-briefcase-medical",
+        "order": 15
       }
     ]
   }

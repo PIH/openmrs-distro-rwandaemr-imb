@@ -443,5 +443,27 @@
         "order": 17
       }
     ]
+  },
+  {
+    "id": "imbemr.fbfbef74-4b99-4070-95b8-7023e3db51e1.regimens",
+    "order": 5,
+    "config": {
+      "icon": "fas fa-fw fa-briefcase-medical",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "fbfbef74-4b99-4070-95b8-7023e3db51e1",
+      "dashboard": "fbfbef74-4b99-4070-95b8-7023e3db51e1",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.fbfbef74-4b99-4070-95b8-7023e3db51e1.exitFromCare.Form",
+        "extensionPointId": "fbfbef74-4b99-4070-95b8-7023e3db51e1.overallActions",
+        "type": "link",
+        "label": "Regimens",
+        "url": "imbemr/patient/regimen.page?patientId={{patient.uuid}}",
+        "icon": "fas fa-fw fa-briefcase-medical",
+        "order": 15
+      }
+    ]
   }
 ]

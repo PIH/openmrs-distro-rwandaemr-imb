@@ -1,12 +1,12 @@
 <htmlform
-htmlformUuid="d3b4ef22-d37b-49a1-a530-5011d05ee394" 
-formUuid="7103db59-1792-421b-88d6-2bbcb96d0981" 
-formName="Auto Patient Education" 
-formDescription="Auto Patient Education" 
-formVersion="1.0" 
-formEncounterType="fa8b9e67-3cad-4c52-afd3-95d808835bc8" 
-formPublished="true" 
-formRetired="false"
+        htmlformUuid="d3b4ef22-d37b-49a1-a530-5011d05ee394"
+        formUuid="7103db59-1792-421b-88d6-2bbcb96d0981"
+        formName="Auto Patient Education"
+        formDescription="Auto Patient Education"
+        formVersion="1.0"
+        formEncounterType="fa8b9e67-3cad-4c52-afd3-95d808835bc8"
+        formPublished="true"
+        formRetired="false"
 >
 
     <macros>
@@ -15,185 +15,270 @@ formRetired="false"
         fontOnHeaderColor = white
 
     </macros>
+
     <style>
-        th.tableHeader {
-        background-color: #009d8e;
-        color: #FFFFFF;
-        font-size: 16px;
-        text-align: left;
-        }
-        .sectionHeader { background-color: #009d8e;
-        color: white; display: block; padding: 2px; font-weight:bold; }
-        ul {
-        list-style-type: square;
-        font-family: Verdana, Arial, Helvetica, sans-serif;
-        font-size: 11px;
-        }
-
-        tr.spaceUnder>td {
-        padding-bottom: 1em;
-        }
-
-        td {
-        font-size: 15px;
-        }
-
-        #container {
-        position: relative;
-        margin: auto;
-        width: 1400px;
-        height: auto;
-        }
-
-        @media print {
-        #container {
-        display: none;
-        }
-
-        #printArea {
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
         display: block;
         }
 
-        #userBar {
-        display: none;
-        }
-
-        #banner {
-        display: none;
-        }
-
-        #footer {
-        display: none;
-        }
-
-        #htmlFormEntryBanner {
-        display: none;
-        }
-
-        .error {
-        display: none;
-        }
-
-        .lables {
-        width: 200px;
-        }
-
-        table {
-        width: 100%;
-        }
-
-        table,td,th {
-        border: 1px solid black;
-        border-collapse: collapse;
-        }
-
-        th {
-        text-align: left;
-        background-color: #D9D9D9;
-        font-size: 10px;
-        }
-
-        td {
-        font-size: 10px;
-        }
-
-        .selectedCancerStagingKeys {
-        page-break-before: always;
-        border: 0px;
-        }
-
-        table.selectedCancerStagingKeys td {
-        border: 0px;
-        }
-
-        #signature {
-        border: none;
-        }
-        #signature td {
-        border: none;
-        }
-        }
-
-        @media screen {
-        table {
-        border: 1px solid #DFDFDF;
-        width: 100%;
-        border-color: #009d8e;
-        }
-
-        #container {
+        form fieldset {
         display: block;
         }
 
-        #printArea {
-        display: none;
-        }
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
         }
 
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
+        width: 100%;
+        }
+
+        .div {
+        float: left;
+        }
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        .date-one-line {
+        display: flex;
+        }
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
+        }
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
+        }
     </style>
-    <section headerCode="DRUG ADMINISTRATION FORM">
-        <table border="2" cellspacing="0" cellpadding="6" width="100%">
-            <tr>
-                <td>
-                    Patient ID #: <lookup class="value" expression="patientIdentifiers.get(&quot;Primary Care ID Type&quot;)" />
-                </td>
-                <td> Names: <lookup class="value" expression="patient.personName.familyName" />  <lookup class="value" expression="patient.personName.givenName" />
-                </td>
-                <td>
-                    Age: <lookup expression="patient.age" class="value"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Date:
-                    <encounterDate default="today"/>
-                </td>
-                <td>
-                    Health Facility:
-                   <encounterLocation default="GlobalProperty:billing.defaultLocation"  />
-                </td>
-                <td>
-                    Provider:
-                    <encounterProvider default="currentUser" />
-                </td>
-            </tr>
-        </table>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
+
+
+            <table border="2" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        Date:
+                        <encounterDate default="today"/>
+                    </td>
+                    <td>
+                        Health Facility:
+                        <encounterLocation id="location" default="GlobalProperty:billing.defaultLocation" />
+                    </td>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="PATIENT EDUCATION">
+        <div class="section-container">
+            <div class="two-columns">
+
+                <fieldset>
+                    <legend>
+                        <b>
+                            Customer care information
+                        </b>
+                    </legend>
+                    <p class="radio">
+                        <obs conceptId="63c847c0-2875-473c-b0bb-ccaec1c64f8e"
+                             answerConceptId="f0c33f93-4bff-4bc3-b267-85d78f42c626" style="radio" answerSeparator="" />
+                        <br />
+                        <obs conceptId="63c847c0-2875-473c-b0bb-ccaec1c64f8e"
+                             answerConceptId="717407ed-7c21-476c-8d14-c66d80dc13ae" style="radio" answerSeparator="" />
+                        <br />
+                        <obs conceptId="63c847c0-2875-473c-b0bb-ccaec1c64f8e"
+                             answerConceptId="0ced39cf-e269-4a4e-9e03-c18bb8292400" style="radio" answerSeparator="" />
+                        <br />
+                        <obs conceptId="65a05784-ca14-47da-8a02-ea5b2a5d741f"
+                             answerConceptId="912944d6-0f0c-4524-b9ef-0cb82701892b" style="radio" answerSeparator="" />
+                        <br />
+                        <obs conceptId="65a05784-ca14-47da-8a02-ea5b2a5d741f"
+                             answerConceptId="70bff201-2c89-4b5d-abfb-0174a69faba1" style="radio" answerSeparator="" />
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>
+                        <b>
+                            Clinical information
+                        </b>
+                    </legend>
+                    <p class="radio">
+                        <obs conceptId="426ffd09-8630-47f7-8a5f-54b5050389f0"
+                             answerConceptId="1f3f4d49-5911-4c2c-b1cf-4b34c69a8b46" style="radio" answerSeparator="" />
+                        <br />
+                        <obs conceptId="426ffd09-8630-47f7-8a5f-54b5050389f0"
+                             answerConceptId="8393160d-47d8-4264-b226-5cfe80a8467c" style="radio" answerSeparator="" />
+                        <br />
+                        <obs conceptId="426ffd09-8630-47f7-8a5f-54b5050389f0"
+                             answerConceptId="419afc62-07b8-42cb-8069-5701e3daa90c" style="radio" answerSeparator="" />
+                        <br />
+                        <obs conceptId="426ffd09-8630-47f7-8a5f-54b5050389f0"
+                             answerConceptId="8a6f28f6-f275-4afe-a9f5-0b33d9cdb244" style="radio" answerSeparator="" />
+                    </p>
+                </fieldset>
+
+            </div>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Evaluation of effectiveness for patient education">
+        <div class="section-container">
+        <p>
+            <obs conceptId="76da94a3-8eb5-44e4-b690-0e2e0f814fa2" style="textarea" rows="4" cols="40"/>
+        </p>
+        </div>
     </section>
 
-   <section headerCode="Education Information">
-       <table class="baseline-aligned">
-               <!-- <obsgroup groupingConceptId="e3ebef35-03c5-47b4-9c43-e1ee1fb3adff">-->
-                    <table class="baseline-aligned">
-                        <tr>
-                            <td class="lblcolor">Identified Health Education needs</td>
-                            <td>
-                                <obs conceptId="e8c8e2d7-2f28-4650-8759-ff0745f7db3d" id="past_medical" style="textarea" rows="3" cols="30"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="lblcolor">Education subject</td>
-                            <td>
-                                <obs conceptId="a0c245fb-a639-4288-8919-cfcf051398ec" id="past_medical" style="textarea" rows="3" cols="30"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="lblcolor">Information received by the patient</td>
-                            <td>
-                                <obs conceptId="7ed7e70e-b98b-4c15-b12b-204bc792452c" id="past_medical" style="textarea" rows="3" cols="30"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="lblcolor">Information received by the next kin</td>
-                            <td>
-                                <obs conceptId="712a3fd6-c315-49bf-b4a3-b0eb8957ddfd" id="past_medical" style="textarea" rows="3" cols="30"/>
-                            </td>
-                        </tr>
-       </table>
-               <!-- </obsgroup>-->
-       </table>
-   </section>
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
 
-    <center>
-        <submit/>
-    </center>
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
 </htmlform>

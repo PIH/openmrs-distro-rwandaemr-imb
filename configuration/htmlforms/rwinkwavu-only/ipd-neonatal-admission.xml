@@ -285,7 +285,7 @@
                             <obs conceptId="3ce939d2-26fe-102b-80cb-0017a47871b2" labelText="Temperature:" />
                         </td>
                         <td>
-                            <obs conceptId="3ce93b62-26fe-102b-80cb-0017a47871b2" labelText="Weight:" required="true" />
+                            <obs conceptId="3cf15b3a-26fe-102b-80cb-0017a47871b2" labelText="Weight(g):" required="true" />
                         </td>
                         <td>
                             <obs conceptId="3ce93cf2-26fe-102b-80cb-0017a47871b2" labelText="Height:" />

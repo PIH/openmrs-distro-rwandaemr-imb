@@ -38,8 +38,8 @@
 		padding: 1px 10px;
 		}
 
-		.past-medical-history-item>span,
-		.past-medical-history-item>label {
+		.past-medical-history-item&gt;span,
+		.past-medical-history-item&gt;label {
 		display: inline !important;
 		vertical-align: middle;
 		}
@@ -50,7 +50,7 @@
 		-moz-column-count: 2;
 		}
 
-		p.radio>* {
+		p.radio&gt;* {
 		display: inline;
 		float: none !important;
 		min-width: initial;
@@ -137,34 +137,28 @@
 		});
     </script>
 	<!-- RADIOLOGY  FORM -->
-	<postSubmissionAction class="org.openmrs.module.mohbilling.automation.CreateBillOnHtmlFormSubmissionAction" />
-	<h1>RADIOLOGY REQUEST FORM</h1>
-	<section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+	<postSubmissionAction class="org.openmrs.module.mohbilling.automation.CreateBillOnHtmlFormSubmissionAction"/>
+	<h1>RADIOLOGY RESULTS FORM</h1>
+	<section headerCode="GENERAL INFORMATION" headerStyle="title" headerTag="legend" sectionTag="fieldset">
 		<div class="section-container">
 
 
-			<table border="2" cellspacing="0" cellpadding="6" width="100%">
+			<table border="2" cellpadding="6" cellspacing="0" width="100%">
 				<tr>
 					<td>
 						Date:
-						<encounterDate default="today" />
+						<encounterDate default="today"/>
 					</td>
 					<td>
 						Health Facility:
-						<encounterLocation id="location" default="GlobalProperty:billing.defaultLocation" />
+						<encounterLocation default="GlobalProperty:billing.defaultLocation" id="location"/>
 					</td>
 					<td>
 						Provider:
-						<encounterProvider default="currentUser" />
+						<encounterProvider default="currentUser"/>
 					</td>
 				</tr>
-				<tr>
-					<td class="lblcolor">
-						<b>Department:
-							<obs conceptId="a29f03ad-be6b-4958-b47e-eb9235d364a4" required="true" />
-						</b>
-					</td>
-				</tr>
+
 			</table>
 		</div>
 	</section>
@@ -302,88 +296,54 @@
 			</fieldset>
 		</div>
 	</section>
+	<ifMode mode="VIEW" include="true">
+		<section class="before20240805changes" sectionTag="fieldset" headerTag="legend" headerStyle="title"
+				 headerCode="Old Radiology Results">
+			<div class="section-container">
 
-
-	<!-- <div id="tab3" class="sectionheader">
-                <span id="tab_title3">3. CT-SCAN TESTS <b><font color="pink">Click here to request</font></b></span>
-            </div>
-            <div id="tab_content3">
-                <br />
-                <div class="bodycontainer">
-                    <div class="section">
-
-                        <table border="1" width="100%" style="margin-top:auto;">
-                            <tr>
-
-                                <td align="bottom">
-                                    <b><font color="red">CT-SCAN EXAMINATION OF</font></b>
-
-                                        <obsgroup groupingConceptId="cf92e2b3-d38a-11e8-b6e2-0c5b8f279a64">
-                                            <table style=" margin-left: auto; margin-right: auto;">
-                                                <tr><td><obs conceptId="160120" labelText="CT SCAN PERIPHERAL ANGIOGRAM (EXTREMITY ANGIOGRAM)"/></td></tr>
-                                                <tr><td><obs conceptId="160119" labelText="CT SCAN LOWER OR UPPER EXTREMITIES"/></td></tr>
-                                                <tr><td><obs conceptId="160118" labelText="CT SCAN HAND"/></td></tr>
-                                                <tr><td><obs conceptId="160117" labelText="CT SCAN WRIST"/></td></tr>
-                                                <tr><td><obs conceptId="160116" labelText="CT SCAN FOREARM"/></td></tr>
-                                                <tr><td><obs conceptId="160115" labelText="CT SCAN ELBOW"/></td></tr>
-                                                <tr><td><obs conceptId="160114" labelText="CT SCAN HUMERUS"/></td></tr>
-                                                <tr><td><obs conceptId="160113" labelText="CT SCAN SHOULDER"/></td></tr>
-                                                <tr><td><obs conceptId="160112" labelText="CT SCAN FOOT"/></td></tr>
-                                                <tr><td><obs conceptId="160111" labelText="CT SCAN ANKLE"/></td></tr>
-                                                <tr><td><obs conceptId="160110" labelText="CT SCAN LEG (TIBIA/FIBULA)"/></td></tr>
-                                                <tr><td><obs conceptId="160109" labelText="CT SCAN KNEE"/></td></tr>
-                                                <tr><td><obs conceptId="160108" labelText="CT SCAN FEMUR"/></td></tr>
-                                                <tr><td><obs conceptId="160107" labelText="CT SCAN THIGH"/></td></tr>
-                                                <tr><td><obs conceptId="160106" labelText="CT SCAN HIP"/></td></tr>
-                                                <tr><td><obs conceptId="160105" labelText="CT SCAN PELVIS"/></td></tr>
-                                                <tr><td><obs conceptId="160104" labelText="CT ABDOMEN TRIPLE PHASE"/></td></tr>
-                                                <tr><td><obs conceptId="160103" labelText="CT SCAN ABDOMEN ANGIOGRAM"/></td></tr>
-                                                <tr><td><obs conceptId="160102" labelText="CT SCAN ABDOMEN"/></td></tr>
-                                                <tr><td><obs conceptId="160101" labelText="HRCT (HIGH RESOLUTION CT CHEST)"/></td></tr>
-                                                <tr><td><obs conceptId="160100" labelText="CT CHEST ANGIOGRAM"/></td></tr>
-                                                <tr><td><obs conceptId="160099" labelText="CT SCAN CHEST"/></td></tr>
-                                                <tr><td><obs conceptId="160098" labelText="CT SCAN LUMBO-SACRAL SPINE"/></td></tr>
-                                                <tr><td><obs conceptId="160097" labelText="CT SCAN THORACIC SPINE"/></td></tr>
-                                                <tr><td><obs conceptId="160096" labelText="CT SCAN CERVICAL SPINE"/></td></tr>
-                                                <tr><td><obs conceptId="160095" labelText="CT SCAN NECK SOFT TISSUE"/></td></tr>
-                                                <tr><td><obs conceptId="160094" labelText="CT SCAN BASE OF THE SKULL"/></td></tr>
-                                                <tr><td><obs conceptId="160093" labelText="CT SCAN TEMPORAL BONES"/></td></tr>
-                                                <tr><td><obs conceptId="160092" labelText="CT SCAN ORBIT"/></td></tr>
-                                                <tr><td><obs conceptId="160091" labelText="CT SCAN SINUS"/></td></tr>
-                                                <tr><td><obs conceptId="160090" labelText="CT SCAN OF THE FACE : MANDIBLE/MAXILLA"/></td></tr>
-                                                <tr><td><obs conceptId="160089" labelText="CT SCAN BRAIN"/></td></tr>
-
-                                            </table>
-                                        </obsgroup>
-
-                                </td>
-
-                            </tr>
-                        </table>
-                    </div>
-
-
-                </div>
-
-                <div id="div2">
-                    <div style="color: red;" id="close2">
-                        <span><b>[X] Close me</b></span>
-                    </div>
-                </div>
-                <br/>
-
-            </div> -->
-
-
-	<ifMode mode="VIEW" include="false">
+				<fieldset>
+					<legend>
+						<b>
+							<font color="red">RADIOGRAPHER'S COMMENTS: EXPOSURE FACTORS:</font>
+						</b>
+					</legend>
+					<p>
+						<label for="">Radiology Finding: </label>
+						<obs cols="80" conceptId="3cdd0da6-26fe-102b-80cb-0017a47871b2" rows="3" style="textarea"/>
+					</p>
+					<p>
+						<label for="">Echograph Finding:</label>
+						<obs cols="80" conceptId="8d8597b4-0b54-4bc1-a35c-fa06d80e7a2b" rows="3" style="textarea"/>
+					</p>
+				</fieldset>
+				<fieldset>
+					<legend>
+						<b>
+							<font color="green">ATTACH IMAGE</font>
+						</b>
+					</legend>
+					<p>
+						<obs conceptId="3d47a038-c74a-4246-a0aa-40a0db014fe7"/>
+					</p>
+					<p>
+						<obs conceptId="930257d0-6ee2-451c-bef3-a1e7c20ff5ff"/>
+					</p>
+					<p>
+						<obs conceptId="c80acf00-6be0-4d41-908b-78995fd183ca"/>
+					</p>
+				</fieldset>
+			</div>
+		</section>
+	</ifMode>
+	<ifMode include="false" mode="VIEW">
 		<div id="buttons">
 
-			<button id="submit" class="submitButton confirm right">
-				<uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
-											style="display: none; margin-left: 10px;"></i>
+			<button class="submitButton confirm right" id="submit">
+				<uimessage code="Save"/>
+				<i class="icon-spinner icon-spin icon-2x" style="display: none; margin-left: 10px;"/>
 			</button>
-			<button id="cancel" type="button" class="cancel">
-				<uimessage code="emr.cancel" />
+			<button class="cancel" id="cancel" type="button">
+				<uimessage code="emr.cancel"/>
 			</button>
 		</div>
 	</ifMode>

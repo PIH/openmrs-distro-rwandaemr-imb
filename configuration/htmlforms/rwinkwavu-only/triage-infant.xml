@@ -1,0 +1,1368 @@
+<htmlform
+        formDescription="infant triage form"
+        formEncounterType="b42ac53d-4817-4b58-a884-a76c946083be"
+        formName="infant triage form"
+        formPublished="true"
+        formRetired="false"
+        formUuid="298fc43f-81b9-4bfa-a2aa-07b3db70a833"
+        formVersion="1.0"
+        htmlformUuid="212af5b4-5261-436c-88d2-747d9f622aeb">
+    <!-- Pedi HIV top level form.
+         HIV-RW.V1.akb.Juky13.doc
+         Created by gneza 2013
+     -->
+    <macros>
+        paperFormId = (Fill this in)
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+    </macros>
+
+    <style>
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
+        display: block;
+        }
+
+        form fieldset {
+        display: block;
+        }
+
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
+        }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        float: none;
+        display: inline-block;
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
+        width: 100%;
+        }
+
+        .div {
+        float: left;
+        }
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        .date-one-line {
+        display: flex;
+        }
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
+        }
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
+        }
+    </style>
+    <script type="text/javascript">
+        if(jQuery){
+        jQuery(document).ready(function(){
+        if ( $j.browser.msie ) {
+        $j(":checkbox").click(function(){
+        $j(this).change();
+        });
+        }
+        var temp = getValue('tmp.value');
+        $j(".baseline-aligned").each(function(){
+        var group = $j(this);
+
+        $j(this).children("#trigger").find(":checkbox:first").change(function(){
+        var checked = $j(this).attr("checked");
+        if(checked == true){
+
+
+        }else{
+
+        }
+        });
+        });
+
+
+        $j(".baseline-aligned").each(function(){
+        var group = $j(this);
+        var uncheckAll = function(){
+        group.find("input[type$='checkbox']").attr("checked",false);
+        group.find("input[type$='checkbox']").change();
+        }
+
+
+        group.find("#checkboxAll").find("input").click(
+        /*  This was tricky... A number of things needed to happen
+        Basically, This is supposed to treat a group of inputs as if
+        were all one big checkbox. It is designed so that a checkbox
+        can be next to an input, and the user clicks the input, the
+        checkbox checks as well. But, when the user clicks the checkbox,
+        the browser marks the checkbox as checked. Therefore, when we check
+        if the checkbox is already checked, it always respondes true...
+        We needed to have 2 cases: when the clicking action is on the first checkbox
+        and when the action is on any other.  */
+
+
+        function(){
+
+        var flip;
+        var checked = $j(this).siblings(":checkbox:first").attr("checked");
+        if($j(this).attr("name") == $j(this).parents("#checkboxAll:first").find(":checkbox:first").attr("name")){
+        checked = $j(this).attr("checked");
+        flip = checked;
+        }else{
+        flip = !checked;
+        }
+
+        if($j(this).attr("type") == "text") if(flip == false) flip = !flip; // this is so the user doesn't go to check the checkbox, then uncheck it when they hit the input.
+
+
+
+
+
+        $j(this).parents("#checkboxAll:first").find(":checkbox").attr("checked",flip);
+        $j(this).parents("#checkboxAll:first").find(":checkbox").change();
+
+        var sbp1 = getValue('sbpid.value');
+        var dbp1 = getValue('dbpid.value');
+
+        var second =group.find("#checkboxCheckbox:first").find(":checkbox:first").attr("checked");
+        var thard =group.find("#checkboxCheckbox2:first").find(":checkbox:first").attr("checked");
+        var first =group.find("#checkboxAll:first").find(":checkbox:first").attr("checked");
+
+        if(first=='checked' || thard=='checked' || second=='checked'){
+        $j('#message').text('ORANGE Less than 10 min').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','orange');
+        } else if(thard=='checked'  &amp;&amp;( (sbp &gt; 139 ) || (dbp &gt; 89 ))) {
+
+        $j('#message').html('Shout for help to mobilize the team and call for emergency equipment. &lt;/br\&gt;  If you are alone, the family may be your team. &lt;/br\&gt; Airway: Turn woman onto her side to prevent aspiration. Ensure her airway is open. &lt;/br\&gt; If available, give oxygen at 4–6 L per minute by mask or cannula. &lt;/br\&gt; Breathing: If the woman is not breathing, begin ventilation with a bag and mask. &lt;/br\&gt; Circulation: If pulse is absent, begin cardiac massage6. Protect from injury, but do not actively restrain her. &lt;/br\&gt; Do not put anything in her mouth. &lt;/br\&gt;  Do not leave her alone. &lt;/br\&gt; While giving care, ask the family about her medical history and recent signs of illness including fever, chills, headache, and neck stiffness. &lt;/br\&gt; Put up an intravenous line and transfer urgently to hospital &lt;/br\&gt; ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','orange');
+
+        } else{
+        $j('#message').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','white');
+        }
+        });
+
+        group.find("#checkboxCheckbox").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#checkboxCheckbox:first").find(":checkbox:first").attr("checked");
+        var thard =group.find("#checkboxCheckbox2:first").find(":checkbox:first").attr("checked");
+        var first =group.find("#checkboxAll:first").find(":checkbox:first").attr("checked");
+
+        if(first=='checked'|| thard=='checked' ||second=='checked'){
+        $j('#message').text('ORANGE Less than 10 min').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','orange');
+        }else if(thard=='checked'  &amp;&amp;( (sbp &gt; 139 ) || (dbp &gt; 89 ))) {
+
+        $j('#message').html('Shout for help to mobilize the team and call for emergency equipment. &lt;/br\&gt;  If you are alone, the family may be your team. &lt;/br\&gt; Airway: Turn woman onto her side to prevent aspiration. Ensure her airway is open. &lt;/br\&gt; If available, give oxygen at 4–6 L per minute by mask or cannula. &lt;/br\&gt; Breathing: If the woman is not breathing, begin ventilation with a bag and mask. &lt;/br\&gt; Circulation: If pulse is absent, begin cardiac massage6. Protect from injury, but do not actively restrain her. &lt;/br\&gt; Do not put anything in her mouth. &lt;/br\&gt;  Do not leave her alone. &lt;/br\&gt; While giving care, ask the family about her medical history and recent signs of illness including fever, chills, headache, and neck stiffness. &lt;/br\&gt; Put up an intravenous line and transfer urgently to hospital &lt;/br\&gt; ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','orange');
+
+        } else{
+        $j('#message').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','white');
+        }
+        });
+
+
+        group.find("#checkboxCheckbox2").find("input[type$='checkbox']").click(function(){
+
+        // $j(this).attr("checked",true);
+        // $j(this).change();
+
+        var second =group.find("#checkboxCheckbox:first").find(":checkbox:first").attr("checked");
+        var thard =group.find("#checkboxCheckbox2:first").find(":checkbox:first").attr("checked");
+        var first =group.find("#checkboxAll:first").find(":checkbox:first").attr("checked");
+
+        if(first=='checked' ||thard=='checked' ||second=='checked'){
+        $j('#message').text('ORANGE Less than 10 min').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','orange');
+        } else if(thard=='checked'  &amp;&amp;( (sbp &gt; 139 ) || (dbp &gt; 89 ))) {
+
+        $j('#message').html('Shout for help to mobilize the team and call for emergency equipment. &lt;/br\&gt;  If you are alone, the family may be your team. &lt;/br\&gt; Airway: Turn woman onto her side to prevent aspiration. Ensure her airway is open. &lt;/br\&gt; If available, give oxygen at 4–6 L per minute by mask or cannula. &lt;/br\&gt; Breathing: If the woman is not breathing, begin ventilation with a bag and mask. &lt;/br\&gt; Circulation: If pulse is absent, begin cardiac massage6. Protect from injury, but do not actively restrain her. &lt;/br\&gt; Do not put anything in her mouth. &lt;/br\&gt;  Do not leave her alone. &lt;/br\&gt; While giving care, ask the family about her medical history and recent signs of illness including fever, chills, headache, and neck stiffness. &lt;/br\&gt; Put up an intravenous line and transfer urgently to hospital &lt;/br\&gt; ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','orange');
+
+        } else{
+        $j('#message').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','white');
+        }
+        });
+        group.find("#4").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        // $j(this).change();
+
+        var second =group.find("#4:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message').text('If the patient is not breathing Clear airway and ventilate with Ambu bag and mask until she starts to breath  again. If possible keep on oxygen high flow Keep the patient lying on her back, the head in a slight extension. Put up an intravenous line and transfer urgently Keep monitoring the vital signs (BP, pulse, breathing rate) till patient arrives in hospital').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','orange');
+        } else{
+        $j('#message').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','white');
+        }
+        });
+
+        group.find("#5").find("input[type$='checkbox']").click(function(){
+
+        $j(this).attr("checked",true);
+        $j(this).change();
+
+
+        var second =group.find("#5:first").find(":checkbox:first").attr("checked");
+        var first =group.find("#6:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'|| first=='checked'){
+        $j('#message').text('ORANGE Less than 10 min').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','orange');
+        } else{
+        $j('#message').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','white');
+        }
+        });
+
+
+        group.find("#6").find("input[type$='checkbox']").click(function(){
+
+        // $j(this).attr("checked",true);
+        // $j(this).change();
+
+        var second =group.find("#5:first").find(":checkbox:first").attr("checked");
+        var first =group.find("#6:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'|| first=='checked'){
+        $j('#message').text('ORANGE Less than 10 min').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','orange');
+        } else{
+        $j('#message').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','white');
+        }
+        });
+
+        group.find("#7").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#7:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message').text('ORANGE Less than 10 min').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','orange');
+        } else{
+        $j('#message').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','white');
+        }
+        });
+        group.find("#8").find("input[type$='checkbox']").click(function(){
+
+        // $j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#8:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message').text('ORANGE Less than 10 min').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','orange');
+        } else{
+        $j('#message').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','white');
+        }
+        });
+        group.find("#9").find("input[type$='checkbox']").click(function(){
+
+        // $j(this).attr("checked",true);
+        // $j(this).change();
+
+        var second =group.find("#9:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message').text('ORANGE Less than 10 min').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','orange');
+        } else{
+        $j('#message').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','white');
+        }
+        });
+        group.find("#10").find("input[type$='checkbox']").click(function(){
+
+        // $j(this).attr("checked",true);
+        // $j(this).change();
+
+        var second =group.find("#10:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message').text('ORANGE Less than 10 min').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','orange');
+        } else{
+        $j('#message').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','white');
+        }
+        });
+        group.find("#11").find("input[type$='checkbox']").click(function(){
+
+        // $j(this).attr("checked",true);
+        // $j(this).change();
+
+        var second =group.find("#11:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message').text('ORANGE Less than 10 min').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','orange');
+        } else{
+        $j('#message').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','white');
+        }
+        });
+        group.find("#12").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        // $j(this).change();
+
+        var second =group.find("#12:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message').text('ORANGE Less than 10 min').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','orange');
+        } else{
+        $j('#message').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','white');
+        }
+        });
+        group.find("#13").find("input[type$='checkbox']").click(function(){
+
+        // $j(this).attr("checked",true);
+        // $j(this).change();
+
+        var second =group.find("#13:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message').text('ORANGE Less than 10 min').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','orange');
+        } else{
+        $j('#message').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','white');
+        }
+        });
+        group.find("#14").find("input[type$='checkbox']").click(function(){
+
+        // $j(this).attr("checked",true);
+        // $j(this).change();
+
+        var second =group.find("#14:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message').text('ORANGE Less than 10 min').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','orange');
+        } else{
+        $j('#message').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','white');
+        }
+        });
+        group.find("#15").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        // $j(this).change();
+
+        var second =group.find("#15:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message').text('ORANGE Less than 10 min').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','orange');
+        } else{
+        $j('#message').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','white');
+        }
+        });
+        group.find("#16").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#16:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message').text('ORANGE Less than 10 min').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','orange');
+        } else{
+        $j('#message').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','white');
+        }
+        });
+        group.find("#16").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#16:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message').text('ORANGE Less than 10 min').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','orange');
+        } else{
+        $j('#message').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd').css('background-color','white');
+        }
+        });
+        group.find("#17").find("input[type$='checkbox']").click(function(){
+
+        // $j(this).attr("checked",true);
+        // $j(this).change();
+
+        var second =group.find("#17:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#18").find("input[type$='checkbox']").click(function(){
+
+        // $j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#18:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#19").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#19:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#20").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#20:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#21").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#21:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#22").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#22:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#23").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        // $j(this).change();
+
+        var second =group.find("#23:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#24").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#24:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#25").find("input[type$='checkbox']").click(function(){
+
+        // $j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#25:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#26").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#26:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#27").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#27:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#28").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#28:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#29").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#29:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#30").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        // $j(this).change();
+
+        var second =group.find("#30:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#31").find("input[type$='checkbox']").click(function(){
+
+        // $j(this).attr("checked",true);
+        // $j(this).change();
+
+        var second =group.find("#31:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#32").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        // $j(this).change();
+
+        var second =group.find("#32:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#33").find("input[type$='checkbox']").click(function(){
+
+        // $j(this).attr("checked",true);
+        // $j(this).change();
+
+        var second =group.find("#33:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#34").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#34:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#35").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        // $j(this).change();
+
+        var second =group.find("#35:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#36").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        // $j(this).change();
+
+        var second =group.find("#36:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#37").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#37:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#38").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#38:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#39").find("input[type$='checkbox']").click(function(){
+
+        $j(this).attr("checked",true);
+        $j(this).change();
+
+        var second =group.find("#39:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#40").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#40:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message1').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','red');
+        } else{
+        $j('#message1').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd1').css('background-color','white');
+        }
+        });
+        group.find("#41").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#41:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message3').text('YELLOW Within 60 min').css('color','black').css("font-weight","Bold");
+        $j('#dangertd3').css('background-color','yellow');
+        } else{
+        $j('#message3').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd3').css('background-color','white');
+        }
+        });
+        group.find("#42").find("input[type$='checkbox']").click(function(){
+
+        // $j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#42:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message3').text('YELLOW Within 60 min').css('color','black').css("font-weight","Bold");
+        $j('#dangertd3').css('background-color','yellow');
+        } else{
+        $j('#message3').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd3').css('background-color','white');
+        }
+        });
+
+        group.find("#43").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#43:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message3').text('YELLOW Within 60 min').css('color','black').css("font-weight","Bold");
+        $j('#dangertd3').css('background-color','yellow');
+        } else{
+        $j('#message3').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd3').css('background-color','white');
+        }
+        });
+        group.find("#44").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#44:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message3').text('YELLOW Within 60 min').css('color','black').css("font-weight","Bold");
+        $j('#dangertd3').css('background-color','yellow');
+        } else{
+        $j('#message3').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd3').css('background-color','white');
+        }
+        });
+        group.find("#45").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#45:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message3').text('YELLOW Within 60 min').css('color','black').css("font-weight","Bold");
+        $j('#dangertd3').css('background-color','yellow');
+        } else{
+        $j('#message3').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd3').css('background-color','white');
+        }
+        });
+        group.find("#46").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#46:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message3').text('YELLOW Within 60 min').css('color','black').css("font-weight","Bold");
+        $j('#dangertd3').css('background-color','yellow');
+        } else{
+        $j('#message3').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd3').css('background-color','white');
+        }
+        });
+        group.find("#47").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#47:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message3').text('YELLOW Within 60 min').css('color','black').css("font-weight","Bold");
+        $j('#dangertd3').css('background-color','yellow');
+        } else{
+        $j('#message3').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd3').css('background-color','white');
+        }
+        });
+        group.find("#48").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#48:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message3').text('YELLOW Within 60 min').css('color','black').css("font-weight","Bold");
+        $j('#dangertd3').css('background-color','yellow');
+        } else{
+        $j('#message3').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd3').css('background-color','white');
+        }
+        });
+        group.find("#49").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#49:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message3').text('YELLOW Within 60 min').css('color','black').css("font-weight","Bold");
+        $j('#dangertd3').css('background-color','yellow');
+        } else{
+        $j('#message3').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd3').css('background-color','white');
+        }
+        });
+        group.find("#50").find("input[type$='checkbox']").click(function(){
+
+        //$j(this).attr("checked",true);
+        //$j(this).change();
+
+        var second =group.find("#50:first").find(":checkbox:first").attr("checked");
+
+        if(second=='checked'){
+        $j('#message3').text('YELLOW Within 60 min').css('color','black').css("font-weight","Bold");
+        $j('#dangertd3').css('background-color','yellow');
+        } else{
+        $j('#message3').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd3').css('background-color','white');
+        }
+        });
+        group.find("#all").find("input:checkbox[type='checkbox']").click(function(){
+        if ($j(this).is(":checked")){
+        var scr = $j(this).attr('value');
+        var tscr = $j('#score').html();
+        var setscr = parseInt(scr) + parseInt(tscr);
+        $j('#score').html(setscr);
+        var r=$j('#score').html(setscr);
+        $j('#score1').html(r);
+        }
+        else {
+        var scr = $j(this).attr('value');
+        var tscr = $j('#score').html();
+        var setscr = parseInt(tscr) - parseInt(scr);
+        $j('#score').html(setscr);
+        }
+        });
+        });
+        });
+        }
+    </script>
+
+    <script type="text/javascript">
+        jQuery(function() {
+        var satura = <lookup expression="fn.latestObs(5092).getValueNumeric()"/>;
+        $j(".baseline-aligned").each(function(){
+
+        if(satura&lt;92){
+        $j('#message2').text('RED Immediate Resuscitation ALARM').css('color','black').css("font-weight","Bold");
+        $j('#dangertd2').css('background-color','red');
+        }
+        else{
+        $j('#message2').text(' ').css('color','red').css("font-weight","Bold");
+        $j('#dangertd2').css('background-color','white');
+        }
+        })
+        });
+    </script>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
+
+
+            <table border="2" cellspacing="0" cellpadding="6" width="100%">
+                <tr>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
+                    </td>
+                    <td>
+                        Health Facility:
+                        <encounterLocation default="GlobalProperty:billing.defaultLocation" />
+                    </td>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <h3> Infant Triage form</h3>(0-3 years)
+    <td><h2>Chief Complaints:</h2><obs conceptId="3ce2b170-26fe-102b-80cb-0017a47871b2" style="textarea" rows="2" cols="100"  /></td>
+    <!--
+    <td><obs conceptId="24aa74e0-a281-4031-8919-63f3eaf3a729" style="textarea" rows="3" cols="30" labelCode="History of Present illness"/></td>
+     <td><obs conceptId="bc3862d8-6825-4878-8801-f1e7b0790071" style="textarea" rows="3" cols="30" labelCode="Past medical" /></td>
+     <td><obs conceptId="4e3b9dc8-2b11-4a05-972f-f9710471c5d0" style="textarea" rows="3" cols="30" labelCode="Immunization (VAT)"  /></td>
+     -->
+
+
+
+    <!--<section headerLabel="AUTO VITAL SIGNS">
+
+        <tr>
+
+            <obsgroup groupingConceptId="3cd74ee8-26fe-102b-80cb-0017a47871b2">
+
+                <td><b>Height: </b><font color="red"><lookup expression="fn.latestObs(5090).getValueNumeric()"/></font></td>
+                <td><b>Weight:</b><font color="red"><lookup expression="fn.latestObs(5089).getValueNumeric()"/></font></td>
+                <td><b>Heart Rate or Pulse:</b> <font color="red"><lookup expression="fn.latestObs(5087).getValueNumeric()"/></font></td>
+                <td><b>SBP:</b><font color="red"><lookup expression="fn.latestObs(5085).getValueNumeric()"/></font></td>
+                <td><b>DBP:</b><font color="red"><lookup expression="fn.latestObs(5086).getValueNumeric()"/></font></td>
+                <td><b>Temperature:</b><font color="red"><lookup expression="fn.latestObs(5088).getValueNumeric()"/></font></td>
+                <td><b>O2 Saturation:</b><font color="red"><lookup expression="fn.latestObs(5092).getValueNumeric()"/></font></td>
+                <td><b>Respiratory Rate:</b><font color="red"><lookup expression="fn.latestObs(5242).getValueNumeric()"/></font></td>
+
+
+            </obsgroup>
+
+        </tr>
+
+
+    </section>-->
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="EMERGENCY SINGS? CHECK THE COMPLAINT">
+        <div class="section-container">
+            <table class="baseline-aligned" cellspacing="0" cellpadding="6" width="100%" style="background-color:AliceBlue" id="dangertd1">
+                <tr align="center"> <h2><td colspan="3" id="message1"></td></h2></tr>
+                <tr><th>Airway/ Breathing</th></tr>
+                <tr> <td><span id="17"> <obs conceptId="87ce1710-627e-47fc-931f-201bde8f2e66" answerConceptId="c568dc8a-dbc0-4478-a442-7e7ea688ea2e" answerCode="No Breathing" style="checkbox"  /></span></td></tr>
+                <tr> <td><span id="18"> <obs conceptId="87ce1710-627e-47fc-931f-201bde8f2e66" answerConceptId="0103c82a-fb00-4498-b845-a77b0aac8360" answerCode="Obstructed Breathing" style="checkbox"/></span></td></tr>
+                <tr> <td><span id="19"> <obs conceptId="87ce1710-627e-47fc-931f-201bde8f2e66" answerConceptId="db886b2d-d8af-443b-81ac-013abca8ac42" answerCode="Severe Respiratory Distress" style="checkbox"/></span></td></tr>
+                <tr> <th>Circulation</th></tr>
+
+                <tr><td><span id="20"> <obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="1719e6db-a336-4ec2-adf9-90d51233bfce" answerCode="Cardiac arrest" style="checkbox"/></span></td></tr>
+                <tr><td><span id="21"> <obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="ce977dee-31d6-494e-80a4-529c2f2e3bbe" answerCode="Hemorrhage-uncontrolled" style="checkbox"/></span></td></tr>
+                <tr><td> <span id="22"><obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="84caf353-f54d-46ab-977c-8c660a51c56b" answerCode="Stab/gunshot wound to neck or chest" style="checkbox"/></span></td></tr>
+                <tr><td><span id="24"> <obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="473c2f4c-0111-4cd4-a90b-7f129a2ac8b8" answerCode="Lethargic" style="checkbox"/></span></td></tr>
+                <tr><td><span id="25"> <obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="e1c1e606-cdad-4417-b35a-2152f69f3cbc" answerCode="Pulse weak and fast" style="checkbox"/></span></td></tr>
+                <tr><td><span id="26"> <obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="c1d0fc31-bf80-4b49-aa03-25c4b04a2e1e" answerCode="Cap refill ≥3 sec" style="checkbox"/></span></td></tr>
+                <tr><td> <span id="27"><obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="f051815d-2033-4f99-b59a-8c9e06c46ebe" answerCode="Cold hand plus" style="checkbox"/></span></td></tr>
+                <tr> <th>Convulsion</th></tr>
+                <tr><td><span id="28"> <obs  conceptId="3cce938e-26fe-102b-80cb-0017a47871b2" answerConceptId="b4c88c6c-4141-42be-a953-b585b0649443" answerCode="Current seizure or post ictal (not alert)" style="checkbox"/> <b>Glucose=</b> <obs conceptId="3cd4e194-26fe-102b-80cb-0017a47871b2"/></span></td></tr>
+                <tr><th>Coma</th></tr>
+                <tr><td> <span id="30"><obs  conceptId="3cd95a58-26fe-102b-80cb-0017a47871b2" answerConceptId="eb061310-0040-444b-9e91-89b53aa66e48" answerCode="Un responsive or responsive only to pain" style="checkbox"/> <b>Glucose+</b> <obs conceptId="3cd4e194-26fe-102b-80cb-0017a47871b2"/></span></td></tr>
+                <tr><th>Dehydration</th></tr>
+                <tr><td><span id="31"> <obs conceptId="3cd95a58-26fe-102b-80cb-0017a47871b2" answerConceptId="d5e674ae-76a6-40cf-bc41-0922732ad479" answerCode="Severe dehydration ≥ +2 of following" style="checkbox"/></span></td></tr>
+                <tr><td> <span id="32"> <obs conceptId="3cd95a58-26fe-102b-80cb-0017a47871b2" answerConceptId="918b11a8-bbd8-44d5-9ba5-24bfac4b6a3d" answerCode="Skin pinch ≥ 2sec" style="checkbox"/></span></td></tr>
+                <tr><td><span id="33"><obs conceptId="3cd95a58-26fe-102b-80cb-0017a47871b2" answerConceptId="473c2f4c-0111-4cd4-a90b-7f129a2ac8b8" answerCode="Lethargy" style="checkbox"/></span></td></tr>
+                <tr><td><span id="34"> <obs conceptId="3cd95a58-26fe-102b-80cb-0017a47871b2" answerConceptId="b718ee7f-5909-4d1f-8475-06dbe423ec7a" answerCode="SSunken eyes" style="checkbox"/></span></td></tr>
+
+                <tr> <th>Other:</th></tr>
+                <tr><td> <span id="35"><obs  conceptId="2ab4b47e-5b88-4277-9925-226ce89f9e9f" answerConceptId="02544ac6-78ff-442a-993c-b7844d5b34b8" answerCode="Prolapsed cord" style="checkbox"/></span></td></tr>
+                <tr><td><span id="36"> <obs conceptId="2ab4b47e-5b88-4277-9925-226ce89f9e9f" answerConceptId="d79c7d9e-52b7-4927-bcdf-b0400619f7f3" answerCode="Abnormal CTG" style="checkbox"/></span></td></tr>
+                <tr> <td><span id="37"> <obs conceptId="2ab4b47e-5b88-4277-9925-226ce89f9e9f" answerConceptId="cc696b6c-1f53-4b60-8fea-c61c55318333" answerCode="No fetal movement" style="checkbox"/></span></td></tr>
+                <tr><td><span id="38"> <obs conceptId="2ab4b47e-5b88-4277-9925-226ce89f9e9f" answerConceptId="84caf353-f54d-46ab-977c-8c660a51c56b" answerCode="Stab/gunshot wound" style="checkbox"/></span></td></tr>
+                <tr><td><span id="39"> <obs conceptId="2ab4b47e-5b88-4277-9925-226ce89f9e9f" answerConceptId="0df89a77-686e-4bdb-9a19-335b43aa8059" answerCode="Bandel ring" style="checkbox"/></span></td></tr>
+                <tr><td> <span id="40"><obs conceptId="2ab4b47e-5b88-4277-9925-226ce89f9e9f" answerConceptId="26c0efb3-2acf-4183-aa4b-631de4665d1e" answerCode="Imminent birth" style="checkbox"/></span></td></tr>
+
+
+            </table>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="AUTO VITAL SIGNS">
+        <div class="section-container">
+            <tr>
+
+                <obsgroup groupingConceptId="3cd74ee8-26fe-102b-80cb-0017a47871b2">
+
+                    <td><b>Height: </b><font color="red"><lookup expression="fn.latestObs(5090).getValueNumeric()"/></font></td>
+                    <td><b>Weight:</b><font color="red"><lookup expression="fn.latestObs(5089).getValueNumeric()"/></font></td>
+                    <td><b>Heart Rate or Pulse:</b> <font color="red"><lookup expression="fn.latestObs(5087).getValueNumeric()"/></font></td>
+                    <td><b>SBP:</b><font color="red"><lookup expression="fn.latestObs(5085).getValueNumeric()"/></font></td>
+                    <td><b>DBP:</b><font color="red"><lookup expression="fn.latestObs(5086).getValueNumeric()"/></font></td>
+                    <td><b>Temperature:</b><font color="red"><lookup expression="fn.latestObs(5088).getValueNumeric()"/></font></td>
+                    <td><b>O2 Saturation:</b><font color="red"><lookup expression="fn.latestObs(5092).getValueNumeric()"/></font></td>
+                    <td><b>Respiratory Rate:</b><font color="red"><lookup expression="fn.latestObs(5242).getValueNumeric()"/></font></td>
+
+
+                </obsgroup>
+
+            </tr>
+
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Calculate triage EARLY WARNING SCORE (TEWS) -CIRCLE THE BOX">
+        <div class="section-container">
+
+            <table class="baseline-aligned" cellspacing="0" cellpadding="6" width="100%" style="background-color:AliceBlue" id="dangertd2">
+                <tr align="center"> <h2><td colspan="3" id="message2"></td></h2></tr>
+                <div><span id="checking">
+
+                    <tr>
+                        <td><b>Mobility and its score</b></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+
+                        <td ><span id="all" class="sc">
+                            <h1>RR(min)</h1>
+                            <input type="checkbox"  value="3"/>(&#60;20)
+                            <input type="checkbox"  value="2"/>(20-25)
+                            <input type="checkbox"  value="0"/>(26-39)
+                            <input type="checkbox"  value="1"/>(40-49)
+                            <input type="checkbox"  value="2"/>(&#62;50)
+                            <h1>HR(min)</h1>
+                            <input type="checkbox"  value="3"/>(&#60;70)
+                            <input type="checkbox"  value="2"/>(70-79)
+                            <input type="checkbox"  value="0"/>(80-130)
+                            <input type="checkbox"  value="1"/>(131-159)
+                            <input type="checkbox" value="3"/>(&#62;160)
+                            <h1>SBP</h1>
+                            <input type="checkbox" value="3" />(&#60;71)
+                            <input type="checkbox" value="2" />(71-80)
+                            <input type="checkbox"  value="1"/>(81-100)
+                            <input type="checkbox"  value="0"/>(101-199)
+                            <input type="checkbox" value="2"/>(&#62;199)
+                            <h1>TEMP(C<sup>0</sup>)</h1>
+                            <input type="checkbox" value="2"/>(&#60;35)
+                            <input type="checkbox" value="0"/>(35-38.4)
+                            <input type="checkbox" value="2"/>(&#62;38.4)
+                            <h1>AVUP</h1>
+                            <input type="checkbox" value="2"/>confused
+                            <input type="checkbox" value="0"/> Alert
+                            <input type="checkbox" value="1"/> React to Voice
+                            <input type="checkbox" value="2"/>React to Pain
+                            <input type="checkbox" value="3"/>Unresponsive
+                            <h1>Trauma</h1>
+                            <input type="checkbox" value="0"/> No
+                            <input type="checkbox" value="1"/>Yes
+                        </span></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>Total Score</b></td>
+                        <td bgcolor="red"><span id="score1"><obs conceptId="7c4fb4d3-5e09-49ed-bd44-190ca9a75a55" /></span> </td>
+                        <td><h4><span id="score">0.00</span></h4></td>
+
+                    </tr>
+                    <tr>
+                        <td><b>02Saturation</b></td>
+                        <td><span id="sat"><lookup expression="fn.latestObs(5092).getValueNumeric()"/></span></td>
+
+
+                    </tr>
+                    <tr>
+                        <td><b>Pain(0-10):</b></td>
+                        <td><obs conceptId="9b461c8e-155a-481c-83a4-1de363f7301e"/></td>
+
+                    </tr>
+                </span></div>
+            </table>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Very Urgent Sings? CHECK THE COMPLAINT"  >
+        <div class="section-container">
+            <table class="baseline-aligned" cellspacing="0" cellpadding="2" width="100%" style="background-color:AliceBlue" id="dangertd">
+                <tr align="center"> <h2><td colspan="3" id="message"></td></h2></tr>
+                <tr> <th>Medical</th></tr>
+                <tr> <td><span id="checkboxCheckbox"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="f154aadd-f66e-401c-aae1-bdc21cc5d556" style="checkbox" answerCode="Presenting complaint:more sleep than normal" /> </span> </td> </tr>
+                <tr> <td><span id="checkboxAll"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="3cd659ac-26fe-102b-80cb-0017a47871b2" style="checkbox" answerCode="Focal neurological deficit-acute less than 1 day (glucose)" /> </span> </td> </tr>
+                <tr>  <td><span id="checkboxCheckbox2"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="3ccdf8d4-26fe-102b-80cb-0017a47871b2" style="checkbox" answerCode=" Severe pain more than7" /></span></td></tr>
+                <tr> <td><span id="4"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="36161739-f82a-492a-a1ac-71e8650ece90" style="checkbox" answerCode="floppy,irritable,restless" /> </span> </td> </tr>
+                <tr> <td><span id="5"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="3ccd2364-26fe-102b-80cb-0017a47871b2" style="checkbox" answerCode="Chest pain" /> </span> </td> </tr>
+                <tr> <td><span id="6"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="	1b636e15-008a-4a29-9810-3029b10400fd" style="checkbox" answerCode="Poising/Overdose" /> </span> </td> </tr>
+                <tr>  <td><span id="7"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="216978b5-c2a5-481b-be39-72e83cf8a949" style="checkbox" answerCode="Tiny baby (young than 2 months)" />  </span> </td> </tr>
+
+                <tr><th>trauma</th></tr>
+                <!-- <tr> <td><span id="9"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="a56886fb-dc88-4220-aee5-5a305f743bca" style="checkbox" answerCode="Altered mental status acutes less than 1 day"/> </span>  </td></tr>-->
+                <tr> <td><span id="8"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="c4e02103-9420-4f48-9e37-ff092a4b77bf" style="checkbox" answerCode="Burn over 20% with urgent signs(electrical,chemical of circumferential)" /> </span> </td> </tr>
+                <!--<tr> <td><span id="11"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="	1b636e15-008a-4a29-9810-3029b10400fd" style="checkbox" answerCode="Poising/Overdose" /> </span> </td> </tr>-->
+                <tr> <td><span id="9"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="94560650-1c67-4802-8bf9-cd788f4e318d" style="checkbox" answerCode="Fracture Open(with skin break)" /> </span> </td> </tr>
+                <tr> <td><span id="10"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="73cb05a8-606c-48c8-b5be-bd9129b994f0" style="checkbox" answerCode="Threatened limb(no pulse or pale)" /> </span> </td> </tr>
+                <tr> <td><span id="11"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="c9b21031-f76d-463e-823a-cefdb35ed259" style="checkbox" answerCode="Eye injury" /> </span> </td> </tr>
+                <tr> <td><span id="12"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="cd677f31-bba7-4c3c-b118-8d2c060896cd" style="checkbox" answerCode="Dislocation or lager joint(not finger/foe)" /> </span>  </td></tr>
+                <tr><td><span id="13"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="7db321ae-f12d-40a2-a192-84dffe0b782b" style="checkbox" answerCode="Severe mechanism of injury(fall more than 1 meter,RTA,other significant trauma)" />  </span> </td> </tr>
+            </table>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Urgent Sings? CHECK THE COMPLAINT"  >
+        <div class="section-container">
+            <table class="baseline-aligned" cellspacing="0" cellpadding="2" width="100%" style="background-color:AliceBlue" id="dangertd3">
+                <tr align="center"> <h2><td colspan="3" id="message3"></td></h2></tr>
+                <tr> <th>Medical/</th></tr>
+                <tr> <td><span id="41"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="0c1b3e95-a0fb-4beb-831a-4b07f6c9cdbe" style="checkbox" answerCode="pitting edema of both feet of face"/> </span></td> </tr>
+                <tr> <td><span id="42"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="6d3fde84-b75c-448f-9049-9eec62a3c619" style="checkbox" answerCode="Unable to drink or vomits everything"/> </span></td> </tr>
+                <tr> <td>  <span id="43"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="ed9089cb-2fab-41ad-ab48-5b12e71a2790" style="checkbox" answerCode="Unwell with known diabetes"/></span> </td></tr>
+                <tr> <td> <span id="44"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="7ac54e26-e9c4-47de-b600-bff224d14c86" style="checkbox" answerCode="Severe malnutrition/wasting" /> </span></td></tr>
+                <tr> <td><span id="45"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="3ceb16a8-26fe-102b-80cb-0017a47871b2" style="checkbox" answerCode="Severe Pallor"/> </span>  </td></tr>
+                <tr> <td><span id="46"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="f7f0399c-4962-42e7-acf9-b74a1158ca65" style="checkbox" answerCode="respiratory distress" /> </span> </td> </tr>
+                <tr> <td><span id="47"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="b718ee7f-5909-4d1f-8475-06dbe423ec7a" style="checkbox" answerCode="diarrhea and/or vomiting plus any sunken eye" /> </span> </td> </tr>
+                <tr> <td><span id="48"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="88d6d806-25e7-48fd-8735-86c7c614dcbe" style="checkbox" answerCode="Dry mouth decreased urine output, skin punch slow less than 2secs " /> </span> </td> </tr>
+                <tr><th>Trauma</th></tr>
+                <tr><td><span id="49"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="3cd14b24-26fe-102b-80cb-0017a47871b2" style="checkbox" answerCode=" Dislocation-finger or toe"  /> </span> </td >  </tr>
+                <tr> <td><span id="50"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="d3994be3-4ce4-4620-b859-d8b4c127e0e7" style="checkbox" answerCode="Fracture-closed/Moderate pain(5-6)"/> </span>  </td></tr>
+                <tr> <td><span id="51"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="0675e6ee-617a-4068-9a29-135c22d3ba85" style="checkbox" answerCode="Burn without urgent signs" /> </span> </td> </tr>
+            </table>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Nurse Notification">
+        <div class="section-container">
+            <table cellpadding="6" cellspacing="0" style="background-color:AliceBlue" width="100%">
+                <tr>
+                    <td>
+                        <strong>Triage finish time:</strong>
+                        <obs conceptId="b9260c0b-4abb-4962-9eb5-937877d612a6" />
+                    </td>
+                    <td>
+                        <strong>Notified color:</strong>
+                        <obs answerCodes="Red,Orange,Yellow,Green"
+                             answerConceptIds="374c3f19-3a38-4be6-aa11-a8af6c41db13,a0688681-8e9c-4a6d-afb5-e335e74cf0f1,b35fa30a-2247-4159-bc42-d7867d3ee8a2,d99b8825-33fa-48a0-ba47-c3b60bf24c7e"
+                             conceptId="4e0a4d51-84dc-4467-a0d3-1533df980c19" required="true" style="radio" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="APPROVAL">
+        <div class="section-container">
+            <table cellpadding="6" cellspacing="0" style="background-color:AliceBlue" width="100%">
+                <tr>
+                    <td>
+                        <strong>Doctor's Name:</strong>
+                        <obs cols="30" conceptId="6eb2e0e5-fd99-4385-a570-24f24e1b5dc6" rows="3" style="textarea" />
+                        <b>attended</b>
+                        <obs conceptId="dd0b00b0-b8d0-4f55-931c-cfdbf7c08c2d" />
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
+</htmlform>

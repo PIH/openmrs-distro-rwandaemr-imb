@@ -1,5 +1,5 @@
-<htmlform formUuid="01167552-7e28-44fc-848b-317b00fb8087" formName="Auto OPD Discharge"
-          formEncounterType="76162246-15d8-43b0-9666-5884ad1e2be4" formVersion="1.0">
+<htmlform formUuid="1259e348-0238-4e18-b951-b4db677fe7ea" formName="Auto OPD Discharge"
+          formEncounterType="13703c92-58d2-4d04-a320-8d4699380676" formVersion="1.0">
 
     <script type="text/javascript">
         $(function() {

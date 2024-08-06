@@ -1,5 +1,5 @@
-<htmlform formEncounterType="13703c92-58d2-4d04-a320-8d4699380676" formName="IPD Discharge Form"
-          formUuid="b5f8ffd8-fbde-11e2-8ff2-fd54ab5fdb2a" formVersion="1.0">
+<htmlform formEncounterType="13703c92-58d2-4d04-a320-8d4699380676" formName="Auto OPD Discharge"
+          formUuid="01167552-7e28-44fc-848b-317b00fb8087" formVersion="1.0">
 
     <style>
         .field-error {
@@ -199,17 +199,22 @@
             </p>
             <p class="side-by-side">
                 <obs conceptId="56eb354e-a4e5-455a-a2b9-4748306aaeb8"
-                     answerConceptIds="acd8772e-8346-4c7d-9ad3-b677479b511c,5a465297-2ae7-466f-8352-c7f878c2e4c0,bcf502c3-f937-4e7a-9b42-06499d7bd2af,e9672094-f38c-44e7-affd-a12c44cb45e5,77462de6-c450-43e2-a941-ec83f830ede5"
+                     answerConceptIds="acd8772e-8346-4c7d-9ad3-b677479b511c,5a465297-2ae7-466f-8352-c7f878c2e4c0,bcf502c3-f937-4e7a-9b42-06499d7bd2af,e9672094-f38c-44e7-affd-a12c44cb45e5,77462de6-c450-43e2-a941-ec83f830ede5,5269c451-2a5a-4a54-ac8b-bae388e58a82"
                      style="radio" id="patStat" labelCode="Patient Status:" >
                     <controls>
                         <when value="e9672094-f38c-44e7-affd-a12c44cb45e5" thenDisplay="#autoP" />
                         <when value="77462de6-c450-43e2-a941-ec83f830ede5" thenDisplay="#autoP" />
+                        <when value="5269c451-2a5a-4a54-ac8b-bae388e58a82" thenDisplay="#ref" />
+
                     </controls>
                 </obs>
             </p>
             <p id="autoP" class="side-by-side">
                 <obs conceptId="3ce1367e-26fe-102b-80cb-0017a47871b2" labelText="Was an autopsy requested" noLabel="No"
                      style="no_yes" yesLabel="Yes" />
+            </p>
+            <p id="ref">
+                <obs conceptId="5269c451-2a5a-4a54-ac8b-bae388e58a82" labelText="Where?:" style="text"/>
             </p>
             <p>
                 <label>
@@ -267,6 +272,14 @@
 
 
     </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Evaluation of effectiveness for patient education">
+        <div class="section-container">
+            <p>
+                <obs conceptId="76da94a3-8eb5-44e4-b690-0e2e0f814fa2" style="textarea" rows="4" cols="40"/>
+            </p>
+        </div>
+    </section>
+
 
     <ifMode mode="VIEW" include="false">
         <div id="buttons">

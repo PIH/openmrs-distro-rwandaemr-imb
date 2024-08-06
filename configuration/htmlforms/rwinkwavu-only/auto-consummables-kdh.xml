@@ -1,0 +1,1093 @@
+<htmlform htmlformUuid="bef7f078-8e11-408a-a00b-4d85fa4cde8e" formUuid="fc2a44ed-442b-4942-9393-342e9416ad73"
+          formName="Consumables(KDH)" formDescription="Consumables(KDH)" formVersion="1.0"
+          formEncounterType="3c2a7c11-36b6-4593-85c5-be98713ae288" formPublished="true" formRetired="false">
+
+    <macros>
+        paperFormId = Flow-DM-RW.V2.0.akb.15May09
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+
+        @Motivation_Of_Drug_Prescription@ = 4ac07e09-570c-497b-8b9a-639cdedbe2df
+        @RWANDA_INSURANCE_NUMBER@ = 5775fd72-b120-40e1-84a4-a2554a781bb2
+        @RWANDA_INSURANCE_TYPE@ = 8da67e73-776c-43f6-9758-79d1f6786db3
+        @Insurance_Beneficiary_Names@ = b2783c61-6ff2-4964-bbb8-3440b30ed954
+        @BENEFICIALY_INSURANCE_NUMBER@ = b4bf4d52-ae92-4d8f-b7f0-3c99c521a568
+        @GENERAL_DRUG_FREQUENCY@ = 5e152a81-8635-41d6-aef2-2527a5f584f3
+        @Other_Drugs@ = aaa7aeff-c1cc-4c34-befc-0821c7f5e2e0
+        @Date_of_Ordonance@ = 65ef339a-801c-4f43-ad3e-ef4913d23e70
+
+
+    </macros>
+    <script type="text/javascript">
+        beforeSubmit.push(function () {
+        var c = confirm('Do you want to submit? If yes, Confirm with OK. If No, click on Cancel');
+        if (c) {
+        return true;
+        }
+        else {
+        return false;
+        }
+
+        });
+    </script>
+    <style>
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
+        display: block;
+        }
+
+        form fieldset {
+        display: block;
+        }
+
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
+        }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
+        width: 100%;
+        }
+
+        .div {
+        float: left;
+        }
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        .date-one-line {
+        display: flex;
+        }
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
+        }
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
+        }
+    </style>
+
+
+
+    <postSubmissionAction
+            class="org.openmrs.module.pharmacymanagement.billingAutomation.CreateBillOnConsumableHtmlFormSubmissionAction" />
+
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
+            <table>
+                <tr>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
+                    </td>
+                    <td>
+                        Health Facility:
+                        <encounterLocation id="location" default="GlobalProperty:billing.defaultLocation" />
+                    </td>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- <section headerLabel="Patient Information">
+        <table cellspacing="0" cellpadding="6" width="100%" style="background-color:AliceBlue">
+            <tr>
+                <td>
+                    Primary Care ID Type:
+                    <lookup class="value" expression="patientIdentifiers.get(&quot;Primary Care ID Type&quot;)"/>
+                    <br/>
+                    Nom / Last name:
+                    <lookup class="value" expression="patient.personName.familyName"/>
+                    &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                    Prénom/ First name:
+                    <lookup class="value" expression="patient.personName.givenName"/>
+                    <br/>
+                    Sexe/Sex:
+                    <lookup class="value" expression="patient.Gender"/>
+                    <br/>
+                    Date de naissance/Date of birth:
+                    <lookup class="value" expression="patient.birthdate"/>
+                </td>
+            </tr>
+        </table>
+    </section> -->
+
+    <section  sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="CONSOMMABLES">
+        <div class="section-container">
+
+            <table>
+
+                <tr>
+                    <td class="lblcolor" colspan="4"><b>Department</b>
+                        <obs conceptId="c920931b-fa93-4e99-9e36-28e1e4c16cf7" required="true" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <p class="small-input flexView">
+                        <td>
+                            <obs conceptId="4a9e09a5-e892-4d72-96c1-45dd7cb28931"
+                                 labelText=" CATHETER SHORT IV UU 22G B/50" />
+                        </td>
+                        <td>
+                            <obs conceptId="047ecb6e-be8a-4c3a-b8c3-4e5f62a13b1f" labelText="BALANCE PESE ADULTE" />
+                        </td>
+                        <td>
+                            <obs conceptId="f09b6544-c120-48e0-bc09-8333f9f88124" labelText="BALANCE PESE NOUVEAU NEE" />
+                        </td>
+                        <td>
+                            <obs conceptId="2b3f8003-83fa-47ca-9402-55e4b9c429b8" labelText="BANDAGE CREPE 10 CM X 4 M" />
+                        </td>
+                        <td>
+                            <obs conceptId="67ccfe7b-69bc-44f3-ab98-a641d8c1fa37" labelText="BANDAGE CREPE 6CM*2.7M" />
+                        </td>
+                    </p>
+
+                </tr>
+                <tr>
+                    <p class="small-input flexView">
+                        <td>
+                            <obs conceptId="263d0274-ad78-4015-b846-c116dc1c6f58" labelText="BANDAGE CREPE 8CM*2.7M" />
+                        </td>
+                        <td>
+                            <obs conceptId="b988ada8-c5a2-432a-b0cd-0b2687673a2d"
+                                 labelText="BANDAGE ELASTIC  10 cm x 5 m" />
+                        </td>
+                        <td>
+                            <obs conceptId="984ea68e-a735-4eb3-989a-693eeab150f2"
+                                 labelText="BANDAGE JERSEY TUB 10CM X 25M" />
+                        </td>
+                        <td>
+                            <obs conceptId="8b8f4af9-367e-4fe2-9ac8-a8b6efa2aeca" labelText="BANDAGE PLASTER 10CM X 2.7M" />
+                        </td>
+                    </p>
+
+                </tr>
+                <tr>
+                    <p class="small-input flexView">
+                        <td>
+                            <obs conceptId="f890fccb-9ba5-4cdb-8e8d-cb841f1fe49a"
+                                 labelText="BANDAGE PLASTER 10CM X 3M B/12" />
+                        </td>
+                        <td>
+                            <obs conceptId="75c45bde-94f7-4dc6-a15e-01b6e0ff9a38"
+                                 labelText="BANDAGE PLASTER 15 CM X 2.7 M" />
+                        </td>
+                        <td>
+                            <obs conceptId="33824d9b-e8b8-0b28-8fe2-af5da47caf5e" labelText="BANDAGE PLASTER 20CM X2.7M" />
+                        </td>
+                        <td>
+                            <obs conceptId="658d5cef-4ee7-4d65-b7b9-a4b512742397"
+                                 labelText="BANDAGE PLASTER 7.5 CM X 2.7 M" />
+                        </td>
+                    </p>
+
+                </tr>
+                <tr>
+                    <p class="small-input flexView">
+                        <td>
+                            <obs conceptId="94b58fd2-9b23-456b-9b5f-1262b403bc41"
+                                 labelText="BANDELLETTE DE GLYCEMIE TRUE RESULT" />
+                        </td>
+                        <td>
+                            <obs conceptId="b73ceee3-b169-4e10-b6ce-aecf03e550f1" labelText="BASSIN RENIFORM METAL" />
+                        </td>
+                        <td>
+                            <obs conceptId="fd9dccb9-1f6f-4551-81c3-103fdf001120"
+                                 labelText="BLACK BRAIDED SILK 1 75 CM PR 31MM1/2 C" />
+                        </td>
+                        <td>
+                            <obs conceptId="48013f15-7076-4836-a920-0a8d3d796bda"
+                                 labelText="BLACK BRAIDED SILK 2/0 75 CM PT 36MM3/8C" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p class="small-input flexView">
+                        <td>
+                            <obs conceptId="aef49258-0141-46e0-9b3d-49822ddb2545"
+                                 labelText="CATGUT CHR 1 DEC 5(1) 3/8C PT 40MMX75CM" />
+                        </td>
+                        <td>
+                            <obs conceptId="794a7bee-6715-4e11-b87a-f4af2fd77fe8"
+                                 labelText="CATGUT CHR DEC 3.5 (2/0) PR 1/2 C" />
+                        </td>
+                        <td>
+                            <obs conceptId="fcbfb237-e264-4e45-9c50-8f68907c24cc"
+                                 labelText="CATGUT CHR DEC 4 (0) PR 1/2 C" />
+                        </td>
+                        <td>
+                            <obs conceptId="3526a601-d18a-43f5-8041-563f224a3e60"
+                                 labelText="CATGUT CHR DEC 6 (2)PT 150CM" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p class="small-input flexView">
+                        <td>
+                            <obs conceptId="35a3608a-3ab9-9a47-b1e0-bd656bbb526d" labelText="CATGUT DEC 3(3/0) PR 1/2C" />
+                        </td>
+                        <td>
+                            <obs conceptId="8a8c9ed3-a8b1-47f2-9d59-e8cd1a08aa86" labelText="CATHETER    IV G 14  " />
+                        </td>
+                        <td>
+                            <obs conceptId="8fa3567d-fbb9-4bbf-a3a5-c6892d7243ec"
+                                 labelText="CATHETER SHORT IV UU 16G B/1" />
+                        </td>
+                        <td>
+                            <obs conceptId="cc7d65d5-a70f-4599-a189-ad11601d2e12"
+                                 labelText="CATHETER SHORT IV UU 18G B/50" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p class="small-input flexView">
+                        <td>
+                            <obs conceptId="76a3cb6c-08ae-4d9c-a3ac-e74bae062680" labelText="Catheter short IV UU 20G" />
+                        </td>
+                        <td>
+                            <obs conceptId="e39c31e2-925c-4c07-b638-d9b3f972ecc7" labelText="Catheter Short IV UU 24G" />
+                        </td>
+                        <td>
+                            <obs conceptId="f33cf471-eeca-4d16-9709-9329bad501a4" labelText="Compresse grand" />
+                        </td>
+                        <td>
+                            <obs conceptId="936cc793-0f73-4760-a07b-8dc000cc7e63" labelText="compresse sterile" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p class="flexView small-input">
+                        <td>
+                            <obs conceptId="fdb79644-a4d1-4992-b7f1-bb5a52b0b052"
+                                 labelText="COTON ORTHOPEDIQUE 10 CM X 2.7M" />
+                        </td>
+                        <td>
+                            <obs conceptId="01c1f443-1e90-4703-ab1d-bf74b938df41" labelText="cotton hydrophile  /gram" />
+                        </td>
+                        <td>
+                            <obs conceptId="2450ece7-f70e-4736-b16e-f65f195f559f" labelText="COTTON HYDROPHILE 500G ROLL" />
+                        </td>
+                        <td>
+                            <obs conceptId="6b51ae33-9d48-470b-a697-e9094f4cb85d"
+                                 labelText="Dressing,absorbent,adhesive 20cm*10cm" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p class="small-input flexView">
+                        <td>
+                            <obs conceptId="70765228-5e1d-2248-5fca-d9535891a0c8" labelText="Ecouvillon non sterile" />
+                        </td>
+                        <td>
+                            <obs conceptId="135e4261-09f0-4593-9adf-3d979b4cee33" labelText="ELASTIC BANDAGE  15cm x 4 m" />
+                        </td>
+                        <td>
+                            <obs conceptId="19e5666b-023f-484b-9f0e-b97a78e049a1"
+                                 labelText="ENDOTRACHEAL TUBE 3.5MM +PILOT BALLO" />
+                        </td>
+                        <td>
+                            <obs conceptId="2c9b4bb5-0e02-4b97-9471-30ee96dc540b"
+                                 labelText="ENDOTRACHEAL TUBE 4.0MM +PILOT BALLO" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p class="small-input flexView">
+                        <td>
+                            <obs conceptId="532844aa-043d-4616-8053-36c713bcfb78"
+                                 labelText="ENDOTRACHEAL TUBE 5.0MM +PILOT BALLO" />
+                        </td>
+                        <td>
+                            <obs conceptId="b3435824-ba40-4270-b0c0-59469364d039"
+                                 labelText="ENDOTRACHEAL TUBE 5.5MM +PILOT BALLO" />
+                        </td>
+                        <td>
+                            <obs conceptId="b792790e-5bd2-4a6e-a9d5-7c59bfeb13e6"
+                                 labelText="ENDOTRACHEAL TUBE6.5MM +PILOT BALLO" />
+                        </td>
+                        <td>
+                            <obs conceptId="f59732f7-9dd9-49a7-bf6f-178257b2fde2"
+                                 labelText="ENDOTRACHEAL TUBE6MM +PILOT BALLO" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p class="small-input flexView">
+                        <td>
+                            <obs conceptId="436724c5-61d5-4176-b2d6-98d4e08af615"
+                                 labelText="ENDOTRACHEAL TUBE7.5MM +PILOT BALLO" />
+                        </td>
+                        <td>
+                            <obs conceptId="4842f738-b338-4d17-9d3d-d96977253aa6"
+                                 labelText="ENDOTRACHEAL TUBE7MM +PILOT BALLO" />
+                        </td>
+                        <td>
+                            <obs conceptId="2d56aeb9-caac-4393-a67e-0af58364f6b8" labelText="Envelop Kaki No 1,2,3" />
+                        </td>
+                        <td>
+                            <obs conceptId="a0ea7a0c-1efd-4f39-8f29-6637294d0e61" labelText="Envelop kaki No 14,16" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p class="small-input flexView">
+                        <td>
+                            <obs conceptId="d3d8f360-75c7-4bc2-8178-cf8ac1e10164"
+                                 labelText="EXAMINATION GLOVES NS UU T 7.5" />
+                        </td>
+                        <td>
+                            <obs conceptId="3e20a5d5-0651-4848-988b-0a0a24d939a4" labelText="EYE PROTECTION" />
+                        </td>
+                        <!--<td><obs conceptId="6d57f534-56a9-4069-9751-3c5e9deb66ef" labelText="Feeding tube (nasogastric) no 5"/></td>-->
+                        <td>
+                            <obs conceptId="54105f2c-bf1d-4e63-a039-da8b819c0422" labelText="FEEDING TUBE UU CH 10" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p class="small-input flexView">
+                        <td>
+                            <obs conceptId="c21003eb-329b-4d38-9b8e-0a73860c74bf" labelText="FEEDING TUBE UU CH 8" />
+                        </td>
+                        <td>
+                            <obs conceptId="3bdf22cf-3a64-e62b-aa0d-52ea673ecb94" labelText="FEEDING TUBE UU CH5" />
+                        </td>
+                        <td>
+                            <obs conceptId="2572a94e-4e96-41f6-ad14-80d27015228f"
+                                 labelText="FILM RADIOLOGY 18 CM X 24 CM" />
+                        </td>
+                        <td>
+                            <obs conceptId="9a7cb4c9-8383-41bb-8cab-b8ccf8458d26"
+                                 labelText="FILM RADIOLOGY 24 CM X 30 CM" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="a5bcc294-8ffa-4a71-af55-4c3a5f55c62c"
+                                 labelText="FILM RADIOLOGY 30 CM X 40 CM" />
+                        </td>
+                        <td>
+                            <obs conceptId="3ab56771-5f00-4392-b847-c07ff119af44"
+                                 labelText="FILM RADIOLOGY 35 CM X 35 CM" />
+                        </td>
+                        <td>
+                            <obs conceptId="528556eb-a45b-4ed7-b2c3-c73fadf83db4"
+                                 labelText="FILM RADIOLOGY 35 CM X 43 CM" />
+                        </td>
+                        <td>
+                            <obs conceptId="d86a2e63-7a86-4a94-bef4-cca9a6733259"
+                                 labelText="FOLEY CATHETER 2-WAY STERILE UU CH 8" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="9e8bc525-5b59-4032-9971-f71ff510e02c"
+                                 labelText="FOLEY CATHETER 2-WAY STERILE UU CH10" />
+                        </td>
+                        <td>
+                            <obs conceptId="8ab25147-aed2-4964-a3e5-b75132f62d6a"
+                                 labelText="FOLEY CATHETER 2-WAY STERILE UU CH12" />
+                        </td>
+                        <td>
+                            <obs conceptId="9ca2d5cd-9de4-4096-a2d8-92630602ee7f"
+                                 labelText="FOLEY CATHETER 2-WAY STERILE UU CH14" />
+                        </td>
+                        <td>
+                            <obs conceptId="47143b09-0fab-475c-b039-33c40f89ba9e"
+                                 labelText="FOLEY CATHETER 2-WAY STERILE UU CH16" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="7c3f9b4a-518a-44b9-9873-9018458dc5dc"
+                                 labelText="FOLEY CATHETER 2-WAY STERILE UU CH18" />
+                        </td>
+                        <td>
+                            <obs conceptId="66079ed1-07a1-4957-b540-6225fc572e3d"
+                                 labelText="FOLEY CATHETER 2-WAY STERILE UU CH20" />
+                        </td>
+                        <td>
+                            <obs conceptId="a2988b7e-37e6-442e-beff-2c4dd07f4929"
+                                 labelText="FOLEY CATHETER 2-WAY STERILE UU CH22" />
+                        </td>
+                        <td>
+                            <obs conceptId="2665c94f-84e8-4a8f-bc0b-afff7878244c" labelText="FORCEPS JAR " />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="226da06c-25b7-4893-9597-46f8b4fd6632"
+                                 labelText="Gants d'examen  NS T 7  (Piece )" />
+                        </td>
+                        <td>
+                            <obs conceptId="d5fc04ee-face-4d85-b688-bd90cf7279de"
+                                 labelText="Gants d'examen NS T 8 (Piece )" />
+                        </td>
+                        <td>
+                            <obs conceptId="157fd17b-2d7d-4a1e-b542-c7a4bbca718c" labelText="GANTS D'HYGIENE " />
+                        </td>
+                        <td>
+                            <obs conceptId="a721cb17-3072-42c5-924d-aad7c6e6a6d1" labelText="GASTRIC TUBE LEVIN UU CH 12" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="48d39135-b48d-4263-a304-171f66126ae7" labelText="GASTRIC TUBE LEVIN UU CH 16" />
+                        </td>
+                        <td>
+                            <obs conceptId="1655e725-cf1e-4749-8345-3a4624d2fc74" labelText="GASTRIC TUBE LEVIN UU CH 18" />
+                        </td>
+                        <td>
+                            <obs conceptId="701488f0-0370-403c-b0c7-d0ea4a5e0926" labelText="GASTRIC TUBE LEVIN UU CH14" />
+                        </td>
+                        <td>
+                            <obs conceptId="6864eb1b-e89b-40da-9928-61383666536d"
+                                 labelText="GAUZE ABDOMINAL STERILE 45X70cm" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="dd4bd64c-1fbb-430b-b2da-ff0f0ba5bc81" labelText="Gauze parrafin" />
+                        </td>
+                        <td>
+                            <obs conceptId="081ceb51-6bfb-4926-b7c3-335fd6385666"
+                                 labelText="GLOVES SURGICAL STERILE UU T7.5" />
+                        </td>
+                        <td>
+                            <obs conceptId="563d57b9-3e62-4994-8a42-d34c2d6b6ccc"
+                                 labelText="GLUCOMETER TEST STRIPS ALPHA CHECK B/50" />
+                        </td>
+                        <td>
+                            <obs conceptId="bc44b0fd-8cdc-43b6-bf73-b90b473390c6"
+                                 labelText="GLUCOMETERS TEST STRIPS FOR SD CODE FREE " />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <!--<td><obs conceptId="37750e66-4bcd-4c6d-bb56-38b0ed80eda0" labelText="GYNECOLOGICAL GLOVES STERILE T7.6"/></td>-->
+                        <td>
+                            <obs conceptId="b95a6c9b-0bc1-4a45-b65e-e2be1b1ee681" labelText="GYNECOLOGICAL STERILE T7.5" />
+                        </td>
+                        <td>
+                            <obs conceptId="133b9ad1-136c-4c3c-adb0-2cbece7ac071" labelText="Lame porte objet" />
+                        </td>
+                        <td>
+                            <obs conceptId="e2d22715-1574-4d34-907b-9d4237a418d9" labelText="LANCETS STERILE UU200PCES" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+
+                        <td>
+                            <obs conceptId="e807bc58-a404-4f05-9b97-12e6ba9c3e02"
+                                 labelText="Lunettes nasal a oxygene pediatrique" />
+                        </td>
+                        <td>
+                            <obs conceptId="3777155a-7024-4f25-a9b2-13ca7470ed0c" labelText="MASKS" />
+                        </td>
+                        <td>
+                            <obs conceptId="ea656d78-deb4-48cb-83d4-6e3f678d9df3"
+                                 labelText="MICROSCOPE COVER SLIPS 24X50MM" />
+                        </td>
+                        <td>
+                            <obs conceptId="515cebcf-63a2-465a-aa53-e7c655122c64" labelText="MINERVE CERVICAL (L)" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="89ac341e-c4e3-4c17-81e9-a9ffd0a9fb42" labelText="MINERVE CERVICAL (M)" />
+                        </td>
+                        <td>
+                            <obs conceptId="400fdd31-2219-4a9a-9595-bb49fba9a053" labelText="MINERVE CERVICAL (XL)" />
+                        </td>
+                        <td>
+                            <obs conceptId="247fa342-681a-40c3-815d-18649d21a483" labelText="MINIGRIP SACHET B/100" />
+                        </td>
+                        <td>
+                            <obs conceptId="fc91e82e-38b0-4d5f-b788-4021368b7fd3"
+                                 labelText="MONOFIL POLYPROP 0 100CM PR 40MM 1/2 C" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="13980b09-a6c8-4308-9950-d29f90c5245d"
+                                 labelText="MONOFIL POLYPROP 1 100CM PR 40MM 1/2 C" />
+                        </td>
+                        <td>
+                            <obs conceptId="ff667f5f-ab59-40c8-84c5-097b49098af7"
+                                 labelText="MONOFILAMENT POLYA2/0 75CM PT 40MM3/8 C" />
+                        </td>
+                        <td>
+                            <obs conceptId="19779735-6ab2-4d7a-a37a-03f2a63e3ad6" labelText="NEEDLE DENTAL 27G" />
+                        </td>
+                        <td>
+                            <obs conceptId="22ee9a86-fcf8-46af-a407-0d3eb4d5b0af" labelText="NEEDLE HYPO UU 19G" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="2513b862-0ccd-41eb-a639-f5e34da17512" labelText="NEEDLE HYPO UU 20G" />
+                        </td>
+                        <td>
+                            <obs conceptId="c7d081a1-fc65-4dad-b57b-e9be091a1dd5" labelText="NEEDLE HYPO UU 21G" />
+                        </td>
+                        <td>
+                            <obs conceptId="c86cc0c4-2ef9-4f1d-89a6-ff8fc1903812" labelText="NEEDLE HYPO UU 23G" />
+                        </td>
+                        <td>
+                            <obs conceptId="82cc7242-5c13-44c5-984a-2a5dad16001f" labelText="NEEDLE HYPO UU 25G" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="05f34b7c-0c73-4e2e-997f-2ead14e38ddb" labelText="NEEDLE HYPO UU 26G" />
+                        </td>
+                        <td>
+                            <obs conceptId="d6555061-a884-489c-a326-47c78da8af4d" labelText="NEEDLE PL UU 22G 63MM" />
+                        </td>
+                        <td>
+                            <obs conceptId="8dfe7d0f-22ae-473f-bcac-d8d81bf9c0cc" labelText="NEEDLE PL UU 22G 90MM" />
+                        </td>
+                        <td>
+                            <obs conceptId="81d2b42c-f042-40ff-8af9-3680c35af0a1" labelText="NEEDLE PL UU 25G 90MM" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="36028451-fc22-4c6d-847c-f387d4c2f224" labelText="NEEDLE VACUTAINER 21G B/100" />
+                        </td>
+                        <td>
+                            <obs conceptId="e64f3545-6f4a-4cba-8948-010a2180e639" labelText="ORAQUICK HIV 1/2 SELF-TEST" />
+                        </td>
+                        <td>
+                            <obs conceptId="fede0201-bd27-4cee-8174-df8829b7dc71"
+                                 labelText="Oxygen mask with bag for Adult" />
+                        </td>
+                        <td>
+                            <obs conceptId="87dcbcde-b48e-41ab-8695-46ee35fc7443"
+                                 labelText="Oxygen mask with bag for pediatry" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="096e023d-9a10-4c16-8861-e6fe3aed341e" labelText="OXYGENE ADULTE CANULA" />
+                        </td>
+                        <td>
+                            <obs conceptId="6ceeb44a-fe85-4a0a-b4fd-a8b5fd5510aa" labelText="OXYGENE PEDIATRIC CANULA" />
+                        </td>
+                        <td>
+                            <obs conceptId="af8d309f-8c72-44c4-bb42-c60fb2eb5dbd" labelText="Perfusion Paediatric" />
+                        </td>
+                        <td>
+                            <obs conceptId="e2618291-a699-41ed-b245-7cd101717ba9" labelText="PERFUSION SET UU + NEEDLE B" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="6c6f57b1-4494-40b1-a1c4-7c359b0ba15e" labelText="Petit compresse" />
+                        </td>
+                        <td>
+                            <obs conceptId="8cfef36b-ec69-49cc-bee4-7c42ad368eb9"
+                                 labelText="PISSETTE DE LABORATOIRE 250 ML B/10" />
+                        </td>
+                        <td>
+                            <obs conceptId="0e056d2c-9ea6-409a-b420-3ab7609b9294"
+                                 labelText="PLASTIC STERILE PASTEUR PIPETTES 3ML" />
+                        </td>
+                        <td>
+                            <obs conceptId="6fb86898-295b-42eb-9618-f81ac572739f" labelText="POLYGALACTIN 4/0" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="a2c66cdf-5ee0-443d-8591-5f999eef6633"
+                                 labelText="POLYGLACTIN  910 0 90CM PR PLUS 40MM1/2C" />
+                        </td>
+                        <td>
+                            <obs conceptId="9916687a-62e4-4ac3-aec6-a4e12b658f1f"
+                                 labelText="POLYGLACTIN 910 1 90 CM R 40MM 1/2 C" />
+                        </td>
+                        <td>
+                            <obs conceptId="d2742f4b-6b21-4b28-a432-89774d77983b"
+                                 labelText="POLYGLACTIN 910 2/0 75CMPR PLUS31MM1/2C" />
+                        </td>
+                        <td>
+                            <obs conceptId="2c9320ac-70fd-446f-b113-15c55d8ecff1"
+                                 labelText="POLYGLACTIN 910 3/0 75CM PT 26MM3/8 C" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="79680757-9125-4b66-9f39-9631d8351c5e"
+                                 labelText="Polyglactin 910 4/0 (1.5)75cmpr 17mm1/2C" />
+                        </td>
+                        <td>
+                            <obs conceptId="74d582b1-887c-4397-94f3-6416044f8617" labelText="Pot de selle" />
+                        </td>
+                        <td>
+                            <obs conceptId="2db96960-30d5-4bb0-9e51-0e677dd1b0df" labelText="PREGNANCY TEST 100T" />
+                        </td>
+                        <td>
+                            <obs conceptId="306eb313-ffb0-4c09-a25f-9e82b8dd0100"
+                                 labelText="REAGENT ANTI B MONOCLONAL 10ML" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="15b5b48b-4487-4e93-a02a-5797c02cac84" labelText="REDON TUBE STERILE UU CH16" />
+                        </td>
+                        <td>
+                            <obs conceptId="6303c015-0679-44b5-86d2-132c8c80490b" labelText="REDON TUBE STERILE UU CH18" />
+                        </td>
+                        <td>
+                            <obs conceptId="2d10b955-1db5-4caf-860c-736dc08b3f2b"
+                                 labelText="Rouleau de gaz 36x90 YAD/ per akazingo" />
+                        </td>
+                        <td>
+                            <obs conceptId="3ccb760a-7d50-4e99-8e33-b96d9b0f6f2f" labelText="RPR KIT 150 TESTS" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="1935be6d-aad8-4250-a358-501d1802c10c" labelText="SAFRANINE SOLUTION 1000ML" />
+                        </td>
+                        <td>
+                            <obs conceptId="e8098578-132d-4c9d-af66-5d7fd5cde4a4" labelText="SAFRANINE SOLUTION 100ML" />
+                        </td>
+                        <td>
+                            <obs conceptId="b2a725c5-ba81-4762-a79c-f166e1a895d4" labelText="SLIDE 76X26MM B/72" />
+                        </td>
+                        <td>
+                            <obs conceptId="0a71e6c6-b477-421a-8e9c-da1853432e53" labelText="Sonde à Oxygène CH 10" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="7028a190-7c08-40d3-84d1-ecc9c863a101" labelText="Sonde à Oxygène CH 8" />
+                        </td>
+                        <td>
+                            <obs conceptId="4dd2f58d-9c6a-4901-9851-e27618f6c60c"
+                                 labelText="STOOL CONTAINER 1PS CAP AND SPOON 25ML" />
+                        </td>
+                        <td>
+                            <obs conceptId="7a13bb20-1d42-4814-aad1-788496767c78" labelText="STROMATOLYSER 4DL 1X42 ML" />
+                        </td>
+                        <td>
+                            <obs conceptId="a0ee0dcb-bccc-4fb8-8dd5-0572b83067cb" labelText="STROMATOLYSER 4DS 1X42 ML" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="30d96f61-8c59-4157-989a-e6cf5df9e23b" labelText="SUCTION TUBE UU CH 10" />
+                        </td>
+                        <td>
+                            <obs conceptId="3d363a6a-3c6e-096e-28f1-80963d94cb62" labelText="SUCTION TUBE UU CH 12" />
+                        </td>
+                        <td>
+                            <obs conceptId="9d53fa44-206c-4d16-a762-19f385f1c096" labelText="SUCTION TUBE UU CH 14" />
+                        </td>
+                        <td>
+                            <obs conceptId="a1cf6544-0553-45d3-99d2-b602df447c22" labelText="SUCTION TUBE UU CH 16" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="236fa716-9236-4065-baf7-8ea3f0d45858" labelText="SUCTION TUBE UU CH 5" />
+                        </td>
+                        <td>
+                            <obs conceptId="3e302c03-066b-4ff7-96df-294f9e6a4c8f" labelText="SUCTION TUBE UU CH 6" />
+                        </td>
+                        <td>
+                            <obs conceptId="9dddf759-fb64-fa89-1bf2-ae74a812e3f2" labelText="SUCTION TUBE UU CH8" />
+                        </td>
+                        <td>
+                            <obs conceptId="30bc53c0-7418-4e39-96a3-b343b1709a1c" labelText="SULFOLYSER SLS 210A 3X500ML" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="35ac4e55-67f0-4f1d-be60-9a656308fbf0" labelText="SURGICAL BLADE NO 11" />
+                        </td>
+                        <td>
+                            <obs conceptId="08d0a7f7-7d79-47a9-9162-302ccbf5c245" labelText="SURGICAL BLADE NO 12" />
+                        </td>
+                        <td>
+                            <obs conceptId="ce86b3eb-0496-43d8-91cf-f34a5e19e540" labelText="SURGICAL BLADE NO 15" />
+                        </td>
+                        <td>
+                            <obs conceptId="e92e89e9-6eaf-4d3b-94ae-d7b891185202" labelText="SURGICAL BLADE NO 20" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="927b6c30-71f9-4b3b-8eaf-ce3253b48476" labelText="SURGICAL BLADE NO 21" />
+                        </td>
+                        <td>
+                            <obs conceptId="dbe6472e-6f50-42b9-a6a1-300eeed5ea84" labelText="SURGICAL BLADE NO 22" />
+                        </td>
+                        <td>
+                            <obs conceptId="3e73a357-f0f4-4eb1-828a-f8eb31b4d6e5" labelText="SURGICAL BLADE NO 23" />
+                        </td>
+                        <td>
+                            <obs conceptId="e15bf7c3-e443-4cb3-a468-82be94a095ba" labelText="SURGICAL BLADE NO 24" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="0ff892ea-9a25-45cc-9438-a231ba295989"
+                                 labelText="SWAB STICK WOOD NON STERILE COTTON B/100" />
+                        </td>
+                        <td>
+                            <obs conceptId="4f48b56e-3b08-4ae5-95b5-3f2260c9f776"
+                                 labelText="SYRINGE INSULINE 100UI + NEEDLE" />
+                        </td>
+                        <td>
+                            <obs conceptId="35a30ec5-3af3-4ee0-bece-4a0f5283966d" labelText="SYRINGE UU 10 ML" />
+                        </td>
+                        <td>
+                            <obs conceptId="7ac91e15-cf7d-41e9-baf4-30e1679db2ba"
+                                 labelText="SYRINGE UU 10 ML + NEEDLE 21G B/100" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <!--<td><obs conceptId="d10b2ee0-7c9a-4a66-a773-6368c8c82f52" labelText="SYRINGE UU 2 ML  + NEEDLE 23G"/></td>
+  <td><obs conceptId="70f5ae84-2e51-44fb-8013-6e14853d9bc4" labelText="SYRINGE UU 2 ML  + NEEDLE 23G"/></td>-->
+                        <td>
+                            <obs conceptId="f737a78b-caf8-4f93-8a15-6a9042bf200c" labelText="SYRINGE UU 20ML" />
+                        </td>
+                        <td>
+                            <obs conceptId="ff74777c-2797-42f6-bf0e-81d9df6d59f4" labelText="SYRINGE UU 5 ML" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="77666768-75b4-487b-b58a-bea986ccea43"
+                                 labelText="SYRINGE UU 5 ML  + NEEDLE 21G" />
+                        </td>
+                        <td>
+                            <obs conceptId="230d8983-4dc8-45f4-a388-a7281beb1996" labelText="SYRINGE UU 50 ML B/1" />
+                        </td>
+                        <td>
+                            <obs conceptId="8366b4dc-3532-425d-8836-d0b0d3a09c92" labelText="SYSMEX CELL CLEAN 50ML" />
+                        </td>
+                        <td>
+                            <obs conceptId="5b34709e-047b-48a9-a0a8-bd1190de58b3" labelText="SYSMEX POCH PACK" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="4014c04f-663a-4fe1-a161-801d7504084e"
+                                 labelText="Tape perforated 18cm*5M  /cm" />
+                        </td>
+                        <td>
+                            <obs conceptId="8218887f-e17f-431a-95e4-95c2ee9c3f89" labelText="TAPE ZINC OXIDE 2CM*5M" />
+                        </td>
+                        <td>
+                            <obs conceptId="236e2c18-f711-40a9-b552-ecd545447104"
+                                 labelText="THORACIC TUBE + MANDRIN CH14" />
+                        </td>
+                        <td>
+                            <obs conceptId="9608685c-c372-4cb4-97ad-727925a33cc2"
+                                 labelText="THORACIC TUBE + MANDRIN CH16" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="ddc70068-a8c7-eced-2a2f-7f6a8b429d55" labelText="TONGUE DEPRESSOR WOOD B/100" />
+                        </td>
+                        <td>
+                            <obs conceptId="1139892b-c1f8-4c47-8067-7e398274f6d0"
+                                 labelText="TUBE DRY STERILE VACUTAINER " />
+                        </td>
+                        <td>
+                            <obs conceptId="0644a5a6-0ecc-4a5e-b0b8-9c400f035b1c"
+                                 labelText="TUBE HEMOLYSIS PLASTIC 4 ML B/1000" />
+                        </td>
+                        <td>
+                            <obs conceptId="9b9a62bc-1205-495d-853c-b505e9208d6d"
+                                 labelText="TUBE VACUTAINER EDTA 4ML B/1000" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="fc0923f4-9e53-49f6-9bb7-1355e0623a97" labelText="TULLE GRAS" />
+                        </td>
+                        <td>
+                            <obs conceptId="e09ab139-e1d6-44e1-a2cb-6bfe49c2243c" labelText="ULTRA SOUND GEL 1000ML /ML" />
+                        </td>
+                        <td>
+                            <obs conceptId="244be4f5-419d-4915-9eb4-59e4f3c61bd5" labelText="ULTRASOUND GEL 1000 ML" />
+                        </td>
+                        <td>
+                            <obs conceptId="19ca6c14-55d9-4147-8114-8b7b0e0e0cdc" labelText="ULTRASOUND GEL 250ML" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="a9068934-72a2-4e69-8744-6c66a3f3ddc2"
+                                 labelText="UMBILICAL CORD CLAMP STERILE" />
+                        </td>
+                        <td>
+                            <obs conceptId="2e760bac-3dbc-496c-82c3-8d95e6ca8d08" labelText="UMBILICAL TAPE" />
+                        </td>
+                        <td>
+                            <obs conceptId="a8e4ec1e-3c9b-4b67-97c1-63f5cfde72a1" labelText="URINE BAG 2L STERILE" />
+                        </td>
+                        <td>
+                            <obs conceptId="0e9e1f3a-696a-42dd-8bc3-614ea3162e13"
+                                 labelText="URINE CUP PLASTIC 125ML + LID" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="4f04dce6-0c94-450e-81a6-f743c11b18bc"
+                                 labelText="COTTON ORTHOPEDIC 15CMx2.7CM" />
+                        </td>
+                        <td>
+                            <obs conceptId="bfa92dc3-9c6d-45a9-a2a2-761967ead08d" labelText="OXYGEN BIFLO NASAL NEONATE" />
+                        </td>
+                        <td>
+                            <obs conceptId="83688923-e679-4c58-95b7-05aa781b0281"
+                                 labelText="Non-Rebreathing Oxygen Mask Adult" />
+                        </td>
+                        <td>
+                            <obs conceptId="2e692e33-14be-465a-a858-0e6258e599cb" labelText="CHEST DRAINAGE+TROCAR 32FR" />
+                        </td>
+                    </p>
+                </tr>
+                <tr>
+                    <p>
+                        <td>
+                            <obs conceptId="e394e201-dc0d-4fa7-9bf9-d1fb36987a5a" labelText="CHEST DRAINAGE+TROCAR 28FR" />
+                        </td>
+                        <td>
+                            <obs conceptId="f00c9a40-a0e1-4952-9064-1acfb09769d2"
+                                 labelText="GLUCOMETER TEST STRIPS ACCU CHECK" />
+                        </td>
+                        <td>
+                            <obs conceptId="b060de9f-7c79-4ad9-9037-c0df0bf84d8e"
+                                 labelText="POLYGLACTIN 910 1 90 CM CUT 40MM1/2 C" />
+                        </td>
+                    </p>
+                </tr>
+            </table>
+            <br />
+        </div>
+    </section>
+
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"
+                                            style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
+</htmlform>

@@ -64,8 +64,16 @@
                                         <exclude>htmlforms/**/*</exclude>
                                         <exclude>mUzima/*</exclude>
                                         <exclude>Sync Configuration/*</exclude>
+                                        <exclude>**/*.zip</exclude>
                                     </excludes>
                                     <filtering>true</filtering>
+                                </resource>
+                                <resource>
+                                    <directory>${basedir}/../configuration/</directory>
+                                    <includes>
+                                        <include>**/*.zip</include>
+                                    </includes>
+                                    <filtering>false</filtering>
                                 </resource>
                             </resources>
                             <outputDirectory>${project.build.directory}/configuration</outputDirectory>

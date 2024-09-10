@@ -183,6 +183,9 @@
         }
     </style>
 
+    <ifMode mode="ENTER">
+        <postSubmissionAction class="org.openmrs.module.mohbilling.automation.CreateBillOnHtmlFormSubmissionAction"/>
+    </ifMode>
 
     <h1>Neo_daily evaluation and orders</h1>
     <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
@@ -212,25 +215,25 @@
         <div class="section-container">
 
             <p class="flexView small-input">
-                <obs conceptId="8fb71b3d-ef5b-4e34-bb8a-fc491cbde731" labelText="Day of life(DOL)" />
+                <obs conceptId="8fb71b3d-ef5b-4e34-bb8a-fc491cbde731" labelText="Day of life(DOL)" required="true"/>
             </p>
             <p class="side-by-side">
                 <label>Was the baby : Term or Preterm ?</label>
                 <obs conceptId="1434116b-94de-4cf2-a66e-2505e24f60bb"
                      answerConceptIds="78cea294-5c59-4a45-b334-06e664ab7006,884a4fc3-c196-45c8-be04-52d1bf480f4f"
-                     answerCodes="Term,Preterm" style="radio" />
+                     answerCodes="Term,Preterm" style="radio" required="true"/>
             </p>
             &#160;&#160;
             <p class="flexView small-input">
-                <obs conceptId="1409AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" labelText="Gestational age at birth" />
+                <obs conceptId="1409AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" labelText="Gestational age at birth" required="true"/>
             </p>
             &#160;&#160;
             <p class="flexView small-input">
-                <obs conceptId="960f0865-f07a-40f5-82f5-97fd67cc67ce" labelText="Post mestrual age" />&#160;(GA+DOL)
+                <obs conceptId="960f0865-f07a-40f5-82f5-97fd67cc67ce" labelText="Post mestrual age" required="true"/>&#160;(GA+DOL)
             </p>
             <p>
                 <obs conceptId="29beb9a0-145e-4509-9257-d2e8f4bd6b5c" rows="3" cols="30"
-                     labelText="Recent events(Refer to previous day's assessment and plan" />
+                     labelText="Recent events(Refer to previous day's assessment and plan" required="true"/>
             </p>
 
         </div>
@@ -242,28 +245,30 @@
                 <table cellspacing="0" cellpadding="6">
                     <tr class="strong">
                         <td>
-                            <obs conceptId="3ce939d2-26fe-102b-80cb-0017a47871b2" labelText="Temperature:" />
+                            <obs conceptId="3ce939d2-26fe-102b-80cb-0017a47871b2" labelText="Temperature:" required="true"/>
                         </td>
                         <td>
-                            <obs conceptId="3ce93b62-26fe-102b-80cb-0017a47871b2" labelText="Weight:" />
+                            <obs conceptId="3ce93b62-26fe-102b-80cb-0017a47871b2" labelText="Weight:" required="true"/>
                         </td>
                         <td>
-                            <obs conceptId="3ce93cf2-26fe-102b-80cb-0017a47871b2" labelText="Height:" />
+                            <obs conceptId="3ce93cf2-26fe-102b-80cb-0017a47871b2" labelText="Height:" required="true"/>
+                        </td>
+                        <!--
+                                             <td>
+                                                    <obs conceptId="3ce934fa-26fe-102b-80cb-0017a47871b2" labelText="SBP:" />
+                                                </td>
+                                                <td>
+                                                    <obs conceptId="3ce93694-26fe-102b-80cb-0017a47871b2" labelText="DBP:" />
+                                                </td>
+                        -->
+                        <td>
+                            <obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" labelText="Pulse:" required="true"/>
                         </td>
                         <td>
-                            <obs conceptId="3ce934fa-26fe-102b-80cb-0017a47871b2" labelText="SBP:" />
+                            <obs conceptId="3ceb11f8-26fe-102b-80cb-0017a47871b2" labelText="Respiration" required="true"/>
                         </td>
                         <td>
-                            <obs conceptId="3ce93694-26fe-102b-80cb-0017a47871b2" labelText="DBP:" />
-                        </td>
-                        <td>
-                            <obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" labelText="Pulse:" />
-                        </td>
-                        <td>
-                            <obs conceptId="3ceb11f8-26fe-102b-80cb-0017a47871b2" labelText="Respiration" />
-                        </td>
-                        <td>
-                            <obs conceptId="3ce9401c-26fe-102b-80cb-0017a47871b2" labelText="SPO2" />
+                            <obs conceptId="3ce9401c-26fe-102b-80cb-0017a47871b2" labelText="SPO2" required="true"/>
                         </td>
                     </tr>
                 </table>
@@ -279,7 +284,7 @@
                     <td class="side-by-side">
                         <obs conceptId="535af133-2194-42ad-ad78-770e1cc4c249"
                              answerConceptIds="3cd6f600-26fe-102b-80cb-0017a47871b2,3cd6f86c-26fe-102b-80cb-0017a47871b2"
-                             answerCodes="Yes, No" style="radio" labelText="Room Air" />
+                             answerCodes="Yes, No" style="radio" labelText="Room Air" required="true"/>
                     </td>
                     <td>
                         <obs conceptId="7aa7d0e6-21b4-450e-8b27-bfd33303d2ad" labelText="O2:" /> L/Minute
@@ -288,17 +293,17 @@
                         <obs conceptId="65c3d28b-95e4-4038-9765-46a8835a7631" labelText="CPAP:" /> CmH2O
                     </td>
                     <td>
-                        <obs conceptId="9a93147f-fd5c-4b03-a2d6-f25f99cda5fb" labelText="Change in weight from yesterday:" />g
+                        <obs conceptId="9a93147f-fd5c-4b03-a2d6-f25f99cda5fb" labelText="Change in weight from yesterday:" required="true"/>g
                     </td>
                     <td>
-                        <obs conceptId="5664cc83-3c34-4469-9fad-11b3bba48b8d" labelText="Weight for calculations:" />Kg
+                        <obs conceptId="5664cc83-3c34-4469-9fad-11b3bba48b8d" labelText="Weight for calculations:" required="true"/>Kg
                     </td>
                 </tr>
                 <tr>
                     <td colspan="5" class="side-by-side">General appearance:
                         <obs conceptId="ffe9860f-48b3-416d-94fd-9358cd20a12a"
                              answerConceptIds="3cd750a0-26fe-102b-80cb-0017a47871b2,3cd75230-26fe-102b-80cb-0017a47871b2"
-                             answerCodes="Normal,Abnormal" style="radio" id="geneApp">
+                             answerCodes="Normal,Abnormal" style="radio" id="geneApp" required="true">
                             <controls>
                                 <when value="1116" thenDisplay="#abnoGeneApp" />
                             </controls>
@@ -316,7 +321,7 @@
                     <td colspan="5" class="side-by-side">Head fontanelles:
                         <obs conceptId="ad88ceee-d430-44e8-bfca-cb3abee4f9c7"
                              answerConceptIds="3cd750a0-26fe-102b-80cb-0017a47871b2,3cd75230-26fe-102b-80cb-0017a47871b2"
-                             answerCodes="Normal,Abnormal" style="radio" id="fonta">
+                             answerCodes="Normal,Abnormal" style="radio" id="fonta" required="true">
                             <controls>
                                 <when value="1116" thenDisplay="#abnoFonta" />
                             </controls>
@@ -334,7 +339,7 @@
                     <td colspan="5" class="side-by-side">
                         Ears,eyes,nose,mouth Exam:<obs conceptId="190455c2-5d45-4f91-b122-9be0126c281b"
                                                        answerConceptIds="3cd750a0-26fe-102b-80cb-0017a47871b2,3cd75230-26fe-102b-80cb-0017a47871b2"
-                                                       answerCodes="Normal,Abnormal" style="radio" labelText="" id="ears">
+                                                       answerCodes="Normal,Abnormal" style="radio" labelText="" id="ears" required="true">
                         <controls>
                             <when value="1116" thenDisplay="#abnoEars" />
                         </controls>
@@ -351,7 +356,7 @@
                     <td colspan="5" class="side-by-side">
                         <obs conceptId="190455c2-5d45-4f91-b122-9be0126c281b"
                              answerConceptIds="3cd750a0-26fe-102b-80cb-0017a47871b2,3cd75230-26fe-102b-80cb-0017a47871b2"
-                             answerCodes="Normal,Abnormal" style="radio" labelText="Chest,lung auscultation:" id="chest">
+                             answerCodes="Normal,Abnormal" style="radio" labelText="Chest,lung auscultation:" id="chest" required="true">
                             <controls>
                                 <when value="1116" thenDisplay="#abnoChest" />
                             </controls>
@@ -368,7 +373,7 @@
                     <td colspan="5" class="side-by-side">
                         <obs conceptId="f448e7d8-30d2-4ec5-9284-c7264a016aa0"
                              answerConceptIds="3cd750a0-26fe-102b-80cb-0017a47871b2,3cd75230-26fe-102b-80cb-0017a47871b2"
-                             answerCodes="Normal,Abnormal" style="radio" labelText="Heart: rate, rhythm, murmur:" id="heart">
+                             answerCodes="Normal,Abnormal" style="radio" labelText="Heart: rate, rhythm, murmur:" id="heart" required="true">
                             <controls>
                                 <when value="1116" thenDisplay="#abnoHeart" />
                             </controls>
@@ -385,7 +390,7 @@
                     <td colspan="5" class="side-by-side">
                         <obs conceptId="54efa067-6087-4f60-97ba-139faca6f544"
                              answerConceptIds="3cd750a0-26fe-102b-80cb-0017a47871b2,3cd75230-26fe-102b-80cb-0017a47871b2"
-                             answerCodes="Normal,Abnormal" style="radio" labelText="Abdomen,umbilicus,genital:" id="abdomen">
+                             answerCodes="Normal,Abnormal" style="radio" labelText="Abdomen,umbilicus,genital:" id="abdomen" required="true">
                             <controls>
                                 <when value="1116" thenDisplay="#abnoAbdomen" />
                             </controls>
@@ -403,7 +408,7 @@
                     <td colspan="5" class="side-by-side">
                         <obs conceptId="3cd7637e-26fe-102b-80cb-0017a47871b2"
                              answerConceptIds="3cd750a0-26fe-102b-80cb-0017a47871b2,3cd75230-26fe-102b-80cb-0017a47871b2"
-                             answerCodes="Normal,Abnormal" style="radio" labelText="Extremities:" id="extrem">
+                             answerCodes="Normal,Abnormal" style="radio" labelText="Extremities:" id="extrem" required="true">
                             <controls>
                                 <when value="1116" thenDisplay="#abnoExtrem" />
                             </controls>
@@ -421,7 +426,7 @@
                     <td colspan="5" class="side-by-side">
                         <obs conceptId="a2ddb53a-e151-467e-873d-42c29b188769"
                              answerConceptIds="3cd750a0-26fe-102b-80cb-0017a47871b2,3cd75230-26fe-102b-80cb-0017a47871b2"
-                             answerCodes="Normal,Abnormal" style="radio" labelText="Skin:Capillary refil,jaundice:" id="skin">
+                             answerCodes="Normal,Abnormal" style="radio" labelText="Skin:Capillary refil,jaundice:" id="skin" required="true">
                             <controls>
                                 <when value="1116" thenDisplay="#abnoSkin" />
                             </controls>
@@ -439,7 +444,7 @@
                     <td colspan="5" class="side-by-side">
                         <obs conceptId="856e3240-b31e-455a-99ee-9a287905793e"
                              answerConceptIds="3cd750a0-26fe-102b-80cb-0017a47871b2,3cd75230-26fe-102b-80cb-0017a47871b2"
-                             answerCodes="Normal,Abnormal" style="radio" labelText="Neuro:Tone,reflexes:" id="neuro">
+                             answerCodes="Normal,Abnormal" style="radio" labelText="Neuro:Tone,reflexes:" id="neuro" required="true">
                             <controls>
                                 <when value="1116" thenDisplay="#abnoNeuro" />
                             </controls>
@@ -520,9 +525,12 @@
                 <p class="radio side-by-side">
                     <obs conceptId="1d90020b-53fc-4de5-b588-d30c11da8ed1" answerConceptId="31a53ad9-fe51-4b71-9c7d-260282852126"
                          style="radio" answerCode="Caffeine" />&#160;&#160;
-                    <obs conceptId="0b2f9ddc-c714-4b73-8612-4aad26d4de75" labelText="Aminophyilline, dose:" />&#160;&#160;
+                    <obs conceptId="31a53ad9-fe51-4b71-9c7d-260282852126" labelText="dose:"/>&#160;&#160;
+                    <obs conceptId="1d90020b-53fc-4de5-b588-d30c11da8ed1" answerConceptId="0b2f9ddc-c714-4b73-8612-4aad26d4de75"
+                         style="radio" answerCode="Aminophyilline " />&#160;&#160;
+                    <obs conceptId="0b2f9ddc-c714-4b73-8612-4aad26d4de75" labelText="dose:" />&#160;&#160;
                     <obs conceptId="1d90020b-53fc-4de5-b588-d30c11da8ed1" answerConceptId="189f0b87-028c-4371-b7f4-23e4e515aca1"
-                         style="radio" answerCodes="Stop stimulant if age bellow 33 weeks" />
+                         style="radio" answerCode="Stop stimulant of above or equal to 33 or if 3 days prior to discharge and no apnea for 2 days" />
 
                 </p>
             </fieldset>
@@ -602,14 +610,30 @@
             <p class="side-by-side">
                 <label>Milk:</label>
                 <obs conceptId="6e9ecc76-9151-4bdf-acc6-3b8d54ba1361"
-                     answerConceptIds="7d228a64-8db2-48a7-aaf0-7fb0b6bcedb3,8fb71b3d-ef5b-4e34-bb8a-fc491cbde731,46aaaca8-1f21-410a-aac9-67bfcc1fd577,14961172-cc5e-4d9a-b327-49fb569157fe"
-                     style="radio" answerCodes="Breast milk (Prefered),Artificialmilk,ORAL,Nasogastric Tube" />
+                     answerConceptId="7d228a64-8db2-48a7-aaf0-7fb0b6bcedb3"
+                     style="checkbox" answerCodes="Breast milk (Prefered)" />
+                <obs conceptId="6e9ecc76-9151-4bdf-acc6-3b8d54ba1361"
+                     answerConceptId="8fb71b3d-ef5b-4e34-bb8a-fc491cbde731"
+                     style="checkbox" answerCodes="Artificialmilk" />
+                <obs conceptId="6e9ecc76-9151-4bdf-acc6-3b8d54ba1361"
+                     answerConceptId="46aaaca8-1f21-410a-aac9-67bfcc1fd577"
+                     style="checkbox" answerCodes="ORAL" />
+                <obs conceptId="6e9ecc76-9151-4bdf-acc6-3b8d54ba1361"
+                     answerConceptId="14961172-cc5e-4d9a-b327-49fb569157fe"
+                     style="checkbox" answerCodes="Nasogastric Tube" />
+
             </p>
             <p class="side-by-side">
                 <label>Calories:</label>
                 <obs conceptId="767439c5-1640-4afb-b65d-1a93cf9b8c4e"
-                     answerConceptIds="e255c68a-9573-4653-ae4e-4d0296534717,3d89e5de-69c6-4c7e-a866-47b42d4a4c9b,6ba1b7da-25ef-4491-a4d8-379fc11db584"
-                     labelText=":" style="radio" />
+                     answerConceptId="e255c68a-9573-4653-ae4e-4d0296534717"
+                     style="checkbox" />
+                <obs conceptId="767439c5-1640-4afb-b65d-1a93cf9b8c4e"
+                     answerConceptId="3d89e5de-69c6-4c7e-a866-47b42d4a4c9b"
+                     style="checkbox" />
+                <obs conceptId="767439c5-1640-4afb-b65d-1a93cf9b8c4e"
+                     answerConceptId="6ba1b7da-25ef-4491-a4d8-379fc11db584"
+                     style="checkbox" />
             </p>
 
         </div>
@@ -643,8 +667,8 @@
                         <obs conceptId="936b6450-4e60-42e0-be8a-19d8a14c906e"
                              answerConceptIds="8861b832-872c-4db0-8a6b-71cf0076c38e,cf92e21d-d38a-11e8-b6e2-0c5b8f279a64,e6b364b4-9aa5-4547-88c0-8857e09f5130,acd91d32-d914-436c-8923-b6971a33d781"
                              style="radio"
-                             answerCodes="Billirubin,total and direct,Blood type and Rh status,Start phototherapy,Stop phototherapy"
-                             labelText="Hyperbilirubinemia/jaundice:" />
+                             answerCodes="Billirubin total and direct,Blood type and Rh status,Start phototherapy,Stop phototherapy"
+                             labelText="Hyperbilirubinevitmia/jaundice:" />
                     </td>
                 </tr>
             </table>
@@ -659,6 +683,31 @@
                     </td>
                 </tr>
             </table>
+        </div>
+    </section>
+
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Bill Visit and Rooms">
+        <div class="section-container">
+            <fieldset>
+                <legend>
+                    <b>
+                        Visit and Room
+                    </b>
+                </legend>
+                <label>Department</label>
+
+                <obs conceptId="c920931b-fa93-4e99-9e36-28e1e4c16cf7" />
+
+                <label>VISIT TYPE</label>
+                <obs conceptId="d6dafc4b-9ad8-4467-94a9-0eca78648254"
+                     answerConceptIds="82ce723b-1914-4e70-a66f-df40f5a56039,120f4fba-06aa-4c56-9e74-eb2dcdd54404,002bf513-4db7-4491-9df4-f5086227d20b,3974386d-4208-4ffb-b380-9c39ce81534b,b1ebf22b-1fa4-4538-8b07-abc33dd05ea8,0d3517fd-891e-405d-b1d1-6669ad05aa9f,fecab067-fb65-4d0e-96bf-8c42dd123353,df54a8e3-cf9e-46c3-9efd-92bb5e4ef7f9,59bb1a32-a36a-4766-b47c-eb9c580bb0ad"
+                     answerLabels="Visite par le médecin généraliste en hospitalisation, Visite par le médecin spécialiste en hospitalisation" />
+                <label>HOSPITALISATION ROOM TYPE</label>
+                <obs conceptId="3168fee2-92aa-451b-b143-e46b56fe1e6f"
+                     answerConceptIds="fff2ed9d-3835-4299-b7a8-89b3945f4c07,47a206ab-6ce8-48e9-83ad-d076cb151889,ae6e54a3-d344-408c-9b95-c85ee7d72582,470f56f5-83a5-4cb2-a9ba-8714d585b63d,10f7ceb6-9a61-4374-80d4-70b0560eb84e,50b7a5e9-6b71-4652-b1b6-2804577dbfa4"
+                     answerLabels="Hospitalisation chambre à deux lits avec toilette à l'intérieur,Hospitalisation chambre à un lit avec toilette à l'extérieur,Hospitalisation chambre à deux lits avec toilette à l'extérieur,
+                            Hospitalisation salle commune/ Jour,Hospitalisation chambre à un lit avec toilette à l'intérieur,PRIVATE ROOM (Chambre Privée)" />
+            </fieldset>
         </div>
     </section>
 

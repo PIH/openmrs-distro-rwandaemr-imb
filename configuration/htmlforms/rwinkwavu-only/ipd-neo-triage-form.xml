@@ -1,0 +1,540 @@
+<htmlform
+        formDescription="Neonatal Triage"
+        formEncounterType="b42ac53d-4817-4b58-a884-a76c946083be"
+        formName="Neonatal Triage"
+        formPublished="true"
+        formRetired="false"
+        formUuid="a9f70c7c-244d-450d-9285-429358254a0a"
+        formVersion="1.0"
+        htmlformUuid="6330903c-7890-49a5-a07f-03d4abc0ed8a"
+>
+    <!-- Author: Benjamin N.
+                2024 -->
+    <macros>
+        paperFormId = (Fill this in)
+        headerColor =#009d8e
+        fontOnHeaderColor = white
+    </macros>
+
+    <style>
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
+        display: block;
+        }
+
+        form fieldset {
+        display: block;
+        }
+
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
+        }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
+        width: 100%;
+        }
+
+        .div {
+        float: left;
+        }
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        .date-one-line {
+        display: flex;
+        }
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
+        }
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
+        }
+        .vertical-text {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg); /* Optional: Use if you want the text to read from bottom to top */
+        }
+        /* table, th, td {
+        border: 1px solid black;
+        } */
+    </style>
+    <!--
+     <script type="text/javascript" >
+          var $j = jQuery.noConflict();
+
+        $j(document).ready(function () {
+
+          $j('.red1').change(function () {
+            var re1=jQuery('.red1 input[value="6784"]').attr('checked') ? true : false;
+           var re2=jQuery('.red1 input[value="123883"]').attr('checked') ? true : false;
+           var re3=jQuery('.red1 input[value="123255"]').attr('checked') ? true : false;
+
+           if(re1 == true || re2 == true || re3 == true){
+           $j('#red1Color').css('background-color', 'red');
+
+           }
+
+          });
+
+      </script> -->
+
+    <script type="text/javascript">
+
+        var $j = jQuery.noConflict();
+
+        $j(document).ready(function () {
+        $j('.red1 input[type="checkbox"]').change(function () {
+        if ($j('.red1 input[type="checkbox"]:checked').length > 0) {
+        $j('#red1Color').css('background-color', 'red');
+        } else {
+        $j('#red1Color').css('background-color', '');
+        }
+        });
+        $j('.red2 input[type="checkbox"]').change(function () {
+        if ($j('.red2 input[type="checkbox"]:checked').length > 0) {
+        $j('#red2Color').css('background-color', '#b02f13');
+        } else {
+        $j('#red2Color').css('background-color', '');
+        }
+        });
+        $j('.yello input[type="checkbox"]').change(function () {
+        if ($j('.yello input[type="checkbox"]:checked').length > 0) {
+        $j('#yelloColor').css('background-color', 'yellow');
+        } else {
+        $j('#yelloColor').css('background-color', '');
+        }
+        });
+        $j('.gree input[type="checkbox"]').change(function () {
+        if ($j('.gree input[type="checkbox"]:checked').length > 0) {
+        $j('#greeColor').css('background-color', 'green');
+        } else {
+        $j('#greeColor').css('background-color', '');
+        }
+        });
+        });
+
+    </script>
+
+    <h2>Neonatal Triage</h2>
+
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
+        <div class="section-container">
+            <table>
+                <tr>
+                    <td>
+                        Date:
+                        <encounterDate default="today" />
+                    </td>
+                    <td>
+                        Health Facility:
+                        <encounterLocation id="location" default="GlobalProperty:registration.defaultLocationCode" />
+                    </td>
+                    <td>
+                        Provider:
+                        <encounterProvider default="currentUser" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Triage Information">
+        <div class="section-container">
+            <table border="2">
+                <th colspan="2">TRIAGE LEVEL</th>
+                <th >CRITERIA(tick box if applicable)</th>
+                <tr>
+                    <td id="red1Color" colspan="2">
+                        <p>
+                            <label><b>RED-1
+                                Immediate review and/or Resuscitation needed</b>
+                            </label>
+                        </p>
+                    </td>
+                    <td>
+                        <b>
+                            Reduced level of consciousness
+                        </b>
+                        <br/>
+                        <p class="radio">
+                            <obs conceptId="f6e5d2b2-3d9f-4edf-8df8-fad6e36d0efa"
+                                 answerConceptId="f7a1fd17-f12d-48c1-b3dd-8e9fc95c8100" answerLabel="Unresponsive" style="radio" class="red1" />
+                            <br/>
+                            <obs conceptId="f6e5d2b2-3d9f-4edf-8df8-fad6e36d0efa"
+                                 answerConceptId="5d032797-a42d-40e1-adcf-9278ea07396b" answerLabel="Convulsions" style="radio" class="red1" />
+                            <br/>
+                            <obs conceptId="f6e5d2b2-3d9f-4edf-8df8-fad6e36d0efa"
+                                 answerConceptId="473c2f4c-0111-4cd4-a90b-7f129a2ac8b8" answerLabel="Floppy/lethargic or hypoglycemia(&lt;45mg/dl)" style="radio" class="red1" />
+                        </p>
+                        <p>
+                            <label><b>Critical Antecedent</b></label>
+                            <obs conceptId="b1cd58db-a9b2-4dd7-a6b7-214ea4fffec0" answerConceptId="ea37ceba-c1e5-4889-824d-e5ccf54b7674" style="radio" class="red1"/>
+                        </p>
+                        <p class="side-by-side radio">
+                            <obs conceptId="a6d93b39-1166-4f1e-b61a-006ac813c408" answerConceptId="8d780c47-df41-4cf8-bc17-e2fb74b6c261" answerLabel="Active bleeding" style="radio" class="red1"/>
+                        </p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th rowspan="6" colspan="2" id="red2Color">RED-2
+                        Immediate review and/or Resuscitation needed less than 10 minutes</th>
+                    <td>
+                        <p>
+                            <obs conceptId="162b673f-8d43-42a5-870c-b2959924bdd7" answerConceptId="dfca0645-721a-4671-87ee-5b4d0625219a" style="radio" class="red2"/>
+                            &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+                            <br/>
+                            <label>Antecedent</label>
+                            <obs conceptId="162b673f-8d43-42a5-870c-b2959924bdd7" answerConceptId="7dcf932f-9d04-40a1-bc1b-3781eb98dc56" style="radio" class="red2"/>
+                            <br/>
+                        </p>
+
+                        <p>
+                            <obs conceptId="162b673f-8d43-42a5-870c-b2959924bdd7" answerConceptId="14ac5413-5905-44a8-92d1-0716299712aa" style="radio" class="red2"/>
+                        </p>
+                        <p>
+                            <b>Severe respiratory distress(any one of the following):</b><br/>
+                        </p>
+                        <p>
+                            <obs conceptId="162b673f-8d43-42a5-870c-b2959924bdd7" answerConceptId="0a704a28-b3bf-4700-866e-a6dd45ef4aae" style="radio" class="red2"/>
+                            <br/>
+                            <obs conceptId="162b673f-8d43-42a5-870c-b2959924bdd7" answerConceptId="fbde5594-bfe1-49cd-8682-3ff74e611357" style="radio" class="red2"/>
+                            <br/>
+                            <obs conceptId="162b673f-8d43-42a5-870c-b2959924bdd7" answerConceptId="57a0030d-7dd3-4ce5-99b5-3c886959acbc" style="radio" class="red2"/>
+                            <br/>
+                            <obs conceptId="162b673f-8d43-42a5-870c-b2959924bdd7" answerConceptId="723c5ecd-afcc-454f-92d8-7bc18ea8e65d" style="radio" class="red2"/>
+                            <br/>
+                            <obs conceptId="162b673f-8d43-42a5-870c-b2959924bdd7" answerConceptId="883cbd9d-be25-430b-a358-70a4cb84618d" style="radio" class="red2"/>
+                            <br/>
+                            <obs conceptId="162b673f-8d43-42a5-870c-b2959924bdd7" answerConceptId="a3883c11-6ad9-497d-be33-9fec8ede1064" style="radio" class="red2"/>
+                            <br/>
+                        </p>
+                        <p>
+                            <obs conceptId="162b673f-8d43-42a5-870c-b2959924bdd7" answerConceptId="2476d727-9f73-4152-a254-f33c28e13ec1" style="radio" class="red2"/>
+                        </p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <obs conceptId="162b673f-8d43-42a5-870c-b2959924bdd7" answerConceptId="5d670690-3842-46b1-ba99-2b38a2d4263a" style="radio" class="red2"/>
+                        <br/>
+                        <obs conceptId="162b673f-8d43-42a5-870c-b2959924bdd7" answerConceptId="b0e759a1-a164-41aa-a315-ef32ea229c08" style="radio" class="red2"/>
+                        <br/>
+                        <obs conceptId="162b673f-8d43-42a5-870c-b2959924bdd7" answerConceptId="59833db0-2ed7-43f2-8d04-1f7244b7ec5c" style="radio" class="red2"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="162b673f-8d43-42a5-870c-b2959924bdd7" answerConceptId="38bd50e1-dd14-4935-b92a-74889a22c85a" style="radio" class="red2"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="162b673f-8d43-42a5-870c-b2959924bdd7" answerConceptId="e493708b-2887-462f-99c2-1d67b8bdc400" style="radio" class="red2"/>
+                        <br/>
+                        <obs conceptId="162b673f-8d43-42a5-870c-b2959924bdd7" answerConceptId="90371eed-eeae-48d8-b0a0-ba46d2c4db8c" style="radio" class="red2"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label><b>Severe intrapartum fetal compromise</b></label>
+                        <obs conceptId="c26f25ef-b3cb-4a82-9dd4-f4490ed8686c" answerConceptId="159f4e22-8a3b-4c3f-a60d-54ae80620c31" style="radio" class="red2"/>
+                        <br/>
+                        <obs conceptId="c26f25ef-b3cb-4a82-9dd4-f4490ed8686c" answerConceptId="f35da8c4-c6e1-478a-a828-a120a0174d16" style="radio" class="red2"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="162b673f-8d43-42a5-870c-b2959924bdd7" answerConceptId="ceb0ef72-9921-4521-a206-7419e3d8877f"
+                             answerLabel="Newborn requiring emergency referral regardless of vital signs and clinical status (e.g: any malformation with protruding organ (s); imperforated anus, etc)"
+                             style="radio" class="red2"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th rowspan="12" id="yelloColor">YELLOW Urgent review needed, Less than 30 minutes</th>
+                    <th rowspan="12" class="vertical-text">Presenting with abnormal vital sign AND <br/>
+                        one or more risk factors</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b>
+                            Reduced level of consciousness
+                        </b>
+                        <br/>
+                        <obs conceptId="f6e5d2b2-3d9f-4edf-8df8-fad6e36d0efa"
+                             answerConceptId="74c7b033-ffac-4870-a9a0-bba67606fb77" answerLabel="Jittery" style="radio" class="yello" />
+                        <br/>
+                        <obs conceptId="f6e5d2b2-3d9f-4edf-8df8-fad6e36d0efa"
+                             answerConceptId="3cf2a6fc-26fe-102b-80cb-0017a47871b2" answerLabel="Irritable" style="radio" class="yello" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="916ff7d6-5e22-4259-8179-fc28ec1241dc" answerConceptId="fcbc39dc-be05-4c1e-937f-6513a5507b71" style="radio" class="yello"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="916ff7d6-5e22-4259-8179-fc28ec1241dc" answerConceptId="74175152-64e4-4fa3-893c-027cd5ebe29d" style="radio" class="yello"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="916ff7d6-5e22-4259-8179-fc28ec1241dc" answerConceptId="8ad33232-13b3-4dbe-a79f-28fec0a49da9" style="radio" class="yello"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="916ff7d6-5e22-4259-8179-fc28ec1241dc" answerConceptId="01c78bbf-5599-4af7-8dce-36d3cbf0afdb" style="radio" class="yello"/>
+                        <br/>
+                        <b>Mild respiratory distress:</b>
+                        <br/>
+                        <obs conceptId="1afc6cb7-7067-44a0-84f5-03cf9cf644ab" answerConceptId="e342a11b-4b2c-4cef-9d4c-71fee0a2a098" style="radio" class="yello"/>
+                        <br/>
+                        <obs conceptId="1afc6cb7-7067-44a0-84f5-03cf9cf644ab" answerConceptId="0fd2e032-62bd-4789-85bc-63f110a618e0" style="radio" class="yello"/>
+                        <br/>
+                        <obs conceptId="1afc6cb7-7067-44a0-84f5-03cf9cf644ab" answerConceptId="73509761-3056-4b05-9779-03300f20eae5" style="radio" class="yello"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="916ff7d6-5e22-4259-8179-fc28ec1241dc" answerConceptId="3fd6a9b4-2249-43c6-947e-c9ca733c6bc8" style="radio" class="yello"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="916ff7d6-5e22-4259-8179-fc28ec1241dc" answerConceptId="54bd4bc4-2cce-4e74-a03c-bb9887fe34e0" style="radio" class="yello"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="916ff7d6-5e22-4259-8179-fc28ec1241dc" answerConceptId="9a59b22f-1cee-44fe-936a-9357bd4928b1" style="radio" class="yello"/>
+                        <br/>
+                        Including PROM with or without intrapartum antibiotics or other sepsis risk <br/>
+                        Suspescted or clinical charioamnionitis, maternal fever (>38C), Meconium Stained Amniotic Fluid (MSAF)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="side-by-side radio">
+                            <obs conceptId="916ff7d6-5e22-4259-8179-fc28ec1241dc" answerConceptId="efe77f00-5a3d-41b0-98c8-f3ef55c35553" style="radio" class="yello"/>
+                            <obs conceptId="916ff7d6-5e22-4259-8179-fc28ec1241dc" answerConceptId="e1039577-5015-44b2-9499-c7428d054a0d" style="radio" class="yello"/>
+                            <obs conceptId="916ff7d6-5e22-4259-8179-fc28ec1241dc" answerConceptId="fa78eade-6013-4cc4-b8cb-a8d2ff445452" style="radio" class="yello"/>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="916ff7d6-5e22-4259-8179-fc28ec1241dc" answerConceptId="d28ecec2-a7cb-4b0e-bb29-71fa7265c986"
+                             answerLabel="Instrumental Birth - vaccum and/ or forceps, including forceps during C-section (risk for subgaleal haemorrharge)" style="radio" class="yello"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <obs conceptId="916ff7d6-5e22-4259-8179-fc28ec1241dc" answerConceptId="35278ab4-2f8e-4458-b977-15446d195665" style="radio" class="yello"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th rowspan="12" colspan="2" id="greeColor">GREEN, Non urgent, Within 60 minutes</th>
+                    <td>
+                        <obs conceptId="5c0c4065-ca5e-4efb-90b7-0c480ddfe291" answerConceptId="d7d931b1-2a3c-4e68-827a-88e49f0f1d54"
+                             answerLabel="Term baby with normal vital signs (Temperature 36.5-37.5C, RR 30-60 cycles/ min, HR: 100-160 bpm, SPO2 90-100% on RA) with a risk factors such(such as extra digits, syphillis exposed, etc.)" style="radio" class="gree"/>
+                        <br/>
+                        <obs conceptId="73c8e54e-0e34-43fb-b7bb-a0ad1d29ff30" style="textarea" rows="2" cols="40" labelText="Risk factors identified:"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Nurse Notification">
+        <div class="section-container">
+            <table cellpadding="6" cellspacing="0" style="background-color:AliceBlue" width="100%">
+                <tr>
+                    <td>
+                        <p class="date-one-line">
+                            <strong>Triage finish time:</strong>
+                            <obs conceptId="b6f02672-a188-4519-b326-1aeea2f47010" required="true" />
+                        </p>
+                    </td>
+                    <td>
+                        <p class="side-by-side">
+                            <strong>Notified color:</strong>
+                            <obs answerCodes="Red,Orange,Yellow,Green"
+                                 answerConceptIds="374c3f19-3a38-4be6-aa11-a8af6c41db13,a0688681-8e9c-4a6d-afb5-e335e74cf0f1,b35fa30a-2247-4159-bc42-d7867d3ee8a2,d99b8825-33fa-48a0-ba47-c3b60bf24c7e"
+                                 conceptId="4e0a4d51-84dc-4467-a0d3-1533df980c19" required="true" style="radio" />
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="APPROVAL">
+        <div class="section-container">
+            <table cellpadding="6" cellspacing="0" style="background-color:AliceBlue" width="100%">
+                <tr>
+                    <td>
+                        <strong>Doctor's Name:</strong>
+                        <obs cols="30" conceptId="6eb2e0e5-fd99-4385-a570-24f24e1b5dc6" rows="3" style="textarea" />
+                        <p class="date-one-line">
+                            <b>attended</b>
+                            <obs conceptId="dd0b00b0-b8d0-4f55-931c-cfdbf7c08c2d" />
+                        </p>
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+
+            <button id="submit" class="submitButton confirm right">
+                <uimessage code="Save" /><i class="icon-spinner icon-spin icon-2x"  style="display: none; margin-left: 10px;"></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel" />
+            </button>
+        </div>
+    </ifMode>
+
+</htmlform>

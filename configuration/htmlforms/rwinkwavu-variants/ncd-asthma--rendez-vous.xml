@@ -222,7 +222,7 @@
         }
     </style>
 
-
+    <postSubmissionAction class="org.openmrs.module.rbcmessaging.util.SendReturnVisitDateMessageOnNCDHtmlFormSubmissionAction"/>
     <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
         <div class="section-container">
 

@@ -29,7 +29,7 @@
         <coreappsVersion>1.40.0-SNAPSHOT</coreappsVersion>
         <emrapiVersion>1.35.0-SNAPSHOT</emrapiVersion>
         <eventVersion>2.10.0</eventVersion>
-        <fhir2Version>2.0.0-SNAPSHOT</fhir2Version>
+        <fhir2Version>2.3.0-SNAPSHOT</fhir2Version>
         <formconceptsVersion>2.0.1</formconceptsVersion>
         <formentryappVersion>1.4.3</formentryappVersion>
         <groovyVersion>2.3.1</groovyVersion>
@@ -45,7 +45,7 @@
         <laboratorymanagementVersion>2.0.0-SNAPSHOT</laboratorymanagementVersion>
         <legacyuiVersion>1.15.0</legacyuiVersion>
         <metadatamappingVersion>1.7.0-SNAPSHOT</metadatamappingVersion>
-        <metadatasharingVersion>1.9.0</metadatasharingVersion>
+        <metadatasharingVersion>1.10.0-SNAPSHOT</metadatasharingVersion>
         <mohappointmentVersion>2.0.1-SNAPSHOT</mohappointmentVersion>
         <mohbillingVersion>2.0.2-SNAPSHOT</mohbillingVersion>
         <mohdataflowmoduleVersion>0.0.5-SNAPSHOT</mohdataflowmoduleVersion>

@@ -1,6 +1,5 @@
 <htmlform formEncounterType="13703c92-58d2-4d04-a320-8d4699380676" formName="Auto OPD Discharge"
           formUuid="01167552-7e28-44fc-848b-317b00fb8087" formVersion="1.0">
-
     <style>
         .field-error {
         color: #ff6666;
@@ -251,6 +250,13 @@
                     <obs conceptId="58cb5e4c-fb3c-4be6-9817-97fcf85911bc"
                          answerConceptId="980004f2-ac2b-4b90-9999-feca3f62009b" style="radio" />
 
+                    <obs conceptId="58cb5e4c-fb3c-4be6-9817-97fcf85911bc"
+                         answerConceptId="3ceb46fa-26fe-102b-80cb-0017a47871b2" answerLabel="PF" style="radio" />
+
+                    <obs conceptId="58cb5e4c-fb3c-4be6-9817-97fcf85911bc"
+                         answerConceptId="910162c5-62db-43f7-a50e-625a1458eb4c" style="radio" />
+
+
                 </p>
                 <p>
 
@@ -265,6 +271,12 @@
 
                     <obs conceptId="58cb5e4c-fb3c-4be6-9817-97fcf85911bc"
                          answerConceptId="e86eab39-5d98-4f68-86e8-6d595bbd047c" style="radio" />
+
+                    <obs conceptId="58cb5e4c-fb3c-4be6-9817-97fcf85911bc"
+                         answerConceptId="272d0388-f717-4738-b3e0-9cb7a7f5632d" answerLabel="CPON" style="radio" />
+
+                    <obs conceptId="58cb5e4c-fb3c-4be6-9817-97fcf85911bc"
+                         answerConceptId="480bf084-80fe-42f2-8952-015b56dcb9ad" style="radio" />
 
                 </p>
             </div>

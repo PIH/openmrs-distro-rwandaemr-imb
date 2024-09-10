@@ -1,4 +1,10 @@
-<htmlform formUuid="aa195bd3-3782-4682-a748-cd8530b1823b" formName="Neonatal Discharge Form"
+<htmlform formDescription="Neonatal Discharge Form"
+          formName="Neonatal Discharge Form"
+          formPublished="true"
+          formRetired="false"
+          formUuid="aa195bd3-3782-4682-a748-cd8530b1823b"
+          formVersion="1.0"
+          htmlformUuid="3f2af8bb-8301-4c5b-af3b-ebd946af4b60"
           formEncounterType="13703c92-58d2-4d04-a320-8d4699380676">
     <macros>
         paperFormId = Flow-DM-RW.V2.0.akb.15May09 headerColor =#009d8e
@@ -374,7 +380,62 @@
                 </obs>
 
             </p>
-
+            <p class="small-input flexView">
+                <obs conceptId="5e50c704-f7aa-42b5-b25e-cb5c3bd1e13c" style="text" size="40" labelText="Final Diagnosis at Discharge:"/>
+            </p>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="">
+        <div class="section-container">
+            <fieldset>
+                <legend>
+                    <b>DISCHARGE AND FOLLOW UP</b>
+                </legend>
+                <p class="radio">
+                    <obs conceptId="ce6d9105-7578-448a-be5f-de6669f115ec"
+                         answerConceptId="f28a68e3-50b0-454e-82d1-36e238f51529" style="radio" />
+                    <br />
+                    <obs conceptId="ce6d9105-7578-448a-be5f-de6669f115ec"
+                         answerConceptId="0ac1acf3-0e24-43f7-b293-b5533f3297f9" style="radio" />
+                    <br />
+                    <obs conceptId="ce6d9105-7578-448a-be5f-de6669f115ec"
+                         answerConceptId="7f8c2882-978b-4e72-9bad-db442ce0ab7b" style="radio" />
+                    <br />
+                    <obs conceptId="ce6d9105-7578-448a-be5f-de6669f115ec"
+                         answerConceptId="efb70399-83b8-4abe-a057-24cb48c3de19" style="radio" />
+                    <br />
+                    <obs conceptId="ce6d9105-7578-448a-be5f-de6669f115ec"
+                         answerConceptId="07cc7ce5-283e-41da-9422-4d6e9f79d50c" style="radio" />
+                    <br />
+                    <obs conceptId="ce6d9105-7578-448a-be5f-de6669f115ec"
+                         answerConceptId="91ff09b4-fb88-408b-a5d0-dec25e144418" style="radio" />
+                    <br />
+                    <obs conceptId="ce6d9105-7578-448a-be5f-de6669f115ec"
+                         answerConceptId="633af1e1-4f47-4d5f-9926-a3dfba4474aa" style="radio" />
+                    <br />
+                    <obs conceptId="ce6d9105-7578-448a-be5f-de6669f115ec"
+                         answerConceptId="87e742fd-23db-42dc-90f5-71416bbe5e21" style="radio" />
+                    <br />
+                    <obs conceptId="ce6d9105-7578-448a-be5f-de6669f115ec"
+                         answerConceptId="e0615f44-8eb4-468a-90f1-ec28f734e8e8" style="radio" />
+                    <br />
+                    <obs conceptId="ce6d9105-7578-448a-be5f-de6669f115ec"
+                         answerConceptId="379a596f-67ed-453b-9f6b-214c7a75dd5f" style="radio" />
+                    <br />
+                    <obs conceptId="ce6d9105-7578-448a-be5f-de6669f115ec"
+                         answerConceptId="042a4a74-a5b3-428e-b697-b20ef0c179f2" style="radio" />
+                    <br />
+                    <obs conceptId="ce6d9105-7578-448a-be5f-de6669f115ec"
+                         answerConceptId="27770982-0e42-4b17-886e-8d9090efb4f8" style="radio" />
+                    <br />
+                    <obs conceptId="ce6d9105-7578-448a-be5f-de6669f115ec"
+                         answerConceptId="baea56e3-c1cf-4dbe-b50a-3d4b0f2c1590" style="radio" />
+                    <br />
+                </p>
+                <p>
+                    <obs conceptId="76da94a3-8eb5-44e4-b690-0e2e0f814fa2" style="textarea" rows="4" cols="40" labelText="Evaluation of effectiveness for patient education"/>
+                </p>
+            </fieldset>
         </div>
     </section>
 

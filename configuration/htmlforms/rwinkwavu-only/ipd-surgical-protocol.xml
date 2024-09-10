@@ -197,7 +197,6 @@
 
     <!--<span style="float: right">Paper Form ID: $paperFormId</span>-->
     <!-- <includeIf velocityTest="$patient.gender == 'F' "> -->
-    <postSubmissionAction class="org.openmrs.module.mch.CreatePatientInSubmissionAction" />
     <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
         <div class="section-container">
             <table style="table-layout: fixed;">
@@ -223,11 +222,11 @@
     <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="POST OP Protocols">
         <div class="section-container">
 
-            <p class="small-input">
+            <p class="small-input flexView">
                 Type of Intervention:
                 <obs conceptId="624416cf-0066-4a28-a4b2-baaf96b9bcc2" style="text" />
             </p>
-            <p>
+            <p class="date-one-line">
                 Date of Intervention:
                 <obs conceptId="877b19b5-619e-4df3-a310-28a7e827768e" /><br />
             </p>
@@ -240,22 +239,22 @@
                 <obs conceptId="4cc57da9-76ea-4275-bfd8-d5e9486926cf" allowFutureDates="true" /><br />
 
             </p>
-            <p>
+            <p class="small-input flexView">
                 Surgeon:
                 <obs conceptId="4711b066-8465-4da2-910a-91192390ac43" style="text" /><br />
 
             </p>
-            <p>
+            <p class="small-input flexView">
                 Internal Assistant:
                 <obs conceptId="c73f3dd7-789e-43b2-a795-869ecbcfa5ad" style="text" /><br />
 
             </p>
-            <p>
+            <p class="small-input flexView">
                 External Assistant:
                 <obs conceptId="81fd294d-4243-41d3-8ff0-05ce4a8194aa" style="text" /><br />
 
             </p>
-            <p>
+            <p class="small-input flexView">
                 Anesthetist:
                 <obs conceptId="ba2db825-bada-4ca5-8b95-9b23c52dfef2" style="text" /><br />
 
@@ -283,23 +282,30 @@
                 </obs>
             </p>
 
-            <p id="ifYesTransfu" class="small-input">
-                If Yes, please indicate:<br />
-                <obs conceptId="08f71fa4-db7c-4ff5-b8f3-ad7e561d232e" labelText="Volume:" /><br/>
-                <obs conceptId="a5865679-f9ce-43a0-90bb-de9ec9c6bfbb" labelText="Donnor's blood type:" /><br/>
-                <obs conceptId="ed84af4b-90a4-4d7b-8f65-18da8a5fae07" labelText="Receiver's blood type:" /><br/>
+            <p id="ifYesTransfu" class="small-input flexView">
+                If Yes, please indicate the volume:<br />
+                <span class="flexView">
+                    <obs conceptId="2ca48a3a-ecb1-4078-a0ec-9c1ec8ba10f1" labelText="PRBS:" style="text"/>
+                    <obs conceptId="3cd3d038-26fe-102b-80cb-0017a47871b2" labelText="PLATELETS:" style="text"/>
+                    <obs conceptId="	8d777abf-edd2-4ede-862f-62fc78e708a5" labelText="FFP:" style="text"/>
+                    <obs conceptId="48c3db3b-5288-4489-adb3-8f275ffbdaff" labelText="Cryoprecipitate:" style="text"/>
+                </span>
             </p>
-            <p>
+            <p class="small-input side-by-side">
+                <obs conceptId="a5865679-f9ce-43a0-90bb-de9ec9c6bfbb" labelText="Donnor's blood type:" style="radio"/><br/>
+                <obs conceptId="ed84af4b-90a4-4d7b-8f65-18da8a5fae07" labelText="Receiver's blood type:" style="radio" /><br/>
+            </p>
+            <p class="small-input flexView">
                 Diagnostic(indications) Pre-Operation:
                 <obs conceptId="78f9f275-f1ff-439e-8df3-7711560f2dc5" style="text" /><br />
 
             </p>
-            <p>
+            <p class="small-input flexView">
                 Intra-Operative Diagnosis:
                 <obs conceptId="78f9f275-f1ff-439e-8df3-7711560f2dc5" style="text" /><br />
 
             </p>
-            <p>
+            <p class="small-input flexView">
                 Skin desinfection and product used :
                 <obs conceptId="0ab77c37-e619-49a6-8d46-2e24926be088" style="text" /><br />
 
@@ -314,7 +320,7 @@
                 <obs conceptId="dc08328a-3105-43cd-b85f-905328261ac7" style="textarea" rows="4" cols="40" /><br />
 
             </p>
-            <p>
+            <p class="small-input flexView">
                 Type of sutures and number:
                 <obs conceptId="7e64db30-4542-4649-840c-572163b1061c" style="text" /><br />
 
@@ -324,7 +330,7 @@
                 <obs conceptId="df5c33c1-b092-4e1a-87c2-57975c8a598c" style="textarea" rows="4" cols="40" /><br />
 
             </p>
-            <p>
+            <p class="small-input flexView">
                 Post-operative diagnosis:
                 <obs conceptId="358f9c91-c17f-40b5-9df0-d3cb78a57ae8" style="text" /><br />
 

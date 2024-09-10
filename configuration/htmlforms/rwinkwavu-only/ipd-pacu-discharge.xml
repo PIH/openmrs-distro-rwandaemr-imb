@@ -1,13 +1,4 @@
-<htmlform
-        htmlformUuid="016d0779-9b3b-456e-bcfc-830817a0245c"
-        formUuid="cb18e7f7-6e7b-42f9-8a26-0e297b2cbf4c"
-        formName="Discharge From PACU(PADS Score)"
-        formDescription="Discharge From PACU(PADS Score)"
-        formVersion="1.0"
-        formEncounterType="97de5563-b775-40ad-b72e-444eee8144d3"
-        formPublished="true"
-        formRetired="false"
->
+<htmlform>
 
     <macros>
         paperFormId = Flow-DM-RW.V2.0.akb.15May09
@@ -184,37 +175,66 @@
         text-align: center;
 
         }
+
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
+        display: block;
+        }
     </style>
 
-
     <script type="text/javascript">
-        var $ = jQuery.noConflict();
+        jq = jQuery.noConflict();
 
-        $(document).ready(function () {
+        jq(document).ready(function () {
 
-        // $("#result2").find("input").attr("disabled",true);
+        jq("#bpScore input").prop('disabled', true);
+        jq("#awScore input").prop('disabled', true);
+        jq("#nvScore input").prop('disabled', true);
+        jq("#pcmoScore input").prop('disabled', true);
+        jq("#sbScore input").prop('disabled', true);
+        jq("#result2 input").prop('disabled', true);
+        // Make the total score field read-only
+        jq("#result2 input").prop('readonly', true);
 
-        $('#bpScore, #awScore, #nvScore, #pcmoScore, #sbScore').change(function () {
+        // Listen for radio button changes and update the respective score fields
+        jq('input[type="radio"]').change(function () {
+        // Get the name of the radio group and the selected value
+        let groupName = jq(this).attr('name');
+        let selectedValue = jq(this).val();
 
+        // Populate the corresponding obs field
+        if (groupName === 'bpr') {
+        jq("#bpScore input").val(selectedValue);
+        } else if (groupName === 'aw') {
+        jq("#awScore input").val(selectedValue);
+        } else if (groupName === 'nv') {
+        jq("#nvScore input").val(selectedValue);
+        } else if (groupName === 'pcmo') {
+        jq("#pcmoScore input").val(selectedValue);
+        } else if (groupName === 'sb') {
+        jq("#sbScore input").val(selectedValue);
+        }
 
-        score1 = parseInt(getValue('bpScore.value'));
-        score2 = parseInt(getValue('awScore.value'));
-        score3 = parseInt(getValue('nvScore.value'));
-        score4 = parseInt(getValue('pcmoScore.value'));
-        score5 = parseInt(getValue('sbScore.value'));
+        // Update the total score
+        updateTotalScore();
+        });
+
+        // Function to calculate and update the total score
+        function updateTotalScore() {
+        let score1 = parseInt(jq("#bpScore input").val()) || 0;
+        let score2 = parseInt(jq("#awScore input").val()) || 0;
+        let score3 = parseInt(jq("#nvScore input").val()) || 0;
+        let score4 = parseInt(jq("#pcmoScore input").val()) || 0;
+        let score5 = parseInt(jq("#sbScore input").val()) || 0;
 
         const sum = score1 + score2 + score3 + score4 + score5;
-        console.log(sum);
 
-        // $('#totalScore').val(total.toFixed(1));
-
-        setValue('result2.value', sum);
-
-        })
-
+        // Update the total score field
+        jq("#result2 input").val(sum);
+        }
         });
     </script>
-
 
 
     <h1>DISCHARGE FROM PACU (PADS Score)</h1>
@@ -243,7 +263,6 @@
 
     <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="PADS score">
         <div class="section-container">
-
             <table border="1">
                 <tr>
                     <th>Indicator</th>
@@ -251,29 +270,25 @@
                     <th>Criteria</th>
                 </tr>
                 <tr>
-                    <td>
-                        BP and Pulse Rate
-                    </td>
+                    <td>BP and Pulse Rate</td>
                     <td class="score">
-                        <obs conceptId="45a2f503-36be-4aff-b8ed-545909363cf3" id="bpScore" />
+                        <obs conceptId="45a2f503-36be-4aff-b8ed-545909363cf3" answerCodes="2,1,0" style="dropdown" id="bpScore" />
                     </td>
                     <td>
-                        Within 20% of pre-op levels:2 <br />
-                        Between 20% and 40% of pre-op levels:1<br />
-                        More than 40% different from pre-op levels:0
+                        <input type="radio" name="bpr" value="2" /> Within 20% of pre-op levels: 2<br/>
+                        <input type="radio" name="bpr" value="1" /> Between 20% and 40% of pre-op levels: 1<br/>
+                        <input type="radio" name="bpr" value="0" /> More than 40% different from pre-op levels: 0
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        Ability to Walk
-                    </td>
+                    <td>Ability to Walk</td>
                     <td class="score">
-                        <obs conceptId="30f15dd0-5d91-4f11-9afa-6b64f8b735fc" id="awScore" />
+                        <obs conceptId="30f15dd0-5d91-4f11-9afa-6b64f8b735fc" answerCodes="2,1,0" style="dropdown" id="awScore" />
                     </td>
                     <td>
-                        Has steady gait and no dizziness (or pre-op level):2<br />
-                        Requires support to walk:1<br />
-                        Unable to walk:0
+                        <input type="radio" name="aw" value="2" /> Has steady gait and no dizziness (or pre-op level): 2<br/>
+                        <input type="radio" name="aw" value="1" /> Requires support to walk: 1<br/>
+                        <input type="radio" name="aw" value="0" /> Unable to walk: 0
                     </td>
                 </tr>
                 <tr>
@@ -281,12 +296,14 @@
                         Nausea and Vomiting
                     </td>
                     <td class="score">
-                        <obs conceptId="729b6487-6990-4b35-99ba-1d7be371ee50" id="nvScore" />
+                        <obs conceptId="729b6487-6990-4b35-99ba-1d7be371ee50" answerCodes="2,1,0" style="dropdown" id="nvScore" />
                     </td>
                     <td>
-                        Minimal, controllable with oral meds:2<br />
-                        Moderate, requires treatment with IM meds:1<br />
-                        Continual despite meds:0
+                        <input type="radio" name="nv" value="2" /> Minimal, controllable with oral meds:2
+                        <br/>
+                        <input type="radio" name="nv" value="1" /> Moderate, requires treatment with IM meds:1
+                        <br/>
+                        <input type="radio" name="nv" value="0" /> Continual despite meds:0
                     </td>
                 </tr>
                 <tr>
@@ -294,12 +311,14 @@
                         Pain Control with Oral Meds />
                     </td>
                     <td class="score">
-                        <obs conceptId="a1a1f068-b2e4-46a4-989e-e08d6436f9bf" id="pcmoScore" />
+                        <obs conceptId="a1a1f068-b2e4-46a4-989e-e08d6436f9bf" answerCodes="2,1,0" style="dropdown" id="pcmoScore" />
                     </td>
                     <td>
-                        Mild, controlled with oral meds:2<br />
-                        Patient requires treatment with injections:1<br />
-                        Severe pain:0
+                        <input type="radio" name="pcmo" value="2" /> Mild, controlled with oral meds:2
+                        <br/>
+                        <input type="radio" name="pcmo" value="1" /> Patient requires treatment with injections:1
+                        <br/>
+                        <input type="radio" name="pcmo" value="0" /> Severe pain:0
                     </td>
                 </tr>
                 <tr>
@@ -307,23 +326,30 @@
                         Surgical Bleeding />
                     </td>
                     <td class="score">
-                        <obs conceptId="45f90faf-37ad-448d-b55e-04c312b8cfb5" id="sbScore" />
+                        <obs conceptId="45f90faf-37ad-448d-b55e-04c312b8cfb5" answerCodes="2,1,0" style="dropdown" id="sbScore" />
                     </td>
                     <td>
-                        Minimal, requiring no dressing changes in PACU:2<br />
-                        Moderate, requiring ≤2 dressing changes:1<br />
-                        Severe, requiring >2 dressing changes:0
+                        <input type="radio" name="sb" value="2" /> Minimal, requiring no dressing changes in PACU:2
+                        <br/>
+                        <input type="radio" name="sb" value="1" /> Moderate, requiring ≤2 dressing changes:1
+                        <br/>
+                        <input type="radio" name="sb" value="0" /> Severe, requiring >2 dressing changes:0
                     </td>
                 </tr>
                 <tr>
-
                     <td colspan="3">
                         <center>
                             <p class="small-input">
-                                <obs conceptId="d5f66511-03bd-4ee6-a8fe-f1a9d835228e" id="result2" labelText="TOTAL SCORE:"/>
+                                <obs conceptId="d5f66511-03bd-4ee6-a8fe-f1a9d835228e" id="result2" labelText="TOTAL SCORE:" />
                             </p>
-
                         </center>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <font color="red">
+                            <b>Note:</b> A score of 9 or 10 is needed to discharge a patient
+                        </font>
                     </td>
                 </tr>
             </table>
@@ -342,4 +368,5 @@
             </button>
         </div>
     </ifMode>
+
 </htmlform>

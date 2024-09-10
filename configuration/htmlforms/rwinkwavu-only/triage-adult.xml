@@ -287,41 +287,66 @@
 
     <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="EMERGENCY SINGS? CHECK THE COMPLAINT">
         <div class="section-container" id="dangertd1">
-            <table class="baseline-aligned" cellspacing="0" cellpadding="6" width="100%" style="background-color:AliceBlue" >
+            <p>
                 <tr align="center"> <h2><td colspan="3" id="message1"></td></h2></tr>
-                <tr><th>Airway/ Breathing</th></tr>
-                <tr> <td><obs conceptId="87ce1710-627e-47fc-931f-201bde8f2e66" answerConceptId="c568dc8a-dbc0-4478-a442-7e7ea688ea2e" answerCode="No Breathing" style="checkbox"  class="red1"/></td></tr>
-                <tr> <td> <obs conceptId="87ce1710-627e-47fc-931f-201bde8f2e66" answerConceptId="0103c82a-fb00-4498-b845-a77b0aac8360" answerCode="Obstructed Breathing" style="checkbox" class="red1"/></td></tr>
-                <tr> <td><obs conceptId="87ce1710-627e-47fc-931f-201bde8f2e66" answerConceptId="db886b2d-d8af-443b-81ac-013abca8ac42" answerCode="Severe Respiratory Distress" style="checkbox" class="red1"/></td></tr>
-                <tr> <th>Circulation</th></tr>
+            </p>
+            <p class="radio side-by-side">
+                <label><b>
+                    Airway/ Breathing
+                </b></label><br/>
+                <obs conceptId="87ce1710-627e-47fc-931f-201bde8f2e66" answerConceptId="c568dc8a-dbc0-4478-a442-7e7ea688ea2e" answerCode="No Breathing" style="radio"  class="red1"/><br/>
+                <obs conceptId="87ce1710-627e-47fc-931f-201bde8f2e66" answerConceptId="0103c82a-fb00-4498-b845-a77b0aac8360" answerCode="Obstructed Breathing" style="radio" class="red1"/><br/>
+                <obs conceptId="87ce1710-627e-47fc-931f-201bde8f2e66" answerConceptId="db886b2d-d8af-443b-81ac-013abca8ac42" answerCode="Severe Respiratory Distress" style="radio" class="red1"/>
+            </p>
+            <p class="radio side-by-side">
+                <label><b>
+                    Circulation
+                </b></label><br/>
 
-                <tr><td> <obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="1719e6db-a336-4ec2-adf9-90d51233bfce" answerCode="Cardiac arrest" style="checkbox" class="red1"/></td></tr>
-                <tr><td> <obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="ce977dee-31d6-494e-80a4-529c2f2e3bbe" answerCode="Hemorrhage-uncontrolled" style="checkbox" class="red1"/></td></tr>
-                <tr><td> <obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="84caf353-f54d-46ab-977c-8c660a51c56b" answerCode="Stab/gunshot wound to neck or chest" style="checkbox" class="red1"/></td></tr>
-                <tr><td> <obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="473c2f4c-0111-4cd4-a90b-7f129a2ac8b8" answerCode="Lethargic" style="checkbox" class="red1"/></td></tr>
-                <tr><td><obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="e1c1e606-cdad-4417-b35a-2152f69f3cbc" answerCode="Pulse weak and fast" style="checkbox" class="red1"/></td></tr>
-                <tr><td> <obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="c1d0fc31-bf80-4b49-aa03-25c4b04a2e1e" answerCode="Cap refill ≥3 sec" style="checkbox" class="red1"/></td></tr>
-                <tr><td><obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="f051815d-2033-4f99-b59a-8c9e06c46ebe" answerCode="Cold hand plus" style="checkbox" class="red1"/></td></tr>
-                <tr> <th>Convulsion</th></tr>
-                <tr><td> <obs  conceptId="3cce938e-26fe-102b-80cb-0017a47871b2" answerConceptId="b4c88c6c-4141-42be-a953-b585b0649443" answerCode="Current seizure or post ictal (not alert)" style="checkbox" class="red1"/> <b>Glucose=</b> <obs conceptId="3cd4e194-26fe-102b-80cb-0017a47871b2"/></td></tr>
-                <tr><th>Coma</th></tr>
-                <tr><td> <obs  conceptId="3cd95a58-26fe-102b-80cb-0017a47871b2" answerConceptId="eb061310-0040-444b-9e91-89b53aa66e48" answerCode="Un responsive or responsive only to pain" style="checkbox" class="red1"/> <b>Glucose+</b> <obs conceptId="3cd4e194-26fe-102b-80cb-0017a47871b2"/></td></tr>
-                <tr><th>Dehydration</th></tr>
-                <tr><td> <obs conceptId="3cd95a58-26fe-102b-80cb-0017a47871b2" answerConceptId="d5e674ae-76a6-40cf-bc41-0922732ad479" answerCode="Severe dehydration ≥ +2 of following" style="checkbox" class="red1"/></td></tr>
-                <tr><td> <obs conceptId="3cd95a58-26fe-102b-80cb-0017a47871b2" answerConceptId="918b11a8-bbd8-44d5-9ba5-24bfac4b6a3d" answerCode="Skin pinch ≥ 2sec" style="checkbox" class="red1"/></td></tr>
-                <tr><td><obs conceptId="3cd95a58-26fe-102b-80cb-0017a47871b2" answerConceptId="473c2f4c-0111-4cd4-a90b-7f129a2ac8b8" answerCode="Lethargy" style="checkbox" class="red1"/></td></tr>
-                <tr><td> <obs conceptId="3cd95a58-26fe-102b-80cb-0017a47871b2" answerConceptId="b718ee7f-5909-4d1f-8475-06dbe423ec7a" answerCode="SSunken eyes" style="checkbox" class="red1"/></td></tr>
-
-                <tr> <th>Other:</th></tr>
-                <tr><td><obs  conceptId="2ab4b47e-5b88-4277-9925-226ce89f9e9f" answerConceptId="02544ac6-78ff-442a-993c-b7844d5b34b8" answerCode="Prolapsed cord" style="checkbox" class="red1"/></td></tr>
-                <tr><td><obs conceptId="2ab4b47e-5b88-4277-9925-226ce89f9e9f" answerConceptId="d79c7d9e-52b7-4927-bcdf-b0400619f7f3" answerCode="Abnormal CTG" style="checkbox" class="red1"/></td></tr>
-                <tr> <td><obs conceptId="2ab4b47e-5b88-4277-9925-226ce89f9e9f" answerConceptId="cc696b6c-1f53-4b60-8fea-c61c55318333" answerCode="No fetal movement" style="checkbox" class="red1"/></td></tr>
-                <tr><td><obs conceptId="2ab4b47e-5b88-4277-9925-226ce89f9e9f" answerConceptId="84caf353-f54d-46ab-977c-8c660a51c56b" answerCode="Stab/gunshot wound" style="checkbox" class="red1"/></td></tr>
-                <tr><td><obs conceptId="2ab4b47e-5b88-4277-9925-226ce89f9e9f" answerConceptId="0df89a77-686e-4bdb-9a19-335b43aa8059" answerCode="Bandel ring" style="checkbox" class="red1"/></td></tr>
-                <tr><td><obs conceptId="2ab4b47e-5b88-4277-9925-226ce89f9e9f" answerConceptId="26c0efb3-2acf-4183-aa4b-631de4665d1e" answerCode="Imminent birth" style="checkbox" class="red1"/></td></tr>
-
-
-            </table>
+                <obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="1719e6db-a336-4ec2-adf9-90d51233bfce" answerCode="Cardiac arrest" style="radio" class="red1"/><br/>
+                <obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="ce977dee-31d6-494e-80a4-529c2f2e3bbe" answerCode="Hemorrhage-uncontrolled" style="radio" class="red1"/><br/>
+                <obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="84caf353-f54d-46ab-977c-8c660a51c56b" answerCode="Stab/gunshot wound to neck or chest" style="radio" class="red1"/><br/>
+                <obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="473c2f4c-0111-4cd4-a90b-7f129a2ac8b8" answerCode="Lethargic" style="radio" class="red1"/><br/>
+                <obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="e1c1e606-cdad-4417-b35a-2152f69f3cbc" answerCode="Pulse weak and fast" style="radio" class="red1"/><br/>
+                <obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="c1d0fc31-bf80-4b49-aa03-25c4b04a2e1e" answerCode="Cap refill ≥3 sec" style="radio" class="red1"/><br/>
+                <obs conceptId="8591a9a6-6b7d-4485-a2c9-ae658b46030d" answerConceptId="f051815d-2033-4f99-b59a-8c9e06c46ebe" answerCode="Cold hand plus" style="radio" class="red1"/>
+            </p>
+            <p class="radio side-by-side">
+                <label>
+                    <b>
+                        Convulsion
+                    </b>
+                </label><br/>
+                <obs  conceptId="3cce938e-26fe-102b-80cb-0017a47871b2" answerConceptId="b4c88c6c-4141-42be-a953-b585b0649443" answerCode="Current seizure or post ictal (not alert)" style="radio" class="red1"/> <b>Glucose=</b> <obs conceptId="3cd4e194-26fe-102b-80cb-0017a47871b2"/>
+            </p>
+            <p class="radio side-by-side">
+                <label><b>
+                    Coma
+                </b></label><br/>
+                <obs  conceptId="3cd95a58-26fe-102b-80cb-0017a47871b2" answerConceptId="eb061310-0040-444b-9e91-89b53aa66e48" answerCode="Un responsive or responsive only to pain" style="radio" class="red1"/> <b>Glucose+</b> <obs conceptId="3cd4e194-26fe-102b-80cb-0017a47871b2"/>
+            </p>
+            <p class="radio side-by-side">
+                <label><b>
+                    Dehydration
+                </b></label><br/>
+                <obs conceptId="3cd95a58-26fe-102b-80cb-0017a47871b2" answerConceptId="d5e674ae-76a6-40cf-bc41-0922732ad479" answerCode="Severe dehydration ≥ +2 of following" style="radio" class="red1"/><br/>
+                <obs conceptId="3cd95a58-26fe-102b-80cb-0017a47871b2" answerConceptId="918b11a8-bbd8-44d5-9ba5-24bfac4b6a3d" answerCode="Skin pinch ≥ 2sec" style="radio" class="red1"/><br/>
+                <obs conceptId="3cd95a58-26fe-102b-80cb-0017a47871b2" answerConceptId="473c2f4c-0111-4cd4-a90b-7f129a2ac8b8" answerCode="Lethargy" style="radio" class="red1"/><br/>
+                <obs conceptId="3cd95a58-26fe-102b-80cb-0017a47871b2" answerConceptId="b718ee7f-5909-4d1f-8475-06dbe423ec7a" answerCode="SSunken eyes" style="radio" class="red1"/>
+            </p>
+            <p class="radio side-by-side">
+                <label>
+                    <b>
+                        Other:
+                    </b>
+                </label><br/>
+                <obs conceptId="2ab4b47e-5b88-4277-9925-226ce89f9e9f" answerConceptId="d08d4530-4c16-45a8-bccf-d50a48a6bbf5" answerCode="Hypoglycemia (Glucose less than 3 mmol/L/60mg/dl)" style="radio" class="red1"/><br/>
+                <obs conceptId="2ab4b47e-5b88-4277-9925-226ce89f9e9f" answerConceptId="d854c862-76ee-4f18-9653-3374b2230da5" answerCode="Purpuric rash" style="radio" class="red1"/><br/>
+                <obs conceptId="2ab4b47e-5b88-4277-9925-226ce89f9e9f" answerConceptId="fb20e84b-ebea-4eeb-a8f9-a537e5975068" answerCode="Burn-face/inhalation" style="radio" class="red1"/><br/>
+                <!-- <obs conceptId="2ab4b47e-5b88-4277-9925-226ce89f9e9f" answerConceptId="84caf353-f54d-46ab-977c-8c660a51c56b" answerCode="Stab/gunshot wound" style="radio" class="red1"/><br/>
+                <obs conceptId="2ab4b47e-5b88-4277-9925-226ce89f9e9f" answerConceptId="0df89a77-686e-4bdb-9a19-335b43aa8059" answerCode="Bandel ring" style="radio" class="red1"/><br/>
+                <obs conceptId="2ab4b47e-5b88-4277-9925-226ce89f9e9f" answerConceptId="26c0efb3-2acf-4183-aa4b-631de4665d1e" answerCode="Imminent birth" style="radio" class="red1"/> -->
+            </p>
         </div>
     </section>
     <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="AUTO VITAL SIGNS">
@@ -360,7 +385,7 @@
                 <tr>
                     <td></td>
                     <td><span id="all" class="sc">
-                        <div class="radio">
+                        <div class="radio side-by-side">
                             <h1>RR</h1>
                             <input type="radio" name="rr" value="2" />(&#60;9)
                             <input type="radio" name="rr" value="0" />(9-14)
@@ -417,50 +442,66 @@
     <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Very Urgent Sings? CHECK THE COMPLAINT"  >
         <div class="section-container" id="dangertd">
 
-            <table class="baseline-aligned" cellspacing="0" cellpadding="2" width="100%" style="background-color:AliceBlue" >
-                <tr align="center"> <h2><td colspan="3" id="message"></td></h2></tr>
-                <tr> <th>Medical</th></tr>
-                <tr> <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="3cd659ac-26fe-102b-80cb-0017a47871b2" style="checkbox" answerCode="Focal neurological deficit-acute less than (glucose)" class="orange"/>  </td> </tr>
-                <tr> <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="a56886fb-dc88-4220-aee5-5a305f743bca" style="checkbox" answerCode="Altered mental status-acute less than 1 day(glucose)" class="orange"/>   </td></tr>
-                <tr> <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="3ccd2364-26fe-102b-80cb-0017a47871b2" style="checkbox" answerCode="Chest pain" class="orange"/>  </td> </tr>
-                <tr> <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="	1b636e15-008a-4a29-9810-3029b10400fd" style="checkbox" answerCode="Poising/Overdose" class="orange"/>  </td> </tr>
-                <tr>  <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="7db15d2f-8e04-4306-9683-237e5f9371f0" style="checkbox" answerCode="Coughing or vomiting blood" class="orange"/>   </td> </tr>
-                <tr> <td> <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="ed9089cb-2fab-41ad-ab48-5b12e71a2790" style="checkbox" answerCode="Unwell with known diabetes" class="orange"/> </td></tr>
-                <tr> <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="0b9c25d6-b91e-45f2-8b36-2b61f6d70f84" style="checkbox" answerCode="aggressive" class="orange"/>  </td> </tr>
-                <tr> <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="3cf1a95a-26fe-102b-80cb-0017a47871b2" style="checkbox" answerCode="shortness of breath-acutes(less than 1 day)" class="orange"/>   </td></tr>
-                <tr>  <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="3ccdf8d4-26fe-102b-80cb-0017a47871b2" style="checkbox" answerCode="very Severe pain more than7" class="orange"/></td></tr>
 
-                <tr><th>trauma</th></tr>
-                <!-- <tr> <td><span id="9"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="a56886fb-dc88-4220-aee5-5a305f743bca" style="checkbox" answerCode="Altered mental status acutes less than 1 day"/>   </td></tr>-->
-                <tr> <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="c4e02103-9420-4f48-9e37-ff092a4b77bf" style="checkbox" answerCode="Burn over 20% with urgent signs(electrical,chemical of circumferential)" class="orange"/>  </td> </tr>
-                <!--<tr> <td><span id="11"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="	1b636e15-008a-4a29-9810-3029b10400fd" style="checkbox" answerCode="Poising/Overdose" />  </td> </tr>-->
-                <tr> <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="94560650-1c67-4802-8bf9-cd788f4e318d" style="checkbox" answerCode="Fracture Open(with skin break)" class="orange"/>  </td> </tr>
-                <tr> <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="73cb05a8-606c-48c8-b5be-bd9129b994f0" style="checkbox" answerCode="Threatened limb(no pulse or pale)" class="orange"/>  </td> </tr>
-                <tr> <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="c9b21031-f76d-463e-823a-cefdb35ed259" style="checkbox" answerCode="Eye injury" class="orange"/>  </td> </tr>
-                <tr> <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="cd677f31-bba7-4c3c-b118-8d2c060896cd" style="checkbox" answerCode="Dislocation or lager joint(not finger/foe)" class="orange"/>   </td></tr>
-                <tr><td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="7db321ae-f12d-40a2-a192-84dffe0b782b" style="checkbox" answerCode="Severe mechanism of injury(fall more than 1 meter,RTA,other significant trauma)" class="orange"/>   </td> </tr>
-                <!--<tr>  <td><span id="15"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="7db15d2f-8e04-4306-9683-237e5f9371f0" style="checkbox" answerCode="Coughing or vomiting blood" />   </td> </tr>-->
-                <tr>  <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="3ccdf8d4-26fe-102b-80cb-0017a47871b2" style="checkbox" answerCode="abnormal trauma" class="orange"/></td></tr>
-            </table>
+            <p>
+                <tr><h2><td colspan="3" id="message"></td></h2></tr>
+            </p>
+            <p class="radio side-by-side">
+                <label><b>
+                    Medical
+                </b></label><br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="3cd659ac-26fe-102b-80cb-0017a47871b2" style="radio" answerCode="Focal neurological deficit-acute less than 1 day (glucose)" class="orange"/><br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="a56886fb-dc88-4220-aee5-5a305f743bca" style="radio" answerCode="Altered mental status-acute less than 1 day(glucose)" class="orange"/><br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="3ccd2364-26fe-102b-80cb-0017a47871b2" style="radio" answerCode="Chest pain" class="orange"/><br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="	1b636e15-008a-4a29-9810-3029b10400fd" style="radio" answerCode="Poising/Overdose" class="orange"/><br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="7db15d2f-8e04-4306-9683-237e5f9371f0" style="radio" answerCode="Coughing or vomiting blood" class="orange"/><br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="ed9089cb-2fab-41ad-ab48-5b12e71a2790" style="radio" answerCode="Unwell with diabetes, glucose>200mg/dl or 11mmol/l" class="orange"/><br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="0b9c25d6-b91e-45f2-8b36-2b61f6d70f84" style="radio" answerCode="Aggression" class="orange"/><br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="3cf1a95a-26fe-102b-80cb-0017a47871b2" style="radio" answerCode="shortness of breath-acutes(less than 1 day)" class="orange"/><br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="3ccdf8d4-26fe-102b-80cb-0017a47871b2" style="radio" answerCode="very Severe pain more than7" class="orange"/><br/>
+            </p>
+            <p class="radio side-by-side">
+                <label><b>
+                    Trauma
+                </b></label><br/>
+                <!-- <span id="9"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="a56886fb-dc88-4220-aee5-5a305f743bca" style="radio" answerCode="Altered mental status acutes less than 1 day"/>   <br/>-->
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="c4e02103-9420-4f48-9e37-ff092a4b77bf" style="radio" answerCode="Burn over 20% with urgent signs(electrical,chemical of circumferential)" class="orange"/>  <br/>
+                <!--<span id="11"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="	1b636e15-008a-4a29-9810-3029b10400fd" style="radio" answerCode="Poising/Overdose" />  <br/>-->
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="94560650-1c67-4802-8bf9-cd788f4e318d" style="radio" answerCode="Fracture Open(with skin break)" class="orange"/>  <br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="73cb05a8-606c-48c8-b5be-bd9129b994f0" style="radio" answerCode="Threatened limb(no pulse or pale)" class="orange"/>  <br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="c9b21031-f76d-463e-823a-cefdb35ed259" style="radio" answerCode="Eye injury" class="orange"/>  <br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="cd677f31-bba7-4c3c-b118-8d2c060896cd" style="radio" answerCode="Dislocation or lager joint(not finger/foe)" class="orange"/>   <br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="7db321ae-f12d-40a2-a192-84dffe0b782b" style="radio" answerCode="Severe mechanism of injury(fall more than 1 meter,RTA,other significant trauma)" class="orange"/>   <br/>
+                <!--<tr>  <td><span id="15"><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="7db15d2f-8e04-4306-9683-237e5f9371f0" style="radio" answerCode="Coughing or vomiting blood" />   <br/>-->
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="3ccdf8d4-26fe-102b-80cb-0017a47871b2" style="radio" answerCode="abnormal trauma" class="orange"/><br/>
+            </p>
+
         </div>
     </section>
     <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Urgent Sings? CHECK THE COMPLAINT"  >
         <div class="section-container" id="dangertd3">
-
-            <table class="baseline-aligned" cellspacing="0" cellpadding="2" width="100%" style="background-color:AliceBlue" >
+            <p>
                 <tr align="center"> <h2><td colspan="3" id="message3"></td></h2></tr>
-                <tr> <th>Medical/</th></tr>
-                <tr> <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="6d3fde84-b75c-448f-9049-9eec62a3c619" style="checkbox" answerCode="Unable to drink or vomits everything" class="yellow"/> </td> </tr>
-                <tr> <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="d4535d76-ca1f-49be-9fbd-56f58815aa0d" style="checkbox" answerCode="Diabetic,unwell known but glucose more than 300mg/dl" class="yellow"/> </td></tr>
-                <tr> <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="7ac54e26-e9c4-47de-b600-bff224d14c86" style="checkbox" answerCode="Severe malnutrition/wasting" class="yellow"/> </td></tr>
-                <tr> <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="3cd1894a-26fe-102b-80cb-0017a47871b2" style="checkbox" answerCode="very pale" class="yellow"/>   </td></tr>
-                <tr> <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="f7f0399c-4962-42e7-acf9-b74a1158ca65" style="checkbox" answerCode="respiratory distress" class="yellow"/>  </td> </tr>
-
-                <tr><th>Trauma</th></tr>
-                <tr><td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="3cd14b24-26fe-102b-80cb-0017a47871b2" style="checkbox" answerCode=" Dislocation-finger or toe"  class="yellow"/>  </td >  </tr>
-                <tr> <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="d3994be3-4ce4-4620-b859-d8b4c127e0e7" style="checkbox" answerCode="Fracture-closed/Moderate pain(5-6)" class="yellow"/>   </td></tr>
-                <tr> <td><obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="0675e6ee-617a-4068-9a29-135c22d3ba85" style="checkbox" answerCode="Burn without urgent signs" class="yellow"/>  </td> </tr>
-            </table>
+            </p>
+            <p class="radio side-by-side">
+                <label><b>
+                    Medical
+                </b></label><br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="6d3fde84-b75c-448f-9049-9eec62a3c619" style="radio" answerCode="Unable to drink or vomits everything" class="yellow"/> <br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="d4535d76-ca1f-49be-9fbd-56f58815aa0d" style="radio" answerCode="Diabetic,unwell known but glucose more than 300mg/dl" class="yellow"/> <br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="7ac54e26-e9c4-47de-b600-bff224d14c86" style="radio" answerCode="Severe malnutrition/wasting" class="yellow"/> <br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="3cd1894a-26fe-102b-80cb-0017a47871b2" style="radio" answerCode="Very pale" class="yellow"/>   <br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="f7f0399c-4962-42e7-acf9-b74a1158ca65" style="radio" answerCode="Respiratory distress" class="yellow"/>
+            </p>
+            <p class="radio side-by-side">
+                <label><b>
+                    Trauma
+                </b></label><br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="3cd14b24-26fe-102b-80cb-0017a47871b2" style="radio" answerCode=" Dislocation-finger or toe"  class="yellow"/><br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="d3994be3-4ce4-4620-b859-d8b4c127e0e7" style="radio" answerCode="Fracture-closed/Moderate pain(5-6)" class="yellow"/>   <br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="0675e6ee-617a-4068-9a29-135c22d3ba85" style="radio" answerCode="Burn without urgent signs" class="yellow"/> <br/>
+                <obs conceptId="9b743ef1-dff7-466c-b749-073a0feb1800" answerConceptId="925eb62e-6a80-4500-a2bc-675485739a58" style="radio" answerCode="Moderate pain (5-6)" class="yellow"/>
+            </p>
         </div>
     </section>
     <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Nurse Notification">

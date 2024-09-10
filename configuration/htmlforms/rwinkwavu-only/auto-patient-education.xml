@@ -210,40 +210,71 @@
             </table>
         </div>
     </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="PATIENT EDUCATION">
+        <div class="section-container">
+            <div class="two-columns">
 
-   <section headerCode="Education Information">
-       <table class="baseline-aligned">
-               <!-- <obsgroup groupingConceptId="e3ebef35-03c5-47b4-9c43-e1ee1fb3adff">-->
-                    <table class="baseline-aligned">
-                        <tr>
-                            <td class="lblcolor">Identified Health Education needs</td>
-                            <td>
-                                <obs conceptId="e8c8e2d7-2f28-4650-8759-ff0745f7db3d" id="past_medical" style="textarea" rows="3" cols="30"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="lblcolor">Education subject</td>
-                            <td>
-                                <obs conceptId="a0c245fb-a639-4288-8919-cfcf051398ec" id="past_medical" style="textarea" rows="3" cols="30"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="lblcolor">Information received by the patient</td>
-                            <td>
-                                <obs conceptId="7ed7e70e-b98b-4c15-b12b-204bc792452c" id="past_medical" style="textarea" rows="3" cols="30"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="lblcolor">Information received by the next kin</td>
-                            <td>
-                                <obs conceptId="712a3fd6-c315-49bf-b4a3-b0eb8957ddfd" id="past_medical" style="textarea" rows="3" cols="30"/>
-                            </td>
-                        </tr>
-       </table>
-               <!-- </obsgroup>-->
-       </table>
-   </section>
+                <fieldset>
+                    <legend>
+                        <b>
+                            Customer care information
+                        </b>
+                    </legend>
+                    <p class="radio">
+                        <obs conceptId="63c847c0-2875-473c-b0bb-ccaec1c64f8e"
+                             answerConceptId="f0c33f93-4bff-4bc3-b267-85d78f42c626" style="radio" answerSeparator="" />
+                        <br />
+                        <obs conceptId="63c847c0-2875-473c-b0bb-ccaec1c64f8e"
+                             answerConceptId="717407ed-7c21-476c-8d14-c66d80dc13ae" style="radio" answerSeparator="" />
+                        <br />
+                        <obs conceptId="63c847c0-2875-473c-b0bb-ccaec1c64f8e"
+                             answerConceptId="0ced39cf-e269-4a4e-9e03-c18bb8292400" style="radio" answerSeparator="" />
+                        <br />
+                        <obs conceptId="65a05784-ca14-47da-8a02-ea5b2a5d741f"
+                             answerConceptId="912944d6-0f0c-4524-b9ef-0cb82701892b" style="radio" answerSeparator="" />
+                        <br />
+                        <obs conceptId="65a05784-ca14-47da-8a02-ea5b2a5d741f"
+                             answerConceptId="70bff201-2c89-4b5d-abfb-0174a69faba1" style="radio" answerSeparator="" />
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>
+                        <b>
+                            Clinical information
+                        </b>
+                    </legend>
+                    <p class="radio">
+                        <obs conceptId="426ffd09-8630-47f7-8a5f-54b5050389f0"
+                             answerConceptId="1f3f4d49-5911-4c2c-b1cf-4b34c69a8b46" style="radio" answerSeparator="" />
+                        <br />
+                        <obs conceptId="426ffd09-8630-47f7-8a5f-54b5050389f0"
+                             answerConceptId="8393160d-47d8-4264-b226-5cfe80a8467c" style="radio" answerSeparator="" />
+                        <br />
+                        <obs conceptId="426ffd09-8630-47f7-8a5f-54b5050389f0"
+                             answerConceptId="f6294913-be47-41ac-9d61-22f02521cfe7" style="radio" answerSeparator="" />
+                        <br />
+                        <obs conceptId="426ffd09-8630-47f7-8a5f-54b5050389f0"
+                             answerConceptId="419afc62-07b8-42cb-8069-5701e3daa90c" style="radio" answerSeparator="" />
 
+                        <br />
+                        <obs conceptId="426ffd09-8630-47f7-8a5f-54b5050389f0"
+                             answerConceptId="8a6f28f6-f275-4afe-a9f5-0b33d9cdb244" style="radio" answerSeparator="" />
+                        <br />
+                        <obs conceptId="426ffd09-8630-47f7-8a5f-54b5050389f0"
+                             answerConceptId="d1a0dc77-425c-4d8e-a33e-5260cfbfccb6" style="radio" answerSeparator="" answerLabel="Discharge Plan"/>
+                    </p>
+                </fieldset>
+
+            </div>
+        </div>
+    </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Evaluation of effectiveness for patient education">
+        <div class="section-container">
+            <p>
+                <obs conceptId="76da94a3-8eb5-44e4-b690-0e2e0f814fa2" style="textarea" rows="4" cols="40"/>
+            </p>
+        </div>
+    </section>
     <ifMode mode="VIEW" include="false">
         <div id="buttons">
 

@@ -215,6 +215,9 @@
                         Provider:
                         <encounterProvider default="currentUser" />
                     </td>
+                    <td><img src="/configuration/globalresources/images/rwanda-flag-std.jpg" align="left"
+                             height="65" ></img>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -263,7 +266,7 @@
                         </p>
                         <p class="side-by-side">
                             <b>Difficult airway or aspiration risk?</b><br />
-                            <obs conceptId="6c0cba43-f0ac-48ce-924d-4a296b9a1e0b" answerConceptIds="1065,1066"
+                            <obs conceptId="6c0cba43-f0ac-48ce-924d-4a296b9a1e0b" answerConceptIds="1065,1066" answerLabels="Yes, and equipment/assistant available"
                                  style="radio" />
                         </p>
                         <p class="side-by-side">
@@ -275,7 +278,7 @@
                     <td>
                         <p>
                             <b>
-                                <font color="red">Before skin incision/(with at least nurse and anaesthetist)</font>
+                                <font color="red">Before skin incision/(with at least nurse, surgeon and anaesthetist)</font>
                             </b>
                         </p>
                         <p>
@@ -294,31 +297,34 @@
                         </p>
                         <p>
                             <b>Anticipated Critical Events<br /> To surgeon:</b><br />
-                            <obs conceptId="202477f5-188c-4243-a2c0-6cf2c8466b22"
-                                 answerConceptId="29567e7f-39df-466c-a43b-f3a24076769e" style="checkbox" />
+
                         </p>
-                        <p>
-                            <obs conceptId="202477f5-188c-4243-a2c0-6cf2c8466b22"
-                                 answerConceptId="eeb270f1-f250-4b65-8fe5-f270337adea5" style="checkbox" />
+                        <p class="small-input">
+                            <obs conceptId="29567e7f-39df-466c-a43b-f3a24076769e"
+                                 style="text" size="20" labelText="What are the critical or non-router step?:"/>
+                            <br/>
+                            <obs conceptId="eeb270f1-f250-4b65-8fe5-f270337adea5" style="text" size="20" labelText="How long with the case take?"/>
+                            <br/>
+                            <obs conceptId="8990469c-2d10-4cfb-aed2-72c77329c4c0"
+                                 style="text" labelText="What is the anticipated blood loss?" size="20"/>
                         </p>
-                        <p>
-                            <obs conceptId="202477f5-188c-4243-a2c0-6cf2c8466b22"
-                                 answerConceptId="8990469c-2d10-4cfb-aed2-72c77329c4c0" style="checkbox" />
-                        </p>
-                        <p>
+                        <p class="side-by-side">
                             <b>To Anaesthetist:</b><br />
-                            <obs conceptId="089eec10-2403-4c85-9af1-a848e43caf51"
-                                 answerConceptId="2a381503-aa85-48e7-a774-d7ee9e5742f3" style="checkbox" />
+                            <obs conceptId="2a381503-aa85-48e7-a774-d7ee9e5742f3"
+                                 answerConceptIds="1065,1066" style="radio" id="ane">
+                                <controls>
+                                    <when value="1065" thenDisplay="#anyCon"/>
+                                </controls>
+                            </obs><br/>
+                            <obs conceptId="43800585-e44d-4792-a924-87af9f212d38" labelText="Which concerns:" size="20" id="anyCon"/>
                         </p>
-                        <p>
-                            <obs conceptId="089eec10-2403-4c85-9af1-a848e43caf51" answerConceptId="1065"
-                                 style="checkbox" /><br />
+                        <p class="side-by-side">
                             <b>To Nurse Team:</b><br />
-                            <obs conceptId="f241933c-5647-43dc-a929-a1f12400c38e"
-                                 answerConceptId="1854e938-8427-44aa-b5c0-188ef3a58e28" style="checkbox" />
+                            <obs conceptId="1854e938-8427-44aa-b5c0-188ef3a58e28"
+                                 answerConceptIds="1065,1066" style="radio" />
                             <br />
-                            <obs conceptId="f241933c-5647-43dc-a929-a1f12400c38e"
-                                 answerConceptId="c83f917e-5339-4358-a90c-3edcc582917e" style="checkbox" />
+                            <obs conceptId="c83f917e-5339-4358-a90c-3edcc582917e"
+                                 labelText="Are there equipment issues or aby concerns" style="text"  size="20"/>
                             <br />
                         </p>
                         <p class="side-by-side">
@@ -331,7 +337,7 @@
                     <td>
                         <p>
                             <b>
-                                <font color="red">Before leaves operating room/(with at least nurse and anaesthetist)
+                                <font color="red">Before leaves operating room/(with at least nurse,surgeon and anaesthetist)
                                 </font>
                             </b>
                         </p>
@@ -339,10 +345,12 @@
                             <b>Nurse Verbally Confirms:</b><br />
                             <obs conceptId="c88734f8-3d43-47af-8e20-6ad365d67ce8"
                                  answerConceptId="bb714fab-5f81-489d-bc5e-a39849fd4453" style="checkbox" />
+                            <obs conceptId="624416cf-0066-4a28-a4b2-baaf96b9bcc2" style="text" />
                         </p>
                         <p>
                             <obs conceptId="c88734f8-3d43-47af-8e20-6ad365d67ce8"
                                  answerConceptId="4a535890-de2d-4507-9995-b02cd54e6a31" style="checkbox" />
+                            <obs conceptId="84c45cba-91de-44b2-bd0c-8486684eebb5" style="text"/>
                         </p>
                         <p>
                             <obs conceptId="c88734f8-3d43-47af-8e20-6ad365d67ce8"

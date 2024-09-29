@@ -1,5 +1,15 @@
 [
     {
+        "id": "application.registrationapp.summary.editPatientLink",
+        "extensionPointId": "patientDashboard.overallActions",
+        "type": "link",
+        "label": "referenceapplication.app.editRegistrationInfo.label",
+        "url": "registrationapp/registrationSummary.page?patientId={{patient.uuid}}&appId=imbemr.registerPatient",
+        "icon": "icon-pencil",
+        "order": 4,
+        "requiredPrivilege": "App: registrationapp.registerPatient"
+    },
+    {
         "id": "coreapps.createVisit",
         "extensionPointId": "patientDashboard.overallActions",
         "type": "script",

@@ -8,5 +8,9 @@
             <property>emr.concept.diagnosisSetOfSets</property>
             <value>f5ba47a8-c124-4fc9-9da7-598e7455efd6</value>
         </globalProperty>
+        <globalProperty>
+            <property>registrationcore.identifierSourceId</property>
+            <value>08656d01-b429-43fb-957a-a1539e9128db</value>
+        </globalProperty>
     </globalProperties>
 </config>

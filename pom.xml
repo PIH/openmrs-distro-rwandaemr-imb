@@ -57,7 +57,7 @@
         <patientsummaryVersion>1.4.0</patientsummaryVersion>
         <pharmacymanagementVersion>2.0.0-SNAPSHOT</pharmacymanagementVersion>
         <providermanagementVersion>2.14.0</providermanagementVersion>
-        <registrationappVersion>1.26.0-SNAPSHOT</registrationappVersion>
+        <registrationappVersion>1.27.0-SNAPSHOT</registrationappVersion>
         <registrationcoreVersion>1.13.0-SNAPSHOT</registrationcoreVersion>
         <reportingVersion>1.26.0</reportingVersion>
         <reportingcompatibilityVersion>2.0.9</reportingcompatibilityVersion>

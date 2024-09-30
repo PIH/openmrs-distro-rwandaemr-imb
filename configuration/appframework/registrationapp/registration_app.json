@@ -11,40 +11,6 @@
         "encounterType": "cfe614d5-fa7e-4919-b76b-a66117f57e4c",
         "encounterRole": "e8a0fb6a-aba5-11e1-b9e7-002713655c9f"
       },
-      "patientSearchColumnConfig": [
-        {
-          "type": "identifier",
-          "value": "4e458867-9a68-4e55-9fe0-fb49fac4e6b0",
-          "label": "Primary Care ID",
-          "width": "80px"
-        },
-        {
-          "type": "name",
-          "label": "coreapps.search.name",
-          "width": "200px"
-        },
-        {
-          "type": "gender",
-          "label": "coreapps.gender",
-          "width": "65px"
-        },
-        {
-          "type": "age",
-          "label": "coreapps.age",
-          "width": "50px"
-        },
-        {
-          "type": "birthdate",
-          "label": "coreapps.birthdate",
-          "width": "100px"
-        },
-        {
-          "type": "attribute",
-          "value": "Health Center",
-          "label": "Health Center",
-          "width": "200px"
-        }
-      ],
       "allowRetrospectiveEntry": true,
       "allowUnknownPatients": true,
       "allowManualIdentifier": true,
@@ -63,28 +29,6 @@
       ],
       "maxPatientSearchResults": 50,
       "sections": [
-        {
-          "id": "demographics",
-          "label": "",
-          "questions": [
-            {
-              "id": "mothersName",
-              "legend": "Mother's Name",
-              "header": "Mother's Rwandan Name",
-              "fields": [
-                {
-                  "formFieldName": "mothersName",
-                  "type": "personAttribute",
-                  "uuid": "8d871d18-c2cc-11de-8d13-0010c6dffd0f",
-                  "widget": {
-                    "providerName": "uicommons",
-                    "fragmentId": "field/text"
-                  }
-                }
-              ]
-            }
-          ]
-        },
         {
           "id": "contactInfo",
           "label": "registrationapp.patient.contactInfo.label",
@@ -116,9 +60,140 @@
                   "uuid": "d6bcc287-4576-4264-961b-6bf1c08fbf68",
                   "widget": {
                     "providerName": "uicommons",
-                    "fragmentId": "field/text"
+                    "fragmentId": "field/text",
+                    "config": {
+                      "size": "30"
+                    }
                   },
                   "cssClasses": ["phone"]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "attribute-section",
+          "label": "Personal Attributes",
+          "questions": [
+            {
+              "id": "mothers-name-question",
+              "legend": "Mother's Name",
+              "fields": [
+                {
+                  "formFieldName": "mothersName",
+                  "type": "personAttribute",
+                  "label": "Mother's Rwandan Name",
+                  "uuid": "8d871d18-c2cc-11de-8d13-0010c6dffd0f",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+                      "size": "50"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "fathers-name-question",
+              "legend": "Father's Name",
+              "fields": [
+                {
+                  "formFieldName": "fathersName",
+                  "type": "personAttribute",
+                  "label": "Father's Rwandan Name",
+                  "uuid": "b7e948d4-9458-4f06-8d93-e859b6be9b76",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+                      "size": "50"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "education-level-question",
+              "legend": "Education Level",
+              "fields": [
+                {
+                  "formFieldName": "educationLevel",
+                  "type": "personAttribute",
+                  "label": "Education Level",
+                  "uuid": "9add985a-cba2-421a-8dd5-6323eb5bda4f",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+                      "size": "50"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "profession-question",
+              "legend": "Profession",
+              "fields": [
+                {
+                  "formFieldName": "profession",
+                  "type": "personAttribute",
+                  "label": "Profession",
+                  "uuid": "ceb19b28-4327-472f-aac4-4c6c6106c7f9",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+                      "size": "50"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "religion-question",
+              "legend": "Religion",
+              "fields": [
+                {
+                  "formFieldName": "religion",
+                  "type": "personAttribute",
+                  "label": "Religion",
+                  "uuid": "287ad1fe-cd21-4577-bb32-7cd36d6a0ebb",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+                      "size": "50"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "patient-identification-section",
+          "label": "registrationapp.patient.identifiers.label",
+          "questions": [
+            {
+              "id": "nationalId",
+              "legend": "National ID",
+              "fields": [
+                {
+                  "type": "patientIdentifier",
+                  "label": "National ID",
+                  "formFieldName": "nationalId",
+                  "uuid": "ed52ec82-4b7c-411b-804a-13bd9651bb3e",
+                  "cssClasses": ["regex"],
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+                      "size": "50",
+                      "regex": "[0-9]{16}"
+                    }
+                  }
                 }
               ]
             }

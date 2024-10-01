@@ -12,5 +12,9 @@
             <property>registrationcore.identifierSourceId</property>
             <value>08656d01-b429-43fb-957a-a1539e9128db</value>
         </globalProperty>
+        <globalProperty>
+            <property>patient.listingAttributeTypes</property>
+            <value>Health Center,Phone number</value>
+        </globalProperty>
     </globalProperties>
 </config>

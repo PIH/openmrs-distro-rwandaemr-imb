@@ -1,0 +1,20 @@
+[
+  {
+    "id": "registrationSummary.overallActions.registrationHome",
+    "extensionPointId": "registrationSummary.overallActions",
+    "type": "link",
+    "label": "registrationapp.new.registration",
+    "url": "registrationapp/findPatient.page?appId=imbemr.registerPatient",
+    "order": 1
+  },
+  {
+    "id": "registrationSummary.overallActions.clinicalDashboard",
+    "extensionPointId": "registrationSummary.overallActions",
+    "type": "link",
+    "label": "registrationapp.clinicalDashboard",
+    "url": "coreapps/clinicianfacing/patient.page?patientId={{ patient.uuid }}&appId=imbemr.registerPatient",
+    "order": 2
+  }
+]
+
+

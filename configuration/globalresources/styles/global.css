@@ -21,3 +21,7 @@ form input, form select, form textarea, form ul.select, .form input, .form selec
 span.value {
     color: blue;
 }
+
+.dashboard .info-body h3 {
+    white-space: nowrap;
+}

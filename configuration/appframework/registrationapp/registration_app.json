@@ -73,16 +73,16 @@
         },
         {
           "id": "attribute-section",
-          "label": "Personal Attributes",
+          "label": "imbemr.registration.personAttributes",
           "questions": [
             {
               "id": "mothers-name-question",
-              "legend": "Mother's Name",
+              "legend": "imbemr.registration.mothersName.legend",
               "fields": [
                 {
                   "formFieldName": "mothersName",
                   "type": "personAttribute",
-                  "label": "Mother's Rwandan Name",
+                  "label": "imbemr.registration.mothersName.label",
                   "uuid": "8d871d18-c2cc-11de-8d13-0010c6dffd0f",
                   "widget": {
                     "providerName": "uicommons",
@@ -96,12 +96,12 @@
             },
             {
               "id": "fathers-name-question",
-              "legend": "Father's Name",
+              "legend": "imbemr.registration.fathersName.legend",
               "fields": [
                 {
                   "formFieldName": "fathersName",
                   "type": "personAttribute",
-                  "label": "Father's Rwandan Name",
+                  "label": "imbemr.registration.fathersName.label",
                   "uuid": "b7e948d4-9458-4f06-8d93-e859b6be9b76",
                   "widget": {
                     "providerName": "uicommons",
@@ -115,12 +115,12 @@
             },
             {
               "id": "education-level-question",
-              "legend": "Education Level",
+              "legend": "imbemr.registration.educationLevel.legend",
               "fields": [
                 {
                   "formFieldName": "educationLevel",
                   "type": "personAttribute",
-                  "label": "Education Level",
+                  "label": "imbemr.registration.educationLevel.label",
                   "uuid": "9add985a-cba2-421a-8dd5-6323eb5bda4f",
                   "widget": {
                     "providerName": "uicommons",
@@ -134,12 +134,12 @@
             },
             {
               "id": "profession-question",
-              "legend": "Profession",
+              "legend": "imbemr.registration.profession.legend",
               "fields": [
                 {
                   "formFieldName": "profession",
                   "type": "personAttribute",
-                  "label": "Profession",
+                  "label": "imbemr.registration.profession.label",
                   "uuid": "ceb19b28-4327-472f-aac4-4c6c6106c7f9",
                   "widget": {
                     "providerName": "uicommons",
@@ -153,12 +153,12 @@
             },
             {
               "id": "religion-question",
-              "legend": "Religion",
+              "legend": "imbemr.registration.religion.legend",
               "fields": [
                 {
                   "formFieldName": "religion",
                   "type": "personAttribute",
-                  "label": "Religion",
+                  "label": "imbemr.registration.religion.label",
                   "uuid": "287ad1fe-cd21-4577-bb32-7cd36d6a0ebb",
                   "widget": {
                     "providerName": "uicommons",
@@ -172,12 +172,12 @@
             },
             {
               "id": "health-center-question",
-              "legend": "Health Center",
+              "legend": "imbemr.registration.healthCenter.legend",
               "fields": [
                 {
                   "formFieldName": "healthCenter",
                   "type": "personAttribute",
-                  "label": "Health Center",
+                  "label": "imbemr.registration.healthCenter.label",
                   "uuid": "8d87236c-c2cc-11de-8d13-0010c6dffd0f",
                   "widget": {
                     "providerName": "imbemr",
@@ -199,11 +199,11 @@
           "questions": [
             {
               "id": "nationalId",
-              "legend": "National ID",
+              "legend": "imbemr.registration.nationalId.legend",
               "fields": [
                 {
                   "type": "patientIdentifier",
-                  "label": "National ID",
+                  "label": "imbemr.registration.nationalId.label",
                   "formFieldName": "nationalId",
                   "uuid": "ed52ec82-4b7c-411b-804a-13bd9651bb3e",
                   "cssClasses": ["regex"],

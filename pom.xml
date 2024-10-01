@@ -41,7 +41,7 @@
         <idgenVersion>4.10.0</idgenVersion>
         <imbemrVersion>2.0.0-SNAPSHOT</imbemrVersion>
         <imbpathologyrequestVersion>1.0.0-SNAPSHOT</imbpathologyrequestVersion>
-        <initializerVersion>2.7.0-SNAPSHOT</initializerVersion>
+        <initializerVersion>2.7.0</initializerVersion>
         <laboratorymanagementVersion>2.0.0-SNAPSHOT</laboratorymanagementVersion>
         <legacyuiVersion>1.15.0</legacyuiVersion>
         <metadatamappingVersion>1.7.0-SNAPSHOT</metadatamappingVersion>

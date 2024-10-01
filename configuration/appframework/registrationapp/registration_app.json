@@ -169,6 +169,27 @@
                   }
                 }
               ]
+            },
+            {
+              "id": "health-center-question",
+              "legend": "Health Center",
+              "fields": [
+                {
+                  "formFieldName": "healthCenter",
+                  "type": "personAttribute",
+                  "label": "Health Center",
+                  "uuid": "8d87236c-c2cc-11de-8d13-0010c6dffd0f",
+                  "widget": {
+                    "providerName": "imbemr",
+                    "fragmentId": "field/location",
+                    "config": {
+                      "withTag": "Visit Location",
+                      "defaultValue": "visitLocationForSessionLocation",
+                      "size": "50"
+                    }
+                  }
+                }
+              ]
             }
           ]
         },
@@ -191,7 +212,7 @@
                     "fragmentId": "field/text",
                     "config": {
                       "size": "50",
-                      "regex": "[0-9]{16}"
+                      "regex": "(^$)|(^\\d{16}$)"
                     }
                   }
                 }

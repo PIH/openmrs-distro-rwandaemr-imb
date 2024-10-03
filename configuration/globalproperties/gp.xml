@@ -16,5 +16,12 @@
             <property>patient.listingAttributeTypes</property>
             <value>Health Center,Phone number</value>
         </globalProperty>
+
+        <!-- Registration Core -->
+        <globalProperty>
+            <property>registrationcore.patientNameSearch</property>
+            <value>registrationcore.ExistingPatientNameSearch</value>
+        </globalProperty>
+
     </globalProperties>
 </config>

@@ -7,10 +7,6 @@
       "afterCreatedUrl": "registrationapp/registrationSummary.page?patientId={{patientId}}&appId=imbemr.registerPatient",
       "patientDashboardLink": "registrationapp/registrationSummary.page?appId=imbemr.registerPatient",
       "afterCreatedActions": [],
-      "registrationEncounter": {
-        "encounterType": "cfe614d5-fa7e-4919-b76b-a66117f57e4c",
-        "encounterRole": "e8a0fb6a-aba5-11e1-b9e7-002713655c9f"
-      },
       "allowRetrospectiveEntry": true,
       "allowUnknownPatients": true,
       "allowManualIdentifier": true,

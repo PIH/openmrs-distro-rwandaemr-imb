@@ -22,6 +22,14 @@
             <property>registrationcore.patientNameSearch</property>
             <value>registrationcore.ExistingPatientNameSearch</value>
         </globalProperty>
+        <globalProperty>
+            <property>registrationcore.fastSimilarPatientSearchAlgorithm</property>
+            <value>imbemr.RwandaFastPatientSearchAlgorithm</value>
+        </globalProperty>
+        <globalProperty>
+            <property>registrationcore.preciseSimilarPatientSearchAlgorithm</property>
+            <value>imbemr.RwandaPrecisePatientSearchAlgorithm</value>
+        </globalProperty>
 
     </globalProperties>
 </config>

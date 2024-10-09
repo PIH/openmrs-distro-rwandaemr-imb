@@ -16,12 +16,20 @@
     "order": 2
   },
   {
+    "id": "registrationSummary.overallActions.registrationEncounter",
+    "extensionPointId": "registrationSummary.overallActions",
+    "type": "link",
+    "label": "imbemr.registration.encounter.createAction",
+    "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.id}}&createVisit=true&definitionUiResource=file:configuration/htmlforms/registration.xml",
+    "order": 3
+  },
+  {
     "id": "registrationSummary.overallActions.clinicalDashboard",
     "extensionPointId": "registrationSummary.overallActions",
     "type": "link",
     "label": "registrationapp.clinicalDashboard",
     "url": "coreapps/clinicianfacing/patient.page?patientId={{patient.uuid}}&appId=imbemr.registerPatient",
-    "order": 3
+    "order": 4
   }
 ]
 

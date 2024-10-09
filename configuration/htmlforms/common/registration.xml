@@ -4,9 +4,6 @@
           formEncounterType="cfe614d5-fa7e-4919-b76b-a66117f57e4c"
           formVersion="1.0">
 
-    <style>
-    </style>
-
     <macros>
         <macro key="serviceRequestedQuestion" expression="fn.globalProperty('registration.serviceRequestedConcept')"/>
         <!-- The below 2 expressions are provided by the ImbEmrVelocityContextProvider -->
@@ -30,7 +27,7 @@
                 <label for="encounterDate"><uimessage code="imbemr.registration.encounter.date.label"/></label>
                 <encounterDate id="encounterDate" showTime="true" default="now"/>
             </div>
-            <div class="col-12">
+            <div class="col-12 hide-on-dashboard">
                 <label for="encounterProvider"><uimessage code="imbemr.registration.encounter.provider.label"/></label>
                 <encounterProviderAndRole id="encounterProvider" default="currentUser" encounterRole="e8a0fb6a-aba5-11e1-b9e7-002713655c9f" required="true"/>
             </div>
@@ -40,27 +37,33 @@
                 <encounterLocation default="SessionAttribute:emrContext.sessionLocationId" required="true"/>
             </div>
         </div>
-        <br/>
+        <br class="hide-on-dashboard"/>
         <div class="row col-12">
-            <div class="col-6">
+            <div class="col-12">
                 <label for="service-requested-question"><uimessage code="imbemr.registration.encounter.serviceRequested.label"/></label>
                 <obs id="service-requested-question"
                      conceptId="$serviceRequestedQuestion"
                      answerConceptIds="$serviceConcepts"
                      answerLabels="$serviceLabels"
                      style="dropdown"
-                     required="true"
-                     size="18">
+                     required="true">
                 </obs>
             </div>
-
-            <div class="col-6">
+            <div class="col-12">
                 <label for="insurance-question"><uimessage code="imbemr.insurance"/></label>
                 <span>TODO</span>
             </div>
         </div>
 
-        <submit/>
+        <ifMode mode="VIEW" include="false">
+            <br/>
+            <div id="buttons">
+                <submit id="submitBtn" submitClass="confirm" submitCode="general.save"/>
+                <button type="button" class="cancel">
+                    <uimessage code="emr.cancel"/>
+                </button>
+            </div>
+        </ifMode>
 
     </section>
 

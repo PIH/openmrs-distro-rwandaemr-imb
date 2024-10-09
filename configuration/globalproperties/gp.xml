@@ -31,5 +31,11 @@
             <value>imbemr.RwandaPrecisePatientSearchAlgorithm</value>
         </globalProperty>
 
+        <!-- HFE -->
+        <globalProperty>
+            <property>htmlformentry.timeWidgetHideSecondsDefault</property>
+            <value>true</value>
+        </globalProperty>
+
     </globalProperties>
 </config>

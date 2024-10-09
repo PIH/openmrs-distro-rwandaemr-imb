@@ -52,5 +52,28 @@
         }
       }
     ]
+  },
+  {
+    "id": "imbemr.dashboardWidget.registrationEncounters",
+    "icon": "icon-book",
+    "label": "imbemr.todaysRegistration",
+    "order": 3,
+    "extensions": [
+      {
+        "id": "imbemr.dashboardWidget.registrationEncounters",
+        "appId": "imbemr.dashboardWidget.registrationEncounters",
+        "extensionPointId": "registrationSummary.secondColumnContentFragments",
+        "extensionParams": {
+          "provider": "imbemr",
+          "fragment": "patient/encountersDuringVisit",
+          "fragmentConfig": {
+            "encounterType": "cfe614d5-fa7e-4919-b76b-a66117f57e4c",
+            "creatable": true,
+            "definitionUiResource": "file:configuration/htmlforms/registration.xml",
+            "classToHide": "hide-on-dashboard"
+          }
+        }
+      }
+    ]
   }
 ]

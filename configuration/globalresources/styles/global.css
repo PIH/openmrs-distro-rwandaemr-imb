@@ -25,3 +25,12 @@ span.value {
 .dashboard .info-body h3 {
     width: 160px;
 }
+
+#encounterDate input, #encounterDate select {
+    min-width: unset;
+    display: unset;
+}
+
+#encounterDate .hfe-hours, #encounterDate > .hfe-minutes, #encounterDate > .hfe-seconds {
+    min-width: unset;
+}

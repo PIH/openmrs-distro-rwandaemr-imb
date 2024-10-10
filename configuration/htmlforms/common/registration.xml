@@ -50,8 +50,13 @@
                 </obs>
             </div>
             <div class="col-12">
-                <label for="insurance-question"><uimessage code="imbemr.insurance"/></label>
-                <span>TODO</span>
+                <insurancePolicyObs id="insurance-question"
+                                    encounterDateFieldId="encounterDate"
+                                    label="imbemr.registration.encounter.insurance.label"
+                                    emptyOptionLabel=""
+                                    showAll="true"
+                                    required="true"
+                />
             </div>
         </div>
 

@@ -34,3 +34,7 @@ span.value {
 #encounterDate .hfe-hours, #encounterDate > .hfe-minutes, #encounterDate > .hfe-seconds {
     min-width: unset;
 }
+
+.encounters-during-visit .value {
+    padding-left: 10px;
+}

@@ -20,7 +20,22 @@
         </script>
     </ifMode>
 
-    <section id="encounter-details-section" sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="">
+    <ifMode mode="VIEW" include="true">
+        <style>
+            #registration-form-section label {
+                padding-right: 10px;
+            }
+            #registration-form-section label::after {
+                content: ': ';
+                display: inline;
+            }
+            #insurance-question {
+                display: inline-block;
+            }
+        </style>
+    </ifMode>
+
+    <section id="registration-form-section" sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="">
 
         <div class="row col-12">
             <div class="col-12">

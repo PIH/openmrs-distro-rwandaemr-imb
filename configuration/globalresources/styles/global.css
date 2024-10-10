@@ -22,6 +22,10 @@ span.value {
     color: blue;
 }
 
+label {
+    vertical-align: top;
+}
+
 .dashboard .info-body h3 {
     width: 160px;
 }
@@ -35,6 +39,6 @@ span.value {
     min-width: unset;
 }
 
-.encounters-during-visit .value {
-    padding-left: 10px;
+.encounters-during-visit span.value {
+    color: #363463;
 }

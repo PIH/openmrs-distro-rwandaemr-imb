@@ -1,5 +1,25 @@
 [
   {
+    "id": "imbemr.visitAction.registrationEncounter",
+    "extensionPointId": "patientDashboard.visitActions",
+    "type": "link",
+    "label": "imbemr.registration.encounter.label",
+    "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/registration.xml",
+    "icon": "icon-user",
+    "require": "visit != null && !visit.encounters || !some(visit.encounters, (function(encounter) { return encounter.encounterType.uuid === 'cfe614d5-fa7e-4919-b76b-a66117f57e4c'; } ))",
+    "order": 1
+  },
+  {
+    "id": "imbemr.visitAction.vitalsEncounter",
+    "extensionPointId": "patientDashboard.visitActions",
+    "type": "link",
+    "label": "imbemr.vitals.encounter.label",
+    "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/vitals.xml",
+    "icon": "icon-user",
+    "require": "visit != null",
+    "order": 2
+  },
+  {
     "id": "referenceapplication.realTime.simpleTransfer",
     "extensionPointId": "patientDashboard.visitActions",
     "type": "link",

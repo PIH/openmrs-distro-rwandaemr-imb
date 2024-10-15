@@ -3,7 +3,7 @@
     "id": "registrationSummary.overallActions.registrationHome",
     "extensionPointId": "registrationSummary.overallActions",
     "type": "link",
-    "label": "imbmer.registration.home",
+    "label": "imbemr.registration.home",
     "url": "registrationapp/findPatient.page?appId=imbemr.registerPatient",
     "order": 1
   },

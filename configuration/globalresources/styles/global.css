@@ -42,3 +42,9 @@ label {
 .encounters-during-visit span.value {
     color: #363463;
 }
+
+#visits-list li.selected {
+    background: #5b57a6;
+    color: white;
+    font-weight: bold;
+}

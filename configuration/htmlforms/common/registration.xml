@@ -4,6 +4,8 @@
           formEncounterType="cfe614d5-fa7e-4919-b76b-a66117f57e4c"
           formVersion="1.0">
 
+    <postSubmissionAction class="org.openmrs.module.imbemr.htmlformentry.CreateAppointmentAction"/>
+
     <macros>
         <macro key="serviceRequestedQuestion" expression="fn.globalProperty('registration.serviceRequestedConcept')"/>
         <!-- The below 2 expressions are provided by the ImbEmrVelocityContextProvider -->

@@ -528,9 +528,9 @@
 
                                     <br /><br /><br />
 
-                                    &#160;&#160;&#160;&#160;&#160;&#160; Patient’s ID Number for billing (from
-                                    Ikarita y’umurwayi):
-                                    <patient field="identifier" />
+<!--                                    &#160;&#160;&#160;&#160;&#160;&#160; Patient’s ID Number for billing (from-->
+<!--                                    Ikarita y’umurwayi):-->
+<!--                                    <patient field="identifier" />-->
                                 </td>
                             </tr>
 
@@ -1278,7 +1278,7 @@
     <table>
         <tr>
             <td>Signature:
-                <encounterProvider role="Oncology Provider" />
+                <encounterProvider default="currentUser" />
             </td>
         </tr>
     </table><br />

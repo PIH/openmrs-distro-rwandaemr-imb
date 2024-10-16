@@ -1,10 +1,10 @@
 <htmlform
-        htmlformUuid="0235b92f-5093-40b1-93ac-ee6b62e602da"
-        formUuid="b248baa0-4093-4be7-8ef5-d542da648466"
-        formName="IPD Clinical Examination Form"
-        formDescription="IPD Clinical Examination Form"
+        htmlformUuid="9633fee0-af4a-4e6c-afed-d8030c938399"
+        formUuid="544a9be9-f1a1-467c-a62a-72b98a81da6b"
+        formName="Maternity Medical Assessment Form"
+        formDescription="Maternity Medical Assessment Form"
         formVersion="1.0"
-        formEncounterType="b5d79036-f5ba-4274-b8ed-e1d0fe351064"
+        formEncounterType="8e3c016e-cfca-407a-8214-2f071b3d8da2"
         formPublished="true"
         formRetired="false"
 >
@@ -244,7 +244,20 @@
         display: flex;
         }
     </style>
+    <script type="text/javascript">
+        $(document).ready(function() {
+        $('#submit').click(function(event) {
+        var lmpDate = $('#lmp input[type="date"]').val(); // Get the LMP date value
+        var isUnknownChecked = $('#unknown-lmp input[type="radio"]').is(':checked'); // Check if the Unknown radio button is selected
 
+        // Validation logic
+        if (!lmpDate &amp;&amp; !isUnknownChecked) {
+        event.preventDefault(); // Prevent form submission
+        alert('Please enter LMP date or select "Unknown".');
+        }
+        });
+        });
+    </script>
     <script type="text/javascript">
         if(jQuery){
         $j(document).ready(function(){
@@ -279,6 +292,138 @@
         });
         });
         }
+    </script>
+    <script type="text/javascript">
+        var $j = jQuery.noConflict();
+
+        $j(document).ready(function () {
+
+
+        var today = new Date();
+        var dated = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        // setValue('encdateId.value',dated);
+
+        // ============ visit date =========
+        var newDate = new Date(today.setMonth(today.getMonth()+1));
+        var dt = newDate.getFullYear()+'-'+(newDate.getMonth()+1)+'-'+newDate.getDate();
+        // setValue('nextvisitid.value',dt);
+        // ===================
+        getField('lmp.value').change(function() {
+        var mp = getValue('lmp.value');
+        //alert(mp);
+        var d = new Date(mp);
+
+        d.setFullYear (d.getFullYear() + 1);
+        d.setMonth(d.getMonth() - 3);
+
+        d.setDate(d.getDate() + 7);
+
+        var curr_date = d.getDate();
+
+        var curr_month = d.getMonth();
+        curr_month++;
+
+        var curr_year = d.getFullYear();
+
+        var duedate = curr_year + "-" + curr_month + "-" + curr_date;
+
+
+        setValue('dd.value',duedate);
+        //setValue('dd1.value',duedate);
+
+
+        <!-- Gets due date, current date, and format -->
+        todaysTime = new Date();
+        todaysHour = 0
+        todaysMinute = 0
+        todaysSecond = 0
+        todaysYear = todaysTime.getFullYear()
+        todaysMonth = todaysTime.getMonth()
+        todaysDate = todaysTime.getDate()
+        var dda = getValue('dd.value');
+        //var dda = getValue('dd1.value');
+        //alert(mp);
+        var birthTime = new Date(dda);
+
+        birthYear = birthTime.getFullYear()
+        birthMonth = birthTime.getMonth()
+        birthDate = birthTime.getDate()
+        birthHour = 0
+        birthMinute = 0
+        birthSecond = 0
+
+        <!-- Adjusts for Leap Year Info -->
+        if ((birthYear / 4) == (Math.round(birthYear / 4))) {
+        countLeap = 29}
+        else {
+        countLeap = 28}
+
+        <!-- Calculate the days in the month -->
+        if (birthMonth == 2) {
+        countMonth = countLeap}
+        else {
+        if (birthMonth == 4) {
+        countMonth = 30}
+        else {
+        if (birthMonth == 6) {
+        countMonth = 30}
+        else {
+        if (birthMonth == 9) {
+        countMonth = 30}
+        else {
+        if (birthMonth == 11) {
+        countMonth = 30}
+        else {
+        countMonth = 31}}}}}
+        <!-- Doing the subtactions -->
+        if (birthMinute > todaysMinute) {
+        diffMinute = birthMinute - todaysMinute
+        calcHour = 0}
+        else {
+        diffMinute = birthMinute + 60 - todaysMinute
+        calcHour = -1}
+        if (birthHour > todaysHour) {
+        diffHour = birthHour - todaysHour + calcHour
+        calcDate = 0}
+        else {
+        diffHour = birthHour + 24 - todaysHour  + calcHour
+        calcDate = -1}
+        if (birthDate > todaysDate) {
+        diffDate = birthDate - todaysDate + calcDate
+        calcMonth = 0}
+        else {
+        diffDate = birthDate + countMonth - todaysDate  + calcDate
+        calcMonth = -1}
+        if (todaysMonth > birthMonth ) {
+        calcMonth = calcMonth +12}
+        diffMonth = birthMonth - todaysMonth + calcMonth
+
+        <!-- Making sure it all adds up correctly -->
+        if (diffMinute == 60) {
+        diffMinute = 0
+        diffHour = diffHour + 1}
+        if (diffHour == 24) {
+        diffHour = 0
+        diffDate = diffDate + 1}
+        if (diffDate == countMonth) {
+        diffDate = 0
+        diffMonth = diffMonth + 1}
+
+
+        diffWeek = Math.floor(diffDate / 7)
+        weekd=diffWeek+(diffMonth*4)
+        var weekls=36-weekd;
+
+        if (weekls &lt; 0){
+        weekls=0;
+        }
+        setValue('wkId.value',weekls);
+        //setValue('wkId1.value',weekls);
+        // setValue('wkmsg.value',weekd);
+        // $j('#wkmsg').text(' weeks left  ').css('color','red').css("font-weight","Bold");
+        });
+
+        });
     </script>
     <h2>Consultation Form</h2>
 
@@ -370,7 +515,7 @@
             <p class="date-one-line">
                 <label>Last Menstrual period (LMP)</label>
                 <obs conceptId="968" id="lmp" allowFutureDates="false" />
-                <obs conceptId="ea520c44-3dd0-4b37-8929-66e79e9c72d9" answerConceptId="3cd6fac4-26fe-102b-80cb-0017a47871b2"  style="radio" answerLabel="Unknown" required="true"/>
+                <obs conceptId="ea520c44-3dd0-4b37-8929-66e79e9c72d9" answerConceptId="3cd6fac4-26fe-102b-80cb-0017a47871b2"  style="radio" answerLabel="Unknown"/>
             </p>
             <p class="date-one-line">
                 <label>Expected Date of Delivery (EDD)</label>
@@ -384,17 +529,17 @@
             <p class="small-input flexView radio">
                 Nombre des visites(CPN)/Number of Visits(ANC):
                 <obs conceptId="3eb7e679-81ba-47a5-8b02-61cce925a9c5" size="5" />
-                <obs conceptId="a12d857d-1e23-4fbd-b157-159ba4576c64" answerConceptId="3cd6fac4-26fe-102b-80cb-0017a47871b2"  style="radio" answerLabel="Unknown" required="true"/>
+                <obs conceptId="a12d857d-1e23-4fbd-b157-159ba4576c64" answerConceptId="3cd6fac4-26fe-102b-80cb-0017a47871b2"  style="radio" answerLabel="Unknown" />
             </p>
             <p class="date-one-line">
                 Date du premier visite/First visit date:
                 <obs conceptId="6e204083-4edb-4ccc-8e64-d83260125cf4" />
-                <obs conceptId="a12d857d-1e23-4fbd-b157-159ba4576c64" answerConceptId="3cd6fac4-26fe-102b-80cb-0017a47871b2"  style="radio" answerLabel="Unknown" required="true"/>
+                <obs conceptId="a12d857d-1e23-4fbd-b157-159ba4576c64" answerConceptId="3cd6fac4-26fe-102b-80cb-0017a47871b2"  style="radio" answerLabel="Unknown" />
             </p>
             <p class="date-one-line">
                 Date du dernier visite/last visit date:
                 <obs conceptId="e8268115-d39c-4cad-acc4-106d11f10e52" />
-                <obs conceptId="d984db7c-7fb3-4941-839d-e9cf01397e3c" answerConceptId="3cd6fac4-26fe-102b-80cb-0017a47871b2"  style="radio" answerLabel="Unknown" required="true"/>
+                <obs conceptId="d984db7c-7fb3-4941-839d-e9cf01397e3c" answerConceptId="3cd6fac4-26fe-102b-80cb-0017a47871b2"  style="radio" answerLabel="Unknown" />
             </p>
             <p class="small-input flexView">
                 Gravida(G)

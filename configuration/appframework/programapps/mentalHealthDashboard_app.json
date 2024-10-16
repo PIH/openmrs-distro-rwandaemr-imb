@@ -151,7 +151,7 @@
         "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.mhAccessOutpatientVisit.Form",
         "extensionPointId": "51304c8c-ecc2-4bed-818b-a5c785ad58a6.overallActions",
         "type": "link",
-        "label": "Initial Encounter",
+        "label": "Access Outpatient Visit",
         "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/mh-access-outpatient-visit.xml",
         "icon": "icon-file",
         "order": 8
@@ -346,7 +346,7 @@
     },
     "extensions": [
       {
-        "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.exitFromCare.Form",
+        "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.regimens",
         "extensionPointId": "51304c8c-ecc2-4bed-818b-a5c785ad58a6.overallActions",
         "type": "link",
         "label": "Regimens",
@@ -355,5 +355,29 @@
         "order": 15
       }
     ]
+  },
+  {
+    "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.exitFromCare.Form",
+    "order": 16,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "dashboard": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.exitFromCare.Form",
+        "extensionPointId": "51304c8c-ecc2-4bed-818b-a5c785ad58a6.overallActions",
+        "type": "link",
+        "label": "Exit from care",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/mh-exit-form.xml",
+        "icon": "icon-file",
+        "order": 30
+      }
+    ]
   }
 ]
+
+

@@ -1,4 +1,13 @@
-<htmlform>
+<htmlform
+        htmlformUuid="9e466c07-8b20-4e08-a966-d3bd8636005f"
+        formUuid="cf1a9f6c-e6ca-4397-9281-084d03c66f61"
+        formName="Partogram During Active Phase Labor"
+        formDescription="Partogram During Active Phase Labor"
+        formVersion="1.0"
+        formEncounterType="f0d3c07e-bb5a-4a99-9643-b49810e18981"
+        formPublished="true"
+        formRetired="false"
+>
     <!-- Pedi HIV top level form.
          HIV-RW.V1.akb.Juky13.doc
          Created by gneza 2013
@@ -233,13 +242,13 @@
 
             <p class="small-input flexView">
                 Date and Time:
-                <obs conceptId="1b8f65ed-d801-4945-a354-de70c1212d80" required="true" />
+                <obs conceptId="1b8f65ed-d801-4945-a354-de70c1212d80" required="true" default="now" allowFutureDates="true"/>
             </p>
             <p class="small-input flexView">
                 Fetal heart rate:
                 <obs conceptId="57c934dd-a086-4e73-a9b8-3b9c1abef1b1" />bpm
             </p>
-            <p class="small-input flexView">
+            <p class="side-by-side">
                 Amniotic Liquid:
                 <obs conceptId="3b408c83-ccbb-4c99-ac4a-d195bb8ac07f" style="radio" />
             </p>
@@ -259,7 +268,7 @@
                 Uterine Contraction:
                 <obs conceptId="5965b71c-4214-4780-a74e-2de09b06a552" />10min
             </p>
-            <p class="small-input flexView">
+            <p class="side-by-side">
                 Contraction duration:
                 <obs conceptId="0df7b54f-820d-4ad2-b8c3-ea4eac3e67d7" style="radio" />in seconds
             </p>
@@ -280,7 +289,7 @@
                     <b>Vital Signs</b>
                 </legend>
                 <p class="small-input flexView">
-                    Pulse Rat:<obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" />
+                    Pulse Rate:<obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" />
                 </p>
                 <p class="small-input flexView">
                     BP:
@@ -295,10 +304,10 @@
                     <b>Urine Exams</b>
                 </legend>
                 <p class="small-input flexView">
-                    Proteinemi:<obs conceptId="87b0e81b-e440-47cd-ad0d-5a0b3149682a" />
+                    Proteinemie:<obs conceptId="87b0e81b-e440-47cd-ad0d-5a0b3149682a" />
                 </p>
                 <p class="small-input flexView">
-                    Aceton:<obs conceptId="b1f3d6ca-b22b-4cbc-8f30-b34819399895" />
+                    Acetone:<obs conceptId="b1f3d6ca-b22b-4cbc-8f30-b34819399895" />
                 </p>
                 <p class="small-input flexView">
                     Volume:<obs conceptId="eb41c575-5403-48e4-aacf-8dbcf8dd742d" />

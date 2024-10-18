@@ -334,6 +334,13 @@ formRetired="false"
               <obs conceptId="d6dafc4b-9ad8-4467-94a9-0eca78648254" required="true" />
           </p>
           <p>
+            <label>HOSPITALISATION ROOM TYPE</label>
+                <obs conceptId="3168fee2-92aa-451b-b143-e46b56fe1e6f"
+                    answerConceptIds="fff2ed9d-3835-4299-b7a8-89b3945f4c07,47a206ab-6ce8-48e9-83ad-d076cb151889,ae6e54a3-d344-408c-9b95-c85ee7d72582,470f56f5-83a5-4cb2-a9ba-8714d585b63d,10f7ceb6-9a61-4374-80d4-70b0560eb84e,50b7a5e9-6b71-4652-b1b6-2804577dbfa4"
+                    answerLabels="Hospitalisation chambre à deux lits avec toilette à l'intérieur,Hospitalisation chambre à un lit avec toilette à l'extérieur,Hospitalisation chambre à deux lits avec toilette à l'extérieur,
+                            Hospitalisation salle commune/ Jour,Hospitalisation chambre à un lit avec toilette à l'intérieur,PRIVATE ROOM (Chambre Privée)" required="true" />
+          </p>
+          <p>
               <label>Department</label>
               <obs conceptId="c920931b-fa93-4e99-9e36-28e1e4c16cf7" required="true" />
           </p>
@@ -381,7 +388,7 @@ formRetired="false"
   </section>
   <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="HEALTH STATUS">
       <div class="section-container">
-
+<!-- 
         <p class="flexView small-input">
           
             Height:
@@ -411,7 +418,7 @@ formRetired="false"
             <b>Pain Score:</b>
             <obs conceptId="7c4fb4d3-5e09-49ed-bd44-190ca9a75a55" required="true"/>
          
-            </p>
+            </p> -->
           <p class="side-by-side">
               <label>BLOOD GROUP:</label>
               <obs conceptId="3ccf4090-26fe-102b-80cb-0017a47871b2"

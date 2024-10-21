@@ -62,6 +62,7 @@
                                     <excludes>
                                         <exclude>groovy_scripts/*</exclude>
                                         <exclude>htmlforms/**/*</exclude>
+                                        <exclude>locations/locations-rwinkwavu*</exclude>
                                         <exclude>mUzima/*</exclude>
                                         <exclude>Sync Configuration/*</exclude>
                                         <exclude>**/*.zip</exclude>

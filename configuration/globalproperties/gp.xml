@@ -50,5 +50,11 @@
             <value>true</value>
         </globalProperty>
 
+        <!-- Sync -->
+        <globalProperty>
+            <property>sync.ignore_location_tags</property>
+            <value>true</value>
+        </globalProperty>
+
     </globalProperties>
 </config>

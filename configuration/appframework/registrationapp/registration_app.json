@@ -26,6 +26,88 @@
       "maxPatientSearchResults": 50,
       "sections": [
         {
+          "id": "patient-identification-section",
+          "label": "registrationapp.patient.identifiers.label",
+          "questions": [
+            {
+              "id": "national-ids-questions",
+              "legend": "imbemr.registration.nationalIds.legend",
+              "fields": [
+                {
+                  "type": "patientIdentifier",
+                  "label": "imbemr.identifer.nationalId.label",
+                  "formFieldName": "nationalId",
+                  "uuid": "ed52ec82-4b7c-411b-804a-13bd9651bb3e",
+                  "cssClasses": ["regex"],
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+                      "size": "50",
+                      "regex": "(^$)|(^\\d{16}$)"
+                    }
+                  }
+                },
+                {
+                  "type": "patientIdentifier",
+                  "label": "imbemr.identifer.applicationNumber.label",
+                  "formFieldName": "applicationNumber",
+                  "uuid": "0f7d2e40-956a-11ef-93fa-0242ac120002",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+                      "size": "50"
+                    }
+                  }
+                },
+                {
+                  "type": "patientIdentifier",
+                  "label": "imbemr.identifer.upid.label",
+                  "formFieldName": "upid",
+                  "uuid": "01edaedd-956a-11ef-93fa-0242ac120002",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+                      "size": "50"
+                    }
+                  }
+                },
+                {
+                  "type": "patientIdentifier",
+                  "label": "imbemr.identifer.nin.label",
+                  "formFieldName": "nin",
+                  "uuid": "0c69d739-956a-11ef-93fa-0242ac120002",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+                      "size": "50"
+                    }
+                  }
+                },
+                {
+                  "type": "patientIdentifier",
+                  "label": "imbemr.identifer.passportNumber.label",
+                  "formFieldName": "passportNumber",
+                  "uuid": "12a72978-956a-11ef-93fa-0242ac120002",
+                  "widget": {
+                    "providerName": "uicommons",
+                    "fragmentId": "field/text",
+                    "config": {
+                      "size": "50"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "demographics"
+        },
+        {
           "id": "contactInfo",
           "label": "registrationapp.patient.contactInfo.label",
           "questions": [
@@ -182,33 +264,6 @@
                       "withTag": "Visit Location",
                       "defaultValue": "visitLocationForSessionLocation",
                       "size": "50"
-                    }
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "patient-identification-section",
-          "label": "registrationapp.patient.identifiers.label",
-          "questions": [
-            {
-              "id": "nationalId",
-              "legend": "imbemr.registration.nationalId.legend",
-              "fields": [
-                {
-                  "type": "patientIdentifier",
-                  "label": "imbemr.registration.nationalId.label",
-                  "formFieldName": "nationalId",
-                  "uuid": "ed52ec82-4b7c-411b-804a-13bd9651bb3e",
-                  "cssClasses": ["regex"],
-                  "widget": {
-                    "providerName": "uicommons",
-                    "fragmentId": "field/text",
-                    "config": {
-                      "size": "50",
-                      "regex": "(^$)|(^\\d{16}$)"
                     }
                   }
                 }

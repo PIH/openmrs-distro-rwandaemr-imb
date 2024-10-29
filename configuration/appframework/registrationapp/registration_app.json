@@ -99,6 +99,14 @@
                       "size": "50"
                     }
                   }
+                },
+                {
+                  "widget": {
+                    "providerName": "imbemr",
+                    "fragmentId": "field/searchClientRegistry",
+                    "config": {
+                    }
+                  }
                 }
               ]
             }

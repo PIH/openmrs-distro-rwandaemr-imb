@@ -45,7 +45,7 @@
         </globalProperty>
         <globalProperty>
             <property>registrationcore.mpi.implementation</property>
-            <value>nidaMpiProvider</value>
+            <value></value>
         </globalProperty>
 
         <!-- HFE -->

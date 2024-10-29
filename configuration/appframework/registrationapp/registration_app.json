@@ -105,6 +105,13 @@
                     "providerName": "imbemr",
                     "fragmentId": "field/searchClientRegistry",
                     "config": {
+                      "formFields": [
+                        { "formFieldName":  "nationalId", "identifierTypeUuid":  "ed52ec82-4b7c-411b-804a-13bd9651bb3e" },
+                        { "formFieldName":  "applicationNumber", "identifierTypeUuid":  "0f7d2e40-956a-11ef-93fa-0242ac120002" },
+                        { "formFieldName":  "upid", "identifierTypeUuid":  "01edaedd-956a-11ef-93fa-0242ac120002" },
+                        { "formFieldName":  "nin", "identifierTypeUuid":  "0c69d739-956a-11ef-93fa-0242ac120002" },
+                        { "formFieldName":  "passportNumber", "identifierTypeUuid":  "12a72978-956a-11ef-93fa-0242ac120002" }
+                      ]
                     }
                   }
                 }

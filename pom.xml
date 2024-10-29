@@ -17,7 +17,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <openMRSVersion>2.6.3</openMRSVersion>
-        <addresshierarchyVersion>2.15.0</addresshierarchyVersion>
+        <addresshierarchyVersion>2.19.0</addresshierarchyVersion>
         <adminuiVersion>1.7.0-SNAPSHOT</adminuiVersion>
         <allergyuiVersion>1.8.6-SNAPSHOT</allergyuiVersion>
         <appframeworkVersion>2.18.0-SNAPSHOT</appframeworkVersion>

@@ -2,5 +2,5 @@ Uuid,Name,Description,Required,Format,Format description,Validator,Location beha
 ed52ec82-4b7c-411b-804a-13bd9651bb3e,Rwanda National ID,National ID card with photo distributed to all Rwandan adults by the Rwandan Government from 2008,false,[0-9]{16},16 numbers found on the ID card,,NOT_USED,,
 01edaedd-956a-11ef-93fa-0242ac120002,UPID,UPID,false,,,,NOT_USED,,
 0c69d739-956a-11ef-93fa-0242ac120002,NIN,NIN,false,,,,NOT_USED,,
-0f7d2e40-956a-11ef-93fa-0242ac120002,National ID Application Number,National ID Application Number,false,,,,NOT_USED,,
+0f7d2e40-956a-11ef-93fa-0242ac120002,NID Application Number,National ID Application Number,false,,,,NOT_USED,,
 12a72978-956a-11ef-93fa-0242ac120002,Passport Number,Passport Number,false,,,,NOT_USED,,

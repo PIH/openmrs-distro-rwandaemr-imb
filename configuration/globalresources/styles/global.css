@@ -48,3 +48,7 @@ label {
     color: white;
     font-weight: bold;
 }
+
+#national-ids-questions > h3 {
+    font-weight: bold;
+}

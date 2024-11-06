@@ -8,5 +8,15 @@
         "icon": "icon-refresh",
 		"requiredPrivilege": "App: coreapps.systemAdministration",
         "order": 95
+    },
+    {
+        "id": "imbemr.adminConfigureLoginLocations",
+        "extensionPointId": "systemAdministration.apps",
+        "type": "link",
+        "label": "imbemr.admin.configureLoginLocations",
+        "url": "imbemr/admin/configureLoginLocations.page",
+        "icon": "icon-hospital",
+        "requiredPrivilege": "App: coreapps.systemAdministration",
+        "order": 96
     }
 ]

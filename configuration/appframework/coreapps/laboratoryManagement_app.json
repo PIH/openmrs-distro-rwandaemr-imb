@@ -12,7 +12,8 @@
         "url": "module/laboratorymanagement/viewLabOrder.form",
         "icon": "icon-beaker",
         "requiredPrivilege": "App: coreapps.laboratory",
-        "require": "typeof sessionLocation !== 'undefined' && hasMemberWithProperty(sessionLocation.tags, 'display', 'Laboratory Location')"
+        "require": "typeof sessionLocation !== 'undefined' && hasMemberWithProperty(sessionLocation.tags, 'display', 'Laboratory Location')",
+        "order": 7
       }
     ]
   }

@@ -378,8 +378,16 @@
         @Presumptive_diagnosis_or_Hypothesis@ =08dd5ecf-b381-47ea-a0f1-cd91a65505f7
         @Secondary_ICD_diagnosis@ = afb8006f-e7c4-45bd-82bd-16f6e4b4b51d
         @Primary_ICD_diagnosis@ = 2dce81f9-3874-4247-b441-6369ca0725c2
+        @Extraction_dune_dent_impactee@= 656d0bde-c909-45dc-9976-c6bbaeace9d9
+
     </macros>
     <style>
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
+        display: block;
+        }
+
         form fieldset {
         display: block;
         }
@@ -468,6 +476,10 @@
         width: 100%;
         }
 
+        .div {
+        float: left;
+        }
+
         form input[type="radio"],
         .form input[type="radio"] {
         float: none;
@@ -477,11 +489,76 @@
         .side-by-side label {
         display: inline-block;
         }
+
+        .date-one-line {
+        display: flex;
+        }
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
+        }
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
+        }
     </style>
     <span style="float:right">Paper Form ID: $paperFormId</span>
     <h2>Stomatology Consultation</h2>
 
-    <!--  <postSubmissionAction class="org.openmrs.module.mohbilling.automation.CreateBillOnHtmlFormSubmissionAction"/>-->
+    <ifMode mode="ENTER">
+        <postSubmissionAction class="org.openmrs.module.mohbilling.automation.CreateBillOnHtmlFormSubmissionAction"/>
+    </ifMode>
 
 
     <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
@@ -593,6 +670,96 @@
             </p>
         </div>
     </section>
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="STOMATOLOGIE ACTS">
+        <div id="stomatologyId" class="section-container">
+            <div class="two-columns">
+                <p>
+                    <label>
+                        <b>Department</b>
+                    </label>
+                    <obs conceptId="a29f03ad-be6b-4958-b47e-eb9235d364a4" answerConceptId="e65de509-f9dc-4219-bba2-129e6dd65d01" required="true"/>
+                </p>
+
+                <p class="small-input flexView">
+                    <obs conceptId="$@Extraction_dent_de_lait@" labelText="Extraction_dent_de_lait:" style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@Extraction_dent_definitive@" labelText="Extraction_dent_definitive:"
+                         style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@Extraction_dune_dent_impactee@" labelText="Extraction_dent_impactee:"
+                         style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@Extraction_des_restes_radiculaires@"
+                         labelText="Extraction_des_restes_radiculaires" style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@Obturation_provisoire@" labelText="Obturation_provisoire" style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@Obturation_definitive@" labelText="Obturation_definitive" style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@Devitalisation@" labelText="Devitalisation" style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@Detartrage@" labelText="Detartrage" style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@Gingivectomie@" labelText="Gingivectomie" style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@Coiffage_direct@" labelText="Coiffage_direct" style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@Coiffage_indirect@" labelText="Coiffage_indirect" style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@Curetage_poche_parodontaire@" labelText="Curetage_poche_parodontaire"
+                         style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@Frenectomie_labiale@" labelText="Frenectomie_labiale" style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@Deviation_d_incisive_et_canine@"
+                         labelText="Deviation_d_incisive_et_canine" style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@Reduction_de_l_ATM@" labelText="Reduction_de_l_ATM" style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@Operculectomie@" labelText="Operculectomie" style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@Extraction_chirurgicale_d_une_dent_incluse_ou_impacte@"
+                         labelText="Extraction_chirurgicale_d_une_dent_incluse_ou_impacte" style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@RX_retro-alveolaire@" labelText="RX_retro-alveolaire" style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@Ablation_du_calcul_salivaire@" labelText="Ablation_du_calcul_salivaire"
+                         style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@Apicectomie@" labelText="Apicectomie" style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@Reduction_dento-alveolaire_et_Fixation@"
+                         labelText="Reduction_dento-alveolaire_et_Fixation" style="" />
+                </p>
+                <p class="small-input flexView">
+                    <obs conceptId="$@Kystectomie@" labelText="Kystectomie" style="" />
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+
     <ifMode mode="VIEW" include="false">
         <div id="buttons">
 
@@ -605,4 +772,5 @@
             </button>
         </div>
     </ifMode>
+
 </htmlform>

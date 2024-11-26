@@ -11,8 +11,8 @@
         "label": "Primary Care Registration",
         "url": "module/rwandaprimarycare/chooseLocation.form",
         "icon": "icon-pencil",
-        "requiredPrivilege": "App: coreapps.primarycare"
-
+        "requiredPrivilege": "App: coreapps.primarycare",
+        "order": 2
       }
     ]
   }

@@ -1,22 +1,14 @@
 <htmlform
-        htmlformUuid="9e466c07-8b20-4e08-a966-d3bd8636005f"
-        formUuid="cf1a9f6c-e6ca-4397-9281-084d03c66f61"
-        formName="Partogram During Active Phase Labor"
-        formDescription="Partogram During Active Phase Labor"
+
+        htmlformUuid="c657ff81-750d-455f-b7d4-5850382bbfb3"
+        formUuid="5ba9a138-b3fc-4960-8b4c-52c3d7aa138c"
+        formName="HC Discharge Form"
+        formDescription="HC Discharge Form"
         formVersion="1.0"
-        formEncounterType="f0d3c07e-bb5a-4a99-9643-b49810e18981"
+        formEncounterType="13703c92-58d2-4d04-a320-8d4699380676"
         formPublished="true"
         formRetired="false"
 >
-    <!-- Pedi HIV top level form.
-         HIV-RW.V1.akb.Juky13.doc
-         Created by gneza 2013
-     -->
-    <macros>
-        paperFormId = (Fill this in)
-        headerColor =#009d8e
-        fontOnHeaderColor = white
-    </macros>
     <style>
         .field-error {
         color: #ff6666;
@@ -191,29 +183,26 @@
     </style>
 
     <script type="text/javascript">
-        if (jQuery) {
-        $j(document).ready(function () {
-        $j(".checkboxGroup").each(function () {
-        var group = $j(this);
-        var uncheckAll = function () {
-        group.find("input[type$='checkbox']").attr("checked", false);
-        group.find("input[type$='checkbox']").change();
+
+        var $j = jQuery.noConflict();
+
+        $j(document).ready(function(){
+
+        $j('#follUp').hide();
+
+        if($j('#patientStaus input[value="1490"').attr('checked')){
+        alert("Clikeddd");
+        $j('#follUp').show();
+        }else{
+        $j('#follUp').hide();
         }
-        var uncheckRadioAndAll = function () {
-        group.find("#checkboxAll,#checkboxRadio").find("input[type$='checkbox']").attr("checked", false);
-        group.find("#checkboxAll,#checkboxRadio").find("input[type$='checkbox']").change();
-        }
-        group.find("#checkboxRadio").find("input[type$='checkbox']").click(function () {
-        uncheckAll();
-        $j(this).siblings("input[type$='checkbox']").attr("checked", false);
-        $j(this).attr("checked", true);
-        $j(this).change();
+
         });
-        });
-        });
-        }
+
     </script>
-    <h1>Partogram during labor phase</h1>
+
+    <postSubmissionAction class="org.openmrs.module.mohbilling.automation.CloseGlobalBillOnHtmlFormSubmissionAction"/>
+
     <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
         <div class="section-container">
 
@@ -222,7 +211,7 @@
                 <tr>
                     <td>
                         Date:
-                        <encounterDate default="today" />
+                        <encounterDate default="today"/>
                     </td>
                     <td>
                         Health Facility:
@@ -237,82 +226,30 @@
         </div>
     </section>
 
-    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Partograph">
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Discharge Info:" >
         <div class="section-container">
-
-            <p class="small-input flexView">
-                Date and Time:
-                <obs conceptId="1b8f65ed-d801-4945-a354-de70c1212d80" required="true" allowFutureDates="true"/>
+            <p class="date-one-line">
+                <obs conceptId="3800" labelText="Date de sortie /Discharge date" />
             </p>
-            <p class="small-input flexView">
-                Fetal heart rate:
-                <obs conceptId="57c934dd-a086-4e73-a9b8-3b9c1abef1b1" />bpm
+            <p>
+                <obs conceptId="c920931b-fa93-4e99-9e36-28e1e4c16cf7"  labelText="Discharging Service" />
             </p>
             <p class="side-by-side">
-                Amniotic Liquid:
-                <obs conceptId="3b408c83-ccbb-4c99-ac4a-d195bb8ac07f" style="radio" />
+                <obs id="patientStatus" conceptId="3627" answerConceptIds="1744,1490,1743,1742,1746,e3e2fb28-450b-4a65-b22f-6ec777c6edb7" labelText="Etat du patient a la sortie/ Patient Status" style="radio">
+                    <controls>
+                        <when value="1490" thenDisplay="#follUp"/>
+                    </controls>
+                </obs>
             </p>
-            <p class="small-input flexView">
-                Moulding:
-                <obs conceptId="b8251b45-7729-41fa-a93a-109bdd315660" />
+            <p class="date-one-line">
+                <obs conceptId="3ce94df0-26fe-102b-80cb-0017a47871b2" id="follUp" labelText="Rendez-Vous" allowFutureDates="true"/>
             </p>
-            <p class="small-input flexView">
-                Cervical Dilation:
-                <obs conceptId="206dedbc-ea4a-4298-bb5a-a326526a082e" />
+            <!--<p>
+                 <obs conceptId="2122" style="no_yes" noLabel="non" yesLabel="oui" labelText="Autopsie" />
+             </p> -->
+            <p>
+                Resume clinique /Clinical summary:<obs conceptId="1364" style="textarea" rows="3" cols="30" />
             </p>
-            <p class="small-input flexView">
-                Descent:
-                <obs conceptId="927948ed-8be0-4917-9199-9dc3fb776f86" />
-            </p>
-            <p class="small-input flexView">
-                Uterine Contraction:
-                <obs conceptId="5965b71c-4214-4780-a74e-2de09b06a552" />10min
-            </p>
-            <p class="side-by-side">
-                Contraction duration:
-                <obs conceptId="0df7b54f-820d-4ad2-b8c3-ea4eac3e67d7" style="radio" />in seconds
-            </p>
-            <p class="small-input flexView">
-                Oxytocin Units:
-                <obs conceptId="324e78bc-68cc-4dcc-ab81-54b9fd4b229f" />Units/500ml
-            </p>
-            <p class="small-input flexView">
-                Oxytocin Drops:
-                <obs conceptId="11826120-205d-42db-be63-2d304d494bc8" />drops/minutes
-            </p>
-            <p class="small-input flexView">
-                Medicines and IV liquid:
-                <obs cols="30" conceptId="6226ab58-c614-400a-8104-7fac2de18168" rows="3" style="textarea" />
-            </p>
-            <fieldset>
-                <legend>
-                    <b>Vital Signs</b>
-                </legend>
-                <p class="small-input flexView">
-                    Pulse Rate:<obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" />
-                </p>
-                <p class="small-input flexView">
-                    BP:
-                    <obs conceptId="ed0032c4-d0a8-47c4-bb02-cb727c373721" />
-                </p>
-                <p class="small-input flexView">
-                    Temperature:<obs conceptId="3ce939d2-26fe-102b-80cb-0017a47871b2" />
-                </p>
-            </fieldset>
-            <fieldset>
-                <legend>
-                    <b>Urine Exams</b>
-                </legend>
-                <p class="small-input flexView">
-                    Proteinemie:<obs conceptId="87b0e81b-e440-47cd-ad0d-5a0b3149682a" />
-                </p>
-                <p class="small-input flexView">
-                    Acetone:<obs conceptId="b1f3d6ca-b22b-4cbc-8f30-b34819399895" />
-                </p>
-                <p class="small-input flexView">
-                    Volume:<obs conceptId="eb41c575-5403-48e4-aacf-8dbcf8dd742d" />
-                </p>
-            </fieldset>
         </div>
     </section>
 
@@ -328,4 +265,5 @@
             </button>
         </div>
     </ifMode>
+
 </htmlform>

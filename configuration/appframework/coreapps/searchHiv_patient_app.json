@@ -16,7 +16,8 @@
         "url": "coreapps/findpatient/findPatient.page?app=coreapps.findHivPatient",
         "icon": "icon-search",
         "requiredPrivilege": "App: coreapps.findHivPatient",
-        "require": "typeof sessionLocation !== 'undefined' && hasMemberWithProperty(sessionLocation.tags, 'display', 'ID Location')"
+        "require": "typeof sessionLocation !== 'undefined' && hasMemberWithProperty(sessionLocation.tags, 'display', 'ID Location')",
+        "order": 0
       }
     ]
   }

@@ -48,6 +48,14 @@
     "label": "imbemr.clinicalDashboard.view",
     "url": "coreapps/clinicianfacing/patient.page?patientId={{patient.uuid}}&appId=imbemr.registerPatient",
     "order": 7
+  },
+  {
+    "id": "registrationSummary.overallActions.privateAdmission",
+    "extensionPointId": "registrationSummary.overallActions",
+    "type": "link",
+    "label": "Private Admission",
+    "url": "module/mohbilling/admissionSearch.form",
+    "order": 1
   }
 ]
 

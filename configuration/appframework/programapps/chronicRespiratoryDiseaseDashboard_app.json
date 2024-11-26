@@ -43,6 +43,31 @@
       }
     ]
   },
+
+  {
+    "id": "imbemr.6b825913-ab44-4e49-9ea0-c9e5919f94af.recentEncounters",
+    "description": "coreapps.mostRecentVitals.app.description",
+    "label": "imbemr.clinicianfacing.recentEncounters",
+    "icon": "icon-calendar",
+    "order": 4,
+    "config": {
+      "program": "6b825913-ab44-4e49-9ea0-c9e5919f94af",
+      "dashboard": "6b825913-ab44-4e49-9ea0-c9e5919f94af",
+      "includeActive": false,
+      "limit": "5"
+    },
+    "extensions": [
+      {
+        "id": "imbemr.6b825913-ab44-4e49-9ea0-c9e5919f94af.recentEncounters.extension",
+        "appId": "imbemr.6b825913-ab44-4e49-9ea0-c9e5919f94af.recentEncounters",
+        "extensionPointId": "6b825913-ab44-4e49-9ea0-c9e5919f94af.secondColumnFragments",
+        "extensionParams": {
+          "provider": "imbemr",
+          "fragment": "patient/encountersSection"
+        }
+      }
+    ]
+  },
   {
     "id": "imbemr.6b825913-ab44-4e49-9ea0-c9e5919f94af.obsGraph.weight",
     "order": 3,

@@ -4,7 +4,7 @@
         <!-- EMR API -->
         <globalProperty>
             <property>emrapi.visitExpireHours</property>
-            <value>12</value>
+            <value>24</value>
         </globalProperty>
         <globalProperty>
             <property>emrapi.inpatientVisitExpireHours</property>

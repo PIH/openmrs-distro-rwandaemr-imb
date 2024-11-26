@@ -1,0 +1,622 @@
+<htmlform
+        htmlformUuid="3ca80f02-44ba-410c-8b07-2bfaafecfc14"
+        formUuid="94a97259-8b19-4e2f-8a8e-1f7d24908fd6"
+        formName="HC PNC 0-24H Form"
+        formDescription="HC PNC 0-24H Form"
+        formVersion="1.0"
+        formEncounterType="a703372d-28b7-4831-9817-ee385c8c47d8"
+        formPublished="true"
+        formRetired="false"
+>
+    <style>
+        .field-error {
+        color: #ff6666;
+        font-size: 1.1em;
+        display: block;
+        }
+
+        form fieldset {
+        display: block;
+        }
+
+        .family-history-item .label {
+        display: inline-block;
+        width: 250px;
+        }
+
+        .family-history-item .relative {
+        display: inline-block;
+        width: 120px;
+        }
+
+        .section-header {
+        margin-top: 1.5em;
+        }
+
+        .past-medical-history-item {}
+
+        .past-medical-history-item input[type=checkbox] {
+        float: none;
+        vertical-align: middle;
+        }
+
+        .past-medical-history-item input[type=text] {
+        min-width: 200px;
+        display: inline !important;
+        vertical-align: middle;
+        padding: 1px 10px;
+        }
+
+        .past-medical-history-item>span,
+        .past-medical-history-item>label {
+        display: inline !important;
+        vertical-align: middle;
+        }
+
+        .two-columns {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        }
+
+        .three-columns {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        }
+
+        p.radio>* {
+        display: inline;
+        float: none !important;
+        min-width: initial;
+        }
+
+        .section-container {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container-color {
+        background: #F2F2F2;
+        box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        padding: 10px 5px 10px 15px;
+        line-height: 1.5em;
+        /*add this for vertical spacing between elements*/
+        }
+
+        .section-container input[type="checkbox"] {
+        margin: 0px 5px;
+        /*changed values to vertical, horizontal*/
+        top: 5px;
+        /*added to offset the checkbox position to line up*/
+        }
+
+        .section-container label {
+        /*new definition to override labels inside section-containers*/
+        margin: 0px;
+        }
+
+        .section {
+        width: 100%;
+        }
+
+        .div {
+        float: left;
+        }
+
+        form input[type="radio"],
+        .form input[type="radio"] {
+        float: none;
+        display: inline-block;
+        }
+
+        .side-by-side label {
+        display: inline-block;
+        }
+
+        .date-one-line {
+        display: flex;
+        }
+
+        .date-one-line label {
+        align-self: center;
+        margin-right: 1em;
+        }
+
+        .date-one-line span {
+        display: flex;
+        }
+
+        .hasDatepicker {
+        min-width: 120px;
+        margin-top: 0px;
+        }
+
+        .hfe-hours,
+        .hfe-minutes,
+        .hfe-seconds {
+        width: 70px;
+        min-width: 70px;
+        margin: 0px 10px 0px 10px;
+        }
+
+        .five-columns,
+        .four-columns,
+        .three-columns,
+        .two-columns {
+        display: table;
+        height: 100%;
+        width: 100%;
+        }
+
+        .two-columns>div {
+        display: table-cell;
+        width: 50%;
+        }
+
+        .three-columns>div {
+        display: table-cell;
+        width: 33%;
+        }
+
+        .four-columns>div {
+        display: table-cell;
+        width: 25%;
+        }
+
+        .five-columns>div {
+        display: table-cell;
+        width: 20%;
+        }
+
+        .small-input input {
+        min-width: 5em;
+        }
+
+        .flexView {
+        display: flex;
+        }
+    </style>
+
+    <h2>Assess the mother within 24 hour after delivery (PNC0)</h2>
+
+    <includeIf velocityTest="$patient.gender == 'F' ">
+        <section
+                sectionTag="fieldset"
+                headerTag="legend"
+                headerStyle="title"
+                headerCode="GENERAL INFORMATION"
+        >
+            <div class="section-container">
+                <table border="2" cellspacing="0" cellpadding="6" width="100%">
+                    <tr>
+                        <td>
+                            Date:
+                            <encounterDate default="today"/>
+                        </td>
+                        <td>
+                            Health Facility:
+                            <encounterLocation
+                                    id="location"
+                                    default="GlobalProperty:billing.defaultLocation"
+                            />
+                        </td>
+                        <td>
+                            Provider:
+                            <encounterProvider default="currentUser"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <section
+                sectionTag="fieldset"
+                headerTag="legend"
+                headerStyle="title"
+                headerCode="A. MOTHER AND NEWBORN"
+        >
+            <div class="section-container">
+                <p class="small-input flexView">
+                    Age of the mother:
+                    <obs conceptId="be383e91-4174-4def-b258-477be6ab91ce"/>
+                    Parity:
+                    <obs conceptId="3cd6dda0-26fe-102b-80cb-0017a47871b2"/>
+
+                    Gestity:
+                    <obs conceptId="5ef4cb1e-ddf9-43f2-8ef0-d503a254bbac"/>
+
+                    Birth date:
+                    <obs conceptId="063ab73c-c664-48ec-92d2-90248050f696"/>
+                </p>
+                <p class="side-by-side">
+                    Place of birth:
+
+                    <obs
+                            conceptId="78f156b9-12f6-431a-bd74-d3ad3b146a4e"
+                            answerCodes="Hopital,Health Center,Home"
+                            style="radio"
+                    />
+
+                </p>
+                <p class="side-by-side">
+                    Sex of newborn:
+
+                    <obs
+                            conceptId="48b89be4-c178-4f0a-a912-9c643d324c1d"
+                            answerCodes="Male,Femme"
+                            style="radio"
+                    />
+
+                </p>
+                <b>1. Maternal Outcome"</b>
+                <p class="side-by-side">
+                    Mother outcome:
+
+                    <obs
+                            conceptId="4e75d51e-d080-406d-bfe5-1bdec35b33f0"
+                            answerConceptIds="3cdd446a-26fe-102b-80cb-0017a47871b2,bf09f37f-e4b6-49cb-a272-fdd2681e9b83,3cdea85a-26fe-102b-80cb-0017a47871b2"
+                            answerCodes="PatientDied,Alive,Miscarriage/abortion"
+                            style="radio"
+                    />
+
+                </p>
+                <b>2. Newborn Outcome"</b>
+                <p class="side-by-side">
+                    Newborn outcome:
+
+                    <obs
+                            conceptId="cf3137cf-8a15-429b-800b-2e35d43011d7"
+                            answerConceptIds="b056404d-333c-4231-989e-a3abe01e5cd0,1242d64c-b6a5-4f83-a01f-465afa7148b6,884a4fc3-c196-45c8-be04-52d1bf480f4f,a972e953-3552-4a95-bd9f-1a59c2a87f69,73eed8e7-584b-4745-ae89-12fd914e42a0,7bdbe689-0646-4c3c-a473-a30bf8521605"
+                            answerCodes="BORN ALIVE, LBW/ELBW, Preterm, Still birth, Early neonatal death, Death within 24hr"
+                            style="radio"
+                    />
+
+                </p>
+                <p class="small-input flexView">
+                    Head circumference:
+                    <obs conceptId="3ceb96b4-26fe-102b-80cb-0017a47871b2"/>
+
+                    Height:
+                    <obs conceptId="3ce93cf2-26fe-102b-80cb-0017a47871b2"/>
+
+                    Weight at birth:
+                    <obs conceptId="3cf15b3a-26fe-102b-80cb-0017a47871b2"/>
+                </p>
+            </div>
+        </section>
+        <section
+                sectionTag="fieldset"
+                headerTag="legend"
+                headerStyle="title"
+                headerCode="B. HISTORY OF DELIVERY"
+        >
+            <div class="section-container">
+                <p class="radio">
+                    <obs
+                            conceptId="73de8b6f-7f08-491a-a33f-b482c5722bc3"
+                            answerConceptId="22a6140e-a82a-44b3-a4ba-32c4dcf27ae2"
+                            answerCode="High Fever with chills rigor"
+                            style="radio"
+                    />
+                    <obs
+                            conceptId="73de8b6f-7f08-491a-a33f-b482c5722bc3"
+                            answerConceptId="a03250dc-6c61-4e49-8972-3b3536223573"
+                            answerCode="Severe headaches Blurred vision"
+                            style="radio"
+                    />
+                    <obs
+                            conceptId="73de8b6f-7f08-491a-a33f-b482c5722bc3"
+                            answerConceptId="0f3f27e8-949d-4ef3-9c1a-04cb2ac121ff"
+                            answerCode="Vaginal Bleeding"
+                            style="radio"
+                    />
+                    <obs
+                            conceptId="73de8b6f-7f08-491a-a33f-b482c5722bc3"
+                            answerConceptId="4f677894-1e8a-4980-889f-b823f8f68c75"
+                            answerCode="Unconsciousness/Convulsion/ fit/Restlessness"
+                            style="radio"
+                    />
+                    <obs
+                            conceptId="73de8b6f-7f08-491a-a33f-b482c5722bc3"
+                            answerConceptId="c0665e50-f982-4e6b-8d79-c81d531d89fc"
+                            answerCode="Cyanosis/ sign of impending shock such as mark pallor cold and clammy extremities weak and rapid pulse (greather than 100/min) systolic BP (less than90mmHg),"
+                            style="radio"
+                    />
+                    <obs
+                            conceptId="73de8b6f-7f08-491a-a33f-b482c5722bc3"
+                            answerConceptId="77588667-c1c3-45cc-8144-713f2bbd39a7"
+                            answerCode="Heavy vaginal bleeding"
+                            style="radio"
+                    />
+                    <obs
+                            conceptId="73de8b6f-7f08-491a-a33f-b482c5722bc3"
+                            answerConceptId="16861155-159a-4815-a313-1d9248f26e35"
+                            answerCode="Abdominal pains"
+                            style="radio"
+                    />
+                    <obs
+                            conceptId="73de8b6f-7f08-491a-a33f-b482c5722bc3"
+                            answerConceptId="cab54d02-184d-474c-b72b-2351345faa65"
+                            answerCode="Pain in perineal wound"
+                            style="radio"
+                    />
+                    <obs
+                            conceptId="73de8b6f-7f08-491a-a33f-b482c5722bc3"
+                            answerConceptId="bdf695cb-7f15-4ec7-9242-75f8a4252183"
+                            answerCode="Difficulty in urination"
+                            style="radio"
+                    />
+                </p>
+            </div>
+        </section>
+
+        <section
+                sectionTag="fieldset"
+                headerTag="legend"
+                headerStyle="title"
+                headerCode="C. Type of delivery"
+        >
+            <div class="section-container">
+                <p class="side-by-side">
+
+                    <b>1.Normal vaginal delivery</b>
+
+
+                    <obs
+                            answerCodes="Yes,No"
+                            conceptId="119cad0e-988e-4c75-bddf-212db833fb64"
+                            style="radio"
+                    />
+
+                </p>
+                <p class="side-by-side">
+                    Pain:
+
+                    <obs
+                            answerCodes="Yes,No"
+                            conceptId="7c4d837b-5967-4ba6-902c-ca7651bebf34"
+                            style="radio"
+                    />
+
+                </p>
+                <p class="side-by-side">
+                    Sedation:
+
+                    <obs
+                            answerCodes="Yes,No"
+                            conceptId="6853d046-1632-4cb7-a4c5-544abb29d11a"
+                            style="radio"
+                    />
+
+                </p>
+                <p class="flexView small-input">
+                    Respiratory rate:
+                    <obs conceptId="3ceb11f8-26fe-102b-80cb-0017a47871b2"/>
+                    BHeart rate
+                    <obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2"/>
+                    BP
+                    <obs conceptId="ed0032c4-d0a8-47c4-bb02-cb727c373721"/>
+                    Temperature
+
+                    <obs conceptId="3ce939d2-26fe-102b-80cb-0017a47871b2"/>
+
+                </p>
+                <p class="side-by-side">
+                    Intravenous infusions
+
+                    <obs
+                            answerCodes="Yes,No"
+                            conceptId="7e8d40e8-f928-493f-9f16-c84cedd6879b"
+                            style="radio"
+                    />
+
+                </p>
+                <p class="flexView">
+                    Vaginal loss
+
+                    <obs conceptId="e829075c-7495-4b91-88db-d939c8a07aba"/>
+
+                </p>
+                <p class="side-by-side">
+                    Urinary output
+
+                    <obs
+                            answerCodes="Normal,Abnormal"
+                            conceptId="9c6c3bc8-6f86-4e3a-8850-aea8d5c8d41e"
+                            style="radio"
+                    />
+
+                </p>
+                <p class="side-by-side">
+                    Surgical site drainage and wound
+
+                    <obs
+                            answerCodes="Normal,Abnormal"
+                            conceptId="46c65432-f13e-4ade-9f28-c1e0e5a5b563"
+                            style="radio"
+                    />
+
+                </p>
+                <p class="side-by-side">
+                    Higher risk of Thromboembolism
+
+                    <obs
+                            answerCodes="Yes,No"
+                            conceptId="b8161596-e99f-40e4-abdc-c714ba622047"
+                            style="radio"
+                    />
+
+                </p>
+
+                <p class="side-by-side">
+
+                    <b>3.Assisted vaginal delivery forceps</b>
+
+
+                    <obs
+                            answerCodes="Yes,No"
+                            conceptId="c747fd61-2edd-4165-9bd7-3ce789b7eed8"
+                            style="radio"
+                    />
+
+                </p>
+
+                <p class="side-by-side">
+
+                    <b>4.Assisted vaginal delivery, vacuum</b>
+
+
+                    <obs
+                            answerCodes="Yes,No"
+                            conceptId="a104ed61-424c-472e-9220-5f50ee7e4828"
+                            style="radio"
+                    />
+
+                </p>
+                <p class="side-by-side">
+
+                    Check for completeness of placenta and membranes
+
+
+                    <obs
+                            answerCodes="Complete,Incomplete"
+                            conceptId="6267c791-39c1-4498-b599-b71b147a2d11"
+                            style="radio"
+                    />
+
+                </p>
+                <p class="side-by-side">
+
+                    Assess general maternal well-being (blood pressure, body
+                    temperature)
+
+
+                    <obs
+                            answerCodes="Normal,Abnormal"
+                            conceptId="17155659-6c7a-4cdd-bbd9-dd53607cdd18"
+                            style="radio"
+                    />
+
+                </p>
+                <p class="side-by-side">
+                    Check for pallor (conjunctiva and palms)
+
+                    <obs
+                            answerCodes="Yes,No"
+                            conceptId="f801a432-83f1-465b-b7ad-71b219e6771e"
+                            style="radio"
+                    />
+
+                </p>
+                <p class="side-by-side">
+                    Check perineum for tears
+
+                    <obs
+                            answerCodes="Yes,No"
+                            conceptId="558abe4b-8ad5-4254-b1f3-0a8807d58fb6"
+                            style="radio"
+                    />
+
+                </p>
+                <p class="side-by-side">
+                    Inflammation
+
+                    <obs
+                            answerCodes="Yes,No"
+                            conceptId="f915f744-7500-4c9c-ae72-fd2e376e440f"
+                            style="radio"
+                    />
+
+                </p>
+                <p class="side-by-side">
+                    Discharge
+
+                    <obs
+                            answerCodes="Yes,No"
+                            conceptId="c65efcce-d301-4e7e-9eac-656dd5454684"
+                            style="radio"
+                    />
+
+                </p>
+                <p class="side-by-side">
+                    Check for uterine contraction
+
+                    <obs
+                            answerCodes="Yes,No"
+                            conceptId="e0a8a6ce-f037-4940-9677-53dfa1972c97"
+                            style="radio"
+                    />
+
+                </p>
+                <p class="side-by-side">
+                    Feel if uterus is hard and round
+
+                    <obs
+                            answerCodes="Yes,No"
+                            conceptId="71b78da1-59fe-460a-a4bc-b2a757992f36"
+                            style="radio"
+                    />
+
+                </p>
+            </table>
+        </div>
+    </section>
+
+    <section
+            sectionTag="fieldset"
+            headerTag="legend"
+            headerStyle="title"
+            headerCode="D. Any difficulties at birth ?"
+    >
+        <div class="section-container">
+            <p class="side-by-side">
+                Record the difficulties that were faced during birth
+
+                <obs
+                        answerCodes="Yes,No"
+                        conceptId="7778a0dd-faf5-4d0f-9590-f0077ade30f1"
+                        style="radio"
+                />
+            </p>
+            <p>
+                Summary of positive and negative findings and actions taken
+
+                <obs
+                        conceptId="d822dc16-78ec-4f25-a3ca-5783bbc1edc8"
+                        raw="3"
+                        style="text"
+                />
+            </p>
+        </div>
+    </section>
+
+    <ifMode mode="VIEW" include="false">
+        <div id="buttons">
+            <button id="submit" class="submitButton confirm">
+                <uimessage code="Save"/>
+                <i
+                        class="icon-spinner icon-spin icon-2x"
+                        style="display: none; margin-left: 10px"
+                ></i>
+            </button>
+            <button id="cancel" type="button" class="cancel">
+                <uimessage code="emr.cancel"/>
+            </button>
+        </div>
+    </ifMode>
+</includeIf>
+<includeIf velocityTest="$patient.gender == 'M' ">
+<section headerLabel="Invalid Patient Message">
+    <table border="0" width="100%">
+        <tr>
+            <td class="lblcolor">
+                This Form Is Only Filled For Female Patients:
+            </td>
+        </tr>
+    </table>
+</section>
+</includeIf>
+        </htmlform>

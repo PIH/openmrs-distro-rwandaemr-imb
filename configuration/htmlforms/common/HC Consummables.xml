@@ -1,22 +1,42 @@
+
+
 <htmlform
-        htmlformUuid="9e466c07-8b20-4e08-a966-d3bd8636005f"
-        formUuid="cf1a9f6c-e6ca-4397-9281-084d03c66f61"
-        formName="Partogram During Active Phase Labor"
-        formDescription="Partogram During Active Phase Labor"
+        formUuid="9ca317d9-ed6a-44f4-a37a-2d13dc916c7e"
+        formName="HC Consumables"
+        formDescription="HC Consumables"
         formVersion="1.0"
-        formEncounterType="f0d3c07e-bb5a-4a99-9643-b49810e18981"
+        formEncounterType="3c2a7c11-36b6-4593-85c5-be98713ae288"
         formPublished="true"
-        formRetired="false"
->
-    <!-- Pedi HIV top level form.
-         HIV-RW.V1.akb.Juky13.doc
-         Created by gneza 2013
-     -->
+        formRetired="false">
+
     <macros>
-        paperFormId = (Fill this in)
+        paperFormId = Flow-DM-RW.V2.0.akb.15May09
         headerColor =#009d8e
         fontOnHeaderColor = white
+
+        @Motivation_Of_Drug_Prescription@ = 4ac07e09-570c-497b-8b9a-639cdedbe2df
+        @RWANDA_INSURANCE_NUMBER@ = 5775fd72-b120-40e1-84a4-a2554a781bb2
+        @RWANDA_INSURANCE_TYPE@ = 8da67e73-776c-43f6-9758-79d1f6786db3
+        @Insurance_Beneficiary_Names@ = b2783c61-6ff2-4964-bbb8-3440b30ed954
+        @BENEFICIALY_INSURANCE_NUMBER@ = b4bf4d52-ae92-4d8f-b7f0-3c99c521a568
+        @GENERAL_DRUG_FREQUENCY@ = 5e152a81-8635-41d6-aef2-2527a5f584f3
+        @Other_Drugs@ = aaa7aeff-c1cc-4c34-befc-0821c7f5e2e0
+        @Date_of_Ordonance@ = 65ef339a-801c-4f43-ad3e-ef4913d23e70
+
+
     </macros>
+    <script type="text/javascript">
+        beforeSubmit.push(function () {
+        var c = confirm('Do you want to submit? If yes, Confirm with OK. If No, click on Cancel');
+        if (c) {
+        return true;
+        }
+        else {
+        return false;
+        }
+
+        });
+    </script>
     <style>
         .field-error {
         color: #ff6666;
@@ -190,35 +210,13 @@
         }
     </style>
 
-    <script type="text/javascript">
-        if (jQuery) {
-        $j(document).ready(function () {
-        $j(".checkboxGroup").each(function () {
-        var group = $j(this);
-        var uncheckAll = function () {
-        group.find("input[type$='checkbox']").attr("checked", false);
-        group.find("input[type$='checkbox']").change();
-        }
-        var uncheckRadioAndAll = function () {
-        group.find("#checkboxAll,#checkboxRadio").find("input[type$='checkbox']").attr("checked", false);
-        group.find("#checkboxAll,#checkboxRadio").find("input[type$='checkbox']").change();
-        }
-        group.find("#checkboxRadio").find("input[type$='checkbox']").click(function () {
-        uncheckAll();
-        $j(this).siblings("input[type$='checkbox']").attr("checked", false);
-        $j(this).attr("checked", true);
-        $j(this).change();
-        });
-        });
-        });
-        }
-    </script>
-    <h1>Partogram during labor phase</h1>
+
+    <postSubmissionAction class="org.openmrs.module.pharmacymanagement.billingAutomation.CreateBillOnConsumableHtmlFormSubmissionAction" />
+
     <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="GENERAL INFORMATION">
         <div class="section-container">
 
-
-            <table border="2" cellspacing="0" cellpadding="6" width="100%">
+            <table border="1" style="table-layout: fixed;" cellspacing="0" cellpadding="6" width="80%">
                 <tr>
                     <td>
                         Date:
@@ -226,7 +224,7 @@
                     </td>
                     <td>
                         Health Facility:
-                        <encounterLocation id="location" default="GlobalProperty:billing.defaultLocation" />
+                        <encounterLocation default="GlobalProperty:billing.defaultLocation" />
                     </td>
                     <td>
                         Provider:
@@ -237,84 +235,37 @@
         </div>
     </section>
 
-    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="Partograph">
+    <section sectionTag="fieldset" headerTag="legend" headerStyle="title" headerCode="CONSOMMABLES">
         <div class="section-container">
+            <table>
+                <tr>
+                    <td class="lblcolor" colspan="4">
+                        <b>Department</b>
+                        <obs conceptId="c920931b-fa93-4e99-9e36-28e1e4c16cf7" required="true" />
+                    </td>
+                </tr>
+                <tr><td>ABAISSE LANGUE</td><td><obs conceptId="85a97aef-a01d-4e60-bdbd-0e19feacb291"/></td>
+                    <td>CATGUT CHROMIC 3/0</td><td><obs conceptId="e2f4d87f-bd2b-4af7-937b-dc032d93744d"/></td>
+                    <td>CATHETER G18</td><td><obs conceptId="5d8648b5-eb86-45f1-b769-98cda44801c7"/></td>
+                    <td>CATHETER G20</td><td><obs conceptId="76a3cb6c-08ae-4d9c-a3ac-e74bae062680"/></td>
+                </tr><tr><td>CATHETER G22</td><td><obs conceptId="0d60dd86-b231-4db2-8d58-1ba2fdc6480c"/></td>
+                <td>CATHETER G24</td><td><obs conceptId="e39c31e2-925c-4c07-b638-d9b3f972ecc7"/></td>
+                <td>COTTON</td><td><obs conceptId="5d973b0c-5e8c-4d43-b971-055914b6f9d6"/></td>
+                <td>UMBILICAL CORD CLAMP</td><td><obs conceptId="b8b7f6a1-7986-43e3-ae7f-e98f88bd9825"/></td>
+            </tr><tr><td>GANT PROPRE 7,5 MOYENNE</td><td><obs conceptId="2799f29c-8b95-f252-bedd-97a13866bfdc"/></td>
+                <td>GANT STERILE 7,5</td><td><obs conceptId="ad22fd7e-15b1-8595-f886-acd5bc385bc8"/></td>
+                <td>ULTRASOUND GEL</td><td><obs conceptId="c9c7a1f3-5941-44a5-ae4c-5a99438f0ddf"/></td>
+                <td>MINIGRIP SACHET</td><td><obs conceptId="9ffb6a13-b196-402c-9fed-9efe3211f5ca"/></td>
+            </tr><tr><td>SERYNGUE 2CC</td><td><obs conceptId="70f5ae84-2e51-44fb-8013-6e14853d9bc4"/></td>
+                <td>SERYNGUE 5CC</td><td><obs conceptId="ff74777c-2797-42f6-bf0e-81d9df6d59f4"/></td>
+                <td>SERYNGUE 10CC</td><td><obs conceptId="7ac91e15-cf7d-41e9-baf4-30e1679db2ba"/></td>
+                <td>TROUSSE DE PERFUSION</td><td><obs conceptId="d541567e-5394-4e70-b569-70e9fa3d882a"/></td></tr>
 
-            <p class="small-input flexView">
-                Date and Time:
-                <obs conceptId="1b8f65ed-d801-4945-a354-de70c1212d80" required="true" allowFutureDates="true"/>
-            </p>
-            <p class="small-input flexView">
-                Fetal heart rate:
-                <obs conceptId="57c934dd-a086-4e73-a9b8-3b9c1abef1b1" />bpm
-            </p>
-            <p class="side-by-side">
-                Amniotic Liquid:
-                <obs conceptId="3b408c83-ccbb-4c99-ac4a-d195bb8ac07f" style="radio" />
-            </p>
-            <p class="small-input flexView">
-                Moulding:
-                <obs conceptId="b8251b45-7729-41fa-a93a-109bdd315660" />
-            </p>
-            <p class="small-input flexView">
-                Cervical Dilation:
-                <obs conceptId="206dedbc-ea4a-4298-bb5a-a326526a082e" />
-            </p>
-            <p class="small-input flexView">
-                Descent:
-                <obs conceptId="927948ed-8be0-4917-9199-9dc3fb776f86" />
-            </p>
-            <p class="small-input flexView">
-                Uterine Contraction:
-                <obs conceptId="5965b71c-4214-4780-a74e-2de09b06a552" />10min
-            </p>
-            <p class="side-by-side">
-                Contraction duration:
-                <obs conceptId="0df7b54f-820d-4ad2-b8c3-ea4eac3e67d7" style="radio" />in seconds
-            </p>
-            <p class="small-input flexView">
-                Oxytocin Units:
-                <obs conceptId="324e78bc-68cc-4dcc-ab81-54b9fd4b229f" />Units/500ml
-            </p>
-            <p class="small-input flexView">
-                Oxytocin Drops:
-                <obs conceptId="11826120-205d-42db-be63-2d304d494bc8" />drops/minutes
-            </p>
-            <p class="small-input flexView">
-                Medicines and IV liquid:
-                <obs cols="30" conceptId="6226ab58-c614-400a-8104-7fac2de18168" rows="3" style="textarea" />
-            </p>
-            <fieldset>
-                <legend>
-                    <b>Vital Signs</b>
-                </legend>
-                <p class="small-input flexView">
-                    Pulse Rate:<obs conceptId="3ce93824-26fe-102b-80cb-0017a47871b2" />
-                </p>
-                <p class="small-input flexView">
-                    BP:
-                    <obs conceptId="ed0032c4-d0a8-47c4-bb02-cb727c373721" />
-                </p>
-                <p class="small-input flexView">
-                    Temperature:<obs conceptId="3ce939d2-26fe-102b-80cb-0017a47871b2" />
-                </p>
-            </fieldset>
-            <fieldset>
-                <legend>
-                    <b>Urine Exams</b>
-                </legend>
-                <p class="small-input flexView">
-                    Proteinemie:<obs conceptId="87b0e81b-e440-47cd-ad0d-5a0b3149682a" />
-                </p>
-                <p class="small-input flexView">
-                    Acetone:<obs conceptId="b1f3d6ca-b22b-4cbc-8f30-b34819399895" />
-                </p>
-                <p class="small-input flexView">
-                    Volume:<obs conceptId="eb41c575-5403-48e4-aacf-8dbcf8dd742d" />
-                </p>
-            </fieldset>
+
+            </table>
         </div>
     </section>
+
 
     <ifMode mode="VIEW" include="false">
         <div id="buttons">

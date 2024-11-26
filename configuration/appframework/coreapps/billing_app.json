@@ -12,8 +12,9 @@
         "url": "module/mohbilling/insurancePolicySearch.form",
         "icon": "icon-money",
         "require": "typeof sessionLocation !== 'undefined' && hasMemberWithProperty(sessionLocation.tags, 'display', 'Billing Location')",
-        "requiredPrivilege": "App: coreapps.billingAdmin"
+        "requiredPrivilege": "App: coreapps.billingAdmin",
+        "order": 5
       }
     ]
   }
-]https://cwiki.apache.org/confluence/pages/viewrecentblogposts.action?key=MAVEN&src=sidebar-blogs
+  ]

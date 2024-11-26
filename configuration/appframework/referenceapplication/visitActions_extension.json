@@ -24,7 +24,7 @@
     "extensionPointId": "patientDashboard.visitActions",
     "type": "link",
     "label": "referenceapplication.task.simpleTransfer.label",
-    "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=referenceapplication:htmlforms/simpleTransfer.xml",
+    "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/simpleTransfer.xml",
     "icon": "icon-random",
     "order": 51,
     "requiredPrivilege": "Task: referenceapplication.simpleTransfer",

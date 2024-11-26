@@ -12,7 +12,8 @@
                 "label": "Find Patient Record",
                 "url": "coreapps/findpatient/findPatient.page?app=coreapps.findPatient_refApp",
                 "icon": "icon-search",
-                "requiredPrivilege": "App: coreapps.findPatient"
+                "requiredPrivilege": "App: coreapps.findPatient",
+                "order": 1
             }
         ]
     }

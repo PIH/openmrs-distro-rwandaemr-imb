@@ -10,7 +10,8 @@
         "type": "link",
         "label": "Cohort Builder",
         "url": "cohortBuilder.list",
-        "icon": "icon-tasks"
+        "icon": "icon-tasks",
+        "order": 11
       }
     ]
   }

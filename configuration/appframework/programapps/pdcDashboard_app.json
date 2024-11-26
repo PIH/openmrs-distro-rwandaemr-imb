@@ -313,6 +313,28 @@
     ]
   },
   {
+    "id": "imbemr.fbfbef74-4b99-4070-95b8-7023e3db51e1.gmcd.Form",
+    "order": 11,
+    "config": {
+      "icon": "fas fa-fw fa-stethoscope",
+      "label": "coreapps.programHistoryDashboardWidget.label",
+      "program": "fbfbef74-4b99-4070-95b8-7023e3db51e1",
+      "dashboard": "fbfbef74-4b99-4070-95b8-7023e3db51e1",
+      "includeActive": false
+    },
+    "extensions": [
+      {
+        "id": "imbemr.fbfbef74-4b99-4070-95b8-7023e3db51e1.gmcd.Form",
+        "extensionPointId": "fbfbef74-4b99-4070-95b8-7023e3db51e1.overallActions",
+        "type": "link",
+        "label": "GMCD form",
+        "url": "htmlformentryui/htmlform/enterHtmlFormWithStandardUi.page?patientId={{patient.uuid}}&visitId={{visit.uuid}}&definitionUiResource=file:configuration/htmlforms/pdc-gmcd.xml",
+        "icon": "icon-file",
+        "order": 11
+      }
+    ]
+  },
+  {
     "id": "imbemr.fbfbef74-4b99-4070-95b8-7023e3db51e1.pdcProgressNote.Form",
     "order": 12,
     "config": {

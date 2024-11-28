@@ -403,7 +403,7 @@
                 </td>
                 <td>
                     Health Facility:
-                    <encounterLocation default="GlobalProperty:registration.defaultLocationCode" />
+                    <encounterLocation default="GlobalProperty:billing.defaultLocation" />
                 </td>
                 <td>
                     Provider:

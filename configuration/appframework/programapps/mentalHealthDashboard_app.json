@@ -44,6 +44,30 @@
     ]
   },
   {
+    "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.recentEncounters",
+    "description": "coreapps.mostRecentVitals.app.description",
+    "label": "imbemr.clinicianfacing.recentEncounters",
+    "icon": "icon-calendar",
+    "order": 4,
+    "config": {
+      "program": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "dashboard": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "includeActive": false,
+      "limit": "5"
+    },
+    "extensions": [
+      {
+        "id": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.recentEncounters.extension",
+        "appId": "imbemr.51304c8c-ecc2-4bed-818b-a5c785ad58a6.recentEncounters",
+        "extensionPointId": "51304c8c-ecc2-4bed-818b-a5c785ad58a6.secondColumnFragments",
+        "extensionParams": {
+          "provider": "imbemr",
+          "fragment": "patient/encountersSection"
+        }
+      }
+    ]
+  },
+  {
     "id": "imbemr.mentalHealthProgramDashboard.obsGraph.weight",
     "order": 3,
     "config": {
@@ -54,7 +78,7 @@
       "showLegend": true,
       "function": "(bmi,3ce93b62-26fe-102b-80cb-0017a47871b2,3ce93cf2-26fe-102b-80cb-0017a47871b2);",
       "label": "WEIGHT,HEIGHT AND BMI GRAPH",
-      "program": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
+      "program": "",
       "dashboard": "51304c8c-ecc2-4bed-818b-a5c785ad58a6",
       "includeActive": false
     },

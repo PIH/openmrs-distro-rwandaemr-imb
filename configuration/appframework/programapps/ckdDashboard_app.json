@@ -44,6 +44,30 @@
     ]
   },
   {
+    "id": "imbemr.1b48afcc-347b-4419-b481-0a6a9db1e900.recentEncounters",
+    "description": "coreapps.mostRecentVitals.app.description",
+    "label": "imbemr.clinicianfacing.recentEncounters",
+    "icon": "icon-calendar",
+    "order": 4,
+    "config": {
+      "program": "1b48afcc-347b-4419-b481-0a6a9db1e900",
+      "dashboard": "1b48afcc-347b-4419-b481-0a6a9db1e900",
+      "includeActive": false,
+      "limit": "5"
+    },
+    "extensions": [
+      {
+        "id": "imbemr.1b48afcc-347b-4419-b481-0a6a9db1e900.recentEncounters.extension",
+        "appId": "imbemr.1b48afcc-347b-4419-b481-0a6a9db1e900.recentEncounters",
+        "extensionPointId": "1b48afcc-347b-4419-b481-0a6a9db1e900.secondColumnFragments",
+        "extensionParams": {
+          "provider": "imbemr",
+          "fragment": "patient/encountersSection"
+        }
+      }
+    ]
+  },
+  {
     "id": "imbemr.ckdProgramDashboard.obsGraph.weight",
     "order": 3,
     "config": {

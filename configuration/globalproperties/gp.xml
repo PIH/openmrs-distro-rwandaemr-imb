@@ -1,6 +1,12 @@
 <config>
     <globalProperties>
 
+        <!-- IMB EMR -->
+        <globalProperty>
+            <property>imbemr.autoCreateInsuranceType</property>
+            <value>NONE(PRIVATE)</value>
+        </globalProperty>
+
         <!-- EMR API -->
         <globalProperty>
             <property>emrapi.visitExpireHours</property>

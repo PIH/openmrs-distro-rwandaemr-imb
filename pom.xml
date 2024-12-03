@@ -21,7 +21,7 @@
         <adminuiVersion>1.7.0-SNAPSHOT</adminuiVersion>
         <allergyuiVersion>1.8.6-SNAPSHOT</allergyuiVersion>
         <appframeworkVersion>2.18.0-SNAPSHOT</appframeworkVersion>
-        <appuiVersion>1.17.0</appuiVersion>
+        <appuiVersion>1.18.0-SNAPSHOT</appuiVersion>
         <attachmentsVersion>2.8.0</attachmentsVersion>
         <authenticationVersion>1.1.0-SNAPSHOT</authenticationVersion>
         <authenticationuiVersion>1.1.0-SNAPSHOT</authenticationuiVersion>

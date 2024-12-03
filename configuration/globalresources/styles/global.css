@@ -1,6 +1,9 @@
 header {
     background-color:#00473f;
 }
+.login-header-image {
+    padding: 8px;
+}
 body {
     max-width: unset !important;
     width: 1500px;

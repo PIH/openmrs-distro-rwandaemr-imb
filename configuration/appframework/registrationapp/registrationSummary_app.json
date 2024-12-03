@@ -31,8 +31,7 @@
           "provider": "registrationapp",
           "fragment": "summary/section",
           "fragmentConfig": {
-            "sectionId": "patient-identification-section",
-            "displayEachField": true
+            "sectionId": "patient-identification-section"
           }
         }
       }

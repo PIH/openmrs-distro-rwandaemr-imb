@@ -48,10 +48,6 @@
             <property>registrationcore.preciseSimilarPatientSearchAlgorithm</property>
             <value>imbemr.RwandaPrecisePatientSearchAlgorithm</value>
         </globalProperty>
-        <globalProperty>
-            <property>registrationcore.mpi.implementation</property>
-            <value></value>
-        </globalProperty>
 
         <!-- HFE -->
         <globalProperty>

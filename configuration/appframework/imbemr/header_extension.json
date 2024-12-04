@@ -4,14 +4,9 @@
         "extensionPointId": "org.openmrs.module.appui.header.config",
         "type": "config",
         "extensionParams": {
-            "logo-icon-url": "/ms/uiframework/resource/file/configuration/frontend/rwandaLogo.png"
+            "custom-provider": "imbemr",
+            "custom-fragment": "header",
+            "logo-icon-url": "file:configuration/frontend/rwandaLogo.png"
         }
-    },
-    {
-        "id": "imbemr.myAccountHeaderLink",
-        "extensionPointId": "org.openmrs.module.appui.header.userAccount.menuItems",
-        "type": "link",
-        "label": "authenticationui.myAccount.title",
-        "url": "authenticationui/account/userAccount.page"
     }
 ]

@@ -1,6 +1,9 @@
 header {
     background-color:#00473f;
 }
+.login-header-image {
+    padding: 8px;
+}
 body {
     max-width: unset !important;
     width: 1500px;
@@ -46,5 +49,9 @@ label {
 #visits-list li.selected {
     background: #5b57a6;
     color: white;
+    font-weight: bold;
+}
+
+#national-ids-questions > h3 {
     font-weight: bold;
 }

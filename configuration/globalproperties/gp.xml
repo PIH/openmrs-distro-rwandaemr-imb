@@ -1,6 +1,12 @@
 <config>
     <globalProperties>
 
+        <!-- IMB EMR -->
+        <globalProperty>
+            <property>imbemr.autoCreateInsuranceType</property>
+            <value>NONE(PRIVATE)</value>
+        </globalProperty>
+
         <!-- EMR API -->
         <globalProperty>
             <property>emrapi.visitExpireHours</property>
@@ -30,6 +36,14 @@
             <property>patient.listingAttributeTypes</property>
             <value>Health Center,Phone number</value>
         </globalProperty>
+        <globalProperty>
+            <property>default_locale</property>
+            <value>en</value>
+        </globalProperty>
+        <globalProperty>
+            <property>locale.allowed.list</property>
+            <value>en,fr,rw</value>
+        </globalProperty>
 
         <!-- Registration Core -->
         <globalProperty>
@@ -47,6 +61,10 @@
         <globalProperty>
             <property>registrationcore.preciseSimilarPatientSearchAlgorithm</property>
             <value>imbemr.RwandaPrecisePatientSearchAlgorithm</value>
+        </globalProperty>
+        <globalProperty>
+            <property>registrationcore.mpi.implementation</property>
+            <value></value>
         </globalProperty>
 
         <!-- HFE -->

@@ -1,4 +1,13 @@
-<htmlform>
+<htmlform
+        htmlformUuid="6a233011-f845-4a3b-9c05-43135f630237"
+        formUuid="788875de-c473-422d-8ff6-278b87cfec79"
+        formName="HC ASRH Individual counselling"
+        formDescription="HC ASRH Individual counselling"
+        formVersion="1.0"
+        formEncounterType="d088d4ed-b51b-46fd-ae73-30a1669b60d6"
+        formPublished="true"
+        formRetired="false"
+>
 
     <macros>
         paperFormId = (Fill this in)

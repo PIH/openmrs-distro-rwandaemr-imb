@@ -8,5 +8,13 @@
             "custom-fragment": "header",
             "logo-icon-url": "file:configuration/frontend/rwandaLogo.png"
         }
+    },
+    {
+        "id": "coreapps.patientHeader.secondLineFragments.stickyNote",
+        "extensionPointId": "patientHeader.secondLineFragments",
+        "extensionParams": {
+            "provider": "coreapps",
+            "fragment": "stickyNote"
+        }
     }
 ]

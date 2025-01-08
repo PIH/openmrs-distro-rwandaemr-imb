@@ -45,6 +45,20 @@ order by l.name
 ;
 ```
 
+# Person Attribute Types
+```sql
+select  t.uuid as 'UUID',
+        if(t.retired, 'TRUE', null) as 'Void/Retire',
+        t.name as 'Name',
+        t.description as 'Description',
+        t.format as 'Format',
+        t.foreign_uuid as 'Foreign uuid',
+        if(t.searchable, 'TRUE', 'FALSE') as 'Searchable'
+from person_attribute_type t
+order by t.name
+;
+```
+
 # Visit Types
 
 ```sql

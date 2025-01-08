@@ -11,7 +11,9 @@ c1c39e98-2f2d-432b-8cc9-b2f273209c29,,Adult HIV,Encounter for the Adult HIV Flow
 3caf2350-98f3-483e-9c99-bfb59f0198d3,TRUE,Adult Initial Visit (Research),"An initial visit encounter, entered for research p"
 4d911f5c-26fe-102b-80cb-0017a47871b2,,ADULT RETURN VISIT,Outpatient Adult Return Visit
 51513701-76d0-44cc-9f44-0bfdeaeda78b,TRUE,Adult Return Visit (Research),"An return visit encounter, entered for research pu"
+5fe002a9-a457-46e0-b938-221695a2a03e,,ANAESTHESIA VISIT,ANAESTHESIA VISIT
 a703372d-28b7-4831-9817-ee385c8c47d8,,ANC visit,ANC visit
+03c36ceb-d4c5-441f-aca5-d88fdd9b6964,,Anesthesia Record,Anesthesia Record
 d088d4ed-b51b-46fd-ae73-30a1669b60d6,,ASRH Visit,ASRH Visit
 820004cd-5f2b-40a9-bf26-bf6f5a945790,,ASTHMA VISIT,ASTHMA VISIT
 5021b1a1-e7f6-44b4-ba02-da2f2bcf8718,,Attachment Upload,Encounters used to record uploads of attachments.
@@ -44,6 +46,7 @@ afa9251e-5d99-44dd-96d9-c0c8f54614d6,,HTC visit,HTC visit
 462e7e66-8d01-4d43-af1f-b80c1a5239c8,,IMNCI VISIT,Encounter for IMNCI(PECIME) Visits
 0b3925f9-0336-47a6-931e-5c356e9cc82f,,Inpatient Oncology,Inpatient Oncology
 f3f15319-4d43-4720-8baf-499ece4fcf97,,investigation encounter,investigation encounter
+5117d944-9a73-4a09-a1ed-08d8407a38ba,,IPD auto Observation or general followup encounter,IPD auto Observation or general followup encounter
 b5d79036-f5ba-4274-b8ed-e1d0fe351064,,IPD Clinical Examination,IPD Clinical Examination
 5117d944-9a73-4a09-a1ed-08d8407a38ba,,IPD FollowUp Visit,IPD auto Observation or general followup encounter
 d8739592-adc2-4898-8eba-a396daa4d88c,,kinestherapy acts encounter,kinestherapy acts encounter
@@ -61,6 +64,7 @@ d8739592-adc2-4898-8eba-a396daa4d88c,,kinestherapy acts encounter,kinestherapy a
 457ff7db-b160-4446-a922-23500b2fdc32,,Neo daily evaluation and orders encounter,Neo daily evaluation and orders encounter
 a8c2299f-bcfe-4786-925b-04fc716cfa6e,,Neo education encounter,Neo education encounter
 6c8255f8-d2a4-4b65-b752-f59bdef313e8,,Neo Progress note encounter,Neo Progress note encounter
+01b6a15c-1c82-47d1-a540-fad3cfa81ab6,,Neonatology Nursing Visit,Neonatology Nursing Visit
 609cd2f6-6acf-4a08-8557-16de80fb403c,,Non clinical encounter,Non clinical encounter are encounters that don't involve  clinician meeting with the patient
 b1c2d207-7221-4c23-b580-6c5de5385847,,Non Clinical Oncology,Non Clinical Oncology
 62935462-e0cd-4f0d-8de3-d6db8f058183,,Nutrition,Nutrition

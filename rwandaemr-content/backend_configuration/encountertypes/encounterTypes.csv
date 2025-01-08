@@ -17,6 +17,7 @@ a703372d-28b7-4831-9817-ee385c8c47d8,,ANC visit,ANC visit
 d088d4ed-b51b-46fd-ae73-30a1669b60d6,,ASRH Visit,ASRH Visit
 820004cd-5f2b-40a9-bf26-bf6f5a945790,,ASTHMA VISIT,ASTHMA VISIT
 5021b1a1-e7f6-44b4-ba02-da2f2bcf8718,,Attachment Upload,Encounters used to record uploads of attachments.
+b5b00648-739a-40f8-a509-da2d03ce9dc0,,Cause of Death visit,Cause of Death visit
 66b9053c-c97d-4a6a-992f-0d9af3c17abd,,CheckIn visit,CheckIn visit
 710c8487-9831-4063-a79d-bf07f27653b2,,CHRONIC KIDNEY DISEASE VISIT,Chronic Kidney Disease Encounter Type
 75caca4e-33ca-4b0a-aa63-5ed29f3000f0,,Consultation encounter,Out/In patient Consultation encounter
@@ -72,11 +73,13 @@ b1c2d207-7221-4c23-b580-6c5de5385847,,Non Clinical Oncology,Non Clinical Oncolog
 f0c136c8-e24d-4957-8072-7907275b4ea0,,OPD Discharge,OPD Discharge
 f060e157-6ce7-48b6-81c4-afa2be5664b5,,operation consent encounter,operation consent encounter
 002e0b8f-6b7d-4f0c-8375-fd77b17061e8,,Ophthalmology acts encounter,Ophthalmology acts encounter
+36d88e93-cba9-4421-964d-a574efe94f13,,ORAL ENDOCRINE REMOTE TREATMENT,ORAL ENDOCRINE REMOTE TREATMENT
 f85df61f-3469-41fc-997d-1d673d178c3e,,Ordonance,Ordonance
 ff319885-3f20-4ae5-8663-3ad5678cba41,,Outpatient Oncology,Outpatient Oncology
 b4149626-e393-497c-82dc-5c9f6578f42e,,Oxygen consumption encounter,Oxygen consumption encounter
 f0d3c07e-bb5a-4a99-9643-b49810e18981,,Partograph Labor Phase,Partograph Labor Phase
 fa8b9e67-3cad-4c52-afd3-95d808835bc8,,Patient Education,Patient Education
+70f18a24-92ec-4de5-acdc-7cae77414e32,,Pathology,Pathology requests and reports
 166da42f-4595-445c-8f8a-f815fe9a47ec,,Patient Follow-up,Patient Follow-up
 504ca1b7-ae18-434a-89d9-cf80f1ad3407,,Patient Transfer,Patient Transfer
 71826dd4-330d-4548-9fd8-6703682fbd3a,,PDC Visit,Pediatric development Visit encounter type

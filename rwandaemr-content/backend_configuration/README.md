@@ -14,3 +14,15 @@ from location l
 order by l.name
 ;
 ```
+
+# Visit Types
+
+```sql
+select t.uuid as 'UUID',
+       if(t.retired, 'TRUE', null) as 'Void/Retire',
+       t.name as 'Name',
+       t.description as 'Description'
+from visit_type t
+order by t.name
+;
+```

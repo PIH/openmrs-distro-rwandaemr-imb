@@ -59,6 +59,18 @@ order by t.name
 ;
 ```
 
+# Relationship Types
+```sql
+select  t.uuid as 'UUID',
+        if(t.retired, 'TRUE', null) as 'Void/Retire',
+        t.a_is_to_b as 'A is to B',
+        t.b_is_to_a as 'B is to A',
+        t.description as 'Description'
+from relationship_type t
+order by t.a_is_to_b, t.b_is_to_a
+;
+```
+
 # Visit Types
 
 ```sql

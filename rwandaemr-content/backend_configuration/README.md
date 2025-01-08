@@ -13,6 +13,24 @@ order by t.name
 ;
 ```
 
+# Identifier Types
+
+```sql
+select t.uuid as 'UUID',
+        t.name as 'Name',
+        t.description as 'Description',
+        if(t.required, 'TRUE', 'FALSE') as 'Required',
+        t.format as 'Format',
+        t.format_description as 'Format description',
+        t.validator as 'Validator',
+        t.location_behavior as 'Location behavior',
+        t.uniqueness_behavior as 'Uniqueness behavior',
+        if(t.retired, 'TRUE', null) as 'Void/Retire'
+from patient_identifier_type t
+order by t.name
+;
+```
+
 # Locations
 
 ```sql

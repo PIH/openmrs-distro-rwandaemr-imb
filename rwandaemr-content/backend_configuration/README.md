@@ -1,6 +1,18 @@
 Scripts
 =====================
 
+# Encounter Types
+
+```sql
+select t.uuid as 'UUID',
+       if(t.retired, 'TRUE', null) as 'Void/Retire',
+       t.name as 'Name',
+       t.description as 'Description'
+from encounter_type t
+order by t.name
+;
+```
+
 # Locations
 
 ```sql

@@ -150,7 +150,7 @@
                   "type": "personAttribute",
                   "label": "registrationapp.patient.phone.question",
                   "formFieldName": "phoneNumber",
-                  "uuid": "d6bcc287-4576-4264-961b-6bf1c08fbf68",
+                  "uuid": "${personAttribute.phoneNumber.uuid}",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text",
@@ -195,7 +195,7 @@
                   "formFieldName": "fathersName",
                   "type": "personAttribute",
                   "label": "imbemr.registration.fathersName.label",
-                  "uuid": "b7e948d4-9458-4f06-8d93-e859b6be9b76",
+                  "uuid": "${personAttribute.fathersName.uuid}",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text",
@@ -214,7 +214,7 @@
                   "formFieldName": "educationLevel",
                   "type": "personAttribute",
                   "label": "imbemr.registration.educationLevel.label",
-                  "uuid": "9add985a-cba2-421a-8dd5-6323eb5bda4f",
+                  "uuid": "${personAttribute.educationLevel.uuid}",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text",
@@ -233,7 +233,7 @@
                   "formFieldName": "profession",
                   "type": "personAttribute",
                   "label": "imbemr.registration.profession.label",
-                  "uuid": "ceb19b28-4327-472f-aac4-4c6c6106c7f9",
+                  "uuid": "${personAttribute.profession.uuid}",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text",
@@ -252,7 +252,7 @@
                   "formFieldName": "religion",
                   "type": "personAttribute",
                   "label": "imbemr.registration.religion.label",
-                  "uuid": "287ad1fe-cd21-4577-bb32-7cd36d6a0ebb",
+                  "uuid": "${personAttribute.religion.uuid}",
                   "widget": {
                     "providerName": "uicommons",
                     "fragmentId": "field/text",

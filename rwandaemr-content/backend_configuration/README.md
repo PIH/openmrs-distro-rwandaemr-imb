@@ -59,6 +59,22 @@ order by t.name
 ;
 ```
 
+# Programs
+
+```sql
+select  p.uuid as 'UUID',
+        if(p.retired, 'TRUE', null) as 'Void/Retire',
+        p.name as 'Name',
+        p.description as 'Description',
+        c.uuid as 'Program concept',
+        outcomes_concept.uuid as 'Outcomes concept'
+from program p
+left join concept c on p.concept_id = c.concept_id
+left join concept outcomes_concept on p.outcomes_concept_id = outcomes_concept.concept_id
+order by p.name
+;
+```
+
 # Relationship Types
 ```sql
 select  t.uuid as 'UUID',

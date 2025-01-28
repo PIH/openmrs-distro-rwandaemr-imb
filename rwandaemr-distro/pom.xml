@@ -55,6 +55,7 @@
         <mohdataflowmoduleVersion>0.0.5-SNAPSHOT</mohdataflowmoduleVersion>
         <mohtracVersion>2.0.0-SNAPSHOT</mohtracVersion>
         <namephoneticsVersion>1.19.0</namephoneticsVersion>
+        <openconceptlabVersion>2.5.0-SNAPSHOT</openconceptlabVersion>
         <omodExportVersion>2.1.0</omodExportVersion>
         <orderextensionVersion>3.2.0</orderextensionVersion>
         <owaVersion>1.15.0</owaVersion>

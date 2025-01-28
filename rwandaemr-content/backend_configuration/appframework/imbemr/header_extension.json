@@ -6,7 +6,7 @@
         "extensionParams": {
             "custom-provider": "imbemr",
             "custom-fragment": "header",
-            "logo-icon-url": "file:configuration/frontend/rwandaLogo.png"
+            "logo-icon-url": "file:configuration/globalresources/images/rwandaLogo.png"
         }
     },
     {

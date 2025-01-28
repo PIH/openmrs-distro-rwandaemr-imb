@@ -4,7 +4,7 @@
         <!-- IMB EMR -->
         <globalProperty>
             <property>imbemr.autoCreateInsuranceType</property>
-            <value>NONE(PRIVATE)</value>
+            <value>${insurance.private.name}</value>
         </globalProperty>
 
         <!-- EMR API -->

@@ -135,4 +135,4 @@ https://github.com/Rwanda-EMR/openmrs-config-rwandaemr
 However, ideally the above projects would be rekindled using the content and configuration found in this project, and
 the contents of `./rwandaemr-content` and `./rwandaemr-distro` could be migrated to these appropriately.
 
-Early documentation for this project which is no longer current [can be found here](https://github.com/PIH/openmrs-distro-rwandaemr-imb/wiki).
+Early documentation for this project which is no longer current [can be found here](https://github.com/PIH/openmrs-distro-rwandaemr/wiki).

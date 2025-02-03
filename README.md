@@ -119,13 +119,13 @@ in an SDK server named `rwinktest` without rebuilding and restarting as follows:
 cp -r rwandaemr-content/backend_configuration/messageproperties/* ~/openmrs/rwinktest/configuration/messageproperties/
 ```
 
-Then, navigate to http://localhost:8080/openmrs/imbemr/admin/configuration.page and click "Refresh Message Properties"
+Then, navigate to http://localhost:8080/openmrs/rwandaemr/admin/configuration.page and click "Refresh Message Properties"
 
 Similarly, if you are editing appframework configuration files, you can update these without rebuilding and restarting as follows:
 
 `cp -r rwandaemr-content/backend_configuration/appframework/* ~/openmrs/rwinktest/configuration/appframework/`
 
-Then, navigate to http://localhost:8080/openmrs/imbemr/admin/configuration.page and click "Refresh Apps and Extensions"
+Then, navigate to http://localhost:8080/openmrs/rwandaemr/admin/configuration.page and click "Refresh Apps and Extensions"
 
 ### Other versions and historical documentation
 

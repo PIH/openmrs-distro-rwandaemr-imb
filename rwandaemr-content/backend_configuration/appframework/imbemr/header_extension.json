@@ -1,10 +1,10 @@
 [
     {
-        "id": "imbemr.headerConfig",
+        "id": "rwandaemr.headerConfig",
         "extensionPointId": "org.openmrs.module.appui.header.config",
         "type": "config",
         "extensionParams": {
-            "custom-provider": "imbemr",
+            "custom-provider": "rwandaemr",
             "custom-fragment": "header",
             "logo-icon-url": "file:configuration/frontend/rwandaLogo.png"
         }

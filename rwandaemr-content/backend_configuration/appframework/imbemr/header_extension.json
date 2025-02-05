@@ -6,7 +6,7 @@
         "extensionParams": {
             "custom-provider": "rwandaemr",
             "custom-fragment": "header",
-            "logo-icon-url": "file:configuration/globalresources/images/rwandaLogo.png"
+            "logo-icon-url": "/ms/uiframework/resource/file/configuration/globalresources/images/rwandaLogo.png"
         }
     },
     {
